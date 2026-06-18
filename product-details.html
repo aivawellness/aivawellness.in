@@ -37,12 +37,19 @@
 
     /* ─── NAVBAR ─────────────────────────────────────────── */
     .site-header {
-      position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 9999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 9999;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       box-shadow: 0 1px 8px rgba(13,17,23,0.06);
-      -webkit-backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .nav-inner {
       max-width: 1280px; margin: 0 auto; padding: 0 20px;
