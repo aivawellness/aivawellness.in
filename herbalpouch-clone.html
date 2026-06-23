@@ -698,35 +698,56 @@
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
       }
       .product-card {
         background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
         overflow: hidden;
+        box-shadow: var(--shadow);
         transition:
-          box-shadow 0.35s,
-          transform 0.35s;
+          box-shadow 0.3s,
+          transform 0.3s;
         position: relative;
+        display: flex;
+        flex-direction: column;
       }
       .product-card:hover {
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.13);
-        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
       }
       .product-img {
         position: relative;
         overflow: hidden;
         background: #f5f5f0;
+        aspect-ratio: 1;
+        width: 100%;
       }
       .product-img img {
         width: 100%;
-        aspect-ratio: 1;
+        height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.55s ease;
+        transition:
+          transform 0.55s ease,
+          opacity 0.3s ease;
+      }
+      .product-img .img-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
       .product-card:hover .product-img img {
         transform: scale(1.05);
+      }
+      .product-card:hover .product-img .img-hover {
+        opacity: 1;
       }
       .p-badge {
         position: absolute;
@@ -766,9 +787,11 @@
           opacity 0.3s,
           transform 0.3s;
       }
+      /* keep action buttons hidden on hover as requested */
       .product-card:hover .p-actions {
-        opacity: 1;
-        transform: translateX(0);
+        opacity: 0;
+        transform: translateX(12px);
+        pointer-events: none;
       }
       .p-action-btn {
         width: 36px;
@@ -790,7 +813,10 @@
         color: #fff;
       }
       .product-info {
-        padding: 18px;
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
       }
       .product-cat {
         font-size: 11px;
@@ -868,6 +894,7 @@
         align-items: center;
         justify-content: center;
         gap: 7px;
+        margin-top: auto;
       }
       .btn-cart:hover {
         background: var(--green-light);
@@ -1691,14 +1718,16 @@
         font-family: "Sora", sans-serif;
         font-size: 1.05rem;
         font-weight: 700;
-        color: #fff;
+        color: var(--green);
         display: flex;
         align-items: center;
         gap: 8px;
         margin-bottom: 10px;
+        white-space: nowrap;
       }
       .footer-brand span {
-        color: #60a5fa;
+        color: var(--green-light);
+        font-weight: 600;
       }
       .footer-desc {
         font-size: 0.83rem;
@@ -1724,9 +1753,10 @@
         transition: all 0.2s;
       }
       .social-btn:hover {
-        background: var(--blue);
+        background: var(--green);
         color: #fff;
         transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(45, 80, 22, 0.18);
       }
       .footer-col h6 {
         font-size: 0.8rem;
@@ -1763,7 +1793,7 @@
         margin-bottom: 10px;
       }
       .footer-contact-item i {
-        color: #60a5fa;
+        color: var(--green);
         margin-top: 2px;
         flex-shrink: 0;
       }
@@ -1773,7 +1803,7 @@
         transition: color 0.2s;
       }
       .footer-contact-item a:hover {
-        color: #fff;
+        color: var(--green);
       }
       .footer-bottom {
         border-top: 1px solid #1e293b;
@@ -1981,7 +2011,12 @@
     </div>
 
     <!-- HERO SLIDER -->
-    <section class="hero-slider" id="heroSlider">
+    <section
+      class="hero-slider"
+      id="heroSlider"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
       <div class="slider-track" id="sliderTrack">
         <div class="slide">
           <a class="slide-link" href="product-details.html"
@@ -2057,7 +2092,7 @@
     </div>
 
     <!-- ABOUT SECTION -->
-    <section class="about-section">
+    <section class="about-section" data-aos="fade-up" data-aos-duration="800">
       <div class="about-text" data-aos="fade-right" data-aos-duration="700">
         <p class="about-eyebrow">Who We Are</p>
         <h2>Has wellness stopped feeling simple?</h2>
@@ -2117,7 +2152,12 @@
     </section>
 
     <!-- PRODUCTS SECTION -->
-    <section class="products-section" id="products">
+    <section
+      class="products-section"
+      id="products"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
       <div class="section-header" data-aos="fade-up">
         <p class="section-eyebrow">Our Products</p>
         <h2>Premium Supplements for Every Need</h2>
@@ -2127,7 +2167,12 @@
         </p>
       </div>
       <div class="products-grid">
-        <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+        <div
+          class="product-card"
+          data-aos="fade-right"
+          data-aos-duration="820"
+          data-aos-delay="0"
+        >
           <div class="product-img">
             <span class="p-badge badge-new">New</span
             ><a href="product-details.html"
@@ -2139,6 +2184,11 @@
                     'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'
                 "
             /></a>
+            <img
+              class="img-hover"
+              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80"
+              alt="Magnesium hover"
+            />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
                 <i class="fa-regular fa-heart"></i></button
@@ -2161,7 +2211,104 @@
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="80">
+        <div
+          class="product-card"
+          data-aos="fade-up"
+          data-aos-duration="760"
+          data-aos-delay="80"
+        >
+          <div class="product-img">
+            <span class="p-badge badge-new">New</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/ZMA + VITAMIN B6.jpg"
+                alt="ZMA + Vitamin B6"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'
+                "
+            /></a>
+            <img
+              class="img-hover"
+              src="products-1/hover-ZMA + VITAMIN B6.jpg"
+              alt="ZMA hover"
+            />
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">ZMA</div>
+            <h3>
+              <a href="product-details.html">ZMA + Vitamin B6 (90 Capsules)</a>
+            </h3>
+            <div class="stars">★★★★★ <span>62 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹1,499</span
+              ><span class="original-price">₹1,699</span
+              ><span class="save-badge">Save 12%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
+        <div
+          class="product-card"
+          data-aos="fade-left"
+          data-aos-duration="820"
+          data-aos-delay="160"
+        >
+          <div class="product-img">
+            <span class="p-badge badge-new">New</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/vitamins minerals with amino acid (Woman).jpg"
+                alt="Probiotics Advanced"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'
+                "
+            /></a>
+            <img
+              class="img-hover"
+              src="products-1/hover-vitamins minerals with amino acid (Woman).jpg"
+              alt="Probiotics hover"
+            />
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Immunity</div>
+            <h3><a href="product-details.html">Probiotics Advanced</a></h3>
+            <div class="stars">★★★★★ <span>57 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹1,299</span
+              ><span class="original-price">₹1,499</span
+              ><span class="save-badge">Save 13%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
+        <div
+          class="product-card"
+          data-aos="zoom-in"
+          data-aos-duration="740"
+          data-aos-delay="240"
+        >
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span
             ><a href="product-details.html"
@@ -2173,6 +2320,11 @@
                     'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80'
                 "
             /></a>
+            <img
+              class="img-hover"
+              src="https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=600&q=80"
+              alt="Nattokinase hover"
+            />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
                 <i class="fa-regular fa-heart"></i></button
@@ -2195,7 +2347,12 @@
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="160">
+        <div
+          class="product-card"
+          data-aos="fade-right"
+          data-aos-duration="820"
+          data-aos-delay="320"
+        >
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span
             ><a href="product-details.html"
@@ -2207,6 +2364,11 @@
                     'https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80'
                 "
             /></a>
+            <img
+              class="img-hover"
+              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80"
+              alt="Vitamins hover"
+            />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
                 <i class="fa-regular fa-heart"></i></button
@@ -2233,7 +2395,12 @@
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+        <div
+          class="product-card"
+          data-aos="fade-up"
+          data-aos-duration="760"
+          data-aos-delay="400"
+        >
           <div class="product-img">
             <span class="p-badge badge-sale">Sale</span
             ><a href="product-details.html"
@@ -2245,6 +2412,11 @@
                     'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'
                 "
             /></a>
+            <img
+              class="img-hover"
+              src="https://images.unsplash.com/photo-1585433707802-83ca02fe8980?w=600&q=80"
+              alt="Bone health hover"
+            />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
                 <i class="fa-regular fa-heart"></i></button
@@ -2271,7 +2443,12 @@
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="80">
+        <div
+          class="product-card"
+          data-aos="fade-left"
+          data-aos-duration="820"
+          data-aos-delay="480"
+        >
           <div class="product-img">
             <span class="p-badge badge-new">New</span
             ><a href="product-details.html"
@@ -2283,6 +2460,11 @@
                     'https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=600&q=80'
                 "
             /></a>
+            <img
+              class="img-hover"
+              src="https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=600&q=80"
+              alt="Vitamin D3 hover"
+            />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
                 <i class="fa-regular fa-heart"></i></button
@@ -2317,6 +2499,11 @@
                     'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80'
                 "
             /></a>
+            <img
+              class="img-hover"
+              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80"
+              alt="Omega-3 hover"
+            />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
                 <i class="fa-regular fa-heart"></i></button
@@ -2350,14 +2537,23 @@
     </section>
 
     <!-- FEATURES SECTION -->
-    <section class="features-section">
+    <section
+      class="features-section"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
       <div class="section-header" data-aos="fade-up">
         <p class="section-eyebrow">Why Aiva Wellness</p>
         <h2>Ayurveda Simplified for Everyday Life</h2>
         <p>Clean inputs. Simple choices. Maximum results.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
+        <div
+          class="feature-item"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="40"
+        >
           <div class="feature-icon"><i class="fa-solid fa-capsules"></i></div>
           <h4>Premium Vitamins &amp; Minerals</h4>
           <p>
@@ -2365,7 +2561,12 @@
             efficiently.
           </p>
         </div>
-        <div class="feature-item" data-aos="fade-up" data-aos-delay="80">
+        <div
+          class="feature-item"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="160"
+        >
           <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
           <h4>100% Natural Extracts</h4>
           <p>
@@ -2373,7 +2574,12 @@
             their integrity.
           </p>
         </div>
-        <div class="feature-item" data-aos="fade-up" data-aos-delay="160">
+        <div
+          class="feature-item"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="280"
+        >
           <div class="feature-icon">
             <i class="fa-solid fa-vial-circle-check"></i>
           </div>
@@ -2383,7 +2589,12 @@
             nothing less.
           </p>
         </div>
-        <div class="feature-item" data-aos="fade-up" data-aos-delay="240">
+        <div
+          class="feature-item"
+          data-aos="zoom-in"
+          data-aos-duration="700"
+          data-aos-delay="360"
+        >
           <div class="feature-icon">
             <i class="fa-solid fa-calendar-check"></i>
           </div>
@@ -2395,7 +2606,12 @@
         </div>
       </div>
       <div class="values-row">
-        <div class="value-item" data-aos="fade-up" data-aos-delay="0">
+        <div
+          class="value-item"
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-delay="60"
+        >
           <h4>Simple <span>01</span></h4>
           <p>
             Wellness shouldn't demand complicated rituals. Our products
@@ -2403,7 +2619,12 @@
             consistent even on your busiest days.
           </p>
         </div>
-        <div class="value-item" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="value-item"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="180"
+        >
           <h4>Pure <span>02</span></h4>
           <p>
             We stay true to nature's integrity. By sourcing high-quality
@@ -2411,7 +2632,12 @@
             potency of traditional herbs without additives.
           </p>
         </div>
-        <div class="value-item" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="value-item"
+          data-aos="fade-left"
+          data-aos-duration="700"
+          data-aos-delay="300"
+        >
           <h4>Essential <span>03</span></h4>
           <p>
             We focus on the most effective botanicals in their most supportive
@@ -2423,7 +2649,7 @@
     </section>
 
     <!-- COMBO / FEATURED PRODUCT -->
-    <section class="combo-section">
+    <section class="combo-section" data-aos="fade-up" data-aos-duration="800">
       <div class="combo-img-wrap" data-aos="fade-right" data-aos-duration="700">
         <img
           src="products-1/ZMA + VITAMIN B6.jpg"
@@ -2495,7 +2721,7 @@
     </section>
 
     <!-- DROPS VS CAPSULES -->
-    <section class="drops-section">
+    <section class="drops-section" data-aos="fade-up" data-aos-duration="800">
       <div class="drops-inner">
         <div class="sh" data-aos="fade-up">
           <p class="se">The Aiva Advantage</p>
@@ -2593,7 +2819,11 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="testimonials-section">
+    <section
+      class="testimonials-section"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
       <div class="test-inner">
         <div class="section-header" data-aos="fade-up">
           <p class="section-eyebrow">Customer Reviews</p>
@@ -2650,7 +2880,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq-section">
+    <section class="faq-section" data-aos="fade-up" data-aos-duration="800">
       <div class="faq-inner">
         <div class="section-header" data-aos="fade-up">
           <p class="section-eyebrow">Got Questions?</p>
@@ -2744,7 +2974,7 @@
     </section>
 
     <!-- BLOGS -->
-    <section class="blogs-section">
+    <section class="blogs-section" data-aos="fade-up" data-aos-duration="800">
       <div class="blogs-inner">
         <div class="section-header" data-aos="fade-up">
           <p class="section-eyebrow">Health Insights</p>
@@ -2755,7 +2985,12 @@
           </p>
         </div>
         <div class="blogs-grid">
-          <div class="blog-card" data-aos="fade-up" data-aos-delay="0">
+          <div
+            class="blog-card"
+            data-aos="fade-right"
+            data-aos-duration="700"
+            data-aos-delay="60"
+          >
             <div class="blog-img">
               <img
                 src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80"
@@ -2775,7 +3010,12 @@
               ></a>
             </div>
           </div>
-          <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="blog-card"
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay="200"
+          >
             <div class="blog-img">
               <img
                 src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80"
@@ -2795,7 +3035,12 @@
               ></a>
             </div>
           </div>
-          <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="blog-card"
+            data-aos="fade-left"
+            data-aos-duration="700"
+            data-aos-delay="340"
+          >
             <div class="blog-img">
               <img
                 src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80"
@@ -2820,7 +3065,7 @@
     </section>
 
     <!-- INSTAGRAM -->
-    <section class="insta-section">
+    <section class="insta-section" data-aos="fade-up" data-aos-duration="800">
       <div class="insta-header" data-aos="fade-up">
         <a
           href="https://www.instagram.com/aivawellness/"
@@ -2907,7 +3152,11 @@
     </section>
 
     <!-- NEWSLETTER -->
-    <section class="newsletter-section">
+    <section
+      class="newsletter-section"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
       <div class="newsletter-inner" data-aos="fade-up">
         <div class="newsletter-icon">
           <i class="fa-solid fa-paper-plane"></i>
@@ -3033,7 +3282,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-      AOS.init({ once: true, offset: 80, easing: "ease-out-quad" });
+      AOS.init({
+        once: true,
+        offset: 80,
+        duration: 700,
+        easing: "ease-out-quad",
+      });
 
       window.addEventListener("load", () => {
         setTimeout(
