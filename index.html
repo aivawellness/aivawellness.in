@@ -713,6 +713,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        align-items: center;
       }
       @media (max-width: 1024px) {
         .products-grid {
@@ -821,7 +822,10 @@
         padding: 12px 14px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
         flex-grow: 1;
+        width: 100%;
       }
       .product-cat {
         font-size: 0.7rem;
@@ -832,11 +836,12 @@
         margin-bottom: 6px;
       }
       .product-info h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 7px;
-        line-height: 1.3;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
       }
       .product-info h3 a {
         color: var(--text);
@@ -858,8 +863,10 @@
       }
       .price-row {
         display: flex;
+        flex-direction: row;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
+        gap: 10px;
         margin-bottom: 14px;
         flex-wrap: wrap;
       }
@@ -883,11 +890,11 @@
         font-weight: 600;
       }
       .btn-cart {
-        width: 100%;
-        background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+        width: auto;
+        background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
         color: #fff;
-        border: none;
-        padding: 14px 16px;
+        border: 1px solid rgba(96, 165, 250, 0.24);
+        padding: 14px 24px;
         font-size: 0.85rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -899,18 +906,19 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
+        margin: 0 auto;
         margin-top: auto;
-        border-radius: 6px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
         position: relative;
         overflow: hidden;
       }
       .btn-cart:hover {
-        background: linear-gradient(135deg, var(--blue) 0%, #0052cc 100%);
+        background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
         transform: translateY(-2px);
         box-shadow:
           0 6px 16px rgba(0, 0, 0, 0.2),
-          0 0 0 3px rgba(0, 100, 255, 0.1);
+          0 0 0 3px rgba(34, 197, 94, 0.18);
       }
       .btn-cart:active {
         transform: translateY(0);
