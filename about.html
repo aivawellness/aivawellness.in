@@ -2,399 +2,493 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <title>About Us | Aiva Wellness</title>
   <meta name="description" content="Aiva Wellness is a premium healthcare & wellness brand, formulating science-backed, FSSAI-licensed supplements from Solan, Himachal Pradesh for households across India." />
-  <meta name="keywords" content="Aiva Wellness, about us, our story, wellness brand, supplements India, Solan Himachal Pradesh, FSSAI licensed" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://aivawellness.com/about.html" />
   <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1d4ed8;--blue-light:#3b82f6;--blue-pale:#dbeafe;
+  --blue-soft:rgba(59,130,246,0.08);--blue-border:rgba(59,130,246,0.22);
+  --accent:#60a5fa;--black:#080d14;--ink:#0f172a;--muted:#64748b;
+  --light:#f1f5f9;--bg:#f8fafc;--white:#ffffff;
+  --green:#16a34a;--green-soft:#dcfce7;--gold:#f59e0b;--border:#e2e8f0;
+  --text:#1e293b;--text-mid:#64748b;--text-light:#94a3b8;
+  --r:16px;--r-sm:10px;
+  --sh:0 4px 32px rgba(8,13,20,0.07);
+  --sh-lg:0 20px 60px rgba(8,13,20,0.14);
+  --sh-xl:0 32px 80px rgba(8,13,20,0.18);
+  --ease:cubic-bezier(.22,1,.36,1);--t:.3s;--header-h:68px;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;padding-top:var(--header-h)}
+h1,h2,h3,h4,h5,h6{font-weight:600;line-height:1.2}
+a{text-decoration:none}
 
-  <style>
-    /* ─── CSS VARIABLES (exact match across the site) ─── */
-    :root {
-      --blue: #1d4ed8;
-      --blue-light: #3b82f6;
-      --blue-soft: rgba(59,130,246,0.10);
-      --blue-border: rgba(59,130,246,0.25);
-      --black: #0d1117;
-      --ink: #1e293b;
-      --muted: #64748b;
-      --light: #f1f5f9;
-      --white: #ffffff;
-      --green: #16a34a;
-      --green-soft: #dcfce7;
-      --border: #e2e8f0;
-      --radius: 14px;
-      --radius-sm: 8px;
-      --shadow: 0 4px 24px rgba(13,17,23,0.07);
-      --shadow-lg: 0 16px 48px rgba(13,17,23,0.13);
-      --header-height: 68px;
-    }
+/* PRELOADER */
+#preloader {
+  position: fixed; inset: 0;
+  background: linear-gradient(160deg, #0b1120 0%, #0f1a2e 60%, #0d1525 100%);
+  z-index: 9999; display: flex; align-items: center;
+  justify-content: center; flex-direction: column;
+  transition: opacity .6s ease, visibility .6s;
+}
+#preloader.hide { opacity: 0; visibility: hidden; pointer-events: none; }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { overflow-x: hidden; width: 100%; font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--ink); }
-    body { padding-top: var(--header-height); }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.pl-glow {
+  position: absolute; width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%,100% { opacity: .5; transform: scale(1); }
+  50%      { opacity: 1;  transform: scale(1.15); }
+}
 
-    /* ─── NAVBAR ─── */
-    .site-header {
-      position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 9999;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 8px rgba(13,17,23,0.06);
-    }
-    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: var(--header-height); }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand img { width: 46px; height: 46px; border-radius: 10px; }
-    .brand-name { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--black); }
-    .brand-name span { color: var(--blue); }
-    .brand-sub { font-size: 0.72rem; color: var(--muted); display: block; margin-top: 1px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
-    .nav-cta {
-      background: var(--blue); color: #fff; border: none; padding: 9px 22px;
-      border-radius: 999px; font-size: 0.88rem; font-weight: 600; cursor: pointer;
-      text-decoration: none; display: flex; align-items: center; gap: 7px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { background: #1e40af; transform: translateY(-1px); color: #fff; }
-    .hamburger { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px; cursor: pointer; }
-    .hamburger span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; border-radius: 2px; transition: 0.3s; }
+.pl-card {
+  position: relative;
+  background: rgba(236,252,228,0.95);
+  border-radius: 24px;
+  padding: 40px 48px 36px;
+  display: flex; flex-direction: column; align-items: center;
+  box-shadow:
+    0 0 0 0.5px rgba(164,230,134,0.3),
+    0 4px 6px rgba(14,57,16,0.15),
+    0 24px 48px rgba(14,57,16,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+  animation: cardIn .7s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+.pl-card::before, .pl-card::after {
+  content: ''; position: absolute;
+  width: 20px; height: 20px;
+  border-color: #16a34a; border-style: solid; opacity: .25;
+}
+.pl-card::before { top:14px; left:14px; border-width: 1.5px 0 0 1.5px; border-radius: 4px 0 0 0; }
+.pl-card::after  { bottom:14px; right:14px; border-width: 0 1.5px 1.5px 0; border-radius: 0 0 4px 0; }
+@keyframes cardIn {
+  from { opacity:0; transform: translateY(20px) scale(0.95); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
+}
 
-    /* ─── MOBILE MENU ─── */
-    .mobile-menu {
-      position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0; z-index: 999;
-      background: rgba(13,17,23,0.7); backdrop-filter: blur(6px);
-      display: none; flex-direction: column;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-nav { background: #fff; padding: 20px; display: flex; flex-direction: column; gap: 4px; }
-    .mobile-nav a { padding: 12px 14px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; transition: background 0.2s; }
-    .mobile-nav a:hover { background: var(--light); }
-    .mobile-nav a.active { color: var(--blue); background: var(--blue-soft); }
-    .mobile-nav a.cta { background: var(--blue); color: #fff; text-align: center; margin-top: 8px; }
+.pl-logo-img {
+  width: 72px; height: 72px; object-fit: contain;
+  animation: logoIn .6s cubic-bezier(0.34,1.56,0.64,1) .2s both;
+}
+@keyframes logoIn {
+  from { opacity:0; transform: scale(0.7); }
+  to   { opacity:1; transform: scale(1); }
+}
 
-    /* ─── BREADCRUMB ─── */
-    .breadcrumb-bar { background: #fff; border-bottom: 1px solid var(--border); }
-    .breadcrumb-bar .inner { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; }
-    .breadcrumb-bar a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .breadcrumb-bar a:hover { color: var(--blue); }
-    .breadcrumb-bar .sep { color: var(--border); }
-    .breadcrumb-bar .current { color: var(--ink); font-weight: 500; }
+.pl-divider {
+  width:100%; height:.5px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+  margin: 20px 0 18px;
+}
 
-    /* ─── IN-PAGE TABS ─── */
-    .about-tabs { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: var(--header-height); z-index: 500; }
-    .about-tabs-inner { max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
-    .about-tabs-inner::-webkit-scrollbar { display: none; }
-    .tab-link {
-      padding: 14px 18px; font-size: 0.85rem; font-weight: 600; color: var(--muted);
-      text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap;
-      transition: color 0.2s; margin-bottom: -1px;
-    }
-    .tab-link:hover { color: var(--blue); }
-    .tab-link.active { color: var(--blue); border-bottom-color: var(--blue); }
+.pl-brand { font-family:'Sora',sans-serif; font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:4px; }
+.pl-brand span { color: #1d4ed8; }
+.pl-tagline  { font-size:.7rem; font-weight:600; letter-spacing:.18em; color:#94a3b8; text-transform:uppercase; margin-bottom:24px; }
 
-    /* ─── HERO BANNER ─── */
-    .about-hero {
-      background: linear-gradient(135deg, #0d1117 0%, #1e3a5f 60%, #1d4ed8 100%);
-      padding: 64px 20px 56px; text-align: center; position: relative; overflow: hidden;
-      scroll-margin-top: 130px;
-    }
-    .about-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.25) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .about-hero::after {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 20% 80%, rgba(29,78,216,0.2) 0%, transparent 55%);
-      pointer-events: none;
-    }
-    .about-hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
-    .about-hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(59,130,246,0.18); border: 1px solid rgba(59,130,246,0.35);
-      color: #93c5fd; font-size: 0.75rem; font-weight: 600; padding: 5px 14px;
-      border-radius: 999px; margin-bottom: 20px; letter-spacing: 0.06em; text-transform: uppercase;
-    }
-    .about-hero h1 { font-family: 'Sora', sans-serif; font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.18; }
-    .about-hero h1 span { color: #60a5fa; }
-    .about-hero p { color: rgba(255,255,255,0.68); font-size: 1.02rem; line-height: 1.65; margin: 0 auto; max-width: 540px; }
-    .hero-stats { display: flex; justify-content: center; gap: 44px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
-    .hero-stat { text-align: center; }
-    .hero-stat-num { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
-    .hero-stat-label { font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 3px; }
+.pl-bar-wrap { width:100%; display:flex; flex-direction:column; gap:8px; }
+.pl-bar      { width:100%; height:2px; background:rgba(0,0,0,0.06); border-radius:2px; overflow:hidden; }
+.pl-fill     {
+  height:100%;
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6, #60a5fa);
+  border-radius:2px;
+  animation: plBar 1.8s cubic-bezier(0.25,1,0.5,1) .4s both;
+}
+@keyframes plBar { from{width:0} to{width:100%} }
 
-    /* ─── PAGE WRAP ─── */
-    .page-wrap { max-width: 1280px; margin: 0 auto; padding: 60px 20px 0; }
-    section { scroll-margin-top: 130px; }
-    .section-heading { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--black); margin-bottom: 6px; }
-    .section-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 36px; max-width: 640px; }
-    .center { text-align: center; margin-left: auto; margin-right: auto; }
+.pl-status      { display:flex; justify-content:space-between; align-items:center; }
+.pl-status-text { font-size:11px; color:#94a3b8; letter-spacing:.04em; }
+.pl-dots        { display:flex; gap:4px; }
+.pl-dots span   { width:4px; height:4px; border-radius:50%; background:#3b82f6; opacity:.3; animation:dotPulse 1.2s ease-in-out infinite; }
+.pl-dots span:nth-child(2) { animation-delay:.2s; }
+.pl-dots span:nth-child(3) { animation-delay:.4s; }
+@keyframes dotPulse { 0%,100%{opacity:.25} 50%{opacity:1} }
 
-    /* ─── STORY SECTION ─── */
-    .story-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; padding-bottom: 60px; }
-    .eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-    .story-text h2 { font-family: 'Sora', sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--black); line-height: 1.25; margin-bottom: 18px; }
-    .story-text p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 0; }
-    .vision-quote {
-      font-style: italic; color: var(--ink); font-size: 0.98rem; line-height: 1.7;
-      border-left: 3px solid var(--blue); background: var(--blue-soft);
-      border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 22px 0;
-    }
-    .story-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
-    .story-badge {
-      display: inline-flex; align-items: center; gap: 7px; background: #fff;
-      border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px;
-      font-size: 0.78rem; font-weight: 600; color: var(--ink); box-shadow: var(--shadow);
-    }
-    .story-badge i { color: var(--blue); }
 
-    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .stat-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 26px 18px; text-align: center; box-shadow: var(--shadow);
-      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
-    }
-    .stat-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--blue-border); }
-    .stat-num { font-family: 'Sora', sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--blue); }
-    .stat-label { font-size: 0.76rem; color: var(--muted); margin-top: 4px; font-weight: 500; line-height: 1.4; }
+/* ANNOUNCEMENT BAR */
+.ann-bar{background:linear-gradient(90deg,#1e3a8a 0%,#1d4ed8 50%,#1e3a8a 100%);color:#fff;font-size:.72rem;letter-spacing:.06em;padding:9px 0;overflow:hidden;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.1)}
+.ann-bar-track{display:inline-flex;animation:marquee 32s linear infinite;gap:80px;will-change:transform}
+.ann-bar-track:hover{animation-play-state:paused}
+.ann-bar-track span{display:inline-flex;align-items:center;gap:8px}
+.ann-bar-track .sep{opacity:.4}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    /* ─── MISSION BANNER ─── */
-    .mission-banner {
-      background: linear-gradient(135deg, #0d1117 0%, #1e3a5f 60%, #1d4ed8 100%);
-      border-radius: 20px; padding: 52px 40px; text-align: center; position: relative; overflow: hidden;
-    }
-    .mission-banner::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.28) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .mb-eyebrow { position: relative; display: inline-block; color: #93c5fd; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
-    .mission-banner p { position: relative; color: #fff; font-family: 'Sora', sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.5; max-width: 760px; margin: 0 auto; }
+/* HEADER */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:1200;background:rgba(255,255,255,.92);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid rgba(226,232,240,.6);transition:all .4s var(--ease)}
+.site-header.scrolled{background:rgba(255,255,255,.98);box-shadow:0 4px 32px rgba(8,13,20,.09);border-bottom-color:var(--border)}
+.nav-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:var(--header-h);gap:16px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand-mark{width:54px;height:54px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 44px rgba(14,91,255,.12);border:1px solid rgba(14,91,255,.12);flex-shrink:0;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;overflow:hidden;}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block;}
+.brand:hover .brand-mark{transform:none;box-shadow:0 14px 44px rgba(14,91,255,.12);border-color:rgba(14,91,255,.12)}
+.brand-name{font-family:"Sora",sans-serif;font-size:1.12rem;font-weight:800;color:var(--black);display:block;white-space:nowrap;letter-spacing:-.01em}
+.brand-name span{color:var(--blue)}
+.brand-sub{display:block;font-size:.68rem;color:var(--muted);margin-top:1px;white-space:nowrap;letter-spacing:.02em}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{color:var(--muted);font-size:.84rem;font-weight:500;padding:6px 14px;border-radius:8px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--blue);background:var(--blue-soft)}
+.nav-links a.active{color:var(--blue);background:var(--blue-soft);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-cta{background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;border-radius:999px;padding:9px 22px;font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:7px;white-space:nowrap;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(29,78,216,.3);transition:all .25s var(--ease)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(29,78,216,.4);color:#fff;background:linear-gradient(135deg,#1e40af,#1d4ed8)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:9px;background:none;border:1px solid var(--border);border-radius:10px;flex-shrink:0;transition:border-color .2s}
+.hamburger:hover{border-color:var(--blue)}
+.hamburger span{width:20px;height:2px;background:var(--ink);display:block;transition:all .35s var(--ease);border-radius:2px}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:rgba(8,13,20,.65);backdrop-filter:blur(8px);z-index:1000}
+.mobile-menu.open{display:block}
+.mobile-nav-panel{background:var(--white);padding:12px;display:flex;flex-direction:column;gap:2px;box-shadow:var(--sh-xl);border-bottom-left-radius:20px;border-bottom-right-radius:20px}
+.mobile-nav-panel a{padding:14px 16px;border-radius:10px;font-weight:600;font-size:.95rem;color:var(--ink);transition:background .2s,color .2s}
+.mobile-nav-panel a:hover{background:var(--light);color:var(--blue)}
+.mobile-nav-panel a.active{color:var(--blue);background:var(--blue-soft)}
+.mobile-nav-panel .m-cta{background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;text-align:center;margin-top:6px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px}
+.mobile-nav-panel .m-cta:hover{background:linear-gradient(135deg,#1e40af,#1d4ed8);color:#fff}
 
-    /* ─── VALUES ─── */
-    .values-section-inner { padding: 64px 0; }
-    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .value-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 28px 24px; box-shadow: var(--shadow);
-      transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease, color 0.25s ease;
-      text-align: center; color: var(--ink);
-    }
-    .value-card:hover {
-      box-shadow: var(--shadow-lg); transform: translateY(-6px);
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
-      color: #fff; border-color: transparent;
-    }
-    .value-icon {
-      width: 52px; height: 52px; background: #fff; border: 1px solid rgba(59,130,246,0.16);
-      border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 20px; color: var(--blue); margin: 0 auto 18px;
-      transition: transform 0.28s ease, box-shadow 0.28s ease;
-      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
-    }
-    .value-card:hover .value-icon { transform: scale(1.08); border-radius: 50%; background: #fff; box-shadow: 0 12px 30px rgba(16,24,40,0.18); }
-    .value-card:hover .value-title, .value-card:hover .value-desc { color: #fff; }
-    .value-title { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--black); margin-bottom: 8px; }
-    .value-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+/* BREADCRUMB */
+.breadcrumb-bar{background:#fff;border-bottom:1px solid var(--border)}
+.breadcrumb-inner{max-width:1320px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:6px;font-size:.78rem}
+.breadcrumb-inner a{color:var(--muted);transition:color .2s}
+.breadcrumb-inner a:hover{color:var(--blue)}
+.breadcrumb-inner .sep{color:var(--border)}
+.breadcrumb-inner .current{color:var(--ink);font-weight:600}
 
-    /* ─── BEHIND THE SCENES / PEEK ─── */
-    .peek-section { padding: 0 0 64px; }
-    .peek-wrap { max-width: 880px; margin: 0 auto; }
-    .peek-main-wrap { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
-    .peek-main-img { width: 100%; height: 400px; object-fit: cover; display: block; transition: opacity 0.3s ease; }
-    .peek-caption-bar {
-      position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px;
-      background: linear-gradient(to top, rgba(13,17,23,0.85), transparent);
-      color: #fff; font-size: 0.85rem; font-weight: 600;
-    }
-    .peek-thumbs { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
-    .peek-thumb { width: 92px; height: 64px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 3px solid transparent; opacity: 0.6; transition: all 0.2s; }
-    .peek-thumb.active, .peek-thumb:hover { opacity: 1; border-color: var(--blue); }
 
-    /* ─── JOURNEY TIMELINE ─── */
-    .journey-section { padding: 0 0 64px; }
-    .journey-track { position: relative; max-width: 760px; margin: 0 auto; }
-    .journey-track::before { content: ''; position: absolute; left: 19px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
-    .timeline-item { position: relative; padding-left: 56px; margin-bottom: 30px; }
-    .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-dot {
-      position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: var(--blue);
-      color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.76rem;
-      box-shadow: 0 0 0 5px var(--blue-soft); z-index: 1;
-    }
-    .timeline-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; box-shadow: var(--shadow); }
-    .timeline-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--black); margin-bottom: 4px; font-size: 0.95rem; }
-    .timeline-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+/* HERO */
+.about-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#080d14 0%,#0f1e3a 50%,#1d4ed8 100%);min-height:420px;display:flex;align-items:center;padding-top:40px;padding-bottom:40px}
+.hero-bg-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-particle{position:absolute;border-radius:50%;background:rgba(59,130,246,.12);animation:particleFloat linear infinite}
+@keyframes particleFloat{0%{transform:translateY(0) scale(1);opacity:0}10%{opacity:1}90%{opacity:.6}100%{transform:translateY(-120vh) scale(.5);opacity:0}}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(59,130,246,.18),transparent 70%)}
+.hero-orb-1{width:600px;height:600px;top:-200px;right:-100px;animation:orbPulse 8s ease-in-out infinite}
+.hero-orb-2{width:400px;height:400px;bottom:-150px;left:-80px;animation:orbPulse 6s ease-in-out infinite reverse}
+@keyframes orbPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.15);opacity:1}}
+.hero-grid-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(59,130,246,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-inner{max-width:1320px;margin:0 auto;padding:72px 24px 72px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;width:100%}
+@media(max-width:768px){.about-hero{min-height:auto;padding-top:48px;padding-bottom:36px;align-items:flex-start}.hero-inner{padding:48px 20px 32px;grid-template-columns:1fr;gap:32px}}
+.hero-title{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,5vw,68px);font-weight:600;color:#fff;line-height:1.1;margin-bottom:20px;text-shadow:0 2px 40px rgba(0,0,0,.3)}
+.hero-title em{font-style:italic;color:var(--accent)}
+.hero-desc{font-size:.95rem;color:rgba(255,255,255,.72);line-height:1.85;max-width:520px;margin-bottom:36px}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue);padding:13px 28px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .28s var(--ease);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-hero-primary:hover{background:var(--blue);color:#fff;gap:14px;transform:translateY(-2px)}
+.btn-hero-secondary{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);color:#fff;padding:13px 28px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);transition:all .28s var(--ease)}
+.btn-hero-secondary:hover{background:rgba(255,255,255,.18);gap:14px;transform:translateY(-2px)}
+.hero-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hero-stat-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px 20px;text-align:center;backdrop-filter:blur(12px);transition:all .35s var(--ease);position:relative;overflow:hidden}
+.hero-stat-card::before{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(135deg,rgba(59,130,246,.1),transparent);opacity:0;transition:opacity .35s}
+.hero-stat-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.1)}
+.hero-stat-card:hover::before{opacity:1}
+.hero-stat-num{font-family:"Sora",sans-serif;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:4px;line-height:1}
+.hero-stat-label{font-size:.7rem;color:rgba(255,255,255,.55);font-weight:500;letter-spacing:.04em}
+.hero-stat-icon{font-size:20px;margin-bottom:10px;opacity:.75}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;z-index:2}
+.scroll-mouse{width:24px;height:36px;border:1.5px solid rgba(255,255,255,.25);border-radius:12px;display:flex;align-items:flex-start;justify-content:center;padding-top:6px}
+.scroll-wheel{width:3px;height:7px;background:#fff;border-radius:2px;opacity:.5;animation:scrollDown 2s ease-in-out infinite}
+@keyframes scrollDown{0%{transform:translateY(0);opacity:.5}60%{transform:translateY(10px);opacity:.15}100%{transform:translateY(0);opacity:.5}}
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr;gap:48px;align-items:flex-start}.hero-stats-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.hero-stats-grid{grid-template-columns:1fr 1fr}}
 
-    /* ─── TRUST STRIP ─── */
-    .trust-section { padding: 0 0 64px; }
-    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .trust-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 22px 20px; text-align: center; transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease, color 0.25s ease;
-      box-shadow: var(--shadow); color: var(--ink);
-    }
-    .trust-card:hover {
-      box-shadow: var(--shadow-lg); transform: translateY(-6px);
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
-      color: #fff; border-color: transparent;
-    }
-    .trust-card:hover .trust-card-title,
-    .trust-card:hover .trust-card-desc { color: #fff; }
-    .trust-icon-wrap {
-      width: 52px; height: 52px; margin: 0 auto 14px;
-      background: #fff; border: 1px solid rgba(59,130,246,0.12);
-      border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 22px; color: var(--blue); transition: transform 0.28s ease, box-shadow 0.28s ease, border-radius 0.28s ease;
-      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
-    }
-    .trust-card:hover .trust-icon-wrap { transform: scale(1.06); border-radius: 50%; box-shadow: 0 12px 30px rgba(16,24,40,0.18); }
-    .trust-card-title { font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
-    .trust-card-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+/* TRUST STRIP */
+.trust-strip{background:var(--white);border-bottom:1px solid var(--border);padding:0;width:100%}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:stretch;justify-content:center;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;padding:18px 28px;border-right:1px solid var(--border);transition:background .2s;cursor:default}
+.trust-item:first-child{border-left:1px solid var(--border)}
+.trust-item:hover{background:var(--blue-soft)}
+.trust-icon{width:34px;height:34px;border-radius:50%;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .2s;border:1px solid var(--blue-border)}
+.trust-item:hover .trust-icon{background:var(--blue);transform:scale(1.1)}
+.trust-icon i{font-size:14px;color:var(--blue);transition:color .2s}
+.trust-item:hover .trust-icon i{color:#fff}
+.trust-item span{font-size:.76rem;font-weight:500;color:var(--muted);white-space:nowrap}
+@media(max-width:900px){.trust-item{padding:14px 16px;border-right:none;border-bottom:1px solid var(--border)}.trust-item:first-child{border-left:none}}
+@media(max-width:600px){.trust-strip{display:none!important}}
 
-    /* ─── TESTIMONIALS ─── */
-    .testimonials-outer { padding: 0 0 64px; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .testimonial-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 26px; box-shadow: var(--shadow); transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .testimonial-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .t-stars { color: #f59e0b; font-size: 13px; margin-bottom: 12px; letter-spacing: 2px; }
-    .t-text { font-size: 0.87rem; color: var(--ink); line-height: 1.7; margin-bottom: 18px; }
-    .t-author { display: flex; align-items: center; gap: 10px; }
-    .t-avatar {
-      width: 38px; height: 38px; border-radius: 50%; background: var(--blue-soft); color: var(--blue);
-      display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif;
-      font-weight: 700; font-size: 0.82rem; flex-shrink: 0;
-    }
-    .t-name { font-weight: 700; font-size: 0.85rem; color: var(--black); }
-    .t-meta { font-size: 0.72rem; color: var(--muted); }
+/* SECTION UTILITIES */
+.section-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:14px;padding:5px 14px;background:var(--blue-soft);border-radius:999px;border:1px solid var(--blue-border)}
+.section-title{font-family:"Cormorant Garamond",serif;font-size:clamp(28px,4vw,52px);font-weight:600;color:var(--black);margin-bottom:14px;line-height:1.15}
+.section-title span{background:linear-gradient(135deg,var(--blue),var(--blue-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-sub{color:var(--muted);font-size:.88rem;max-width:520px;line-height:1.8}
+.section-header{text-align:center;margin-bottom:60px;padding:0 16px}
+.section-header .section-sub{margin:0 auto}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--blue);color:var(--blue);padding:12px 26px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;transition:all .3s var(--ease);border-radius:999px}
+.btn-outline:hover{background:var(--blue);color:#fff;gap:16px;box-shadow:0 8px 24px rgba(29,78,216,.25);transform:translateY(-1px)}
+.btn-outline i{transition:transform .25s}
+.btn-outline:hover i{transform:translateX(2px)}
 
-    /* ─── MAP SECTION ─── */
-    .map-section { padding: 0 0 64px; }
-    .map-section-title { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--black); margin-bottom: 8px; }
-    .map-section-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 24px; }
-    .map-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); height: 360px; }
-    .map-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
+/* STORY SECTION */
+.story-section{max-width:1320px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.story-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,3.8vw,48px);font-weight:600;color:var(--black);line-height:1.15;margin-bottom:20px}
+.story-p{font-size:.9rem;color:var(--text-mid);line-height:1.9;margin-bottom:16px}
+.vision-quote{font-style:italic;color:var(--ink);font-size:.95rem;line-height:1.75;border-left:3px solid var(--blue);background:var(--blue-soft);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;position:relative;overflow:hidden}
+.vision-quote::before{content:"\201C";position:absolute;top:-8px;right:14px;font-family:"Cormorant Garamond",serif;font-size:80px;color:var(--blue);opacity:.12;line-height:1}
+.story-images{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px}
+.story-img-main{grid-column:1/-1;overflow:hidden;border-radius:var(--r);position:relative;box-shadow:var(--sh-xl)}
+.story-img-main img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.story-img-main:hover img{transform:scale(1.04)}
+.story-img-sm{overflow:hidden;border-radius:var(--r-sm);position:relative;box-shadow:var(--sh)}
+.story-img-sm img{width:100%;height:170px;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.story-img-sm:hover img{transform:scale(1.06)}
+.story-img-badge{position:absolute;bottom:14px;left:14px;background:rgba(8,13,20,.7);backdrop-filter:blur(8px);color:#fff;font-size:.68rem;font-weight:600;padding:7px 14px;border-radius:999px;display:flex;align-items:center;gap:6px;z-index:2;border:1px solid rgba(255,255,255,.12)}
+.story-img-badge i{color:var(--gold)}
+@media(max-width:1000px){.story-section{grid-template-columns:1fr;gap:48px}}
 
-    /* ─── CTA BANNER ─── */
-    .cta-banner { background: var(--light); border: 1px solid var(--border); border-radius: 20px; padding: 52px 32px; text-align: center; margin-bottom: 64px; }
-    .cta-banner h2 { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--black); margin-bottom: 10px; }
-    .cta-banner p { color: var(--muted); font-size: 0.95rem; margin-bottom: 26px; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-cta-primary {
-      background: var(--blue); color: #fff; padding: 12px 28px; border-radius: 999px;
-      font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-flex;
-      align-items: center; gap: 8px; transition: all 0.2s;
-    }
-    .btn-cta-primary:hover { background: #1e40af; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(29,78,216,0.3); }
-    .btn-cta-secondary {
-      background: #fff; color: var(--ink); border: 1.5px solid var(--border); padding: 12px 28px;
-      border-radius: 999px; font-weight: 700; font-size: 0.9rem; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
-    }
-    .btn-cta-secondary:hover { border-color: var(--blue); color: var(--blue); }
+/* MISSION BANNER */
+.mission-wrap{max-width:1320px;margin:0 auto 96px;padding:0 24px}
+.mission-banner{background:linear-gradient(135deg,#080d14 0%,#0f1e3a 50%,#1d4ed8 100%);border-radius:24px;padding:64px 48px;text-align:center;position:relative;overflow:hidden}
+.mission-banner::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.mission-banner::after{content:"";position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.2),transparent 70%);pointer-events:none}
+.mission-eyebrow{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:18px;padding:6px 16px;background:rgba(255,255,255,.07);border-radius:999px;border:1px solid rgba(255,255,255,.12)}
+.mission-text{position:relative;font-family:"Cormorant Garamond",serif;font-size:clamp(22px,3.5vw,44px);font-weight:600;color:#fff;line-height:1.4;max-width:800px;margin:0 auto}
+.mission-text em{font-style:italic;color:var(--accent)}
+@media(max-width:768px){.mission-banner{padding:44px 28px}}
 
-    /* ─── REVEAL ANIMATION ─── */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.in-view { opacity: 1; transform: translateY(0); }
+/* VALUES */
+.values-section{padding:0 24px 96px;max-width:1480px;margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(5,minmax(240px,1fr));gap:24px;justify-content:center}
+.value-card{background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:24px;padding:28px 24px;box-shadow:0 18px 40px rgba(15,23,42,.08);transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease,background-color .4s ease;position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:240px}
+.value-card::before{content:"";position:absolute;inset:0;border-radius:24px;background:radial-gradient(circle at top center,rgba(59,130,246,.08),transparent 30%);opacity:0;transition:opacity .4s ease;pointer-events:none}
+.value-card::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue-light));transform:scaleX(0);transform-origin:left center;transition:transform .4s ease;pointer-events:none}
+.value-card:hover{transform:translateY(-10px);box-shadow:0 28px 60px rgba(15,23,42,.18);border-color:rgba(59,130,246,.35);background:rgba(255,255,255,.97)}
+.value-card:hover::before{opacity:1}
+.value-card:hover::after{transform:scaleX(1)}
+.value-icon{width:52px;height:52px;background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(147,197,253,.14));border:1px solid rgba(59,130,246,.16);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--blue);margin:0 auto 18px;transition:transform .35s ease,background .35s ease,box-shadow .35s ease;box-shadow:0 8px 22px rgba(59,130,246,.12)}
+.value-card:hover .value-icon{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff;transform:scale(1.1) rotate(-5deg);border-color:transparent;box-shadow:0 16px 42px rgba(59,130,246,.28)}
+.value-title{font-family:"Cormorant Garamond",serif;font-size:1.18rem;font-weight:600;color:var(--black);margin-bottom:12px}
+.value-desc{font-size:.84rem;color:var(--muted);line-height:1.8}
+@media(max-width:1200px){.values-grid{grid-template-columns:repeat(4,minmax(220px,1fr))}}
+@media(max-width:900px){.values-grid{grid-template-columns:repeat(3,minmax(220px,1fr))}}
+@media(max-width:700px){.values-grid{grid-template-columns:repeat(2,minmax(220px,1fr))}}
+@media(max-width:520px){.values-grid{grid-template-columns:1fr}}
 
-    /* ─── FOOTER ─── */
-    footer { background: #0d1117; color: #94a3b8; padding: 56px 20px 28px; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .footer-brand span { color: var(--blue-light); }
-    .footer-desc { font-size: 0.85rem; line-height: 1.7; margin-bottom: 16px; }
-    .footer-social { display: flex; gap: 10px; }
-    .social-btn { width: 36px; height: 36px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 14px; transition: all 0.2s; }
-    .social-btn:hover { background: var(--blue); color: #fff; }
-    .footer-col h6 { font-size: 0.82rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: #fff; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; margin-bottom: 10px; }
-    .footer-contact-item i { color: var(--blue-light); margin-top: 2px; flex-shrink: 0; }
-    .footer-contact-item a { color: #94a3b8; text-decoration: none; }
-    .footer-contact-item a:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem; }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-links a { color: #64748b; text-decoration: none; }
-    .footer-bottom-links a:hover { color: #fff; }
+/* BEHIND THE SCENES SLIDER */
+.peek-section{padding:0 0 96px}
+.peek-wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+.peek-slider-outer{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--sh-xl);border:1px solid var(--border);background:var(--black)}
+.peek-slides-track{display:flex;transition:transform .75s cubic-bezier(.76,0,.24,1);will-change:transform}
+.peek-slide{min-width:100%;flex:0 0 100%;position:relative}
+.peek-slide img{width:100%;height:480px;object-fit:cover;display:block;transform:scale(1.05);transition:transform .75s var(--ease)}
+.peek-slide.active img{transform:scale(1)}
+.peek-slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,13,20,.78) 0%,rgba(8,13,20,.1) 55%,transparent 100%)}
+.peek-slide-content{position:absolute;bottom:0;left:0;right:0;padding:32px 36px;transform:translateY(10px);opacity:0;transition:all .5s .2s var(--ease)}
+.peek-slide.active .peek-slide-content{transform:translateY(0);opacity:1}
+.peek-slide-tag{display:inline-flex;align-items:center;gap:6px;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700;margin-bottom:8px;padding:4px 12px;background:rgba(255,255,255,.1);border-radius:999px;border:1px solid rgba(255,255,255,.15)}
+.peek-slide-caption{font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:600;color:#fff}
+.peek-controls{position:absolute;top:50%;transform:translateY(-50%);left:0;right:0;display:flex;justify-content:space-between;padding:0 20px;pointer-events:none;z-index:4}
+.peek-btn{width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center;pointer-events:all;transition:all .25s var(--ease);border:1px solid rgba(255,255,255,.2)}
+.peek-btn:hover{background:rgba(255,255,255,.28);transform:scale(1.1)}
+.peek-dots{position:absolute;bottom:20px;right:28px;display:flex;gap:7px;z-index:5}
+.peek-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);border:none;cursor:pointer;padding:0;transition:all .35s var(--ease)}
+.peek-dot.active{background:#fff;width:22px;border-radius:4px}
+.peek-progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.12);z-index:5}
+.peek-progress-fill{height:100%;background:linear-gradient(90deg,var(--blue-light),var(--accent));width:0%;border-radius:0 2px 2px 0}
+.peek-progress-fill.run{transition:width 4.5s linear;width:100%}
+.peek-thumbs-row{display:flex;gap:10px;margin-top:14px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.peek-thumbs-row::-webkit-scrollbar{display:none}
+.peek-thumb{flex:0 0 auto;width:110px;height:72px;object-fit:cover;border-radius:10px;cursor:pointer;border:3px solid transparent;opacity:.55;transition:all .25s var(--ease)}
+.peek-thumb.active,.peek-thumb:hover{opacity:1;border-color:var(--blue);transform:translateY(-2px)}
+@media(max-width:768px){.peek-slide img{height:300px}.peek-slide-caption{font-size:1.3rem}.peek-slide-content{padding:20px 20px}}
 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .story-grid { grid-template-columns: 1fr; }
-      .stats-grid { max-width: 460px; margin: 0 auto; }
-      .values-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-      .trust-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; flex-direction: column; }
-      .about-hero h1 { font-size: 2rem; }
-      .hero-stats { gap: 24px; }
-      .values-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .peek-main-img { height: 280px; }
-      .mission-banner { padding: 38px 24px; }
-      .mission-banner p { font-size: 1.1rem; }
-      .footer-top { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
-      .footer-top > div { width: 100%; max-width: 420px; }
-      .footer-brand, .footer-social { display: flex; justify-content: center; align-items: center; gap: 10px; }
-      .footer-col { width: 100%; display: flex; flex-direction: column; align-items: center; }
-      .footer-col h6 { text-align: center; }
-      .footer-col ul { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0; margin: 0; }
-      .footer-contact-item { justify-content: center; text-align: center; }
-      .footer-contact-item i { margin-top: 0; }
-      .footer-bottom { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
-      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
-      .section-heading, .section-sub, .story-text, .map-section-title, .map-section-sub { text-align: center; }
-      .story-text { text-align: center; }
-      .story-badges, .section-sub.center { margin-left: auto; margin-right: auto; }
-      .vision-quote { text-align: left; }
-    }
-    @media (max-width: 480px) {
-      .about-hero { padding: 44px 16px 40px; }
-      .about-hero h1 { font-size: 1.65rem; }
-      .hero-stats { flex-wrap: wrap; gap: 18px; }
-      .page-wrap { padding: 40px 14px 0; }
-      .stats-grid { grid-template-columns: 1fr; max-width: 300px; }
-      .mission-banner p { font-size: 1rem; }
-      .peek-main-img { height: 220px; }
-      .peek-thumb { width: 70px; height: 50px; }
-      .cta-banner { padding: 38px 20px; }
-    }
-  </style>
+/* JOURNEY TIMELINE */
+.journey-section{padding:0 0 96px;background:linear-gradient(180deg,var(--bg),#f0f6ff)}
+.journey-inner{max-width:1320px;margin:0 auto;padding:0 24px}
+.journey-header{text-align:center;margin-bottom:64px;padding-top:64px}
+.timeline-track{position:relative;padding:20px 0 40px}
+.timeline-line{position:absolute;top:52px;left:44px;right:44px;height:2px;background:linear-gradient(90deg,transparent,var(--blue-border) 10%,var(--blue-border) 90%,transparent)}
+.timeline-items{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative;z-index:1}
+.timeline-item{display:flex;flex-direction:column;align-items:center;text-align:center;cursor:default}
+.timeline-dot-wrap{position:relative;margin-bottom:20px}
+.timeline-dot{width:44px;height:44px;background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Sora",sans-serif;font-weight:800;font-size:.72rem;box-shadow:0 0 0 6px var(--blue-soft),0 8px 20px rgba(29,78,216,.3);transition:all .35s var(--ease);z-index:1;position:relative}
+.timeline-item:hover .timeline-dot{transform:scale(1.15);box-shadow:0 0 0 8px var(--blue-soft),0 12px 28px rgba(29,78,216,.4)}
+.timeline-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 16px;box-shadow:var(--sh);transition:all .35s var(--ease);width:100%}
+.timeline-item:hover .timeline-card{box-shadow:var(--sh-lg);transform:translateY(-4px);border-color:var(--blue-border)}
+.timeline-year{font-family:"Sora",sans-serif;font-size:.7rem;font-weight:700;color:var(--blue);letter-spacing:.08em;margin-bottom:6px}
+.timeline-title{font-family:"Cormorant Garamond",serif;font-weight:600;color:var(--black);margin-bottom:6px;font-size:1rem;line-height:1.3}
+.timeline-desc{font-size:.76rem;color:var(--muted);line-height:1.65}
+@media(max-width:900px){
+  .timeline-line{display:none}
+  .timeline-items{grid-template-columns:1fr;gap:12px;max-width:480px;margin:0 auto}
+  .timeline-item{flex-direction:row;text-align:left;gap:16px;align-items:flex-start}
+  .timeline-dot-wrap{margin-bottom:0;flex-shrink:0}
+  .timeline-card{flex:1}
+}
+
+/* WHY TRUST US */
+.trust-cards-section{padding:0 24px 96px;max-width:1320px;margin:0 auto}
+.trust-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.trust-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px 22px;text-align:center;box-shadow:var(--sh);transition:all .4s var(--ease);position:relative;overflow:hidden}
+.trust-card::before{content:"";position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue-light));transform:scaleX(0);transition:transform .4s var(--ease)}
+.trust-card:hover{box-shadow:0 24px 64px rgba(29,78,216,.14);transform:translateY(-8px);border-color:var(--blue-border)}
+.trust-card:hover::before{transform:scaleX(1)}
+.trust-card-icon{width:58px;height:58px;margin:0 auto 16px;background:var(--blue-soft);border:1px solid var(--blue-border);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--blue);transition:all .35s var(--ease);box-shadow:0 6px 18px rgba(29,78,216,.08)}
+.trust-card:hover .trust-card-icon{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff;transform:scale(1.1) rotate(-5deg);border-color:transparent;box-shadow:0 12px 28px rgba(29,78,216,.28)}
+.trust-card-title{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:600;color:var(--black);margin-bottom:8px}
+.trust-card-desc{font-size:.8rem;color:var(--muted);line-height:1.65}
+@media(max-width:900px){.trust-cards-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.trust-cards-grid{grid-template-columns:1fr}}
+
+/* TESTIMONIALS */
+.testimonials-section{padding:0 24px 96px;max-width:1320px;margin:0 auto}
+.ts-rating-bar{display:flex;align-items:center;gap:28px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px 32px;margin-bottom:32px;flex-wrap:wrap;box-shadow:var(--sh)}
+.ts-big-score{font-family:"Sora",sans-serif;font-size:3rem;font-weight:900;color:var(--black);line-height:1}
+.ts-stars-big{color:var(--gold);font-size:16px;letter-spacing:2px;margin:6px 0 4px}
+.ts-score-sub{font-size:.72rem;color:var(--muted);font-weight:500}
+.ts-v-div{width:1px;height:56px;background:var(--border);flex-shrink:0}
+.ts-dist{flex:1;min-width:170px;display:flex;flex-direction:column;gap:8px}
+.ts-dist-row{display:flex;align-items:center;gap:10px;font-size:.72rem;color:var(--muted)}
+.ts-dist-bar{flex:1;height:6px;background:var(--light);border-radius:99px;overflow:hidden}
+.ts-dist-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#f97316);width:0%;transition:width 1.4s var(--ease)}
+.ts-fill-muted{background:linear-gradient(90deg,#cbd5e1,#94a3b8)!important}
+.ts-total-num{font-family:"Sora",sans-serif;font-size:1.8rem;font-weight:800;color:var(--black)}
+.ts-total-label{font-size:.72rem;color:var(--muted);margin-top:2px}
+.ts-filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.ts-filter-btn{padding:8px 18px;border-radius:999px;font-size:.74rem;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--muted);transition:all .25s var(--ease)}
+.ts-filter-btn.active,.ts-filter-btn:hover{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(29,78,216,.25)}
+.ts-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:36px;transition:opacity .4s,transform .4s}
+.ts-card{background:#fff;border:1px solid rgba(15,23,42,.05);border-radius:20px;padding:26px 28px;position:relative;overflow:hidden;transition:all .4s var(--ease);box-shadow:0 8px 32px rgba(13,17,23,.05)}
+.ts-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;background:var(--card-bar,linear-gradient(90deg,var(--gold),#f97316))}
+.ts-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(13,17,23,.13);border-color:rgba(29,78,216,.1)}
+.ts-quote-bg{position:absolute;top:12px;right:18px;font-family:Georgia,serif;font-size:80px;line-height:1;color:var(--border);pointer-events:none;font-weight:700}
+.ts-card-stars{font-size:13px;letter-spacing:1px;margin-bottom:12px;color:var(--gold)}
+.ts-card-text{font-size:.87rem;color:rgba(15,23,42,.78);line-height:1.85;margin-bottom:18px;font-style:italic}
+.ts-card-sep{height:1px;background:var(--border);margin-bottom:16px}
+.ts-card-user{display:flex;align-items:center;gap:12px}
+.ts-card-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 4px 14px rgba(13,17,23,.15)}
+.ts-card-name{font-weight:700;font-size:.87rem;color:var(--black)}
+.ts-card-loc{font-size:.7rem;color:var(--muted);margin-top:1px}
+.ts-card-product{display:inline-block;font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:999px;margin-top:6px;background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue-border)}
+.ts-card-verified{position:absolute;bottom:18px;right:18px;display:flex;align-items:center;gap:4px;font-size:.65rem;color:var(--green);font-weight:700}
+.ts-nav-row{display:flex;align-items:center;justify-content:center;gap:12px}
+.ts-nav-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.ts-nav-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.ts-dots-wrap{display:flex;gap:6px;align-items:center}
+.ts-dot{width:7px;height:7px;border-radius:50%;background:var(--border);cursor:pointer;border:none;padding:0;transition:all .35s var(--ease)}
+.ts-dot.active{background:var(--blue);width:22px;border-radius:4px}
+.ts-page-info{font-size:.75rem;color:var(--muted);font-weight:700;min-width:44px;text-align:center}
+@media(max-width:900px){.ts-cards-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ts-cards-grid{grid-template-columns:1fr}.ts-v-div{display:none}.ts-rating-bar{padding:18px 20px}}
+
+/* MAP */
+.map-section{padding:0 24px 96px;max-width:1320px;margin:0 auto}
+.map-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:center}
+.map-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,3vw,38px);font-weight:600;color:var(--black);margin-bottom:14px;line-height:1.2}
+.map-p{font-size:.88rem;color:var(--text-mid);line-height:1.85;margin-bottom:20px}
+.map-contacts{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.map-contact-item{display:flex;align-items:center;gap:12px;font-size:.83rem;color:var(--muted);padding:12px 16px;background:#fff;border:1px solid var(--border);border-radius:10px;transition:all .25s var(--ease)}
+.map-contact-item:hover{border-color:var(--blue-border);background:var(--blue-soft);color:var(--blue);transform:translateX(4px)}
+.map-contact-item i{color:var(--blue);width:18px;text-align:center;flex-shrink:0}
+.map-contact-item a{color:inherit}
+.map-wrap{border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh-xl);height:380px}
+.map-wrap iframe{display:block;width:100%;height:100%;border:0}
+@media(max-width:900px){.map-inner{grid-template-columns:1fr}}
+
+/* CTA BANNER */
+.cta-section{padding:0 24px 96px;max-width:1320px;margin:0 auto}
+.cta-banner{background:linear-gradient(135deg,#080d14 0%,#0f1e3a 50%,#1d4ed8 100%);border-radius:24px;padding:72px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.cta-banner::after{content:"";position:absolute;top:-60px;right:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.22),transparent 70%);pointer-events:none}
+.cta-eyebrow{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:18px;padding:6px 16px;background:rgba(255,255,255,.07);border-radius:999px;border:1px solid rgba(255,255,255,.12)}
+.cta-title{position:relative;font-family:"Cormorant Garamond",serif;font-size:clamp(26px,4vw,52px);font-weight:600;color:#fff;margin-bottom:14px;line-height:1.2}
+.cta-title em{font-style:italic;color:var(--accent)}
+.cta-sub{position:relative;color:rgba(255,255,255,.72);font-size:.9rem;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8}
+.cta-btns{position:relative;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-cta-white{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue);padding:14px 32px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .28s var(--ease);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-cta-white:hover{background:var(--blue);color:#fff;gap:14px;transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.3)}
+.btn-cta-ghost{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);color:#fff;padding:14px 32px;border-radius:999px;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);transition:all .28s var(--ease)}
+.btn-cta-ghost:hover{background:rgba(255,255,255,.18);gap:14px;transform:translateY(-2px)}
+@media(max-width:768px){.cta-banner{padding:52px 28px}}
+
+/* FOOTER */
+footer{background:#080d14;color:#94a3b8;padding:60px 20px 28px;border-top:1px solid rgba(255,255,255,.04)}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand{font-family:"Sora",sans-serif;font-size:1.1rem;font-weight:800;color:#fff;display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:14px}
+.footer-brand .brand-row{display:flex;align-items:center;gap:10px}
+.footer-brand .f-mark{width:42px;height:42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(14,91,255,.12);border:1px solid rgba(14,91,255,.12);overflow:hidden;}
+.footer-brand .f-mark img{width:80%;height:80%;object-fit:contain;display:block;}
+.footer-brand .f-mark i{display:none}
+.footer-brand .brand-name .brand-aiva{color:#fff}
+.footer-brand .brand-name span{color:#60a5fa}
+.footer-brand .brand-sub{font-size:.76rem;color:#64748b;margin-top:4px;font-weight:500}
+.footer-desc{font-size:.8rem;line-height:1.85;margin-bottom:20px;max-width:280px}
+.footer-social{display:flex;gap:10px;flex-wrap:wrap}
+.social-btn{width:38px;height:38px;background:#1e293b;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:15px;transition:all .25s var(--ease);border:1px solid rgba(255,255,255,.04)}
+.social-btn:hover{background:var(--blue);color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px rgba(29,78,216,.25);border-color:transparent}
+.footer-col h6{font-size:.72rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{color:#64748b;font-size:.8rem;transition:color .2s,padding-left .2s;display:inline-block}
+.footer-col ul li a:hover{color:#fff;padding-left:6px}
+.footer-contact-item{display:flex;align-items:flex-start;gap:11px;font-size:.8rem;margin-bottom:12px}
+.footer-contact-item i{color:#60a5fa;margin-top:2px;flex-shrink:0}
+.footer-contact-item a{color:#64748b;transition:color .2s}
+.footer-contact-item a:hover{color:#60a5fa}
+.footer-bottom{border-top:1px solid #1e293b;padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.74rem}
+.footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-bottom-links a{color:#475569;transition:color .2s}
+.footer-bottom-links a:hover{color:#fff}
+@media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-top{grid-template-columns:1fr;gap:28px;text-align:center}.footer-brand,.footer-social,.footer-col ul{justify-content:center;align-items:center}.footer-col{display:flex;flex-direction:column;align-items:center}.footer-contact-item{justify-content:center}.footer-bottom{flex-direction:column;align-items:center;text-align:center}.footer-bottom-links{justify-content:center}.footer-desc{max-width:100%;text-align:center}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(-28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}.d4{transition-delay:.4s!important}.d5{transition-delay:.5s!important}
+
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
+@media(max-width:600px){.story-section,.values-section,.trust-cards-section,.testimonials-section,.map-section,.cta-section{padding-left:16px;padding-right:16px}}
+</style>
 </head>
 <body>
 
-<!-- ─── HEADER ─── -->
-<header class="site-header">
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pl-glow"></div>
+  <div class="pl-card">
+    <img class="pl-logo-img" src="assets/logo.png" alt="AivaWellness Logo" />
+    <div class="pl-divider"></div>
+    <div class="pl-brand">Aiva<span>Wellness</span></div>
+    <div class="pl-tagline">Your Health, Our Priority</div>
+    <div class="pl-bar-wrap">
+      <div class="pl-bar"><div class="pl-fill"></div></div>
+      <div class="pl-status">
+        <span class="pl-status-text">Loading experience...</span>
+        <div class="pl-dots"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar">
+  <div class="ann-bar-track">
+    <span><i class="fa-solid fa-leaf"></i>&nbsp; Premium Healthcare formulas made in Himachal Pradesh &nbsp;<span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free shipping on orders over &#8377;999 &nbsp;<span class="sep">|</span>&nbsp; 100% Ayurvedic &amp; Natural &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No Binders</span>
+    <span><i class="fa-solid fa-leaf"></i>&nbsp; Premium Healthcare formulas made in Himachal Pradesh &nbsp;<span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free shipping on orders over &#8377;999 &nbsp;<span class="sep">|</span>&nbsp; 100% Ayurvedic &amp; Natural &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No Binders</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
   <nav class="nav-inner">
     <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="Aiva Wellness" onerror="this.style.display='none'">
+      <div class="brand-mark"><img src="assets/logo.png" alt="Aiva Wellness logo"></div>
       <div>
         <span class="brand-name">Aiva<span>Wellness</span></span>
-        <small class="brand-sub">Premium Healthcare & Wellness</small>
+        <small class="brand-sub">Premium Healthcare &amp; Wellness</small>
       </div>
     </a>
     <ul class="nav-links">
@@ -403,296 +497,348 @@
       <li><a href="about.html" class="active">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="tel:+917807751710" class="nav-cta">
-      <i class="fa-solid fa-phone"></i> Call Now
-    </a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <a href="tel:+917807751710" class="nav-cta"><i class="fa-solid fa-phone"></i> Call Now</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 </header>
 
-<!-- Mobile Menu -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this)toggleMenu()">
-  <nav class="mobile-nav">
+  <nav class="mobile-nav-panel">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
     <a href="about.html" class="active">About Us</a>
     <a href="contact.html">Contact</a>
-    <a href="tel:+917807751710" class="cta"><i class="fa-solid fa-phone me-2"></i>Call Now</a>
+    <a href="tel:+917807751710" class="m-cta"><i class="fa-solid fa-phone"></i> Call Now</a>
   </nav>
 </div>
 
-<!-- ─── BREADCRUMB ─── -->
-<div class="breadcrumb-bar">
-  <div class="inner">
-    <a href="index.html">Home</a>
-    <span class="sep">›</span>
-    <span class="current">About Us</span>
-  </div>
-</div>
-
-<!-- ─── IN-PAGE TABS ─── -->
-  <div class="about-tabs">
-  <div class="about-tabs-inner" id="aboutTabs">
-    <a href="#story" class="tab-link active">Our Story</a>
-    <a href="#behind-the-scenes" class="tab-link">Behind the Scenes</a>
-  </div>
-</div>
-
-<!-- ─── HERO ─── -->
+<!-- HERO -->
 <section class="about-hero" id="top">
-  <div class="about-hero-inner">
-    <div class="about-hero-badge"><i class="fa-solid fa-mountain"></i> Our Story</div>
-    <h1>From the Hills of Himachal to <span>Your Daily Wellness Ritual</span></h1>
-    <p>Aiva Wellness began with a simple frustration — why was it so hard to find supplements you could actually trust? Today we formulate, test and ship science-backed wellness products from our home in Solan, Himachal Pradesh, to thousands of households across India.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">2022</div><div class="hero-stat-label">Founded</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">25+</div><div class="hero-stat-label">Products</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">10K+</div><div class="hero-stat-label">Customers</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">FSSAI</div><div class="hero-stat-label">Licensed Facility</div></div>
+  <div class="hero-bg-particles" id="heroParticles"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1 class="hero-title">Built on Purity,<br>Proof &amp; <em>People</em></h1>
+      <p class="hero-desc">Aiva Wellness began with a simple frustration &mdash; why was it so hard to find supplements you could actually trust? Today we formulate, test, and ship science-backed wellness products from our home in Solan, Himachal Pradesh, to thousands of households across India.</p>
+      <div class="hero-cta-row">
+        <a href="shop.html" class="btn-hero-primary">Explore Products <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn-hero-secondary">Talk to Us <i class="fa-solid fa-headset"></i></a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats-grid">
+        <div class="hero-stat-card reveal d1">
+          <div class="hero-stat-icon"><i class="fa-solid fa-calendar" style="color:#60a5fa"></i></div>
+          <div class="hero-stat-num">2022</div>
+          <div class="hero-stat-label">Founded</div>
+        </div>
+        <div class="hero-stat-card reveal d2">
+          <div class="hero-stat-icon"><i class="fa-solid fa-box" style="color:#34d399"></i></div>
+          <div class="hero-stat-num">25+</div>
+          <div class="hero-stat-label">Products</div>
+        </div>
+        <div class="hero-stat-card reveal d3">
+          <div class="hero-stat-icon"><i class="fa-solid fa-users" style="color:#fbbf24"></i></div>
+          <div class="hero-stat-num">10K+</div>
+          <div class="hero-stat-label">Customers</div>
+        </div>
+        <div class="hero-stat-card reveal d4">
+          <div class="hero-stat-icon"><i class="fa-solid fa-certificate" style="color:#f472b6"></i></div>
+          <div class="hero-stat-num">FSSAI</div>
+          <div class="hero-stat-label">Licensed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-icon"><i class="fa-solid fa-certificate"></i></div><span>FSSAI Licensed Facility</span></div>
+    <div class="trust-item"><div class="trust-icon"><i class="fa-solid fa-flask-vial"></i></div><span>Third-Party Lab Tested</span></div>
+    <div class="trust-item"><div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div><span>No Fillers or Binders</span></div>
+    <div class="trust-item"><div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div><span>Pan-India Delivery</span></div>
+    <div class="trust-item"><div class="trust-icon"><i class="fa-solid fa-headset"></i></div><span>2&ndash;4 Hr Support</span></div>
+  </div>
+</div>
+
+<main>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-section">
+    <div class="story-text reveal-right">
+      <span class="section-eyebrow"><i class="fa-solid fa-circle-info"></i> Who We Are</span>
+      <h2 class="story-h2">A Wellness Brand Built on Purity, Proof &amp; People</h2>
+      <p class="story-p">Aiva Wellness is a direct-to-consumer healthcare and nutraceutical brand. We design every formulation with input from nutrition experts, manufacture in an FSSAI-licensed facility, and send each batch for independent lab testing before it ever reaches your doorstep.</p>
+      <p class="story-p">No trend-chasing, no inflated claims &mdash; just honestly labelled supplements that do what they say.</p>
+      <div class="vision-quote">&ldquo;To make trustworthy wellness ordinary &mdash; not a luxury, not a gamble, just something every Indian household can rely on.&rdquo;</div>
+
+    </div>
+    <div class="reveal-left">
+      <div class="story-images">
+        <div class="story-img-main">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80" alt="Natural Aiva Wellness ingredients"/>
+          <div class="story-img-badge"><i class="fa-solid fa-star"></i> Made in Himachal Pradesh</div>
+        </div>
+        <div class="story-img-sm">
+          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Aiva Wellness capsules"/>
+        </div>
+        <div class="story-img-sm">
+          <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80" alt="Wellness ritual"/>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── MAIN CONTENT ─── -->
-<main>
-<div class="page-wrap">
-
-  <!-- ─── STORY ─── -->
-  <section id="story">
-    <div class="story-grid">
-      <div class="story-text reveal">
-        <span class="eyebrow">Who We Are</span>
-        <h2>A Wellness Brand Built on Purity, Proof &amp; People</h2>
-        <p>Aiva Wellness is a direct-to-consumer healthcare and nutraceutical brand. We design every formulation with input from nutrition experts, manufacture in an FSSAI-licensed facility, and send each batch for independent lab testing before it ever reaches your doorstep. No trend-chasing, no inflated claims — just honestly labelled supplements that do what they say.</p>
-        <div class="vision-quote">"To make trustworthy wellness ordinary — not a luxury, not a gamble, just something every Indian household can rely on."</div>
-        <div class="story-badges">
-          <span class="story-badge"><i class="fa-solid fa-certificate"></i> FSSAI Licensed</span>
-          <span class="story-badge"><i class="fa-solid fa-flask-vial"></i> Third-Party Lab Tested</span>
-        </div>
-      </div>
-      <div class="stats-grid reveal">
-        <div class="stat-card"><div class="stat-num">25+</div><div class="stat-label">Products Across 11 Categories</div></div>
-        <div class="stat-card"><div class="stat-num">10K+</div><div class="stat-label">Customers Served</div></div>
-        <div class="stat-card"><div class="stat-num">4.8★</div><div class="stat-label">Average Customer Rating</div></div>
-        <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Genuine, Sealed Products</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── MISSION BANNER ─── -->
-  <div class="mission-banner reveal" style="margin-bottom: 64px;">
-    <div class="mb-eyebrow">Our Mission</div>
-    <p>Bring lab-tested, honestly-labelled wellness products to every corner of India — at a price that respects your trust.</p>
+<!-- MISSION BANNER -->
+<div class="mission-wrap">
+  <div class="mission-banner reveal">
+    <div class="mission-eyebrow"><i class="fa-solid fa-bullseye"></i> Our Mission</div>
+    <p class="mission-text">Bring lab-tested, honestly-labelled wellness products to every corner of India &mdash; at a price that <em>respects your trust</em>.</p>
   </div>
+</div>
 
-  <!-- ─── CORE VALUES ─── -->
-  <section id="values" class="values-section-inner">
-    <h2 class="section-heading center">What We Stand For</h2>
-    <p class="section-sub center">Five core values shape every formulation, every label and every order that leaves our facility.</p>
+<!-- VALUES -->
+<section id="values">
+  <div class="values-section">
+    <div class="section-header">
+      <span class="section-eyebrow"><i class="fa-solid fa-heart"></i> What We Stand For</span>
+      <h2 class="section-title">Five Values That Shape <span>Every Decision</span></h2>
+      <p class="section-sub">These aren&rsquo;t poster words &mdash; they&rsquo;re the criteria we use when choosing ingredients, pricing products, and responding to customers.</p>
+    </div>
     <div class="values-grid">
-      <div class="value-card reveal">
+      <div class="value-card reveal d1">
         <div class="value-icon"><i class="fa-solid fa-flask-vial"></i></div>
         <div class="value-title">Science First</div>
         <div class="value-desc">Every formulation starts with research, not trends. We work with nutrition experts long before a product reaches the production line.</div>
       </div>
-      <div class="value-card reveal">
+      <div class="value-card reveal d2">
         <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <div class="value-title">Purity &amp; Safety</div>
-        <div class="value-desc">FSSAI-licensed manufacturing and third-party lab testing on every batch, so what's on the label is exactly what's in the bottle.</div>
+        <div class="value-desc">FSSAI-licensed manufacturing and third-party lab testing on every batch &mdash; so what&rsquo;s on the label is exactly what&rsquo;s in the bottle.</div>
       </div>
-      <div class="value-card reveal">
-        <div class="value-icon"><i class="fa-solid fa-eye"></i></div>
-        <div class="value-title">Radical Transparency</div>
-        <div class="value-desc">No hidden fillers and no inflated claims. Full ingredient panels and sourcing information are always available to you.</div>
-      </div>
-      <div class="value-card reveal">
+      <div class="value-card reveal d1">
         <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
         <div class="value-title">Customer First</div>
         <div class="value-desc">From formulation to support, every decision starts with one question: is this genuinely good for the person taking it?</div>
       </div>
-      <div class="value-card reveal">
+      <div class="value-card reveal d2">
         <div class="value-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
         <div class="value-title">Honest Pricing</div>
-        <div class="value-desc">Premium quality shouldn't mean a premium markup. We price for accessibility, not exclusivity.</div>
+        <div class="value-desc">Premium quality shouldn&rsquo;t mean a premium markup. We price for accessibility, not exclusivity.</div>
       </div>
-      <div class="value-card reveal">
+      <div class="value-card reveal d3">
         <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
         <div class="value-title">Mindful Sourcing</div>
         <div class="value-desc">Where possible, we source locally from Himachal Pradesh and work with suppliers who share our sustainability standards.</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── BEHIND THE SCENES ─── -->
-  <section id="behind-the-scenes" class="peek-section">
-    <h2 class="section-heading center">A Peek Behind the Counter</h2>
-    <p class="section-sub center">We're a small, hands-on team — from formulation to the final seal on every bottle. Here's a glimpse of how Aiva products come together.</p>
-    <div class="peek-wrap reveal">
-      <div class="peek-main-wrap">
-        <img id="peekMain" class="peek-main-img"
-             src="assets/about/peek-formulation.jpg"
-             alt="Aiva Wellness behind the scenes"
-             onerror="this.src='https://placehold.co/900x500/f1f5f9/64748b?text=Formulation+%26+R%26D'">
-        <div class="peek-caption-bar" id="peekCaption">Formulation &amp; R&amp;D</div>
-      </div>
-      <div class="peek-thumbs" id="peekThumbs"></div>
+<!-- BEHIND THE SCENES -->
+<section id="peek" class="peek-section">
+  <div class="peek-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow"><i class="fa-solid fa-camera"></i> Behind the Counter</span>
+      <h2 class="section-title">A Peek at How <span>Aiva Comes Together</span></h2>
+      <p class="section-sub">We&rsquo;re a small, hands-on team &mdash; from formulation to the final seal on every bottle.</p>
     </div>
-  </section>
+    <div class="peek-slider-outer reveal">
+      <div class="peek-slides-track" id="peekTrack"></div>
+      <div class="peek-controls">
+        <button class="peek-btn" onclick="peekNav(-1)" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="peek-btn" onclick="peekNav(1)" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="peek-dots" id="peekDots"></div>
+      <div class="peek-progress"><div class="peek-progress-fill" id="peekProgress"></div></div>
+    </div>
+    <div class="peek-thumbs-row" id="peekThumbs"></div>
+  </div>
+</section>
 
-  <!-- ─── OUR JOURNEY ─── -->
-  <section id="journey" class="journey-section">
-    <h2 class="section-heading center">Our Journey So Far</h2>
-    <p class="section-sub center">A young brand, growing one honest label at a time.</p>
-    <div class="journey-track">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot">'22</div>
-        <div class="timeline-card">
-          <div class="timeline-title">Aiva Wellness is founded</div>
-          <div class="timeline-desc">Started in Solan, Himachal Pradesh, with our first Magnesium formulation and a small, dedicated team.</div>
+<!-- JOURNEY -->
+<section id="journey" class="journey-section">
+  <div class="journey-inner">
+    <div class="journey-header reveal">
+      <span class="section-eyebrow"><i class="fa-solid fa-route"></i> Our Journey</span>
+      <h2 class="section-title">Growing One <span>Honest Label</span> at a Time</h2>
+      <p class="section-sub" style="margin:0 auto">A young brand with big ambitions &mdash; here&rsquo;s where we&rsquo;ve been and where we&rsquo;re going.</p>
+    </div>
+    <div class="timeline-track reveal">
+      <div class="timeline-line"></div>
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <div class="timeline-dot-wrap"><div class="timeline-dot">&apos;22</div></div>
+          <div class="timeline-card"><div class="timeline-year">2022</div><div class="timeline-title">Aiva Wellness Founded</div><div class="timeline-desc">Started in Solan, Himachal Pradesh, with our first Magnesium formulation and a small, dedicated team.</div></div>
         </div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot">'23</div>
-        <div class="timeline-card">
-          <div class="timeline-title">FSSAI licensed, range expands</div>
-          <div class="timeline-desc">Our facility became FSSAI licensed, and we expanded into Vitamins, Immunity and Men's &amp; Women's Health lines.</div>
+        <div class="timeline-item">
+          <div class="timeline-dot-wrap"><div class="timeline-dot">&apos;23</div></div>
+          <div class="timeline-card"><div class="timeline-year">2023</div><div class="timeline-title">FSSAI Licensed, Range Expands</div><div class="timeline-desc">Our facility became FSSAI licensed, and we expanded into Vitamins, Immunity and Men&rsquo;s &amp; Women&rsquo;s Health lines.</div></div>
         </div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot">'24</div>
-        <div class="timeline-card">
-          <div class="timeline-title">10,000+ customers served</div>
-          <div class="timeline-desc">We crossed our first major milestone and introduced Protein, Pre-Workout and Gainer lines for active lifestyles.</div>
+        <div class="timeline-item">
+          <div class="timeline-dot-wrap"><div class="timeline-dot">&apos;24</div></div>
+          <div class="timeline-card"><div class="timeline-year">2024</div><div class="timeline-title">10,000+ Customers Served</div><div class="timeline-desc">Crossed our first major milestone and introduced Protein, Pre-Workout and Gainer lines for active lifestyles.</div></div>
         </div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot">'25</div>
-        <div class="timeline-card">
-          <div class="timeline-title">25+ products, 11 categories</div>
-          <div class="timeline-desc">Our catalogue grew to 25+ science-backed products, with every single batch independently lab tested.</div>
+        <div class="timeline-item">
+          <div class="timeline-dot-wrap"><div class="timeline-dot">&apos;25</div></div>
+          <div class="timeline-card"><div class="timeline-year">2025</div><div class="timeline-title">25+ Products, 11 Categories</div><div class="timeline-desc">Our catalogue grew to 25+ science-backed products, with every single batch independently lab tested.</div></div>
         </div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot">'26</div>
-        <div class="timeline-card">
-          <div class="timeline-title">Going pan-India</div>
-          <div class="timeline-desc">We're continuing to expand delivery across India, while staying true to the same small-batch standards we started with.</div>
+        <div class="timeline-item">
+          <div class="timeline-dot-wrap"><div class="timeline-dot">&apos;26</div></div>
+          <div class="timeline-card"><div class="timeline-year">2026</div><div class="timeline-title">Going Pan-India</div><div class="timeline-desc">Expanding delivery across India, while staying true to the same small-batch standards we started with.</div></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ─── TRUST STRIP ─── -->
-  <div class="trust-section">
-    <h2 class="section-heading center">Why People Trust Aiva</h2>
-    <p class="section-sub center">The same standards that apply to our products apply to how we treat every customer.</p>
-    <div class="trust-grid">
-      <div class="trust-card reveal">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+<!-- WHY TRUST US -->
+<section id="trust">
+  <div class="trust-cards-section">
+    <div class="section-header">
+      <span class="section-eyebrow"><i class="fa-solid fa-shield-halved"></i> Why People Trust Aiva</span>
+      <h2 class="section-title">The Same Standards <span>Every Time</span></h2>
+      <p class="section-sub">The same standards that apply to our products apply to how we treat every customer.</p>
+    </div>
+    <div class="trust-cards-grid">
+      <div class="trust-card reveal d1">
+        <div class="trust-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <div class="trust-card-title">100% Genuine</div>
         <div class="trust-card-desc">Every product is sealed, lab-tested and FSSAI licensed before it ships.</div>
       </div>
-      <div class="trust-card reveal">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-rotate-left"></i></div>
+      <div class="trust-card reveal d2">
+        <div class="trust-card-icon"><i class="fa-solid fa-rotate-left"></i></div>
         <div class="trust-card-title">7-Day Easy Returns</div>
-        <div class="trust-card-desc">Hassle-free returns on sealed, unopened products — no awkward questions.</div>
+        <div class="trust-card-desc">Hassle-free returns on sealed, unopened products &mdash; no awkward questions.</div>
       </div>
-      <div class="trust-card reveal">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-truck-fast"></i></div>
+      <div class="trust-card reveal d3">
+        <div class="trust-card-icon"><i class="fa-solid fa-truck-fast"></i></div>
         <div class="trust-card-title">Pan-India Delivery</div>
         <div class="trust-card-desc">Fast, trackable shipping to every pincode we currently serve.</div>
       </div>
-      <div class="trust-card reveal">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-headset"></i></div>
-        <div class="trust-card-title">2–4 Hr Support</div>
+      <div class="trust-card reveal d4">
+        <div class="trust-card-icon"><i class="fa-solid fa-headset"></i></div>
+        <div class="trust-card-title">2&ndash;4 Hr Support</div>
         <div class="trust-card-desc">Real humans respond to queries fast, over call or WhatsApp.</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ─── TESTIMONIALS ─── -->
-  <!-- TODO: Replace these sample quotes with real, verified customer reviews before publishing live. -->
-  <section class="testimonials-outer">
-    <h2 class="section-heading center">What Our Customers Say</h2>
-    <p class="section-sub center">A few words from people who've made Aiva part of their daily routine.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-text">What stood out to me was the transparency — the label actually matches what's inside. My sleep and muscle cramps have both improved since I started the Magnesium Complex.</div>
-        <div class="t-author">
-          <div class="t-avatar">DS</div>
-          <div>
-            <div class="t-name">Deepanshu Shukla</div>
-            <div class="t-meta">Verified Buyer</div>
-          </div>
-        </div>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-section">
+    <div class="section-header">
+      <span class="section-eyebrow"><i class="fa-solid fa-quote-left"></i> Real Customer Stories</span>
+      <h2 class="section-title">Trusted by <span>10,000+ Customers</span></h2>
+      <p class="section-sub">Don&rsquo;t just take our word for it &mdash; hear from people whose lives have changed with Aiva Wellness.</p>
+    </div>
+    <div class="ts-rating-bar reveal">
+      <div>
+        <div class="ts-big-score">4.8</div>
+        <div class="ts-stars-big" id="tsAvgStars"></div>
+        <div class="ts-score-sub">Overall Rating</div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-text">Good to see a small Indian brand actually getting their products lab tested. Delivery was quick too — ordered from Bengaluru and it reached in under a week.</div>
-        <div class="t-author">
-          <div class="t-avatar">TP</div>
-          <div>
-            <div class="t-name">Tirthankar Purkayastha</div>
-            <div class="t-meta">Verified Buyer</div>
-          </div>
-        </div>
+      <div class="ts-v-div"></div>
+      <div class="ts-dist">
+        <div class="ts-dist-row"><span>5&#9733;</span><div class="ts-dist-bar"><div class="ts-dist-fill" data-w="82"></div></div><span>82%</span></div>
+        <div class="ts-dist-row"><span>4&#9733;</span><div class="ts-dist-bar"><div class="ts-dist-fill" data-w="12"></div></div><span>12%</span></div>
+        <div class="ts-dist-row"><span>3&#9733;</span><div class="ts-dist-bar"><div class="ts-dist-fill ts-fill-muted" data-w="4"></div></div><span>4%</span></div>
+        <div class="ts-dist-row"><span>2&#9733;</span><div class="ts-dist-bar"><div class="ts-dist-fill ts-fill-muted" data-w="2"></div></div><span>2%</span></div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-text">I recommend the Vitamin D3 + Immunity pack to clients at my gym. Honest pricing, no gimmicks, and customer support actually replies on WhatsApp.</div>
-        <div class="t-author">
-          <div class="t-avatar">VS</div>
-          <div>
-            <div class="t-name">Varun Sonagra</div>
-            <div class="t-meta">Verified Buyer</div>
-          </div>
-        </div>
+      <div class="ts-v-div"></div>
+      <div>
+        <div class="ts-total-num">928</div>
+        <div class="ts-total-label">Verified Reviews</div>
       </div>
     </div>
-  </section>
-
-  <!-- ─── MAP / VISIT US ─── -->
-  <div class="map-section">
-    <h2 class="map-section-title">Visit Our Home in the Hills</h2>
-    <p class="map-section-sub">Our formulation and manufacturing base is in Solan, Himachal Pradesh.</p>
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3361.8537831906324!2d77.1878!3d31.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e52!2d77.1878!3d31.0236!5e0!3m2!1sen!2sin!4v1757563662397!5m2!1sen!2sin"
-        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="ts-filter-row reveal">
+      <button class="ts-filter-btn active" onclick="setTFilter('all',this)">All</button>
+      <button class="ts-filter-btn" onclick="setTFilter('Magnesium',this)">Magnesium</button>
+      <button class="ts-filter-btn" onclick="setTFilter('Nattokinase',this)">Nattokinase</button>
+      <button class="ts-filter-btn" onclick="setTFilter('Protein',this)">Protein</button>
+      <button class="ts-filter-btn" onclick="setTFilter('Vitamins',this)">Vitamins</button>
+      <button class="ts-filter-btn" onclick="setTFilter('Immunity',this)">Immunity</button>
+    </div>
+    <div class="ts-cards-grid" id="tsGrid"></div>
+    <div class="ts-nav-row">
+      <button class="ts-nav-btn" onclick="tNav(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="ts-dots-wrap" id="tsDots"></div>
+      <span class="ts-page-info" id="tsPageInfo">1 / 3</span>
+      <button class="ts-nav-btn" onclick="tNav(1)"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
   </div>
+</section>
 
-  <!-- ─── CTA ─── -->
+<!-- MAP -->
+<div class="map-section">
+  <div class="map-inner">
+    <div class="map-info reveal-right">
+      <span class="section-eyebrow"><i class="fa-solid fa-location-dot"></i> Visit Us</span>
+      <h2 class="map-h2">Our Home in the Hills</h2>
+      <p class="map-p">Our formulation and manufacturing base is nestled in Solan, Himachal Pradesh &mdash; where clean mountain air and commitment to quality go hand in hand.</p>
+      <div class="map-contacts">
+        <div class="map-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751710">+91 78077 51710</a></div>
+        <div class="map-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:aivawellness@gmail.com">aivawellness@gmail.com</a></div>
+        <div class="map-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh, India</span></div>
+        <div class="map-contact-item"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/917807751710" target="_blank">Chat on WhatsApp</a></div>
+      </div>
+    </div>
+    <div class="map-wrap reveal-left">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3361.8537831906324!2d77.1878!3d31.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e52!2d77.1878!3d31.0236!5e0!3m2!1sen!2sin!4v1757563662397!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Aiva Wellness location"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
   <div class="cta-banner reveal">
-    <h2>Ready to Start Your Wellness Journey?</h2>
-    <p>Browse our full range of science-backed, lab-tested supplements — or talk to us first if you're not sure where to start.</p>
+    <div class="cta-eyebrow"><i class="fa-solid fa-rocket"></i> Start Your Journey</div>
+    <h2 class="cta-title">Ready to Make Wellness <em>Simple Again?</em></h2>
+    <p class="cta-sub">Browse our full range of science-backed, lab-tested supplements &mdash; or talk to us first if you&rsquo;re not sure where to start.</p>
     <div class="cta-btns">
-      <a href="shop.html" class="btn-cta-primary"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
-      <a href="contact.html" class="btn-cta-secondary"><i class="fa-solid fa-headset"></i> Talk to Us</a>
+      <a href="shop.html" class="btn-cta-white"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
+      <a href="contact.html" class="btn-cta-ghost"><i class="fa-solid fa-headset"></i> Talk to Us</a>
     </div>
   </div>
+</div>
 
-</div><!-- /page-wrap -->
 </main>
 
-<!-- ─── FOOTER ─── -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
         <div class="footer-brand">
-          <img src="assets/logo.png" alt="Aiva Wellness" width="36" height="36" style="border-radius:8px;" onerror="this.style.display='none'">
-          Aiva<span>Wellness</span>
+          <div class="brand-row">
+            <div class="f-mark"><img src="assets/logo.png" alt="Aiva Wellness logo"></div>
+            <span class="brand-name"><span class="brand-aiva">Aiva</span><span>Wellness</span></span>
+          </div>
+          <small class="brand-sub">Premium Healthcare &amp; Wellness</small>
         </div>
-        <div class="footer-desc">Premium Healthcare & Wellness Solutions. Delivering trusted wellness products with transparency, care, and science-backed formulations.</div>
+        <div class="footer-desc">Premium Healthcare &amp; Wellness Solutions from Solan, Himachal Pradesh. Science-backed Ayurvedic formulations crafted for the health of every Indian family.</div>
         <div class="footer-social">
-          <a class="social-btn" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="social-btn" href="https://www.instagram.com/aivawellness/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a class="social-btn" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a class="social-btn" href="https://www.linkedin.com/company/aivawellness" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
           <a class="social-btn" href="https://wa.me/917807751710" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="social-btn" href="https://www.amazon.in/stores/AivaWellness" target="_blank" aria-label="Amazon"><i class="fa-brands fa-amazon"></i></a>
           <a class="social-btn" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
@@ -708,117 +854,139 @@
       <div class="footer-col">
         <h6>Categories</h6>
         <ul>
-          <li><a href="#">Magnesium</a></li>
-          <li><a href="#">Protein</a></li>
-          <li><a href="#">Vitamins</a></li>
-          <li><a href="#">Pre-Workout</a></li>
-          <li><a href="#">Recovery</a></li>
+          <li><a href="shop.html">Magnesium</a></li>
+          <li><a href="shop.html">Nattokinase</a></li>
+          <li><a href="shop.html">Vitamins &amp; Minerals</a></li>
+          <li><a href="shop.html">Omega-3</a></li>
+          <li><a href="shop.html">ZMA</a></li>
+          <li><a href="shop.html">Immunity</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h6>Contact</h6>
+        <h6>Contact Us</h6>
         <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751710">+91 78077 51710</a></div>
         <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:aivawellness@gmail.com">aivawellness@gmail.com</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh, India</span></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Aiva Wellness. All rights reserved.</span>
+      <span>&copy; 2026 Aiva Wellness. All rights reserved.</span>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Policy</a>
+        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Shipping Policy</a><a href="#">Return Policy</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  /* ── Mobile Menu ── */
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+/* PRELOADER */
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('preloader').classList.add('hide'),900));
+
+/* HEADER SCROLL */
+window.addEventListener('scroll',()=>document.getElementById('siteHeader').classList.toggle('scrolled',window.scrollY>20));
+
+/* MOBILE MENU */
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu'),h=document.querySelector('.hamburger');
+  m.classList.toggle('open');h.classList.toggle('active');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+
+/* HERO PARTICLES */
+(function(){
+  const c=document.getElementById('heroParticles');
+  if(!c||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  for(let i=0;i<20;i++){
+    const p=document.createElement('div');p.className='hero-particle';
+    const s=Math.random()*60+20;
+    p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;bottom:${Math.random()*-20}%;animation-duration:${Math.random()*15+8}s;animation-delay:${Math.random()*8}s;opacity:${Math.random()*.35+.05}`;
+    c.appendChild(p);
   }
+})();
 
-  /* ── Behind-the-scenes peek slider ── */
-  const peekSlides = [
-    { src: 'assets/about/peek-formulation.jpg', fallback: 'Formulation+%26+R%26D', caption: 'Formulation & R&D' },
-    { src: 'assets/about/peek-lab.jpg', fallback: 'Quality+Testing+Lab', caption: 'Quality Testing Lab' },
-    { src: 'assets/about/peek-packing.jpg', fallback: 'Packing+%26+Sealing', caption: 'Packing & Sealing' },
-    { src: 'assets/about/peek-team.jpg', fallback: 'Our+Team', caption: 'Our Team' },
-    { src: 'assets/about/peek-dispatch.jpg', fallback: 'Ready+for+Dispatch', caption: 'Ready for Dispatch' }
-  ];
-  let peekIndex = 0;
-  const peekThumbsWrap = document.getElementById('peekThumbs');
-  const peekMain = document.getElementById('peekMain');
-  const peekCaption = document.getElementById('peekCaption');
+/* PEEK SLIDER */
+const PEEK=[
+  {src:'assets/about/peek-formulation.jpg',fb:'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1200&q=80',tag:'R&D Lab',cap:'Formulation & R&D'},
+  {src:'assets/about/peek-lab.jpg',fb:'https://images.unsplash.com/photo-1576671081837-49000212a370?w=1200&q=80',tag:'Quality Control',cap:'Quality Testing Lab'},
+  {src:'assets/about/peek-packing.jpg',fb:'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1200&q=80',tag:'Production',cap:'Packing & Sealing'},
+  {src:'assets/about/peek-team.jpg',fb:'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1200&q=80',tag:'Our People',cap:'Our Team'},
+  {src:'assets/about/peek-dispatch.jpg',fb:'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80',tag:'Logistics',cap:'Ready for Dispatch'},
+];
+let pIdx=0,pTimer;
+const pTrack=document.getElementById('peekTrack'),pDots=document.getElementById('peekDots'),pThumbs=document.getElementById('peekThumbs'),pProg=document.getElementById('peekProgress');
 
-  peekSlides.forEach((slide, i) => {
-    const t = document.createElement('img');
-    t.src = slide.src;
-    t.alt = slide.caption;
-    t.className = 'peek-thumb' + (i === 0 ? ' active' : '');
-    t.onerror = function () { this.src = 'https://placehold.co/180x120/f1f5f9/64748b?text=' + slide.fallback; };
-    t.onclick = () => setPeekSlide(i);
-    peekThumbsWrap.appendChild(t);
-  });
+PEEK.forEach((s,i)=>{
+  const d=document.createElement('div');d.className='peek-slide'+(i===0?' active':'');
+  d.innerHTML=`<img src="${s.src}" alt="${s.cap}" onerror="this.src='${s.fb}'"><div class="peek-slide-overlay"></div><div class="peek-slide-content"><div class="peek-slide-tag"><i class="fa-solid fa-camera"></i> ${s.tag}</div><div class="peek-slide-caption">${s.cap}</div></div>`;
+  pTrack.appendChild(d);
+  const dot=document.createElement('button');dot.className='peek-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Slide '+(i+1));dot.onclick=()=>{goPeek(i);resetPeek()};pDots.appendChild(dot);
+  const th=document.createElement('img');th.src=s.src;th.alt=s.cap;th.className='peek-thumb'+(i===0?' active':'');th.onerror=function(){this.src=s.fb};th.onclick=()=>{goPeek(i);resetPeek()};pThumbs.appendChild(th);
+});
 
-  function setPeekSlide(i) {
-    peekIndex = i;
-    const slide = peekSlides[i];
-    peekMain.style.opacity = '0';
-    setTimeout(() => {
-      peekMain.src = slide.src;
-      peekMain.onerror = function () { this.src = 'https://placehold.co/900x500/f1f5f9/64748b?text=' + slide.fallback; };
-      peekCaption.textContent = slide.caption;
-      peekMain.style.opacity = '1';
-    }, 200);
-    document.querySelectorAll('.peek-thumb').forEach((t, idx) => t.classList.toggle('active', idx === i));
-  }
+function goPeek(n){
+  pTrack.querySelectorAll('.peek-slide')[pIdx].classList.remove('active');
+  pIdx=(n+PEEK.length)%PEEK.length;
+  pTrack.querySelectorAll('.peek-slide')[pIdx].classList.add('active');
+  pTrack.style.transform=`translateX(-${pIdx*100}%)`;
+  pDots.querySelectorAll('.peek-dot').forEach((d,i)=>d.classList.toggle('active',i===pIdx));
+  pThumbs.querySelectorAll('.peek-thumb').forEach((t,i)=>t.classList.toggle('active',i===pIdx));
+  pProg.classList.remove('run');void pProg.offsetWidth;setTimeout(()=>pProg.classList.add('run'),30);
+}
+function peekNav(dir){goPeek(pIdx+dir);resetPeek()}
+function resetPeek(){clearInterval(pTimer);if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches)pTimer=setInterval(()=>goPeek(pIdx+1),4800)}
+pProg.classList.add('run');resetPeek();
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reducedMotion) {
-    setInterval(() => setPeekSlide((peekIndex + 1) % peekSlides.length), 4000);
-  }
+/* peek touch */
+let ptx=0,ptDrag=false;
+pTrack.parentElement.addEventListener('touchstart',e=>{ptx=e.touches[0].clientX;ptDrag=false},{passive:true});
+pTrack.parentElement.addEventListener('touchmove',e=>{if(Math.abs(e.touches[0].clientX-ptx)>8)ptDrag=true},{passive:true});
+pTrack.parentElement.addEventListener('touchend',e=>{if(ptDrag&&Math.abs(e.changedTouches[0].clientX-ptx)>40)peekNav(e.changedTouches[0].clientX<ptx?1:-1);ptDrag=false});
 
-  /* ── In-page tabs: smooth scroll + scroll-spy ── */
-  document.querySelectorAll('.tab-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
+/* SCROLL REVEAL */
+const revEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.parentElement&&true}});},{threshold:.1}).observe&&
+(() => {
+  const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});},{threshold:.1});
+  revEls.forEach(el=>obs.observe(el));
+})();
 
-  const tabSections = ['story', 'values', 'behind-the-scenes', 'journey'].map(id => document.getElementById(id));
-  const tabLinks = document.querySelectorAll('.tab-link');
-  const spyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        tabLinks.forEach(l => l.classList.remove('active'));
-        const match = document.querySelector(`.tab-link[href="#${entry.target.id}"]`);
-        if (match) match.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  tabSections.forEach(s => s && spyObserver.observe(s));
+/* TESTIMONIALS */
+const T_DATA=[
+  {name:'Rajesh Kumar',loc:'Delhi',init:'RK',avatar:'linear-gradient(135deg,#1d4ed8,#3b82f6)',bar:'linear-gradient(90deg,#1d4ed8,#3b82f6)',stars:5,cat:'Magnesium',prod:'Magnesium Complex 5-in-1',text:'The Magnesium Complex has genuinely improved my sleep quality. I used to wake up 3\u20134 times a night, now I sleep through. Highly recommend it!'},
+  {name:'Sunita Patel',loc:'Mumbai',init:'SP',avatar:'linear-gradient(135deg,#16a34a,#0d9488)',bar:'linear-gradient(90deg,#16a34a,#0d9488)',stars:5,cat:'Nattokinase',prod:'Nattokinase 200 mg',text:"I've tried many brands but Aiva's Nattokinase stands out. My doctor noticed improvement in my blood viscosity report within 3 months."},
+  {name:'Deepanshu Shukla',loc:'Delhi',init:'DS',avatar:'linear-gradient(135deg,#7c3aed,#1d4ed8)',bar:'linear-gradient(90deg,#7c3aed,#1d4ed8)',stars:5,cat:'Magnesium',prod:'Magnesium Complex',text:'What stood out was the transparency \u2014 the label actually matches what\u2019s inside. My sleep and muscle cramps have both improved significantly.'},
+  {name:'Priya Sharma',loc:'Pune',init:'PS',avatar:'linear-gradient(135deg,#db2777,#7c3aed)',bar:'linear-gradient(90deg,#db2777,#7c3aed)',stars:5,cat:'Vitamins',prod:"Women's Vitamins & Minerals",text:"Ordered the Women's Vitamins pack and delivery was super fast. The product is excellent \u2014 energy levels are noticeably better daily!"},
+  {name:'Manoj Rathi',loc:'Bengaluru',init:'MR',avatar:'linear-gradient(135deg,#0ea5e9,#1d4ed8)',bar:'linear-gradient(90deg,#0ea5e9,#1d4ed8)',stars:5,cat:'Immunity',prod:'Omega-3 Fish Oil',text:'Best Omega-3 in India at this price. No fish burps, easy to swallow, and my joint pain reduced significantly after just 6 weeks!'},
+  {name:'Tirthankar Purkayastha',loc:'Bengaluru',init:'TP',avatar:'linear-gradient(135deg,#16a34a,#0ea5e9)',bar:'linear-gradient(90deg,#16a34a,#0ea5e9)',stars:5,cat:'Immunity',prod:'Immunity Pack',text:'Good to see a small Indian brand actually getting their products lab tested. Ordered from Bengaluru and it reached in under a week.'},
+  {name:'Neha Kapoor',loc:'Jaipur',init:'NK',avatar:'linear-gradient(135deg,#d97706,#dc2626)',bar:'linear-gradient(90deg,#d97706,#dc2626)',stars:5,cat:'Vitamins',prod:'Vitamin D3 Supplement',text:'The Vitamin D3 is exactly what my doctor recommended. Pricing reasonable, quality top notch. Definitely ordering again!'},
+  {name:'Varun Sonagra',loc:'Pune',init:'VS',avatar:'linear-gradient(135deg,#1d4ed8,#7c3aed)',bar:'linear-gradient(90deg,#1d4ed8,#7c3aed)',stars:5,cat:'Vitamins',prod:'Vitamin D3 + Immunity Pack',text:'I recommend the Vitamin D3 + Immunity pack to clients at my gym. Honest pricing, no gimmicks, and customer support actually replies on WhatsApp.'},
+  {name:'Vikram Singh',loc:'Hyderabad',init:'VS',avatar:'linear-gradient(135deg,#f59e0b,#d97706)',bar:'linear-gradient(90deg,#f59e0b,#d97706)',stars:5,cat:'Protein',prod:'Whey Isolate Advanced',text:'Sleep quality improved dramatically, and I\u2019m recovering faster between workouts. Best supplement investment I\u2019ve made!'},
+];
+const PER_PAGE=3;let tFilter='all',tPage=0;
+function tFiltered(){return tFilter==='all'?T_DATA:T_DATA.filter(r=>r.cat===tFilter)}
+function tPages(){return Math.ceil(tFiltered().length/PER_PAGE)}
+function tStars(n){let o='';for(let i=1;i<=5;i++)o+=i<=n?'\u2605':'\u2606';return o;}
+function renderT(){
+  const f=tFiltered(),pages=tPages(),sl=f.slice(tPage*PER_PAGE,(tPage+1)*PER_PAGE);
+  const g=document.getElementById('tsGrid');
+  g.style.opacity='0';g.style.transform='translateY(10px)';
+  setTimeout(()=>{
+    g.innerHTML=sl.map(r=>`<div class="ts-card" style="--card-bar:${r.bar}"><div class="ts-quote-bg">"</div><div class="ts-card-stars">${tStars(r.stars)}</div><p class="ts-card-text">${r.text}</p><div class="ts-card-sep"></div><div class="ts-card-user"><div class="ts-card-avatar" style="background:${r.avatar}">${r.init}</div><div><div class="ts-card-name">${r.name}</div><div class="ts-card-loc">${r.loc}</div><div class="ts-card-product">${r.prod}</div></div></div><div class="ts-card-verified"><i class="fa-solid fa-circle-check"></i> Verified</div></div>`).join('');
+    document.getElementById('tsDots').innerHTML=Array.from({length:pages},(_,i)=>`<button class="ts-dot${i===tPage?' active':''}" onclick="tGo(${i})"></button>`).join('');
+    document.getElementById('tsPageInfo').textContent=`${tPage+1} / ${pages}`;
+    g.style.transition='opacity .4s ease,transform .4s ease';g.style.opacity='1';g.style.transform='translateY(0)';
+  },180);
+}
+function setTFilter(cat,btn){tFilter=cat;tPage=0;document.querySelectorAll('.ts-filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderT()}
+function tNav(d){tPage=(tPage+d+tPages())%tPages();renderT()}
+function tGo(i){tPage=i;renderT()}
+renderT();
 
-  /* ── Scroll reveal ── */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-</script>
+/* avg stars */
+document.getElementById('tsAvgStars').innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733;';
 
-<!-- Vercel Speed Insights -->
-<script type="module">
-  import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.0.10/dist/index.mjs';
-  injectSpeedInsights();
+/* rating bar animation */
+new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.ts-dist-fill').forEach(el=>setTimeout(()=>{el.style.width=el.dataset.w+'%'},100))}});},{threshold:.2}).observe(document.querySelector('.ts-rating-bar'));
 </script>
 </body>
 </html>

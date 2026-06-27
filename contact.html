@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <!-- Google Tag Manager -->
@@ -7,487 +7,1051 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-M4P9RQB9');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-  <title>Contact Us | Aiva Wellness</title>
-  <meta name="description" content="Contact Aiva Wellness for premium healthcare product inquiries, bulk orders, and customer support. We're here to help you on your wellness journey." />
-  <meta name="keywords" content="Aiva Wellness, contact, healthcare products, wellness support, supplements, customer support" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://aivawellness.com/contact.html" />
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+  <title>Contact Us | Aiva Wellness — Premium Healthcare & Wellness</title>
+  <meta name="description" content="Contact Aiva Wellness for premium healthcare product inquiries, bulk orders, and customer support. We're here to help you on your wellness journey."/>
+  <meta name="keywords" content="Aiva Wellness, contact, healthcare products, wellness support, supplements, customer support"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://aivawellness.com/contact.html"/>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <style>
-    /* ─── CSS VARIABLES (exact match from shop + product-details) ─── */
-    :root {
-      --blue: #1d4ed8;
-      --blue-light: #3b82f6;
-      --blue-soft: rgba(59,130,246,0.10);
-      --blue-border: rgba(59,130,246,0.25);
-      --black: #0d1117;
-      --ink: #1e293b;
-      --muted: #64748b;
-      --light: #f1f5f9;
-      --white: #ffffff;
-      --green: #16a34a;
-      --green-soft: #dcfce7;
-      --border: #e2e8f0;
-      --radius: 14px;
-      --radius-sm: 8px;
-      --shadow: 0 4px 24px rgba(13,17,23,0.07);
-      --shadow-lg: 0 16px 48px rgba(13,17,23,0.13);
-      --header-height: 68px;
-    }
+<style>
+/* ═══════════════════════════════════════════════════
+   RESET & TOKENS — exact match to index.html
+═══════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { overflow-x: hidden; width: 100%; font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--ink); }
-    body { padding-top: var(--header-height); }
+:root{
+  --blue:#1d4ed8;
+  --blue-light:#3b82f6;
+  --blue-pale:#dbeafe;
+  --blue-soft:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.22);
+  --accent:#60a5fa;
+  --black:#080d14;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --light:#f1f5f9;
+  --bg:#f8fafc;
+  --white:#ffffff;
+  --green:#16a34a;
+  --green-soft:#dcfce7;
+  --gold:#f59e0b;
+  --border:#e2e8f0;
+  --text:#1e293b;
+  --text-mid:#64748b;
+  --text-light:#94a3b8;
+  --r:16px;
+  --r-sm:10px;
+  --sh:0 4px 32px rgba(8,13,20,0.07);
+  --sh-lg:0 20px 60px rgba(8,13,20,0.14);
+  --sh-xl:0 32px 80px rgba(8,13,20,0.18);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t:.3s;
+}
 
-    /* ─── NAVBAR ─── */
-    .site-header {
-      position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 9999;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 8px rgba(13,17,23,0.06);
-    }
-    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: var(--header-height); }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand img { width: 46px; height: 46px; border-radius: 10px; }
-    .brand-name { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--black); }
-    .brand-name span { color: var(--blue); }
-    .brand-sub { font-size: 0.72rem; color: var(--muted); display: block; margin-top: 1px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
-    .nav-cta {
-      background: var(--blue); color: #fff; border: none; padding: 9px 22px;
-      border-radius: 999px; font-size: 0.88rem; font-weight: 600; cursor: pointer;
-      text-decoration: none; display: flex; align-items: center; gap: 7px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { background: #1e40af; transform: translateY(-1px); color: #fff; }
-    .hamburger { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px; cursor: pointer; }
-    .hamburger span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; border-radius: 2px; transition: 0.3s; }
+html{scroll-behavior:smooth;overflow-x:hidden;font-size:16px}
+body{
+  font-family:"Inter",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  padding-top:68px;
+}
+h1,h2,h3,h4,h5,h6{font-weight:600;line-height:1.2}
 
-    /* ─── MOBILE MENU ─── */
-    .mobile-menu {
-      position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0; z-index: 999;
-      background: rgba(13,17,23,0.7); backdrop-filter: blur(6px);
-      display: none; flex-direction: column;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-nav { background: #fff; padding: 20px; display: flex; flex-direction: column; gap: 4px; }
-    .mobile-nav a { padding: 12px 14px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; transition: background 0.2s; }
-    .mobile-nav a:hover { background: var(--light); }
-    .mobile-nav a.cta { background: var(--blue); color: #fff; text-align: center; margin-top: 8px; }
+/* PRELOADER */
+#preloader {
+  position: fixed; inset: 0;
+  background: linear-gradient(160deg, #0b1120 0%, #0f1a2e 60%, #0d1525 100%);
+  z-index: 9999; display: flex; align-items: center;
+  justify-content: center; flex-direction: column;
+  transition: opacity .6s ease, visibility .6s;
+}
+#preloader.hide { opacity: 0; visibility: hidden; pointer-events: none; }
 
-    /* ─── BREADCRUMB ─── */
-    .breadcrumb-bar { background: #fff; border-bottom: 1px solid var(--border); }
-    .breadcrumb-bar .inner { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; }
-    .breadcrumb-bar a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .breadcrumb-bar a:hover { color: var(--blue); }
-    .breadcrumb-bar .sep { color: var(--border); }
-    .breadcrumb-bar .current { color: var(--ink); font-weight: 500; }
+.pl-glow {
+  position: absolute; width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%,100% { opacity: .5; transform: scale(1); }
+  50%      { opacity: 1;  transform: scale(1.15); }
+}
 
-    /* ─── HERO BANNER ─── */
-    .contact-hero {
-      background: linear-gradient(135deg, #0d1117 0%, #1e3a5f 60%, #1d4ed8 100%);
-      padding: 64px 20px 56px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.25) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .contact-hero::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 20% 80%, rgba(29,78,216,0.2) 0%, transparent 55%);
-      pointer-events: none;
-    }
-    .contact-hero-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
-    .contact-hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(59,130,246,0.18); border: 1px solid rgba(59,130,246,0.35);
-      color: #93c5fd; font-size: 0.75rem; font-weight: 600; padding: 5px 14px;
-      border-radius: 999px; margin-bottom: 20px; letter-spacing: 0.06em; text-transform: uppercase;
-    }
-    .contact-hero h1 { font-family: 'Sora', sans-serif; font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.15; }
-    .contact-hero h1 span { color: #60a5fa; }
-    .contact-hero p { color: rgba(255,255,255,0.68); font-size: 1.02rem; line-height: 1.65; margin-bottom: 0; max-width: 480px; margin: 0 auto; }
-    .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 44px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .hero-stat { text-align: center; }
-    .hero-stat-num { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: #fff; }
-    .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 3px; }
+.pl-card {
+  position: relative;
+  background: rgba(236,252,228,0.95);
+  border-radius: 24px;
+  padding: 40px 48px 36px;
+  display: flex; flex-direction: column; align-items: center;
+  box-shadow:
+    0 0 0 0.5px rgba(164,230,134,0.3),
+    0 4px 6px rgba(14,57,16,0.15),
+    0 24px 48px rgba(14,57,16,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+  animation: cardIn .7s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+.pl-card::before, .pl-card::after {
+  content: ''; position: absolute;
+  width: 20px; height: 20px;
+  border-color: #16a34a; border-style: solid; opacity: .25;
+}
+.pl-card::before { top:14px; left:14px; border-width: 1.5px 0 0 1.5px; border-radius: 4px 0 0 0; }
+.pl-card::after  { bottom:14px; right:14px; border-width: 0 1.5px 1.5px 0; border-radius: 0 0 4px 0; }
+@keyframes cardIn {
+  from { opacity:0; transform: translateY(20px) scale(0.95); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
+}
 
-    /* ─── MAIN PAGE WRAP ─── */
-    .page-wrap { max-width: 1280px; margin: 0 auto; padding: 52px 20px 72px; }
+.pl-logo-img {
+  width: 72px; height: 72px; object-fit: contain;
+  animation: logoIn .6s cubic-bezier(0.34,1.56,0.64,1) .2s both;
+}
+@keyframes logoIn {
+  from { opacity:0; transform: scale(0.7); }
+  to   { opacity:1; transform: scale(1); }
+}
 
-    /* ─── CONTACT GRID (2-col layout) ─── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 36px;
-      align-items: start;
-    }
+.pl-divider {
+  width:100%; height:.5px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+  margin: 20px 0 18px;
+}
 
-    /* ─── LEFT: INFO CARDS COLUMN ─── */
-    .info-col { display: flex; flex-direction: column; gap: 16px; }
+.pl-brand { font-family:'Sora',sans-serif; font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:4px; }
+.pl-brand span { color: #1d4ed8; }
+.pl-tagline  { font-size:.7rem; font-weight:600; letter-spacing:.18em; color:#94a3b8; text-transform:uppercase; margin-bottom:24px; }
 
-    /* Quick Contact Card */
-    .info-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 28px; box-shadow: var(--shadow); transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .info-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-    .info-card-title {
-      font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--black);
-      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
-    }
-    .info-card-title i { color: var(--blue); font-size: 1rem; }
+.pl-bar-wrap { width:100%; display:flex; flex-direction:column; gap:8px; }
+.pl-bar      { width:100%; height:2px; background:rgba(0,0,0,0.06); border-radius:2px; overflow:hidden; }
+.pl-fill     {
+  height:100%;
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6, #60a5fa);
+  border-radius:2px;
+  animation: plBar 1.8s cubic-bezier(0.25,1,0.5,1) .4s both;
+}
+@keyframes plBar { from{width:0} to{width:100%} }
 
-    .contact-item {
-      display: flex; align-items: flex-start; gap: 14px; padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .contact-item:first-of-type { padding-top: 0; }
-    .ci-icon {
-      width: 40px; height: 40px; background: var(--blue-soft); border: 1px solid var(--blue-border);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center;
-      color: var(--blue); font-size: 15px; flex-shrink: 0; transition: all 0.2s;
-    }
-    .contact-item:hover .ci-icon { background: var(--blue); color: #fff; }
-    .ci-body { flex: 1; min-width: 0; }
-    .ci-label { font-size: 0.72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-    .ci-value { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
-    .ci-value a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
-    .ci-value a:hover { color: var(--blue); }
-    .ci-sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+.pl-status      { display:flex; justify-content:space-between; align-items:center; }
+.pl-status-text { font-size:11px; color:#94a3b8; letter-spacing:.04em; }
+.pl-dots        { display:flex; gap:4px; }
+.pl-dots span   { width:4px; height:4px; border-radius:50%; background:#3b82f6; opacity:.3; animation:dotPulse 1.2s ease-in-out infinite; }
+.pl-dots span:nth-child(2) { animation-delay:.2s; }
+.pl-dots span:nth-child(3) { animation-delay:.4s; }
+@keyframes dotPulse { 0%,100%{opacity:.25} 50%{opacity:1} }
 
-    /* WhatsApp CTA card */
-    .whatsapp-card {
-      background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
-      border: 1px solid rgba(16,185,129,0.2);
-      border-radius: var(--radius); padding: 24px 28px;
-      display: flex; align-items: center; gap: 18px;
-      text-decoration: none; transition: transform 0.25s, box-shadow 0.25s;
-      box-shadow: 0 4px 20px rgba(6,78,59,0.25);
-    }
-    .whatsapp-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(6,78,59,0.35); }
-    .wa-icon {
-      width: 52px; height: 52px; background: rgba(255,255,255,0.15);
-      border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 26px; color: #fff; flex-shrink: 0;
-    }
-    .wa-body { flex: 1; }
-    .wa-label { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
-    .wa-title { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 3px; }
-    .wa-sub { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
-    .wa-arrow { color: rgba(255,255,255,0.5); font-size: 18px; }
+/* ═══════════════════════════════════════════════════
+   ANNOUNCEMENT BAR
+═══════════════════════════════════════════════════ */
+.ann-bar{
+  background:linear-gradient(90deg,#1e3a8a 0%,#1d4ed8 50%,#1e3a8a 100%);
+  color:#fff;font-size:.72rem;letter-spacing:.06em;
+  padding:9px 0;overflow:hidden;white-space:nowrap;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.ann-bar-track{
+  display:inline-flex;animation:marquee 32s linear infinite;
+  gap:80px;will-change:transform;
+}
+.ann-bar-track:hover{animation-play-state:paused}
+.ann-bar-track span{display:inline-flex;align-items:center;gap:8px}
+.ann-bar-track .sep{opacity:.4}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    /* Business hours card */
-    .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; }
-    .hours-row:last-child { border-bottom: none; }
-    .hours-day { color: var(--ink); font-weight: 500; }
-    .hours-time { color: var(--muted); }
-    .hours-open { color: var(--green); font-weight: 600; }
-    .hours-closed { color: #ef4444; font-weight: 600; }
-    .live-dot { display: inline-block; width: 7px; height: 7px; background: var(--green); border-radius: 50%; margin-right: 5px; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+/* ═══════════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════════ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:1200;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(20px) saturate(1.8);
+  -webkit-backdrop-filter:blur(20px) saturate(1.8);
+  border-bottom:1px solid rgba(226,232,240,.6);
+  transition:all .4s var(--ease);
+}
+.site-header.scrolled{
+  background:rgba(255,255,255,.98);
+  box-shadow:0 4px 32px rgba(8,13,20,.09);
+  border-bottom-color:var(--border);
+}
+.nav-inner{
+  max-width:1320px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;height:68px;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand-mark{width:54px;height:54px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 44px rgba(14,91,255,.12);border:1px solid rgba(14,91,255,.12);flex-shrink:0;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;overflow:hidden;}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block;}
+.brand:hover .brand-mark{transform:none;box-shadow:0 14px 44px rgba(14,91,255,.12);border-color:rgba(14,91,255,.12)}
+.brand-name{font-family:"Sora",sans-serif;font-size:1.12rem;font-weight:800;color:var(--black);display:block;white-space:nowrap;letter-spacing:-.01em}
+.brand-name span{color:var(--blue)}
+.brand-sub{display:block;font-size:.68rem;color:var(--muted);margin-top:1px;white-space:nowrap;letter-spacing:.02em}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--muted);font-size:.84rem;font-weight:500;
+  padding:6px 14px;border-radius:8px;
+  transition:color .2s,background .2s;position:relative;
+}
+.nav-links a:hover{color:var(--blue);background:var(--blue-soft)}
+.nav-links a.active{color:var(--blue);background:var(--blue-soft);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-cta{
+  background:linear-gradient(135deg,#1d4ed8,#2563eb);
+  color:#fff;border-radius:999px;padding:9px 22px;
+  font-size:.82rem;font-weight:600;text-decoration:none;
+  display:flex;align-items:center;gap:7px;white-space:nowrap;
+  border:none;cursor:pointer;
+  box-shadow:0 4px 16px rgba(29,78,216,.3);
+  transition:all .25s var(--ease);
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(29,78,216,.4);color:#fff;background:linear-gradient(135deg,#1e40af,#1d4ed8)}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;
+  cursor:pointer;padding:9px;background:none;
+  border:1px solid var(--border);border-radius:10px;
+  flex-shrink:0;transition:border-color .2s;
+}
+.hamburger:hover{border-color:var(--blue)}
+.hamburger span{width:20px;height:2px;background:var(--ink);display:block;transition:all .35s var(--ease);border-radius:2px}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:rgba(8,13,20,.65);backdrop-filter:blur(8px);z-index:1000;
+}
+.mobile-menu.open{display:block}
+.mobile-nav-panel{
+  background:var(--white);padding:12px;
+  display:flex;flex-direction:column;gap:2px;
+  box-shadow:var(--sh-xl);
+  border-bottom-left-radius:20px;border-bottom-right-radius:20px;
+}
+.mobile-nav-panel a{
+  padding:14px 16px;border-radius:10px;font-weight:600;
+  font-size:.95rem;color:var(--ink);text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.mobile-nav-panel a:hover{background:var(--light);color:var(--blue)}
+.mobile-nav-panel .m-cta{
+  background:linear-gradient(135deg,#1d4ed8,#2563eb);
+  color:#fff;text-align:center;margin-top:6px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.mobile-nav-panel .m-cta:hover{background:linear-gradient(135deg,#1e40af,#1d4ed8);color:#fff}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+}
 
-    /* ─── RIGHT: CONTACT FORM CARD ─── */
-    .form-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      box-shadow: var(--shadow-lg); overflow: hidden;
-    }
-    .form-card-head {
-      background: linear-gradient(135deg, #0d1117 0%, #1e3a5f 60%, #1d4ed8 100%);
-      padding: 28px 32px;
-      position: relative; overflow: hidden;
-    }
-    .form-card-head::after {
-      content: '';
-      position: absolute; top: -40px; right: -40px;
-      width: 180px; height: 180px;
-      background: rgba(59,130,246,0.18); border-radius: 50%;
-    }
-    .form-card-head h2 {
-      font-family: 'Sora', sans-serif; font-size: 1.45rem; font-weight: 800; color: #fff;
-      margin-bottom: 6px; position: relative; z-index: 1;
-    }
-    .form-card-head p { font-size: 0.85rem; color: rgba(255,255,255,0.62); position: relative; z-index: 1; }
-    .form-card-body { padding: 32px; }
+/* ═══════════════════════════════════════════════════
+   BREADCRUMB
+═══════════════════════════════════════════════════ */
+.breadcrumb-bar{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:0;
+}
+.breadcrumb-inner{
+  max-width:1320px;margin:0 auto;
+  padding:11px 24px;
+  display:flex;align-items:center;gap:6px;
+  font-size:.78rem;
+}
+.breadcrumb-bar a{color:var(--muted);text-decoration:none;transition:color .2s}
+.breadcrumb-bar a:hover{color:var(--blue)}
+.breadcrumb-sep{color:var(--text-light)}
+.breadcrumb-current{color:var(--ink);font-weight:600}
 
-    /* Form fields */
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group:last-child { margin-bottom: 0; }
-    .form-label {
-      display: block; font-size: 0.8rem; font-weight: 600; color: var(--ink);
-      margin-bottom: 7px; letter-spacing: 0.03em;
-    }
-    .form-label .req { color: var(--blue); }
-    .form-control-custom {
-      width: 100%; padding: 12px 16px; font-size: 0.88rem; font-family: 'Inter', sans-serif;
-      color: var(--ink); background: var(--light); border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm); outline: none; transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-    }
-    .form-control-custom:focus { border-color: var(--blue); background: #fff; box-shadow: 0 0 0 3px var(--blue-soft); }
-    .form-control-custom::placeholder { color: #94a3b8; }
-    textarea.form-control-custom { resize: vertical; min-height: 130px; }
-    select.form-control-custom { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 10px; padding-right: 38px; background-color: var(--light); }
+/* ═══════════════════════════════════════════════════
+   HERO — cinematic dark, matching index.html language
+═══════════════════════════════════════════════════ */
+.contact-hero{
+  background:var(--black);
+  position:relative;overflow:hidden;
+  padding:84px 24px 80px;
+}
+/* ambient glow blobs */
+.contact-hero::before{
+  content:"";position:absolute;top:-120px;right:-100px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(29,78,216,.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.contact-hero::after{
+  content:"";position:absolute;bottom:-100px;left:-80px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(59,130,246,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+/* dot grid texture */
+.hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:36px 36px;
+  pointer-events:none;
+}
+.contact-hero-inner{
+  max-width:700px;margin:0 auto;
+  text-align:center;position:relative;z-index:2;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);font-weight:700;margin-bottom:20px;
+  padding:6px 16px;
+  background:rgba(255,255,255,.06);
+  border-radius:999px;border:1px solid rgba(255,255,255,.12);
+}
+.hero-eyebrow i{color:var(--accent)}
+.contact-hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(32px,5.5vw,68px);font-weight:600;
+  color:#fff;line-height:1.1;margin-bottom:20px;
+  text-shadow:0 2px 40px rgba(0,0,0,.4);
+}
+.contact-hero h1 em{
+  font-style:italic;
+  background:linear-gradient(135deg,#60a5fa,#93c5fd);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.contact-hero p{
+  font-size:.96rem;color:rgba(255,255,255,.68);
+  line-height:1.8;max-width:520px;margin:0 auto 44px;
+}
+/* stat pills */
+.hero-stats-row{
+  display:flex;align-items:stretch;justify-content:center;
+  gap:1px;flex-wrap:wrap;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;overflow:hidden;
+  max-width:560px;margin:0 auto;
+}
+.hero-stat{
+  flex:1;min-width:110px;
+  padding:20px 16px;text-align:center;
+  transition:background .3s;cursor:default;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.hero-stat:last-child{border-right:none}
+.hero-stat:hover{background:rgba(255,255,255,.06)}
+.hero-stat-num{
+  font-family:"Sora",sans-serif;font-size:1.4rem;font-weight:800;color:#fff;
+}
+.hero-stat-label{
+  font-size:.68rem;color:rgba(255,255,255,.48);
+  margin-top:4px;letter-spacing:.04em;font-weight:500;
+}
+/* bottom fade into bg */
+.hero-fade{
+  position:absolute;bottom:0;left:0;right:0;height:80px;
+  background:linear-gradient(to bottom,transparent,var(--bg));
+  z-index:3;pointer-events:none;
+}
 
-    /* Subject chips */
-    .subject-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .subject-chip {
-      padding: 6px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 600;
-      border: 1.5px solid var(--border); background: var(--light); color: var(--muted);
-      cursor: pointer; transition: all 0.2s; user-select: none;
-    }
-    .subject-chip:hover { border-color: var(--blue-border); color: var(--blue); background: var(--blue-soft); }
-    .subject-chip.active { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); }
+/* ═══════════════════════════════════════════════════
+   SECTION UTIL
+═══════════════════════════════════════════════════ */
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--blue);font-weight:700;margin-bottom:14px;
+  padding:5px 14px;background:var(--blue-soft);
+  border-radius:999px;border:1px solid var(--blue-border);
+}
 
-    /* Submit button */
-    .btn-submit {
-      width: 100%; padding: 15px 28px; background: linear-gradient(135deg, #0f172a, #2563eb);
-      color: #fff; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 700;
-      font-family: 'Inter', sans-serif; cursor: pointer; display: flex; align-items: center;
-      justify-content: center; gap: 10px; transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
-      letter-spacing: 0.02em;
-    }
-    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(37,99,235,0.22); background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
-    .btn-submit:active { transform: translateY(0); }
-    .form-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 14px; line-height: 1.6; }
+/* ═══════════════════════════════════════════════════
+   MAIN PAGE WRAP
+═══════════════════════════════════════════════════ */
+.page-wrap{
+  max-width:1320px;margin:0 auto;
+  padding:72px 24px 96px;
+}
 
-    /* ─── MAP SECTION ─── */
-    .map-section { margin-top: 52px; }
-    .map-section-title {
-      font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--black);
-      margin-bottom: 8px;
-    }
-    .map-section-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 24px; }
-    .map-wrap {
-      border-radius: var(--radius); overflow: hidden;
-      border: 1px solid var(--border); box-shadow: var(--shadow);
-      height: 380px;
-    }
-    .map-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
+/* ═══════════════════════════════════════════════════
+   CONTACT GRID — asymmetric 2-col
+═══════════════════════════════════════════════════ */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1.45fr;
+  gap:32px;align-items:start;
+}
+@media(max-width:960px){.contact-grid{grid-template-columns:1fr}}
 
-    /* ─── TRUST STRIP ─── */
-    .trust-section { margin-top: 52px; }
-    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .trust-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 22px 20px; text-align: center; transition: box-shadow 0.3s, transform 0.3s;
-      box-shadow: var(--shadow);
-    }
-    .trust-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .trust-icon-wrap {
-      width: 52px; height: 52px; margin: 0 auto 14px;
-      background: var(--blue-soft); border: 1px solid var(--blue-border);
-      border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 22px; color: var(--blue); transition: all 0.2s;
-    }
-    .trust-card:hover .trust-icon-wrap { background: var(--blue); color: #fff; }
-    .trust-card-title { font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
-    .trust-card-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+/* ═══════════════════════════════════════════════════
+   LEFT — INFO COLUMN
+═══════════════════════════════════════════════════ */
+.info-col{display:flex;flex-direction:column;gap:18px}
 
-    /* ─── FAQ SECTION ─── */
-    .faq-section { margin-top: 60px; }
-    .section-heading { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--black); margin-bottom: 6px; }
-    .section-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 32px; }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .faq-item {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; box-shadow: var(--shadow);
-    }
-    .faq-question {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 22px; cursor: pointer; font-size: 0.88rem; font-weight: 600;
-      color: var(--ink); user-select: none; transition: background 0.2s; gap: 12px;
-    }
-    .faq-question:hover { background: var(--light); }
-    .faq-question.active { color: var(--blue); background: var(--blue-soft); }
-    .faq-chevron { font-size: 12px; color: var(--muted); transition: transform 0.25s; flex-shrink: 0; }
-    .faq-question.active .faq-chevron { transform: rotate(180deg); color: var(--blue); }
-    .faq-answer { display: none; padding: 0 22px 18px; font-size: 0.84rem; color: var(--muted); line-height: 1.7; border-top: 1px solid var(--border); }
-    .faq-answer.open { display: block; }
+/* ─ Quick Contact Card ─ */
+.info-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px;
+  box-shadow:var(--sh);
+  transition:box-shadow .4s var(--ease),transform .4s var(--ease),border-color .3s;
+  position:relative;overflow:hidden;
+}
+.info-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-light));
+  border-radius:20px 20px 0 0;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease);
+}
+.info-card:hover{
+  box-shadow:0 24px 64px rgba(8,13,20,.14);
+  transform:translateY(-5px);border-color:var(--blue-border);
+}
+.info-card:hover::before{transform:scaleX(1)}
+.info-card-title{
+  font-family:"Sora",sans-serif;font-size:.92rem;font-weight:800;
+  color:var(--black);margin-bottom:22px;
+  display:flex;align-items:center;gap:10px;
+}
+.info-card-title i{
+  width:32px;height:32px;background:var(--blue-soft);border:1px solid var(--blue-border);
+  border-radius:9px;display:flex;align-items:center;justify-content:center;
+  color:var(--blue);font-size:13px;flex-shrink:0;
+}
 
-    /* ─── FOOTER ─── */
-    footer { background: #0d1117; color: #94a3b8; padding: 56px 20px 28px; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .footer-brand span { color: var(--blue-light); }
-    .footer-desc { font-size: 0.85rem; line-height: 1.7; margin-bottom: 16px; }
-    .footer-social { display: flex; gap: 10px; }
-    .social-btn { width: 36px; height: 36px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 14px; transition: all 0.2s; }
-    .social-btn:hover { background: var(--blue); color: #fff; }
-    .footer-col h6 { font-size: 0.82rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: #fff; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; margin-bottom: 10px; }
-    .footer-contact-item i { color: var(--blue-light); margin-top: 2px; flex-shrink: 0; }
-    .footer-contact-item a { color: #94a3b8; text-decoration: none; }
-    .footer-contact-item a:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem; }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-links a { color: #64748b; text-decoration: none; }
-    .footer-bottom-links a:hover { color: #fff; }
+/* contact items inside card */
+.contact-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  transition:transform .25s var(--ease);
+}
+.contact-item:last-child{border-bottom:none;padding-bottom:0}
+.contact-item:first-of-type{padding-top:0}
+.contact-item:hover{transform:translateX(4px)}
+.ci-icon{
+  width:44px;height:44px;
+  background:var(--blue-soft);border:1px solid var(--blue-border);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--blue);font-size:16px;flex-shrink:0;
+  transition:all .3s var(--ease);
+}
+.contact-item:hover .ci-icon{
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  color:#fff;border-color:transparent;
+  box-shadow:0 6px 18px rgba(29,78,216,.25);
+}
+.ci-body{flex:1;min-width:0}
+.ci-label{
+  font-size:.68rem;font-weight:700;color:var(--text-light);
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;
+}
+.ci-value{font-size:.9rem;font-weight:600;color:var(--black)}
+.ci-value a{color:var(--black);text-decoration:none;transition:color .2s}
+.ci-value a:hover{color:var(--blue)}
+.ci-sub{font-size:.75rem;color:var(--muted);margin-top:2px;line-height:1.5}
 
-    /* ─── TOAST ─── */
-    .toast-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
-    .toast {
-      background: #0d1117; color: #fff; padding: 12px 20px; border-radius: 10px;
-      font-size: 0.88rem; font-weight: 600; box-shadow: var(--shadow-lg);
-      display: flex; align-items: center; gap: 10px; pointer-events: auto;
-      transform: translateX(120%); transition: transform 0.35s ease;
-    }
-    .toast.show { transform: translateX(0); }
+/* ─ WhatsApp CTA card ─ */
+.whatsapp-card{
+  background:linear-gradient(135deg,#052e16 0%,#064e3b 60%,#065f46 100%);
+  border:1px solid rgba(16,185,129,.18);
+  border-radius:20px;padding:22px 26px;
+  display:flex;align-items:center;gap:18px;
+  text-decoration:none;
+  transition:transform .3s var(--ease),box-shadow .3s;
+  box-shadow:0 4px 24px rgba(5,46,22,.3);
+  position:relative;overflow:hidden;
+}
+.whatsapp-card::after{
+  content:"";position:absolute;top:-60px;right:-60px;
+  width:180px;height:180px;border-radius:50%;
+  background:rgba(16,185,129,.08);pointer-events:none;
+}
+.whatsapp-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 48px rgba(5,46,22,.45);
+}
+.wa-icon{
+  width:54px;height:54px;
+  background:rgba(255,255,255,.12);border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;color:#fff;flex-shrink:0;
+  transition:transform .3s var(--ease);
+  border:1px solid rgba(255,255,255,.1);
+}
+.whatsapp-card:hover .wa-icon{transform:scale(1.1) rotate(-5deg)}
+.wa-body{flex:1}
+.wa-label{font-size:.66rem;font-weight:700;color:rgba(255,255,255,.52);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.wa-title{font-family:"Sora",sans-serif;font-size:1rem;font-weight:800;color:#fff;margin-bottom:3px}
+.wa-sub{font-size:.76rem;color:rgba(255,255,255,.55)}
+.wa-arrow{
+  width:36px;height:36px;background:rgba(255,255,255,.1);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.6);font-size:14px;flex-shrink:0;
+  transition:background .3s,transform .3s,color .3s;
+}
+.whatsapp-card:hover .wa-arrow{background:rgba(255,255,255,.2);color:#fff;transform:translateX(3px)}
 
-    /* ─── WHATSAPP FLOAT ─── */
-    .whatsapp-float {
-      position: fixed; bottom: 28px; right: 24px; z-index: 9998;
-      width: 52px; height: 52px; background: #25d366;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 24px; color: #fff; cursor: pointer; box-shadow: 0 4px 18px rgba(37,211,102,0.45);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.55); }
-    .whatsapp-float-tooltip {
-      position: absolute; right: 62px; top: 50%; transform: translateY(-50%);
-      background: #0d1117; color: #fff; font-size: 0.75rem; font-weight: 600;
-      padding: 5px 12px; border-radius: 8px; white-space: nowrap; pointer-events: none;
-      opacity: 0; transition: opacity 0.2s;
-    }
-    .whatsapp-float:hover .whatsapp-float-tooltip { opacity: 1; }
+/* ─ Business hours card ─ */
+.hours-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:20px;padding:24px 28px;
+  box-shadow:var(--sh);
+  transition:box-shadow .4s var(--ease),transform .4s,border-color .3s;
+}
+.hours-card:hover{
+  box-shadow:0 24px 64px rgba(8,13,20,.11);
+  transform:translateY(-4px);border-color:var(--blue-border);
+}
+.hours-title{
+  font-family:"Sora",sans-serif;font-size:.88rem;font-weight:800;
+  color:var(--black);margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
+}
+.hours-title i{
+  width:32px;height:32px;background:var(--blue-soft);border:1px solid var(--blue-border);
+  border-radius:9px;display:flex;align-items:center;justify-content:center;
+  color:var(--blue);font-size:13px;flex-shrink:0;
+}
+.live-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:.66rem;font-weight:700;color:var(--green);
+  background:var(--green-soft);padding:3px 10px;border-radius:999px;
+  margin-left:auto;border:1px solid rgba(22,163,74,.2);
+}
+.live-dot{
+  width:6px;height:6px;background:var(--green);border-radius:50%;
+  animation:livePulse 2s infinite;
+}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.hours-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 0;border-bottom:1px solid var(--border);
+  font-size:.84rem;
+}
+.hours-row:last-child{border-bottom:none;padding-bottom:0}
+.hours-day{color:var(--ink);font-weight:500}
+.hours-open{color:var(--green);font-weight:700}
+.hours-closed{color:#ef4444;font-weight:700}
 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .trust-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; flex-direction: column; }
-      .contact-hero h1 { font-size: 2rem; }
-      .hero-stats { gap: 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer-top {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 24px;
-      }
-      .footer-top > div { width: 100%; max-width: 420px; }
-      .footer-brand, .footer-social { display: flex; justify-content: center; align-items: center; gap: 10px; }
-      .footer-col { width: 100%; display: flex; flex-direction: column; align-items: center; }
-      .footer-col h6 { text-align: center; }
-      .footer-col ul { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0; margin: 0; }
-      .footer-col ul li { width: auto; }
-      .footer-contact-item { justify-content: center; text-align: center; }
-      .footer-contact-item i { margin-top: 0; }
-      .footer-contact-item a, .footer-contact-item span { display: inline-block; }
-      .footer-bottom { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
-      .footer-bottom-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-      .info-card-title { justify-content: center; text-align: center; }
-      .form-card-head h2, .form-card-head p,
-      .map-section-title, .map-section-sub,
-      .section-heading, .section-sub {
-        text-align: center;
-      }
-    }
-    @media (max-width: 480px) {
-      .contact-hero { padding: 44px 16px 40px; }
-      .contact-hero h1 { font-size: 1.7rem; }
-      .hero-stats { flex-wrap: wrap; gap: 20px; }
-      .page-wrap { padding: 32px 14px 52px; }
-      .form-card-body { padding: 22px 18px; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .info-card { padding: 20px; }
-      .footer-top { gap: 20px; }
-      .footer-col ul { width: 100%; }
-      .footer-col ul li { width: auto; }
-    }
-  </style>
+/* ═══════════════════════════════════════════════════
+   RIGHT — CONTACT FORM CARD
+═══════════════════════════════════════════════════ */
+.form-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:24px;
+  box-shadow:var(--sh-xl);
+  overflow:hidden;
+  transition:box-shadow .4s;
+}
+.form-card:hover{box-shadow:0 40px 100px rgba(8,13,20,.16)}
+
+.form-card-head{
+  background:linear-gradient(135deg,#080d14 0%,#0f1e3a 50%,#1d4ed8 100%);
+  padding:36px 38px;
+  position:relative;overflow:hidden;
+}
+.form-card-head::before{
+  content:"";position:absolute;top:-80px;right:-80px;
+  width:280px;height:280px;border-radius:50%;
+  background:rgba(59,130,246,.12);pointer-events:none;
+}
+.form-card-head::after{
+  content:"";position:absolute;bottom:-60px;left:-40px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(255,255,255,.03);pointer-events:none;
+}
+.form-head-eyebrow{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);font-weight:700;margin-bottom:14px;
+  padding:4px 12px;
+  background:rgba(255,255,255,.07);
+  border-radius:999px;border:1px solid rgba(255,255,255,.1);
+  position:relative;z-index:1;
+}
+.form-card-head h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(22px,3vw,34px);font-weight:600;color:#fff;
+  margin-bottom:8px;line-height:1.2;
+  position:relative;z-index:1;
+}
+.form-card-head p{
+  font-size:.84rem;color:rgba(255,255,255,.58);
+  line-height:1.75;
+  position:relative;z-index:1;
+  max-width:380px;
+}
+/* form head trust pills row */
+.form-trust-pills{
+  display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;
+  position:relative;z-index:1;
+}
+.form-trust-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:.68rem;font-weight:600;color:rgba(255,255,255,.72);
+  padding:4px 12px;border-radius:999px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+}
+.form-trust-pill i{font-size:10px;color:var(--accent)}
+
+.form-card-body{padding:36px 38px}
+
+/* ─ subject chips ─ */
+.subject-chips-label{
+  font-size:.76rem;font-weight:700;color:var(--ink);
+  letter-spacing:.04em;margin-bottom:10px;display:block;
+}
+.subject-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.subject-chip{
+  padding:7px 16px;border-radius:999px;
+  font-size:.76rem;font-weight:600;
+  border:1.5px solid var(--border);background:var(--light);color:var(--muted);
+  cursor:pointer;transition:all .25s var(--ease);user-select:none;
+  display:flex;align-items:center;gap:6px;
+}
+.subject-chip:hover{border-color:var(--blue-border);color:var(--blue);background:var(--blue-soft)}
+.subject-chip.active{
+  border-color:var(--blue);color:var(--blue);background:var(--blue-soft);
+  box-shadow:0 4px 14px rgba(29,78,216,.15);
+}
+
+/* ─ form fields ─ */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:20px}
+.form-group:last-of-type{margin-bottom:0}
+.form-label{
+  display:block;font-size:.78rem;font-weight:600;
+  color:var(--ink);margin-bottom:7px;letter-spacing:.02em;
+}
+.form-label .req{color:var(--blue)}
+.form-ctrl{
+  width:100%;padding:13px 16px;
+  font-size:.87rem;font-family:"Inter",sans-serif;
+  color:var(--ink);background:var(--light);
+  border:1.5px solid var(--border);
+  border-radius:12px;outline:none;
+  transition:border-color .25s,background .25s,box-shadow .25s;
+}
+.form-ctrl:focus{
+  border-color:var(--blue);background:#fff;
+  box-shadow:0 0 0 4px var(--blue-soft);
+}
+.form-ctrl::placeholder{color:var(--text-light)}
+textarea.form-ctrl{resize:vertical;min-height:138px;line-height:1.7}
+select.form-ctrl{
+  cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  background-size:10px;padding-right:40px;
+  background-color:var(--light);
+}
+.form-ctrl.error{border-color:#ef4444;background:#fff5f5}
+.form-ctrl.error:focus{box-shadow:0 0 0 4px rgba(239,68,68,.12)}
+
+/* field validation hint */
+.field-hint{
+  font-size:.7rem;color:var(--text-light);margin-top:5px;
+  display:flex;align-items:center;gap:5px;
+}
+.field-hint.err{color:#ef4444}
+.field-hint i{font-size:10px}
+
+/* ─ submit btn ─ */
+.btn-submit{
+  width:100%;background:linear-gradient(135deg,var(--black),#1e293b);
+  color:#fff;border:none;padding:15px 28px;
+  font-size:.84rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  font-family:"Inter",sans-serif;cursor:pointer;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:all .3s var(--ease);margin-top:24px;
+  position:relative;overflow:hidden;
+}
+.btn-submit::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--blue),#1e40af);
+  opacity:0;transition:opacity .3s;
+}
+.btn-submit:hover::before{opacity:1}
+.btn-submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px rgba(29,78,216,.32);
+}
+.btn-submit:active{transform:translateY(0)}
+.btn-submit>*{position:relative;z-index:1}
+.btn-submit .btn-icon{transition:transform .3s var(--ease)}
+.btn-submit:hover .btn-icon{transform:translateX(3px)}
+.form-note{
+  font-size:.72rem;color:var(--text-light);
+  text-align:center;margin-top:14px;line-height:1.65;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.form-note i{color:var(--green);font-size:11px}
+
+/* ═══════════════════════════════════════════════════
+   MAP SECTION
+═══════════════════════════════════════════════════ */
+.map-section{margin-top:80px}
+.map-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;margin-bottom:28px;
+}
+.map-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(24px,3.5vw,38px);font-weight:600;color:var(--black);
+  margin-bottom:6px;
+}
+.map-sub{font-size:.86rem;color:var(--muted);line-height:1.7}
+.map-address-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:500;color:var(--ink);
+  padding:10px 18px;background:var(--white);
+  border:1px solid var(--border);border-radius:999px;
+  box-shadow:var(--sh);white-space:nowrap;
+}
+.map-address-pill i{color:var(--blue)}
+.map-wrap{
+  border-radius:20px;overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:var(--sh-lg);height:420px;
+  position:relative;
+}
+.map-wrap iframe{width:100%;height:100%;display:block;border:0}
+
+/* ═══════════════════════════════════════════════════
+   FAQ SECTION — exact match to index style
+═══════════════════════════════════════════════════ */
+.faq-section{
+  background:linear-gradient(180deg,#f0f8ff 0%,#e8f4fd 100%);
+  padding:80px 24px;width:100%;
+  margin-top:80px;
+  border-radius:28px;
+}
+.faq-section-inner{max-width:800px;margin:0 auto}
+.faq-section-header{text-align:center;margin-bottom:48px}
+.faq-section-header h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(26px,3.5vw,44px);font-weight:600;
+  color:var(--black);margin-bottom:10px;margin-top:12px;
+}
+.faq-section-header p{font-size:.88rem;color:var(--muted);max-width:460px;margin:0 auto;line-height:1.8}
+.faq-item{
+  border:1px solid rgba(15,23,42,.07);background:#fff;
+  border-radius:18px;margin-bottom:14px;overflow:hidden;
+  box-shadow:0 8px 28px rgba(15,23,42,.04);
+  transition:box-shadow .3s,border-color .3s;
+}
+.faq-item:hover{box-shadow:0 16px 48px rgba(29,78,216,.08);border-color:var(--blue-border)}
+.faq-q{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;padding:20px 24px;cursor:pointer;
+  font-size:.9rem;font-weight:600;color:var(--text);
+  gap:16px;transition:color .25s,background .25s;user-select:none;
+}
+.faq-q:hover{color:var(--blue);background:var(--blue-soft)}
+.faq-icon{
+  width:32px;height:32px;flex-shrink:0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--blue-soft);color:var(--blue);
+  transition:all .3s var(--ease);border:1px solid var(--blue-border);
+}
+.faq-icon i{font-size:13px;transition:transform .35s var(--ease)}
+.faq-item.open .faq-q{color:var(--blue);background:var(--blue-soft)}
+.faq-item.open .faq-icon{
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  color:#fff;border-color:transparent;
+  box-shadow:0 4px 14px rgba(29,78,216,.25);
+}
+.faq-item.open .faq-icon i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;padding:0 24px;transition:max-height .5s var(--ease),padding .35s}
+.faq-item.open .faq-a{max-height:280px;padding-bottom:20px}
+.faq-a p{font-size:.86rem;color:var(--muted);line-height:1.85;padding-top:4px;border-top:1px solid var(--border)}
+
+/* ═══════════════════════════════════════════════════
+   NEWSLETTER — exact match to index
+═══════════════════════════════════════════════════ */
+.newsletter-section{
+  padding:80px 20px;
+  background:linear-gradient(135deg,#080d14 0%,#0f1e3a 50%,#1d4ed8 100%);
+  position:relative;overflow:hidden;
+  margin-top:80px;border-radius:28px;
+}
+.newsletter-section::before{
+  content:"";position:absolute;top:-50%;right:-20%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(59,130,246,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.newsletter-inner{max-width:520px;margin:0 auto;text-align:center;position:relative}
+.newsletter-icon{
+  width:64px;height:64px;background:rgba(255,255,255,.1);
+  border-radius:18px;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;border:1px solid rgba(255,255,255,.15);
+  font-size:28px;color:rgba(255,255,255,.8);
+}
+.newsletter-inner h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(24px,3.5vw,42px);color:#fff;font-weight:600;margin-bottom:10px;
+}
+.newsletter-inner p{font-size:.86rem;color:rgba(255,255,255,.75);margin-bottom:28px;line-height:1.8}
+.newsletter-form{
+  display:flex;max-width:440px;margin:0 auto;
+  border-radius:14px;overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.15);
+}
+.newsletter-form input{
+  flex:1;padding:14px 18px;border:none;
+  font-family:"Inter",sans-serif;font-size:.84rem;
+  background:rgba(255,255,255,.1);color:#fff;outline:none;min-width:0;
+}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.5)}
+.newsletter-form button{
+  background:#fff;color:var(--blue);border:none;
+  padding:14px 22px;font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:800;cursor:pointer;
+  font-family:"Inter",sans-serif;transition:background .2s;white-space:nowrap;
+}
+.newsletter-form button:hover{background:#dbeafe}
+@media(max-width:500px){
+  .newsletter-form{flex-direction:column;border-radius:12px}
+  .newsletter-form button{width:100%}
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER — exact match to index
+═══════════════════════════════════════════════════ */
+footer{background:#080d14;color:#94a3b8;padding:60px 20px 28px;border-top:1px solid rgba(255,255,255,.04)}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand{
+  font-family:"Sora",sans-serif;font-size:1.1rem;font-weight:800;
+  color:#fff;display:flex;flex-direction:column;
+  align-items:flex-start;gap:6px;margin-bottom:14px;
+}
+.footer-brand .brand-row{display:flex;align-items:center;gap:10px}
+.footer-brand .f-mark{
+  width:42px;height:42px;border-radius:50%;
+  background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px rgba(14,91,255,.12);
+  border:1px solid rgba(14,91,255,.12);
+  overflow:hidden;
+}
+.footer-brand .f-mark img{width:80%;height:80%;object-fit:contain;display:block;}
+.footer-brand .f-mark i{display:none}
+.footer-brand .brand-name .brand-aiva{color:#fff}
+.footer-brand .brand-name span{color:#60a5fa}
+.footer-brand .brand-sub{font-size:.76rem;color:#64748b;margin-top:4px;font-weight:500}
+.footer-desc{font-size:.8rem;line-height:1.85;margin-bottom:20px;max-width:280px}
+.footer-social{display:flex;gap:10px;flex-wrap:wrap}
+.social-btn{
+  width:38px;height:38px;background:#1e293b;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:#94a3b8;text-decoration:none;font-size:15px;
+  transition:all .25s var(--ease);border:1px solid rgba(255,255,255,.04);
+}
+.social-btn:hover{background:var(--blue);color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px rgba(29,78,216,.25);border-color:transparent}
+.footer-col h6{
+  font-size:.72rem;font-weight:700;color:#fff;
+  text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{
+  color:#64748b;text-decoration:none;font-size:.8rem;
+  transition:color .2s,padding-left .2s;display:inline-block;
+}
+.footer-col ul li a:hover{color:#fff;padding-left:6px}
+.footer-contact-item{display:flex;align-items:flex-start;gap:11px;font-size:.8rem;margin-bottom:12px}
+.footer-contact-item i{color:#60a5fa;margin-top:2px;flex-shrink:0}
+.footer-contact-item a{color:#64748b;text-decoration:none;transition:color .2s}
+.footer-contact-item a:hover{color:#60a5fa}
+.footer-bottom{
+  border-top:1px solid #1e293b;padding-top:24px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;font-size:.74rem;
+}
+.footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-bottom-links a{color:#475569;text-decoration:none;transition:color .2s}
+.footer-bottom-links a:hover{color:#fff}
+@media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;gap:28px;text-align:center}
+  .footer-brand,.footer-social,.footer-col ul{justify-content:center;align-items:center}
+  .footer-col{display:flex;flex-direction:column;align-items:center}
+  .footer-contact-item{justify-content:center}
+  .footer-bottom{flex-direction:column;align-items:center;text-align:center}
+  .footer-bottom-links{justify-content:center}
+  .footer-desc{max-width:100%;text-align:center}
+}
+
+/* ═══════════════════════════════════════════════════
+   WHATSAPP FLOAT
+═══════════════════════════════════════════════════ */
+.whatsapp-float{
+  position:fixed;bottom:28px;right:24px;z-index:998;
+  width:54px;height:54px;background:#25d366;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:#fff;cursor:pointer;
+  box-shadow:0 4px 20px rgba(37,211,102,.45);
+  transition:transform .25s var(--ease),box-shadow .25s;
+  text-decoration:none;
+}
+.whatsapp-float:hover{
+  transform:scale(1.12);
+  box-shadow:0 8px 32px rgba(37,211,102,.55);
+  color:#fff;
+}
+.wa-tooltip{
+  position:absolute;right:62px;top:50%;transform:translateY(-50%);
+  background:var(--black);color:#fff;font-size:.72rem;font-weight:600;
+  padding:6px 14px;border-radius:8px;white-space:nowrap;
+  pointer-events:none;opacity:0;transition:opacity .2s;
+  box-shadow:var(--sh);
+}
+.wa-tooltip::after{
+  content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);
+  border:5px solid transparent;border-left-color:var(--black);border-right:0;
+}
+.whatsapp-float:hover .wa-tooltip{opacity:1}
+
+/* ═══════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════ */
+.toast-wrap{
+  position:fixed;bottom:96px;right:24px;z-index:9999;
+  display:flex;flex-direction:column;gap:10px;pointer-events:none;
+}
+.toast{
+  background:var(--black);color:#fff;
+  padding:14px 20px;border-radius:14px;
+  font-size:.84rem;font-weight:600;
+  box-shadow:var(--sh-xl);
+  display:flex;align-items:center;gap:10px;
+  pointer-events:auto;
+  transform:translateX(120%);transition:transform .4s var(--ease);
+  border:1px solid rgba(255,255,255,.08);
+  max-width:280px;
+}
+.toast.show{transform:translateX(0)}
+.toast-icon{font-size:18px;flex-shrink:0}
+
+/* ═══════════════════════════════════════════════════
+   SCROLL REVEAL — exact match to index
+═══════════════════════════════════════════════════ */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-right{opacity:0;transform:translateX(-28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-left{opacity:0;transform:translateX(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.d1{transition-delay:.1s!important}
+.d2{transition-delay:.2s!important}
+.d3{transition-delay:.3s!important}
+.d4{transition-delay:.4s!important}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE HELPERS
+═══════════════════════════════════════════════════ */
+@media(max-width:600px){
+  .map-header{flex-direction:column;align-items:flex-start}
+  .trust-section{padding:40px 20px}
+  .faq-section{padding:52px 16px;border-radius:20px}
+  .newsletter-section{border-radius:20px;margin-top:52px}
+  .page-wrap{padding:52px 16px 72px}
+  .form-card-head,.form-card-body{padding:24px 22px}
+  .info-card,.hours-card{padding:22px 20px}
+}
+</style>
 </head>
 <body>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4P9RQB9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- ─── HEADER ─── -->
-<header class="site-header">
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pl-glow"></div>
+  <div class="pl-card">
+    <img class="pl-logo-img" src="assets/logo.png" alt="AivaWellness Logo" />
+    <div class="pl-divider"></div>
+    <div class="pl-brand">Aiva<span>Wellness</span></div>
+    <div class="pl-tagline">Your Health, Our Priority</div>
+    <div class="pl-bar-wrap">
+      <div class="pl-bar"><div class="pl-fill"></div></div>
+      <div class="pl-status">
+        <span class="pl-status-text">Loading experience...</span>
+        <div class="pl-dots"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar">
+  <div class="ann-bar-track">
+    <span><i class="fa-solid fa-leaf"></i> &nbsp;Premium Healthcare formulas made in Himachal Pradesh &nbsp;<span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free shipping on orders over ₹999 &nbsp;<span class="sep">|</span>&nbsp; 100% Ayurvedic &amp; Natural &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No Binders</span>
+    <span><i class="fa-solid fa-leaf"></i> &nbsp;Premium Healthcare formulas made in Himachal Pradesh &nbsp;<span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free shipping on orders over ₹999 &nbsp;<span class="sep">|</span>&nbsp; 100% Ayurvedic &amp; Natural &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No Binders</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
   <nav class="nav-inner">
     <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="Aiva Wellness" onerror="this.style.display='none'">
+      <div class="brand-mark"><img src="assets/logo.png" alt="Aiva Wellness logo"></div>
       <div>
         <span class="brand-name">Aiva<span>Wellness</span></span>
-        <small class="brand-sub">Premium Healthcare & Wellness</small>
+        <small class="brand-sub">Premium Healthcare &amp; Wellness</small>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
-    <a href="tel:+917807751710" class="nav-cta">
-      <i class="fa-solid fa-phone"></i> Call Now
-    </a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <a href="tel:+917807751710" class="nav-cta"><i class="fa-solid fa-phone"></i> Call Now</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 </header>
 
-<!-- Mobile Menu -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this)toggleMenu()">
-  <nav class="mobile-nav">
+  <nav class="mobile-nav-panel">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
-    <a href="#">About Us</a>
+    <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
-    <a href="tel:+917807751710" class="cta"><i class="fa-solid fa-phone me-2"></i>Call Now</a>
+    <a href="tel:+917807751710" class="m-cta"><i class="fa-solid fa-phone"></i> Call Now</a>
   </nav>
 </div>
 
-<!-- ─── BREADCRUMB ─── -->
-<div class="breadcrumb-bar">
-  <div class="inner">
-    <a href="index.html">Home</a>
-    <span class="sep">›</span>
-    <span class="current">Contact Us</span>
-  </div>
-</div>
-
-<!-- ─── HERO ─── -->
+<!-- HERO -->
 <section class="contact-hero">
+  <div class="hero-dots"></div>
   <div class="contact-hero-inner">
-    <div class="contact-hero-badge"><i class="fa-solid fa-headset"></i> We're Here to Help</div>
-    <h1>Get in <span>Touch</span> With Us</h1>
+    <div class="hero-eyebrow"><i class="fa-solid fa-headset"></i> We're Here to Help</div>
+    <h1>Get in <em>Touch</em><br>With Us</h1>
     <p>Have a question, bulk order enquiry, or just want to say hello? Our team is always ready to assist you with warmth and care.</p>
-    <div class="hero-stats">
+    <div class="hero-stats-row">
       <div class="hero-stat">
         <div class="hero-stat-num">2–4 hrs</div>
         <div class="hero-stat-label">Avg. Response Time</div>
@@ -502,28 +1066,32 @@
       </div>
     </div>
   </div>
+  <div class="hero-fade"></div>
 </section>
 
-<!-- ─── MAIN CONTENT ─── -->
+<!-- MAIN -->
 <main>
 <div class="page-wrap">
 
-  <!-- ─── CONTACT GRID ─── -->
+  <!-- CONTACT GRID -->
   <div class="contact-grid">
 
     <!-- LEFT: Info Column -->
     <div class="info-col">
 
       <!-- Quick Contact Card -->
-      <div class="info-card">
-        <div class="info-card-title"><i class="fa-solid fa-address-book"></i> Quick Contact</div>
+      <div class="info-card reveal reveal-right">
+        <div class="info-card-title">
+          <i class="fa-solid fa-address-book"></i>
+          Quick Contact
+        </div>
 
         <div class="contact-item">
           <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
           <div class="ci-body">
             <div class="ci-label">Phone</div>
             <div class="ci-value"><a href="tel:+917807751710">+91 78077 51710</a></div>
-            <div class="ci-sub">Mon – Sat, 9 AM – 7 PM</div>
+            <div class="ci-sub">Mon – Sat, 9 AM – 6 PM</div>
           </div>
         </div>
 
@@ -548,43 +1116,75 @@
         <div class="contact-item">
           <div class="ci-icon"><i class="fa-brands fa-instagram"></i></div>
           <div class="ci-body">
-            <div class="ci-label">Follow Us</div>
-            <div class="ci-value"><a href="#" target="_blank">@aivawellness</a></div>
-            <div class="ci-sub">For updates, offers & tips</div>
+            <div class="ci-label">Instagram</div>
+            <div class="ci-value"><a href="https://www.instagram.com/aivawellness/" target="_blank" rel="noopener">@aivawellness</a></div>
+            <div class="ci-sub">For updates, offers &amp; tips</div>
           </div>
         </div>
-
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div class="ci-body">
+            <div class="ci-label">LinkedIn</div>
+            <div class="ci-value"><a href="https://www.linkedin.com/company/aivawellness/" target="_blank" rel="noopener">Aiva Wellness</a></div>
+            <div class="ci-sub">Professional updates &amp; partnerships</div>
+          </div>
+        </div>
       </div>
 
       <!-- WhatsApp CTA -->
-      <a class="whatsapp-card" href="https://wa.me/917807751710?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Aiva%20Wellness" target="_blank">
+      <a class="whatsapp-card reveal reveal-right d1" href="https://wa.me/917807751710?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Aiva%20Wellness" target="_blank" rel="noopener">
         <div class="wa-icon"><i class="fa-brands fa-whatsapp"></i></div>
         <div class="wa-body">
           <div class="wa-label">Fastest Response</div>
           <div class="wa-title">Chat on WhatsApp</div>
           <div class="wa-sub">Typically replies within minutes</div>
         </div>
-        <i class="fa-solid fa-arrow-right wa-arrow"></i>
+        <div class="wa-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       </a>
+
+      <!-- Business Hours -->
+      <div class="hours-card reveal reveal-right d2">
+        <div class="hours-title">
+          <i class="fa-regular fa-clock"></i>
+          Business Hours
+          <div class="live-badge"><span class="live-dot"></span> Open Now</div>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Monday – Saturday</span>
+          <span class="hours-open">9:00 AM – 6:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Sunday</span>
+          <span class="hours-closed">Closed</span>
+        </div>
+        <div class="hours-row" style="padding-top:14px;border-top:1px solid var(--border);margin-top:4px;border-bottom:none">
+          <span class="hours-day" style="font-size:.78rem;color:var(--muted)"><i class="fa-brands fa-whatsapp" style="color:var(--green);margin-right:6px"></i> WhatsApp Support</span>
+          <span class="hours-open">24 / 7</span>
+        </div>
+      </div>
 
     </div><!-- /info-col -->
 
-    <!-- RIGHT: Contact Form -->
-    <div class="form-card">
+    <!-- RIGHT: Form Card -->
+    <div class="form-card reveal reveal-left">
       <div class="form-card-head">
+        <div class="form-head-eyebrow"><i class="fa-solid fa-paper-plane"></i> Drop Us a Line</div>
         <h2>Send Us a Message</h2>
         <p>Fill in the details below and we'll get back to you as quickly as possible.</p>
+        <div class="form-trust-pills">
+          <span class="form-trust-pill"><i class="fa-solid fa-shield-halved"></i> 100% Secure</span>
+          <span class="form-trust-pill"><i class="fa-solid fa-bolt"></i> Fast Reply</span>
+          <span class="form-trust-pill"><i class="fa-solid fa-lock"></i> Private & Safe</span>
+        </div>
       </div>
-      <div class="form-card-body">
 
-        <!-- Quick Subject Chips -->
-        <div style="margin-bottom:10px;">
-          <div class="form-label" style="margin-bottom:10px;">What can we help you with?</div>
-          <div class="subject-chips" id="subjectChips">
-            <span class="subject-chip active" onclick="selectChip(this, 'Product Inquiry')">🧪 Product Inquiry</span>
-            <span class="subject-chip" onclick="selectChip(this, 'Bulk / Wholesale Order')">📦 Bulk Order</span>
-            <span class="subject-chip" onclick="selectChip(this, 'Other')">💬 Other</span>
-          </div>
+      <div class="form-card-body">
+        <span class="subject-chips-label">What can we help you with?</span>
+        <div class="subject-chips" id="subjectChips">
+          <span class="subject-chip active" onclick="selectChip(this,'Product Inquiry')"><i class="fa-solid fa-flask"></i> Product Inquiry</span>
+          <span class="subject-chip" onclick="selectChip(this,'Bulk / Wholesale Order')"><i class="fa-solid fa-boxes-stacked"></i> Bulk Order</span>
+          <span class="subject-chip" onclick="selectChip(this,'Order Support')"><i class="fa-solid fa-truck"></i> Order Support</span>
+          <span class="subject-chip" onclick="selectChip(this,'Other')"><i class="fa-regular fa-comment-dots"></i> Other</span>
         </div>
 
         <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
@@ -592,50 +1192,63 @@
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="fname">First Name <span class="req">*</span></label>
-              <input class="form-control-custom" type="text" id="fname" name="fname" placeholder="Rahul" required>
+              <input class="form-ctrl" type="text" id="fname" name="fname" placeholder="Rahul" required/>
             </div>
             <div class="form-group">
               <label class="form-label" for="lname">Last Name <span class="req">*</span></label>
-              <input class="form-control-custom" type="text" id="lname" name="lname" placeholder="Sharma" required>
+              <input class="form-ctrl" type="text" id="lname" name="lname" placeholder="Sharma" required/>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="email">Email Address <span class="req">*</span></label>
-              <input class="form-control-custom" type="email" id="email" name="email" placeholder="rahul@example.com" required>
+              <input class="form-ctrl" type="email" id="email" name="email" placeholder="rahul@example.com" required/>
             </div>
             <div class="form-group">
               <label class="form-label" for="phone">Phone Number</label>
-              <input class="form-control-custom" type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+              <input class="form-ctrl" type="tel" id="phone" name="phone" placeholder="+91 98765 43210"/>
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="subject">Subject <span class="req">*</span></label>
-            <input class="form-control-custom" type="text" id="subject" name="subject" placeholder="Your subject..." required>
+            <input class="form-ctrl" type="text" id="subject" name="subject" placeholder="Your subject…" required/>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="message">Your Message <span class="req">*</span></label>
-            <textarea class="form-control-custom" id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+            <textarea class="form-ctrl" id="message" name="message" placeholder="Tell us how we can help you…" required></textarea>
           </div>
 
           <button type="submit" class="btn-submit">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
+            <i class="fa-solid fa-paper-plane btn-icon"></i>
+            <span>Send Message</span>
           </button>
-          <p class="form-note">🔒 Your information is private & secure. We never share your data with third parties.</p>
-        </form>
+          <p class="form-note">
+            <i class="fa-solid fa-circle-check"></i>
+            Your information is private &amp; secure. We never share your data with third parties.
+          </p>
 
+        </form>
       </div>
     </div><!-- /form-card -->
 
   </div><!-- /contact-grid -->
 
-  <!-- ─── MAP ─── -->
-  <div class="map-section">
-    <div class="map-section-title">Our Location</div>
-    <div class="map-section-sub">Visit us at our headquarters in Solan, Himachal Pradesh</div>
+  <!-- MAP SECTION -->
+  <div class="map-section reveal">
+    <div class="map-header">
+      <div>
+        <span class="section-eyebrow"><i class="fa-solid fa-location-dot"></i> Find Us</span>
+        <div class="map-title" style="margin-top:10px">Our Location</div>
+        <div class="map-sub">Visit us at our headquarters in Solan, Himachal Pradesh</div>
+      </div>
+      <div class="map-address-pill">
+        <i class="fa-solid fa-location-dot"></i>
+        Vill. LOHARON, P.O. GHATTI, Solan – 173211, H.P.
+      </div>
+    </div>
     <div class="map-wrap">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3361.8537831906324!2d77.1878!3d31.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e52!2d77.1878!3d31.0236!5e0!3m2!1sen!2sin!4v1757563662397!5m2!1sen!2sin"
@@ -644,106 +1257,85 @@
     </div>
   </div>
 
-  <!-- ─── TRUST STRIP ─── -->
-  <div class="trust-section">
-    <div class="trust-grid">
-      <div class="trust-card">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="trust-card-title">Safe & Secure</div>
-        <div class="trust-card-desc">Your personal information is fully protected with us. We never share your data.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
-        <div class="trust-card-title">Fast Response</div>
-        <div class="trust-card-desc">We respond to all queries within 2–4 hours on business days.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-star"></i></div>
-        <div class="trust-card-title">5-Star Support</div>
-        <div class="trust-card-desc">Our support team is trained to resolve issues quickly and professionally.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-icon-wrap"><i class="fa-solid fa-box-open"></i></div>
-        <div class="trust-card-title">Bulk Orders</div>
-        <div class="trust-card-desc">Special pricing available for wholesale & institutional bulk purchases.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─── FAQ ─── -->
+  <!-- FAQ SECTION -->
   <div class="faq-section">
-    <div class="section-heading">Frequently Asked Questions</div>
-    <div class="section-sub">Quick answers to the most common queries we receive.</div>
-    <div class="faq-grid">
-
-      <div class="faq-item">
-        <div class="faq-question active" onclick="toggleFaq(this)">
-          <span>What is the typical delivery time for orders?</span>
-          <i class="fa-solid fa-chevron-down faq-chevron"></i>
-        </div>
-        <div class="faq-answer open">Standard delivery takes 4–7 business days across India. Express shipping is available at checkout for 1–2 day delivery in major cities.</div>
+    <div class="faq-section-inner">
+      <div class="faq-section-header reveal">
+        <span class="section-eyebrow"><i class="fa-solid fa-circle-question"></i> Got Questions?</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers to the most common queries we receive.</p>
       </div>
+      <div class="reveal">
 
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span>Do you offer bulk or wholesale pricing?</span>
-          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        <div class="faq-item open">
+          <div class="faq-q" onclick="toggleFaq(this)">What is the typical delivery time for orders?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></div>
+          <div class="faq-a" style="max-height:280px;padding-bottom:20px"><p>Standard delivery takes 4–7 business days across India. Express shipping is available at checkout for 1–2 day delivery in major cities.</p></div>
         </div>
-        <div class="faq-answer">Yes! We offer special pricing for bulk & institutional orders. Please contact us via the form above or WhatsApp mentioning "Bulk Order" and we'll get back to you within 24 hours.</div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span>What is your return & refund policy?</span>
-          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do you offer bulk or wholesale pricing?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></div>
+          <div class="faq-a"><p>Yes! We offer special pricing for bulk &amp; institutional orders. Please contact us via the form above or WhatsApp mentioning "Bulk Order" and we'll get back to you within 24 hours.</p></div>
         </div>
-        <div class="faq-answer">We have a hassle-free 7-day return policy for sealed/unopened products. If you received a damaged or incorrect item, we'll replace it at no extra cost. Contact us within 48 hours of delivery.</div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span>Are your products third-party tested?</span>
-          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What is your return &amp; refund policy?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></div>
+          <div class="faq-a"><p>We have a hassle-free 7-day return policy for sealed/unopened products. If you received a damaged or incorrect item, we'll replace it at no extra cost. Contact us within 48 hours of delivery.</p></div>
         </div>
-        <div class="faq-answer">Absolutely. All Aiva Wellness products go through rigorous quality checks and third-party lab testing to ensure safety, purity, and potency before they reach you.</div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span>Can I track my order after placing it?</span>
-          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Are your products third-party tested?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></div>
+          <div class="faq-a"><p>Absolutely. All Aiva Wellness products go through rigorous quality checks and third-party lab testing to ensure safety, purity, and potency before they reach you.</p></div>
         </div>
-        <div class="faq-answer">Yes, you'll receive a tracking link via SMS and email once your order is shipped. You can also WhatsApp us your order ID for a quick status update at any time.</div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <span>How do I know which product is right for me?</span>
-          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Can I track my order after placing it?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></div>
+          <div class="faq-a"><p>Yes, you'll receive a tracking link via SMS and email once your order is shipped. You can also WhatsApp us your order ID for a quick status update at any time.</p></div>
         </div>
-        <div class="faq-answer">We're happy to guide you! Share your health goals with us via WhatsApp or the contact form and our wellness advisors will suggest the most suitable products for your needs.</div>
-      </div>
 
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How do I know which product is right for me?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></div>
+          <div class="faq-a"><p>We're happy to guide you! Share your health goals with us via WhatsApp or the contact form and our wellness advisors will suggest the most suitable products for your needs.</p></div>
+        </div>
+
+      </div>
     </div>
   </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner reveal">
+      <div class="newsletter-icon"><i class="fa-solid fa-paper-plane"></i></div>
+      <h2>Be Part of the Aiva Wellness Journey</h2>
+      <p>Subscribe for wellness tips, clean-living insights, exclusive offers, and early access to new products.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="Enter your email address" required/>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
 
 </div><!-- /page-wrap -->
 </main>
 
-<!-- ─── FOOTER ─── -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
         <div class="footer-brand">
-          <img src="assets/logo.png" alt="Aiva Wellness" width="36" height="36" style="border-radius:8px;" onerror="this.style.display='none'">
-          Aiva<span>Wellness</span>
+          <div class="brand-row">
+            <div class="f-mark"><img src="assets/logo.png" alt="Aiva Wellness logo"></div>
+            <span class="brand-name"><span class="brand-aiva">Aiva</span><span>Wellness</span></span>
+          </div>
+          <small class="brand-sub">Premium Healthcare &amp; Wellness</small>
         </div>
-        <div class="footer-desc">Premium Healthcare & Wellness Solutions. Delivering trusted wellness products with transparency, care, and science-backed formulations.</div>
+        <div class="footer-desc">Premium Healthcare &amp; Wellness Solutions from Solan, Himachal Pradesh. Science-backed Ayurvedic formulations crafted for the health of every Indian family.</div>
         <div class="footer-social">
-          <a class="social-btn" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="social-btn" href="https://www.instagram.com/aivawellness/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a class="social-btn" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a class="social-btn" href="https://wa.me/917807751710" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="social-btn" href="https://www.linkedin.com/company/aivawellness" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="social-btn" href="https://wa.me/919175772002" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="social-btn" href="https://www.amazon.in/stores/AivaWellness" target="_blank" aria-label="Amazon"><i class="fa-brands fa-amazon"></i></a>
           <a class="social-btn" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
@@ -752,130 +1344,174 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h6>Categories</h6>
         <ul>
-          <li><a href="#">Magnesium</a></li>
-          <li><a href="#">Protein</a></li>
-          <li><a href="#">Vitamins</a></li>
-          <li><a href="#">Pre-Workout</a></li>
-          <li><a href="#">Recovery</a></li>
+          <li><a href="shop.html">Magnesium</a></li>
+          <li><a href="shop.html">Nattokinase</a></li>
+          <li><a href="shop.html">Vitamins &amp; Minerals</a></li>
+          <li><a href="shop.html">Omega-3</a></li>
+          <li><a href="shop.html">ZMA</a></li>
+          <li><a href="shop.html">Immunity</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h6>Contact</h6>
+        <h6>Contact Us</h6>
         <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751710">+91 78077 51710</a></div>
         <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:aivawellness@gmail.com">aivawellness@gmail.com</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh, India</span></div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Aiva Wellness. All rights reserved.</span>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Policy</a>
+        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Shipping Policy</a><a href="#">Return Policy</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- WhatsApp Float -->
-<div class="whatsapp-float" onclick="window.open('https://wa.me/917807751710?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Aiva%20Wellness','_blank')">
+<a class="whatsapp-float" href="https://wa.me/917807751710?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Aiva%20Wellness" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
-  <div class="whatsapp-float-tooltip">Chat on WhatsApp</div>
-</div>
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+</a>
 
-<!-- Toast -->
+<!-- Toast Container -->
 <div class="toast-wrap" id="toastWrap"></div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  /* ── Mobile Menu ── */
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+/* ═══ PRELOADER ═══ */
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('preloader').classList.add('hide'),900);
+});
+
+/* ═══ HEADER SCROLL ═══ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('siteHeader').classList.toggle('scrolled',window.scrollY>20);
+},{passive:true});
+
+/* ═══ MOBILE MENU ═══ */
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  const h=document.querySelector('.hamburger');
+  m.classList.toggle('open');
+  h.classList.toggle('active');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+
+/* ═══ SCROLL REVEAL ═══ */
+const revealEls=document.querySelectorAll('.reveal');
+const revObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');revObserver.unobserve(e.target)}
+  });
+},{threshold:.1});
+revealEls.forEach(el=>revObserver.observe(el));
+
+/* ═══ FAQ ACCORDION ═══ */
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight='0';
+    i.querySelector('.faq-a').style.paddingBottom='0';
+  });
+  if(!wasOpen){
+    item.classList.add('open');
+    const a=item.querySelector('.faq-a');
+    a.style.maxHeight='280px';
+    a.style.paddingBottom='20px';
   }
+}
 
-  /* ── Toast ── */
-  function showToast(icon, msg) {
-    const wrap = document.getElementById('toastWrap');
-    const t = document.createElement('div');
-    t.className = 'toast';
-    t.innerHTML = `<span style="font-size:18px">${icon}</span><span>${msg}</span>`;
-    wrap.appendChild(t);
-    requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add('show')));
-    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 350); }, 3000);
+/* ═══ SUBJECT CHIPS ═══ */
+function selectChip(el,value){
+  document.querySelectorAll('.subject-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('subject').value=value;
+}
+// Default
+window.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('subject').value='Product Inquiry';
+});
+
+/* ═══ TOAST ═══ */
+function showToast(icon,msg){
+  const wrap=document.getElementById('toastWrap');
+  const t=document.createElement('div');
+  t.className='toast';
+  t.innerHTML=`<span class="toast-icon">${icon}</span><span>${msg}</span>`;
+  wrap.appendChild(t);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>t.classList.add('show')));
+  setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),400)},3500);
+}
+
+/* ═══ FORM SUBMIT ═══ */
+function handleSubmit(e){
+  e.preventDefault();
+  const form=document.getElementById('contactForm');
+  const fname=form.querySelector('#fname').value.trim();
+  const email=form.querySelector('#email').value.trim();
+  const subject=form.querySelector('#subject').value.trim();
+  const message=form.querySelector('#message').value.trim();
+
+  // clear errors
+  form.querySelectorAll('.form-ctrl').forEach(f=>f.classList.remove('error'));
+
+  let hasError=false;
+  if(!fname){form.querySelector('#fname').classList.add('error');hasError=true}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){form.querySelector('#email').classList.add('error');hasError=true}
+  if(!subject){form.querySelector('#subject').classList.add('error');hasError=true}
+  if(!message){form.querySelector('#message').classList.add('error');hasError=true}
+
+  if(hasError){showToast('⚠️','Please fill in all required fields.');return}
+
+  const btn=form.querySelector('.btn-submit');
+  const orig=btn.innerHTML;
+  btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i><span>Sending…</span>';
+  btn.disabled=true;
+
+  setTimeout(()=>{
+    btn.innerHTML='<i class="fa-solid fa-check"></i><span>Message Sent!</span>';
+    btn.style.background='linear-gradient(135deg,#052e16,#16a34a)';
+    showToast('✅','Message sent! We\'ll reply within 2–4 hours.');
+    form.reset();
+    document.querySelectorAll('.subject-chip').forEach(c=>c.classList.remove('active'));
+    document.querySelector('.subject-chip').classList.add('active');
+    document.getElementById('subject').value='Product Inquiry';
+    setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.disabled=false},3000);
+  },1600);
+}
+
+/* ═══ NEWSLETTER ═══ */
+function handleNewsletter(e){
+  e.preventDefault();
+  e.target.innerHTML='<p style="color:#fff;font-size:1rem;padding:16px 0;font-family:Cormorant Garamond,serif;font-style:italic;letter-spacing:.02em">✨ Thank you for joining the Aiva Wellness community!</p>';
+}
+
+/* ═══ SMART HOURS BADGE ═══ */
+(function(){
+  const now=new Date();
+  const day=now.getDay(); // 0=Sun,6=Sat
+  const h=now.getHours();
+  const badge=document.querySelector('.live-badge');
+  if(!badge)return;
+  let open=false;
+  if(day>=1&&day<=5&&h>=9&&h<19)open=true;
+  if(day===6&&h>=10&&h<17)open=true;
+  if(!open){
+    badge.innerHTML='<span style="width:6px;height:6px;background:#ef4444;border-radius:50%;display:inline-block"></span> Closed Now';
+    badge.style.color='#ef4444';
+    badge.style.background='rgba(239,68,68,.08)';
+    badge.style.borderColor='rgba(239,68,68,.2)';
   }
-
-  /* ── FAQ Accordion ── */
-  function toggleFaq(btn) {
-    const answer = btn.nextElementSibling;
-    const isOpen = answer.classList.contains('open');
-    // close all
-    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-    if (!isOpen) {
-      answer.classList.add('open');
-      btn.classList.add('active');
-    }
-  }
-
-  /* ── Subject Chips ── */
-  function selectChip(el, value) {
-    document.querySelectorAll('.subject-chip').forEach(c => c.classList.remove('active'));
-    el.classList.add('active');
-    document.getElementById('subject').value = value;
-  }
-  // Set default subject on load
-  document.getElementById('subject').value = 'Product Inquiry';
-
-  /* ── Form Submit ── */
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = document.getElementById('contactForm');
-    const fname = form.querySelector('#fname').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const subject = form.querySelector('#subject').value.trim();
-    const message = form.querySelector('#message').value.trim();
-
-    if (!fname || !email || !subject || !message) {
-      showToast('⚠️', 'Please fill in all required fields.');
-      return;
-    }
-
-    const btn = form.querySelector('.btn-submit');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
-    btn.disabled = true;
-
-    // Simulate form submission
-    setTimeout(() => {
-      btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #064e3b, #16a34a)';
-      showToast('✅', 'Message sent! We\'ll reply within 2–4 hours.');
-      form.reset();
-      document.querySelectorAll('.subject-chip').forEach(c => c.classList.remove('active'));
-      document.querySelector('.subject-chip').classList.add('active');
-      document.getElementById('subject').value = 'Product Inquiry';
-
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
-    }, 1600);
-  }
-</script>
-
-<!-- Vercel Speed Insights -->
-<script type="module">
-  import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.0.10/dist/index.mjs';
-  injectSpeedInsights();
+})();
 </script>
 </body>
 </html>
