@@ -2401,8 +2401,12 @@
           <div class="footer-col">
             <h6>Categories</h6>
             <ul>
-              <li><a href="shop.html">Magnesium</a></li>
-              <li><a href="shop.html">Nattokinase</a></li>
+              <li><a href="product-details.html">Magnesium</a></li>
+              <li>
+                <a href="product-details-pages/nattokinase200.html"
+                  >Nattokinase</a
+                >
+              </li>
               <li><a href="shop.html">Vitamins &amp; Minerals</a></li>
               <li><a href="shop.html">Omega-3</a></li>
               <li><a href="shop.html">ZMA</a></li>
@@ -2666,15 +2670,19 @@
       /* ── render card ── */
       function renderCard(p, delay) {
         const saving = Math.round(((p.old - p.price) / p.old) * 100);
+        const detailLink =
+          p.id === 104
+            ? "product-details-pages/nattokinase200.html"
+            : "product-details.html";
         return `<div class="product-card reveal d${(delay % 6) + 1}" data-id="${p.id}">
     <div class="product-img">
       <span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>
-      <a href="product-details.html">
+      <a href="${detailLink}">
         <img src="${p.img}" alt="${p.name}" onerror="this.src='${PLACEHOLDER}'"/>
         <img class="img-hover" src="${p.img2}" alt="${p.name}" onerror="this.src='${PLACEHOLDER}'"/>
       </a>
       <div class="p-actions">
-        <button class="p-action-btn" title="Quick View" onclick="window.location.href='product-details.html'"><i class="fa-regular fa-eye"></i></button>
+        <button class="p-action-btn" title="Quick View" onclick="window.location.href='${detailLink}'"><i class="fa-regular fa-eye"></i></button>
         <button class="p-action-btn" title="Share" onclick="toggleShareMenu(event, ${p.id})"><i class="fa-solid fa-share-nodes"></i></button>
       </div>
       <div class="share-popover" id="sharePopover-${p.id}" aria-hidden="true">
@@ -2687,7 +2695,7 @@
     </div>
     <div class="product-info">
       <div class="product-cat">${p.cat}</div>
-      <h3><a href="product-details.html">${p.name}</a></h3>
+      <h3><a href="${detailLink}">${p.name}</a></h3>
       <div class="stars">${starsHtml(p.rating)} <span>${p.rating} (${p.reviews})</span></div>
       <div class="price-row">
         <span class="sale-price">${fmtINR(p.price)}</span>
@@ -2695,7 +2703,7 @@
         <span class="save-badge">Save ${saving}%</span>
       </div>
       <div class="buy-actions">
-        <button class="btn-cart" onclick="window.location.href='product-details.html'">
+        <button class="btn-cart" onclick="window.location.href='${detailLink}'">
           <i class="fa-regular fa-eye"></i><span>View Product</span>
         </button>
         <button class="btn-share-inline" type="button" title="Share" onclick="toggleShareMenu(event, ${p.id})">

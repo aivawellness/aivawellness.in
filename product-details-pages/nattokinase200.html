@@ -6,9 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=5"
     />
-    <title>Magnesium Complex 5-in-1 | Aiva Wellness</title>
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    <title>Nattokinase 200 mg | Aiva Wellness</title>
+    <link rel="icon" href="../favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="../favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,9 +20,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <style>
-      /* ══════════════════════════════════════════════
-   TOKENS — identical to index.html
-══════════════════════════════════════════════ */
       *,
       *::before,
       *::after {
@@ -82,10 +79,6 @@
       img {
         max-width: 100%;
       }
-
-      /* ══════════════════════════════════════════════
-   ANNOUNCEMENT BAR
-══════════════════════════════════════════════ */
       .ann-bar {
         background: linear-gradient(
           90deg,
@@ -126,10 +119,6 @@
           transform: translateX(-50%);
         }
       }
-
-      /* ══════════════════════════════════════════════
-   HEADER
-══════════════════════════════════════════════ */
       .site-header {
         position: fixed;
         top: 0;
@@ -359,10 +348,6 @@
           display: flex;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   BREADCRUMB
-══════════════════════════════════════════════ */
       .breadcrumb-bar {
         background: var(--white);
         border-bottom: 1px solid var(--border);
@@ -393,19 +378,11 @@
         color: var(--ink);
         font-weight: 500;
       }
-
-      /* ══════════════════════════════════════════════
-   PAGE WRAP
-══════════════════════════════════════════════ */
       .page-wrap {
         max-width: 1320px;
         margin: 0 auto;
         padding: 40px 24px 80px;
       }
-
-      /* ══════════════════════════════════════════════
-   PRODUCT TOP GRID
-══════════════════════════════════════════════ */
       .product-top {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -423,10 +400,6 @@
           gap: 32px;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   GALLERY — PREMIUM PRODUCT MEDIA SECTION
-══════════════════════════════════════════════ */
       .gallery-wrap {
         position: sticky;
         top: 88px;
@@ -439,11 +412,9 @@
           position: static;
         }
       }
-
       .gallery-rail {
         display: none;
       }
-
       .gallery-main {
         flex: 1;
         min-width: 0;
@@ -451,8 +422,6 @@
         flex-direction: column;
         gap: 14px;
       }
-
-      /* Main image + zoom container */
       .main-img-container {
         position: relative;
         overflow: hidden;
@@ -516,7 +485,6 @@
         opacity: 1;
         background-position: -20% 100%;
       }
-
       .zoom-hint {
         position: absolute;
         bottom: 14px;
@@ -552,7 +520,6 @@
           padding: 6px 10px;
         }
       }
-
       .gallery-counter {
         position: absolute;
         top: 14px;
@@ -567,7 +534,6 @@
         padding: 6px 12px;
         border-radius: 999px;
       }
-
       .main-nav-arrow {
         position: absolute;
         top: 50%;
@@ -608,7 +574,6 @@
           height: 38px;
         }
       }
-
       .expand-btn {
         position: absolute;
         top: 14px;
@@ -643,7 +608,6 @@
           transform: translateY(0);
         }
       }
-
       .gallery-dots {
         display: none;
         justify-content: center;
@@ -670,7 +634,6 @@
         width: 20px;
         border-radius: 4px;
       }
-
       .image-modal-body {
         cursor: grab;
       }
@@ -714,7 +677,6 @@
       .image-modal-video-badge.show {
         display: inline-flex;
       }
-
       .image-modal-strip {
         position: absolute;
         bottom: 16px;
@@ -773,8 +735,6 @@
           display: none;
         }
       }
-
-      /* Video thumb */
       .video-thumb {
         position: relative;
         overflow: hidden;
@@ -841,7 +801,6 @@
         text-align: center;
         text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
       }
-
       .thumbs-row {
         display: flex;
         gap: 10px;
@@ -885,14 +844,11 @@
         border-color: var(--blue);
         box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
       }
-
       .gallery-rail .thumb-img,
       .gallery-rail .video-thumb {
         width: 76px;
         height: 76px;
       }
-
-      /* Gallery badge */
       .gallery-badge {
         position: absolute;
         top: 14px;
@@ -915,17 +871,11 @@
           left: 14px;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   PRODUCT INFO PANEL
-══════════════════════════════════════════════ */
       .product-info {
         display: flex;
         flex-direction: column;
         gap: 24px;
       }
-
-      /* Eyebrow */
       .p-eyebrow {
         display: inline-flex;
         align-items: center;
@@ -941,8 +891,6 @@
         border: 1px solid var(--blue-border);
         width: fit-content;
       }
-
-      /* Title */
       .p-title {
         font-family: "Inter", sans-serif;
         font-size: clamp(22px, 2.6vw, 36px);
@@ -959,8 +907,6 @@
         line-height: 1.8;
         max-width: 520px;
       }
-
-      /* Rating row */
       .rating-row {
         display: flex;
         align-items: center;
@@ -998,8 +944,6 @@
         align-items: center;
         gap: 4px;
       }
-
-      /* Stock */
       .stock-row {
         display: flex;
         align-items: center;
@@ -1032,8 +976,6 @@
         font-size: 0.76rem;
         color: var(--muted);
       }
-
-      /* Price card */
       .price-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -1081,8 +1023,6 @@
         font-size: 0.73rem;
         color: var(--muted);
       }
-
-      /* CTA Buttons */
       .cta-group {
         display: flex;
         gap: 12px;
@@ -1130,8 +1070,6 @@
         position: relative;
         z-index: 1;
       }
-
-      /* Trust grid */
       .trust-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1190,8 +1128,6 @@
         font-size: 0.68rem;
         color: var(--muted);
       }
-
-      /* Key features card */
       .features-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -1227,8 +1163,6 @@
         margin-top: 2px;
         flex-shrink: 0;
       }
-
-      /* Delivery estimator */
       .delivery-box {
         background: var(--blue-soft);
         border: 1px solid var(--blue-border);
@@ -1251,8 +1185,6 @@
       .delivery-text strong {
         color: var(--blue);
       }
-
-      /* Share */
       .share-row {
         display: flex;
         align-items: center;
@@ -1296,10 +1228,6 @@
       .meta-row strong {
         color: var(--ink);
       }
-
-      /* ══════════════════════════════════════════════
-   VIDEO MODAL
-══════════════════════════════════════════════ */
       .video-modal-overlay {
         position: fixed;
         inset: 0;
@@ -1513,10 +1441,6 @@
         font-size: 0.88rem;
         color: rgba(255, 255, 255, 0.6);
       }
-
-      /* ══════════════════════════════════════════════
-   TABS SECTION
-══════════════════════════════════════════════ */
       .tabs-section {
         margin-bottom: 72px;
       }
@@ -1569,8 +1493,6 @@
           transform: translateY(0);
         }
       }
-
-      /* Description */
       .desc-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1601,21 +1523,29 @@
       }
       .benefits-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      @media (max-width: 768px) {
+        .benefits-grid {
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 16px;
+        }
       }
       @media (max-width: 480px) {
         .benefits-grid {
-          gap: 10px;
+          grid-template-columns: repeat(2, minmax(140px, 1fr));
+          gap: 12px;
         }
         .benefit-card {
-          padding: 16px 10px;
+          padding: 16px 14px;
+          min-height: 220px;
         }
         .benefit-icon {
-          font-size: 22px;
+          font-size: 20px;
         }
         .benefit-title {
-          font-size: 0.8rem;
+          font-size: 0.84rem;
         }
         .benefit-desc {
           font-size: 0.72rem;
@@ -1632,6 +1562,8 @@
         align-items: center;
         text-align: center;
         gap: 10px;
+        min-height: 240px;
+        width: 100%;
         box-shadow: 0 4px 24px rgba(8, 13, 20, 0.06);
         transition: all 0.35s var(--ease);
       }
@@ -1642,28 +1574,48 @@
         box-shadow: 0 20px 48px rgba(29, 78, 216, 0.14);
       }
       .benefit-icon {
-        font-size: 28px;
-        transition: transform 0.3s var(--ease);
+        width: 62px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        font-size: 24px;
+        color: #fff;
+        transition:
+          transform 0.3s var(--ease),
+          background 0.3s var(--ease);
+      }
+      .benefit-icon i {
+        width: 1em;
+        height: 1em;
       }
       .benefit-card:hover .benefit-icon {
         transform: scale(1.15);
       }
-      .benefit-title {
-        font-weight: 700;
-        font-size: 0.9rem;
-        color: var(--black);
-        transition: color 0.3s;
+      .benefit-icon--bone {
+        background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.24);
       }
-      .benefit-card:hover .benefit-title {
-        color: var(--blue);
+      .benefit-icon--dumbbell {
+        background: linear-gradient(135deg, #0f766e 0%, #34d399 100%);
+        box-shadow: 0 12px 25px rgba(15, 118, 110, 0.22);
       }
-      .benefit-desc {
-        font-size: 0.8rem;
-        color: var(--muted);
-        line-height: 1.75;
+      .benefit-icon--heart {
+        background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
+        box-shadow: 0 12px 25px rgba(220, 38, 38, 0.22);
       }
-
-      /* Nutrition */
+      .benefit-icon--shield {
+        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        box-shadow: 0 12px 25px rgba(14, 165, 233, 0.22);
+      }
+      .benefit-icon--bolt {
+        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        box-shadow: 0 12px 25px rgba(245, 158, 11, 0.22);
+      }
+      .benefit-icon--brain {
+        background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        box-shadow: 0 12px 25px rgba(139, 92, 246, 0.22);
+      }
       .nutrition-wrap {
         max-width: 700px;
         width: 100%;
@@ -1709,8 +1661,6 @@
         margin-top: 14px;
         line-height: 1.7;
       }
-
-      /* Ingredients */
       .ingredients-text {
         font-size: 0.88rem;
         color: var(--text-mid);
@@ -1731,8 +1681,6 @@
         display: block;
         margin-bottom: 5px;
       }
-
-      /* How to use */
       .usage-steps {
         display: flex;
         flex-direction: column;
@@ -1785,10 +1733,6 @@
         display: block;
         margin-bottom: 5px;
       }
-
-      /* ══════════════════════════════════════════════
-   REVIEWS SECTION
-══════════════════════════════════════════════ */
       .reviews-section {
         margin-bottom: 72px;
       }
@@ -1815,7 +1759,6 @@
         margin-bottom: 32px;
         line-height: 1.2;
       }
-
       .reviews-layout {
         display: grid;
         grid-template-columns: 280px 1fr;
@@ -1827,7 +1770,6 @@
           grid-template-columns: 1fr;
         }
       }
-
       .rating-summary-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -1924,7 +1866,6 @@
         background: #2563eb;
         transform: translateY(-1px);
       }
-
       .review-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -2008,10 +1949,6 @@
         border-color: var(--blue);
         color: var(--blue);
       }
-
-      /* ══════════════════════════════════════════════
-   SIMILAR PRODUCTS
-══════════════════════════════════════════════ */
       .similar-section {
         margin-bottom: 40px;
       }
@@ -2030,7 +1967,6 @@
           grid-template-columns: 1fr;
         }
       }
-
       .product-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -2195,10 +2131,6 @@
         transform: translateY(-1px);
         box-shadow: 0 6px 16px rgba(29, 78, 216, 0.3);
       }
-
-      /* ══════════════════════════════════════════════
-   STICKY BUY BAR (mobile)
-══════════════════════════════════════════════ */
       .sticky-buy-bar {
         display: none;
         position: fixed;
@@ -2245,10 +2177,6 @@
           display: block;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
       footer {
         background: #080d14;
         color: #94a3b8;
@@ -2452,10 +2380,6 @@
           text-align: center;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   TOAST
-══════════════════════════════════════════════ */
       .toast-wrap {
         position: fixed;
         bottom: 80px;
@@ -2499,10 +2423,6 @@
           transform: translateY(0);
         }
       }
-
-      /* ══════════════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════════════ */
       .reveal {
         opacity: 0;
         transform: translateY(28px);
@@ -2526,8 +2446,6 @@
       .d4 {
         transition-delay: 0.4s !important;
       }
-
-      /* ══ IMAGE MODAL — PREMIUM ZOOM CONTROLS ══ */
       .image-modal-zoombar {
         position: absolute;
         bottom: 16px;
@@ -2603,7 +2521,6 @@
           font-size: 0.92rem;
           line-height: 1.6;
         }
-
         .image-modal-inner {
           height: auto;
           max-height: 92vh;
@@ -2659,7 +2576,6 @@
     </style>
   </head>
   <body>
-    <!-- ANNOUNCEMENT BAR -->
     <div class="ann-bar">
       <div class="ann-bar-track">
         <span
@@ -2687,12 +2603,11 @@
       </div>
     </div>
 
-    <!-- HEADER -->
     <header class="site-header" id="siteHeader">
       <nav class="nav-inner">
-        <a class="brand" href="index.html">
+        <a class="brand" href="../index.html">
           <div class="brand-mark">
-            <img src="assets/logo.png" alt="Aiva Wellness logo" />
+            <img src="../assets/logo.png" alt="Aiva Wellness logo" />
           </div>
           <div>
             <span class="brand-name">Aiva<span>Wellness</span></span>
@@ -2700,10 +2615,10 @@
           </div>
         </a>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html" class="active">Shop</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop.html" class="active">Shop</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../contact.html">Contact</a></li>
         </ul>
         <div class="nav-right">
           <a href="tel:+917807751710" class="nav-cta"
@@ -2720,29 +2635,25 @@
       </nav>
     </header>
 
-    <!-- MOBILE MENU -->
     <div
       class="mobile-menu"
       id="mobileMenu"
       onclick="if (event.target === this) toggleMenu();"
     >
       <nav class="mobile-nav-panel">
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
+        <a href="../index.html">Home</a>
+        <a href="../shop.html">Shop</a>
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact</a>
         <a href="tel:+917807751710" class="m-cta"
           ><i class="fa-solid fa-phone"></i> Call Now</a
         >
       </nav>
     </div>
 
-    <!-- MAIN PAGE -->
     <main>
       <div class="page-wrap">
-        <!-- ── PRODUCT TOP ── -->
         <div class="product-top">
-          <!-- GALLERY -->
           <div class="gallery-wrap">
             <div class="gallery-main">
               <div class="main-img-container" id="imgContainer">
@@ -2781,11 +2692,11 @@
                 <div class="img-frame">
                   <img
                     id="mainImg"
-                    src="products/Magnesium Complex.jpg.jpeg"
-                    alt="Magnesium Complex 5-in-1"
+                    src="../products/Nattokinase Carton.jpg.jpeg"
+                    alt="Nattokinase 200 mg"
                     onerror="
                       this.src =
-                        'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=700&q=80'
+                        'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=700&q=80'
                     "
                   />
                 </div>
@@ -2795,80 +2706,77 @@
                 >
               </div>
 
-              <!-- Mobile dot indicators -->
               <div class="gallery-dots" id="galleryDots"></div>
 
-              <!-- Thumbnails row -->
               <div class="thumbs-row" id="thumbsRow">
                 <img
                   class="thumb-img active"
-                  src="products/Magnesium Complex.jpg.jpeg"
-                  data-full-src="products/Magnesium Complex.jpg.jpeg"
+                  src="../products/Nattokinase Carton.jpg.jpeg"
+                  data-full-src="../products/Nattokinase Carton.jpg.jpeg"
                   alt="View 1"
+                  onerror="
+                    this.src =
+                      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=150&q=80'
+                  "
+                  onclick="
+                    switchThumb(this, '../products/Nattokinase Carton.jpg.jpeg')
+                  "
+                />
+                <img
+                  class="thumb-img"
+                  src="../products/Magnesium Complex.jpg.jpeg"
+                  data-full-src="../products/Magnesium Complex.jpg.jpeg"
+                  alt="View 2"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80'
                   "
                   onclick="
-                    switchThumb(this, 'products/Magnesium Complex.jpg.jpeg')
+                    switchThumb(this, '../products/Magnesium Complex.jpg.jpeg')
                   "
                 />
                 <img
                   class="thumb-img"
-                  src="products/Nattokinase Carton.jpg.jpeg"
-                  data-full-src="products/Nattokinase Carton.jpg.jpeg"
-                  alt="View 2"
-                  onerror="
-                    this.src =
-                      'https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=150&q=80'
-                  "
-                  onclick="
-                    switchThumb(this, 'products/Nattokinase Carton.jpg.jpeg')
-                  "
-                />
-                <img
-                  class="thumb-img"
-                  src="products/VITAMIN D3.jpg.jpeg"
-                  data-full-src="products/VITAMIN D3.jpg.jpeg"
+                  src="../products/VITAMIN D3.jpg.jpeg"
+                  data-full-src="../products/VITAMIN D3.jpg.jpeg"
                   alt="View 3"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=150&q=80'
                   "
-                  onclick="switchThumb(this, 'products/VITAMIN D3.jpg.jpeg')"
+                  onclick="switchThumb(this, '../products/VITAMIN D3.jpg.jpeg')"
                 />
                 <img
                   class="thumb-img"
-                  src="products/ZMA.png"
-                  data-full-src="products/ZMA.png"
+                  src="../products/ZMA.png"
+                  data-full-src="../products/ZMA.png"
                   alt="View 4"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=150&q=80'
                   "
-                  onclick="switchThumb(this, 'products/ZMA.png')"
+                  onclick="switchThumb(this, '../products/ZMA.png')"
                 />
                 <img
                   class="thumb-img"
-                  src="products/omega 3, Vitamin E.jpg.jpeg"
-                  data-full-src="products/omega 3, Vitamin E.jpg.jpeg"
+                  src="../products/omega 3, Vitamin E.jpg.jpeg"
+                  data-full-src="../products/omega 3, Vitamin E.jpg.jpeg"
                   alt="View 5"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=150&q=80'
                   "
                   onclick="
-                    switchThumb(this, 'products/omega 3, Vitamin E.jpg.jpeg')
+                    switchThumb(this, '../products/omega 3, Vitamin E.jpg.jpeg')
                   "
                 />
-                <!-- Video thumbnail -->
                 <div class="video-thumb" onclick="openVideoModal()">
                   <img
-                    src="products-1/Magnesium Complex.jpg"
+                    src="../products/Nattokinase Carton.jpg.jpeg"
                     alt="Product Video"
                     onerror="
                       this.src =
-                        'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80'
+                        'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=150&q=80'
                     "
                   />
                   <div class="play-icon"><i class="fa-solid fa-play"></i></div>
@@ -2878,21 +2786,18 @@
             </div>
           </div>
 
-          <!-- PRODUCT INFO -->
           <div class="product-info reveal">
             <span class="p-eyebrow"
               ><i class="fa-solid fa-leaf"></i> Aiva Wellness — Bestseller</span
             >
 
             <div>
-              <h1 id="productTitle" class="p-title">
-                Magnesium Complex 5-in-1
-              </h1>
+              <h1 id="productTitle" class="p-title">Nattokinase 200 mg</h1>
               <p id="productDesc" class="p-short">
-                Magnesium Complex 5 in 1 supports bone strength, muscle
-                recovery, and cardiac wellness with a balanced formula of
-                Magnesium, Vitamin D3, Zinc, and Calcium. Ideal for daily
-                energy, immunity, and overall vitality.
+                Nattokinase is a natural fibrinolytic enzyme that supports
+                healthy blood circulation and cardiovascular wellness. Each
+                serving delivers 2000 FU (200 mg) of high-potency enzyme to help
+                maintain normal blood flow and overall heart health.
               </p>
             </div>
 
@@ -2900,7 +2805,7 @@
               <div class="stars-gold">
                 ★★★★<span style="color: var(--border)">★</span>
               </div>
-              <span class="rating-val">4.8</span>
+              <span class="rating-val">4.7</span>
               <span
                 class="rating-count"
                 onclick="
@@ -2908,7 +2813,7 @@
                     .querySelector('.reviews-section')
                     .scrollIntoView({ behavior: 'smooth' })
                 "
-                >(128 reviews)</span
+                >(73 reviews)</span
               >
               <span class="verified-pill"
                 ><i class="fa-solid fa-circle-check"></i> Verified</span
@@ -2918,15 +2823,14 @@
             <div class="stock-row">
               <div class="stock-dot"></div>
               <span class="stock-label">In Stock</span>
-              <span class="stock-sub">· 250+ units · Ships in 24 hrs</span>
+              <span class="stock-sub">· 180+ units · Ships in 24 hrs</span>
             </div>
 
-            <!-- Price -->
             <div class="price-card">
               <div class="price-row-main">
-                <span id="priceMain" class="price-main-val">₹1,299</span>
-                <span id="priceOld" class="price-old-val">₹1,499</span>
-                <span id="discountChip" class="discount-chip">13% OFF</span>
+                <span id="priceMain" class="price-main-val">₹1,199</span>
+                <span id="priceOld" class="price-old-val">₹1,399</span>
+                <span id="discountChip" class="discount-chip">14% OFF</span>
               </div>
               <div id="savingText" class="saving-text">
                 🎉 You save ₹200 on this order!
@@ -2943,7 +2847,6 @@
               </button>
             </div>
 
-            <!-- Trust -->
             <div class="trust-grid">
               <div class="trust-item">
                 <div class="trust-icon-w">
@@ -2974,7 +2877,6 @@
               </div>
             </div>
 
-            <!-- Delivery -->
             <div class="delivery-box">
               <i class="fa-solid fa-location-dot"></i>
               <div class="delivery-text">
@@ -2984,7 +2886,6 @@
               </div>
             </div>
 
-            <!-- Features card -->
             <div class="features-card">
               <div class="features-hd">Key Benefits</div>
               <ul class="feat-list">
@@ -2992,36 +2893,36 @@
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Supports bone strength with Calcium + Vitamin D3
+                  High-potency 2000 FU natural fibrinolytic enzyme per serving
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Aids muscle recovery &amp; reduces cramps after exercise
+                  Supports healthy blood circulation &amp; vascular function
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Promotes cardiac wellness and healthy nerve function
+                  Promotes cardiovascular and heart wellness
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Boosts immunity with Zinc + Magnesium combination
+                  Fermented soy-derived enzyme, traditionally used for
+                  circulatory support
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Enhances daily energy, focus, and overall vitality
+                  Convenient daily softgel, easy to incorporate into routine
                 </li>
               </ul>
             </div>
 
-            <!-- Share + Meta -->
             <div class="share-row">
               <span class="share-lbl">Share:</span>
               <a
@@ -3052,7 +2953,6 @@
           </div>
         </div>
 
-        <!-- ── TABS ── -->
         <div class="tabs-section reveal">
           <div class="tabs-nav">
             <button class="tab-btn active" onclick="switchTab('desc', this)">
@@ -3069,93 +2969,165 @@
             </button>
           </div>
 
-          <!-- Description -->
           <div class="tab-panel active" id="tab-desc">
             <div class="desc-grid">
               <div class="desc-text">
-                <h4>About Magnesium Complex 5-in-1</h4>
+                <h4>About Nattokinase 200 mg</h4>
                 <p>
-                  Aiva Wellness Magnesium Complex 5-in-1 is a scientifically
-                  formulated supplement combining five synergistic nutrients —
-                  Magnesium, Vitamin D3, Zinc, Calcium, and Vitamin K2 — in a
-                  single, convenient tablet.
+                  Aiva Wellness Nattokinase is a natural fibrinolytic enzyme
+                  derived from fermented soybean (Natto), delivering 2000 FU
+                  (200 mg) per serving in a high-potency softgel. It is
+                  formulated to support healthy blood circulation, vascular
+                  function, and everyday cardiovascular wellness.
                 </p>
-                <p>
-                  Magnesium is involved in over 300 enzymatic reactions in the
-                  body, supporting everything from ATP energy production to
-                  protein synthesis. Paired with Calcium and Vitamin D3 for
-                  superior bone mineralisation, and Zinc for immune defence,
-                  this complex ensures you get maximum benefit from every dose.
-                </p>
-                <p>
-                  Whether you are an active athlete recovering from training, a
-                  professional managing stress, or simply someone looking to
-                  fill nutritional gaps in a modern diet, this formula is
-                  designed to fit seamlessly into your daily routine.
-                </p>
-                <h4 style="margin-top: 20px">Why Choose This Formula?</h4>
-                <p>
-                  Most single-ingredient magnesium supplements miss the
-                  cofactors that enable proper absorption. Our 5-in-1 formula is
-                  built around bioavailability — combining nutrients that work
-                  together, not against each other. Every batch is third-party
-                  tested and FSSAI-certified.
-                </p>
+                <h4 style="margin-top: 20px">Product Information</h4>
+                <div class="nutrition-wrap" style="max-width: 100%">
+                  <table class="nutrition-table" style="min-width: 100%">
+                    <tbody>
+                      <tr>
+                        <td>Item Form</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Softgel
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Potency</td>
+                        <td style="text-align: right; font-weight: 700">
+                          2000 FU per serving
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brand</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Aiva Wellness
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Manufacturer</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Aiva Wellness Pvt. Ltd., Solan, Himachal Pradesh,
+                          India
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Country of Origin</td>
+                        <td style="text-align: right; font-weight: 700">
+                          India
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Item Type Name</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Natural Fibrinolytic Enzyme
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Unit Count</td>
+                        <td style="text-align: right; font-weight: 700">
+                          60 Tablets
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Number of Items</td>
+                        <td style="text-align: right; font-weight: 700">1</td>
+                      </tr>
+                      <tr>
+                        <td>Item Weight</td>
+                        <td style="text-align: right; font-weight: 700">
+                          170 Grams
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Product Dimensions</td>
+                        <td style="text-align: right; font-weight: 700">
+                          5.4 x 5.4 x 11.7 cm
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Customer Reviews</td>
+                        <td style="text-align: right; font-weight: 700">
+                          4.7 ★ (73 ratings)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Date First Available</td>
+                        <td style="text-align: right; font-weight: 700">
+                          January 2026
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="nutrition-note">
+                    FSSAI-certified · Third-party lab tested · Manufactured
+                    under strict GMP standards. Not for medicinal use.
+                  </p>
+                </div>
               </div>
               <div class="benefits-grid">
                 <div class="benefit-card">
-                  <div class="benefit-icon">🦴</div>
-                  <div class="benefit-title">Strong Bones</div>
-                  <div class="benefit-desc">
-                    Calcium + Vitamin D3 + K2 trinity optimises bone mineral
-                    density and reduces fracture risk.
+                  <div class="benefit-icon benefit-icon--heart">
+                    <i class="fa-solid fa-heart-pulse"></i>
                   </div>
-                </div>
-                <div class="benefit-card">
-                  <div class="benefit-icon">💪</div>
-                  <div class="benefit-title">Muscle Recovery</div>
-                  <div class="benefit-desc">
-                    Magnesium reduces muscle cramps, supports post-workout
-                    recovery and protein synthesis.
-                  </div>
-                </div>
-                <div class="benefit-card">
-                  <div class="benefit-icon">❤️</div>
                   <div class="benefit-title">Heart Health</div>
                   <div class="benefit-desc">
-                    Regulates blood pressure, supports cardiac rhythm and
-                    healthy vascular function.
+                    Supports healthy blood flow and overall cardiovascular
+                    wellness with daily use.
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">🛡️</div>
-                  <div class="benefit-title">Immune Defence</div>
+                  <div class="benefit-icon benefit-icon--shield">
+                    <i class="fa-solid fa-droplet"></i>
+                  </div>
+                  <div class="benefit-title">Circulation Support</div>
                   <div class="benefit-desc">
-                    Zinc and Vitamin D3 fortify your body's natural immune
-                    response year-round.
+                    A natural fibrinolytic enzyme that helps maintain smooth,
+                    healthy circulation.
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">⚡</div>
-                  <div class="benefit-title">Daily Energy</div>
+                  <div class="benefit-icon benefit-icon--bolt">
+                    <i class="fa-solid fa-bolt"></i>
+                  </div>
+                  <div class="benefit-title">Vascular Wellness</div>
                   <div class="benefit-desc">
-                    Magnesium is essential for ATP production — your body's
-                    primary energy currency.
+                    Helps support normal vascular tone and arterial flexibility
+                    over time.
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">🧠</div>
-                  <div class="benefit-title">Sleep &amp; Calm</div>
+                  <div class="benefit-icon benefit-icon--bone">
+                    <i class="fa-solid fa-flask"></i>
+                  </div>
+                  <div class="benefit-title">High Potency</div>
                   <div class="benefit-desc">
-                    Helps regulate the nervous system and promotes deeper, more
-                    restorative sleep.
+                    Each softgel delivers a concentrated 2000 FU (200 mg) dose
+                    of natural enzyme.
+                  </div>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon benefit-icon--dumbbell">
+                    <i class="fa-solid fa-seedling"></i>
+                  </div>
+                  <div class="benefit-title">Naturally Fermented</div>
+                  <div class="benefit-desc">
+                    Sourced from traditionally fermented soybean (Natto) for a
+                    natural enzyme profile.
+                  </div>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon benefit-icon--brain">
+                    <i class="fa-solid fa-capsules"></i>
+                  </div>
+                  <div class="benefit-title">Daily Wellness</div>
+                  <div class="benefit-desc">
+                    Easy one-softgel daily routine to support long-term
+                    cardiovascular care.
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Nutrition -->
           <div class="tab-panel" id="tab-nutrition">
             <div class="nutrition-wrap">
               <p
@@ -3165,105 +3137,96 @@
                   margin-bottom: 18px;
                 "
               >
-                <strong>Serving Size:</strong> 2 Tablets &nbsp;|&nbsp;
-                <strong>Servings Per Container:</strong> 30
+                <strong>Serving Size:</strong> 1 Softgel &nbsp;|&nbsp;
+                <strong>Servings Per Container:</strong> 60
               </p>
               <table class="nutrition-table">
                 <thead>
                   <tr>
                     <th>Nutrient</th>
                     <th style="text-align: center">Per Serving</th>
-                    <th>% Daily Value</th>
+                    <th>% RDA</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Magnesium (as Magnesium Glycinate)</td>
-                    <td style="text-align: center">300 mg</td>
-                    <td>71%</td>
+                    <td>Nattokinase Enzyme</td>
+                    <td style="text-align: center">200 mg (2000 FU)</td>
+                    <td>**</td>
                   </tr>
                   <tr>
-                    <td>Calcium (as Calcium Carbonate)</td>
-                    <td style="text-align: center">200 mg</td>
-                    <td>20%</td>
+                    <td>Omega-3 Fatty Acid</td>
+                    <td style="text-align: center">180 mg</td>
+                    <td>**</td>
                   </tr>
                   <tr>
-                    <td>Vitamin D3 (Cholecalciferol)</td>
-                    <td style="text-align: center">1000 IU</td>
-                    <td>250%</td>
+                    <td>EPA (Eicosapentaenoic Acid)</td>
+                    <td style="text-align: center">120 mg</td>
+                    <td>**</td>
                   </tr>
                   <tr>
-                    <td>Zinc (as Zinc Gluconate)</td>
+                    <td>DHA (Docosahexaenoic Acid)</td>
                     <td style="text-align: center">10 mg</td>
-                    <td>91%</td>
+                    <td>**</td>
                   </tr>
                   <tr>
-                    <td>Vitamin K2 (MK-7)</td>
-                    <td style="text-align: center">45 mcg</td>
-                    <td>56%</td>
-                  </tr>
-                  <tr>
-                    <td>Vitamin B6 (Pyridoxine HCl)</td>
-                    <td style="text-align: center">5 mg</td>
-                    <td>294%</td>
+                    <td>Vitamin E</td>
+                    <td style="text-align: center">10.06 mg</td>
+                    <td>0.5</td>
                   </tr>
                 </tbody>
               </table>
               <p class="nutrition-note">
-                * Percent Daily Values are based on a 2,000 calorie diet. Daily
-                Values may be higher or lower depending on your calorie
-                requirements.
+                ** %RDA not established. RDA values established as per ICMR
+                &amp; FSS (Labeling &amp; Display) Guidelines 2020, based on a
+                sedentary woman.
               </p>
             </div>
           </div>
 
-          <!-- Ingredients -->
           <div class="tab-panel" id="tab-ingredients">
             <p class="ingredients-text">
-              <strong>Active Ingredients:</strong> Magnesium Glycinate (300 mg),
-              Calcium Carbonate (200 mg), Cholecalciferol / Vitamin D3 (25 mcg),
-              Zinc Gluconate (10 mg), Menaquinone-7 / Vitamin K2 MK-7 (45 mcg),
-              Pyridoxine HCl / Vitamin B6 (5 mg).
+              <strong>Active Ingredients:</strong> Nattokinase Enzyme (200 mg /
+              2000 FU), Omega-3 Fatty Acid (180 mg), EPA – Eicosapentaenoic Acid
+              (120 mg), DHA – Docosahexaenoic Acid (10 mg), Vitamin E (10.06
+              mg).
             </p>
             <p class="ingredients-text">
-              <strong>Other Ingredients:</strong> Microcrystalline Cellulose,
-              Dicalcium Phosphate, Magnesium Stearate (vegetable), Silicon
-              Dioxide, Hydroxypropyl Methylcellulose (coating), Polyethylene
-              Glycol.
+              <strong>Other Ingredients:</strong> Fish Oil, Capsule Shell
+              (Gelatin – Food Grade), Humectants (422 &amp; 420i), Gelling
+              Agent. Polyols may have laxative effects.
             </p>
             <div class="allergen-box">
               <strong
                 ><i class="fa-solid fa-triangle-exclamation"></i> Allergen
                 Information</strong
-              >Contains no gluten, dairy, soy, nut, or shellfish-derived
-              ingredients. Manufactured in a facility that also processes milk
-              and soy. Suitable for vegetarians. Not suitable for vegans
-              (Vitamin D3 is lanolin-derived).
+              >Contains fish-derived ingredients and soy-fermented enzyme.
+              Capsule shell is gelatin-based and not suitable for vegetarians or
+              vegans. Manufactured in a facility that also processes soy and
+              shellfish. Not intended to diagnose, treat, cure, or prevent any
+              disease.
             </div>
           </div>
 
-          <!-- How to use -->
           <div class="tab-panel" id="tab-usage">
             <div class="usage-steps">
               <div class="usage-step">
                 <div class="step-num">1</div>
                 <div class="step-text">
-                  <h5>Take 2 tablets per day</h5>
+                  <h5>Take 1 softgel daily</h5>
                   <p>
-                    The recommended dose is 2 tablets daily. Do not exceed this
-                    amount unless advised by a healthcare professional.
+                    For adults, the recommended dose is one softgel daily.
+                    Recommended dosage should not be exceeded.
                   </p>
                 </div>
               </div>
               <div class="usage-step">
                 <div class="step-num">2</div>
                 <div class="step-text">
-                  <h5>Take with or after meals</h5>
+                  <h5>Take preferably with meals</h5>
                   <p>
-                    Take with food to enhance absorption of fat-soluble vitamins
-                    (D3, K2) and to minimise any chance of stomach discomfort.
-                    Evening is ideal, as magnesium supports relaxation and sleep
-                    quality.
+                    Take the softgel daily, preferably with meals, to support
+                    comfortable digestion and consistent absorption.
                   </p>
                 </div>
               </div>
@@ -3272,9 +3235,9 @@
                 <div class="step-text">
                   <h5>Swallow with a full glass of water</h5>
                   <p>
-                    Drink at least 200 ml of water when taking the tablets.
-                    Avoid taking with caffeinated drinks or alcohol as these can
-                    reduce mineral absorption.
+                    Drink at least 200 ml of water when taking the softgel.
+                    Avoid taking on an empty stomach if you experience any
+                    discomfort.
                   </p>
                 </div>
               </div>
@@ -3283,10 +3246,9 @@
                 <div class="step-text">
                   <h5>Use consistently for best results</h5>
                   <p>
-                    Benefits are cumulative. Use for a minimum of 8–12 weeks for
-                    noticeable improvements in energy, sleep, and muscle
-                    comfort. Store below 30°C in a cool, dry place away from
-                    direct sunlight.
+                    Benefits build over time with regular daily use. Store in a
+                    cool, dry place at room temperature and out of direct
+                    sunlight, away from children.
                   </p>
                 </div>
               </div>
@@ -3295,72 +3257,73 @@
               <strong
                 ><i class="fa-solid fa-circle-exclamation"></i> Important
                 Notice</strong
-              >Consult your doctor before use if you are pregnant, nursing, have
-              kidney disease, are on prescription medications, or have a known
-              medical condition. Keep out of reach of children. This product is
-              not intended to diagnose, treat, cure, or prevent any disease.
+              >Consult your healthcare practitioner before taking this product
+              if you are pregnant, lactating, or trying to conceive, or if you
+              are on blood-thinning medication or have a bleeding disorder. Not
+              for medicinal use. This product is not intended to diagnose,
+              treat, cure, or prevent any disease, and is not to be used as a
+              substitute for a varied diet. Keep out of reach of children.
             </div>
           </div>
         </div>
 
-        <!-- ── REVIEWS ── -->
         <div class="reviews-section reveal">
           <span class="section-eyebrow"
             ><i class="fa-solid fa-star"></i> Customer Reviews</span
           >
-          <h2 class="section-hd">Trusted by 10,000+ Happy Customers</h2>
+          <h2 class="section-hd">Trusted by Thousands for Heart Wellness</h2>
 
           <div class="reviews-layout">
             <div class="rating-summary-card">
-              <div class="big-score">4.8</div>
+              <div class="big-score">4.7</div>
               <div class="big-stars">
                 ★★★★<span style="color: var(--border)">★</span>
               </div>
-              <div class="total-rev">Based on 128 verified reviews</div>
+              <div class="total-rev">Based on 73 verified reviews</div>
               <div>
                 <div class="bar-row">
                   <span class="bar-lbl">5★</span>
                   <div class="bar-track">
                     <div
                       class="bar-fill"
-                      data-w="78"
+                      data-w="72"
                       style="background: #16a34a"
                     ></div>
                   </div>
-                  <span class="bar-count">100</span>
+                  <span class="bar-count">53</span>
                 </div>
                 <div class="bar-row">
                   <span class="bar-lbl">4★</span>
                   <div class="bar-track">
                     <div
                       class="bar-fill"
-                      data-w="14"
+                      data-w="18"
                       style="background: #65a30d"
                     ></div>
                   </div>
-                  <span class="bar-count">18</span>
+                  <span class="bar-count">13</span>
                 </div>
                 <div class="bar-row">
                   <span class="bar-lbl">3★</span>
                   <div class="bar-track">
                     <div
                       class="bar-fill"
-                      data-w="5"
+                      data-w="6"
                       style="background: #ca8a04"
                     ></div>
                   </div>
-                  <span class="bar-count">6</span>
+                  <span class="bar-count">4</span>
                 </div>
                 <div class="bar-row">
                   <span class="bar-lbl">2★</span>
                   <div class="bar-track">
                     <div
                       class="bar-fill"
-                      data-w="2"
+                      data-w="3"
                       style="background: #ea580c"
                     ></div>
                   </div>
-                  <span class="bar-count">3</span>
+                  <span class="bar-count">2</span>
                 </div>
                 <div class="bar-row">
                   <span class="bar-lbl">1★</span>
@@ -3375,8 +3338,8 @@
                 </div>
                 <div class="rating-summary-footer">
                   <div class="rating-summary-note">
-                    <strong>Top benefit:</strong> calmer sleep, reduced cramps,
-                    and faster recovery.
+                    <strong>Top benefit:</strong> better circulation and a sense
+                    of overall cardiovascular ease.
                   </div>
                   <button
                     class="rating-summary-cta"
@@ -3396,63 +3359,63 @@
               <div class="review-card">
                 <div class="rc-header">
                   <div>
-                    <div class="rc-author">Rohit Sharma</div>
+                    <div class="rc-author">Anil Verma</div>
                     <div class="rc-verified">
                       <i class="fa-solid fa-circle-check"></i> Verified Purchase
                     </div>
                   </div>
-                  <div class="rc-date">2 days ago</div>
+                  <div class="rc-date">3 days ago</div>
                 </div>
                 <div class="rc-stars">★★★★★</div>
                 <div class="rc-title">
-                  Noticeably improved my sleep within a week!
+                  My doctor was happy with my checkup numbers
                 </div>
                 <div class="rc-text">
-                  I was skeptical at first but after just 7 days my sleep has
-                  gotten significantly deeper. I no longer wake up with leg
-                  cramps at night. The tablet is easy to swallow and no
-                  aftertaste. Definitely a keeper.
+                  I started taking this on my doctor's suggestion to support
+                  circulation alongside my regular routine. After two months my
+                  last checkup went smoothly and I genuinely feel lighter on my
+                  feet. Easy to swallow, no aftertaste.
                 </div>
                 <div class="rc-helpful">
                   <span>Helpful?</span
                   ><button
                     class="helpful-btn"
-                    onclick="this.textContent = '👍 Yes (43)'"
+                    onclick="this.textContent = '👍 Yes (31)'"
                   >
-                    👍 Yes (42)</button
+                    👍 Yes (30)</button
                   ><button class="helpful-btn">👎 No (1)</button>
                 </div>
               </div>
               <div class="review-card">
                 <div class="rc-header">
                   <div>
-                    <div class="rc-author">Priya Kapoor</div>
+                    <div class="rc-author">Sunita Rao</div>
                     <div class="rc-verified">
                       <i class="fa-solid fa-circle-check"></i> Verified Purchase
                     </div>
                   </div>
-                  <div class="rc-date">1 week ago</div>
+                  <div class="rc-date">2 weeks ago</div>
                 </div>
                 <div class="rc-stars">
                   ★★★★<span style="color: var(--border)">★</span>
                 </div>
-                <div class="rc-title">Great value, fast shipping</div>
+                <div class="rc-title">Good quality, packaging is solid</div>
                 <div class="rc-text">
-                  Ordered for my parents who are in their 60s. They've been
-                  taking it for 3 weeks and both say their joints feel less
-                  stiff in the mornings. Packaging is excellent and delivery was
-                  quicker than expected.
+                  Bought this for my father who is in his 50s. The carton
+                  arrived well sealed and the softgels are easy to take. We've
+                  noticed his energy levels and circulation feel better since
+                  starting. Will reorder.
                 </div>
                 <div class="rc-helpful">
                   <span>Helpful?</span
-                  ><button class="helpful-btn">👍 Yes (28)</button
+                  ><button class="helpful-btn">👍 Yes (22)</button
                   ><button class="helpful-btn">👎 No (0)</button>
                 </div>
               </div>
               <div class="review-card">
                 <div class="rc-header">
                   <div>
-                    <div class="rc-author">Meera Iyer</div>
+                    <div class="rc-author">Karthik Menon</div>
                     <div class="rc-verified">
                       <i class="fa-solid fa-circle-check"></i> Verified Purchase
                     </div>
@@ -3460,16 +3423,16 @@
                   <div class="rc-date">1 month ago</div>
                 </div>
                 <div class="rc-stars">★★★★★</div>
-                <div class="rc-title">Doctor recommended and it works!</div>
+                <div class="rc-title">High potency and consistent quality</div>
                 <div class="rc-text">
-                  My doctor suggested adding magnesium and D3 to my diet. Found
-                  this and it ticks every box. After 6 weeks my Vitamin D levels
-                  are almost normal. It's convenient to take just 2 pills rather
-                  than separate supplements. Reordering immediately.
+                  I researched several nattokinase brands before settling on
+                  this one because of the 2000 FU potency per serving. Have been
+                  taking it daily for six weeks and feel it's a worthwhile
+                  addition to my heart-health routine.
                 </div>
                 <div class="rc-helpful">
                   <span>Helpful?</span
-                  ><button class="helpful-btn">👍 Yes (35)</button
+                  ><button class="helpful-btn">👍 Yes (19)</button
                   ><button class="helpful-btn">👎 No (0)</button>
                 </div>
               </div>
@@ -3477,7 +3440,6 @@
           </div>
         </div>
 
-        <!-- ── SIMILAR PRODUCTS ── -->
         <div class="similar-section reveal">
           <span class="section-eyebrow"
             ><i class="fa-solid fa-bag-shopping"></i> You May Also Like</span
@@ -3490,26 +3452,24 @@
               <div class="card-img-wrap">
                 <span class="card-badge">Top Seller</span>
                 <img
-                  src="products/Nattokinase Carton.jpg.jpeg"
-                  alt="Nattokinase"
+                  src="../products/Magnesium Complex.jpg.jpeg"
+                  alt="Magnesium Complex"
                   onerror="
                     this.src =
-                      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&q=80'
+                      'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&q=80'
                   "
                 />
               </div>
               <div class="card-body">
-                <span class="card-cat">Nattokinase</span>
+                <span class="card-cat">Magnesium</span>
                 <div class="card-name">
-                  <a href="product-details-pages/nattokinase200.html"
-                    >Nattokinase 200 mg</a
-                  >
+                  <a href="../product-details.html">Magnesium Complex 5-in-1</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>73 reviews</span></div>
+                <div class="card-stars">★★★★★ <span>128 reviews</span></div>
                 <div class="card-price-row">
                   <div>
-                    <span class="card-price">₹1,899</span>
-                    <span class="card-old">₹2,099</span>
+                    <span class="card-price">₹1,299</span>
+                    <span class="card-old">₹1,499</span>
                   </div>
                   <button
                     class="card-btn"
@@ -3524,7 +3484,7 @@
               <div class="card-img-wrap">
                 <span class="card-badge sale">Sale</span>
                 <img
-                  src="products/omega 3, Vitamin E.jpg.jpeg"
+                  src="../products/omega 3, Vitamin E.jpg.jpeg"
                   alt="Omega-3"
                   onerror="
                     this.src =
@@ -3535,7 +3495,7 @@
               <div class="card-body">
                 <span class="card-cat">Omega-3</span>
                 <div class="card-name">
-                  <a href="product-details.html"
+                  <a href="../product-details.html"
                     >Omega-3 Fish Oil + Vitamin E</a
                   >
                 </div>
@@ -3558,7 +3518,7 @@
               <div class="card-img-wrap">
                 <span class="card-badge new">New</span>
                 <img
-                  src="products/ZMA.png"
+                  src="../products/ZMA.png"
                   alt="ZMA"
                   onerror="
                     this.src =
@@ -3569,7 +3529,9 @@
               <div class="card-body">
                 <span class="card-cat">ZMA</span>
                 <div class="card-name">
-                  <a href="product-details.html">ZMA + Vitamin B6 (90 Caps)</a>
+                  <a href="../product-details.html"
+                    >ZMA + Vitamin B6 (90 Caps)</a
+                  >
                 </div>
                 <div class="card-stars">★★★★★ <span>62 reviews</span></div>
                 <div class="card-price-row">
@@ -3590,7 +3552,7 @@
               <div class="card-img-wrap">
                 <span class="card-badge">Top Seller</span>
                 <img
-                  src="products/VITAMIN D3.jpg.jpeg"
+                  src="../products/VITAMIN D3.jpg.jpeg"
                   alt="Vitamin D3"
                   onerror="
                     this.src =
@@ -3601,7 +3563,7 @@
               <div class="card-body">
                 <span class="card-cat">Vitamins</span>
                 <div class="card-name">
-                  <a href="product-details.html">Vitamin D3 Supplement</a>
+                  <a href="../product-details.html">Vitamin D3 Supplement</a>
                 </div>
                 <div class="card-stars">★★★★★ <span>142 reviews</span></div>
                 <div class="card-price-row">
@@ -3621,10 +3583,8 @@
           </div>
         </div>
       </div>
-      <!-- /page-wrap -->
     </main>
 
-    <!-- VIDEO MODAL -->
     <div
       class="video-modal-overlay"
       id="videoModal"
@@ -3636,7 +3596,7 @@
         </button>
         <div class="video-placeholder">
           <div class="video-play-big"><i class="fa-solid fa-play"></i></div>
-          <p>Magnesium Complex 5-in-1 — Product Walkthrough</p>
+          <p>Nattokinase 200 mg — Product Walkthrough</p>
           <p style="font-size: 0.76rem; opacity: 0.5">
             Video will play here · Replace with your hosted video URL
           </p>
@@ -3644,7 +3604,6 @@
       </div>
     </div>
 
-    <!-- IMAGE VIEWER MODAL -->
     <div
       class="image-modal-overlay"
       id="imageModal"
@@ -3712,17 +3671,15 @@
       </div>
     </div>
 
-    <!-- STICKY BUY BAR (mobile) -->
     <div class="sticky-buy-bar" id="stickyBar">
       <div class="sticky-buy-bar-inner">
-        <span class="sbb-price">₹1,299</span>
+        <span class="sbb-price">₹1,199</span>
         <button class="sbb-btn" onclick="handleBuyNow()">
           <i class="fa-solid fa-bag-shopping"></i> Buy Now
         </button>
       </div>
     </div>
 
-    <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <div class="footer-top">
@@ -3730,7 +3687,7 @@
             <div class="footer-brand">
               <div class="brand-row">
                 <div class="f-mark">
-                  <img src="assets/logo.png" alt="Aiva Wellness logo" />
+                  <img src="../assets/logo.png" alt="Aiva Wellness logo" />
                 </div>
                 <span class="brand-name"
                   ><span class="brand-aiva">Aiva</span
@@ -3784,25 +3741,21 @@
           <div class="footer-col">
             <h6>Quick Links</h6>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="shop.html">Shop</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../shop.html">Shop</a></li>
+              <li><a href="../about.html">About Us</a></li>
+              <li><a href="../contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h6>Categories</h6>
             <ul>
-              <li><a href="product-details.html">Magnesium</a></li>
-              <li>
-                <a href="product-details-pages/nattokinase200.html"
-                  >Nattokinase</a
-                >
-              </li>
-              <li><a href="shop.html">Vitamins &amp; Minerals</a></li>
-              <li><a href="shop.html">Omega-3</a></li>
-              <li><a href="shop.html">ZMA</a></li>
-              <li><a href="shop.html">Immunity</a></li>
+              <li><a href="../product-details.html">Magnesium</a></li>
+              <li><a href="nattokinase200.html">Nattokinase</a></li>
+              <li><a href="../shop.html">Vitamins &amp; Minerals</a></li>
+              <li><a href="../shop.html">Omega-3</a></li>
+              <li><a href="../shop.html">ZMA</a></li>
+              <li><a href="../shop.html">Immunity</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -3831,18 +3784,15 @@
       </div>
     </footer>
 
-    <!-- TOAST CONTAINER -->
     <div class="toast-wrap" id="toastWrap"></div>
 
     <script>
-      /* ══ HEADER SCROLL ══ */
       window.addEventListener("scroll", () => {
         document
           .getElementById("siteHeader")
           .classList.toggle("scrolled", window.scrollY > 20);
       });
 
-      /* ══ MOBILE MENU ══ */
       function toggleMenu() {
         const m = document.getElementById("mobileMenu");
         const h = document.querySelector(".hamburger");
@@ -3853,7 +3803,6 @@
           : "";
       }
 
-      /* ══ TABS ══ */
       function switchTab(id, btn) {
         document
           .querySelectorAll(".tab-panel")
@@ -3865,7 +3814,6 @@
         btn.classList.add("active");
       }
 
-      /* ══ GALLERY THUMBNAIL SWITCH (syncs rail + row) ══ */
       function switchThumb(el, src) {
         document.querySelectorAll(".thumb-img").forEach((t) => {
           t.classList.toggle("active", (t.dataset.fullSrc || t.src) === src);
@@ -3883,7 +3831,6 @@
         }, 120);
       }
 
-      /* ══ PREMIUM GALLERY CONTROLS ══ */
       const imgContainer = document.getElementById("imgContainer");
       const mainImg = document.getElementById("mainImg");
       let activeThumbSrc = mainImg.src;
@@ -3953,14 +3900,12 @@
         if (thumb) switchThumb(thumb, item.src);
       }
 
-      /* keyboard nav for main gallery (when modal closed) */
       document.addEventListener("keydown", (e) => {
         if (imageModal.classList.contains("open")) return;
         if (e.key === "ArrowLeft") stepMainGallery(-1);
         if (e.key === "ArrowRight") stepMainGallery(1);
       });
 
-      /* swipe support on mobile main image */
       (() => {
         let touchStartX = null;
         imgContainer.addEventListener(
@@ -3984,7 +3929,6 @@
 
       updateGalleryUI();
 
-      /* hover-to-preview: show thumbnail image in main viewer on hover */
       document.querySelectorAll("#thumbsRow .thumb-img").forEach((thumb) => {
         const previewSrc = thumb.dataset.fullSrc || thumb.src;
         thumb.addEventListener("mouseenter", () =>
@@ -3995,7 +3939,6 @@
         );
       });
 
-      /* ══ VIDEO MODAL ══ */
       function openVideoModal() {
         document.getElementById("videoModal").classList.add("open");
         document.body.style.overflow = "hidden";
@@ -4005,7 +3948,6 @@
         document.body.style.overflow = "";
       }
 
-      /* ══ IMAGE MODAL — fixed, professional, mobile + desktop ready ══ */
       const imageModal = document.getElementById("imageModal");
       const imageModalImg = document.getElementById("imageModalImg");
       const imageModalBody = document.getElementById("imageModalBody");
@@ -4029,7 +3971,6 @@
       let touchMode = null;
       let lastTapTime = 0;
 
-      /* build filmstrip thumbnails inside modal (once) */
       if (imageModalStrip) {
         galleryItems.forEach((item, i) => {
           if (item.type === "video") {
@@ -4064,7 +4005,6 @@
         return getActiveGalleryIndex();
       }
 
-      /* main image click / expand button both call this WITHOUT passing the click event */
       function openImageModal() {
         currentModalIndex = getCurrentModalIndex();
         showModalItem(currentModalIndex);
@@ -4093,7 +4033,7 @@
         resetImagePosition();
 
         if (item.type === "video") {
-          imageModalImg.src = "products/Magnesium Complex.jpg.jpeg";
+          imageModalImg.src = "../products/Nattokinase Carton.jpg.jpeg";
           imageModalVideoBadge.classList.add("show");
         } else {
           imageModalImg.src = item.src;
@@ -4136,7 +4076,6 @@
         setImageModalTransform();
       }
 
-      /* desktop: scroll wheel zoom */
       imageModalBody.addEventListener(
         "wheel",
         (e) => {
@@ -4148,7 +4087,6 @@
         { passive: false },
       );
 
-      /* desktop: double-click to zoom in/reset */
       imageModalBody.addEventListener("dblclick", (e) => {
         e.preventDefault();
         if (
@@ -4159,7 +4097,6 @@
         setImageModalScale(imageModalScale > 1 ? 1 : 2.2);
       });
 
-      /* desktop: drag to pan when zoomed */
       imageModalBody.addEventListener("pointerdown", (e) => {
         if (!imageModal.classList.contains("open") || imageModalScale <= 1)
           return;
@@ -4187,7 +4124,6 @@
         });
       });
 
-      /* mobile: pinch to zoom + single-finger pan + double-tap to zoom */
       imageModalBody.addEventListener(
         "touchstart",
         (e) => {
@@ -4201,7 +4137,6 @@
           } else if (e.touches.length === 1) {
             const now = Date.now();
             if (now - lastTapTime < 300) {
-              /* double tap */
               if (
                 !(
                   galleryItems[currentModalIndex] &&
@@ -4262,7 +4197,6 @@
         if (e.touches.length === 0) touchMode = null;
       });
 
-      /* tap on video preview inside modal opens the actual video modal */
       imageModalBody.addEventListener("click", (e) => {
         if (isDragging) return;
         if (
@@ -4275,7 +4209,6 @@
         }
       });
 
-      /* single, clean click handler — opens modal at the currently active image */
       imgContainer.addEventListener("click", (e) => {
         e.stopPropagation();
         openImageModal();
@@ -4289,14 +4222,12 @@
         if (e.key === "-") setImageModalScale(imageModalScale - 0.3);
       });
 
-      /* ══ QUANTITY ══ */
       let qty = 1;
       function changeQty(delta) {
         qty = Math.max(1, Math.min(99, qty + delta));
         document.getElementById("qtyVal").textContent = qty;
       }
 
-      /* ══ VARIANT PILLS ══ */
       document.querySelectorAll(".vpill").forEach((p) => {
         p.addEventListener("click", function () {
           document
@@ -4306,7 +4237,6 @@
         });
       });
 
-      /* ══ BUY NOW ══ */
       function handleBuyNow() {
         showToast("✅", "Redirecting to checkout…");
         setTimeout(() => {
@@ -4315,7 +4245,6 @@
         }, 800);
       }
 
-      /* ══ TOAST ══ */
       function showToast(icon, msg) {
         const wrap = document.getElementById("toastWrap");
         const t = document.createElement("div");
@@ -4331,7 +4260,6 @@
         }, 2800);
       }
 
-      /* ══ SCROLL REVEAL ══ */
       const revEls = document.querySelectorAll(".reveal");
       new IntersectionObserver(
         (entries) => {
@@ -4343,7 +4271,6 @@
         },
         { threshold: 0.1 },
       ).observe(document.body);
-      // observe individually
       revEls.forEach((el) => {
         new IntersectionObserver(
           ([e]) => {
@@ -4355,7 +4282,6 @@
         ).observe(el);
       });
 
-      /* ══ RATING BAR ANIMATION ══ */
       new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
@@ -4369,7 +4295,6 @@
         { threshold: 0.3 },
       ).observe(document.querySelector(".rating-summary-card"));
 
-      /* ══ STICKY BUY BAR — hide when in-view, show when scrolled past ══ */
       (() => {
         const bar = document.getElementById("stickyBar");
         const ctaGroup = document.querySelector(".cta-group");
@@ -4386,27 +4311,26 @@
         obs.observe(ctaGroup);
       })();
 
-      /* ══ PRODUCT MAP (URL param-driven) ══ */
       const PRODUCT_MAP = {
         101: {
           name: "Magnesium Complex 5-in-1",
-          img: "products/Magnesium Complex.jpg.jpeg",
+          img: "../products/Magnesium Complex.jpg.jpeg",
           price: 1299,
           old: 1499,
           discount: 13,
           desc: "Magnesium Complex 5 in 1 supports bone strength, muscle recovery, and cardiac wellness with a balanced formula of Magnesium, Vitamin D3, Zinc, and Calcium. Ideal for daily energy, immunity, and overall vitality.",
         },
         103: {
-          name: "Nattokinase 100 mg",
-          img: "products/Nattokinase Carton.jpg.jpeg",
+          name: "Nattokinase 200 mg",
+          img: "../products/Nattokinase Carton.jpg.jpeg",
           price: 1199,
           old: 1399,
           discount: 14,
-          desc: "Nattokinase 100 mg supports heart health and immune balance, helping maintain healthy circulation and vascular function with every daily serving.",
+          desc: "Nattokinase is a natural fibrinolytic enzyme that supports heart health and healthy blood circulation, helping maintain normal vascular function with every daily serving.",
         },
         108: {
           name: "Vitamin D3 Supplement",
-          img: "products/VITAMIN D3.jpg.jpeg",
+          img: "../products/VITAMIN D3.jpg.jpeg",
           price: 499,
           old: 599,
           discount: 17,
@@ -4414,7 +4338,7 @@
         },
         111: {
           name: "ZMA + Vitamin B6 (90 Capsules)",
-          img: "products/ZMA.png",
+          img: "../products/ZMA.png",
           price: 1499,
           old: 1699,
           discount: 12,
@@ -4422,7 +4346,7 @@
         },
         122: {
           name: "Omega-3 Fish Oil + Vitamin E",
-          img: "products/omega 3, Vitamin E.jpg.jpeg",
+          img: "../products/omega 3, Vitamin E.jpg.jpeg",
           price: 899,
           old: 1099,
           discount: 18,
@@ -4432,8 +4356,8 @@
 
       (() => {
         const id =
-          parseInt(new URLSearchParams(location.search).get("id"), 10) || 101;
-        const p = PRODUCT_MAP[id] || PRODUCT_MAP[101];
+          parseInt(new URLSearchParams(location.search).get("id"), 10) || 103;
+        const p = PRODUCT_MAP[id] || PRODUCT_MAP[103];
         document.getElementById("productTitle").textContent = p.name;
         document.getElementById("productDesc").textContent = p.desc;
         document.getElementById("priceMain").textContent =
