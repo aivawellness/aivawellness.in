@@ -465,7 +465,9 @@
         cursor: zoom-in;
         user-select: none;
         -webkit-user-select: none;
-        transition: box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+        transition:
+          box-shadow 0.35s var(--ease),
+          border-color 0.35s var(--ease);
       }
       .main-img-container:hover {
         box-shadow: var(--sh-xl);
@@ -483,7 +485,9 @@
         display: block;
         pointer-events: none;
         cursor: zoom-in;
-        transition: opacity 0.22s ease, transform 0.6s var(--ease);
+        transition:
+          opacity 0.22s ease,
+          transform 0.6s var(--ease);
         will-change: transform;
       }
       .main-img-container:hover img#mainImg {
@@ -502,7 +506,9 @@
         background-size: 220% 220%;
         background-position: 120% 0%;
         opacity: 0;
-        transition: opacity 0.4s, background-position 0.9s var(--ease);
+        transition:
+          opacity 0.4s,
+          background-position 0.9s var(--ease);
         pointer-events: none;
         z-index: 4;
       }
@@ -684,7 +690,9 @@
         justify-content: center;
         cursor: pointer;
         z-index: 10;
-        transition: transform 0.2s, background 0.2s;
+        transition:
+          transform 0.2s,
+          background 0.2s;
       }
       .image-modal-nav:hover {
         background: rgba(0, 0, 0, 0.65);
@@ -843,7 +851,9 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
       }
-      .thumbs-row::-webkit-scrollbar { display: none; }
+      .thumbs-row::-webkit-scrollbar {
+        display: none;
+      }
       .thumbs-row {
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -1386,7 +1396,9 @@
         justify-content: center;
         cursor: pointer;
         z-index: 10;
-        transition: transform 0.2s, background 0.2s;
+        transition:
+          transform 0.2s,
+          background 0.2s;
       }
       .image-modal-prev {
         left: 18px;
@@ -2452,74 +2464,103 @@
       }
 
       /* ══ IMAGE MODAL — PREMIUM ZOOM CONTROLS ══ */
-.image-modal-zoombar {
-  position: absolute;
-  bottom: 16px;
-  right: 18px;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
-  padding: 6px;
-  border-radius: 999px;
-}
-.zoom-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-.zoom-btn:hover {
-  background: var(--blue);
-}
-.zoom-btn:active {
-  transform: scale(0.92);
-}
-.zoom-pct {
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  min-width: 40px;
-  text-align: center;
-  user-select: none;
-}
-.image-modal-hint {
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 15;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  pointer-events: none;
-  white-space: nowrap;
-}
-@media (max-width: 600px) {
-  .image-modal-hint { display: none; }
-  .image-modal-content { padding: 0 50px; }
-  .image-modal-nav { width: 40px; height: 40px; }
-  .image-modal-zoombar { bottom: 12px; right: 12px; }
-}
-.image-modal-nav:active {
-  transform: translateY(-50%) scale(0.92);
-}
-.image-modal-close:hover {
-  background: var(--blue);
-}
-.image-modal-close:active {
-  transform: scale(0.92);
-}
+      .image-modal-zoombar {
+        position: absolute;
+        bottom: 16px;
+        right: 18px;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(8px);
+        padding: 6px;
+        border-radius: 999px;
+      }
+      .zoom-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .zoom-btn:hover {
+        background: var(--blue);
+      }
+      .zoom-btn:active {
+        transform: scale(0.92);
+      }
+      .zoom-pct {
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        min-width: 40px;
+        text-align: center;
+        user-select: none;
+      }
+      .image-modal-hint {
+        position: absolute;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 15;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.7rem;
+        letter-spacing: 0.02em;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      @media (max-width: 600px) {
+        .image-modal-inner {
+          padding: 12px 0 60px;
+        }
+        .image-modal-hint {
+          display: none;
+        }
+        .image-modal-content {
+          padding: 0 12px;
+        }
+        .image-modal-body {
+          width: 100%;
+          height: 100%;
+        }
+        .image-modal-body img {
+          width: 100%;
+          height: auto;
+        }
+        .image-modal-nav {
+          width: 40px;
+          height: 40px;
+        }
+        .image-modal-prev {
+          left: 8px;
+        }
+        .image-modal-next {
+          right: 8px;
+        }
+        .image-modal-zoombar {
+          bottom: 12px;
+          right: 12px;
+        }
+      }
+      .image-modal-nav:active {
+        transform: translateY(-50%) scale(0.92);
+      }
+      .image-modal-close:hover {
+        background: var(--blue);
+      }
+      .image-modal-close:active {
+        transform: scale(0.92);
+      }
     </style>
   </head>
   <body>
@@ -2615,21 +2656,30 @@
                 <button
                   class="expand-btn"
                   title="View fullscreen"
-                  onclick="event.stopPropagation(); openImageModal();"
+                  onclick="
+                    event.stopPropagation();
+                    openImageModal();
+                  "
                 >
                   <i class="fa-solid fa-expand"></i>
                 </button>
                 <button
                   class="main-nav-arrow main-nav-prev"
                   title="Previous"
-                  onclick="event.stopPropagation(); stepMainGallery(-1);"
+                  onclick="
+                    event.stopPropagation();
+                    stepMainGallery(-1);
+                  "
                 >
                   <i class="fa-solid fa-chevron-left"></i>
                 </button>
                 <button
                   class="main-nav-arrow main-nav-next"
                   title="Next"
-                  onclick="event.stopPropagation(); stepMainGallery(1);"
+                  onclick="
+                    event.stopPropagation();
+                    stepMainGallery(1);
+                  "
                 >
                   <i class="fa-solid fa-chevron-right"></i>
                 </button>
@@ -3525,25 +3575,54 @@
         <div class="image-modal-toolbar">
           <span class="image-modal-counter" id="modalCounter">1 / 6</span>
         </div>
-        <span class="image-modal-hint" id="imageModalHint">Scroll / pinch to zoom · Drag to pan · Double-click to reset</span>
+        <span class="image-modal-hint" id="imageModalHint"
+          >Scroll / pinch to zoom · Drag to pan · Double-click to reset</span
+        >
         <div class="image-modal-zoombar">
-          <button class="zoom-btn" onclick="event.stopPropagation(); setImageModalScale(imageModalScale - 0.5);" title="Zoom out">
+          <button
+            class="zoom-btn"
+            onclick="
+              event.stopPropagation();
+              setImageModalScale(imageModalScale - 0.5);
+            "
+            title="Zoom out"
+          >
             <i class="fa-solid fa-minus"></i>
           </button>
           <span class="zoom-pct" id="zoomPct">100%</span>
-          <button class="zoom-btn" onclick="event.stopPropagation(); setImageModalScale(imageModalScale + 0.5);" title="Zoom in">
+          <button
+            class="zoom-btn"
+            onclick="
+              event.stopPropagation();
+              setImageModalScale(imageModalScale + 0.5);
+            "
+            title="Zoom in"
+          >
             <i class="fa-solid fa-plus"></i>
           </button>
         </div>
         <div class="image-modal-content">
-          <button class="image-modal-nav image-modal-prev" onclick="prevModalItem(event)">
+          <button
+            class="image-modal-nav image-modal-prev"
+            onclick="prevModalItem(event)"
+          >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
           <div class="image-modal-body" id="imageModalBody">
-            <img id="imageModalImg" src="" alt="Product image" draggable="false" />
-            <span class="image-modal-video-badge" id="imageModalVideoBadge">Video</span>
+            <img
+              id="imageModalImg"
+              src=""
+              alt="Product image"
+              draggable="false"
+            />
+            <span class="image-modal-video-badge" id="imageModalVideoBadge"
+              >Video</span
+            >
           </div>
-          <button class="image-modal-nav image-modal-next" onclick="nextModalItem(event)">
+          <button
+            class="image-modal-nav image-modal-next"
+            onclick="nextModalItem(event)"
+          >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -3704,11 +3783,9 @@
 
       /* ══ GALLERY THUMBNAIL SWITCH (syncs rail + row) ══ */
       function switchThumb(el, src) {
-        document
-          .querySelectorAll(".thumb-img")
-          .forEach((t) => {
-            t.classList.toggle("active", (t.dataset.fullSrc || t.src) === src);
-          });
+        document.querySelectorAll(".thumb-img").forEach((t) => {
+          t.classList.toggle("active", (t.dataset.fullSrc || t.src) === src);
+        });
         activeThumbSrc = src;
         previewMainImage(src);
         updateGalleryUI();
@@ -3728,30 +3805,30 @@
       let activeThumbSrc = mainImg.src;
 
       const galleryItems = Array.from(
-        document.querySelectorAll('#thumbsRow .thumb-img'),
+        document.querySelectorAll("#thumbsRow .thumb-img"),
       ).map((thumb) => ({
-        type: 'image',
+        type: "image",
         src: thumb.dataset.fullSrc || thumb.src,
       }));
-      const videoThumbEls = document.querySelectorAll('.video-thumb');
+      const videoThumbEls = document.querySelectorAll(".video-thumb");
       if (videoThumbEls.length) {
-        galleryItems.push({ type: 'video', src: '', label: 'Product Video' });
+        galleryItems.push({ type: "video", src: "", label: "Product Video" });
       }
 
-      const galleryCounterEl = document.getElementById('galleryCounter');
-      const galleryDotsEl = document.getElementById('galleryDots');
+      const galleryCounterEl = document.getElementById("galleryCounter");
+      const galleryDotsEl = document.getElementById("galleryDots");
       if (galleryDotsEl) {
         galleryItems.forEach((item, i) => {
-          const dot = document.createElement('button');
-          dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-          dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
-          dot.addEventListener('click', () => {
-            if (item.type === 'video') {
+          const dot = document.createElement("button");
+          dot.className = "gallery-dot" + (i === 0 ? " active" : "");
+          dot.setAttribute("aria-label", "Go to image " + (i + 1));
+          dot.addEventListener("click", () => {
+            if (item.type === "video") {
               openVideoModal();
             } else {
-              const thumb = Array.from(document.querySelectorAll('#thumbsRow .thumb-img')).find(
-                (t) => (t.dataset.fullSrc || t.src) === item.src,
-              );
+              const thumb = Array.from(
+                document.querySelectorAll("#thumbsRow .thumb-img"),
+              ).find((t) => (t.dataset.fullSrc || t.src) === item.src);
               if (thumb) switchThumb(thumb, item.src);
             }
           });
@@ -3761,7 +3838,7 @@
 
       function getActiveGalleryIndex() {
         const idx = galleryItems.findIndex(
-          (item) => item.type === 'image' && item.src === activeThumbSrc,
+          (item) => item.type === "image" && item.src === activeThumbSrc,
         );
         return idx >= 0 ? idx : 0;
       }
@@ -3769,11 +3846,11 @@
       function updateGalleryUI() {
         const idx = getActiveGalleryIndex();
         if (galleryCounterEl) {
-          galleryCounterEl.textContent = (idx + 1) + ' / ' + galleryItems.length;
+          galleryCounterEl.textContent = idx + 1 + " / " + galleryItems.length;
         }
         if (galleryDotsEl) {
           Array.from(galleryDotsEl.children).forEach((dot, i) =>
-            dot.classList.toggle('active', i === idx),
+            dot.classList.toggle("active", i === idx),
           );
         }
       }
@@ -3782,46 +3859,57 @@
         const idx = getActiveGalleryIndex();
         let nextIdx = (idx + delta + galleryItems.length) % galleryItems.length;
         const item = galleryItems[nextIdx];
-        if (item.type === 'video') {
+        if (item.type === "video") {
           openVideoModal();
           return;
         }
-        const thumb = Array.from(document.querySelectorAll('#thumbsRow .thumb-img')).find(
-          (t) => (t.dataset.fullSrc || t.src) === item.src,
-        );
+        const thumb = Array.from(
+          document.querySelectorAll("#thumbsRow .thumb-img"),
+        ).find((t) => (t.dataset.fullSrc || t.src) === item.src);
         if (thumb) switchThumb(thumb, item.src);
       }
 
       /* keyboard nav for main gallery (when modal closed) */
-      document.addEventListener('keydown', (e) => {
-        if (imageModal.classList.contains('open')) return;
-        if (e.key === 'ArrowLeft') stepMainGallery(-1);
-        if (e.key === 'ArrowRight') stepMainGallery(1);
+      document.addEventListener("keydown", (e) => {
+        if (imageModal.classList.contains("open")) return;
+        if (e.key === "ArrowLeft") stepMainGallery(-1);
+        if (e.key === "ArrowRight") stepMainGallery(1);
       });
 
       /* swipe support on mobile main image */
       (() => {
         let touchStartX = null;
-        imgContainer.addEventListener('touchstart', (e) => {
-          touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-        imgContainer.addEventListener('touchend', (e) => {
-          if (touchStartX === null) return;
-          const dx = e.changedTouches[0].clientX - touchStartX;
-          if (Math.abs(dx) > 40) stepMainGallery(dx > 0 ? -1 : 1);
-          touchStartX = null;
-        }, { passive: true });
+        imgContainer.addEventListener(
+          "touchstart",
+          (e) => {
+            touchStartX = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        imgContainer.addEventListener(
+          "touchend",
+          (e) => {
+            if (touchStartX === null) return;
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 40) stepMainGallery(dx > 0 ? -1 : 1);
+            touchStartX = null;
+          },
+          { passive: true },
+        );
       })();
 
       updateGalleryUI();
 
       /* hover-to-preview: show thumbnail image in main viewer on hover */
-      document.querySelectorAll('#thumbsRow .thumb-img').forEach((thumb) => {
+      document.querySelectorAll("#thumbsRow .thumb-img").forEach((thumb) => {
         const previewSrc = thumb.dataset.fullSrc || thumb.src;
-        thumb.addEventListener('mouseenter', () => previewMainImage(previewSrc));
-        thumb.addEventListener('mouseleave', () => previewMainImage(activeThumbSrc));
+        thumb.addEventListener("mouseenter", () =>
+          previewMainImage(previewSrc),
+        );
+        thumb.addEventListener("mouseleave", () =>
+          previewMainImage(activeThumbSrc),
+        );
       });
-
 
       /* ══ VIDEO MODAL ══ */
       function openVideoModal() {
@@ -3837,7 +3925,9 @@
       const imageModal = document.getElementById("imageModal");
       const imageModalImg = document.getElementById("imageModalImg");
       const imageModalBody = document.getElementById("imageModalBody");
-      const imageModalVideoBadge = document.getElementById("imageModalVideoBadge");
+      const imageModalVideoBadge = document.getElementById(
+        "imageModalVideoBadge",
+      );
       const imageModalStrip = document.getElementById("imageModalStrip");
       const modalCounterEl = document.getElementById("modalCounter");
       const zoomPctEl = document.getElementById("zoomPct");
@@ -3931,7 +4021,8 @@
         }
 
         if (modalCounterEl) {
-          modalCounterEl.textContent = (currentModalIndex + 1) + " / " + galleryItems.length;
+          modalCounterEl.textContent =
+            currentModalIndex + 1 + " / " + galleryItems.length;
         }
         syncModalStrip();
       }
@@ -3947,8 +4038,7 @@
       }
 
       function setImageModalTransform() {
-        imageModalImg.style.transform =
-          `translate3d(${imageModalTx}px, ${imageModalTy}px, 0) scale(${imageModalScale})`;
+        imageModalImg.style.transform = `translate3d(${imageModalTx}px, ${imageModalTy}px, 0) scale(${imageModalScale})`;
       }
 
       function setImageModalScale(scale) {
@@ -3957,28 +4047,38 @@
           imageModalTx = 0;
           imageModalTy = 0;
         }
-        if (zoomPctEl) zoomPctEl.textContent = Math.round(imageModalScale * 100) + "%";
+        if (zoomPctEl)
+          zoomPctEl.textContent = Math.round(imageModalScale * 100) + "%";
         setImageModalTransform();
       }
 
       /* desktop: scroll wheel zoom */
-      imageModalBody.addEventListener("wheel", (e) => {
-        if (!imageModal.classList.contains("open")) return;
-        e.preventDefault();
-        const delta = e.deltaY > 0 ? 0.85 : 1.15;
-        setImageModalScale(imageModalScale * delta);
-      }, { passive: false });
+      imageModalBody.addEventListener(
+        "wheel",
+        (e) => {
+          if (!imageModal.classList.contains("open")) return;
+          e.preventDefault();
+          const delta = e.deltaY > 0 ? 0.85 : 1.15;
+          setImageModalScale(imageModalScale * delta);
+        },
+        { passive: false },
+      );
 
       /* desktop: double-click to zoom in/reset */
       imageModalBody.addEventListener("dblclick", (e) => {
         e.preventDefault();
-        if (galleryItems[currentModalIndex] && galleryItems[currentModalIndex].type === "video") return;
+        if (
+          galleryItems[currentModalIndex] &&
+          galleryItems[currentModalIndex].type === "video"
+        )
+          return;
         setImageModalScale(imageModalScale > 1 ? 1 : 2.2);
       });
 
       /* desktop: drag to pan when zoomed */
       imageModalBody.addEventListener("pointerdown", (e) => {
-        if (!imageModal.classList.contains("open") || imageModalScale <= 1) return;
+        if (!imageModal.classList.contains("open") || imageModalScale <= 1)
+          return;
         isDragging = true;
         lastPointerX = e.clientX;
         lastPointerY = e.clientY;
@@ -4004,51 +4104,74 @@
       });
 
       /* mobile: pinch to zoom + single-finger pan + double-tap to zoom */
-      imageModalBody.addEventListener("touchstart", (e) => {
-        if (e.touches.length === 2) {
-          touchMode = "pinch";
-          imageModalTouchDist = Math.hypot(
-            e.touches[0].pageX - e.touches[1].pageX,
-            e.touches[0].pageY - e.touches[1].pageY,
-          );
-          imageModalBaseScale = imageModalScale;
-        } else if (e.touches.length === 1) {
-          const now = Date.now();
-          if (now - lastTapTime < 300) {
-            /* double tap */
-            if (!(galleryItems[currentModalIndex] && galleryItems[currentModalIndex].type === "video")) {
-              setImageModalScale(imageModalScale > 1 ? 1 : 2.2);
+      imageModalBody.addEventListener(
+        "touchstart",
+        (e) => {
+          if (e.touches.length === 2) {
+            touchMode = "pinch";
+            imageModalTouchDist = Math.hypot(
+              e.touches[0].pageX - e.touches[1].pageX,
+              e.touches[0].pageY - e.touches[1].pageY,
+            );
+            imageModalBaseScale = imageModalScale;
+          } else if (e.touches.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              /* double tap */
+              if (
+                !(
+                  galleryItems[currentModalIndex] &&
+                  galleryItems[currentModalIndex].type === "video"
+                )
+              ) {
+                setImageModalScale(imageModalScale > 1 ? 1 : 2.2);
+              }
+              lastTapTime = 0;
+            } else {
+              lastTapTime = now;
             }
-            lastTapTime = 0;
-          } else {
-            lastTapTime = now;
+            if (imageModalScale > 1) {
+              touchMode = "pan";
+              lastPointerX = e.touches[0].pageX;
+              lastPointerY = e.touches[0].pageY;
+            }
           }
-          if (imageModalScale > 1) {
-            touchMode = "pan";
+        },
+        { passive: true },
+      );
+
+      imageModalBody.addEventListener(
+        "touchmove",
+        (e) => {
+          if (!imageModal.classList.contains("open")) return;
+          if (
+            touchMode === "pinch" &&
+            e.touches.length === 2 &&
+            imageModalTouchDist
+          ) {
+            e.preventDefault();
+            const currentDist = Math.hypot(
+              e.touches[0].pageX - e.touches[1].pageX,
+              e.touches[0].pageY - e.touches[1].pageY,
+            );
+            setImageModalScale(
+              imageModalBaseScale * (currentDist / imageModalTouchDist),
+            );
+          } else if (
+            touchMode === "pan" &&
+            e.touches.length === 1 &&
+            imageModalScale > 1
+          ) {
+            e.preventDefault();
+            imageModalTx += e.touches[0].pageX - lastPointerX;
+            imageModalTy += e.touches[0].pageY - lastPointerY;
             lastPointerX = e.touches[0].pageX;
             lastPointerY = e.touches[0].pageY;
+            setImageModalTransform();
           }
-        }
-      }, { passive: true });
-
-      imageModalBody.addEventListener("touchmove", (e) => {
-        if (!imageModal.classList.contains("open")) return;
-        if (touchMode === "pinch" && e.touches.length === 2 && imageModalTouchDist) {
-          e.preventDefault();
-          const currentDist = Math.hypot(
-            e.touches[0].pageX - e.touches[1].pageX,
-            e.touches[0].pageY - e.touches[1].pageY,
-          );
-          setImageModalScale(imageModalBaseScale * (currentDist / imageModalTouchDist));
-        } else if (touchMode === "pan" && e.touches.length === 1 && imageModalScale > 1) {
-          e.preventDefault();
-          imageModalTx += e.touches[0].pageX - lastPointerX;
-          imageModalTy += e.touches[0].pageY - lastPointerY;
-          lastPointerX = e.touches[0].pageX;
-          lastPointerY = e.touches[0].pageY;
-          setImageModalTransform();
-        }
-      }, { passive: false });
+        },
+        { passive: false },
+      );
 
       imageModalBody.addEventListener("touchend", (e) => {
         if (e.touches.length < 2) imageModalTouchDist = null;
@@ -4058,7 +4181,10 @@
       /* tap on video preview inside modal opens the actual video modal */
       imageModalBody.addEventListener("click", (e) => {
         if (isDragging) return;
-        if (galleryItems[currentModalIndex] && galleryItems[currentModalIndex].type === "video") {
+        if (
+          galleryItems[currentModalIndex] &&
+          galleryItems[currentModalIndex].type === "video"
+        ) {
           e.stopPropagation();
           closeImageModal();
           openVideoModal();
