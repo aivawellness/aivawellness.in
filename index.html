@@ -4945,11 +4945,17 @@
         }
       });
 
-      function shareProduct(id, type) {
-        const url =
+      function getProductUrl(id) {
+        const base =
           window.location.origin +
-          window.location.pathname.replace(/\/[^\/]*$/, "/") +
-          "product-details.html";
+          window.location.pathname.replace(/\/[^\/]*$/, "/");
+        if (id === 4) return base + "product-details-pages/nattokinase200.html";
+        if (id === 3) return base + "product-details-pages/nattokinase100.html";
+        return base + "product-details.html";
+      }
+
+      function shareProduct(id, type) {
+        const url = getProductUrl(id);
         const title = "Check out this product on Aiva Wellness";
         const text = "Discover wellness products with Aiva.";
         closeAllShareMenus();
