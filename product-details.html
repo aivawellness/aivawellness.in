@@ -1894,6 +1894,36 @@
         min-width: 22px;
         text-align: left;
       }
+      .rating-summary-footer {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .rating-summary-note {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: var(--ink);
+      }
+      .rating-summary-cta {
+        align-self: center;
+        border: none;
+        background: var(--blue);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+      .rating-summary-cta:hover {
+        background: #2563eb;
+        transform: translateY(-1px);
+      }
 
       .review-card {
         background: var(--white);
@@ -3349,6 +3379,22 @@
                   </div>
                   <span class="bar-count">1</span>
                 </div>
+                <div class="rating-summary-footer">
+                  <div class="rating-summary-note">
+                    <strong>Top benefit:</strong> calmer sleep, reduced cramps,
+                    and faster recovery.
+                  </div>
+                  <button
+                    class="rating-summary-cta"
+                    onclick="
+                      document
+                        .querySelector('.reviews-section')
+                        .scrollIntoView({ behavior: 'smooth' })
+                    "
+                  >
+                    Read all customer reviews
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -3407,31 +3453,6 @@
                   <span>Helpful?</span
                   ><button class="helpful-btn">👍 Yes (28)</button
                   ><button class="helpful-btn">👎 No (0)</button>
-                </div>
-              </div>
-              <div class="review-card">
-                <div class="rc-header">
-                  <div>
-                    <div class="rc-author">Amandeep Singh</div>
-                    <div class="rc-verified">
-                      <i class="fa-solid fa-circle-check"></i> Verified Purchase
-                    </div>
-                  </div>
-                  <div class="rc-date">3 weeks ago</div>
-                </div>
-                <div class="rc-stars">★★★★★</div>
-                <div class="rc-title">Best magnesium supplement I've tried</div>
-                <div class="rc-text">
-                  As a gym trainer I've tried at least 6 different magnesium
-                  products. This one stands out because of the glycinate form —
-                  it's much gentler on the stomach than oxide forms. My clients
-                  have also started using it and feedback has been
-                  overwhelmingly positive.
-                </div>
-                <div class="rc-helpful">
-                  <span>Helpful?</span
-                  ><button class="helpful-btn">👍 Yes (61)</button
-                  ><button class="helpful-btn">👎 No (2)</button>
                 </div>
               </div>
               <div class="review-card">
