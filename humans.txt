@@ -1,0 +1,16 @@
+/* TEAM */
+Brand: Aiva Wellness
+Contact: info@aivawellness.in
+Location: Solan, Himachal Pradesh, India
+
+/* SITE */
+Last update: 2026/07/10
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, JavaScript (ES6)
+Components: Bootstrap, Font Awesome
+Software: -
+
+/* THANKS */
+Thank you for visiting Aiva Wellness — Premium Healthcare & Wellness.

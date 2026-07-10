@@ -1,0 +1,26 @@
+{
+  "name": "Aiva Wellness | Premium Healthcare & Wellness",
+  "short_name": "Aiva Wellness",
+  "description": "Aiva Wellness crafts FSSAI-licensed, Ayurvedic, science-backed health supplements made in Solan, Himachal Pradesh, India.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f8fafc",
+  "theme_color": "#1d4ed8",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Contact: mailto:info@aivawellness.in
+Contact: tel:+917807751710
+Expires: 2027-07-10T00:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://aivawellness.in/.well-known/security.txt
+Policy: https://aivawellness.in/security-policy.html
