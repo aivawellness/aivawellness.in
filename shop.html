@@ -2685,6 +2685,24 @@
       const PLACEHOLDER =
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f1f5f9'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2394a3b8' font-family='sans-serif' font-size='14'%3EImage unavailable%3C/text%3E%3C/svg%3E";
 
+      const PRODUCT_PAGE_MAP = {
+        101: "product-details-pages/magnesium-complex-5-in-1.html",
+        102: "product-details-pages/bone-health-support.html",
+        103: "product-details-pages/nattokinase100.html",
+        104: "product-details-pages/nattokinase200.html",
+        105: "product-details-pages/heart-skin-eye-joint-health-pack.html",
+        106: "product-details-pages/heart-health-immunity-booster.html",
+        107: "product-details-pages/energy-immunity-support.html",
+        108: "product-details-pages/vitamin-d3-supplement.html",
+        109: "product-details-pages/vitamins-minerals-amino-acids-men.html",
+        110: "product-details-pages/vitamins-minerals-amino-acids-women.html",
+        111: "product-details-pages/zma-vitamin-b6.html",
+        112: "product-details-pages/l-glutathione-500mg.html",
+        113: "product-details-pages/whey-protein-2kg.html",
+        114: "product-details-pages/plant-protein-blend.html",
+        115: "product-details-pages/multivitamins-minerals.html",
+      };
+
       const PRODUCTS = [
         {
           id: 104,
@@ -2904,12 +2922,7 @@
       /* ── render card ── */
       function renderCard(p, delay) {
         const saving = Math.round(((p.old - p.price) / p.old) * 100);
-        const detailLink =
-          p.id === 104
-            ? "product-details-pages/nattokinase200.html"
-            : p.id === 103
-              ? "product-details-pages/nattokinase100.html"
-              : "product-details.html";
+        const detailLink = PRODUCT_PAGE_MAP[p.id] || "product-details.html";
         return `<div class="product-card reveal d${(delay % 6) + 1}" data-id="${p.id}">
     <div class="product-img">
       <span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>
@@ -3191,11 +3204,8 @@
         const base =
           window.location.origin +
           window.location.pathname.replace(/\/[^\/]*$/, "/");
-        if (id === 104)
-          return base + "product-details-pages/nattokinase200.html";
-        if (id === 103)
-          return base + "product-details-pages/nattokinase100.html";
-        return base + "product-details.html";
+        const slug = PRODUCT_PAGE_MAP[id];
+        return slug ? base + slug : base + "product-details.html";
       }
 
       function shareProduct(id, type) {
