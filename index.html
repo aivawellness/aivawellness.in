@@ -90,69 +90,15 @@
       })(window, document, "script", "dataLayer", "GTM-56SL6CGG");
     </script>
     <!-- End Google Tag Manager -->
-    <!-- Google Analytics 4 (GA4) — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
-    <!-- Meta (Facebook) Pixel — replace with your real Pixel ID -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
-      fbq("init", "000000000000000");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=000000000000000&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- Microsoft Clarity — replace xxxxxxxxxx with your project ID -->
-    <script>
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "xxxxxxxxxx");
-    </script>
+    <!--
+      Removed for performance: a duplicate placeholder GA4 tag (G-XXXXXXXXXX),
+      a placeholder Meta Pixel (id 000000000000000), and a placeholder
+      Microsoft Clarity snippet (id xxxxxxxxxx). None were configured with
+      real IDs, so they were only adding extra network requests and JS
+      execution with no tracking benefit. The real GA4 tag (G-7JEHMZBFMB)
+      above and GTM (GTM-56SL6CGG) below are left in place. If you want
+      Meta Pixel or Clarity, re-add them with your real IDs.
+    -->
 
     <script type="application/ld+json">
       {
@@ -250,14 +196,32 @@
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link
+      rel="preload"
+      as="image"
+      fetchpriority="high"
+      href="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&q=80&auto=format&fm=webp"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
+    </noscript>
 
     <style>
       /* ═══════════════════════════════════════════════════
@@ -3402,9 +3366,11 @@
         <div class="slide active">
           <div class="slide-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&q=80"
+              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&q=80&auto=format&fm=webp"
               alt="Aiva Wellness Natural Supplements"
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
           <div class="slide-content">
@@ -3423,7 +3389,7 @@
         <div class="slide">
           <div class="slide-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1600&q=80"
+              src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1600&q=80&auto=format&fm=webp"
               alt="Magnesium Complex 5-in-1"
               loading="lazy"
             />
@@ -3444,7 +3410,7 @@
         <div class="slide">
           <div class="slide-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1600&q=80"
+              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1600&q=80&auto=format&fm=webp"
               alt="Heart Health"
               loading="lazy"
             />
@@ -3464,7 +3430,7 @@
         <div class="slide">
           <div class="slide-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80"
+              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80&auto=format&fm=webp"
               alt="Vitamins & Minerals"
               loading="lazy"
             />
@@ -3544,8 +3510,10 @@
         <div class="about-images-mobile reveal reveal-left">
           <div class="about-img-main">
             <img
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80"
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80&auto=format&fm=webp"
               alt="Natural Aiva Wellness ingredients"
+              loading="lazy"
+              decoding="async"
             />
             <div class="about-img-badge">
               <i class="fa-solid fa-star"></i> Made in Himachal Pradesh
@@ -3585,8 +3553,10 @@
       <div class="about-images reveal reveal-left">
         <div class="about-img-main">
           <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80&auto=format&fm=webp"
             alt="Natural Aiva Wellness ingredients"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -3610,20 +3580,24 @@
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details-pages/nattokinase200.html"
               ><img
-                src="products/Nattokinase Carton.jpg.jpeg"
+                src="products/Nattokinase Carton.webp"
+                loading="lazy"
+                decoding="async"
                 alt="Nattokinase 200mg"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80'
+                    'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
               class="img-hover"
-              src="products/all images/2.jpg.jpeg"
+              src="products/all images/2.webp"
+              loading="lazy"
+              decoding="async"
               alt="Nattokinase hover"
               onerror="
                 this.src =
-                  'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=600&q=80'
+                  'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=600&q=80&auto=format&fm=webp'
               "
             />
             <div class="p-actions">
@@ -3715,18 +3689,22 @@
             <span class="p-badge badge-new">New</span>
             <a href="product-details-pages/nattokinase100.html">
               <img
-                src="products/Nattokinase Carton  final 3d.jpg.jpeg"
+                src="products/Nattokinase Carton  final 3d.webp"
+                loading="lazy"
+                decoding="async"
                 alt="Nattokinase 100 mg"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80'
+                    'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80&auto=format&fm=webp'
                 "
               />
             </a>
             <img
               class="img-hover"
-              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80"
+              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80&auto=format&fm=webp"
               alt="Nattokinase hover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-actions">
               <button
@@ -3817,17 +3795,21 @@
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
               ><img
-                src="products/Magnesium Complex.jpg.jpeg"
+                src="products/Magnesium Complex.webp"
+                loading="lazy"
+                decoding="async"
                 alt="Magnesium Complex 5-in-1"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
               class="img-hover"
-              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80"
+              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80&auto=format&fm=webp"
               alt="Magnesium hover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-actions">
               <button
@@ -3908,11 +3890,13 @@
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
               ><img
-                src="products/Q Fit-300.jpg.jpeg"
+                src="products/Q Fit-300.webp"
+                loading="lazy"
+                decoding="async"
                 alt="Probiotics Advanced"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
@@ -4003,17 +3987,21 @@
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
               ><img
-                src="products/vitamins minerals with amino acid (Woman).jpg.jpeg"
+                src="products/vitamins minerals with amino acid (Woman).webp"
+                loading="lazy"
+                decoding="async"
                 alt="Vitamins & Minerals for Women"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80'
+                    'https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
               class="img-hover"
-              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80"
+              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80&auto=format&fm=webp"
               alt="Vitamins hover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-actions">
               <button
@@ -4098,17 +4086,21 @@
             <span class="p-badge badge-sale">Sale</span>
             <a href="product-details.html"
               ><img
-                src="products/CCM, Mg, Zc, D3.jpg.jpeg"
+                src="products/CCM, Mg, Zc, D3.webp"
+                loading="lazy"
+                decoding="async"
                 alt="Bone Health Support"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'
+                    'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
               class="img-hover"
-              src="https://images.unsplash.com/photo-1585433707802-83ca02fe8980?w=600&q=80"
+              src="https://images.unsplash.com/photo-1585433707802-83ca02fe8980?w=600&q=80&auto=format&fm=webp"
               alt="Bone health hover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-actions">
               <button
@@ -4156,17 +4148,21 @@
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
               ><img
-                src="products/VITAMIN D3.jpg.jpeg"
+                src="products/VITAMIN D3.webp"
+                loading="lazy"
+                decoding="async"
                 alt="Vitamin D3 Supplement"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=600&q=80'
+                    'https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
               class="img-hover"
-              src="https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=600&q=80"
+              src="https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=600&q=80&auto=format&fm=webp"
               alt="Vitamin D3 hover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-actions">
               <button
@@ -4210,16 +4206,20 @@
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
               ><img
-                src="products/omega 3, Vitamin E.jpg.jpeg"
+                src="products/omega 3, Vitamin E.webp"
+                loading="lazy"
+                decoding="async"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80'
+                    'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
               class="img-hover"
-              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80"
+              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80&auto=format&fm=webp"
               alt="Omega-3 hover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-actions">
               <button
@@ -4349,11 +4349,13 @@
     <section class="combo-section">
       <div class="combo-img-wrap reveal reveal-right">
         <img
-          src="products/ZMA.png"
+          src="products/ZMA.webp"
+          loading="lazy"
+          decoding="async"
           alt="ZMA + Vitamin B6"
           onerror="
             this.src =
-              'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80'
+              'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80&auto=format&fm=webp'
           "
         />
         <span class="combo-img-badge">Featured</span>
@@ -4384,33 +4386,39 @@
         <div class="combo-items">
           <div class="combo-item active">
             <img
-              src="products/ZMA.png"
+              src="products/ZMA.webp"
+              loading="lazy"
+              decoding="async"
               alt="ZMA"
               onerror="
                 this.src =
-                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'
+                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
               "
             />
             <span>ZMA</span>
           </div>
           <div class="combo-item">
             <img
-              src="products/Magnesium Complex.jpg.jpeg"
+              src="products/Magnesium Complex.webp"
+              loading="lazy"
+              decoding="async"
               alt="Magnesium"
               onerror="
                 this.src =
-                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'
+                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
               "
             />
             <span>Magnesium</span>
           </div>
           <div class="combo-item">
             <img
-              src="products/VITAMIN D3.jpg.jpeg"
+              src="products/VITAMIN D3.webp"
+              loading="lazy"
+              decoding="async"
               alt="Vitamin D3"
               onerror="
                 this.src =
-                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'
+                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
               "
             />
             <span>Vitamin D3</span>
@@ -4477,11 +4485,13 @@
           <div class="drops-middle reveal">
             <div class="drops-middle-inner">
               <img
-                src="products/vitamins minerals with amino acid (man).jpg.jpeg"
+                src="products/vitamins minerals with amino acid (man).webp"
+                loading="lazy"
+                decoding="async"
                 alt="Aiva Wellness Drops"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&q=80'
+                    'https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&q=80&auto=format&fm=webp'
                 "
               />
               <div class="drops-middle-glow"></div>
@@ -4621,8 +4631,10 @@
           <div class="blog-card reveal reveal-right">
             <div class="blog-img">
               <img
-                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80"
+                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80&auto=format&fm=webp"
                 alt="Magnesium Benefits"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="blog-info">
@@ -4641,8 +4653,10 @@
           <div class="blog-card reveal">
             <div class="blog-img">
               <img
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80"
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80&auto=format&fm=webp"
                 alt="Heart Health"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="blog-info">
@@ -4661,8 +4675,10 @@
           <div class="blog-card reveal reveal-left">
             <div class="blog-img">
               <img
-                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80"
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80&auto=format&fm=webp"
                 alt="Vitamins for Women"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="blog-info">
@@ -4697,74 +4713,102 @@
         <div class="insta-track">
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <!-- duplicate for seamless loop -->
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
             alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
