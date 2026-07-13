@@ -2978,7 +2978,10 @@
                       this.src =
                         'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=700&q=80&auto=format&fm=webp'
                     "
-                   loading="eager" fetchpriority="high" decoding="async" />
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
                 </div>
                 <span class="zoom-hint"
                   ><i class="fa-solid fa-magnifying-glass-plus"></i> Click to
@@ -3004,7 +3007,9 @@
                       '../products/Nattokinase Carton  final 3d.webp',
                     )
                   "
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
                 <img
                   class="thumb-img"
                   src="../products/Magnesium Complex.webp"
@@ -3017,7 +3022,9 @@
                   onclick="
                     switchThumb(this, '../products/Magnesium Complex.webp')
                   "
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
                 <img
                   class="thumb-img"
                   src="../products/VITAMIN D3.webp"
@@ -3028,7 +3035,9 @@
                       'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=150&q=80&auto=format&fm=webp'
                   "
                   onclick="switchThumb(this, '../products/VITAMIN D3.webp')"
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
                 <img
                   class="thumb-img"
                   src="../products/ZMA.webp"
@@ -3039,7 +3048,9 @@
                       'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=150&q=80&auto=format&fm=webp'
                   "
                   onclick="switchThumb(this, '../products/ZMA.webp')"
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
                 <img
                   class="thumb-img"
                   src="../products/omega 3, Vitamin E.webp"
@@ -3052,7 +3063,9 @@
                   onclick="
                     switchThumb(this, '../products/omega 3, Vitamin E.webp')
                   "
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div class="video-thumb" onclick="openVideoModal()">
                   <img
                     src="products-1/Nattokinase Carton.jpg"
@@ -3750,7 +3763,9 @@
                     this.src =
                       'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&q=80&auto=format&fm=webp'
                   "
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card-body">
                 <span class="card-cat">Magnesium</span>
@@ -3782,7 +3797,9 @@
                     this.src =
                       'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500&q=80&auto=format&fm=webp'
                   "
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card-body">
                 <span class="card-cat">Omega-3</span>
@@ -3816,7 +3833,9 @@
                     this.src =
                       'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&q=80&auto=format&fm=webp'
                   "
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card-body">
                 <span class="card-cat">ZMA</span>
@@ -3850,7 +3869,9 @@
                     this.src =
                       'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=500&q=80&auto=format&fm=webp'
                   "
-                 loading="lazy" decoding="async" />
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card-body">
                 <span class="card-cat">Vitamins</span>
@@ -4347,8 +4368,7 @@
         resetImagePosition();
 
         if (item.type === "video") {
-          imageModalImg.src =
-            "../products/Nattokinase Carton  final 3d.webp";
+          imageModalImg.src = "../products/Nattokinase Carton  final 3d.webp";
           imageModalVideoBadge.classList.add("show");
         } else {
           imageModalImg.src = item.src;
