@@ -1,16 +1,63 @@
 /* TEAM */
+
 Brand: Aiva Wellness
+Website: https://aivawellness.in
 Contact: info@aivawellness.in
 Location: Solan, Himachal Pradesh, India
 
+Developer: Rishav Kumar
+Role: Frontend Developer
+
 /* SITE */
-Last update: 2026/07/10
+
+Last Updated: 2026-07-10
 Language: English
 Doctype: HTML5
 IDE: Visual Studio Code
-Standards: HTML5, CSS3, JavaScript (ES6)
-Components: Bootstrap, Font Awesome
-Software: -
+
+Frontend:
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Bootstrap 5
+- Font Awesome
+
+Hosting: Vercel
+Domain: GoDaddy
+
+Performance:
+- Responsive Design
+- SEO Optimized
+- Accessibility Focused
+- Schema.org Structured Data
+- Open Graph
+- Twitter Cards
+
+/* TECHNOLOGY */
+
+Analytics:
+- Google Analytics 4
+- Microsoft Clarity
+
+Search:
+- Google Search Console
+- Bing Webmaster Tools
+
+AI Readiness:
+- robots.txt
+- sitemap.xml
+- llms.txt
+- humans.txt
+- security.txt
 
 /* THANKS */
-Thank you for visiting Aiva Wellness — Premium Healthcare & Wellness.
+
+Thank you for visiting Aiva Wellness.
+
+We're committed to providing premium healthcare and wellness supplements backed by quality, trust, and innovation.
+
+Website:
+https://aivawellness.in
+
+Email:
+info@aivawellness.in
