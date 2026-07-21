@@ -818,7 +818,7 @@
       }
       .shop-hero h1 {
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(30px, 5.5vw, 72px);
+        font-size: clamp(24px, 4.5vw, 52px);
         font-weight: 600;
         color: #fff;
         line-height: 1.1;
@@ -1268,7 +1268,7 @@
       .product-card {
         background: var(--white);
         border: 1px solid var(--border);
-        border-radius: 20px;
+        border-radius: 0;
         overflow: hidden;
         box-shadow: 0 2px 16px rgba(8, 13, 20, 0.05);
         transition: all 0.4s var(--ease);
@@ -1280,7 +1280,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        border-radius: 20px;
+        border-radius: 0;
         background: linear-gradient(
           135deg,
           rgba(29, 78, 216, 0.04),
@@ -2277,29 +2277,7 @@
     <section class="shop-hero">
       <div class="shop-hero-blob"></div>
       <div class="shop-hero-inner">
-        <h1>Premium <span>Wellness</span> Products</h1>
-        <p>
-          Science-backed supplements crafted for your health goals. 100%
-          Ayurvedic &amp; Natural, lab-tested quality from Himachal Pradesh.
-        </p>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-num">25+</div>
-            <div class="hero-stat-label">Products</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">10K+</div>
-            <div class="hero-stat-label">Customers</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">4.8★</div>
-            <div class="hero-stat-label">Avg Rating</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">100%</div>
-            <div class="hero-stat-label">Genuine</div>
-          </div>
-        </div>
+        <h1>Wellness <span>Nutraceutical</span> Products</h1>
         <div class="hero-search-wrap">
           <input
             type="text"
@@ -2950,7 +2928,6 @@
       </div>
     </div>
     <div class="product-info">
-      <div class="product-cat">${p.cat}</div>
       <h3><a href="${detailLink}">${p.name}</a></h3>
       <div class="stars">${starsHtml(p.rating)} <span>${p.rating} (${p.reviews})</span></div>
       <div class="price-row">
