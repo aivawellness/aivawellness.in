@@ -809,6 +809,14 @@
         );
         pointer-events: none;
       }
+      /* Local Swiss font for condensed bold headings */
+      @font-face {
+        font-family: "Swiss721BoldCondensedBT";
+        src: url("/fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
       .shop-hero-inner {
         max-width: 860px;
         margin: 0 auto;
@@ -817,7 +825,7 @@
         z-index: 2;
       }
       .shop-hero h1 {
-        font-family: "Cormorant Garamond", serif;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(24px, 4.5vw, 52px);
         font-weight: 600;
         color: #fff;
