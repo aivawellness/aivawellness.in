@@ -1467,10 +1467,10 @@
 
       .product-card {
         background: var(--white);
-        border: 1px solid var(--border);
+        border: 1px solid rgba(59, 130, 246, 0.16);
         border-radius: 0;
         overflow: hidden;
-        box-shadow: 0 2px 16px rgba(8, 13, 20, 0.05);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.08), 0 2px 16px rgba(8, 13, 20, 0.08);
         transition: all 0.4s var(--ease);
         display: flex;
         flex-direction: column;
@@ -1483,8 +1483,8 @@
         border-radius: 0;
         background: linear-gradient(
           135deg,
-          rgba(29, 78, 216, 0.04),
-          transparent
+          rgba(59, 130, 246, 0.08),
+          rgba(255, 255, 255, 0.18)
         );
         opacity: 0;
         transition: opacity 0.4s;
@@ -1492,9 +1492,9 @@
         z-index: 1;
       }
       .product-card:hover {
-        box-shadow: 0 24px 64px rgba(8, 13, 20, 0.14);
+        box-shadow: 0 24px 64px rgba(59, 130, 246, 0.18), 0 16px 35px rgba(8, 13, 20, 0.18);
         transform: translateY(-8px);
-        border-color: var(--blue-border);
+        border-color: rgba(37, 99, 235, 0.35);
       }
       .product-card:hover::before {
         opacity: 1;
@@ -3643,7 +3643,7 @@
             /></a>
             <img
               class="img-hover"
-              src="products/all images/2.webp"
+              src="blogs/images/natto2.png"
               loading="lazy"
               decoding="async"
               alt="Nattokinase hover"
@@ -3718,9 +3718,9 @@
             </h3>
             <div class="stars">★★★★★ <span>73 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,899</span>
-              <span class="original-price">₹2,099</span>
-              <span class="save-badge">Save 10%</span>
+              <span class="sale-price">₹1,199</span>
+              <span class="original-price">₹1,399</span>
+              <span class="save-badge">Save 14%</span>
             </div>
             <div class="buy-actions">
               <button
@@ -3939,13 +3939,13 @@
 
         <div class="product-card reveal d3">
           <div class="product-img">
-            <span class="p-badge badge-new">New</span>
-            <a href="product-details.html"
+            <span class="p-badge badge-sale">Sale</span>
+            <a href="product-details-pages/multivitamins-minerals.html"
               ><img
-                src="products/Q Fit-300.webp"
+                src="products/Magnesium Complex.webp"
                 loading="lazy"
                 decoding="async"
-                alt="Probiotics Advanced"
+                alt="Multivitamins & Minerals"
                 onerror="
                   this.src =
                     'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&auto=format&fm=webp'
@@ -3953,80 +3953,82 @@
             /></a>
             <img
               class="img-hover"
-              src="products-1/hover-vitamins minerals with amino acid (Woman).jpg"
-              alt="Probiotics hover"
+              src="products/Magnesium Complex.webp"
+              alt="Multivitamins & Minerals hover"
+              loading="lazy"
+              decoding="async"
             />
             <div class="p-actions">
               <button
                 class="p-action-btn"
                 title="Quick view"
-                onclick="window.location.href = 'product-details.html'"
+                onclick="window.location.href = 'product-details-pages/multivitamins-minerals.html'"
               >
                 <i class="fa-regular fa-eye"></i>
               </button>
               <button
                 class="p-action-btn"
                 title="Share"
-                onclick="toggleShareMenu(event, 3)"
+                onclick="toggleShareMenu(event, 115)"
               >
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
             </div>
-            <div class="share-popover" id="sharePopover-3" aria-hidden="true">
+            <div class="share-popover" id="sharePopover-115" aria-hidden="true">
               <button
                 type="button"
                 class="share-option"
-                onclick="shareProduct(3, 'whatsapp')"
+                onclick="shareProduct(115, 'whatsapp')"
               >
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
               </button>
               <button
                 type="button"
                 class="share-option"
-                onclick="shareProduct(3, 'copy')"
+                onclick="shareProduct(115, 'copy')"
               >
                 <i class="fa-regular fa-copy"></i> Copy Link
               </button>
               <button
                 type="button"
                 class="share-option"
-                onclick="shareProduct(3, 'email')"
+                onclick="shareProduct(115, 'email')"
               >
                 <i class="fa-regular fa-envelope"></i> Email
               </button>
               <button
                 type="button"
                 class="share-option"
-                onclick="shareProduct(3, 'facebook')"
+                onclick="shareProduct(115, 'facebook')"
               >
                 <i class="fa-brands fa-facebook-f"></i> Facebook
               </button>
               <button
                 type="button"
                 class="share-option"
-                onclick="shareProduct(3, 'telegram')"
+                onclick="shareProduct(115, 'telegram')"
               >
                 <i class="fa-brands fa-telegram-plane"></i> Telegram
               </button>
             </div>
           </div>
           <div class="product-info">
-            <div class="product-cat">Immunity</div>
+            <div class="product-cat">Vitamins</div>
             <h3>
-              <a href="product-details.html"
-                >Heart, Health & Immunity Booster</a
+              <a href="product-details-pages/multivitamins-minerals.html"
+                >Multivitamins & Minerals</a
               >
             </h3>
-            <div class="stars">★★★★★ <span>57 reviews</span></div>
+            <div class="stars">★★★★★ <span>134 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,299</span>
-              <span class="original-price">₹1,499</span>
-              <span class="save-badge">Save 13%</span>
+              <span class="sale-price">₹999</span>
+              <span class="original-price">₹1,199</span>
+              <span class="save-badge">Save 17%</span>
             </div>
             <div class="buy-actions">
               <button
                 class="btn-cart"
-                onclick="window.location.href = 'product-details.html'"
+                onclick="window.location.href = 'product-details-pages/multivitamins-minerals.html'"
               >
                 <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
               </button>
@@ -4034,6 +4036,7 @@
           </div>
         </div>
 
+        <!--
         <div class="product-card reveal d1">
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
@@ -4312,11 +4315,13 @@
           </div>
         </div>
       </div>
+      <!--
       <div class="view-all-wrap reveal">
         <a href="shop.html" class="btn-outline"
           >View All Products <i class="fa-solid fa-arrow-right"></i
         ></a>
       </div>
+      -->
     </section>
 
     <!-- ABOUT SECTION -->
