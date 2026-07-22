@@ -272,6 +272,12 @@
         --t: 0.3s;
       }
 
+      @font-face {
+        font-family: "Swiss721BoldCondensedBT";
+        src: url("/fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
+        font-display: swap;
+      }
+
       html {
         scroll-behavior: smooth;
         overflow-x: hidden;
@@ -893,8 +899,8 @@
         background: rgba(255, 255, 255, 0.5);
       }
       .slide-content h1 {
-        font-family: var(--font-sans);
-        font-size: clamp(28px, 4.5vw, 58px);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: clamp(24px, 4.5vw, 52px);
         font-weight: 600;
         color: #fff;
         line-height: 1.12;
@@ -1159,15 +1165,25 @@
         border: 1px solid var(--blue-border);
       }
       .section-header h2 {
-        font-family: var(--font-sans);
-        font-size: clamp(28px, 4vw, 52px);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: clamp(24px, 4.5vw, 52px);
         font-weight: 600;
         color: var(--black);
         margin-bottom: 14px;
       }
+      /* subtle accent underline for premium feel */
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: var(--accent, var(--black));
+  margin: 8px auto 0;
+  opacity: 0.7;
+}
       .section-header p {
-        color: var(--muted);
-        font-size: 0.9rem;
+        color: var(--text-mid);
+        font-size: 1rem;
         max-width: 520px;
         margin: 0 auto;
         line-height: 1.8;
@@ -1206,8 +1222,8 @@
         align-items: flex-start;
       }
       .about-text h2 {
-        font-family: var(--font-sans);
-        font-size: clamp(26px, 3.8vw, 48px);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: clamp(24px, 3.8vw, 48px);
         font-weight: 600;
         color: var(--black);
         line-height: 1.15;
@@ -1644,11 +1660,16 @@
         border: 1px solid var(--blue-border);
       }
       .product-info h3 {
-        font-size: 0.9rem;
+        font-size: 1.25rem;
         font-weight: 600;
         margin-bottom: 10px;
         line-height: 1.4;
         color: var(--black);
+      }
+      .product-info h3,
+      .product-card .p-badge,
+      .product-card .sale-price {
+        font-family: "Swiss721BoldCondensedBT", "Sora", sans-serif;
       }
       .product-info h3 a {
         color: inherit;
@@ -1660,7 +1681,7 @@
       }
       .stars {
         color: var(--gold);
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 12px;
         letter-spacing: 1px;
       }
@@ -1956,7 +1977,7 @@
         text-align: center;
       }
       .combo-info h2 {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(22px, 3.2vw, 44px);
         font-weight: 600;
         color: var(--black);
@@ -2163,8 +2184,8 @@
         border: 1px solid rgba(255, 255, 255, 0.12);
       }
       .drops-inner .sh h2 {
-        font-family: var(--font-sans);
-        font-size: clamp(26px, 4vw, 52px);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: clamp(24px, 4vw, 52px);
         font-weight: 600;
         margin-bottom: 12px;
       }
@@ -2301,8 +2322,8 @@
         margin-bottom: 52px;
       }
       .section-title {
-        font-family: var(--font-sans);
-        font-size: clamp(28px, 4vw, 52px);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: clamp(24px, 4vw, 52px);
         font-weight: 600;
         color: var(--black);
         margin-bottom: 12px;
@@ -2923,7 +2944,7 @@
         color: rgba(255, 255, 255, 0.8);
       }
       .newsletter-inner h2 {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(24px, 3.5vw, 42px);
         color: #fff;
         font-weight: 600;
