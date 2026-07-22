@@ -427,9 +427,9 @@
       }
 
       .pl-brand {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.25rem;
-        font-weight: 800;
+        font-weight: 600;
         color: #0f172a;
         margin-bottom: 4px;
       }
@@ -621,9 +621,9 @@
         border-color: rgba(14, 91, 255, 0.12);
       }
       .brand-name {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.15rem;
-        font-weight: 800;
+        font-weight: 600;
         color: var(--black);
         display: block;
         white-space: nowrap;
@@ -1047,9 +1047,9 @@
         top: 24px;
         right: 24px;
         z-index: 10;
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 0.72rem;
-        font-weight: 700;
+        font-weight: 600;
         color: rgba(255, 255, 255, 0.6);
         letter-spacing: 0.08em;
       }
@@ -1172,15 +1172,15 @@
         margin-bottom: 14px;
       }
       /* subtle accent underline for premium feel */
-.section-header h2::after {
-  content: "";
-  display: block;
-  width: 56px;
-  height: 2px;
-  background: var(--accent, var(--black));
-  margin: 8px auto 0;
-  opacity: 0.7;
-}
+      .section-header h2::after {
+        content: "";
+        display: block;
+        width: 56px;
+        height: 2px;
+        background: var(--accent, var(--black));
+        margin: 8px auto 0;
+        opacity: 0.7;
+      }
       .section-header p {
         color: var(--text-mid);
         font-size: 1rem;
@@ -1230,15 +1230,16 @@
         margin-bottom: 20px;
       }
       .about-text p {
-        font-size: 0.9rem;
+        font-size: 1rem;
         color: var(--text-mid);
-        line-height: 1.9;
+        line-height: 1.95;
         margin-bottom: 16px;
+        text-align: justify;
       }
       .about-stats {
         display: flex;
         gap: 32px;
-        margin: 28px 0;
+        margin: 18px 0;
         padding: 24px 0;
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
@@ -1248,16 +1249,16 @@
         text-align: left;
       }
       .a-stat-num {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.8rem;
-        font-weight: 800;
+        font-weight: 600;
         background: linear-gradient(135deg, var(--blue), var(--blue-light));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
       .a-stat-label {
-        font-size: 0.7rem;
+        font-size: 0.82rem;
         color: var(--text-light);
         margin-top: 2px;
         font-weight: 500;
@@ -1297,8 +1298,7 @@
       .about-images {
         display: flex;
         justify-content: center;
-        align-items: stretch;
-        height: 100%;
+        align-items: center;
       }
       .about-images-mobile {
         display: none;
@@ -1308,27 +1308,30 @@
       }
       .about-img-main {
         overflow: hidden;
-        border-radius: 32px;
+        border-radius: 0;
         position: relative;
-        max-width: 680px;
+        max-width: 760px;
         width: 100%;
+        min-height: 540px;
         border: 1px solid rgba(15, 23, 42, 0.08);
         box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
         background: #fff;
         display: flex;
         flex-direction: column;
-        min-height: 100%;
+        align-items: center;
+        justify-content: center;
       }
       .about-img-main img {
-        width: 100%;
+        width: auto;
         height: 100%;
-        min-height: 440px;
-        object-fit: cover;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center;
         display: block;
         transition: transform 0.7s var(--ease);
       }
       .about-img-main:hover img {
-        transform: scale(1.03);
+        transform: none;
       }
       .about-img-main::after {
         content: "";
@@ -1345,12 +1348,12 @@
       .about-img-main::before {
         content: "";
         position: absolute;
-        top: 18px;
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
         border: 1px solid rgba(255, 255, 255, 0.6);
-        border-radius: 28px;
+        border-radius: 0;
         pointer-events: none;
       }
       /* subtle badge on about image */
@@ -1699,9 +1702,9 @@
         flex-wrap: wrap;
       }
       .sale-price {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.1rem;
-        font-weight: 800;
+        font-weight: 600;
         color: var(--black);
         letter-spacing: -0.02em;
       }
@@ -1728,8 +1731,8 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         cursor: pointer;
-        font-weight: 700;
-        font-family: var(--font-sans);
+        font-weight: 600;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         transition: all 0.3s var(--ease);
         display: flex;
         align-items: center;
@@ -1856,9 +1859,9 @@
         transform: rotate(6deg);
       }
       .feature-item h4 {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.05rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--ink);
         margin-bottom: 10px;
       }
@@ -1890,16 +1893,16 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto 18px;
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 0.9rem;
-        font-weight: 800;
+        font-weight: 600;
         color: #fff;
         box-shadow: 0 10px 24px rgba(29, 78, 216, 0.2);
       }
       .value-item h4 {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.4rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--ink);
         margin-bottom: 10px;
       }
@@ -2026,9 +2029,9 @@
         justify-content: center;
       }
       .combo-price-row .sale {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 2.2rem;
-        font-weight: 800;
+        font-weight: 600;
         color: var(--black);
         line-height: 1;
       }
@@ -2061,6 +2064,18 @@
       .combo-item {
         text-align: center;
         cursor: pointer;
+        position: relative;
+        padding: 0 8px;
+      }
+      .combo-item:not(:last-child)::after {
+        content: "+";
+        position: absolute;
+        right: -6px;
+        top: 42%;
+        transform: translateY(-60%);
+        color: #111111;
+        font-weight: 800;
+        font-size: 1.1rem;
       }
       .combo-item img {
         width: 68px;
@@ -2102,8 +2117,8 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         cursor: pointer;
-        font-family: var(--font-sans);
-        font-weight: 700;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-weight: 600;
         transition: all 0.3s var(--ease);
         text-decoration: none;
         border-radius: 14px;
@@ -2356,9 +2371,9 @@
         box-shadow: var(--sh);
       }
       .ts-big-score {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 3rem;
-        font-weight: 900;
+        font-weight: 600;
         color: var(--black);
         line-height: 1;
       }
@@ -2411,7 +2426,7 @@
         background: linear-gradient(90deg, #cbd5e1, #94a3b8) !important;
       }
       .ts-total-num {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.8rem;
         font-weight: 800;
         color: var(--black);
@@ -2482,12 +2497,12 @@
         position: absolute;
         top: 12px;
         right: 18px;
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 80px;
         line-height: 1;
         color: var(--border);
         pointer-events: none;
-        font-weight: 700;
+        font-weight: 600;
       }
       .ts-card-stars {
         font-size: 13px;
@@ -2742,14 +2757,15 @@
       .blog-card {
         background: #fff;
         overflow: hidden;
-        border: 1px solid var(--border);
-        border-radius: 20px;
+        border: 1px solid rgba(29, 78, 216, 0.22);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        border-radius: 0;
         transition: all 0.4s var(--ease);
       }
       .blog-card:hover {
-        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
         transform: translateY(-6px);
-        border-color: var(--blue-border);
+        border-color: rgba(29, 78, 216, 0.35);
       }
       .blog-img {
         overflow: hidden;
@@ -2872,13 +2888,19 @@
         object-fit: cover;
         flex-shrink: 0;
         border-radius: 14px;
+        border: 1px solid rgba(29, 78, 216, 0.12);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
         transition:
           opacity 0.2s,
-          transform 0.3s;
+          transform 0.3s,
+          box-shadow 0.3s,
+          filter 0.3s;
       }
       .insta-img:hover {
-        opacity: 0.85;
-        transform: scale(0.97);
+        opacity: 1;
+        transform: scale(1.02);
+        box-shadow: 0 18px 40px rgba(29, 78, 216, 0.18);
+        filter: saturate(1.08);
       }
       @keyframes scrollX {
         0% {
@@ -2969,7 +2991,7 @@
         flex: 1;
         padding: 14px 18px;
         border: none;
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 0.84rem;
         background: rgba(255, 255, 255, 0.1);
         color: #fff;
@@ -2987,9 +3009,9 @@
         font-size: 0.72rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        font-weight: 800;
+        font-weight: 600;
         cursor: pointer;
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         transition: background 0.2s;
         white-space: nowrap;
       }
@@ -3026,9 +3048,9 @@
         margin-bottom: 48px;
       }
       .footer-brand {
-        font-family: var(--font-sans);
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: 1.1rem;
-        font-weight: 800;
+        font-weight: 600;
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -4303,11 +4325,11 @@
         <span class="about-eyebrow"
           ><i class="fa-solid fa-circle-info"></i> Who We Are</span
         >
-        <h2>Has wellness stopped feeling simple?</h2>
+        <h2>Premium wellness built with clarity, trust, and science</h2>
         <div class="about-images-mobile reveal reveal-left">
           <div class="about-img-main">
             <img
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80&auto=format&fm=webp"
+              src="products/about-cover.png"
               alt="Natural Aiva Wellness ingredients"
               loading="lazy"
               decoding="async"
@@ -4318,26 +4340,44 @@
           </div>
         </div>
         <p>
-          At Aiva Wellness, we make it simple again. From our facility in Solan,
-          Himachal Pradesh, we craft precision health formulas designed for the
-          modern Indian body — free from unnecessary additives, binders, and
-          fillers.
+          Aiva Wellness is a premium health brand rooted in precision
+          formulation, clean sourcing, and professional craftsmanship. From our
+          Solan facility, we develop advanced wellness supplements for
+          discerning customers who expect efficacy, purity, and elevated
+          quality.
         </p>
         <p>
-          Every product is rooted in Ayurvedic wisdom and validated by modern
-          science, because we believe you deserve both.
+          Each formula blends time-honoured Ayurvedic insight with modern
+          scientific validation, ensuring every product feels streamlined,
+          purposeful, and genuinely supportive for daily life.
         </p>
         <div class="about-stats">
           <div class="a-stat">
-            <div class="a-stat-num">10k+</div>
+            <div
+              class="a-stat-num"
+              data-target="10"
+              data-suffix="k+"
+              data-decimals="0"
+            >
+              10k+
+            </div>
             <div class="a-stat-label">Happy Customers</div>
           </div>
           <div class="a-stat">
-            <div class="a-stat-num">25+</div>
+            <div
+              class="a-stat-num"
+              data-target="25"
+              data-suffix="+"
+              data-decimals="0"
+            >
+              25+
+            </div>
             <div class="a-stat-label">Premium Products</div>
           </div>
           <div class="a-stat">
-            <div class="a-stat-num">4.8</div>
+            <div class="a-stat-num" data-target="4.8" data-decimals="1">
+              4.8
+            </div>
             <div class="a-stat-label">Average Rating</div>
           </div>
         </div>
@@ -4350,7 +4390,7 @@
       <div class="about-images reveal reveal-left">
         <div class="about-img-main">
           <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80&auto=format&fm=webp"
+            src="products/about-cover.png"
             alt="Natural Aiva Wellness ingredients"
             loading="lazy"
             decoding="async"
@@ -4441,10 +4481,10 @@
     <section class="combo-section">
       <div class="combo-img-wrap reveal reveal-right">
         <img
-          src="products/ZMA.webp"
+          src="products/combo.png"
           loading="lazy"
           decoding="async"
-          alt="ZMA + Vitamin B6"
+          alt="Nattokinase 200 + Magnesium + Vitamin D3 Combo"
           onerror="
             this.src =
               'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80&auto=format&fm=webp'
@@ -4456,10 +4496,10 @@
         <span class="about-eyebrow"
           ><i class="fa-solid fa-fire"></i> Bestseller Combo</span
         >
-        <h2><strong>ZMA + Vitamin B6 Formula</strong></h2>
+        <h2><strong>Heart, Sleep & Immunity Trio</strong></h2>
         <p class="combo-sub">
-          Zinc, Magnesium &amp; B6 — the trinity for deep sleep, testosterone,
-          and muscle recovery.
+          Nattokinase 200 + Magnesium 5-in-1 + Vitamin D3 — cardiovascular
+          support, deep sleep, and immune strength combined.
         </p>
         <div class="combo-stars">
           <div class="combo-rating">
@@ -4467,40 +4507,40 @@
             ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
             ><i class="fa-solid fa-star"></i>
           </div>
-          <div class="combo-review">62 reviews</div>
+          <div class="combo-review">89 reviews</div>
         </div>
         <div class="combo-price-row">
-          <span class="sale">₹1,499</span>
-          <span class="orig">MRP ₹1,699</span>
+          <span class="sale">₹2,599</span>
+          <span class="orig">MRP ₹2,997</span>
         </div>
         <p class="combo-mrp">(MRP inclusive of all taxes)</p>
         <p class="combo-includes-label">What's Included</p>
         <div class="combo-items">
           <div class="combo-item active">
             <img
-              src="products/ZMA.webp"
+              src="products/Nattokinase Carton.webp"
               loading="lazy"
               decoding="async"
-              alt="ZMA"
+              alt="Nattokinase 200"
               onerror="
                 this.src =
                   'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
               "
             />
-            <span>ZMA</span>
+            <span>Nattokinase 200</span>
           </div>
           <div class="combo-item">
             <img
               src="products/Magnesium Complex.webp"
               loading="lazy"
               decoding="async"
-              alt="Magnesium"
+              alt="Magnesium 5-in-1"
               onerror="
                 this.src =
                   'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
               "
             />
-            <span>Magnesium</span>
+            <span>Magnesium 5-in-1</span>
           </div>
           <div class="combo-item">
             <img
@@ -4531,21 +4571,23 @@
       <div class="drops-inner">
         <div class="sh reveal">
           <p class="se"><i class="fa-solid fa-bolt"></i> The Aiva Advantage</p>
-          <h2>Why Liquid Drops Outperform Capsules &amp; Tablets</h2>
+          <h2>Why Magnesium Complex 5-in-1 Performs Better</h2>
           <p>
-            Formulated to support your daily health routine with maximum
-            efficiency
+            Advanced magnesium support for bone strength, muscle recovery, calm
+            energy, and everyday wellness.
           </p>
         </div>
         <div class="drops-grid">
           <div class="drops-left">
             <div class="drop-feat reveal">
-              <div class="drop-feat-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="drop-feat-icon">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
               <div class="drop-feat-text">
-                <h4>Better Absorption</h4>
+                <h4>5 Bioavailable Magnesium Forms</h4>
                 <p>
-                  Absorbed sublingually for faster, higher utilization of the
-                  active extract.
+                  A unique blend of Aspartate, Citrate, Glycinate, Gluconate,
+                  and Oxide for complete magnesium support.
                 </p>
               </div>
             </div>
@@ -4554,10 +4596,10 @@
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
               <div class="drop-feat-text">
-                <h4>Gentle for Regular Use</h4>
+                <h4>Enhanced Absorption</h4>
                 <p>
-                  Herbal formulation suitable for everyday routines without
-                  building dependency.
+                  Multiple magnesium types work together to improve absorption
+                  and utilization versus single-form supplements.
                 </p>
               </div>
             </div>
@@ -4566,10 +4608,10 @@
                 <i class="fa-solid fa-heart-pulse"></i>
               </div>
               <div class="drop-feat-text">
-                <h4>Digestive Comfort</h4>
+                <h4>Supports Muscle &amp; Nerve Function</h4>
                 <p>
-                  Bypasses heavy digestion — ideal for sensitive stomachs and
-                  those with gut issues.
+                  Helps maintain healthy muscle performance, nerve signalling,
+                  and electrolyte balance.
                 </p>
               </div>
             </div>
@@ -4577,13 +4619,13 @@
           <div class="drops-middle reveal">
             <div class="drops-middle-inner">
               <img
-                src="products/vitamins minerals with amino acid (man).webp"
+                src="products/Magnesium Complex.webp"
                 loading="lazy"
                 decoding="async"
-                alt="Aiva Wellness Drops"
+                alt="Magnesium Complex 5-in-1"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&q=80&auto=format&fm=webp'
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&auto=format&fm=webp'
                 "
               />
               <div class="drops-middle-glow"></div>
@@ -4592,35 +4634,35 @@
           <div class="drops-right">
             <div class="drop-feat reveal">
               <div class="drop-feat-icon">
-                <i class="fa-solid fa-microscope"></i>
+                <i class="fa-solid fa-bolt"></i>
               </div>
               <div class="drop-feat-text">
-                <h4>Higher Bioavailability</h4>
+                <h4>Supports Energy Production</h4>
                 <p>
-                  More of what you take is effectively absorbed and used by your
-                  body.
+                  Magnesium helps power energy metabolism and reduces tiredness
+                  and fatigue.
                 </p>
               </div>
             </div>
             <div class="drop-feat reveal d1">
-              <div class="drop-feat-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="drop-feat-icon"><i class="fa-solid fa-bone"></i></div>
               <div class="drop-feat-text">
-                <h4>Maximum Purity</h4>
+                <h4>Bone Health Support</h4>
                 <p>
-                  Selected herbs processed to achieve the highest level of
-                  purity available.
+                  Contributes to the maintenance of healthy bones and teeth with
+                  optimal magnesium nutrition.
                 </p>
               </div>
             </div>
             <div class="drop-feat reveal d2">
               <div class="drop-feat-icon">
-                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-leaf"></i>
               </div>
               <div class="drop-feat-text">
-                <h4>No Filler and Binders</h4>
+                <h4>Clean &amp; Quality Formula</h4>
                 <p>
-                  Completely free from unnecessary additives, fillers, and
-                  artificial binders.
+                  No unnecessary fillers, artificial binders or excess additives
+                  — just pure effective magnesium support.
                 </p>
               </div>
             </div>
@@ -4723,29 +4765,7 @@
           <div class="blog-card reveal reveal-right">
             <div class="blog-img">
               <img
-                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80&auto=format&fm=webp"
-                alt="Magnesium Benefits"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="blog-info">
-              <div class="blog-tag">Magnesium</div>
-              <h3>
-                <a href="#"
-                  >5 Signs You May Be Magnesium Deficient — And What to Do About
-                  It</a
-                >
-              </h3>
-              <a href="#" class="blog-read"
-                >Read more <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-          <div class="blog-card reveal">
-            <div class="blog-img">
-              <img
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80&auto=format&fm=webp"
+                src="blogs/images/nattokinase.png"
                 alt="Heart Health"
                 loading="lazy"
                 decoding="async"
@@ -4764,21 +4784,47 @@
               ></a>
             </div>
           </div>
-          <div class="blog-card reveal reveal-left">
+          <div class="blog-card reveal">
             <div class="blog-img">
               <img
-                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80&auto=format&fm=webp"
-                alt="Vitamins for Women"
+                src="blogs/images/magnesium.png"
+                alt="Magnesium Benefits"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div class="blog-info">
-              <div class="blog-tag">Women's Health</div>
+              <div class="blog-tag">Magnesium</div>
               <h3>
                 <a href="#"
-                  >Why Women Need Different Vitamins: A Guide to Gender-Specific
-                  Nutrition</a
+                  >5 Signs You May Be Magnesium Deficient — And What to Do About
+                  It</a
+                >
+              </h3>
+              <a href="#" class="blog-read"
+                >Read more <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="blog-card reveal reveal-left">
+            <div class="blog-img">
+              <img
+                src="blogs/images/omega-3.png"
+                alt="Omega-3 Fish Oil"
+                loading="lazy"
+                decoding="async"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700&q=80&auto=format&fm=webp'
+                "
+              />
+            </div>
+            <div class="blog-info">
+              <div class="blog-tag">Omega-3</div>
+              <h3>
+                <a href="#"
+                  >Omega-3 Fish Oil: The Essential Nutrient for Heart, Brain
+                  &amp; Joint Health</a
                 >
               </h3>
               <a href="#" class="blog-read"
@@ -4805,49 +4851,49 @@
         <div class="insta-track">
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/Nattokinase Carton.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/Magnesium Complex.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/omega 3, Vitamin E.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/VITAMIN D3.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/vitamins minerals with amino acid (man).webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/vitamins minerals with amino acid (Woman).webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/ZMA.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
@@ -4855,49 +4901,35 @@
           <!-- duplicate for seamless loop -->
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/CCM, Mg, Zc, D3.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/Q Fit-300.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/reefit forte c new size.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/Nattokinase Carton  final 3d.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
-            alt="Aiva Wellness"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="insta-img"
-            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
-            alt="Aiva Wellness"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="insta-img"
-            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80&auto=format&fm=webp"
+            src="products/Magnesium Complex.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
@@ -5179,6 +5211,59 @@
         { threshold: 0.12 },
       );
       revealEls.forEach((el) => revObserver.observe(el));
+
+      /* ═══ ABOUT STATS COUNTER ═══ */
+      const statCounters = document.querySelectorAll(".a-stat-num");
+      const statsBlock = document.querySelector(".about-stats");
+      let statsAnimated = false;
+
+      function formatStatValue(value, suffix) {
+        if (!suffix) return value;
+        if (suffix === "k+") {
+          return `${Math.round(value)}k+`;
+        }
+        return `${Math.round(value)}${suffix}`;
+      }
+
+      function animateStat(el) {
+        const target = Number(el.dataset.target) || 0;
+        const decimals = Number(el.dataset.decimals || 0);
+        const suffix = el.dataset.suffix || "";
+        const duration = 1400;
+        const startTime = performance.now();
+
+        function step(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const current = target * progress;
+          if (suffix === "k+") {
+            el.textContent = formatStatValue(current, suffix);
+          } else if (decimals > 0) {
+            el.textContent = `${current.toFixed(decimals)}`;
+          } else {
+            el.textContent = `${Math.round(current)}${suffix}`;
+          }
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      if (statsBlock && statCounters.length) {
+        const statsObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !statsAnimated) {
+                statsAnimated = true;
+                statCounters.forEach((el) => animateStat(el));
+                statsObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
+        statsObserver.observe(statsBlock);
+      }
 
       /* ═══ MOBILE MENU ═══ */
       function toggleMenu() {

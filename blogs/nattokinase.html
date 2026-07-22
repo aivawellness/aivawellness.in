@@ -272,9 +272,15 @@
         --sh-lg: 0 20px 60px rgba(8, 13, 20, 0.14);
         --ease: cubic-bezier(0.22, 1, 0.36, 1);
       }
+      @font-face {
+        font-family: "Swiss721BoldCondensedBT";
+        src: url("/fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
+        font-display: swap;
+      }
       html {
         scroll-behavior: smooth;
         overflow-x: hidden;
+        font-size: 16px;
       }
       body {
         font-family: "Inter", sans-serif;
@@ -286,9 +292,25 @@
       h1,
       h2,
       h3,
-      h4 {
+      h4,
+      h5,
+      h6 {
         font-weight: 600;
         line-height: 1.2;
+      }
+      .section-header h2 {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(24px, 4.5vw, 52px);
+        font-weight: 700;
+        color: var(--black);
+        margin-bottom: 14px;
+      }
+      .section-header p {
+        color: var(--text-mid);
+        font-size: 1rem;
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.8;
       }
       img {
         max-width: 100%;
@@ -393,13 +415,13 @@
         object-fit: contain;
       }
       .brand-name {
-        font-family: "Sora", sans-serif;
-        font-size: 1.15rem;
-        font-weight: 800;
+        font-family: "Inter", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
         color: var(--black);
         display: block;
         white-space: nowrap;
-        letter-spacing: -0.01em;
+        letter-spacing: normal;
       }
       .brand-name span {
         color: var(--blue);
@@ -420,19 +442,20 @@
       .nav-links a {
         text-decoration: none;
         color: var(--muted);
-        font-size: 0.84rem;
-        font-weight: 500;
-        padding: 6px 14px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 600;
+        padding: 8px 16px;
         border-radius: 8px;
         transition: all 0.2s;
       }
       .nav-links a:hover,
       .nav-links a.active {
         color: var(--blue);
-        background: var(--blue-soft);
+        background: rgba(59, 130, 246, 0.1);
       }
       .nav-links a.active {
-        font-weight: 600;
+        font-weight: 700;
       }
       .nav-right {
         display: flex;
@@ -441,16 +464,17 @@
         flex-shrink: 0;
       }
       .nav-cta {
+        font-family: "Inter", sans-serif;
         background: linear-gradient(135deg, #1d4ed8, #2563eb);
         color: #fff;
         border-radius: 999px;
-        padding: 9px 22px;
-        font-size: 0.82rem;
-        font-weight: 600;
+        padding: 10px 24px;
+        font-size: 0.88rem;
+        font-weight: 700;
         text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 7px;
+        gap: 8px;
         white-space: nowrap;
         box-shadow: 0 4px 16px rgba(29, 78, 216, 0.3);
         transition: all 0.25s var(--ease);
@@ -548,19 +572,147 @@
       .article-hero {
         position: relative;
         background: var(--black);
+        min-height: 520px;
         overflow: hidden;
-        max-height: 460px;
       }
       .article-hero img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        aspect-ratio: 16/5;
         object-fit: cover;
-        opacity: 0.55;
+        object-position: center center;
+        opacity: 1;
+        filter: none;
+      }
+      @media (max-width: 1024px) {
+        .article-hero {
+          min-height: 460px;
+        }
+      }
+      @media (max-width: 900px) {
+        .article-hero {
+          min-height: 360px;
+        }
+        .article-hero-content {
+          padding: 20px 18px 22px;
+        }
+        .article-hero h1 {
+          font-size: clamp(22px, 6vw, 32px);
+          max-width: 92%;
+          line-height: 1.25;
+        }
+        .breadcrumb {
+          font-size: 0.68rem;
+          gap: 6px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .article-tag {
+          font-size: 0.72rem;
+          padding: 6px 14px;
+          margin-bottom: 14px;
+        }
+        .article-meta {
+          font-size: 0.72rem;
+          gap: 10px;
+        }
+        .article-wrap {
+          padding: 42px 20px 26px;
+        }
+        .article-body h2 {
+          font-size: clamp(22px, 4vw, 30px);
+        }
+        .article-body h3 {
+          font-size: 1rem;
+        }
+        .article-body p {
+          font-size: 1rem;
+          line-height: 1.95;
+        }
+        .inline-fig,
+        .image-grid {
+          margin: 32px 0;
+        }
+        .image-grid {
+          gap: 20px;
+          width: 100%;
+          max-width: 100%;
+        }
+        .image-card {
+          max-height: 480px;
+        }
       }
       @media (max-width: 700px) {
-        .article-hero img {
-          aspect-ratio: 4/3;
+        .article-hero {
+          min-height: 300px;
+        }
+        .article-hero-content {
+          justify-content: center;
+          padding: 18px 16px 20px;
+        }
+        .article-hero h1 {
+          font-size: 1.4rem;
+          line-height: 1.35;
+          max-width: 90%;
+        }
+        .breadcrumb {
+          width: 100%;
+          justify-content: center;
+        }
+        .article-meta {
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+        .article-wrap {
+          padding: 32px 16px 24px;
+        }
+        .article-body h2 {
+          font-size: clamp(20px, 5vw, 26px);
+        }
+        .article-body p {
+          font-size: 0.98rem;
+          line-height: 1.9;
+        }
+        .inline-fig,
+        .image-grid {
+          margin: 28px 0;
+        }
+        .image-grid {
+          gap: 16px;
+          max-width: 100%;
+        }
+        .image-card {
+          max-height: none;
+        }
+        .image-card img {
+          aspect-ratio: auto;
+          height: auto;
+        }
+      }
+      @media (max-width: 520px) {
+        .article-hero {
+          min-height: 260px;
+        }
+        .article-hero-content {
+          padding: 16px 14px 18px;
+        }
+        .article-hero h1 {
+          font-size: 1.25rem;
+        }
+        .article-meta {
+          gap: 8px;
+          font-size: 0.74rem;
+        }
+        .article-wrap {
+          padding: 24px 14px 22px;
+        }
+        .article-body h2 {
+          font-size: 1.3rem;
+        }
+        .image-grid {
+          gap: 14px;
         }
       }
       .article-hero::after {
@@ -569,9 +721,10 @@
         inset: 0;
         background: linear-gradient(
           180deg,
-          rgba(8, 13, 20, 0.35) 0%,
-          rgba(8, 13, 20, 0.75) 100%
+          rgba(8, 13, 20, 0.32) 0%,
+          rgba(8, 13, 20, 0.72) 100%
         );
+        pointer-events: none;
       }
       .article-hero-content {
         position: absolute;
@@ -616,14 +769,14 @@
         backdrop-filter: blur(6px);
       }
       .article-hero h1 {
-        font-family: "Cormorant Garamond", serif;
+        font-family: "Inter", sans-serif;
         font-size: clamp(24px, 4.2vw, 42px);
-        font-weight: 600;
+        font-weight: 700;
         color: #fff;
         max-width: 760px;
-        line-height: 1.15;
+        line-height: 1.2;
         margin-bottom: 14px;
-        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.18);
       }
       .article-meta {
         display: flex;
@@ -650,32 +803,37 @@
         padding: 64px 24px 20px;
       }
       .article-lede {
-        font-family: "Cormorant Garamond", serif;
-        font-style: italic;
-        font-size: 1.35rem;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(1.05rem, 1.7vw, 1.24rem);
         color: var(--ink);
-        line-height: 1.65;
-        margin-bottom: 40px;
+        line-height: 1.85;
+        margin-bottom: 42px;
         padding-bottom: 36px;
         border-bottom: 1px solid var(--border);
       }
       .article-body h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(24px, 3vw, 34px);
+        font-family: "Inter", sans-serif;
+        font-size: clamp(26px, 3vw, 36px);
         color: var(--black);
-        margin: 48px 0 18px;
+        margin: 44px 0 16px;
+        line-height: 1.25;
       }
       .article-body h3 {
-        font-family: "Sora", sans-serif;
+        font-family: "Inter", sans-serif;
         font-size: 1.05rem;
         color: var(--black);
-        margin: 30px 0 12px;
+        margin: 28px 0 12px;
+        line-height: 1.45;
       }
       .article-body p {
-        font-size: 0.98rem;
-        line-height: 1.9;
+        font-size: 1rem;
+        line-height: 2;
         color: var(--text-mid);
-        margin-bottom: 20px;
+        margin-bottom: 22px;
+      }
+      .article-body ul li {
+        font-size: 0.95rem;
+        line-height: 1.8;
       }
       .article-body ul {
         margin: 0 0 22px 0;
@@ -715,8 +873,8 @@
       }
       .inline-fig img {
         width: 100%;
-        aspect-ratio: 16/9;
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
       }
       .inline-fig figcaption {
         font-size: 0.76rem;
@@ -724,6 +882,51 @@
         padding: 12px 18px;
         background: #fff;
         border-top: 1px solid var(--border);
+      }
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+        max-width: 1120px;
+        width: min(100%, 1120px);
+        margin: 32px auto;
+        align-items: stretch;
+      }
+      .image-card {
+        border-radius: 0;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: var(--sh-lg);
+        background: #fff;
+        max-height: 520px;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .image-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 26px 80px rgba(8, 13, 20, 0.16);
+      }
+      .image-card img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+        background: #f8fafc;
+        display: block;
+        transition: transform 0.45s ease;
+      }
+      .image-card:hover img {
+        transform: scale(1.06);
+      }
+      @media (max-width: 960px) {
+        .image-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 660px) {
+        .image-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .pull-quote {
         margin: 40px 0;
@@ -733,12 +936,11 @@
         border-radius: 0 16px 16px 0;
       }
       .pull-quote p {
-        font-family: "Cormorant Garamond", serif;
-        font-style: italic;
-        font-size: 1.2rem;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
         color: var(--ink);
         margin: 0;
-        line-height: 1.6;
+        line-height: 1.8;
       }
       .disclaimer-box {
         margin: 40px 0;
@@ -891,9 +1093,11 @@
         margin-bottom: 8px;
       }
       .apc-text h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.5rem;
+        font-family: "Inter", sans-serif;
+        font-size: 1.18rem;
         margin-bottom: 8px;
+        font-weight: 700;
+        line-height: 1.35;
       }
       .apc-text p {
         font-size: 0.82rem;
@@ -971,9 +1175,10 @@
         border: 1px solid var(--blue-border);
       }
       .related-section h2 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(24px, 3.4vw, 40px);
+        font-family: "Inter", sans-serif;
+        font-size: clamp(24px, 3.2vw, 38px);
         color: var(--black);
+        line-height: 1.2;
       }
       .blogs-grid {
         display: grid;
@@ -984,7 +1189,7 @@
         background: #fff;
         overflow: hidden;
         border: 1px solid var(--border);
-        border-radius: 20px;
+        border-radius: 0;
         transition: all 0.4s var(--ease);
       }
       .blog-card:hover {
@@ -1078,9 +1283,9 @@
         margin-bottom: 48px;
       }
       .footer-brand {
-        font-family: "Sora", sans-serif;
-        font-size: 1.1rem;
-        font-weight: 800;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -1385,10 +1590,18 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <img
-        src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1800&q=80&auto=format&fm=webp"
-        alt="Cardiovascular wellness and heart health"
-      />
+      <picture>
+        <source
+          media="(max-width: 700px)"
+          srcset="../blogs/images/natto-cover-mobile.png"
+        />
+        <img
+          src="../blogs/images/natto-cover.png"
+          alt="Cardiovascular wellness and heart health"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
           <a href="../index.html">Home</a> <span>/</span>
@@ -1437,8 +1650,10 @@
 
         <div class="inline-fig">
           <img
-            src="https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=1200&q=80&auto=format&fm=webp"
+            src="../blogs/images/natto.png"
             alt="Nattokinase enzyme supplement capsules"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption>
             Modern nattokinase supplements offer a convenient, standardised way
@@ -1553,15 +1768,23 @@
           </li>
         </ul>
 
-        <div class="inline-fig">
-          <img
-            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=80&auto=format&fm=webp"
-            alt="Aiva Wellness clean-label supplement bottle"
-          />
-          <figcaption>
-            Aiva Wellness formulates Nattokinase without fillers or binders,
-            crafted at our facility in Solan, Himachal Pradesh.
-          </figcaption>
+        <div class="image-grid">
+          <figure class="image-card">
+            <img
+              src="../blogs/images/natto1.png"
+              alt="Nattokinase product image 1"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure class="image-card">
+            <img
+              src="../blogs/images/natto2.png"
+              alt="Nattokinase product image 2"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
 
         <h2>The Takeaway</h2>
@@ -1659,28 +1882,10 @@
         <div class="blog-card reveal">
           <div class="blog-img">
             <img
-              src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80&auto=format&fm=webp"
-              alt="Magnesium Benefits"
-            />
-          </div>
-          <div class="blog-info">
-            <div class="blog-tag">Magnesium</div>
-            <h3>
-              <a href="../index.html#blogs"
-                >5 Signs You May Be Magnesium Deficient — And What to Do About
-                It</a
-              >
-            </h3>
-            <a href="../index.html#blogs" class="blog-read"
-              >Read more <i class="fa-solid fa-arrow-right"></i
-            ></a>
-          </div>
-        </div>
-        <div class="blog-card reveal">
-          <div class="blog-img">
-            <img
-              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80&auto=format&fm=webp"
-              alt="Nattokinase heart health"
+              src="images/nattokinase.png"
+              alt="Heart Health"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="blog-info">
@@ -1699,16 +1904,40 @@
         <div class="blog-card reveal">
           <div class="blog-img">
             <img
-              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80&auto=format&fm=webp"
-              alt="Vitamins for Women"
+              src="images/magnesium.png"
+              alt="Magnesium Benefits"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="blog-info">
-            <div class="blog-tag">Women's Health</div>
+            <div class="blog-tag">Magnesium</div>
             <h3>
               <a href="../index.html#blogs"
-                >Why Women Need Different Vitamins: A Guide to Gender-Specific
-                Nutrition</a
+                >5 Signs You May Be Magnesium Deficient — And What to Do About
+                It</a
+              >
+            </h3>
+            <a href="../index.html#blogs" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="images/omega-3.png"
+              alt="Omega-3 Fish Oil"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Omega-3</div>
+            <h3>
+              <a href="../index.html#blogs"
+                >Omega-3 Fish Oil: The Essential Nutrient for Heart, Brain &amp;
+                Joint Health</a
               >
             </h3>
             <a href="../index.html#blogs" class="blog-read"
