@@ -207,7 +207,9 @@
     <style>
       @font-face {
         font-family: "Swiss721BoldCondensedBT";
-        src: url("/fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
+        src: url("fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
         font-display: swap;
       }
 
@@ -269,8 +271,9 @@
       h4,
       h5,
       h6 {
-        font-weight: 600;
-        line-height: 1.2;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-weight: 700;
+        line-height: 1.15;
       }
 
       /* PRELOADER */
@@ -1040,9 +1043,9 @@
         transform: scaleX(1);
       }
       .info-card-title {
-        font-family: "Sora", sans-serif;
-        font-size: 0.92rem;
-        font-weight: 800;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: 1rem;
+        font-weight: 700;
         color: var(--black);
         margin-bottom: 22px;
         display: flex;
@@ -1200,9 +1203,9 @@
         margin-bottom: 4px;
       }
       .wa-title {
-        font-family: "Sora", sans-serif;
-        font-size: 1rem;
-        font-weight: 800;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
         color: #fff;
         margin-bottom: 3px;
       }
@@ -1250,9 +1253,9 @@
         border-color: var(--blue-border);
       }
       .hours-title {
-        font-family: "Sora", sans-serif;
-        font-size: 0.88rem;
-        font-weight: 800;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: 1rem;
+        font-weight: 700;
         color: var(--black);
         margin-bottom: 18px;
         display: flex;
@@ -1394,12 +1397,12 @@
         z-index: 1;
       }
       .form-card-head h2 {
-        font-family: "Cormorant Garamond", serif;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(22px, 3vw, 34px);
-        font-weight: 600;
+        font-weight: 700;
         color: #fff;
         margin-bottom: 8px;
-        line-height: 1.2;
+        line-height: 1.15;
         position: relative;
         z-index: 1;
       }
@@ -1411,32 +1414,6 @@
         z-index: 1;
         max-width: 380px;
       }
-      /* form head trust pills row */
-      .form-trust-pills {
-        display: flex;
-        gap: 8px;
-        margin-top: 18px;
-        flex-wrap: wrap;
-        position: relative;
-        z-index: 1;
-      }
-      .form-trust-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 0.68rem;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.72);
-        padding: 4px 12px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .form-trust-pill i {
-        font-size: 10px;
-        color: var(--accent);
-      }
-
       .form-card-body {
         padding: 36px 38px;
       }
@@ -1656,9 +1633,9 @@
         margin-bottom: 28px;
       }
       .map-title {
-        font-family: "Cormorant Garamond", serif;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(24px, 3.5vw, 38px);
-        font-weight: 600;
+        font-weight: 700;
         color: var(--black);
         margin-bottom: 6px;
       }
@@ -1718,9 +1695,9 @@
         margin-bottom: 48px;
       }
       .faq-section-header h2 {
-        font-family: "Cormorant Garamond", serif;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(26px, 3.5vw, 44px);
-        font-weight: 600;
+        font-weight: 700;
         color: var(--black);
         margin-bottom: 10px;
         margin-top: 12px;
@@ -1753,8 +1730,9 @@
         align-items: center;
         padding: 20px 24px;
         cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: 600;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: 1rem;
+        font-weight: 700;
         color: var(--text);
         gap: 16px;
         transition:
@@ -1830,7 +1808,7 @@
         position: relative;
         overflow: hidden;
         margin-top: 80px;
-        border-radius: 28px;
+        border-radius: 0;
       }
       .newsletter-section::before {
         content: "";
@@ -1867,10 +1845,10 @@
         color: rgba(255, 255, 255, 0.8);
       }
       .newsletter-inner h2 {
-        font-family: "Cormorant Garamond", serif;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(24px, 3.5vw, 42px);
         color: #fff;
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 10px;
       }
       .newsletter-inner p {
@@ -2630,25 +2608,11 @@
           <!-- RIGHT: Form Card -->
           <div class="form-card reveal reveal-left">
             <div class="form-card-head">
-              <div class="form-head-eyebrow">
-                <i class="fa-solid fa-paper-plane"></i> Drop Us a Line
-              </div>
               <h2>Send Us a Message</h2>
               <p>
                 Fill in the details below and we'll get back to you as quickly
                 as possible.
               </p>
-              <div class="form-trust-pills">
-                <span class="form-trust-pill"
-                  ><i class="fa-solid fa-shield-halved"></i> 100% Secure</span
-                >
-                <span class="form-trust-pill"
-                  ><i class="fa-solid fa-bolt"></i> Fast Reply</span
-                >
-                <span class="form-trust-pill"
-                  ><i class="fa-solid fa-lock"></i> Private & Safe</span
-                >
-              </div>
             </div>
 
             <div class="form-card-body">
