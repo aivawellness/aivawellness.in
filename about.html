@@ -234,9 +234,22 @@
         --t: 0.3s;
         --header-h: 68px;
       }
+      @font-face {
+        font-family: "Swiss721BoldCondensedBT";
+        src: url("fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
       html {
         scroll-behavior: smooth;
         overflow-x: hidden;
+      }
+      /* Make all headings use the Swiss condensed display font like index/shop */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-weight: 700;
+        line-height: 1.15;
       }
       body {
         font-family: "Inter", sans-serif;
@@ -587,11 +600,17 @@
       }
       .brand-sub {
         display: block;
-        font-size: 0.68rem;
+        font-size: 0.76rem;
         color: var(--muted);
-        margin-top: 1px;
-        white-space: nowrap;
+        margin-top: 4px;
         letter-spacing: 0.02em;
+        white-space: normal; /* allow wrap so it sits under the brand name */
+      }
+      .brand-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
       }
       .nav-links {
         display: flex;
@@ -880,7 +899,7 @@
         }
       }
       .hero-title {
-        font-family: "Cormorant Garamond", serif;
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(32px, 5vw, 68px);
         font-weight: 600;
         color: #fff;
@@ -898,6 +917,11 @@
         line-height: 1.85;
         max-width: 520px;
         margin-bottom: 36px;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
       }
       .hero-cta-row {
         display: flex;
@@ -1163,7 +1187,7 @@
         font-size: clamp(28px, 4vw, 52px);
         font-weight: 600;
         color: var(--black);
-        margin-bottom: 14px;
+        margin-bottom: 6px;
         line-height: 1.15;
       }
       .section-title span {
@@ -1174,9 +1198,19 @@
       }
       .section-sub {
         color: var(--muted);
-        font-size: 0.88rem;
+        font-size: 1.05rem; /* bumped further */
         max-width: 520px;
-        line-height: 1.8;
+        line-height: 1.9;
+      }
+      /* UNIFORM PARAGRAPHS: consistent line-height and spacing */
+      .hero-desc,
+      .section-sub,
+      .story-p,
+      .ts-card-text,
+      .map-p,
+      .footer-desc {
+        line-height: 1.9;
+        margin-bottom: 16px;
       }
       .section-header {
         text-align: center;
@@ -1184,7 +1218,7 @@
         padding: 0 16px;
       }
       .section-header .section-sub {
-        margin: 0 auto;
+        margin: 0.25rem auto 0; /* sits right under the heading */
       }
       .btn-outline {
         display: inline-flex;
@@ -1222,7 +1256,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
-        align-items: start;
+        align-items: center; /* center image vertically with heading */
       }
       .story-h2 {
         font-family: "Cormorant Garamond", serif;
@@ -1233,10 +1267,15 @@
         margin-bottom: 20px;
       }
       .story-p {
-        font-size: 0.9rem;
+        font-size: 1.05rem; /* minor increase */
         color: var(--text-mid);
-        line-height: 1.9;
+        line-height: 1.95;
         margin-bottom: 16px;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
       }
       .vision-quote {
         font-style: italic;
@@ -1271,13 +1310,14 @@
       .story-img-main {
         grid-column: 1/-1;
         overflow: hidden;
-        border-radius: var(--r);
+        border-radius: 0; /* sharp corners requested */
         position: relative;
         box-shadow: var(--sh-xl);
+        height: 462px;
       }
       .story-img-main img {
         width: 100%;
-        height: 280px;
+        height: 100%;
         object-fit: cover;
         display: block;
         transition: transform 0.7s var(--ease);
@@ -1301,30 +1341,12 @@
       .story-img-sm:hover img {
         transform: scale(1.06);
       }
-      .story-img-badge {
-        position: absolute;
-        bottom: 14px;
-        left: 14px;
-        background: rgba(8, 13, 20, 0.7);
-        backdrop-filter: blur(8px);
-        color: #fff;
-        font-size: 0.68rem;
-        font-weight: 600;
-        padding: 7px 14px;
-        border-radius: 999px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        z-index: 2;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-      }
-      .story-img-badge i {
-        color: var(--gold);
-      }
+      /* story-img-badge removed per request */
       @media (max-width: 1000px) {
         .story-section {
           grid-template-columns: 1fr;
           gap: 48px;
+          align-items: start; /* stacked layout aligns to top on small screens */
         }
       }
 
@@ -2084,6 +2106,10 @@
         overflow: hidden;
         transition: all 0.4s var(--ease);
         box-shadow: 0 8px 32px rgba(13, 17, 23, 0.05);
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
       .ts-card::before {
         content: "";
@@ -2121,11 +2147,14 @@
         color: var(--gold);
       }
       .ts-card-text {
-        font-size: 0.87rem;
-        color: rgba(15, 23, 42, 0.78);
-        line-height: 1.85;
+        font-size: 0.94rem;
+        color: rgba(15, 23, 42, 0.9);
+        line-height: 1.9;
         margin-bottom: 18px;
         font-style: italic;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
       }
       .ts-card-sep {
         height: 1px;
@@ -2272,10 +2301,13 @@
         line-height: 1.2;
       }
       .map-p {
-        font-size: 0.88rem;
+        font-size: 0.95rem;
         color: var(--text-mid);
-        line-height: 1.85;
+        line-height: 1.9;
         margin-bottom: 20px;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
       }
       .map-contacts {
         display: flex;
@@ -2531,10 +2563,11 @@
         font-weight: 500;
       }
       .footer-desc {
-        font-size: 0.8rem;
-        line-height: 1.85;
+        font-size: 0.92rem;
+        line-height: 1.9;
         margin-bottom: 20px;
         max-width: 280px;
+        text-align: left;
       }
       .footer-social {
         display: flex;
@@ -2755,6 +2788,21 @@
         y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "xmnjshu9fg");
     </script>
+    <style>
+      /* Override: prefer Swiss condensed for all headings/titles on this page */
+      h1,h2,h3,h4,h5,h6,
+      [class*="title"],
+      .mission-text,
+      .peek-slide-caption,
+      .story-h2,
+      .form-card-head h2,
+      .map-title,
+      .vision-quote::before {
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -2840,7 +2888,7 @@
           <li><a href="blog.html">Blogs</a></li>
         </ul>
         <div class="nav-right">
-          <a href="tel:+917807751710" class="nav-cta"
+          <a href="tel:+917807751711" class="nav-cta"
             ><i class="fa-solid fa-phone"></i> Call Now</a
           >
           <button
@@ -2866,7 +2914,7 @@
         <a href="about.html" class="active">About Us</a>
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blogs</a>
-        <a href="tel:+917807751710" class="m-cta"
+        <a href="tel:+917807751711" class="m-cta"
           ><i class="fa-solid fa-phone"></i> Call Now</a
         >
       </nav>
@@ -2905,14 +2953,14 @@
               <div class="hero-stat-icon">
                 <i class="fa-solid fa-calendar" style="color: #60a5fa"></i>
               </div>
-              <div class="hero-stat-num">2022</div>
+              <div class="hero-stat-num">2026</div>
               <div class="hero-stat-label">Founded</div>
             </div>
             <div class="hero-stat-card reveal d2">
               <div class="hero-stat-icon">
                 <i class="fa-solid fa-box" style="color: #34d399"></i>
               </div>
-              <div class="hero-stat-num">25+</div>
+              <div class="hero-stat-num">15+</div>
               <div class="hero-stat-label">Products</div>
             </div>
             <div class="hero-stat-card reveal d3">
@@ -2941,10 +2989,7 @@
     <!-- TRUST STRIP -->
     <div class="trust-strip">
       <div class="trust-inner">
-        <div class="trust-item">
-          <div class="trust-icon"><i class="fa-solid fa-certificate"></i></div>
-          <span>FSSAI Licensed Facility</span>
-        </div>
+        <!-- FSSAI trust item removed per request -->
         <div class="trust-item">
           <div class="trust-icon"><i class="fa-solid fa-flask-vial"></i></div>
           <span>Third-Party Lab Tested</span>
@@ -2961,7 +3006,7 @@
         </div>
         <div class="trust-item">
           <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
-          <span>2&ndash;4 Hr Support</span>
+          <span>24 Hr Support</span>
         </div>
       </div>
     </div>
@@ -2998,24 +3043,10 @@
             <div class="story-images">
               <div class="story-img-main">
                 <img
-                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80&auto=format&fm=webp"
+                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1400&q=80&auto=format&fm=webp"
                   alt="Natural Aiva Wellness ingredients"
                 />
-                <div class="story-img-badge">
-                  <i class="fa-solid fa-star"></i> Made in Himachal Pradesh
-                </div>
-              </div>
-              <div class="story-img-sm">
-                <img
-                  src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80&auto=format&fm=webp"
-                  alt="Aiva Wellness capsules"
-                />
-              </div>
-              <div class="story-img-sm">
-                <img
-                  src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80&auto=format&fm=webp"
-                  alt="Wellness ritual"
-                />
+                <!-- story-img-badge removed -->
               </div>
             </div>
           </div>
@@ -3284,7 +3315,7 @@
               <div class="trust-card-icon">
                 <i class="fa-solid fa-headset"></i>
               </div>
-              <div class="trust-card-title">2&ndash;4 Hr Support</div>
+              <div class="trust-card-title">24 Hr Support</div>
               <div class="trust-card-desc">
                 Real humans respond to queries fast, over call or WhatsApp.
               </div>
@@ -3417,7 +3448,7 @@
             <div class="map-contacts">
               <div class="map-contact-item">
                 <i class="fa-solid fa-phone"></i
-                ><a href="tel:+917807751710">+91 78077 51710</a>
+                ><a href="tel:+917807751711">+91 78077 51711</a>
               </div>
               <div class="map-contact-item">
                 <i class="fa-solid fa-envelope"></i
@@ -3473,6 +3504,7 @@
     </main>
 
     <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <div class="footer-top">
@@ -3482,81 +3514,19 @@
                 <div class="f-mark">
                   <img src="assets/logo.png" alt="Aiva Wellness logo" />
                 </div>
-                <span class="brand-name"
-                  ><span class="brand-aiva">Aiva</span
-                  ><span>Wellness</span></span
-                >
+                <div class="brand-meta">
+                  <span class="brand-name"><span class="brand-aiva">Aiva</span><span>Wellness</span></span>
+                  <small class="brand-sub">Premium Healthcare &amp; Wellness</small>
+                </div>
               </div>
-              <small class="brand-sub">Premium Healthcare &amp; Wellness</small>
             </div>
-            <div class="footer-desc">
-              Premium Healthcare &amp; Wellness Solutions from Solan, Himachal
-              Pradesh. Science-backed Ayurvedic formulations crafted for the
-              health of every Indian family.
-            </div>
+            <!-- footer-desc removed per request -->
             <div class="footer-social">
-              <a
-                class="social-btn"
-                href="https://www.instagram.com/aivawellness.in/?hl=en"
-                target="_blank"
-                aria-label="Instagram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a
-                class="social-btn"
-                href="https://www.facebook.com/profile.php?id=61591507665329"
-                target="_blank"
-                aria-label="Facebook"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <!--
-              <a
-                class="social-btn"
-                href="https://www.threads.com/@aivawellness.in"
-                target="_blank"
-                aria-label="Threads"
-                ><i class="fa-brands fa-threads"></i
-              ></a>
-              -->
-              <a
-                class="social-btn"
-                href="https://x.com/aivawellness"
-                target="_blank"
-                aria-label="X"
-                ><i class="fa-brands fa-x-twitter"></i
-              ></a>
-              <a
-                class="social-btn"
-                href="https://www.linkedin.com/company/aivawellness"
-                target="_blank"
-                aria-label="LinkedIn"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <!--
-              <a
-                class="social-btn"
-                href="https://wa.me/917807751710"
-                target="_blank"
-                aria-label="WhatsApp"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
-              -->
-              <a
-                class="social-btn"
-                href="https://www.amazon.in/stores/AivaWellness"
-                target="_blank"
-                aria-label="Amazon"
-                ><i class="fa-brands fa-amazon"></i
-              ></a>
-              <!--
-              <a
-                class="social-btn"
-                href="https://www.youtube.com/@aivawellness-in"
-                target="_blank"
-                aria-label="YouTube"
-                ><i class="fa-brands fa-youtube"></i
-              ></a>
-              -->
+              <a class="social-btn" href="https://www.instagram.com/aivawellness.in/?hl=en" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a class="social-btn" href="https://www.facebook.com/profile.php?id=61591507665329" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a class="social-btn" href="https://x.com/aivawellness" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a class="social-btn" href="https://www.linkedin.com/company/aivawellness" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="social-btn" href="https://www.amazon.in/stores/AivaWellness" target="_blank" aria-label="Amazon"><i class="fa-brands fa-amazon"></i></a>
             </div>
           </div>
           <div class="footer-col">
@@ -3566,44 +3536,29 @@
               <li><a href="shop.html">Shop</a></li>
               <li><a href="about.html">About Us</a></li>
               <li><a href="contact.html">Contact</a></li>
+              <li><a href="blogs/nattokinase.html">Blogs</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h6>Categories</h6>
+            <h6>Our Products</h6>
             <ul>
-              <li><a href="product-details.html">Magnesium</a></li>
-              <li>
-                <a href="product-details-pages/nattokinase200.html"
-                  >Nattokinase</a
-                >
-              </li>
-              <li><a href="shop.html">Vitamins &amp; Minerals</a></li>
-              <li><a href="shop.html">Omega-3</a></li>
-              <li><a href="shop.html">ZMA</a></li>
-              <li><a href="shop.html">Immunity</a></li>
+              <li><a href="product-details-pages/nattokinase200.html">Nattokinase 200 mg</a></li>
+              <li><a href="product-details-pages/nattokinase100.html">Nattokinase 100 mg</a></li>
+              <li><a href="product-details-pages/magnesium-complex-5-in-1.html">Magnesium Complex 5-in-1</a></li>
+              <li><a href="product-details-pages/multivitamins-minerals.html">Multivitamins &amp; Minerals</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h6>Contact Us</h6>
-            <div class="footer-contact-item">
-              <i class="fa-solid fa-phone"></i
-              ><a href="tel:+917807751710">+91 78077 51710</a>
-            </div>
-            <div class="footer-contact-item">
-              <i class="fa-solid fa-envelope"></i
-              ><a href="mailto:info@aivawellness.in">info@aivawellness.in</a>
-            </div>
-            <div class="footer-contact-item">
-              <i class="fa-solid fa-location-dot"></i
-              ><span>Solan, Himachal Pradesh, India</span>
-            </div>
+            <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751711">+91 78077 51711</a></div>
+            <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@aivawellness.in">info@aivawellness.in</a></div>
+            <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh, India</span></div>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>&copy; 2026 Aiva Wellness. All rights reserved.</span>
+          <span>© 2026 Aiva Wellness. All rights reserved.</span>
           <div class="footer-bottom-links">
-            <a href="#">Privacy Policy</a><a href="#">Terms of Service</a
-            ><a href="#">Shipping Policy</a><a href="#">Return Policy</a>
+            <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Shipping Policy</a><a href="#">Return Policy</a>
           </div>
         </div>
       </div>
