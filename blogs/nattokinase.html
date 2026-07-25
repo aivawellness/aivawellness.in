@@ -2,10 +2,18 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-7JEHMZBFMB"
-    ></script>
+    <script>
+      window.__isLocalPreview = window.location.protocol === "file:";
+    </script>
+    <script>
+      if (!window.__isLocalPreview) {
+        var gtagScript = document.createElement("script");
+        gtagScript.async = true;
+        gtagScript.src =
+          "https://www.googletagmanager.com/gtag/js?id=G-7JEHMZBFMB";
+        document.head.appendChild(gtagScript);
+      }
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -13,7 +21,9 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-7JEHMZBFMB");
+      if (!window.__isLocalPreview) {
+        gtag("config", "G-7JEHMZBFMB");
+      }
     </script>
     <meta charset="UTF-8" />
     <meta
@@ -90,16 +100,18 @@
 
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-56SL6CGG");
+      if (!window.__isLocalPreview) {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-56SL6CGG");
+      }
     </script>
     <!-- End Google Tag Manager -->
     <!-- Google Analytics 4 (GA4) — replace G-XXXXXXXXXX with your Measurement ID -->
@@ -117,31 +129,36 @@
     </script>
     <!-- Meta (Facebook) Pixel — replace with your real Pixel ID -->
     <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
-      fbq("init", "000000000000000");
-      fbq("track", "PageView");
+      if (!window.__isLocalPreview) {
+        !(function (f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function () {
+            n.callMethod
+              ? n.callMethod.apply(n, arguments)
+              : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = "2.0";
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(
+          window,
+          document,
+          "script",
+          "https://connect.facebook.net/en_US/fbevents.js",
+        );
+        var pixelId = "000000000000000";
+        if (pixelId && pixelId !== "000000000000000") {
+          fbq("init", pixelId);
+          fbq("track", "PageView");
+        }
+      }
     </script>
     <noscript
       ><img
@@ -333,7 +350,7 @@
       }
       @font-face {
         font-family: "Swiss721BoldCondensedBT";
-        src: url("/fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
+        src: url("../fonts/Swiss721BoldCondensedBT.ttf") format("truetype");
         font-display: swap;
       }
       html {
@@ -590,13 +607,16 @@
         display: flex;
         flex-direction: column;
         gap: 2px;
-                align-items: center;`nbox-shadow: var(--sh-lg);
+        align-items: center;
+        box-shadow: var(--sh-lg);
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
       }
       .mobile-nav-panel a {
         padding: 14px 16px;
-                width: 100%;`n        text-align: center;`nborder-radius: 10px;
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
         font-weight: 600;
         font-size: 0.95rem;
         color: var(--ink);
@@ -2676,5 +2696,3 @@
     </script>
   </body>
 </html>
-
-
