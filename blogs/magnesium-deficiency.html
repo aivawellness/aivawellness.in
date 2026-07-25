@@ -2636,18 +2636,22 @@
       }
 
       const revealEls = document.querySelectorAll(".reveal");
-      const revObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              revObserver.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      revealEls.forEach((el) => revObserver.observe(el));
+      if ("IntersectionObserver" in window) {
+        const revObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                revObserver.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        revealEls.forEach((el) => revObserver.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("visible"));
+      }
 
       /* ═══ FAQ ACCORDION ═══ */
       function toggleFaqItem(btn) {
