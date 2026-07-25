@@ -2843,6 +2843,30 @@
       .blog-read:hover {
         gap: 13px;
       }
+      .blogs-cta {
+        margin-top: 32px;
+        text-align: center;
+      }
+      .blogs-cta .btn-center {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 30px;
+        border-radius: 0;
+        border: 1.5px solid var(--blue);
+        color: var(--blue);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        font-size: 0.8rem;
+        background: transparent;
+        transition: all 0.3s var(--ease);
+      }
+      .blogs-cta .btn-center:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-2px);
+      }
       @media (max-width: 900px) {
         .blogs-grid {
           grid-template-columns: 1fr 1fr;
@@ -4858,6 +4882,9 @@
               ></a>
             </div>
           </div>
+        </div>
+        <div class="blogs-cta reveal">
+          <a href="blog.html" class="btn-outline btn-center">View All Blogs <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
