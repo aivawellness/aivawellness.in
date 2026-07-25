@@ -1405,13 +1405,16 @@
       .about-img-main img.hover-img {
         opacity: 0;
       }
-      .about-img-main:hover img.hover-img {
+      .about-img-main:hover img.hover-img,
+      .about-img-main.touch-active img.hover-img {
         opacity: 1;
       }
-      .about-img-main:hover img:first-child {
+      .about-img-main:hover img:first-child,
+      .about-img-main.touch-active img:first-child {
         opacity: 0;
       }
-      .about-img-main:hover img {
+      .about-img-main:hover img,
+      .about-img-main.touch-active img {
         transform: none;
       }
       .about-img-main::after {
@@ -1451,14 +1454,16 @@
         .about-img-main {
           max-width: 100%;
           width: 100%;
-          min-height: auto;
+          min-height: 320px;
           padding: 0;
         }
         .about-img-main img {
+          position: absolute;
+          inset: 0;
           width: 100%;
-          height: auto;
-          max-height: none;
-          object-fit: contain;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
         }
         .about-img-badge {
           display: none !important;
@@ -5355,6 +5360,19 @@
         { threshold: 0.12 },
       );
       revealEls.forEach((el) => revObserver.observe(el));
+
+      /* â•â•â• ABOUT IMAGE TOUCH HOVER â•â•â• */
+      const aboutImageBlocks = document.querySelectorAll('.about-img-main');
+      aboutImageBlocks.forEach((block) => {
+        block.addEventListener(
+          'touchstart',
+          function (e) {
+            aboutImageBlocks.forEach((b) => b.classList.remove('touch-active'));
+            this.classList.add('touch-active');
+          },
+          { passive: true },
+        );
+      });
 
       /* â•â•â• ABOUT STATS COUNTER â•â•â• */
       const statCounters = document.querySelectorAll(".a-stat-num");
