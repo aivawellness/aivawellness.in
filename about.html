@@ -1321,17 +1321,31 @@
         border-radius: 0; /* sharp corners requested */
         position: relative;
         box-shadow: var(--sh-xl);
-        height: 462px;
+        height: 560px;
       }
       .story-img-main img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.7s var(--ease);
+        transition: opacity 0.45s ease, transform 0.7s var(--ease);
       }
-      .story-img-main:hover img {
-        transform: scale(1.04);
+      .story-img-main img.hover-img {
+        opacity: 0;
+      }
+      .story-img-main:hover img.hover-img,
+      .story-img-main.touch-active img.hover-img {
+        opacity: 1;
+      }
+      .story-img-main:hover img:first-child,
+      .story-img-main.touch-active img:first-child {
+        opacity: 0;
+      }
+      .story-img-main:hover img,
+      .story-img-main.touch-active img {
+        transform: none;
       }
       .story-img-sm {
         overflow: hidden;
@@ -1355,6 +1369,12 @@
           grid-template-columns: 1fr;
           gap: 48px;
           align-items: start; /* stacked layout aligns to top on small screens */
+        }
+      }
+
+      @media (max-width: 600px) {
+        .story-img-main {
+          height: 320px;
         }
       }
 
@@ -3058,8 +3078,17 @@
             <div class="story-images">
               <div class="story-img-main">
                 <img
-                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1400&q=80&auto=format&fm=webp"
+                  src="products/about-cover.png"
                   alt="Natural Aiva Wellness ingredients"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="hover-img"
+                  src="products/about-cover-hover.png"
+                  alt="Aiva Wellness hover image"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <!-- story-img-badge removed -->
               </div>
@@ -3663,6 +3692,21 @@
           ? "hidden"
           : "";
       }
+
+      /* STORY IMAGE TOUCH HOVER */
+      document.addEventListener("DOMContentLoaded", () => {
+        const storyImageBlocks = document.querySelectorAll(".story-img-main");
+        storyImageBlocks.forEach((block) => {
+          block.addEventListener(
+            "touchstart",
+            function () {
+              storyImageBlocks.forEach((item) => item.classList.remove("touch-active"));
+              this.classList.add("touch-active");
+            },
+            { passive: true },
+          );
+        });
+      });
 
       /* HERO PARTICLES */
       (function () {
