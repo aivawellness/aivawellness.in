@@ -676,7 +676,7 @@
       .nav-cta {
         background: linear-gradient(135deg, #1d4ed8, #2563eb);
         color: #fff;
-        border-radius: 999px;
+        border-radius: 8px;
         padding: 9px 22px;
         font-size: 0.82rem;
         font-weight: 600;
@@ -870,7 +870,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 6% 60px;
+        padding: 0 6% 60px 10%;
         z-index: 6;
         max-width: 560px;
         transform: translateX(30px);
@@ -879,9 +879,31 @@
           transform 0.7s 0.3s var(--ease),
           opacity 0.6s 0.3s;
       }
+      .slide.first-slide .slide-content {
+        padding-left: 8%;
+      }
       .slide.active .slide-content {
         transform: translateX(0);
         opacity: 1;
+      }
+      /* Adjust slides 2–4 horizontal offset (reduced, move left) */
+      .slide:not(.first-slide).active .slide-content {
+        transform: translateX(60px);
+      }
+      @media (max-width: 1024px) {
+        .slide:not(.first-slide).active .slide-content {
+          transform: translateX(50px);
+        }
+      }
+      @media (max-width: 768px) {
+        .slide:not(.first-slide).active .slide-content {
+          transform: translateX(30px);
+        }
+      }
+      @media (max-width: 600px) {
+        .slide:not(.first-slide).active .slide-content {
+          transform: translateX(0);
+        }
       }
       .slide-eyebrow {
         font-size: 0.68rem;
@@ -920,24 +942,28 @@
       .slide-cta {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         background: #fff;
         color: var(--blue);
-        padding: 12px 26px;
-        border-radius: 999px;
-        font-size: 0.82rem;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 0.9rem;
         font-weight: 700;
         text-decoration: none;
         letter-spacing: 0.04em;
         text-transform: uppercase;
-        transition: all 0.25s var(--ease);
-        width: fit-content;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+        width: auto !important;
+        max-width: fit-content;
+        white-space: nowrap;
+        animation: premiumPulse 4.5s ease-in-out infinite;
       }
       .slide-cta:hover {
         background: var(--blue);
         color: #fff;
-        gap: 14px;
+        gap: 12px;
         transform: translateY(-2px);
       }
       .slide-cta i {
@@ -945,6 +971,16 @@
       }
       .slide-cta:hover i {
         transform: translateX(2px);
+      }
+      @keyframes premiumPulse {
+        0%, 100% {
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18), 0 0 0 rgba(29, 78, 216, 0);
+          transform: translateY(0);
+        }
+        50% {
+          box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22), 0 0 28px rgba(29, 78, 216, 0.14);
+          transform: translateY(-1px);
+        }
       }
       @media (max-width: 600px) {
         .slide-content {
@@ -954,6 +990,38 @@
         .slide-content p {
           display: none;
         }
+      }
+      /* --- Visual refinements for slides 2,3,4 only --- */
+      /* Increase heading size, add subtle outline and shadow for visual depth,
+         increase paragraph size slightly, make CTA rectangular and add hover zoom */
+      .slide:not(.first-slide) .slide-content h1 {
+        font-size: clamp(30px, 5.2vw, 60px);
+        line-height: 1.06;
+        -webkit-text-stroke: 0.6px rgba(0,0,0,0.18);
+        text-shadow: 0 6px 20px rgba(0,0,0,0.45);
+      }
+      .slide:not(.first-slide) .slide-content p {
+        font-size: 1.05rem;
+        max-width: 480px;
+      }
+      .slide:not(.first-slide) .slide-cta {
+        border-radius: 8px;
+        padding: 12px 22px;
+        transition: transform 0.22s var(--ease), box-shadow 0.22s;
+        align-self: flex-start;
+      }
+      .slide:not(.first-slide) .slide-cta:hover,
+      .slide:not(.first-slide) .slide-cta:focus {
+        transform: scale(1.06);
+        box-shadow: 0 14px 36px rgba(16,24,40,0.22);
+      }
+      @media (max-width: 600px) {
+        .slide:not(.first-slide) .slide-content h1 {
+          font-size: clamp(22px, 6.5vw, 32px);
+          -webkit-text-stroke: 0.4px rgba(0,0,0,0.14);
+          text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        }
+        .slide:not(.first-slide) .slide-cta { transform: none; box-shadow: 0 4px 16px rgba(0,0,0,0.12); align-self: flex-start; }
       }
 
       /* Progress bar */
@@ -1325,13 +1393,23 @@
         justify-content: center;
       }
       .about-img-main img {
-        width: auto;
+        position: absolute;
+        inset: 0;
+        width: 100%;
         height: 100%;
-        max-width: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
         display: block;
-        transition: transform 0.7s var(--ease);
+        transition: opacity 0.45s ease, transform 0.7s var(--ease);
+      }
+      .about-img-main img.hover-img {
+        opacity: 0;
+      }
+      .about-img-main:hover img.hover-img {
+        opacity: 1;
+      }
+      .about-img-main:hover img:first-child {
+        opacity: 0;
       }
       .about-img-main:hover img {
         transform: none;
@@ -3533,10 +3611,10 @@
     <!-- HERO SLIDER -->
     <section class="hero-slider" id="heroSlider">
       <div class="slider-track" id="sliderTrack">
-        <div class="slide active">
+        <div class="slide active first-slide">
           <div class="slide-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&q=80&auto=format&fm=webp"
+              src="images/1.png"
               alt="Aiva Wellness Natural Supplements"
               loading="eager"
               fetchpriority="high"
@@ -3545,12 +3623,12 @@
           </div>
           <div class="slide-content">
             <div class="slide-eyebrow">Himachal Pradesh, India</div>
-            <h1>Wellness Made Simple, Pure &amp; Powerful</h1>
+            <h1>Wellness Made Simple,<br>Pure &amp; Powerful</h1>
             <p>
               Precision health formulas rooted in Ayurvedic wisdom, validated by
               modern science.
             </p>
-            <a href="product-details.html" class="slide-cta"
+            <a href="shop.html" class="slide-cta"
               >Explore Now <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
@@ -3559,20 +3637,20 @@
         <div class="slide">
           <div class="slide-img-wrap">
             <img
-              src="images/hero2.png"
-              alt="Magnesium Complex 5-in-1"
+              src="images/2.png"
+              alt="Aiva Wellness Natural Supplements"
               loading="lazy"
             />
           </div>
           <div class="slide-content">
-            <div class="slide-eyebrow">Bestseller</div>
-            <h1>Magnesium Complex 5-in-1</h1>
+            <div class="slide-eyebrow">Himachal Pradesh, India</div>
+            <h1>Wellness Made Simple,<br>Pure &amp; Powerful</h1>
             <p>
-              Five forms of magnesium for deeper sleep, muscle recovery, and
-              calm energy.
+              Precision health formulas rooted in Ayurvedic wisdom, validated by
+              modern science.
             </p>
-            <a href="product-details.html" class="slide-cta"
-              >Shop Now <i class="fa-solid fa-arrow-right"></i
+            <a href="shop.html" class="slide-cta"
+              >Explore Now <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
         </div>
@@ -3580,19 +3658,20 @@
         <div class="slide">
           <div class="slide-img-wrap">
             <img
-              src="images/hero1.png"
-              alt="Nattokinase"
+              src="images/3.png"
+              alt="Aiva Wellness Natural Supplements"
               loading="lazy"
             />
           </div>
           <div class="slide-content">
-            <div class="slide-eyebrow">Heart Health</div>
-            <h1>Nattokinase – Nature's Enzyme for Your Heart</h1>
+            <div class="slide-eyebrow">Himachal Pradesh, India</div>
+            <h1>Wellness Made Simple,<br>Pure &amp; Powerful</h1>
             <p>
-              Clinically supported cardiovascular care from the heart of nature.
+              Precision health formulas rooted in Ayurvedic wisdom, validated by
+              modern science.
             </p>
-            <a href="product-details.html" class="slide-cta"
-              >Discover <i class="fa-solid fa-arrow-right"></i
+            <a href="shop.html" class="slide-cta"
+              >Explore Now <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
         </div>
@@ -3600,19 +3679,20 @@
         <div class="slide">
           <div class="slide-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80&auto=format&fm=webp"
-              alt="Vitamins & Minerals"
+              src="images/4.png"
+              alt="Aiva Wellness Natural Supplements"
               loading="lazy"
             />
           </div>
           <div class="slide-content">
-            <div class="slide-eyebrow">Vitamins &amp; Minerals</div>
-            <h1>Complete Nutrition for the Modern Indian Body</h1>
+            <div class="slide-eyebrow">Himachal Pradesh, India</div>
+            <h1>Wellness Made Simple,<br>Pure &amp; Powerful</h1>
             <p>
-              Clean, bioavailable formulas your body actually absorbs and uses.
+              Precision health formulas rooted in Ayurvedic wisdom, validated by
+              modern science.
             </p>
-            <a href="product-details.html" class="slide-cta"
-              >View Range <i class="fa-solid fa-arrow-right"></i
+            <a href="shop.html" class="slide-cta"
+              >Explore Now <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
         </div>
@@ -3914,8 +3994,8 @@
             /></a>
             <img
               class="img-hover"
-              src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80&auto=format&fm=webp"
-              alt="Magnesium hover"
+              src="products/all images/magnesium2.png"
+              alt="Magnesium Complex hover"
               loading="lazy"
               decoding="async"
             />
@@ -4009,7 +4089,7 @@
             /></a>
             <img
               class="img-hover"
-              src="products/reefit forte c new size.webp"
+              src="products/all images/multivitamin2.png"
               alt="Energy & Immunity Support hover"
               loading="lazy"
               decoding="async"
@@ -4395,6 +4475,13 @@
               loading="lazy"
               decoding="async"
             />
+            <img
+              class="hover-img"
+              src="products/about-cover-hover.png"
+              alt="Aiva Wellness hover image"
+              loading="lazy"
+              decoding="async"
+            />
             <div class="about-img-badge">
               <i class="fa-solid fa-star"></i> Made in Himachal Pradesh
             </div>
@@ -4453,6 +4540,13 @@
           <img
             src="products/about-cover.png"
             alt="Natural Aiva Wellness ingredients"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            class="hover-img"
+            src="products/about-cover-hover.png"
+            alt="Aiva Wellness hover image"
             loading="lazy"
             decoding="async"
           />
