@@ -2842,6 +2842,16 @@
       .blog-read:hover {
         gap: 13px;
       }
+      .blogs-action {
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+      }
+      .blogs-action .btn-outline {
+        border-radius: 0;
+        padding: 14px 34px;
+        margin: 0 auto;
+      }
       @media (max-width: 900px) {
         .blogs-grid {
           grid-template-columns: 1fr 1fr;
@@ -4857,6 +4867,11 @@
               ></a>
             </div>
           </div>
+        </div>
+        <div class="blogs-action reveal">
+          <a href="blog.html" class="btn-outline">
+            Browse all blogs <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </section>
