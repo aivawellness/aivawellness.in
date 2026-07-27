@@ -150,120 +150,6 @@
         line-height: 1.2;
       }
 
-      /* PRELOADER */
-      #preloader {
-        position: fixed;
-        inset: 0;
-        background: linear-gradient(
-          160deg,
-          #0b1120 0%,
-          #0f1a2e 60%,
-          #0d1525 100%
-        );
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        transition:
-          opacity 0.6s ease,
-          visibility 0.6s;
-      }
-      #preloader.hide {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-
-      .pl-glow {
-        position: absolute;
-        width: 260px;
-        height: 260px;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.12) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        animation: glowPulse 3s ease-in-out infinite;
-      }
-      @keyframes glowPulse {
-        0%,
-        100% {
-          opacity: 0.5;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1.15);
-        }
-      }
-
-      .pl-card {
-        position: relative;
-        background: rgba(236, 252, 228, 0.95);
-        border-radius: 24px;
-        padding: 40px 48px 36px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow:
-          0 0 0 0.5px rgba(164, 230, 134, 0.3),
-          0 4px 6px rgba(14, 57, 16, 0.15),
-          0 24px 48px rgba(14, 57, 16, 0.2),
-          inset 0 1px 0 rgba(255, 255, 255, 0.7);
-        animation: cardIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-      }
-      .pl-card::before,
-      .pl-card::after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border-color: #16a34a;
-        border-style: solid;
-        opacity: 0.25;
-      }
-      .pl-card::before {
-        top: 14px;
-        left: 14px;
-        border-width: 1.5px 0 0 1.5px;
-        border-radius: 4px 0 0 0;
-      }
-      .pl-card::after {
-        bottom: 14px;
-        right: 14px;
-        border-width: 0 1.5px 1.5px 0;
-        border-radius: 0 0 4px 0;
-      }
-      @keyframes cardIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px) scale(0.95);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      .pl-logo-img {
-        width: 72px;
-        height: 72px;
-        object-fit: contain;
-        animation: logoIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
-      }
-      @keyframes logoIn {
-        from {
-          opacity: 0;
-          transform: scale(0.7);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
       .pl-divider {
         width: 100%;
         height: 0.5px;
@@ -3270,28 +3156,6 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- PRELOADER -->
-    <div id="preloader">
-      <div class="pl-glow"></div>
-      <div class="pl-card">
-        <img
-          class="pl-logo-img"
-          src="assets/logo.png"
-          alt="AivaWellness Logo"
-        />
-        <div class="pl-divider"></div>
-        <div class="pl-brand">Aiva<span>Wellness</span></div>
-        <div class="pl-tagline">Your Health, Our Priority</div>
-        <div class="pl-bar-wrap">
-          <div class="pl-bar"><div class="pl-fill"></div></div>
-          <div class="pl-status">
-            <span class="pl-status-text">Loading experience...</span>
-            <div class="pl-dots"><span></span><span></span><span></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END PRELOADER -->
     <div class="ann-bar">
       <div class="ann-bar-track">
         <span
@@ -3585,14 +3449,6 @@
     </footer>
 
     <script>
-      /* ═══ PRELOADER ═══ */
-      window.addEventListener("load", () => {
-        setTimeout(
-          () => document.getElementById("preloader").classList.add("hide"),
-          900,
-        );
-      });
-
       /* ═══ HEADER SCROLL ═══ */
       window.addEventListener("scroll", () => {
         document
