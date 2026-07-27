@@ -1330,7 +1330,9 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: opacity 0.45s ease, transform 0.7s var(--ease);
+        transition:
+          opacity 0.45s ease,
+          transform 0.7s var(--ease);
       }
       .story-img-main img.hover-img {
         opacity: 0;
@@ -3634,8 +3636,8 @@
                 >
               </li>
               <li>
-                <a href="product-details-pages/multivitamins-minerals.html"
-                  >Multivitamins &amp; Minerals</a
+                <a href="product-details-pages/energy-immunity-support.html"
+                  >Energy &amp; Immunity Support</a
                 >
               </li>
             </ul>
@@ -3700,7 +3702,9 @@
           block.addEventListener(
             "touchstart",
             function () {
-              storyImageBlocks.forEach((item) => item.classList.remove("touch-active"));
+              storyImageBlocks.forEach((item) =>
+                item.classList.remove("touch-active"),
+              );
               this.classList.add("touch-active");
             },
             { passive: true },
