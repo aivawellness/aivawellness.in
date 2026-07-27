@@ -799,12 +799,14 @@
         color: #fff;
         line-height: 1.1;
         margin-bottom: 20px;
-        text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
       }
       .hero-title em {
         font-style: italic;
         color: var(--accent);
       }
+      .text-blue { color: var(--blue); }
+      .text-gold { color: var(--gold); font-weight: 700; }
       .hero-desc {
         font-size: 0.95rem;
         color: rgba(255, 255, 255, 0.72);
@@ -2826,9 +2828,9 @@
       <div class="hero-inner">
         <div class="hero-left">
           <h1 class="hero-title">
-            Built on Purity.<br />
-            Backed by Science.<br />
-            Trusted by People.
+            Built on <span class="text-gold">Purity</span>.<br />
+            Backed by <span class="text-gold">Science</span>.<br />
+            Trusted by <span class="text-gold">People</span>.
           </h1>
           <p class="hero-desc">
             Aiva Wellness was created to make choosing high-quality supplements
