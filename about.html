@@ -1351,16 +1351,17 @@
       }
       .values-grid {
         display: grid;
-        grid-template-columns: repeat(5, minmax(240px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
         justify-content: center;
+        justify-items: center;
       }
       .value-card {
-        background: #fff;
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        border-radius: 0;
-        padding: 28px 24px;
-        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid rgba(15, 23, 42, 0.05);
+        border-radius: 24px;
+        padding: 36px 32px;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
         transition:
           transform 0.4s ease,
           box-shadow 0.4s ease,
@@ -1373,7 +1374,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        min-height: 240px;
+        min-height: 300px;
       }
       .value-card::before {
         content: "";
@@ -1403,10 +1404,10 @@
         pointer-events: none;
       }
       .value-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 28px 60px rgba(15, 23, 42, 0.18);
-        border-color: rgba(59, 130, 246, 0.35);
-        background: rgba(255, 255, 255, 0.97);
+        transform: translateY(-14px);
+        box-shadow: 0 32px 72px rgba(15, 23, 42, 0.18);
+        border-color: rgba(59, 130, 246, 0.25);
+        background: #fff;
       }
       .value-card:hover::before {
         opacity: 1;
@@ -1415,45 +1416,46 @@
         transform: scaleX(1);
       }
       .value-icon {
-        width: 52px;
-        height: 52px;
+        width: 66px;
+        height: 66px;
         background: linear-gradient(
           135deg,
           rgba(59, 130, 246, 0.12),
-          rgba(147, 197, 253, 0.14)
+          rgba(147, 197, 253, 0.18)
         );
         border: 1px solid rgba(59, 130, 246, 0.16);
-        border-radius: 18px;
+        border-radius: 22px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 22px;
+        font-size: 28px;
         color: var(--blue);
-        margin: 0 auto 18px;
+        margin: 0 auto 22px;
         transition:
-          transform 0.35s ease,
+          transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
           background 0.35s ease,
           box-shadow 0.35s ease;
-        box-shadow: 0 8px 22px rgba(59, 130, 246, 0.12);
+        box-shadow: 0 12px 28px rgba(59, 130, 246, 0.16);
       }
       .value-card:hover .value-icon {
         background: linear-gradient(135deg, var(--blue), var(--blue-light));
         color: #fff;
-        transform: scale(1.1) rotate(-5deg);
+        transform: translateY(-2px) scale(1.08);
         border-color: transparent;
-        box-shadow: 0 16px 42px rgba(59, 130, 246, 0.28);
+        box-shadow: 0 18px 42px rgba(59, 130, 246, 0.24);
       }
       .value-title {
         font-family: "Cormorant Garamond", serif;
-        font-size: 1.18rem;
-        font-weight: 600;
+        font-size: 1.25rem;
+        font-weight: 700;
         color: var(--black);
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
       .value-desc {
-        font-size: 0.84rem;
+        font-size: 0.95rem;
         color: var(--muted);
-        line-height: 1.8;
+        line-height: 1.9;
+        max-width: 320px;
       }
       @media (max-width: 1200px) {
         .values-grid {
@@ -2742,26 +2744,20 @@
     <div class="ann-bar">
       <div class="ann-bar-track">
         <span
-          ><i class="fa-solid fa-leaf"></i>&nbsp; Premium Healthcare formulas
-          made in Himachal Pradesh &nbsp;<span class="sep">|</span>&nbsp; 10%
-          off your first order with code <strong>AIVA10</strong> &nbsp;<span
-            class="sep"
-            >|</span
-          >&nbsp; Free shipping on orders over &#8377;999 &nbsp;<span
-            class="sep"
-            >|</span
+          ><i class="fa-solid fa-capsules"></i>&nbsp; Premium Healthcare
+          Formulas made in Himachal Pradesh &nbsp;<span class="sep">|</span
+          >&nbsp; 10% off your first order with code
+          <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free
+          shipping on orders over &#8377;999 &nbsp;<span class="sep">|</span
           >&nbsp; 100% Natural &nbsp;<span class="sep">|</span>&nbsp; No
           Fillers, No Binders</span
         >
         <span
-          ><i class="fa-solid fa-leaf"></i>&nbsp; Premium Healthcare formulas
-          made in Himachal Pradesh &nbsp;<span class="sep">|</span>&nbsp; 10%
-          off your first order with code <strong>AIVA10</strong> &nbsp;<span
-            class="sep"
-            >|</span
-          >&nbsp; Free shipping on orders over &#8377;999 &nbsp;<span
-            class="sep"
-            >|</span
+          ><i class="fa-solid fa-capsules"></i>&nbsp; Premium Healthcare
+          Formulas made in Himachal Pradesh &nbsp;<span class="sep">|</span
+          >&nbsp; 10% off your first order with code
+          <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free
+          shipping on orders over &#8377;999 &nbsp;<span class="sep">|</span
           >&nbsp; 100% Natural &nbsp;<span class="sep">|</span>&nbsp; 100% Vegan
           & Cruelty-Free &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No
           Binders</span
@@ -2830,14 +2826,16 @@
       <div class="hero-inner">
         <div class="hero-left">
           <h1 class="hero-title">
-            Built on Purity,<br />Proof &amp; <em>People</em>
+            Built on Purity.<br />
+            Backed by Science.<br />
+            Trusted by People.
           </h1>
           <p class="hero-desc">
-            Aiva Wellness began with a simple frustration &mdash; why was it so
-            hard to find supplements you could actually trust? Today we
-            formulate, test, and ship science-backed wellness products from our
-            home in Solan, Himachal Pradesh, to thousands of households across
-            India.
+            Aiva Wellness was created to make choosing high-quality supplements
+            simple. Every product is thoughtfully formulated with science-backed
+            ingredients, manufactured under rigorous quality standards, and
+            designed to deliver wellness you can trust&mdash;because your health
+            deserves nothing less.
           </p>
           <div class="hero-cta-row">
             <a href="shop.html" class="btn-hero-primary"
@@ -2897,9 +2895,9 @@
         </div>
         <div class="trust-item">
           <div class="trust-icon">
-            <i class="fa-solid fa-shield-halved"></i>
+            <i class="fa-solid fa-capsules"></i>
           </div>
-          <span>No Fillers or Binders</span>
+          <span>Premium Healthcare Formulas</span>
         </div>
         <div class="trust-item">
           <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
@@ -2985,12 +2983,12 @@
               ><i class="fa-solid fa-heart"></i> What We Stand For</span
             >
             <h2 class="section-title">
-              Five Values That Shape <span>Every Decision</span>
+              The Values That Shape <span>Every Decision</span>
             </h2>
             <p class="section-sub">
-              These aren&rsquo;t poster words &mdash; they&rsquo;re the criteria
-              we use when choosing ingredients, pricing products, and responding
-              to customers.
+              At Aiva Wellness, every decision is driven by a simple commitment:
+              deliver wellness products that are honest, effective, and made
+              with uncompromising quality standards.
             </p>
           </div>
           <div class="values-grid">
@@ -2998,46 +2996,41 @@
               <div class="value-icon">
                 <i class="fa-solid fa-flask-vial"></i>
               </div>
-              <div class="value-title">Science First</div>
+              <div class="value-title">Science-Backed</div>
               <div class="value-desc">
-                Research leads every formulation. We work with nutrition experts
-                before a product reaches production.
+                Every formula is developed using scientifically supported
+                ingredients and expert insights to ensure quality and
+                effectiveness.
               </div>
             </div>
             <div class="value-card reveal d2">
               <div class="value-icon">
-                <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-certificate"></i>
               </div>
-              <div class="value-title">Purity &amp; Safety</div>
+              <div class="value-title">Purity &amp; Quality</div>
               <div class="value-desc">
-                Every batch is FSSAI-manufactured and third-party tested, so the
-                label matches the bottle.
+                Made in certified facilities and carefully tested to deliver the
+                purity, safety, and consistency you can trust.
               </div>
             </div>
             <div class="value-card reveal d1">
-              <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
-              <div class="value-title">Customer First</div>
+              <div class="value-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <div class="value-title">Customer-Centric</div>
               <div class="value-desc">
-                From formulation to support, every decision starts with one
-                question: is this truly good for the customer?
+                Every decision we make is guided by what&#39;s best for our
+                customers—from formulation to ongoing support.
               </div>
             </div>
             <div class="value-card reveal d2">
               <div class="value-icon">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
               </div>
-              <div class="value-title">Honest Pricing</div>
+              <div class="value-title">Honest Value</div>
               <div class="value-desc">
-                Premium quality shouldn&rsquo;t mean a premium markup. We price
-                for access, not exclusivity.
-              </div>
-            </div>
-            <div class="value-card reveal d3">
-              <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
-              <div class="value-title">Mindful Sourcing</div>
-              <div class="value-desc">
-                We source locally where possible and partner with suppliers who
-                share our sustainability standards.
+                Premium wellness should be accessible. We focus on exceptional
+                quality at a fair and transparent price.
               </div>
             </div>
           </div>
@@ -3108,8 +3101,8 @@
                   <div class="timeline-year">2026</div>
                   <div class="timeline-title">Aiva Wellness Founded</div>
                   <div class="timeline-desc">
-                    Started in Solan, Himachal Pradesh, with our first Magnesium
-                    formulation and a small, dedicated team.
+                    Launched with a vision to make premium, science-backed
+                    wellness simple, transparent, and accessible for everyone.
                   </div>
                 </div>
               </div>
@@ -3168,64 +3161,6 @@
                     same small-batch standards we started with.
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WHY TRUST US -->
-      <section id="trust">
-        <div class="trust-cards-section">
-          <div class="section-header">
-            <span class="section-eyebrow"
-              ><i class="fa-solid fa-shield-halved"></i> Why People Trust
-              Aiva</span
-            >
-            <h2 class="section-title">
-              The Same Standards <span>Every Time</span>
-            </h2>
-            <p class="section-sub">
-              The same standards that apply to our products apply to how we
-              treat every customer.
-            </p>
-          </div>
-          <div class="trust-cards-grid">
-            <div class="trust-card reveal d1">
-              <div class="trust-card-icon">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <div class="trust-card-title">100% Genuine</div>
-              <div class="trust-card-desc">
-                Every product is sealed, lab-tested and FSSAI licensed before it
-                ships.
-              </div>
-            </div>
-            <div class="trust-card reveal d2">
-              <div class="trust-card-icon">
-                <i class="fa-solid fa-leaf"></i>
-              </div>
-              <div class="trust-card-title">100% Vegan</div>
-              <div class="trust-card-desc">
-                Plant-first formulas made without animal-derived ingredients.
-              </div>
-            </div>
-            <div class="trust-card reveal d3">
-              <div class="trust-card-icon">
-                <i class="fa-solid fa-truck-fast"></i>
-              </div>
-              <div class="trust-card-title">Pan-India Delivery</div>
-              <div class="trust-card-desc">
-                Fast, trackable shipping to every pincode we currently serve.
-              </div>
-            </div>
-            <div class="trust-card reveal d4">
-              <div class="trust-card-icon">
-                <i class="fa-solid fa-headset"></i>
-              </div>
-              <div class="trust-card-title">24 Hr Support</div>
-              <div class="trust-card-desc">
-                Real humans respond to queries fast, over call or WhatsApp.
               </div>
             </div>
           </div>
@@ -3339,52 +3274,6 @@
           </div>
         </div>
       </section>
-
-      <!-- MAP -->
-      <div class="map-section">
-        <div class="map-inner">
-          <div class="map-info reveal-right">
-            <span class="section-eyebrow"
-              ><i class="fa-solid fa-location-dot"></i> Visit Us</span
-            >
-            <h2 class="map-h2">Our Home in the Hills</h2>
-            <p class="map-p">
-              Our formulation and manufacturing base is nestled in Solan,
-              Himachal Pradesh &mdash; where clean mountain air and commitment
-              to quality go hand in hand.
-            </p>
-            <div class="map-contacts">
-              <div class="map-contact-item">
-                <i class="fa-solid fa-phone"></i
-                ><a href="tel:+917807751711">+91 78077 51711</a>
-              </div>
-              <div class="map-contact-item">
-                <i class="fa-solid fa-envelope"></i
-                ><a href="mailto:info@aivawellness.in">info@aivawellness.in</a>
-              </div>
-              <div class="map-contact-item">
-                <i class="fa-solid fa-location-dot"></i
-                ><span>Solan, Himachal Pradesh, India</span>
-              </div>
-              <div class="map-contact-item">
-                <i class="fa-brands fa-whatsapp"></i
-                ><a href="https://wa.me/917807751711" target="_blank"
-                  >Chat on WhatsApp</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="map-wrap reveal-left">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d613.0609185496876!2d77.06838464219695!3d30.91925549771708!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f87fa9d515c59%3A0xec59938eb6dae6ef!2sAiva%20Wellness!5e1!3m2!1sen!2sin!4v1784868604054!5m2!1sen!2sin"
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Aiva Wellness location"
-            ></iframe>
-          </div>
-        </div>
-      </div>
 
       <!-- CTA -->
       <div class="cta-section">
