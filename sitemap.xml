@@ -84,4 +84,47 @@
         </image:image>
     </url>
 
+        <url>
+        <loc>https://aivawellness.in/blog.html</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/product-details-pages/magnesium-complex-5-in-1.html</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://aivawellness.in/products/Magnesium%20Complex.jpg.jpeg</image:loc>
+            <image:title>Magnesium Complex 5-in-1</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/product-details-pages/energy-immunity-support.html</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/blogs/magnesium-deficiency.html</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://aivawellness.in/products/Magnesium%20Complex.jpg.jpeg</image:loc>
+            <image:title>5 Signs You May Be Magnesium Deficient</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/blogs/omega-3-fish-oil.html</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
 </urlset>
