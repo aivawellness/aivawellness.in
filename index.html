@@ -1156,7 +1156,7 @@
         padding: 0 24px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        gap: 24px;
         align-items: stretch;
       }
       .about-eyebrow {
@@ -1256,7 +1256,7 @@
       .about-images {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
       }
       .about-images-mobile {
         display: none;
@@ -1281,13 +1281,38 @@
       }
       .about-img-main img {
         position: absolute;
-        inset: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: auto;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: center bottom;
         display: block;
         transition: opacity 0.45s ease, transform 0.7s var(--ease);
+      }
+
+      .about-heading {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-bottom: 4px;
+      }
+      .about-heading h2 {
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: clamp(24px, 4.5vw, 52px);
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 8px;
+      }
+      .about-heading h2::after {
+        content: "";
+        display: block;
+        width: 56px;
+        height: 2px;
+        background: var(--accent, var(--black));
+        margin: 8px auto 0;
+        opacity: 0.7;
       }
       .about-img-main img.hover-img {
         opacity: 0;
@@ -1388,7 +1413,16 @@
         }
         .about-images {
           order: -1;
-          margin-bottom: 32px;
+          margin-bottom: 16px;
+        }
+        .about-section {
+          gap: 12px;
+        }
+        .about-heading {
+          margin-bottom: 4px;
+        }
+        .about-heading h2 {
+          margin-bottom: 6px;
         }
         .about-text {
           align-items: center;
@@ -4346,11 +4380,11 @@
 
     <!-- ABOUT SECTION -->
     <section class="about-section">
-      <div class="about-text reveal reveal-right">
-        <span class="about-eyebrow"
-          ><i class="fa-solid fa-circle-info"></i> Who We Are</span
-        >
+      <div class="about-heading">
+        <span class="about-eyebrow"><i class="fa-solid fa-circle-info"></i>ABOUT AIVA WELLNESS</span>
         <h2>Premium wellness built with clarity, trust, and science</h2>
+      </div>
+      <div class="about-text reveal reveal-right">
         <div class="about-images-mobile reveal reveal-left">
           <div class="about-img-main">
             <img
@@ -5054,7 +5088,7 @@
                 <a href="product-details-pages/energy-immunity-support.html"
                   >Energy &amp; Immunity Support</a
                 >
-              </li>
+      -c      </li>
             </ul>
           </div>
           <div class="footer-col">
