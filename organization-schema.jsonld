@@ -22,14 +22,14 @@
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
+          "@type": "Product",
           "name": "Nattokinase Supplements"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
+          "@type": "Product",
           "name": "Magnesium Complex"
         }
       }
@@ -62,3 +62,4 @@
     "https://www.amazon.in/stores/AivaWellness"
   ]
 }
+
