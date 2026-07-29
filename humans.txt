@@ -3,7 +3,7 @@
 Brand: Aiva Wellness
 Website: https://aivawellness.in
 Contact: info@aivawellness.in
-Location: Solan, Himachal Pradesh, India
+Location: India
 
 Developer: Rishav Kumar
 Role: Frontend Developer
