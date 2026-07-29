@@ -166,7 +166,8 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "MedicalBusiness",
+        "additionalType": "https://schema.org/HealthAndBeautyBusiness",
         "name": "Aiva Wellness",
         "url": "https://aivawellness.in/",
         "logo": "https://aivawellness.in/assets/logo.png",
@@ -184,6 +185,30 @@
           "email": "info@aivawellness.in",
           "areaServed": "IN",
           "availableLanguage": ["en", "hi"]
+        },
+        "knowsAbout": [
+          "Nattokinase",
+          "Magnesium Complex",
+          "Vitamins & Minerals",
+          "Nutraceuticals",
+          "Cardiovascular Health"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Wellness Supplements",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Nattokinase Supplements"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": { "@type": "Service", "name": "Magnesium Complex" }
+            }
+          ]
         },
         "sameAs": [
           "https://www.instagram.com/aivawellness.in/?hl=en",

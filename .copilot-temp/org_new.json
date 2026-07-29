@@ -21,17 +21,11 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Nattokinase Supplements"
-        }
+        "itemOffered": { "@type": "Service", "name": "Nattokinase Supplements" }
       },
       {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Magnesium Complex"
-        }
+        "itemOffered": { "@type": "Service", "name": "Magnesium Complex" }
       }
     ]
   },
@@ -47,10 +41,7 @@
     "contactType": "customer service",
     "email": "info@aivawellness.in",
     "areaServed": "IN",
-    "availableLanguage": [
-      "en",
-      "hi"
-    ]
+    "availableLanguage": ["en", "hi"]
   },
   "sameAs": [
     "https://www.instagram.com/aivawellness.in/?hl=en",

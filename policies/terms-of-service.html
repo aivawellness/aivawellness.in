@@ -94,14 +94,17 @@
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- Organization JSON-LD removed; served from common header include -->
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "MedicalBusiness",
+        "additionalType": "https://schema.org/HealthAndBeautyBusiness",
         "name": "Aiva Wellness",
         "url": "https://aivawellness.in/",
         "logo": "https://aivawellness.in/assets/logo.png",
-        "description": "Discover premium healthcare and wellness supplements from Aiva Wellness. Explore science-backed formulas including Nattokinase, Magnesium Complex, Vitamins & Minerals, crafted with high-quality ingredients to support your everyday wellness.",
+        "description": "Aiva Wellness is a premium healthcare & wellness brand formulating FSSAI-licensed, science-backed supplements in India.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Solan",
@@ -116,6 +119,15 @@
           "areaServed": "IN",
           "availableLanguage": ["en", "hi"]
         },
+        "knowsAbout": ["Nattokinase", "Magnesium Complex", "Vitamins & Minerals", "Nutraceuticals", "Cardiovascular Health"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Wellness Supplements",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nattokinase Supplements" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Magnesium Complex" } }
+          ]
+        },
         "sameAs": [
           "https://www.instagram.com/aivawellness.in/?hl=en",
           "https://www.facebook.com/profile.php?id=61591507665329",
@@ -127,40 +139,6 @@
         ]
       }
     </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://aivawellness.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Terms of Service",
-            "item": "https://aivawellness.in/terms-of-service.html"
-          }
-        ]
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Are Aiva Wellness products a substitute for medical treatment?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Aiva Wellness products are dietary supplements not intended to diagnose, treat, cure, or prevent any disease, and are not a substitute for professional medical advice."
-            }
           },
           {
             "@type": "Question",
