@@ -699,6 +699,11 @@
       @media (max-width: 900px) {
         .article-hero {
           min-height: 360px;
+          max-width: 100%;
+        }
+        .article-hero img {
+          object-fit: cover;
+          object-position: center center;
         }
         .article-hero-content {
           padding: 20px 18px 22px;
@@ -756,6 +761,9 @@
         .article-hero-content {
           justify-content: center;
           padding: 18px 16px 20px;
+        }
+        .article-hero-content > :not(h1) {
+          display: none;
         }
         .article-hero h1 {
           font-size: 1.4rem;

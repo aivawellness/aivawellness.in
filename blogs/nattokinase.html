@@ -731,6 +731,11 @@
       @media (max-width: 900px) {
         .article-hero {
           min-height: 360px;
+          max-width: 100%;
+        }
+        .article-hero img {
+          object-fit: cover;
+          object-position: center center;
         }
         .article-hero-content {
           padding: 20px 18px 22px;
@@ -788,6 +793,9 @@
         .article-hero-content {
           justify-content: center;
           padding: 18px 16px 20px;
+        }
+        .article-hero-content > :not(h1) {
+          display: none;
         }
         .article-hero h1 {
           font-size: 1.4rem;
@@ -2015,7 +2023,7 @@
       <picture>
         <source
           media="(max-width: 700px)"
-          srcset="../blogs/images/nattocover-mobile.png"
+          srcset="../blogs/images/nattocover.png"
         />
         <img
           src="../blogs/images/nattocover.png"
@@ -2572,12 +2580,12 @@
           <div class="blog-info">
             <div class="blog-tag">Magnesium</div>
             <h3>
-              <a href="../index.html#blogs"
+              <a href="magnesium-deficiency.html"
                 >5 Signs You May Be Magnesium Deficient — And What to Do About
                 It</a
               >
             </h3>
-            <a href="../index.html#blogs" class="blog-read"
+            <a href="magnesium-deficiency.html" class="blog-read"
               >Read more <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
@@ -2594,12 +2602,12 @@
           <div class="blog-info">
             <div class="blog-tag">Omega-3</div>
             <h3>
-              <a href="../index.html#blogs"
+              <a href="omega-3-fish-oil.html"
                 >Omega-3 Fish Oil: The Essential Nutrient for Heart, Brain &amp;
                 Joint Health</a
               >
             </h3>
-            <a href="../index.html#blogs" class="blog-read"
+            <a href="omega-3-fish-oil.html" class="blog-read"
               >Read more <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
