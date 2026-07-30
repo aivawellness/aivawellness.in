@@ -2844,7 +2844,21 @@
         border: 1px solid rgba(29, 78, 216, 0.22);
         box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
         border-radius: 0;
+        position: relative;
         transition: all 0.4s var(--ease);
+      }
+      .blog-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(255, 255, 255, 0.18));
+        opacity: 0;
+        transition: opacity 0.4s var(--ease);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .blog-card:hover::before {
+        opacity: 1;
       }
       .blog-card:hover {
         box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
@@ -2854,16 +2868,19 @@
       .blog-img {
         overflow: hidden;
         position: relative;
+        aspect-ratio: 16/9;
+        z-index: 0;
       }
       .blog-img img {
         width: 100%;
-        aspect-ratio: 16/9;
+        height: 100%;
         object-fit: cover;
+        object-position: center center;
         display: block;
         transition: transform 0.7s var(--ease);
       }
       .blog-card:hover .blog-img img {
-        transform: scale(1.06);
+        transform: scale(1.08);
       }
       .blog-info {
         padding: 22px;
@@ -4782,7 +4799,7 @@
               <div class="blog-tag">Magnesium</div>
               <h3>
                 <a href="blogs/magnesium-deficiency.html"
-                  >5 Signs You May Be Magnesium Deficient � And What to Do About
+                  >5 Signs You May Be Magnesium Deficient - And What to Do About
                   It</a
                 >
               </h3>
