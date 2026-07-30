@@ -672,16 +672,53 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: var(--black);
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 255, 255, 0.08),
+          rgba(15, 23, 42, 0.94)
+        );
         min-height: 520px;
         overflow: hidden;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .article-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: inherit;
+        filter: blur(28px);
+        transform: scale(1.1);
+        opacity: 0.75;
+        pointer-events: none;
+      }
+      .article-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(15, 23, 42, 0.35) 0%,
+            rgba(15, 23, 42, 0.2) 30%,
+            rgba(15, 23, 42, 0.8) 100%
+          ),
+          radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.08),
+            transparent 38%
+          );
+        mix-blend-mode: normal;
+        opacity: 0.92;
       }
       .article-hero img {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         object-position: center center;
         opacity: 1;
         filter: none;
@@ -1978,10 +2015,10 @@
       <picture>
         <source
           media="(max-width: 700px)"
-          srcset="../blogs/images/natto-cover-mobile.png"
+          srcset="../blogs/images/nattocover-mobile.png"
         />
         <img
-          src="../blogs/images/natto-cover.png"
+          src="../blogs/images/nattocover.png"
           alt="Cardiovascular wellness and heart health"
           loading="lazy"
           decoding="async"
@@ -2671,7 +2708,6 @@
               ><a href="tel:+917807751711">+91 78077 51711</a>
             </div>
             <div class="footer-contact-item">
-              
               <i class="fa-solid fa-envelope"></i
               ><a href="mailto:info@aivawellness.in">info@aivawellness.in</a>
             </div>
@@ -2736,5 +2772,3 @@
     </script>
   </body>
 </html>
-
-

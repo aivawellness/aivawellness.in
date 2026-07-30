@@ -677,13 +677,16 @@
         background: var(--black);
         min-height: 520px;
         overflow: hidden;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
       }
       .article-hero img {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         object-position: center center;
         opacity: 1;
         filter: none;
@@ -2693,5 +2696,3 @@
     </script>
   </body>
 </html>
-
-
