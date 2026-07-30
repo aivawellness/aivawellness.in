@@ -2115,31 +2115,38 @@
         display: flex;
         gap: 16px;
         margin-bottom: 26px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
+        align-items: flex-start;
       }
       .combo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         cursor: pointer;
         position: relative;
-        padding: 0 8px;
+        padding: 0;
+        min-width: 88px;
       }
       .combo-item:not(:last-child)::after {
         content: "+";
         position: absolute;
-        right: -6px;
-        top: 42%;
-        transform: translateY(-60%);
+        right: -12px;
+        top: 44%;
+        transform: translateY(-50%);
         color: #111111;
         font-weight: 800;
         font-size: 1.1rem;
+        line-height: 1;
       }
       .combo-item img {
         width: 68px;
         height: 68px;
         object-fit: contain;
         border: 2px solid var(--border);
-        padding: 6px;
+        padding: 4px;
         border-radius: 12px;
         transition: all 0.25s var(--ease);
         display: block;
@@ -2157,8 +2164,10 @@
         font-size: 0.68rem;
         color: var(--muted);
         display: block;
-        margin-top: 5px;
+        margin-top: 6px;
         font-weight: 500;
+        line-height: 1.3;
+        max-width: 100px;
       }
       .btn-add {
         display: flex;
@@ -4508,7 +4517,7 @@
         >
         <h2><strong>Heart, Sleep & Immunity Trio</strong></h2>
         <p class="combo-sub">
-          Nattokinase 200 + Magnesium 5-in-1 + Vitamin D3 - cardiovascular
+          Nattokinase 200 + Magnesium 5-in-1 + Energy & Immunity Support - cardiovascular
           support, deep sleep, and immune strength combined.
         </p>
         <div class="combo-stars">
@@ -4554,16 +4563,16 @@
           </div>
           <div class="combo-item">
             <img
-              src="products/VITAMIN D3.webp"
+              src="products/reefit forte c new size.webp"
               loading="lazy"
               decoding="async"
-              alt="Vitamin D3"
+              alt="Energy & Immunity Support"
               onerror="
                 this.src =
                   'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
               "
             />
-            <span>Vitamin D3</span>
+            <span>Energy & Immunity Support</span>
           </div>
         </div>
         <a href="product-details.html" class="btn-add"
