@@ -2843,7 +2843,7 @@
       /* -- render card -- */
       function renderCard(p, delay) {
         const saving = Math.round(((p.old - p.price) / p.old) * 100);
-        const detailLink = PRODUCT_PAGE_MAP[p.id] || "product-details.html";
+        const detailLink = PRODUCT_PAGE_MAP[p.id] || "shop.html";
         return `<div class="product-card reveal d${(delay % 6) + 1}" data-id="${p.id}">
     <div class="product-img">
       <span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>
@@ -3122,7 +3122,7 @@
           window.location.origin +
           window.location.pathname.replace(/\/[^\/]*$/, "/");
         const slug = PRODUCT_PAGE_MAP[id];
-        return slug ? base + slug : base + "product-details.html";
+        return slug ? base + slug : base + "shop.html";
       }
 
       function shareProduct(id, type) {
