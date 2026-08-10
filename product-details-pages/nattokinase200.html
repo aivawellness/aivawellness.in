@@ -1505,24 +1505,60 @@
         background: var(--black);
         border-radius: 24px;
         overflow: hidden;
-        max-width: 840px;
+        max-width: 1000px;
         width: 100%;
         position: relative;
         box-shadow: var(--sh-xl);
-        min-height: 420px;
+        min-height: auto;
       }
       .video-modal-inner .video-placeholder {
-        min-height: 420px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 18px;
-        padding: 36px;
+        gap: 0;
+        padding: 0;
       }
       .video-modal-inner .video-placeholder p {
-        max-width: 640px;
+        max-width: 100%;
         text-align: center;
+      }
+      .video-modal-inner video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: calc(100vh - 40px) !important;
+        aspect-ratio: auto !important;
+        object-fit: contain;
+        display: block;
+      }
+      .video-placeholder {
+        aspect-ratio: unset !important;
+        padding: 0 !important;
+      }
+      @media (max-width: 768px) {
+        .video-modal-overlay {
+          padding: 0 !important;
+        }
+        .video-modal-inner {
+          max-width: 100% !important;
+          width: 100% !important;
+          min-height: auto !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        .video-modal-inner .video-placeholder {
+          width: 100% !important;
+          padding: 0 !important;
+          min-height: auto !important;
+          aspect-ratio: unset !important;
+        }
+        .video-modal-close {
+          top: 12px;
+          right: 12px;
+          width: 40px;
+          height: 40px;
+        }
       }
       .image-modal-overlay {
         position: fixed;
@@ -2761,13 +2797,14 @@
       @media (max-width: 600px) {
         .video-modal-inner,
         .video-modal-inner .video-placeholder {
-          min-height: auto;
-          border-radius: 20px;
-          padding: 24px 18px;
+          min-height: auto !important;
+          border-radius: 0 !important;
+          padding: 0 !important;
         }
         .video-modal-inner .video-placeholder {
-          gap: 16px;
-          padding: 28px 18px;
+          gap: 0 !important;
+          width: 100% !important;
+          aspect-ratio: unset !important;
         }
         .video-modal-inner .video-play-big {
           width: 64px;
@@ -2778,6 +2815,7 @@
           font-size: 0.92rem;
           line-height: 1.6;
         }
+      }
         .image-modal-inner {
           height: auto;
           max-height: 92vh;
@@ -3079,19 +3117,60 @@
                   loading="lazy"
                   decoding="async"
                 />
-                <div class="video-thumb" onclick="openVideoModal()">
-                  <img
-                    src="../products/Nattokinase Carton.webp"
-                    alt="Product Video"
-                    onerror="
-                      this.src =
-                        'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=150&q=80&auto=format&fm=webp'
+                <div
+                  class="video-thumb"
+                  onclick="openVideoModal()"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    background: #f8fafc;
+                    border: 1px dashed rgba(148, 163, 184, 0.7);
+                    border-radius: 12px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      color: #475569;
+                      font-size: 0.9rem;
+                      font-weight: 600;
+                      letter-spacing: 0.05em;
+                      text-transform: uppercase;
+                      opacity: 0.9;
                     "
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div class="play-icon"><i class="fa-solid fa-play"></i></div>
-                  <div class="video-tag">Video</div>
+                  >
+                    <span
+                      style="
+                        display: block;
+                        width: 48px;
+                        height: 48px;
+                        border: 2px dashed rgba(100, 116, 139, 0.8);
+                        border-radius: 12px;
+                        margin-bottom: 0.5rem;
+                      "
+                    ></span>
+                    <span>Video</span>
+                  </div>
+                  <div
+                    class="play-icon"
+                    style="
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      opacity: 0.72;
+                    "
+                  >
+                    <i class="fa-solid fa-play"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3325,13 +3404,13 @@
                       <tr>
                         <td>Item Type Name</td>
                         <td style="text-align: right; font-weight: 700">
-                           Enzyme Supplement
+                          Enzyme Supplement
                         </td>
                       </tr>
                       <tr>
                         <td>Flavour</td>
                         <td style="text-align: right; font-weight: 700">
-                           Unflavoured
+                          Unflavoured
                         </td>
                       </tr>
                       <tr>
@@ -3365,7 +3444,7 @@
                       <tr>
                         <td>Diet type</td>
                         <td style="text-align: right; font-weight: 700">
-                         gluten free, vegan
+                          gluten free, vegan
                         </td>
                       </tr>
                       <tr>
@@ -3460,167 +3539,174 @@
                 <strong>Servings Per Container:</strong> 30
               </p>
               <table class="nutrition-table">
-  <thead>
-    <tr>
-      <th>Nutrient</th>
-      <th style="text-align: center">Per Serving</th>
-      <th>% RDA</th>
-    </tr>
-  </thead>
+                <thead>
+                  <tr>
+                    <th>Nutrient</th>
+                    <th style="text-align: center">Per Serving</th>
+                    <th>% RDA</th>
+                  </tr>
+                </thead>
 
-  <tbody>
-    <tr>
-      <td>Energy</td>
-      <td style="text-align: center">0.90% (0.05%)</td>
-      <td>—</td>
-    </tr>
+                <tbody>
+                  <tr>
+                    <td>Energy</td>
+                    <td style="text-align: center">0.90% (0.05%)</td>
+                    <td>—</td>
+                  </tr>
 
-    <tr>
-      <td>Protein</td>
-      <td style="text-align: center">0.22 g (0.41%)</td>
-      <td>—</td>
-    </tr>
+                  <tr>
+                    <td>Protein</td>
+                    <td style="text-align: center">0.22 g (0.41%)</td>
+                    <td>—</td>
+                  </tr>
 
-    <tr>
-      <td>Carbohydrates</td>
-      <td style="text-align: center">0.006 g</td>
-      <td>—</td>
-    </tr>
+                  <tr>
+                    <td>Carbohydrates</td>
+                    <td style="text-align: center">0.006 g</td>
+                    <td>—</td>
+                  </tr>
 
-    <tr>
-      <td>Total Sugars</td>
-      <td style="text-align: center">0.00 g</td>
-      <td>—</td>
-    </tr>
+                  <tr>
+                    <td>Total Sugars</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>—</td>
+                  </tr>
 
-    <tr>
-      <td>Added Sugars</td>
-      <td style="text-align: center">0.00 g</td>
-      <td>0%</td>
-    </tr>
+                  <tr>
+                    <td>Added Sugars</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>0%</td>
+                  </tr>
 
-    <tr>
-      <td>Total Fat</td>
-      <td style="text-align: center">0.00 g</td>
-      <td>0%</td>
-    </tr>
+                  <tr>
+                    <td>Total Fat</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>0%</td>
+                  </tr>
 
-    <tr>
-      <td>Saturated Fat</td>
-      <td style="text-align: center">0.00 g</td>
-      <td>0%</td>
-    </tr>
+                  <tr>
+                    <td>Saturated Fat</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>0%</td>
+                  </tr>
 
-    <tr>
-      <td>Trans Fat</td>
-      <td style="text-align: center">0.00 mg</td>
-      <td>0%</td>
-    </tr>
+                  <tr>
+                    <td>Trans Fat</td>
+                    <td style="text-align: center">0.00 mg</td>
+                    <td>0%</td>
+                  </tr>
 
-    <tr>
-      <td>Sodium</td>
-      <td style="text-align: center">0.00 mg</td>
-      <td>0%</td>
-    </tr>
+                  <tr>
+                    <td>Sodium</td>
+                    <td style="text-align: center">0.00 mg</td>
+                    <td>0%</td>
+                  </tr>
 
-    <tr>
-      <td>Nattokinase from Fermented Soybean Extract</td>
-      <td style="text-align: center">200 mg / 4000 FU</td>
-      <td>**</td>
-    </tr>
-  </tbody>
-</table>  
+                  <tr>
+                    <td>Nattokinase from Fermented Soybean Extract</td>
+                    <td style="text-align: center">200 mg / 4000 FU</td>
+                    <td>**</td>
+                  </tr>
+                </tbody>
+              </table>
               <p class="nutrition-note">
-  <strong>*%RDA:</strong>
-  Recommended Dietary Allowance values calculated as per Indian Council of
-  Medical Research (ICMR) guidelines 2020 based on Sedentary Women. Based on
-  FSS (Labeling &amp; Display). <strong>**</strong> RDA not established.
-</p>
+                <strong>*%RDA:</strong>
+                Recommended Dietary Allowance values calculated as per Indian
+                Council of Medical Research (ICMR) guidelines 2020 based on
+                Sedentary Women. Based on FSS (Labeling &amp; Display).
+                <strong>**</strong> RDA not established.
+              </p>
             </div>
           </div>
 
           <div class="tab-panel" id="tab-ingredients">
-  <p class="ingredients-text">
-    <strong>Active Ingredients:</strong>
-    Nattokinase from Fermented Soybean Extract (200 mg / 4000 FU per serving).
-  </p>
+            <p class="ingredients-text">
+              <strong>Active Ingredients:</strong>
+              Nattokinase from Fermented Soybean Extract (200 mg / 4000 FU per
+              serving).
+            </p>
 
-  <p class="ingredients-text">
-    <strong>Other Ingredients:</strong>
-    Diluents (460(ii) &amp; 421), Glazing Agent (553(iii)), and Capsule Shell
-    Contains [Emulsifier (464)] and Permitted Natural Food Colour (INS 171).
-  </p>
+            <p class="ingredients-text">
+              <strong>Other Ingredients:</strong>
+              Diluents (460(ii) &amp; 421), Glazing Agent (553(iii)), and
+              Capsule Shell Contains [Emulsifier (464)] and Permitted Natural
+              Food Colour (INS 171).
+            </p>
 
-  <div class="allergen-box">
-    <strong>
-      <i class="fa-solid fa-triangle-exclamation"></i>
-      Allergen Information
-    </strong>
-    Contains soy-fermented enzyme. Check the product label for complete
-    allergen and ingredient information.
-  </div>
-</div>
+            <div class="allergen-box">
+              <strong>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Allergen Information
+              </strong>
+              Contains soy-fermented enzyme. Check the product label for
+              complete allergen and ingredient information.
+            </div>
+          </div>
 
           <div class="tab-panel" id="tab-usage">
-  <div class="usage-steps">
-    <div class="usage-step">
-      <div class="step-num">1</div>
-      <div class="step-text">
-        <h5>Take 1 capsule daily</h5>
-        <p>
-          Adults may take one capsule daily, or as directed by a qualified
-          healthcare professional. Do not exceed the recommended daily serving.
-        </p>
-      </div>
-    </div>
+            <div class="usage-steps">
+              <div class="usage-step">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <h5>Take 1 capsule daily</h5>
+                  <p>
+                    Adults may take one capsule daily, or as directed by a
+                    qualified healthcare professional. Do not exceed the
+                    recommended daily serving.
+                  </p>
+                </div>
+              </div>
 
-    <div class="usage-step">
-      <div class="step-num">2</div>
-      <div class="step-text">
-        <h5>Take with water</h5>
-        <p>
-          Swallow the capsule whole with an adequate amount of water. Do not
-          crush or open the capsule unless advised by a healthcare professional.
-        </p>
-      </div>
-    </div>
+              <div class="usage-step">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <h5>Take with water</h5>
+                  <p>
+                    Swallow the capsule whole with an adequate amount of water.
+                    Do not crush or open the capsule unless advised by a
+                    healthcare professional.
+                  </p>
+                </div>
+              </div>
 
-    <div class="usage-step">
-      <div class="step-num">3</div>
-      <div class="step-text">
-        <h5>Follow the recommended serving</h5>
-        <p>
-          One capsule provides 200 mg of Nattokinase from fermented soybean
-          extract, equivalent to 4000 FU per serving.
-        </p>
-      </div>
-    </div>
+              <div class="usage-step">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <h5>Follow the recommended serving</h5>
+                  <p>
+                    One capsule provides 200 mg of Nattokinase from fermented
+                    soybean extract, equivalent to 4000 FU per serving.
+                  </p>
+                </div>
+              </div>
 
-    <div class="usage-step">
-      <div class="step-num">4</div>
-      <div class="step-text">
-        <h5>Store properly</h5>
-        <p>
-          Store in a cool, dry place away from direct sunlight and moisture.
-          Keep the container tightly closed and out of reach of children.
-        </p>
-      </div>
-    </div>
-  </div>
+              <div class="usage-step">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                  <h5>Store properly</h5>
+                  <p>
+                    Store in a cool, dry place away from direct sunlight and
+                    moisture. Keep the container tightly closed and out of reach
+                    of children.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  <div class="warning-box">
-    <strong>
-      <i class="fa-solid fa-circle-exclamation"></i>
-      Important Notice
-    </strong>
-    Consult your healthcare practitioner before using this product if you are
-    pregnant, lactating, have a bleeding disorder, are scheduled for surgery,
-    or are taking blood-thinning or other medications. Do not exceed the
-    recommended daily serving. Not for medicinal use. This product is not
-    intended to diagnose, treat, cure, or prevent any disease and should not
-    be used as a substitute for a varied diet. Keep out of reach of children.
-  </div>
-</div>
+            <div class="warning-box">
+              <strong>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Important Notice
+              </strong>
+              Consult your healthcare practitioner before using this product if
+              you are pregnant, lactating, have a bleeding disorder, are
+              scheduled for surgery, or are taking blood-thinning or other
+              medications. Do not exceed the recommended daily serving. Not for
+              medicinal use. This product is not intended to diagnose, treat,
+              cure, or prevent any disease and should not be used as a
+              substitute for a varied diet. Keep out of reach of children.
+            </div>
+          </div>
         </div>
 
         <div class="reviews-section reveal">
@@ -3943,11 +4029,21 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="video-placeholder">
-          <div class="video-play-big"><i class="fa-solid fa-play"></i></div>
-          <p>Nattokinase 200 mg — Product Walkthrough</p>
-          <p style="font-size: 0.76rem; opacity: 0.5">
-            Video will play here · Replace with your hosted video URL
-          </p>
+          <video
+            id="productVideo"
+            controls
+            playsinline
+            preload="metadata"
+            style="
+              width: 100%;
+              max-height: 70vh;
+              border-radius: 12px;
+              background: #000;
+            "
+          >
+            <source src="../videos/video.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
         </div>
       </div>
     </div>
@@ -4297,12 +4393,23 @@
       });
 
       function openVideoModal() {
+        const video = document.getElementById("productVideo");
         document.getElementById("videoModal").classList.add("open");
         document.body.style.overflow = "hidden";
+        if (video) {
+          video.currentTime = 0;
+          video.muted = false;
+          video.play().catch(() => {});
+        }
       }
       function closeVideoModal() {
+        const video = document.getElementById("productVideo");
         document.getElementById("videoModal").classList.remove("open");
         document.body.style.overflow = "";
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
       }
 
       const imageModal = document.getElementById("imageModal");
