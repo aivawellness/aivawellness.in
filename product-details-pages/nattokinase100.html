@@ -1506,24 +1506,60 @@
         background: var(--black);
         border-radius: 24px;
         overflow: hidden;
-        max-width: 840px;
+        max-width: 1000px;
         width: 100%;
         position: relative;
         box-shadow: var(--sh-xl);
-        min-height: 420px;
+        min-height: auto;
       }
       .video-modal-inner .video-placeholder {
-        min-height: 420px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 18px;
-        padding: 36px;
+        gap: 0;
+        padding: 0;
       }
       .video-modal-inner .video-placeholder p {
-        max-width: 640px;
+        max-width: 100%;
         text-align: center;
+      }
+      .video-modal-inner video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: calc(100vh - 40px) !important;
+        aspect-ratio: auto !important;
+        object-fit: contain;
+        display: block;
+      }
+      .video-placeholder {
+        aspect-ratio: unset !important;
+        padding: 0 !important;
+      }
+      @media (max-width: 768px) {
+        .video-modal-overlay {
+          padding: 0 !important;
+        }
+        .video-modal-inner {
+          max-width: 100% !important;
+          width: 100% !important;
+          min-height: auto !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        .video-modal-inner .video-placeholder {
+          width: 100% !important;
+          padding: 0 !important;
+          min-height: auto !important;
+          aspect-ratio: unset !important;
+        }
+        .video-modal-close {
+          top: 12px;
+          right: 12px;
+          width: 40px;
+          height: 40px;
+        }
       }
       .image-modal-overlay {
         position: fixed;
@@ -3893,11 +3929,24 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="video-placeholder">
-          <div class="video-play-big"><i class="fa-solid fa-play"></i></div>
-          <p>Nattokinase 100 mg — Product Walkthrough</p>
-          <p style="font-size: 0.76rem; opacity: 0.5">
-            Video will play here · Replace with your hosted video URL
-          </p>
+          <video
+            id="productVideo"
+            controls
+            playsinline
+            preload="metadata"
+            style="
+              width: 100%;
+              height: auto;
+              max-height: calc(100vh - 40px);
+              aspect-ratio: 16/9;
+              object-fit: contain;
+              display: block;
+              background: #000;
+            "
+          >
+            <source src="../videos/video.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
         </div>
       </div>
     </div>
