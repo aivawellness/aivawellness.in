@@ -3274,13 +3274,22 @@
 
             <div class="share-row">
               <span class="share-lbl">Share:</span>
-              <a
+              <button
                 class="share-btn"
-                href="https://wa.me/?text=Check+this+product"
-                target="_blank"
-                title="WhatsApp"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
+                title="Share on WhatsApp"
+                onclick="
+                  const url = location.href;
+                  navigator.clipboard && navigator.clipboard.writeText(url);
+                  window.open(
+                    'https://wa.me/?text=' +
+                      encodeURIComponent('Check this product: ' + url),
+                    '_blank',
+                  );
+                  showToast('📱', 'Link copied & WhatsApp opened!');
+                "
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </button>
               <button
                 class="share-btn"
                 title="Copy link"

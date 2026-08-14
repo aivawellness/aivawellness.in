@@ -3310,7 +3310,11 @@
                 onclick="
                   const url = location.href;
                   navigator.clipboard && navigator.clipboard.writeText(url);
-                  window.open('https://wa.me/?text=' + encodeURIComponent('Check this product: ' + url), '_blank');
+                  window.open(
+                    'https://wa.me/?text=' +
+                      encodeURIComponent('Check this product: ' + url),
+                    '_blank',
+                  );
                   showToast('📱', 'Link copied & WhatsApp opened!');
                 "
               >
