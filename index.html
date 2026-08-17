@@ -1311,17 +1311,12 @@
         opacity: 0.7;
       }
       .about-img-main img.hover-img {
-        opacity: 0;
-      }
-      .about-img-main:hover img.hover-img,
-      .about-img-main.touch-active img.hover-img {
         opacity: 1;
       }
-      .about-img-main:hover img:first-child,
-      .about-img-main.touch-active img:first-child {
-        opacity: 0;
+      .about-img-main img:first-child {
+        opacity: 1;
       }
-      .about-img-main:hover img,
+      .about-img-main img,
       .about-img-main.touch-active img {
         transform: none;
       }
@@ -1331,10 +1326,6 @@
         inset: 0;
         border: 1px solid rgba(59, 130, 246, 0.14);
         pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.35s;
-      }
-      .about-img-main:hover::after {
         opacity: 1;
       }
       .about-img-main::before {
@@ -4353,13 +4344,6 @@
               loading="lazy"
               decoding="async"
             />
-            <img
-              class="hover-img"
-              src="products/about-cover-hover.png"
-              alt="Aiva Wellness hover image"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
         <p>
@@ -4416,13 +4400,6 @@
           <img
             src="products/about-cover.png"
             alt="Natural Aiva Wellness ingredients"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="hover-img"
-            src="products/about-cover-hover.png"
-            alt="Aiva Wellness hover image"
             loading="lazy"
             decoding="async"
           />

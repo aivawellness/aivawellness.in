@@ -1219,17 +1219,12 @@
           transform 0.7s var(--ease);
       }
       .story-img-main img.hover-img {
-        opacity: 0;
-      }
-      .story-img-main:hover img.hover-img,
-      .story-img-main.touch-active img.hover-img {
         opacity: 1;
       }
-      .story-img-main:hover img:first-child,
-      .story-img-main.touch-active img:first-child {
-        opacity: 0;
+      .story-img-main img:first-child {
+        opacity: 1;
       }
-      .story-img-main:hover img,
+      .story-img-main img,
       .story-img-main.touch-active img {
         transform: none;
       }
@@ -2954,13 +2949,6 @@
                 <img
                   src="products/about-cover.png"
                   alt="Natural Aiva Wellness ingredients"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <img
-                  class="hover-img"
-                  src="products/about-cover-hover.png"
-                  alt="Aiva Wellness hover image"
                   loading="lazy"
                   decoding="async"
                 />
