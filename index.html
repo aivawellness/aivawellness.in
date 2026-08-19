@@ -915,7 +915,7 @@
         .slide-cta {
           position: absolute;
           left: 50vw;
-          bottom: 42px;
+          bottom: 34px;
           padding: 9px 13px;
           font-size: 0.78rem;
           translate: -50% 0;
@@ -953,6 +953,11 @@
         display: flex;
         gap: 8px;
         z-index: 10;
+      }
+      @media (max-width: 768px) {
+        .slider-dots {
+          bottom: 20px;
+        }
       }
       .dot {
         width: 6px;
