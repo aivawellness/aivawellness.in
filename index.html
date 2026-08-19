@@ -907,6 +907,21 @@
         .slide:not(.first-slide) .slide-cta { transform: none; box-shadow: 0 4px 16px rgba(0,0,0,0.12); align-self: flex-start; }
       }
 
+      @media (max-width: 768px) {
+        .slide-content h1 {
+          display: none;
+        }
+
+        .slide-cta {
+          position: absolute;
+          left: 50vw;
+          bottom: 42px;
+          padding: 9px 13px;
+          font-size: 0.78rem;
+          translate: -50% 0;
+        }
+      }
+
       /* Progress bar */
       .slider-progress {
         position: absolute;
