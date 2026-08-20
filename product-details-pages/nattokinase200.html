@@ -2346,6 +2346,72 @@
         background: var(--blue);
         color: #fff;
       }
+      .similar-grid .card-img-wrap {
+        position: relative;
+        border-radius: 0;
+      }
+      .similar-grid .product-card {
+        border-radius: 0;
+      }
+      .similar-grid .card-img-wrap > img {
+        transition:
+          transform 0.7s var(--ease),
+          opacity 0.35s;
+      }
+      .similar-grid .card-img-wrap .img-hover {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        object-fit: cover;
+        transition: opacity 0.45s var(--ease);
+      }
+      .similar-grid .product-card:hover .img-hover {
+        opacity: 1;
+      }
+      .similar-grid .share-popover {
+        position: absolute;
+        top: 52px;
+        right: 12px;
+        z-index: 5;
+        display: none;
+        min-width: 142px;
+        padding: 6px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: var(--sh-lg);
+      }
+      .similar-grid .share-popover.active {
+        display: grid;
+        gap: 4px;
+      }
+      .similar-grid .share-option {
+        border: 0;
+        border-radius: 7px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+        font:
+          600 0.72rem "Inter",
+          sans-serif;
+        padding: 8px 10px;
+        text-align: left;
+      }
+      .similar-grid .share-option:hover {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+      .similar-grid .card-btn {
+        align-items: center;
+        display: inline-flex;
+        gap: 6px;
+        text-decoration: none;
+      }
+      .similar-grid .card-btn::before {
+        content: "\f07a";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+      }
       .card-body {
         padding: 16px 18px 20px;
         display: flex;
@@ -4810,6 +4876,81 @@
         );
         switchThumb(thumbMatch || document.querySelector(".thumb-img"), p.img);
         document.title = p.name + " | Aiva Wellness";
+      })();
+    </script>
+    <script>
+      (() => {
+        const cards = document.querySelectorAll(".similar-grid .product-card");
+        cards.forEach((card) => {
+          const link = card.querySelector(".card-name a");
+          const imageWrap = card.querySelector(".card-img-wrap");
+          if (!link || !imageWrap) return;
+          const url = new URL(link.getAttribute("href"), window.location.href)
+            .href;
+          const title = link.textContent.trim();
+          const hoverImages = {
+            "dailyvitals.html": "../products/all images/multivitamin2.png",
+            "dailyvitalsmen.html": "../products/all images/men-2.png",
+            "magnesium-complex-5-in-1.html":
+              "../products/all images/magnesium2.png",
+            "nattokinase100.html": "../products/all images/1.webp",
+            "nattokinase200.html": "../products/all images/p2.png",
+          };
+          const hoverImage = hoverImages[link.getAttribute("href")];
+          if (hoverImage) {
+            const image = document.createElement("img");
+            image.className = "img-hover";
+            image.src = hoverImage;
+            image.alt = `${title} alternate view`;
+            image.loading = "lazy";
+            image.decoding = "async";
+            imageWrap.appendChild(image);
+          }
+          const actions = document.createElement("div");
+          actions.className = "card-actions";
+          actions.innerHTML =
+            '<button type="button" class="card-act-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button><button type="button" class="card-act-btn" title="Share"><i class="fa-solid fa-share-nodes"></i></button>';
+          const popover = document.createElement("div");
+          popover.className = "share-popover";
+          popover.innerHTML =
+            '<button type="button" class="share-option"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button><button type="button" class="share-option"><i class="fa-regular fa-copy"></i> Copy Link</button>';
+          const [quickButton, shareButton] = actions.querySelectorAll("button");
+          const [whatsappButton, copyButton] =
+            popover.querySelectorAll("button");
+          quickButton.addEventListener("click", () => {
+            window.location.href = link.href;
+          });
+          shareButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            document
+              .querySelectorAll(".similar-grid .share-popover.active")
+              .forEach((item) => item.classList.remove("active"));
+            popover.classList.toggle("active");
+          });
+          whatsappButton.addEventListener("click", () => {
+            window.open(
+              `https://wa.me/?text=${encodeURIComponent(`Check out ${title}: ${url}`)}`,
+              "_blank",
+            );
+            popover.classList.remove("active");
+          });
+          copyButton.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(url);
+              if (typeof showToast === "function")
+                showToast("", "Link copied!");
+            } catch (error) {
+              if (typeof showToast === "function") showToast("", "Copy failed");
+            }
+            popover.classList.remove("active");
+          });
+          imageWrap.append(actions, popover);
+        });
+        document.addEventListener("click", () => {
+          document
+            .querySelectorAll(".similar-grid .share-popover.active")
+            .forEach((item) => item.classList.remove("active"));
+        });
       })();
     </script>
   </body>
