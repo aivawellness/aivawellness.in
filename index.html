@@ -4410,7 +4410,7 @@
             >
               10k+
             </div>
-            <div class="a-stat-label">Happy Customers</div>
+            <div class="a-stat-label">Orders Delivered</div>
           </div>
           <div class="a-stat">
             <div
@@ -5258,7 +5258,7 @@
         const target = Number(el.dataset.target) || 0;
         const decimals = Number(el.dataset.decimals || 0);
         const suffix = el.dataset.suffix || "";
-        const duration = 1400;
+        const duration = 2400;
         const startTime = performance.now();
 
         function step(now) {
@@ -5269,7 +5269,7 @@
           } else if (decimals > 0) {
             el.textContent = `${current.toFixed(decimals)}`;
           } else {
-            el.textContent = `${Math.round(current)}${suffix}`;
+            el.textContent = `${Math.round(current).toLocaleString("en-IN")}${suffix}`;
           }
           if (progress < 1) {
             requestAnimationFrame(step);
