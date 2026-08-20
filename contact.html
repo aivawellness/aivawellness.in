@@ -2554,7 +2554,23 @@
                 >
               </div>
 
-              <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+              <form
+                id="contactForm"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                onsubmit="handleSubmit(event)"
+                novalidate
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="54833b69-7278-4ca6-a38a-46f229bbff3a"
+                />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="Aiva Wellness Website Contact Form"
+                />
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="fname"
@@ -2976,8 +2992,9 @@
       }
 
       /* ═══ FORM SUBMIT ═══ */
-      function handleSubmit(e) {
+      async function handleSubmit(e) {
         e.preventDefault();
+
         const form = document.getElementById("contactForm");
         const fname = form.querySelector("#fname").value.trim();
         const email = form.querySelector("#email").value.trim();
@@ -3014,27 +3031,59 @@
 
         const btn = form.querySelector(".btn-submit");
         const orig = btn.innerHTML;
+
         btn.innerHTML =
           '<i class="fa-solid fa-spinner fa-spin"></i><span>Sending…</span>';
         btn.disabled = true;
 
-        setTimeout(() => {
+        try {
+          const formData = new FormData(form);
+
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          const result = await response.json();
+
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || "Form submission failed.");
+          }
+
           btn.innerHTML =
             '<i class="fa-solid fa-check"></i><span>Message Sent!</span>';
           btn.style.background = "linear-gradient(135deg,#052e16,#16a34a)";
           showToast("✅", "Message sent! We'll reply within 2–4 hours.");
+
           form.reset();
+
           document
             .querySelectorAll(".subject-chip")
             .forEach((c) => c.classList.remove("active"));
+
           document.querySelector(".subject-chip").classList.add("active");
           document.getElementById("subject").value = "Product Inquiry";
+
           setTimeout(() => {
             btn.innerHTML = orig;
             btn.style.background = "";
             btn.disabled = false;
           }, 3000);
-        }, 1600);
+        } catch (error) {
+          console.error("Web3Forms submission error:", error);
+
+          btn.innerHTML = orig;
+          btn.style.background = "";
+          btn.disabled = false;
+
+          showToast(
+            "❌",
+            "Unable to send your message. Please try again or contact us directly."
+          );
+        }
       }
 
       /* ═══ NEWSLETTER ═══ */
@@ -3065,7 +3114,6 @@
     </script>
   </body>
 </html>
-
 
 
 
