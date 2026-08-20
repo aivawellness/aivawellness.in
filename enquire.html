@@ -944,8 +944,18 @@
         <form
           class="enquire-form"
           method="POST"
-          action="https://formspree.io/f/YOUR_FORM_ID"
+          action="https://api.web3forms.com/submit"
         >
+          <input
+            type="hidden"
+            name="access_key"
+            value="54833b69-7278-4ca6-a38a-46f229bbff3a"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="Aiva Wellness Product Enquiry"
+          />
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input
@@ -983,7 +993,7 @@
             <input
               type="text"
               id="subject"
-              name="subject"
+              name="inquiry_subject"
               required
               placeholder="What is your inquiry about?"
             />
@@ -1007,6 +1017,7 @@
               <i class="fa-solid fa-arrow-left"></i> Back to Home
             </a>
           </div>
+          <p class="enquiry-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </main>
@@ -1158,12 +1169,53 @@
       });
 
       // Form submission
-      document
-        .querySelector(".enquire-form")
-        .addEventListener("submit", function (e) {
-          // You can add custom validation or tracking here
-          console.log("Form submitted");
-        });
+      const enquiryForm = document.querySelector(".enquire-form");
+      const enquiryButton = enquiryForm.querySelector('button[type="submit"]');
+      const enquiryStatus = enquiryForm.querySelector(".enquiry-status");
+      const enquiryButtonText = enquiryButton.innerHTML;
+
+      enquiryForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        if (enquiryButton.disabled) return;
+
+        if (!enquiryForm.checkValidity()) {
+          enquiryForm.reportValidity();
+          return;
+        }
+
+        enquiryButton.disabled = true;
+        enquiryButton.innerHTML =
+          '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+        enquiryStatus.textContent = "";
+        enquiryStatus.className = "enquiry-status";
+
+        try {
+          const response = await fetch(enquiryForm.action, {
+            method: "POST",
+            body: new FormData(enquiryForm),
+            headers: { Accept: "application/json" },
+          });
+          const result = await response.json();
+
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || "Enquiry submission failed.");
+          }
+
+          enquiryForm.reset();
+          enquiryButton.innerHTML =
+            '<i class="fa-solid fa-check"></i> Enquiry Sent';
+          enquiryStatus.textContent =
+            "Thank you. Our team will get back to you shortly.";
+          enquiryStatus.className = "enquiry-status success";
+        } catch (error) {
+          console.error("Enquiry submission error:", error);
+          enquiryButton.disabled = false;
+          enquiryButton.innerHTML = enquiryButtonText;
+          enquiryStatus.textContent =
+            "Unable to send your enquiry. Please try again.";
+          enquiryStatus.className = "enquiry-status error";
+        }
+      });
     </script>
 
     <!-- Google Tag Manager (noscript) -->

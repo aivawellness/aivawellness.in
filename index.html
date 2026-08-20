@@ -4969,8 +4969,15 @@
           Subscribe for wellness tips, clean-living insights, exclusive offers,
           and early access to new products.
         </p>
-        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-          <input type="email" placeholder="Enter your email address" required />
+        <form
+          class="newsletter-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          onsubmit="handleNewsletter(event)"
+        >
+          <input type="hidden" name="access_key" value="54833b69-7278-4ca6-a38a-46f229bbff3a" />
+          <input type="hidden" name="subject" value="Aiva Wellness Newsletter Signup" />
+          <input type="email" name="email" placeholder="Enter your email address" required />
           <button type="submit">Subscribe</button>
         </form>
       </div>
@@ -5326,10 +5333,40 @@
       });
 
       /* --- NEWSLETTER --- */
-      function handleNewsletter(e) {
+      async function handleNewsletter(e) {
         e.preventDefault();
-        e.target.innerHTML =
-          '<p style="color:#fff;font-size:1rem;padding:16px 0;font-family:var(--font-sans);font-style:italic;letter-spacing:.02em">? Thank you for joining the Aiva Wellness community!</p>';
+        const form = e.target;
+        const emailInput = form.querySelector('input[type="email"]');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        if (submitButton.disabled) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Subscribing...";
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          const result = await response.json();
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || "Newsletter submission failed.");
+          }
+          form.innerHTML =
+            '<p style="color:#fff;font-size:1rem;padding:16px 0;font-family:var(--font-sans);font-style:italic;letter-spacing:.02em">Thank you for subscribing!</p>';
+        } catch (error) {
+          console.error("Newsletter submission error:", error);
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+          if (!form.querySelector(".newsletter-error")) {
+            const errorMessage = document.createElement("p");
+            errorMessage.className = "newsletter-error";
+            errorMessage.textContent = "Unable to subscribe. Please try again.";
+            form.appendChild(errorMessage);
+          }
+          emailInput.focus();
+        }
       }
 
       /* --- TESTIMONIALS --- */
