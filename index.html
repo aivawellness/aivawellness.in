@@ -1553,6 +1553,16 @@
         width: 100%;
         height: 100%;
       }
+      .product-img.touch-active {
+        box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.16);
+        transform: translateY(-2px);
+      }
+      .product-img.touch-active img {
+        transform: scale(1.08);
+      }
+      .product-img.touch-active .img-hover {
+        opacity: 1;
+      }
       @media (hover: hover) and (pointer: fine) {
         .product-img:hover {
           box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.16);
@@ -5205,6 +5215,19 @@
           'touchstart',
           function (e) {
             aboutImageBlocks.forEach((b) => b.classList.remove('touch-active'));
+            this.classList.add('touch-active');
+          },
+          { passive: true },
+        );
+      });
+
+      /* --- PRODUCT IMAGE TOUCH HOVER --- */
+      const productImageBlocks = document.querySelectorAll('.product-img');
+      productImageBlocks.forEach((block) => {
+        block.addEventListener(
+          'touchstart',
+          function () {
+            productImageBlocks.forEach((b) => b.classList.remove('touch-active'));
             this.classList.add('touch-active');
           },
           { passive: true },
