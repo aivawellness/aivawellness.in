@@ -2,29 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+    <!-- Homepage -->
     <url>
         <loc>https://aivawellness.in/</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <image:image>
-            <image:loc>https://aivawellness.in/assets/logo.png</image:loc>
-            <image:title>Aiva Wellness Logo</image:title>
-        </image:image>
     </url>
 
+    <!-- Main Pages -->
     <url>
         <loc>https://aivawellness.in/about.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://aivawellness.in/shop.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
         <image:image>
             <image:loc>https://aivawellness.in/products/Nattokinase%20Carton%20%20final%203d.webp</image:loc>
             <image:title>Nattokinase 100 mg</image:title>
@@ -44,16 +39,30 @@
     </url>
 
     <url>
+        <loc>https://aivawellness.in/blog.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
         <loc>https://aivawellness.in/contact.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/enquire.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
 
+    <!-- ========================= -->
+    <!-- PRODUCT PAGES - 5 ACTIVE -->
+    <!-- ========================= -->
+
     <url>
         <loc>https://aivawellness.in/product-details-pages/nattokinase100.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -64,7 +73,6 @@
 
     <url>
         <loc>https://aivawellness.in/product-details-pages/nattokinase200.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -74,26 +82,7 @@
     </url>
 
     <url>
-        <loc>https://aivawellness.in/blogs/nattokinase.html</loc>
-        <lastmod>2026-07-31</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-        <image:image>
-            <image:loc>https://aivawellness.in/products/Nattokinase%20Carton%20%20final%203d.webp</image:loc>
-            <image:title>Nattokinase — Natural Enzyme for Cardiovascular Wellness</image:title>
-        </image:image>
-    </url>
-
-        <url>
-        <loc>https://aivawellness.in/blog.html</loc>
-        <lastmod>2026-07-31</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
         <loc>https://aivawellness.in/product-details-pages/magnesium-complex-5-in-1.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -104,27 +93,88 @@
 
     <url>
         <loc>https://aivawellness.in/product-details-pages/dailyvitals.html</loc>
-        <lastmod>2026-07-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://aivawellness.in/products/reefit%20forte%20c%20new%20size.webp</image:loc>
+            <image:title>Daily Vitals</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/product-details-pages/dailyvitalsmen.html</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
+
+    <!-- ========================= -->
+    <!-- BLOG PAGES - 4 ARTICLES -->
+    <!-- ========================= -->
+
+    <url>
+        <loc>https://aivawellness.in/blogs/nattokinase.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://aivawellness.in/blogs/images/nattoblogcover.png</image:loc>
+            <image:title>Nattokinase — Natural Enzyme for Cardiovascular Wellness</image:title>
+        </image:image>
+    </url>
+
     <url>
         <loc>https://aivawellness.in/blogs/magnesium-deficiency.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
         <image:image>
-            <image:loc>https://aivawellness.in/products/Magnesium%20Complex.webp</image:loc>
+            <image:loc>https://aivawellness.in/blogs/images/magnesiumblogcover.png</image:loc>
             <image:title>5 Signs You May Be Magnesium Deficient</image:title>
         </image:image>
     </url>
 
     <url>
         <loc>https://aivawellness.in/blogs/omega-3-fish-oil.html</loc>
-        <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://aivawellness.in/blogs/images/omega-3.png</image:loc>
+            <image:title>Omega-3 Fish Oil</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/blogs/daily-vitals.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+
+    <!-- ========================= -->
+    <!-- POLICY & LEGAL PAGES -->
+    <!-- ========================= -->
+
+    <url>
+        <loc>https://aivawellness.in/policies/privacy-policy.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/policies/return-policy.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/policies/shipping-policy.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://aivawellness.in/policies/terms-of-service.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 
 </urlset>
