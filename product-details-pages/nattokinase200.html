@@ -4133,6 +4133,9 @@
               alt="Product image"
               draggable="false"
             />
+            <video id="imageModalVideo" controls playsinline preload="metadata" style="display:none;width:100%;height:auto;max-height:100%;object-fit:contain;background:#000;">
+              <source src="../videos/nattokinase-200mg video.mp4" type="video/mp4" />
+            </video>
             <span class="image-modal-video-badge" id="imageModalVideoBadge"
               >Video</span
             >
@@ -4447,6 +4450,7 @@
 
       const imageModal = document.getElementById("imageModal");
       const imageModalImg = document.getElementById("imageModalImg");
+      const imageModalVideo = document.getElementById("imageModalVideo");
       const imageModalBody = document.getElementById("imageModalBody");
       const imageModalVideoBadge = document.getElementById(
         "imageModalVideoBadge",
@@ -4473,7 +4477,8 @@
           if (item.type === "video") {
             const v = document.createElement("div");
             v.className = "strip-video";
-            v.innerHTML = '<i class="fa-solid fa-play"></i>';
+            v.innerHTML =
+              '<img src="../videos/natto200.png" alt="Nattokinase 200 mg video thumbnail" /><i class="fa-solid fa-play"></i>';
             v.addEventListener("click", (e) => {
               e.stopPropagation();
               showModalItem(i);
@@ -4520,6 +4525,10 @@
         imageModalTx = 0;
         imageModalTy = 0;
         imageModalImg.style.transform = "translate3d(0,0,0) scale(1)";
+        imageModalImg.style.display = "";
+        imageModalVideo.pause();
+        imageModalVideo.currentTime = 0;
+        imageModalVideo.style.display = "none";
         imageModalVideoBadge.classList.remove("show");
         if (zoomPctEl) zoomPctEl.textContent = "100%";
       }
@@ -4530,9 +4539,13 @@
         resetImagePosition();
 
         if (item.type === "video") {
-          imageModalImg.src = "../products/Nattokinase Carton.webp";
-          imageModalVideoBadge.classList.add("show");
+          imageModalImg.style.display = "none";
+          imageModalVideo.style.display = "block";
+          imageModalVideo.load();
+          imageModalVideo.play().catch(() => {});
         } else {
+          imageModalImg.style.display = "";
+          imageModalVideo.style.display = "none";
           imageModalImg.src = item.src;
           imageModalVideoBadge.classList.remove("show");
           const thumb = Array.from(
