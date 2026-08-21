@@ -1966,9 +1966,22 @@
         padding: 12px 18px;
         color: var(--ink);
       }
+      .nutrition-subnote {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        line-height: 1.4;
+      }
       .nutrition-table tbody td:last-child {
         text-align: right;
         font-weight: 700;
+      }
+      .nutrition-table tbody td.nutrition-section-label {
+        background: var(--black);
+        color: #fff;
+        text-align: left;
+        font-weight: 600;
       }
       .nutrition-note {
         font-size: 0.76rem;
@@ -3550,22 +3563,10 @@
 
           <div class="tab-panel" id="tab-nutrition">
             <div class="nutrition-wrap">
-              <p
-                style="
-                  font-size: 0.84rem;
-                  color: var(--muted);
-                  margin-bottom: 18px;
-                "
-              >
-                <strong>Serving Size:</strong> 1 Capsule &nbsp;|&nbsp;
-                <strong>Servings Per Container:</strong> 60 Capsules
-              </p>
               <p class="nutrition-note" style="margin-top: 0; margin-bottom: 14px;">
-                Each capsule contains (approx.)
+                Contents: Each serving contains:
               </p>
-              <p class="ingredients-text" style="margin-bottom: 10px;">
-                <strong>Vitamins</strong>
-              </p>
+
               <table class="nutrition-table">
                 <thead>
                   <tr>
@@ -3575,158 +3576,58 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <tr><td>Taurine</td><td style="text-align: center">500 mg</td><td>#</td></tr>
                   <tr>
-                    <td>Vitamin A</td>
-                    <td style="text-align: center">600 mcg</td>
-                    <td>66.67</td>
+                    <td>
+                      Ginseng Extract Powder
+                      <span class="nutrition-subnote"
+                        >(Highly Concentrated &amp; Standardized, Ginseng Extract
+                        Corresponding 425 mg of Root of Panax ginseng)</span
+                      >
+                    </td>
+                    <td style="text-align: center">42.5 mg</td>
+                    <td>#</td>
                   </tr>
+                  <tr><td>Chromium Picolinate</td><td style="text-align: center">265 mg</td><td>#</td></tr>
+
+                  <tr><td>Vitamin C</td><td style="text-align: center">40 mg</td><td>50</td></tr>
+                  <tr><td>Vitamin B3</td><td style="text-align: center">12 mg</td><td>85.71</td></tr>
+                  <tr><td>Vitamin E</td><td style="text-align: center">8 mg</td><td>80</td></tr>
+                  <tr><td>Vitamin B6</td><td style="text-align: center">1.5 mg</td><td>78.95</td></tr>
+                  <tr><td>Vitamin B2</td><td style="text-align: center">1.1 mg</td><td>55</td></tr>
+                  <tr><td>Vitamin B1</td><td style="text-align: center">1 mg</td><td>71.63</td></tr>
+                  <tr><td>Vitamin A</td><td style="text-align: center">600 mcg</td><td>60</td></tr>
+                  <tr><td>Calcium D-Pantothenate</td><td style="text-align: center">400 mcg</td><td>3.68</td></tr>
+
+                  <tr><td>Folic Acid</td><td style="text-align: center">100 mcg</td><td>56.67</td></tr>
+                  <tr><td>Biotin</td><td style="text-align: center">30 mcg</td><td>75</td></tr>
+                  <tr><td>Vitamin D</td><td style="text-align: center">5 mcg</td><td>33.34</td></tr>
+                  <tr><td>Vitamin B12</td><td style="text-align: center">1 mcg</td><td>45.46</td></tr>
+                  <tr><td>Iron</td><td style="text-align: center">7.5 mg</td><td>39.47</td></tr>
+                  <tr><td>Magnesium</td><td style="text-align: center">7.43 mg</td><td>1.69</td></tr>
+                  <tr><td>Zinc</td><td style="text-align: center">5 mg</td><td>29.41</td></tr>
+                  <tr><td>Manganese</td><td style="text-align: center">1.4 mg</td><td>35</td></tr>
+                  <tr><td>Copper</td><td style="text-align: center">0.5 mg</td><td>29.41</td></tr>
+                  <tr><td>Iodine</td><td style="text-align: center">100 mcg</td><td>71.43</td></tr>
+                  <tr><td>Selenium</td><td style="text-align: center">10 mcg</td><td>25</td></tr>
+
                   <tr>
-                    <td>Vitamin C</td>
-                    <td style="text-align: center">40 mg</td>
-                    <td>44.44</td>
+                    <td colspan="3" class="nutrition-section-label">
+                      Soya Protein Hydrolysate 186.5 mg contains approximate Amino Acids:
+                    </td>
                   </tr>
-                  <tr>
-                    <td>Vitamin E</td>
-                    <td style="text-align: center">10 mg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Biotin</td>
-                    <td style="text-align: center">30 mcg</td>
-                    <td>75</td>
-                  </tr>
-                  <tr>
-                    <td>Vitamin D3</td>
-                    <td style="text-align: center">400 I.U</td>
-                    <td>66.67</td>
-                  </tr>
-                  <tr>
-                    <td>Vitamin B1</td>
-                    <td style="text-align: center">1.4 mg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Riboflavin</td>
-                    <td style="text-align: center">1.6 mg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Vitamin B6</td>
-                    <td style="text-align: center">1.9 mg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Cyanocobalamin</td>
-                    <td style="text-align: center">2 mcg</td>
-                    <td>83.3</td>
-                  </tr>
-                  <tr>
-                    <td>Niacinamide</td>
-                    <td style="text-align: center">16 mg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Folic Acid</td>
-                    <td style="text-align: center">150 mcg</td>
-                    <td>75</td>
-                  </tr>
-                  <tr>
-                    <td>Ca. Pantothenate</td>
-                    <td style="text-align: center">5 mg</td>
-                    <td>83.3</td>
-                  </tr>
+                  <tr><td>L-Leucine</td><td style="text-align: center">13.45 mg</td><td>0.53</td></tr>
+                  <tr><td>L-Arginine Hydrochloride</td><td style="text-align: center">13.28 mg</td><td>#</td></tr>
+                  <tr><td>L-Lysine Hydrochloride</td><td style="text-align: center">11.07 mg</td><td>#</td></tr>
+                  <tr><td>L-Phenylalanine</td><td style="text-align: center">9.04 mg</td><td>#</td></tr>
+                  <tr><td>L-Isoleucine</td><td style="text-align: center">8.25 mg</td><td>0.63</td></tr>
+                  <tr><td>L-Valine</td><td style="text-align: center">7.91 mg</td><td>0.47</td></tr>
+                  <tr><td>L-Threonine</td><td style="text-align: center">6.38 mg</td><td>0.65</td></tr>
+                  <tr><td>L-Histidine Hydrochloride</td><td style="text-align: center">4.35 mg</td><td>#</td></tr>
+                  <tr><td>L-Methionine</td><td style="text-align: center">2.2 mg</td><td>0.34</td></tr>
+                  <tr><td>L-Tryptophan</td><td style="text-align: center">2.03 mg</td><td>0.78</td></tr>
                 </tbody>
               </table>
-              <p class="ingredients-text" style="margin: 18px 0 10px;">
-                <strong>Minerals</strong>
-              </p>
-              <table class="nutrition-table">
-                <thead>
-                  <tr>
-                    <th>Nutrient</th>
-                    <th style="text-align: center">Quantity</th>
-                    <th>% RDA</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Zinc</td>
-                    <td style="text-align: center">15 mg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Manganese</td>
-                    <td style="text-align: center">2 mg</td>
-                    <td>50</td>
-                  </tr>
-                  <tr>
-                    <td>Copper</td>
-                    <td style="text-align: center">1.7 mg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Selenium</td>
-                    <td style="text-align: center">55 mcg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Chromium</td>
-                    <td style="text-align: center">50 mcg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Magnesium</td>
-                    <td style="text-align: center">25 mg</td>
-                    <td>6</td>
-                  </tr>
-                  <tr>
-                    <td>Iodine</td>
-                    <td style="text-align: center">150 mcg</td>
-                    <td>100</td>
-                  </tr>
-                  <tr>
-                    <td>Molybdenum</td>
-                    <td style="text-align: center">25 mcg</td>
-                    <td>56</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p class="ingredients-text" style="margin: 18px 0 10px;">
-                <strong>Amino Acids</strong>
-              </p>
-              <table class="nutrition-table">
-                <thead>
-                  <tr>
-                    <th>Nutrient</th>
-                    <th style="text-align: center">Quantity</th>
-                    <th>% RDA</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>L-Arginine</td>
-                    <td style="text-align: center">25 mg</td>
-                    <td>**</td>
-                  </tr>
-                  <tr>
-                    <td>L-Lysine</td>
-                    <td style="text-align: center">20 mg</td>
-                    <td>**</td>
-                  </tr>
-                  <tr>
-                    <td>L-Glutamine</td>
-                    <td style="text-align: center">15 mg</td>
-                    <td>**</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p class="nutrition-note">
-                *%RDA: Recommended Dietary Allowance values calculated as per
-                Indian Council of Medical Research (ICMR) guidelines 2020
-                based on sedentary men. Based on FSS (Labeling &amp;
-                Display). ** RDA not established. Nutritional Information
-                based on calculation basis.
-              </p>
             </div>
           </div>
 
