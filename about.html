@@ -2869,10 +2869,10 @@
             </div>
             <div class="hero-stat-card reveal d3">
               <div class="hero-stat-icon">
-                <i class="fa-solid fa-users" style="color: #fbbf24"></i>
+                <i class="fa-solid fa-truck-fast" style="color: #fbbf24"></i>
               </div>
               <div class="hero-stat-num">10K+</div>
-              <div class="hero-stat-label">Customers</div>
+              <div class="hero-stat-label">Orders Delivered</div>
             </div>
             <div class="hero-stat-card reveal d4">
               <div class="hero-stat-icon">
@@ -3126,7 +3126,7 @@
                 </div>
                 <div class="timeline-card">
                   <div class="timeline-year">2026</div>
-                  <div class="timeline-title">10,000+ Customers Served</div>
+                  <div class="timeline-title">10,000+ Orders Delivered</div>
                   <div class="timeline-desc">
                     Crossed our first major milestone and introduced Protein,
                     Pre-Workout and Gainer lines for active lifestyles.
@@ -3161,114 +3161,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TESTIMONIALS -->
-      <section id="testimonials">
-        <div class="testimonials-section">
-          <div class="section-header">
-            <span class="section-eyebrow"
-              ><i class="fa-solid fa-quote-left"></i> Real Customer
-              Stories</span
-            >
-            <h2 class="section-title">
-              Trusted by <span>10,000+ Customers</span>
-            </h2>
-            <p class="section-sub">
-              Don&rsquo;t just take our word for it &mdash; hear from people
-              whose lives have changed with Aiva Wellness.
-            </p>
-          </div>
-          <div class="ts-rating-bar reveal">
-            <div>
-              <div class="ts-big-score">4.8</div>
-              <div class="ts-stars-big" id="tsAvgStars"></div>
-              <div class="ts-score-sub">Overall Rating</div>
-            </div>
-            <div class="ts-v-div"></div>
-            <div class="ts-dist">
-              <div class="ts-dist-row">
-                <span>5&#9733;</span>
-                <div class="ts-dist-bar">
-                  <div class="ts-dist-fill" data-w="82"></div>
-                </div>
-                <span>82%</span>
-              </div>
-              <div class="ts-dist-row">
-                <span>4&#9733;</span>
-                <div class="ts-dist-bar">
-                  <div class="ts-dist-fill" data-w="12"></div>
-                </div>
-                <span>12%</span>
-              </div>
-              <div class="ts-dist-row">
-                <span>3&#9733;</span>
-                <div class="ts-dist-bar">
-                  <div class="ts-dist-fill ts-fill-muted" data-w="4"></div>
-                </div>
-                <span>4%</span>
-              </div>
-              <div class="ts-dist-row">
-                <span>2&#9733;</span>
-                <div class="ts-dist-bar">
-                  <div class="ts-dist-fill ts-fill-muted" data-w="2"></div>
-                </div>
-                <span>2%</span>
-              </div>
-            </div>
-            <div class="ts-v-div"></div>
-            <div>
-              <div class="ts-total-num">928</div>
-              <div class="ts-total-label">Verified Reviews</div>
-            </div>
-          </div>
-          <div class="ts-filter-row reveal">
-            <button
-              class="ts-filter-btn active"
-              onclick="setTFilter('all', this)"
-            >
-              All
-            </button>
-            <button
-              class="ts-filter-btn"
-              onclick="setTFilter('Magnesium', this)"
-            >
-              Magnesium
-            </button>
-            <button
-              class="ts-filter-btn"
-              onclick="setTFilter('Nattokinase', this)"
-            >
-              Nattokinase
-            </button>
-            <button class="ts-filter-btn" onclick="setTFilter('Protein', this)">
-              Protein
-            </button>
-            <button
-              class="ts-filter-btn"
-              onclick="setTFilter('Vitamins', this)"
-            >
-              Vitamins
-            </button>
-            <button
-              class="ts-filter-btn"
-              onclick="setTFilter('Immunity', this)"
-            >
-              Immunity
-            </button>
-          </div>
-          <div class="ts-cards-grid" id="tsGrid"></div>
-          <div class="ts-nav-row">
-            <button class="ts-nav-btn" onclick="tNav(-1)">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <div class="ts-dots-wrap" id="tsDots"></div>
-            <span class="ts-page-info" id="tsPageInfo">1 / 3</span>
-            <button class="ts-nav-btn" onclick="tNav(1)">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
           </div>
         </div>
       </section>
@@ -3775,12 +3667,6 @@
         tPage = i;
         renderT();
       }
-      renderT();
-
-      /* avg stars */
-      document.getElementById("tsAvgStars").innerHTML =
-        "&#9733;&#9733;&#9733;&#9733;&#9733;";
-
       /* rating bar animation */
       new IntersectionObserver(
         (entries) => {
