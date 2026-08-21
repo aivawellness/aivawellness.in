@@ -413,6 +413,8 @@
         gap: 10px;
         text-decoration: none;
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
       }
       .brand-mark {
         width: 54px;
@@ -943,7 +945,7 @@
       }
       .image-modal-strip {
         position: absolute;
-        bottom: 16px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
@@ -988,6 +990,20 @@
         border: 2px solid transparent;
         transition: all 0.2s var(--ease);
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .strip-video img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .strip-video i {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
       }
       .strip-video:hover,
       .strip-video.active {
@@ -2855,7 +2871,7 @@
       }
       .image-modal-hint {
         position: absolute;
-        bottom: 18px;
+        bottom: 2px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 15;
@@ -2891,6 +2907,9 @@
           min-width: auto;
           padding: 10px 0 60px;
           border-radius: 22px;
+        }
+        .image-modal-hint {
+          bottom: 18px;
         }
         .image-modal-toolbar {
           left: 12px;
