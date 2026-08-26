@@ -531,7 +531,6 @@
         overflow: hidden;
         background: var(--black);
         width: 100%;
-        /* subtle bottom curve */
       }
       .hero-slider::after {
         content: "";
@@ -556,7 +555,6 @@
         position: relative;
         overflow: hidden;
       }
-      /* Ken Burns image layer */
       .slide-img-wrap {
         position: relative;
         overflow: hidden;
@@ -584,8 +582,6 @@
           aspect-ratio: 1/1.35;
         }
       }
-
-      /* overlay gradient */
       .slide-img-wrap::after {
         content: "";
         position: absolute;
@@ -691,8 +687,6 @@
           display: none;
         }
       }
-
-      /* Progress bar */
       .slider-progress {
         position: absolute;
         bottom: 0;
@@ -713,8 +707,6 @@
         transition: width 5.5s linear;
         width: 100%;
       }
-
-      /* Dots */
       .slider-dots {
         position: absolute;
         bottom: 28px;
@@ -743,8 +735,6 @@
         background: #fff;
         width: 24px;
       }
-
-      /* Arrows */
       .slider-btn {
         position: absolute;
         top: 50%;
@@ -779,8 +769,6 @@
           display: none;
         }
       }
-
-      /* slide counter */
       .slide-counter {
         position: absolute;
         top: 24px;
@@ -888,21 +876,6 @@
         margin-bottom: 56px;
         padding: 0 16px;
       }
-      .section-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.68rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--blue);
-        font-weight: 700;
-        margin-bottom: 14px;
-        padding: 5px 14px;
-        background: var(--blue-soft);
-        border-radius: 999px;
-        border: 1px solid var(--blue-border);
-      }
       .section-header h2 {
         font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(24px, 4.5vw, 52px);
@@ -910,7 +883,6 @@
         color: var(--black);
         margin-bottom: 14px;
       }
-      /* subtle accent underline for premium feel */
       .section-header h2::after {
         content: "";
         display: block;
@@ -1033,7 +1005,6 @@
       .about-cta {
         margin-top: 20px;
       }
-      /* Image card */
       .about-images {
         display: flex;
         justify-content: center;
@@ -1095,7 +1066,6 @@
         border-radius: 0;
         pointer-events: none;
       }
-      /* subtle badge on about image */
       @media (max-width: 600px) {
         .about-images {
           display: none;
@@ -1218,7 +1188,6 @@
           gap: 16px;
         }
       }
-
       .product-card {
         background: var(--white);
         border: 1px solid rgba(59, 130, 246, 0.16);
@@ -1288,7 +1257,6 @@
       .product-card:hover .product-img .img-hover {
         opacity: 1;
       }
-
       .p-badge {
         position: absolute;
         top: 14px;
@@ -1316,7 +1284,6 @@
         color: #fff;
         box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
       }
-
       .p-actions {
         position: absolute;
         top: 14px;
@@ -1355,7 +1322,6 @@
         color: #fff;
         transform: scale(1.1);
       }
-
       .share-popover {
         position: absolute;
         top: 50px;
@@ -1396,7 +1362,6 @@
         width: 18px;
         text-align: center;
       }
-
       .product-info {
         padding: 20px 20px 22px;
         display: flex;
@@ -1520,7 +1485,6 @@
         position: relative;
         z-index: 1;
       }
-
       .buy-actions {
         display: flex;
         align-items: center;
@@ -1530,7 +1494,6 @@
         margin-top: auto;
         flex-wrap: wrap;
       }
-
       .view-all-wrap {
         text-align: center;
         margin-top: 56px;
@@ -2115,7 +2078,6 @@
         margin: 0 auto;
         line-height: 1.8;
       }
-      /* Rating bar */
       .ts-rating-summary {
         display: flex;
         align-items: center;
@@ -2194,7 +2156,6 @@
         color: var(--muted);
         margin-top: 2px;
       }
-      /* Filter */
       .ts-filter-row {
         display: flex;
         gap: 8px;
@@ -2219,7 +2180,6 @@
         border-color: transparent;
         box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
       }
-      /* Cards */
       .ts-cards-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -2335,7 +2295,6 @@
         color: var(--green);
         font-weight: 700;
       }
-      /* Nav */
       .ts-nav-row {
         display: flex;
         align-items: center;
@@ -2494,108 +2453,6 @@
         line-height: 1.85;
         padding-top: 4px;
         border-top: 1px solid var(--border);
-      }
-
-      /* ═══════════════════════════════════════════════════
-   BLOGS
-═══════════════════════════════════════════════════ */
-      .blogs-section {
-        padding: 80px 20px;
-        background: var(--bg);
-      }
-      .blogs-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .blogs-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-      }
-      .blog-card {
-        background: #fff;
-        overflow: hidden;
-        border: 1px solid rgba(29, 78, 216, 0.22);
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-        border-radius: 0;
-        transition: all 0.4s var(--ease);
-      }
-      .blog-card:hover {
-        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
-        transform: translateY(-6px);
-        border-color: rgba(29, 78, 216, 0.35);
-      }
-      .blog-img {
-        overflow: hidden;
-        position: relative;
-        aspect-ratio: 16/9;
-      }
-      .blog-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-        display: block;
-        transition: transform 0.7s var(--ease);
-      }
-      .blog-card:hover .blog-img img {
-        transform: scale(1.06);
-      }
-      .blog-info {
-        padding: 22px;
-      }
-      .blog-tag {
-        font-size: 0.65rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--blue);
-        font-weight: 700;
-        margin-bottom: 10px;
-        padding: 3px 10px;
-        background: var(--blue-soft);
-        border-radius: 999px;
-        display: inline-block;
-        border: 1px solid var(--blue-border);
-      }
-      .blog-info h3 {
-        font-size: 0.95rem;
-        font-weight: 700;
-        margin-bottom: 14px;
-        line-height: 1.5;
-        color: var(--black);
-      }
-      .blog-info h3 a {
-        color: inherit;
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      .blog-info h3 a:hover {
-        color: var(--blue);
-      }
-      .blog-read {
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--blue);
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        transition: gap 0.25s var(--ease);
-      }
-      .blog-read:hover {
-        gap: 13px;
-      }
-      @media (max-width: 900px) {
-        .blogs-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 600px) {
-        .blogs-grid {
-          grid-template-columns: 1fr;
-        }
       }
 
       /* ═══════════════════════════════════════════════════
@@ -2788,6 +2645,108 @@
         }
         .newsletter-form button {
           width: 100%;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════════
+   BLOGS
+═══════════════════════════════════════════════════ */
+      .blogs-section {
+        padding: 80px 20px;
+        background: var(--bg);
+      }
+      .blogs-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .blogs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .blog-card {
+        background: #fff;
+        overflow: hidden;
+        border: 1px solid rgba(29, 78, 216, 0.22);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        border-radius: 0;
+        transition: all 0.4s var(--ease);
+      }
+      .blog-card:hover {
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
+        transform: translateY(-6px);
+        border-color: rgba(29, 78, 216, 0.35);
+      }
+      .blog-img {
+        overflow: hidden;
+        position: relative;
+        aspect-ratio: 16/9;
+      }
+      .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+        transition: transform 0.7s var(--ease);
+      }
+      .blog-card:hover .blog-img img {
+        transform: scale(1.06);
+      }
+      .blog-info {
+        padding: 22px;
+      }
+      .blog-tag {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--blue);
+        font-weight: 700;
+        margin-bottom: 10px;
+        padding: 3px 10px;
+        background: var(--blue-soft);
+        border-radius: 999px;
+        display: inline-block;
+        border: 1px solid var(--blue-border);
+      }
+      .blog-info h3 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+        line-height: 1.5;
+        color: var(--black);
+      }
+      .blog-info h3 a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .blog-info h3 a:hover {
+        color: var(--blue);
+      }
+      .blog-read {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue);
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        transition: gap 0.25s var(--ease);
+      }
+      .blog-read:hover {
+        gap: 13px;
+      }
+      @media (max-width: 900px) {
+        .blogs-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .blogs-grid {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -3069,9 +3028,7 @@
       .d5 {
         transition-delay: 0.5s !important;
       }
-    </style>
 
-    <style>
       /* ═══════════════════════════════════════════════════
    BLOG PAGE BANNER
 ═══════════════════════════════════════════════════ */
@@ -3143,6 +3100,22 @@
          home-page teaser section */
       .blogs-section.blog-page-section {
         padding: 90px 20px 110px;
+      }
+
+      .section-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.68rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--blue);
+        font-weight: 700;
+        margin-bottom: 14px;
+        padding: 5px 14px;
+        background: var(--blue-soft);
+        border-radius: 999px;
+        border: 1px solid var(--blue-border);
       }
     </style>
     <script type="application/ld+json">
@@ -3359,6 +3332,258 @@
               ></a>
             </div>
           </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/nattokinase-100-vs-200-cover.png"
+              alt="Aiva Wellness Nattokinase 100mg and 200mg capsule packs side by side"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Heart Health</div>
+            <h3>
+              <a href="blogs/nattokinase-100mg-vs-200mg.html"
+                >Nattokinase 100mg vs 200mg: Which One Is Right for You?</a
+              >
+            </h3>
+            <a href="blogs/nattokinase-100mg-vs-200mg.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/nattokinase-explained-cover.png"
+              alt="Natto fermented soybeans, the traditional source of nattokinase"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Heart Health</div>
+            <h3>
+              <a href="blogs/nattokinase-explained.html"
+                >What Is Nattokinase? Understanding Its Role in Cardiovascular Wellness</a
+              >
+            </h3>
+            <a href="blogs/nattokinase-explained.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/nattokinase-4000fu-cover.png"
+              alt="Aiva Wellness Nattokinase Plus 200mg capsule and supplement facts panel"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Heart Health</div>
+            <h3>
+              <a href="blogs/nattokinase-plus-200mg-4000fu.html"
+                >Nattokinase Plus 200mg: Understanding 4,000 FU and What It Means</a
+              >
+            </h3>
+            <a href="blogs/nattokinase-plus-200mg-4000fu.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/magnesium-5-types-cover.png"
+              alt="Five forms of magnesium used in a 5-in-1 magnesium complex supplement"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Magnesium</div>
+            <h3>
+              <a href="blogs/magnesium-5-types-explained.html"
+                >5 Types of Magnesium Explained: Understanding a 5-in-1 Magnesium Complex</a
+              >
+            </h3>
+            <a href="blogs/magnesium-5-types-explained.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/magnesium-sleep-cover.png"
+              alt="A calm bedside setting representing magnesium and relaxation"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Magnesium</div>
+            <h3>
+              <a href="blogs/magnesium-sleep-relaxation-wellness.html"
+                >Magnesium for Sleep, Relaxation &amp; Everyday Wellness</a
+              >
+            </h3>
+            <a href="blogs/magnesium-sleep-relaxation-wellness.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/daily-vitals-adults-cover.png"
+              alt="A balanced plate of food representing everyday vitamin and mineral intake for adults"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">General Wellness</div>
+            <h3>
+              <a href="blogs/essential-vitamins-adults-18-plus.html"
+                >Essential Vitamins &amp; Minerals for Adults 18+: Building a Daily Wellness Routine</a
+              >
+            </h3>
+            <a href="blogs/essential-vitamins-adults-18-plus.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/daily-vitals-men-cover.png"
+              alt="An active man in his 40s representing healthy ageing and everyday wellness"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Men's Health</div>
+            <h3>
+              <a href="blogs/essential-nutrients-men-over-40.html"
+                >Essential Nutrients for Men Over 40: Supporting Energy &amp; Everyday Wellness</a
+              >
+            </h3>
+            <a href="blogs/essential-nutrients-men-over-40.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/daily-vitals-women-cover.png"
+              alt="A woman in her 40s enjoying an active, healthy lifestyle"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Women's Health</div>
+            <h3>
+              <a href="blogs/essential-nutrients-women-over-40.html"
+                >Essential Nutrients for Women Over 40: Supporting Everyday Wellness</a
+              >
+            </h3>
+            <a href="blogs/essential-nutrients-women-over-40.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/epa-vs-dha-cover.png"
+              alt="Fish oil capsules representing EPA and DHA omega-3 fatty acids"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Omega-3</div>
+            <h3>
+              <a href="blogs/epa-vs-dha-omega-3.html"
+                >EPA vs DHA: Understanding the Two Key Omega-3 Fatty Acids</a
+              >
+            </h3>
+            <a href="blogs/epa-vs-dha-omega-3.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/omega-3-buying-guide-cover.png"
+              alt="A bottle of fish oil capsules next to a supplement facts label"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Omega-3</div>
+            <h3>
+              <a href="blogs/omega-3-fish-oil-buying-guide.html"
+                >Omega-3 Fish Oil: What to Look for When Choosing a Supplement</a
+              >
+            </h3>
+            <a href="blogs/omega-3-fish-oil-buying-guide.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/vitamin-d3-explained-cover.png"
+              alt="Sunlight streaming through a window, representing a natural source of vitamin D"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Vitamin D</div>
+            <h3>
+              <a href="blogs/vitamin-d3-explained.html"
+                >Vitamin D3 Explained: Why This Essential Vitamin Matters</a
+              >
+            </h3>
+            <a href="blogs/vitamin-d3-explained.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="blogs/images/vitamin-d3-bone-health-cover.png"
+              alt="An older adult walking outdoors, representing bone health and healthy ageing"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">Vitamin D</div>
+            <h3>
+              <a href="blogs/vitamin-d3-bone-health.html"
+                >Vitamin D3 and Bone Health: What You Should Know</a
+              >
+            </h3>
+            <a href="blogs/vitamin-d3-bone-health.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
         </div>
       </div>
     </section>
