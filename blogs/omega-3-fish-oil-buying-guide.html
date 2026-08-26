@@ -639,12 +639,19 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: radial-gradient(
-          circle at center,
-          rgba(255, 255, 255, 0.08),
-          rgba(15, 23, 42, 0.94)
-        );
-        min-height: 520px;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(193, 220, 239, 0.36),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(61, 112, 157, 0.4),
+            transparent 44%
+          ),
+          linear-gradient(135deg, #243852, #486d98 52%, #1d2436);
+        min-height: 390px;
         overflow: hidden;
         width: 100%;
         max-width: 1200px;
@@ -692,12 +699,12 @@
       }
       @media (max-width: 1024px) {
         .article-hero {
-          min-height: 460px;
+          min-height: 350px;
         }
       }
       @media (max-width: 900px) {
         .article-hero {
-          min-height: 360px;
+          min-height: 320px;
           max-width: 100%;
         }
         .article-hero img {
@@ -1986,15 +1993,6 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <picture>
-        <source media="(max-width: 700px)" srcset="images/OMEGA3FISHOIL.png" />
-        <img
-          src="images/OMEGA3FISHOIL.png"
-          alt="A bottle of fish oil capsules next to a supplement facts label"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
           <a href="/">Home</a> <span>/</span> <a href="../blog.html">Blog</a>

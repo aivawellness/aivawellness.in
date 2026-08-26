@@ -639,12 +639,19 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: radial-gradient(
-          circle at center,
-          rgba(255, 255, 255, 0.08),
-          rgba(15, 23, 42, 0.94)
-        );
-        min-height: 520px;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(172, 222, 181, 0.34),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(58, 139, 119, 0.36),
+            transparent 44%
+          ),
+          linear-gradient(135deg, #203d3c, #3c7464 52%, #172b32);
+        min-height: 390px;
         overflow: hidden;
         width: 100%;
         max-width: 1200px;
@@ -692,12 +699,12 @@
       }
       @media (max-width: 1024px) {
         .article-hero {
-          min-height: 460px;
+          min-height: 350px;
         }
       }
       @media (max-width: 900px) {
         .article-hero {
-          min-height: 360px;
+          min-height: 320px;
           max-width: 100%;
         }
         .article-hero img {
@@ -1986,18 +1993,6 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <picture>
-        <source
-          media="(max-width: 700px)"
-          srcset="images/5typesmagnesiumexplained.png"
-        />
-        <img
-          src="images/5typesmagnesiumexplained.png"
-          alt="Five forms of magnesium used in a 5-in-1 magnesium complex supplement"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
           <a href="/">Home</a> <span>/</span> <a href="../blog.html">Blog</a>

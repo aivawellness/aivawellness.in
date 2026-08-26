@@ -635,8 +635,19 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: var(--black);
-        min-height: 520px;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(155, 219, 224, 0.34),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(43, 133, 145, 0.38),
+            transparent 44%
+          ),
+          linear-gradient(135deg, #173d49, #337b80 52%, #172933);
+        min-height: 390px;
         overflow: hidden;
         width: 100%;
         max-width: 1200px;
@@ -654,12 +665,12 @@
       }
       @media (max-width: 1024px) {
         .article-hero {
-          min-height: 460px;
+          min-height: 350px;
         }
       }
       @media (max-width: 900px) {
         .article-hero {
-          min-height: 360px;
+          min-height: 320px;
           max-width: 100%;
         }
         .article-hero img {
@@ -1949,18 +1960,6 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <picture>
-        <source
-          media="(max-width: 700px)"
-          srcset="images/magnesiumblogcover.png"
-        />
-        <img
-          src="images/magnesiumblogcover.png"
-          alt="Magnesium deficiency signs and symptoms"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
           <a href="/">Home</a> <span>/</span> <a href="../blog.html">Blog</a>

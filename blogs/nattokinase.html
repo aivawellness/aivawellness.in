@@ -650,12 +650,19 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: radial-gradient(
-          circle at center,
-          rgba(255, 255, 255, 0.08),
-          rgba(15, 23, 42, 0.94)
-        );
-        min-height: 520px;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(246, 190, 144, 0.36),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(170, 88, 63, 0.4),
+            transparent 44%
+          ),
+          linear-gradient(135deg, #58342d, #9b6048 52%, #28202a);
+        min-height: 390px;
         overflow: hidden;
         width: 100%;
         max-width: 1200px;
@@ -703,12 +710,12 @@
       }
       @media (max-width: 1024px) {
         .article-hero {
-          min-height: 460px;
+          min-height: 350px;
         }
       }
       @media (max-width: 900px) {
         .article-hero {
-          min-height: 360px;
+          min-height: 320px;
           max-width: 100%;
         }
         .article-hero img {
@@ -1998,18 +2005,6 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <picture>
-        <source
-          media="(max-width: 700px)"
-          srcset="../blogs/images/nattoblogcover.png"
-        />
-        <img
-          src="../blogs/images/nattoblogcover.png"
-          alt="Cardiovascular wellness and heart health"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
           <a href="/">Home</a> <span>/</span> <a href="../blog.html">Blog</a>

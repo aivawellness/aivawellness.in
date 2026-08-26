@@ -641,12 +641,19 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: radial-gradient(
-          circle at center,
-          rgba(255, 255, 255, 0.08),
-          rgba(15, 23, 42, 0.94)
-        );
-        min-height: 520px;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(255, 224, 218, 0.38),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(143, 61, 78, 0.32),
+            transparent 44%
+          ),
+          linear-gradient(135deg, #352633 0%, #68434e 48%, #211d26 100%);
+        min-height: 390px;
         overflow: hidden;
         width: 100%;
         max-width: 1200px;
@@ -670,14 +677,20 @@
         background:
           linear-gradient(
             to bottom,
-            rgba(15, 23, 42, 0.35) 0%,
-            rgba(15, 23, 42, 0.2) 30%,
-            rgba(15, 23, 42, 0.8) 100%
+            rgba(47, 28, 38, 0.22) 0%,
+            rgba(76, 42, 53, 0.1) 30%,
+            rgba(25, 21, 29, 0.88) 100%
           ),
           radial-gradient(
-            circle at center,
-            rgba(255, 255, 255, 0.08),
-            transparent 38%
+            ellipse at 50% 48%,
+            rgba(255, 225, 218, 0.12),
+            transparent 58%
+          ),
+          linear-gradient(
+            110deg,
+            rgba(72, 37, 52, 0.38),
+            transparent 45%,
+            rgba(38, 26, 34, 0.28)
           );
         mix-blend-mode: normal;
         opacity: 0.92;
@@ -690,16 +703,16 @@
         object-fit: contain;
         object-position: center center;
         opacity: 1;
-        filter: none;
+        filter: saturate(0.92) contrast(1.05) sepia(0.08);
       }
       @media (max-width: 1024px) {
         .article-hero {
-          min-height: 460px;
+          min-height: 350px;
         }
       }
       @media (max-width: 900px) {
         .article-hero {
-          min-height: 360px;
+          min-height: 320px;
           max-width: 100%;
         }
         .article-hero img {
@@ -1988,18 +2001,6 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <picture>
-        <source
-          media="(max-width: 700px)"
-          srcset="images/dailyvitalswomen40.png"
-        />
-        <img
-          src="images/dailyvitalswomen40.png"
-          alt="A woman in her 40s enjoying an active, healthy lifestyle"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
           <a href="/">Home</a> <span>/</span> <a href="../blog.html">Blog</a>
