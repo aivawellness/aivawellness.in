@@ -5142,12 +5142,17 @@
         // reset progress bar
         progress.classList.remove("animating");
         void progress.offsetWidth; // reflow
-        setTimeout(() => progress.classList.add("animating"), 30);
+        setTimeout(() => progress.classList.add("animating"), 30);  
       }
 
       function moveSlider(dir) {
         goSlide(currentSlide + dir);
         resetAuto();
+      }
+      function moveSliderByIndex(index) {
+        goSlide(index);
+        resetAuto();
+        void progress.offsetWidth; // reflow
       }
 
       function resetAuto() {
