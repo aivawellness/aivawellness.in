@@ -24,7 +24,7 @@
 
     <meta
       name="description"
-      content="Nattokinase 200 mg by Aiva Wellness delivers 4000 FU of high-potency enzyme to support healthy blood circulation and cardiovascular wellness. ₹1,199."
+      content="Nattokinase 200 mg by Aiva Wellness delivers 4000 FU of high-potency enzyme to support healthy blood circulation and cardiovascular wellness. ₹1,299."
     />
     <meta
       name="keywords"
@@ -42,7 +42,7 @@
     <meta property="og:title" content="Nattokinase 200 mg | Aiva Wellness" />
     <meta
       property="og:description"
-      content="Nattokinase 200 mg by Aiva Wellness delivers 4000 FU of high-potency enzyme to support healthy blood circulation and cardiovascular wellness. ₹1,199."
+      content="Nattokinase 200 mg by Aiva Wellness delivers 4000 FU of high-potency enzyme to support healthy blood circulation and cardiovascular wellness. ₹1,299."
     />
 
     <meta
@@ -58,7 +58,7 @@
     <meta name="twitter:title" content="Nattokinase 200 mg | Aiva Wellness" />
     <meta
       name="twitter:description"
-      content="Nattokinase 200 mg by Aiva Wellness delivers 4000 FU of high-potency enzyme to support healthy blood circulation and cardiovascular wellness. ₹1,199."
+      content="Nattokinase 200 mg by Aiva Wellness delivers 4000 FU of high-potency enzyme to support healthy blood circulation and cardiovascular wellness. ₹1,299."
     />
     <meta
       name="twitter:image"
@@ -199,7 +199,7 @@
           "@type": "Offer",
           "url": "https://aivawellness.in/product-details-pages/nattokinase200.html",
           "priceCurrency": "INR",
-          "price": "1199",
+          "price": "1299",
           "priceValidUntil": "2026-12-31",
           "validFrom": "2026-07-13",
           "availability": "https://schema.org/InStock",
@@ -405,6 +405,8 @@
         gap: 10px;
         text-decoration: none;
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
       }
       .brand-mark {
         width: 54px;
@@ -935,7 +937,7 @@
       }
       .image-modal-strip {
         position: absolute;
-        bottom: 16px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
@@ -980,6 +982,20 @@
         border: 2px solid transparent;
         transition: all 0.2s var(--ease);
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .strip-video img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .strip-video i {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
       }
       .strip-video:hover,
       .strip-video.active {
@@ -1505,24 +1521,60 @@
         background: var(--black);
         border-radius: 24px;
         overflow: hidden;
-        max-width: 840px;
+        max-width: 1000px;
         width: 100%;
         position: relative;
         box-shadow: var(--sh-xl);
-        min-height: 420px;
+        min-height: auto;
       }
       .video-modal-inner .video-placeholder {
-        min-height: 420px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 18px;
-        padding: 36px;
+        gap: 0;
+        padding: 0;
       }
       .video-modal-inner .video-placeholder p {
-        max-width: 640px;
+        max-width: 100%;
         text-align: center;
+      }
+      .video-modal-inner video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: calc(100vh - 40px) !important;
+        aspect-ratio: auto !important;
+        object-fit: contain;
+        display: block;
+      }
+      .video-placeholder {
+        aspect-ratio: unset !important;
+        padding: 0 !important;
+      }
+      @media (max-width: 768px) {
+        .video-modal-overlay {
+          padding: 0 !important;
+        }
+        .video-modal-inner {
+          max-width: 100% !important;
+          width: 100% !important;
+          min-height: auto !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        .video-modal-inner .video-placeholder {
+          width: 100% !important;
+          padding: 0 !important;
+          min-height: auto !important;
+          aspect-ratio: unset !important;
+        }
+        .video-modal-close {
+          top: 12px;
+          right: 12px;
+          width: 40px;
+          height: 40px;
+        }
       }
       .image-modal-overlay {
         position: fixed;
@@ -1547,9 +1599,9 @@
         flex-direction: column;
         width: 100%;
         min-width: 320px;
-        max-width: 95vw;
-        height: 90vh;
-        max-height: 90vh;
+        max-width: min(980px, 92vw);
+        height: 84vh;
+        max-height: 84vh;
         padding: 12px 0 70px;
         border-radius: 24px;
         overflow: hidden;
@@ -1621,8 +1673,8 @@
         position: relative;
       }
       .image-modal-body img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: min(72vw, 760px);
+        max-height: 72vh;
         width: auto;
         height: auto;
         object-fit: contain;
@@ -1808,6 +1860,7 @@
           line-height: 1.55;
         }
       }
+
       .benefit-card {
         background: linear-gradient(180deg, #fff 0%, #f8fbff 100%);
         border: 1px solid rgba(59, 130, 246, 0.16);
@@ -1815,20 +1868,22 @@
         padding: 22px 20px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         text-align: center;
         gap: 10px;
-        min-height: 240px;
         width: 100%;
         box-shadow: 0 4px 24px rgba(8, 13, 20, 0.06);
         transition: all 0.35s var(--ease);
       }
+
       .benefit-card:hover {
         transform: translateY(-6px);
         background: linear-gradient(180deg, #fff 0%, #eff6ff 100%);
         border-color: rgba(59, 130, 246, 0.35);
         box-shadow: 0 20px 48px rgba(29, 78, 216, 0.14);
       }
+
       .benefit-icon {
         width: 62px;
         height: 62px;
@@ -2307,6 +2362,72 @@
         background: var(--blue);
         color: #fff;
       }
+      .similar-grid .card-img-wrap {
+        position: relative;
+        border-radius: 0;
+      }
+      .similar-grid .product-card {
+        border-radius: 0;
+      }
+      .similar-grid .card-img-wrap > img {
+        transition:
+          transform 0.7s var(--ease),
+          opacity 0.35s;
+      }
+      .similar-grid .card-img-wrap .img-hover {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        object-fit: cover;
+        transition: opacity 0.45s var(--ease);
+      }
+      .similar-grid .product-card:hover .img-hover {
+        opacity: 1;
+      }
+      .similar-grid .share-popover {
+        position: absolute;
+        top: 52px;
+        right: 12px;
+        z-index: 5;
+        display: none;
+        min-width: 142px;
+        padding: 6px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: var(--sh-lg);
+      }
+      .similar-grid .share-popover.active {
+        display: grid;
+        gap: 4px;
+      }
+      .similar-grid .share-option {
+        border: 0;
+        border-radius: 7px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+        font:
+          600 0.72rem "Inter",
+          sans-serif;
+        padding: 8px 10px;
+        text-align: left;
+      }
+      .similar-grid .share-option:hover {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+      .similar-grid .card-btn {
+        align-items: center;
+        display: inline-flex;
+        gap: 6px;
+        text-decoration: none;
+      }
+      .similar-grid .card-btn::before {
+        content: "\f07a";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+      }
       .card-body {
         padding: 16px 18px 20px;
         display: flex;
@@ -2748,7 +2869,7 @@
       }
       .image-modal-hint {
         position: absolute;
-        bottom: 18px;
+        bottom: 2px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 15;
@@ -2761,13 +2882,14 @@
       @media (max-width: 600px) {
         .video-modal-inner,
         .video-modal-inner .video-placeholder {
-          min-height: auto;
-          border-radius: 20px;
-          padding: 24px 18px;
+          min-height: auto !important;
+          border-radius: 0 !important;
+          padding: 0 !important;
         }
         .video-modal-inner .video-placeholder {
-          gap: 16px;
-          padding: 28px 18px;
+          gap: 0 !important;
+          width: 100% !important;
+          aspect-ratio: unset !important;
         }
         .video-modal-inner .video-play-big {
           width: 64px;
@@ -2784,6 +2906,9 @@
           min-width: auto;
           padding: 10px 0 60px;
           border-radius: 22px;
+        }
+        .image-modal-hint {
+          bottom: 18px;
         }
         .image-modal-toolbar {
           left: 12px;
@@ -2819,6 +2944,38 @@
         .image-modal-zoombar {
           bottom: 12px;
           right: 12px;
+        }
+        .nutrition-wrap {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: visible;
+        }
+        .nutrition-table {
+          width: 100%;
+          min-width: 0;
+          table-layout: fixed;
+          font-size: 0.74rem;
+        }
+        .nutrition-table thead th,
+        .nutrition-table tbody td {
+          padding: 9px 7px;
+          vertical-align: top;
+          overflow-wrap: anywhere;
+        }
+        .nutrition-table tr > :nth-child(1):nth-last-child(3) {
+          width: 52%;
+        }
+        .nutrition-table tr > :nth-child(2):nth-last-child(2) {
+          width: 28%;
+        }
+        .nutrition-table tr > :nth-child(3):last-child {
+          width: 20%;
+        }
+        .nutrition-table tr > :nth-child(1):nth-last-child(2) {
+          width: 42%;
+        }
+        .nutrition-table tr > :nth-child(2):last-child {
+          width: 58%;
         }
       }
       .image-modal-nav:active {
@@ -3079,19 +3236,38 @@
                   loading="lazy"
                   decoding="async"
                 />
-                <div class="video-thumb" onclick="openVideoModal()">
+                <div
+                  class="video-thumb"
+                  onclick="openVideoModal()"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    background: #f8fafc;
+                    border: 1px dashed rgba(148, 163, 184, 0.7);
+                    border-radius: 12px;
+                    overflow: hidden;
+                  "
+                >
                   <img
-                    src="../products/Nattokinase Carton.webp"
-                    alt="Product Video"
-                    onerror="
-                      this.src =
-                        'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=150&q=80&auto=format&fm=webp'
-                    "
-                    loading="lazy"
-                    decoding="async"
+                    src="../videos/natto200.png"
+                    alt="Nattokinase 200 mg video thumbnail"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    onerror="this.src = '../videos/natto200.png'"
                   />
-                  <div class="play-icon"><i class="fa-solid fa-play"></i></div>
-                  <div class="video-tag">Video</div>
+                  <div
+                    class="play-icon"
+                    style="
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      opacity: 0.72;
+                    "
+                  >
+                    <i class="fa-solid fa-play"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3109,23 +3285,6 @@
                 healthy blood circulation and cardiovascular wellness. Each
                 serving delivers 4000 FU (200 mg) of high-potency enzyme to help
               </p>
-
-              <div class="stars-gold">
-                ★★★★<span style="color: var(--border)">★</span>
-              </div>
-              <span class="rating-val">4.7</span>
-              <span
-                class="rating-count"
-                onclick="
-                  document
-                    .querySelector('.reviews-section')
-                    .scrollIntoView({ behavior: 'smooth' })
-                "
-                >(73 reviews)</span
-              >
-              <span class="verified-pill"
-                ><i class="fa-solid fa-circle-check"></i> Verified</span
-              >
             </div>
 
             <div class="stock-row">
@@ -3136,7 +3295,7 @@
 
             <div class="price-card">
               <div class="price-row-main">
-                <span id="priceMain" class="price-main-val">₹1,199</span>
+                <span id="priceMain" class="price-main-val">₹1,299</span>
                 <span id="priceOld" class="price-old-val">₹1,399</span>
                 <span id="discountChip" class="discount-chip">14% OFF</span>
               </div>
@@ -3167,11 +3326,11 @@
               </div>
               <div class="trust-item">
                 <div class="trust-icon-w">
-                  <i class="fa-solid fa-rotate-left"></i>
+                  <i class="fa-solid fa-box-open"></i>
                 </div>
                 <div>
-                  <div class="trust-text-w">100% Vegan</div>
-                  <div class="trust-sub-w">Supplement</div>
+                  <div class="trust-text-w">Quality Assured</div>
+                  <div class="trust-sub-w">Carefully packed</div>
                 </div>
               </div>
               <div class="trust-item">
@@ -3226,20 +3385,29 @@
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Convenient daily softgel, easy to incorporate into routine
+                  Convenient daily capsule, easy to incorporate into routine
                 </li>
               </ul>
             </div>
 
             <div class="share-row">
               <span class="share-lbl">Share:</span>
-              <a
+              <button
                 class="share-btn"
-                href="https://wa.me/?text=Check+this+product"
-                target="_blank"
-                title="WhatsApp"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
+                title="Share on WhatsApp"
+                onclick="
+                  const url = location.href;
+                  navigator.clipboard && navigator.clipboard.writeText(url);
+                  window.open(
+                    'https://wa.me/?text=' +
+                      encodeURIComponent('Check this product: ' + url),
+                    '_blank',
+                  );
+                  showToast('📱', 'Link copied & WhatsApp opened!');
+                "
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </button>
               <button
                 class="share-btn"
                 title="Copy link"
@@ -3278,7 +3446,7 @@
                 <p>
                   Aiva Wellness Nattokinase is a natural fibrinolytic enzyme
                   derived from fermented soybean (Natto), delivering 4000 FU
-                  (200 mg) per serving in a high-potency softgel. It is
+                  (200 mg) per serving in a high-potency capsule. It is
                   formulated to support healthy blood circulation, vascular
                   function, and everyday cardiovascular wellness.
                 </p>
@@ -3289,7 +3457,7 @@
                       <tr>
                         <td>Item Form</td>
                         <td style="text-align: right; font-weight: 700">
-                          Softgel
+                          capsule
                         </td>
                       </tr>
                       <tr>
@@ -3307,7 +3475,13 @@
                       <tr>
                         <td>Manufacturer</td>
                         <td style="text-align: right; font-weight: 700">
-                          Aiva Wellness Pvt. Ltd., India
+                          Beatrix Lifecare
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Packer</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Beatrix Lifecare
                         </td>
                       </tr>
                       <tr>
@@ -3319,13 +3493,19 @@
                       <tr>
                         <td>Item Type Name</td>
                         <td style="text-align: right; font-weight: 700">
-                          Natural Fibrinolytic Enzyme
+                          Enzyme Supplement
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Flavour</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Unflavoured
                         </td>
                       </tr>
                       <tr>
                         <td>Unit Count</td>
                         <td style="text-align: right; font-weight: 700">
-                          60 Tablets
+                          30 Tablets
                         </td>
                       </tr>
                       <tr>
@@ -3335,19 +3515,25 @@
                       <tr>
                         <td>Item Weight</td>
                         <td style="text-align: right; font-weight: 700">
-                          170 Grams
+                          52 Grams
                         </td>
                       </tr>
                       <tr>
                         <td>Product Dimensions</td>
                         <td style="text-align: right; font-weight: 700">
-                          5.4 x 5.4 x 11.7 cm
+                          5.5 x 5.5 x 10 cm
                         </td>
                       </tr>
                       <tr>
-                        <td>Customer Reviews</td>
+                        <td>Best Before</td>
                         <td style="text-align: right; font-weight: 700">
-                          4.7 ★ (73 ratings)
+                          18 months from the date of manufacture
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Diet type</td>
+                        <td style="text-align: right; font-weight: 700">
+                          gluten free, vegan
                         </td>
                       </tr>
                       <tr>
@@ -3401,7 +3587,7 @@
                   </div>
                   <div class="benefit-title">High Potency</div>
                   <div class="benefit-desc">
-                    Each softgel delivers a concentrated 4000 FU (200 mg) dose
+                    Each capsule delivers a concentrated 4000 FU (200 mg) dose
                     of natural enzyme.
                   </div>
                 </div>
@@ -3421,7 +3607,7 @@
                   </div>
                   <div class="benefit-title">Daily Wellness</div>
                   <div class="benefit-desc">
-                    Easy one-softgel daily routine to support long-term
+                    Easy one-capsule daily routine to support long-term
                     cardiovascular care.
                   </div>
                 </div>
@@ -3438,8 +3624,8 @@
                   margin-bottom: 18px;
                 "
               >
-                <strong>Serving Size:</strong> 1 Softgel &nbsp;|&nbsp;
-                <strong>Servings Per Container:</strong> 60
+                <strong>Serving Size:</strong> 1 capsule &nbsp;|&nbsp;
+                <strong>Servings Per Container:</strong> 30
               </p>
               <table class="nutrition-table">
                 <thead>
@@ -3449,63 +3635,100 @@
                     <th>% RDA</th>
                   </tr>
                 </thead>
+
                 <tbody>
                   <tr>
-                    <td>Nattokinase Enzyme</td>
-                    <td style="text-align: center">200 mg (4000 FU)</td>
-                    <td>**</td>
+                    <td>Energy</td>
+                    <td style="text-align: center">0.90% (0.05%)</td>
+                    <td>—</td>
                   </tr>
+
                   <tr>
-                    <td>Omega-3 Fatty Acid</td>
-                    <td style="text-align: center">180 mg</td>
-                    <td>**</td>
+                    <td>Protein</td>
+                    <td style="text-align: center">0.22 g (0.41%)</td>
+                    <td>—</td>
                   </tr>
+
                   <tr>
-                    <td>EPA (Eicosapentaenoic Acid)</td>
-                    <td style="text-align: center">120 mg</td>
-                    <td>**</td>
+                    <td>Carbohydrates</td>
+                    <td style="text-align: center">0.006 g</td>
+                    <td>—</td>
                   </tr>
+
                   <tr>
-                    <td>DHA (Docosahexaenoic Acid)</td>
-                    <td style="text-align: center">10 mg</td>
-                    <td>**</td>
+                    <td>Total Sugars</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>—</td>
                   </tr>
+
                   <tr>
-                    <td>Vitamin E</td>
-                    <td style="text-align: center">10.06 mg</td>
-                    <td>0.5</td>
+                    <td>Added Sugars</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>0%</td>
+                  </tr>
+
+                  <tr>
+                    <td>Total Fat</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>0%</td>
+                  </tr>
+
+                  <tr>
+                    <td>Saturated Fat</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td>0%</td>
+                  </tr>
+
+                  <tr>
+                    <td>Trans Fat</td>
+                    <td style="text-align: center">0.00 mg</td>
+                    <td>0%</td>
+                  </tr>
+
+                  <tr>
+                    <td>Sodium</td>
+                    <td style="text-align: center">0.00 mg</td>
+                    <td>0%</td>
+                  </tr>
+
+                  <tr>
+                    <td>Nattokinase from Fermented Soybean Extract</td>
+                    <td style="text-align: center">200 mg / 4000 FU</td>
+                    <td>**</td>
                   </tr>
                 </tbody>
               </table>
               <p class="nutrition-note">
-                ** %RDA not established. RDA values established as per ICMR
-                &amp; FSS (Labeling &amp; Display) Guidelines 2020, based on a
-                sedentary woman.
+                <strong>*%RDA:</strong>
+                Recommended Dietary Allowance values calculated as per Indian
+                Council of Medical Research (ICMR) guidelines 2020 based on
+                Sedentary Women. Based on FSS (Labeling &amp; Display).
+                <strong>**</strong> RDA not established.
               </p>
             </div>
           </div>
 
           <div class="tab-panel" id="tab-ingredients">
             <p class="ingredients-text">
-              <strong>Active Ingredients:</strong> Nattokinase Enzyme (200 mg /
-              4000 FU), Omega-3 Fatty Acid (180 mg), EPA – Eicosapentaenoic Acid
-              (120 mg), DHA – Docosahexaenoic Acid (10 mg), Vitamin E (10.06
-              mg).
+              <strong>Active Ingredients:</strong>
+              Nattokinase from Fermented Soybean Extract (200 mg / 4000 FU per
+              serving).
             </p>
+
             <p class="ingredients-text">
-              <strong>Other Ingredients:</strong> Fish Oil, Capsule Shell
-              (Gelatin – Food Grade), Humectants (422 &amp; 420i), Gelling
-              Agent. Polyols may have laxative effects.
+              <strong>Other Ingredients:</strong>
+              Diluents (460(ii) &amp; 421), Glazing Agent (553(iii)), and
+              Capsule Shell Contains [Emulsifier (464)] and Permitted Natural
+              Food Colour (INS 171).
             </p>
+
             <div class="allergen-box">
-              <strong
-                ><i class="fa-solid fa-triangle-exclamation"></i> Allergen
-                Information</strong
-              >Contains fish-derived ingredients and soy-fermented enzyme.
-              Capsule shell is gelatin-based and not suitable for vegetarians or
-              vegans. Manufactured in a facility that also processes soy and
-              shellfish. Not intended to diagnose, treat, cure, or prevent any
-              disease.
+              <strong>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Allergen Information
+              </strong>
+              Contains soy-fermented enzyme. Check the product label for
+              complete allergen and ingredient information.
             </div>
           </div>
 
@@ -3514,61 +3737,68 @@
               <div class="usage-step">
                 <div class="step-num">1</div>
                 <div class="step-text">
-                  <h5>Take 1 softgel daily</h5>
+                  <h5>Take 1 capsule daily</h5>
                   <p>
-                    For adults, the recommended dose is one softgel daily.
-                    Recommended dosage should not be exceeded.
+                    Adults may take one capsule daily, or as directed by a
+                    qualified healthcare professional. Do not exceed the
+                    recommended daily serving.
                   </p>
                 </div>
               </div>
+
               <div class="usage-step">
                 <div class="step-num">2</div>
                 <div class="step-text">
-                  <h5>Take preferably with meals</h5>
+                  <h5>Take with water</h5>
                   <p>
-                    Take the softgel daily, preferably with meals, to support
-                    comfortable digestion and consistent absorption.
+                    Swallow the capsule whole with an adequate amount of water.
+                    Do not crush or open the capsule unless advised by a
+                    healthcare professional.
                   </p>
                 </div>
               </div>
+
               <div class="usage-step">
                 <div class="step-num">3</div>
                 <div class="step-text">
-                  <h5>Swallow with a full glass of water</h5>
+                  <h5>Follow the recommended serving</h5>
                   <p>
-                    Drink at least 200 ml of water when taking the softgel.
-                    Avoid taking on an empty stomach if you experience any
-                    discomfort.
+                    One capsule provides 200 mg of Nattokinase from fermented
+                    soybean extract, equivalent to 4000 FU per serving.
                   </p>
                 </div>
               </div>
+
               <div class="usage-step">
                 <div class="step-num">4</div>
                 <div class="step-text">
-                  <h5>Use consistently for best results</h5>
+                  <h5>Store properly</h5>
                   <p>
-                    Benefits build over time with regular daily use. Store in a
-                    cool, dry place at room temperature and out of direct
-                    sunlight, away from children.
+                    Store in a cool, dry place away from direct sunlight and
+                    moisture. Keep the container tightly closed and out of reach
+                    of children.
                   </p>
                 </div>
               </div>
             </div>
+
             <div class="warning-box">
-              <strong
-                ><i class="fa-solid fa-circle-exclamation"></i> Important
-                Notice</strong
-              >Consult your healthcare practitioner before taking this product
-              if you are pregnant, lactating, or trying to conceive, or if you
-              are on blood-thinning medication or have a bleeding disorder. Not
-              for medicinal use. This product is not intended to diagnose,
-              treat, cure, or prevent any disease, and is not to be used as a
+              <strong>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Important Notice
+              </strong>
+              Consult your healthcare practitioner before using this product if
+              you are pregnant, lactating, have a bleeding disorder, are
+              scheduled for surgery, or are taking blood-thinning or other
+              medications. Do not exceed the recommended daily serving. Not for
+              medicinal use. This product is not intended to diagnose, treat,
+              cure, or prevent any disease and should not be used as a
               substitute for a varied diet. Keep out of reach of children.
             </div>
           </div>
         </div>
 
-        <div class="reviews-section reveal">
+        <div class="reviews-section reveal" hidden>
           <span class="section-eyebrow"
             ><i class="fa-solid fa-star"></i> Customer Reviews</span
           >
@@ -3703,7 +3933,7 @@
                 <div class="rc-title">Good quality, packaging is solid</div>
                 <div class="rc-text">
                   Bought this for my father who is in his 50s. The carton
-                  arrived well sealed and the softgels are easy to take. We've
+                  arrived well sealed and the capsules are easy to take. We've
                   noticed his energy levels and circulation feel better since
                   starting. Will reorder.
                 </div>
@@ -3754,7 +3984,7 @@
                 <span class="card-badge sale">Sale</span>
                 <img
                   src="../products/reefit forte c new size.webp"
-                  alt="Energy & Immunity Support"
+                  alt="Daily Vitals"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=500&q=80&auto=format&fm=webp'
@@ -3766,19 +3996,14 @@
               <div class="card-body">
                 <span class="card-cat">Immunity</span>
                 <div class="card-name">
-                  <a href="energy-immunity-support.html"
-                    >Energy & Immunity Support</a
-                  >
+                  <a href="dailyvitals.html">Daily Vitals</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>67 reviews</span></div>
                 <div class="card-price-row">
                   <div>
-                    <span class="card-price">₹799</span>
+                    <span class="card-price">₹1,299</span>
                     <span class="card-old">₹899</span>
                   </div>
-                  <a class="card-btn" href="energy-immunity-support.html"
-                    >Buy Now</a
-                  >
+                  <a class="card-btn" href="dailyvitals.html">Buy Now</a>
                 </div>
               </div>
             </div>
@@ -3803,7 +4028,6 @@
                     >Magnesium Complex 5-in-1</a
                   >
                 </div>
-                <div class="card-stars">★★★★★ <span>128 reviews</span></div>
                 <div class="card-price-row">
                   <div>
                     <span class="card-price">₹1,299</span>
@@ -3834,10 +4058,9 @@
                 <div class="card-name">
                   <a href="nattokinase100.html">Nattokinase 100 mg</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>56 reviews</span></div>
                 <div class="card-price-row">
                   <div>
-                    <span class="card-price">₹799</span>
+                    <span class="card-price">₹1,299</span>
                     <span class="card-old">₹949</span>
                   </div>
                   <a class="card-btn" href="nattokinase100.html">Buy Now</a>
@@ -3846,10 +4069,10 @@
             </div>
             <div class="product-card">
               <div class="card-img-wrap">
-                <span class="card-badge">Top Seller</span>
+                <span class="card-badge new">New</span>
                 <img
-                  src="../products/Nattokinase Carton.webp"
-                  alt="Nattokinase 200 mg"
+                  src="../products/all images/men-1.png"
+                  alt="Daily Vitals for Men 40+"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&q=80&auto=format&fm=webp'
@@ -3859,17 +4082,16 @@
                 />
               </div>
               <div class="card-body">
-                <span class="card-cat">Heart Health</span>
+                <span class="card-cat">Men's Health</span>
                 <div class="card-name">
-                  <a href="nattokinase200.html">Nattokinase 200 mg</a>
+                  <a href="dailyvitalsmen.html">Daily Vitals for Men 40+</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>73 reviews</span></div>
                 <div class="card-price-row">
                   <div>
-                    <span class="card-price">₹1,199</span>
-                    <span class="card-old">₹1,399</span>
+                    <span class="card-price">₹1,299</span>
+                    <span class="card-old">₹1,499</span>
                   </div>
-                  <a class="card-btn" href="nattokinase200.html">Buy Now</a>
+                  <a class="card-btn" href="dailyvitalsmen.html">Buy Now</a>
                 </div>
               </div>
             </div>
@@ -3888,11 +4110,24 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="video-placeholder">
-          <div class="video-play-big"><i class="fa-solid fa-play"></i></div>
-          <p>Nattokinase 200 mg — Product Walkthrough</p>
-          <p style="font-size: 0.76rem; opacity: 0.5">
-            Video will play here · Replace with your hosted video URL
-          </p>
+          <video
+            id="productVideo"
+            controls
+            playsinline
+            preload="metadata"
+            style="
+              width: 100%;
+              max-height: 70vh;
+              border-radius: 12px;
+              background: #000;
+            "
+          >
+            <source
+              src="../videos/nattokinase-200mg%20video.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support HTML5 video.
+          </video>
         </div>
       </div>
     </div>
@@ -3949,6 +4184,25 @@
               alt="Product image"
               draggable="false"
             />
+            <video
+              id="imageModalVideo"
+              controls
+              playsinline
+              preload="metadata"
+              style="
+                display: none;
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+                object-fit: contain;
+                background: #000;
+              "
+            >
+              <source
+                src="../videos/nattokinase-200mg video.mp4"
+                type="video/mp4"
+              />
+            </video>
             <span class="image-modal-video-badge" id="imageModalVideoBadge"
               >Video</span
             >
@@ -3966,7 +4220,7 @@
 
     <div class="sticky-buy-bar" id="stickyBar">
       <div class="sticky-buy-bar-inner">
-        <span class="sbb-price">₹1,199</span>
+        <span class="sbb-price">₹1,299</span>
         <button class="sbb-btn" onclick="handleBuyNow()">
           <i class="fa-solid fa-bag-shopping"></i> Buy Now
         </button>
@@ -4056,8 +4310,8 @@
                 >
               </li>
               <li>
-                <a href="../product-details-pages/energy-immunity-support.html"
-                  >Energy &amp; Immunity Support</a
+                <a href="../product-details-pages/dailyvitals.html"
+                  >Daily Vitals</a
                 >
               </li>
             </ul>
@@ -4242,16 +4496,28 @@
       });
 
       function openVideoModal() {
+        const video = document.getElementById("productVideo");
         document.getElementById("videoModal").classList.add("open");
         document.body.style.overflow = "hidden";
+        if (video) {
+          video.currentTime = 0;
+          video.muted = false;
+          video.play().catch(() => {});
+        }
       }
       function closeVideoModal() {
+        const video = document.getElementById("productVideo");
         document.getElementById("videoModal").classList.remove("open");
         document.body.style.overflow = "";
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
       }
 
       const imageModal = document.getElementById("imageModal");
       const imageModalImg = document.getElementById("imageModalImg");
+      const imageModalVideo = document.getElementById("imageModalVideo");
       const imageModalBody = document.getElementById("imageModalBody");
       const imageModalVideoBadge = document.getElementById(
         "imageModalVideoBadge",
@@ -4278,7 +4544,8 @@
           if (item.type === "video") {
             const v = document.createElement("div");
             v.className = "strip-video";
-            v.innerHTML = '<i class="fa-solid fa-play"></i>';
+            v.innerHTML =
+              '<img src="../videos/natto200.png" alt="Nattokinase 200 mg video thumbnail" /><i class="fa-solid fa-play"></i>';
             v.addEventListener("click", (e) => {
               e.stopPropagation();
               showModalItem(i);
@@ -4325,6 +4592,10 @@
         imageModalTx = 0;
         imageModalTy = 0;
         imageModalImg.style.transform = "translate3d(0,0,0) scale(1)";
+        imageModalImg.style.display = "";
+        imageModalVideo.pause();
+        imageModalVideo.currentTime = 0;
+        imageModalVideo.style.display = "none";
         imageModalVideoBadge.classList.remove("show");
         if (zoomPctEl) zoomPctEl.textContent = "100%";
       }
@@ -4335,9 +4606,13 @@
         resetImagePosition();
 
         if (item.type === "video") {
-          imageModalImg.src = "../products/Nattokinase Carton.webp";
-          imageModalVideoBadge.classList.add("show");
+          imageModalImg.style.display = "none";
+          imageModalVideo.style.display = "block";
+          imageModalVideo.load();
+          imageModalVideo.play().catch(() => {});
         } else {
+          imageModalImg.style.display = "";
+          imageModalVideo.style.display = "none";
           imageModalImg.src = item.src;
           imageModalVideoBadge.classList.remove("show");
           const thumb = Array.from(
@@ -4625,9 +4900,9 @@
         103: {
           name: "Nattokinase 200 mg",
           img: "../products/Nattokinase Carton.webp",
-          price: 1199,
+          price: 1299,
           old: 1399,
-          discount: 14,
+          discount: 7,
           desc: "Nattokinase is a natural fibrinolytic enzyme that supports heart health and healthy blood circulation, helping maintain normal vascular function with every daily serving.",
         },
         108: {
@@ -4683,6 +4958,80 @@
         document.title = p.name + " | Aiva Wellness";
       })();
     </script>
+    <script>
+      (() => {
+        const cards = document.querySelectorAll(".similar-grid .product-card");
+        cards.forEach((card) => {
+          const link = card.querySelector(".card-name a");
+          const imageWrap = card.querySelector(".card-img-wrap");
+          if (!link || !imageWrap) return;
+          const url = new URL(link.getAttribute("href"), window.location.href)
+            .href;
+          const title = link.textContent.trim();
+          const hoverImages = {
+            "dailyvitals.html": "../products/all images/multivitamin2.png",
+            "dailyvitalsmen.html": "../products/all images/men-2.png",
+            "magnesium-complex-5-in-1.html":
+              "../products/all images/magnesium2.png",
+            "nattokinase100.html": "../products/all images/1.webp",
+            "nattokinase200.html": "../products/all images/p2.png",
+          };
+          const hoverImage = hoverImages[link.getAttribute("href")];
+          if (hoverImage) {
+            const image = document.createElement("img");
+            image.className = "img-hover";
+            image.src = hoverImage;
+            image.alt = `${title} alternate view`;
+            image.loading = "lazy";
+            image.decoding = "async";
+            imageWrap.appendChild(image);
+          }
+          const actions = document.createElement("div");
+          actions.className = "card-actions";
+          actions.innerHTML =
+            '<button type="button" class="card-act-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button><button type="button" class="card-act-btn" title="Share"><i class="fa-solid fa-share-nodes"></i></button>';
+          const popover = document.createElement("div");
+          popover.className = "share-popover";
+          popover.innerHTML =
+            '<button type="button" class="share-option"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button><button type="button" class="share-option"><i class="fa-regular fa-copy"></i> Copy Link</button>';
+          const [quickButton, shareButton] = actions.querySelectorAll("button");
+          const [whatsappButton, copyButton] =
+            popover.querySelectorAll("button");
+          quickButton.addEventListener("click", () => {
+            window.location.href = link.href;
+          });
+          shareButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            document
+              .querySelectorAll(".similar-grid .share-popover.active")
+              .forEach((item) => item.classList.remove("active"));
+            popover.classList.toggle("active");
+          });
+          whatsappButton.addEventListener("click", () => {
+            window.open(
+              `https://wa.me/?text=${encodeURIComponent(`Check out ${title}: ${url}`)}`,
+              "_blank",
+            );
+            popover.classList.remove("active");
+          });
+          copyButton.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(url);
+              if (typeof showToast === "function")
+                showToast("", "Link copied!");
+            } catch (error) {
+              if (typeof showToast === "function") showToast("", "Copy failed");
+            }
+            popover.classList.remove("active");
+          });
+          imageWrap.append(actions, popover);
+        });
+        document.addEventListener("click", () => {
+          document
+            .querySelectorAll(".similar-grid .share-popover.active")
+            .forEach((item) => item.classList.remove("active"));
+        });
+      })();
+    </script>
   </body>
 </html>
-

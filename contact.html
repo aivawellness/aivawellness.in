@@ -2554,7 +2554,23 @@
                 >
               </div>
 
-              <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+              <form
+                id="contactForm"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                onsubmit="handleSubmit(event)"
+                novalidate
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="54833b69-7278-4ca6-a38a-46f229bbff3a"
+                />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="Aiva Wellness Website Contact Form"
+                />
                 <div class="form-row">
                   <div class="form-group">
                     <label class="form-label" for="fname"
@@ -2618,7 +2634,7 @@
                     class="form-ctrl"
                     type="text"
                     id="subject"
-                    name="subject"
+                    name="inquiry_subject"
                     placeholder="Your subject…"
                     required
                   />
@@ -2747,9 +2763,25 @@
             Subscribe for wellness tips, clean-living insights, exclusive
             offers, and early access to new products.
           </p>
-          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <form
+            class="newsletter-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            onsubmit="handleNewsletter(event)"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="54833b69-7278-4ca6-a38a-46f229bbff3a"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="Aiva Wellness Newsletter Signup"
+            />
             <input
               type="email"
+              name="email"
               placeholder="Enter your email address"
               required
             />
@@ -2846,8 +2878,8 @@
                 >
               </li>
               <li>
-                <a href="product-details-pages/energy-immunity-support.html"
-                  >Energy &amp; Immunity Support</a
+                <a href="product-details-pages/dailyvitals.html"
+                  >Daily Vitals</a
                 >
               </li>
             </ul>
@@ -2976,8 +3008,9 @@
       }
 
       /* ═══ FORM SUBMIT ═══ */
-      function handleSubmit(e) {
+      async function handleSubmit(e) {
         e.preventDefault();
+
         const form = document.getElementById("contactForm");
         const fname = form.querySelector("#fname").value.trim();
         const email = form.querySelector("#email").value.trim();
@@ -3014,34 +3047,96 @@
 
         const btn = form.querySelector(".btn-submit");
         const orig = btn.innerHTML;
+
         btn.innerHTML =
           '<i class="fa-solid fa-spinner fa-spin"></i><span>Sending…</span>';
         btn.disabled = true;
 
-        setTimeout(() => {
+        try {
+          const formData = new FormData(form);
+
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          const result = await response.json();
+
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || "Form submission failed.");
+          }
+
           btn.innerHTML =
             '<i class="fa-solid fa-check"></i><span>Message Sent!</span>';
           btn.style.background = "linear-gradient(135deg,#052e16,#16a34a)";
           showToast("✅", "Message sent! We'll reply within 2–4 hours.");
+
           form.reset();
+
           document
             .querySelectorAll(".subject-chip")
             .forEach((c) => c.classList.remove("active"));
+
           document.querySelector(".subject-chip").classList.add("active");
           document.getElementById("subject").value = "Product Inquiry";
+
           setTimeout(() => {
             btn.innerHTML = orig;
             btn.style.background = "";
             btn.disabled = false;
           }, 3000);
-        }, 1600);
+        } catch (error) {
+          console.error("Web3Forms submission error:", error);
+
+          btn.innerHTML = orig;
+          btn.style.background = "";
+          btn.disabled = false;
+
+          showToast(
+            "❌",
+            "Unable to send your message. Please try again or contact us directly."
+          );
+        }
       }
 
       /* ═══ NEWSLETTER ═══ */
-      function handleNewsletter(e) {
+      async function handleNewsletter(e) {
         e.preventDefault();
-        e.target.innerHTML =
-          '<p style="color:#fff;font-size:1rem;padding:16px 0;font-family:Cormorant Garamond,serif;font-style:italic;letter-spacing:.02em">✨ Thank you for joining the Aiva Wellness community!</p>';
+        const form = e.target;
+        const emailInput = form.querySelector('input[type="email"]');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        if (submitButton.disabled) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Subscribing...";
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          const result = await response.json();
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || "Newsletter submission failed.");
+          }
+          form.innerHTML =
+            '<p style="color:#fff;font-size:1rem;padding:16px 0;font-family:Cormorant Garamond,serif;font-style:italic;letter-spacing:.02em">Thank you for subscribing!</p>';
+        } catch (error) {
+          console.error("Newsletter submission error:", error);
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+          if (!form.querySelector(".newsletter-error")) {
+            const errorMessage = document.createElement("p");
+            errorMessage.className = "newsletter-error";
+            errorMessage.textContent = "Unable to subscribe. Please try again.";
+            form.appendChild(errorMessage);
+          }
+          emailInput.focus();
+        }
       }
 
       /* ═══ SMART HOURS BADGE ═══ */
@@ -3065,7 +3160,6 @@
     </script>
   </body>
 </html>
-
 
 
 

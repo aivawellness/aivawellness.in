@@ -15,26 +15,6 @@
     "Immune Support",
     "Magnesium Bisglycinate"
   ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Wellness Supplements",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Nattokinase Supplements"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Magnesium Complex"
-        }
-      }
-    ]
-  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Solan",
@@ -62,4 +42,3 @@
     "https://www.amazon.in/stores/AivaWellness"
   ]
 }
-

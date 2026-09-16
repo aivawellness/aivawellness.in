@@ -162,77 +162,7 @@
       }
     </script>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Product",
-            "name": "Nattokinase 100 mg",
-            "image": "https://aivawellness.in/products/Nattokinase%20Carton%20%20final%203d.webp",
-            "brand": {
-              "@type": "Brand",
-              "name": "Aiva Wellness"
-            },
-            "offers": {
-              "@type": "Offer",
-              "price": "799",
-              "priceCurrency": "INR",
-              "availability": "https://schema.org/InStock",
-              "url": "https://aivawellness.in/product-details-pages/nattokinase100.html"
-            }
-          },
-          {
-            "@type": "Product",
-            "name": "Nattokinase 200 mg",
-            "image": "https://aivawellness.in/products/Nattokinase%20Carton.webp",
-            "brand": {
-              "@type": "Brand",
-              "name": "Aiva Wellness"
-            },
-            "offers": {
-              "@type": "Offer",
-              "price": "1199",
-              "priceCurrency": "INR",
-              "availability": "https://schema.org/InStock",
-              "url": "https://aivawellness.in/product-details-pages/nattokinase200.html"
-            }
-          },
-          {
-            "@type": "Product",
-            "name": "Magnesium Complex 5-in-1",
-            "image": "https://aivawellness.in/products/Magnesium%20Complex.webp",
-            "brand": {
-              "@type": "Brand",
-              "name": "Aiva Wellness"
-            },
-            "offers": {
-              "@type": "Offer",
-              "price": "1299",
-              "priceCurrency": "INR",
-              "availability": "https://schema.org/InStock",
-              "url": "https://aivawellness.in/product-details-pages/magnesium-complex-5-in-1.html"
-            }
-          },
-          {
-            "@type": "Product",
-            "name": "Energy & Immunity Support",
-            "image": "https://aivawellness.in/products/VITAMIN%20D3.webp",
-            "brand": {
-              "@type": "Brand",
-              "name": "Aiva Wellness"
-            },
-            "offers": {
-              "@type": "Offer",
-              "price": "799",
-              "priceCurrency": "INR",
-              "availability": "https://schema.org/InStock",
-              "url": "https://aivawellness.in/product-details-pages/energy-immunity-support.html"
-            }
-          }
-        ]
-      }
-    </script>
+    <!-- Product schema removed from non-product 'Shop' listing pages -->
 
     <script type="application/ld+json">
       {
@@ -2333,7 +2263,6 @@
                 >
                 <span class="cat-count" id="cnt-Nattokinase">2</span>
               </div>
-              <!-- 
               <div
                 class="cat-item"
                 onclick="filterByCategory('Men\'s Health', this)"
@@ -2343,6 +2272,7 @@
                 >
                 <span class="cat-count" id="cnt-Men's Health">1</span>
               </div>
+              <!-- 
               <div
                 class="cat-item"
                 onclick="filterByCategory('Women\'s Health', this)"
@@ -2476,7 +2406,9 @@
 
         <!-- No results -->
         <div class="no-results" id="noResults">
-          <div class="no-results-icon">??</div>
+          <div class="no-results-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
           <h3>No products found</h3>
           <p>
             Try adjusting your filters or search term to discover what you're
@@ -2606,8 +2538,8 @@
                 >
               </li>
               <li>
-                <a href="product-details-pages/energy-immunity-support.html"
-                  >Energy &amp; Immunity Support</a
+                <a href="product-details-pages/dailyvitals.html"
+                  >Daily Vitals</a
                 >
               </li>
             </ul>
@@ -2653,7 +2585,7 @@
         104: "product-details-pages/nattokinase200.html",
         105: "product-details-pages/heart-skin-eye-joint-health-pack.html",
         106: "product-details-pages/heart-health-immunity-booster.html",
-        107: "product-details-pages/energy-immunity-support.html",
+        107: "product-details-pages/dailyvitals.html",
         108: "product-details-pages/vitamin-d3-supplement.html",
         109: "product-details-pages/vitamins-minerals-amino-acids-men.html",
         110: "product-details-pages/vitamins-minerals-amino-acids-women.html",
@@ -2662,6 +2594,10 @@
         113: "product-details-pages/whey-protein-2kg.html",
         114: "product-details-pages/plant-protein-blend.html",
         115: "product-details-pages/multivitamins-minerals.html",
+        116: "product-details-pages/dailyvitalsmen.html",
+        117: "product-details-pages/dailyvitalswomen.html",
+        118: "product-details-pages/vitamind3.html",
+        122: "product-details-pages/omega3fishoil.html",
       };
 
       const PRODUCTS = [
@@ -2669,8 +2605,8 @@
           id: 103,
           name: "Nattokinase 100 mg",
           cat: "Nattokinase",
-          price: 799,
-          old: 949,
+          price: 1299,
+          old: 1499,
           badge: "new",
           rating: 4.7,
           reviews: 56,
@@ -2681,13 +2617,25 @@
           id: 104,
           name: "Nattokinase 200 mg",
           cat: "Nattokinase",
-          price: 1199,
+          price: 1299,
           old: 1399,
           badge: "New",
           rating: 4.9,
           reviews: 73,
           img: "products/Nattokinase Carton.webp",
           img2: "products/all images/p2.png",
+        },
+        {
+          id: 116,
+          name: "Daily Vitals for Men 40+",
+          cat: "Men's Health",
+          price: 1299,
+          old: 1499,
+          badge: "new",
+          rating: 4.6,
+          reviews: 78,
+          img: "products/all images/men-1.png",
+          img2: "products/all images/men-2.png",
         },
         {
           id: 101,
@@ -2700,6 +2648,54 @@
           reviews: 128,
           img: "products/Magnesium Complex.webp",
           img2: "products/all images/magnesium2.png",
+        },
+        {
+          id: 107,
+          name: "Daily Vitals",
+          cat: "Immunity",
+          price: 799,
+          old: 899,
+          badge: "sale",
+          rating: 4.5,
+          reviews: 94,
+          img: "products/reefit forte c new size.webp",
+          img2: "products/all images/multivitamin2.png",
+        },
+        {
+          id: 117,
+          name: "Daily Vitals for Women 40+",
+          cat: "Women's Health",
+          price: 1299,
+          old: 1499,
+          badge: "new",
+          rating: 4.6,
+          reviews: 78,
+          img: "products/all images/women-1.png",
+          img2: "products/all images/women-2.png",
+        },
+        {
+          id: 122,
+          name: "Omega-3 Fish Oil",
+          cat: "Heart Health",
+          price: 799,
+          old: 1199,
+          badge: "sale",
+          rating: 4.6,
+          reviews: 61,
+          img: "products/all images/omega-1.png",
+          img2: "products/all images/omega-2.png",
+        },
+        {
+          id: 118,
+          name: "Vitamin D3 Supplement",
+          cat: "Vitamins",
+          price: 499,
+          old: 599,
+          badge: "new",
+          rating: 4.6,
+          reviews: 142,
+          img: "products/all images/vitamind3-1.png",
+          img2: "products/all images/vitamind3-2.png",
         },
         /* COMMENTED OUT - Hidden Products
         {
@@ -2740,7 +2736,7 @@
         },
         {
           id: 107,
-          name: "Energy & Immunity Support",
+          name: "Daily Vitals",
           cat: "Immunity",
           price: 799,
           old: 899,
@@ -2766,7 +2762,7 @@
           id: 109,
           name: "Vitamins & Minerals with Amino Acids (Men)",
           cat: "Men's Health",
-          price: 1199,
+          price: 1299,
           old: 1399,
           badge: "top",
           rating: 4.7,
@@ -2778,7 +2774,7 @@
           id: 110,
           name: "Vitamins & Minerals with Amino Acids (Women)",
           cat: "Women's Health",
-          price: 1199,
+          price: 1299,
           old: 1399,
           badge: "top",
           rating: 4.8,
@@ -2831,22 +2827,10 @@
           badge: "new",
           rating: 4.5,
           reviews: 78,
-          img: "products/omega 3, Vitamin E.webp",
-          img2: "products/omega 3, Vitamin E.webp",
+          img: "products/all images/omega-1.png",
+          img2: "products/all images/omega-1.png",
         },
         */
-        {
-          id: 107,
-          name: "Energy & Immunity Support",
-          cat: "Immunity",
-          price: 799,
-          old: 899,
-          badge: "sale",
-          rating: 4.5,
-          reviews: 94,
-          img: "products/reefit forte c new size.webp",
-          img2: "products/all images/multivitamin2.png",
-        },
       ];
 
       const PER_PAGE = 12;

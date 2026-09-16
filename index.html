@@ -123,14 +123,6 @@
           "availableLanguage": ["en", "hi"]
         },
         "knowsAbout": ["Nattokinase", "Magnesium Complex", "Vitamins & Minerals", "Nutraceuticals", "Cardiovascular Health"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Wellness Supplements",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Nattokinase Supplements" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Magnesium Complex" } }
-          ]
-        },
         "sameAs": [
           "https://www.instagram.com/aivawellness.in/?hl=en",
           "https://www.facebook.com/profile.php?id=61591507665329",
@@ -304,7 +296,6 @@
         font-weight: 600;
         line-height: 1.2;
       }
-
 
       .pl-divider {
         width: 100%;
@@ -737,7 +728,7 @@
       }
       @media (max-width: 480px) {
         .slide-img-wrap img {
-          aspect-ratio: 1/1.35;
+          aspect-ratio: 1/1.45;
         }
       }
 
@@ -916,6 +907,21 @@
         .slide:not(.first-slide) .slide-cta { transform: none; box-shadow: 0 4px 16px rgba(0,0,0,0.12); align-self: flex-start; }
       }
 
+      @media (max-width: 768px) {
+        .slide-content h1 {
+          display: none;
+        }
+
+        .slide-cta {
+          position: absolute;
+          left: 50vw;
+          bottom: 34px;
+          padding: 9px 13px;
+          font-size: 0.78rem;
+          translate: -50% 0;
+        }
+      }
+
       /* Progress bar */
       .slider-progress {
         position: absolute;
@@ -947,6 +953,11 @@
         display: flex;
         gap: 8px;
         z-index: 10;
+      }
+      @media (max-width: 768px) {
+        .slider-dots {
+          bottom: 20px;
+        }
       }
       .dot {
         width: 6px;
@@ -1320,17 +1331,12 @@
         opacity: 0.7;
       }
       .about-img-main img.hover-img {
-        opacity: 0;
-      }
-      .about-img-main:hover img.hover-img,
-      .about-img-main.touch-active img.hover-img {
         opacity: 1;
       }
-      .about-img-main:hover img:first-child,
-      .about-img-main.touch-active img:first-child {
-        opacity: 0;
+      .about-img-main img:first-child {
+        opacity: 1;
       }
-      .about-img-main:hover img,
+      .about-img-main img,
       .about-img-main.touch-active img {
         transform: none;
       }
@@ -1340,10 +1346,6 @@
         inset: 0;
         border: 1px solid rgba(59, 130, 246, 0.14);
         pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.35s;
-      }
-      .about-img-main:hover::after {
         opacity: 1;
       }
       .about-img-main::before {
@@ -1371,7 +1373,8 @@
         .about-img-main {
           max-width: 100%;
           width: 100%;
-          min-height: 320px;
+          min-height: 0;
+          aspect-ratio: 1.12 / 1;
           padding: 0;
         }
         .about-img-main img {
@@ -1379,7 +1382,7 @@
           inset: 0;
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
         }
         .about-img-badge {
@@ -1550,6 +1553,16 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
+      }
+      .product-img.touch-active {
+        box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.16);
+        transform: translateY(-2px);
+      }
+      .product-img.touch-active img {
+        transform: scale(1.08);
+      }
+      .product-img.touch-active .img-hover {
+        opacity: 1;
       }
       @media (hover: hover) and (pointer: fine) {
         .product-img:hover {
@@ -1830,6 +1843,7 @@
       }
 
       .view-all-wrap {
+        grid-column: 1 / -1;
         text-align: center;
         margin-top: 56px;
       }
@@ -3615,19 +3629,21 @@
     <!-- Slide 1 -->
     <div class="slide active first-slide">
       <div class="slide-img-wrap">
-        <img
-          src="images/1.png"
-          alt="Aiva Wellness Premium Healthcare & Wellness Supplements"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/mob01.png" />
+          <img
+            src="images/1.png"
+            alt="Aiva Wellness Premium Healthcare & Wellness Supplements"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
       <div class="slide-content">
-        <h1>Premium Healthcare<br>Made for Everyday Wellness</h1>
+        <h1>PREMIUM HEALTHCARE,<br>MADE FOR EVERYDAY WELLNESS.</h1>
         <p>
-          Science-backed formulas crafted with premium ingredients to support
-          your health with confidence.
+          Science-backed supplements for a healthier, stronger you.
         </p>
         <a href="shop.html" class="slide-cta">
           Explore Now <i class="fa-solid fa-arrow-right"></i>
@@ -3638,17 +3654,20 @@
     <!-- Slide 2 -->
     <div class="slide">
       <div class="slide-img-wrap">
-        <img
-          src="images/2.png"
-          alt="Magnesium Complex by Aiva Wellness"
-          loading="lazy"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/mob02.png" />
+          <img
+            src="images/2.png"
+            alt="Magnesium Complex by Aiva Wellness"
+            loading="lazy"
+          />
+        </picture>
       </div>
       <div class="slide-content">
-        <h1>Quality You Can<br>Trust Every Day</h1>
+        <h1>SLEEP BETTER.<br>WAKE UP BETTER.</h1>
         <p>
-          Thoughtfully formulated supplements made with premium ingredients and
-          uncompromising quality standards.
+          Advanced magnesium support for restful sleep, muscle relaxation &amp;
+          everyday wellness.
         </p>
         <a
           href="product-details-pages/magnesium-complex-5-in-1.html"
@@ -3662,17 +3681,20 @@
     <!-- Slide 3 -->
     <div class="slide">
       <div class="slide-img-wrap">
-        <img
-          src="images/3.png"
-          alt="Nattokinase Supplement by Aiva Wellness"
-          loading="lazy"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/mob03.png" />
+          <img
+            src="images/3.png"
+            alt="Nattokinase Supplement by Aiva Wellness"
+            loading="lazy"
+          />
+        </picture>
       </div>
       <div class="slide-content">
-        <h1>Backed by Science.<br>Designed for You.</h1>
+        <h1>HEART HEALTH,<br>POWERED BY NATTOKINASE.</h1>
         <p>
-          Carefully developed formulations that combine scientific research
-          with high-quality ingredients for everyday wellness.
+          Traditional Japanese bioactive enzyme for healthy circulation &amp;
+          everyday cardiovascular support.
         </p>
         <a
           href="product-details-pages/nattokinase200.html"
@@ -3686,20 +3708,22 @@
     <!-- Slide 4 -->
     <div class="slide">
       <div class="slide-img-wrap">
-        <img
-          src="images/4.png"
-          alt="Energy & Immunity Support by Aiva Wellness"
-          loading="lazy"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/mob04.png" />
+          <img
+            src="images/4.png"
+            alt="Daily Vitals by Aiva Wellness"
+            loading="lazy"
+          />
+        </picture>
       </div>
       <div class="slide-content">
-        <h1>Wellness That Fits<br>Your Lifestyle</h1>
+        <h1>EVERYDAY HEALTH.<br>ONE COMPLETE FORMULA.</h1>
         <p>
-          Simple, effective nutritional support designed to become a seamless
-          part of your daily health routine.
+          Daily nutritional support for energy, immunity &amp; overall vitality.
         </p>
         <a
-          href="product-details-pages/energy-immunity-support.html"
+          href="product-details-pages/dailyvitals.html"
           class="slide-cta"
         >
           View Product <i class="fa-solid fa-arrow-right"></i>
@@ -3840,9 +3864,9 @@
             </h3>
             <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span>56 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">&#8377;799</span>
-              <span class="original-price">&#8377;949</span>
-              <span class="save-badge">Save 16%</span>
+              <span class="sale-price">&#8377;1,299</span>
+              <span class="original-price">&#8377;1,499</span>
+              <span class="save-badge">Save 13%</span>
             </div>
             <div class="buy-actions">
               <a class="btn-cart" href="product-details-pages/nattokinase100.html">
@@ -3922,9 +3946,9 @@
             </h3>
             <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span>73 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">&#8377;1,199</span>
+              <span class="sale-price">&#8377;1,299</span>
               <span class="original-price">&#8377;1,399</span>
-              <span class="save-badge">Save 14%</span>
+              <span class="save-badge">Save 7%</span>
             </div>
             <div class="buy-actions">
               <a class="btn-cart" href="product-details-pages/nattokinase200.html">
@@ -4007,22 +4031,22 @@
 
         <div class="product-card reveal d3">
           <div class="product-img">
-            <span class="p-badge badge-sale">Sale</span>
-            <a href="product-details-pages/energy-immunity-support.html"
+            <span class="p-badge badge-new">New</span>
+            <a href="product-details-pages/dailyvitalsmen.html"
               ><img
-                src="products/reefit forte c new size.webp"
+                src="products/all images/men-1.png"
                 loading="lazy"
                 decoding="async"
-                alt="Energy & Immunity Support"
-                onerror="
+                alt="Daily Vitals for Men 40+"
+                
                   this.src =
                     'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&auto=format&fm=webp'
                 "
             /></a>
             <img
               class="img-hover"
-              src="products/all images/multivitamin2.png"
-              alt="Energy & Immunity Support hover"
+              src="products/all images/men-2.png"
+              alt="Daily Vitals for Men hover"
               loading="lazy"
               decoding="async"
             />
@@ -4030,50 +4054,50 @@
               <button
                 class="p-action-btn"
                 title="Quick view"
-                onclick="window.location.href = 'product-details-pages/energy-immunity-support.html'"
+                onclick="window.location.href = 'product-details-pages/dailyvitalsmen.html'"
               >
                 <i class="fa-regular fa-eye"></i>
               </button>
               <button
                 class="p-action-btn"
                 title="Share"
-                onclick="toggleShareMenu(event, 107)"
+                onclick="toggleShareMenu(event, 116)"
               >
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
             </div>
-            <div class="share-popover" id="sharePopover-107" aria-hidden="true">
+            <div class="share-popover" id="sharePopover-116" aria-hidden="true">
               <button
                 type="button"
                 class="share-option"
-                onclick="shareProduct(107, 'whatsapp')"
+                onclick="shareProduct(116, 'whatsapp')"
               >
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
               </button>
               <button
                 type="button"
                 class="share-option"
-                onclick="shareProduct(107, 'copy')"
+                onclick="shareProduct(116, 'copy')"
               >
                 <i class="fa-regular fa-copy"></i> Copy Link
               </button>
             </div>
           </div>
           <div class="product-info">
-            <div class="product-cat">Immunity</div>
+            <div class="product-cat">Men's Health</div>
             <h3>
-              <a href="product-details-pages/energy-immunity-support.html"
-                >Energy & Immunity Support</a
+              <a href="product-details-pages/dailyvitalsmen.html"
+                >Daily Vitals for Men 40+</a
               >
             </h3>
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span>94 reviews</span></div>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span>78 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">&#8377;799</span>
-              <span class="original-price">&#8377;899</span>
-              <span class="save-badge">Save 11%</span>
+              <span class="sale-price">&#8377;1,299</span>
+              <span class="original-price">&#8377;1,499</span>
+              <span class="save-badge">Save 13%</span>
             </div>
             <div class="buy-actions">
-              <a class="btn-cart" href="product-details-pages/energy-immunity-support.html">
+              <a class="btn-cart" href="product-details-pages/dailyvitalsmen.html">
                 <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
               </a>
             </div>
@@ -4338,13 +4362,12 @@
           </div>
         </div>
       </div>
-      <!--
+      -->
       <div class="view-all-wrap reveal">
         <a href="shop.html" class="btn-outline"
           >View All Products <i class="fa-solid fa-arrow-right"></i
         ></a>
       </div>
-      -->
     </section>
 
     <!-- ABOUT SECTION -->
@@ -4359,13 +4382,6 @@
             <img
               src="products/about-cover.png"
               alt="Natural Aiva Wellness ingredients"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              class="hover-img"
-              src="products/about-cover-hover.png"
-              alt="Aiva Wellness hover image"
               loading="lazy"
               decoding="async"
             />
@@ -4395,7 +4411,7 @@
             >
               10k+
             </div>
-            <div class="a-stat-label">Happy Customers</div>
+            <div class="a-stat-label">Orders Delivered</div>
           </div>
           <div class="a-stat">
             <div
@@ -4425,13 +4441,6 @@
           <img
             src="products/about-cover.png"
             alt="Natural Aiva Wellness ingredients"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="hover-img"
-            src="products/about-cover-hover.png"
-            alt="Aiva Wellness hover image"
             loading="lazy"
             decoding="async"
           />
@@ -4516,7 +4525,7 @@
         >
         <h2><strong>Heart, Sleep & Immunity Trio</strong></h2>
         <p class="combo-sub">
-          Nattokinase 200 + Magnesium 5-in-1 + Energy & Immunity Support - cardiovascular
+          Nattokinase 200 + Magnesium 5-in-1 + Daily Vitals - cardiovascular
           support, deep sleep, and immune strength combined.
         </p>
         <div class="combo-stars">
@@ -4528,8 +4537,8 @@
           <div class="combo-review">89 reviews</div>
         </div>
         <div class="combo-price-row">
-          <span class="sale">&#8377;2,599</span>
-          <span class="orig">MRP &#8377;2,997</span>
+          <span class="sale">&#8377;3,199</span>
+          <span class="orig">MRP &#8377;3,999</span>
         </div>
         <p class="combo-mrp">(MRP inclusive of all taxes)</p>
         <p class="combo-includes-label">What's Included</p>
@@ -4565,13 +4574,13 @@
               src="products/reefit forte c new size.webp"
               loading="lazy"
               decoding="async"
-              alt="Energy & Immunity Support"
+              alt="Daily Vitals"
               onerror="
                 this.src =
                   'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
               "
             />
-            <span>Energy & Immunity Support</span>
+            <span>Daily Vitals</span>
           </div>
         </div>
         <a href="shop.html" class="btn-add"
@@ -4637,7 +4646,7 @@
           <div class="drops-middle reveal">
             <div class="drops-middle-inner">
               <img
-                src="products/magnesium5in1.png"
+                src="products/magnesium.png"
                 loading="lazy"
                 decoding="async"
                 alt="Magnesium Complex 5-in-1"
@@ -4797,7 +4806,7 @@
           <div class="blog-card reveal">
             <div class="blog-img">
               <img
-                src="blogs/images/magnesium.png"
+                src="blogs/images/magnesium-card-cover.png"
                 alt="Magnesium Benefits"
                 loading="lazy"
                 decoding="async"
@@ -4819,25 +4828,24 @@
           <div class="blog-card reveal reveal-left">
             <div class="blog-img">
               <img
-                src="blogs/images/omega-3.png"
-                alt="Omega-3 Fish Oil"
+                src="blogs/images/daily-vitals-cover.png"
+                alt="Daily Vitals"
                 loading="lazy"
                 decoding="async"
                 onerror="
                   this.src =
-                    'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700&q=80&auto=format&fm=webp'
+                    'https://images.unsplash.com/photo-1584017911906-351421080c99?w=700&q=80&auto=format&fm=webp'
                 "
               />
             </div>
             <div class="blog-info">
-              <div class="blog-tag">Omega-3</div>
+              <div class="blog-tag">General Wellness</div>
               <h3>
-                <a href="blogs/omega-3-fish-oil.html"
-                  >Omega-3 Fish Oil: The Essential Nutrient for Heart, Brain
-                  &amp; Joint Health</a
+                <a href="blogs/daily-vitals.html"
+                  >Daily Vitals: Essential Vitamins &amp; Minerals for Everyday Energy</a
                 >
               </h3>
-              <a href="blogs/omega-3-fish-oil.html" class="blog-read"
+              <a href="blogs/daily-vitals.html" class="blog-read"
                 >Read more <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -4871,6 +4879,13 @@
           />
           <img
             class="insta-img"
+            src="products/all images/p2.png"
+            alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            class="insta-img"
             src="products/Magnesium Complex.webp"
             alt="Aiva Wellness"
             loading="lazy"
@@ -4878,57 +4893,21 @@
           />
           <img
             class="insta-img"
-            src="products/omega 3, Vitamin E.webp"
+            src="products/all images/magnesium2.png"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="products/VITAMIN D3.webp"
+            src="products/all images/men-1.png"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
           <img
             class="insta-img"
-            src="products/vitamins minerals with amino acid (man).webp"
-            alt="Aiva Wellness"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="insta-img"
-            src="products/vitamins minerals with amino acid (Woman).webp"
-            alt="Aiva Wellness"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="insta-img"
-            src="products/ZMA.webp"
-            alt="Aiva Wellness"
-            loading="lazy"
-            decoding="async"
-          />
-          <!-- duplicate for seamless loop -->
-          <img
-            class="insta-img"
-            src="products/CCM, Mg, Zc, D3.webp"
-            alt="Aiva Wellness"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="insta-img"
-            src="products/Q Fit-300.webp"
-            alt="Aiva Wellness"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            class="insta-img"
-            src="products/reefit forte c new size.webp"
+            src="products/all images/men-2.png"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
@@ -4942,11 +4921,35 @@
           />
           <img
             class="insta-img"
-            src="products/Magnesium Complex.webp"
+            src="products/all images/1.webp"
             alt="Aiva Wellness"
             loading="lazy"
             decoding="async"
           />
+          <img
+            class="insta-img"
+            src="products/reefit forte c new size.webp"
+            alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            class="insta-img"
+            src="products/all images/multivitamin2.png"
+            alt="Aiva Wellness"
+            loading="lazy"
+            decoding="async"
+          />
+          <img class="insta-img" src="products/Nattokinase Carton.webp" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/all images/p2.png" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/Magnesium Complex.webp" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/all images/magnesium2.png" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/all images/men-1.png" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/all images/men-2.png" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/Nattokinase Carton  final 3d.webp" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/all images/1.webp" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/reefit forte c new size.webp" alt="Aiva Wellness" loading="lazy" decoding="async" />
+          <img class="insta-img" src="products/all images/multivitamin2.png" alt="Aiva Wellness" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -4962,8 +4965,15 @@
           Subscribe for wellness tips, clean-living insights, exclusive offers,
           and early access to new products.
         </p>
-        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-          <input type="email" placeholder="Enter your email address" required />
+        <form
+          class="newsletter-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          onsubmit="handleNewsletter(event)"
+        >
+          <input type="hidden" name="access_key" value="54833b69-7278-4ca6-a38a-46f229bbff3a" />
+          <input type="hidden" name="subject" value="Aiva Wellness Newsletter Signup" />
+          <input type="email" name="email" placeholder="Enter your email address" required />
           <button type="submit">Subscribe</button>
         </form>
       </div>
@@ -5057,8 +5067,8 @@
                 >
               </li>
               <li>
-                <a href="product-details-pages/energy-immunity-support.html"
-                  >Energy &amp; Immunity Support</a
+                <a href="product-details-pages/dailyvitals.html"
+                  >Daily Vitals</a
                 >
             </li>
             </ul>
@@ -5214,6 +5224,19 @@
         );
       });
 
+      /* --- PRODUCT IMAGE TOUCH HOVER --- */
+      const productImageBlocks = document.querySelectorAll('.product-img');
+      productImageBlocks.forEach((block) => {
+        block.addEventListener(
+          'touchstart',
+          function () {
+            productImageBlocks.forEach((b) => b.classList.remove('touch-active'));
+            this.classList.add('touch-active');
+          },
+          { passive: true },
+        );
+      });
+
       /* --- ABOUT STATS COUNTER --- */
       const statCounters = document.querySelectorAll(".a-stat-num");
       const statsBlock = document.querySelector(".about-stats");
@@ -5231,7 +5254,7 @@
         const target = Number(el.dataset.target) || 0;
         const decimals = Number(el.dataset.decimals || 0);
         const suffix = el.dataset.suffix || "";
-        const duration = 1400;
+        const duration = 2400;
         const startTime = performance.now();
 
         function step(now) {
@@ -5242,7 +5265,7 @@
           } else if (decimals > 0) {
             el.textContent = `${current.toFixed(decimals)}`;
           } else {
-            el.textContent = `${Math.round(current)}${suffix}`;
+            el.textContent = `${Math.round(current).toLocaleString("en-IN")}${suffix}`;
           }
           if (progress < 1) {
             requestAnimationFrame(step);
@@ -5306,10 +5329,40 @@
       });
 
       /* --- NEWSLETTER --- */
-      function handleNewsletter(e) {
+      async function handleNewsletter(e) {
         e.preventDefault();
-        e.target.innerHTML =
-          '<p style="color:#fff;font-size:1rem;padding:16px 0;font-family:var(--font-sans);font-style:italic;letter-spacing:.02em">? Thank you for joining the Aiva Wellness community!</p>';
+        const form = e.target;
+        const emailInput = form.querySelector('input[type="email"]');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        if (submitButton.disabled) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Subscribing...";
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          const result = await response.json();
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || "Newsletter submission failed.");
+          }
+          form.innerHTML =
+            '<p style="color:#fff;font-size:1rem;padding:16px 0;font-family:var(--font-sans);font-style:italic;letter-spacing:.02em">Thank you for subscribing!</p>';
+        } catch (error) {
+          console.error("Newsletter submission error:", error);
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+          if (!form.querySelector(".newsletter-error")) {
+            const errorMessage = document.createElement("p");
+            errorMessage.className = "newsletter-error";
+            errorMessage.textContent = "Unable to subscribe. Please try again.";
+            form.appendChild(errorMessage);
+          }
+          emailInput.focus();
+        }
       }
 
       /* --- TESTIMONIALS --- */
@@ -5620,8 +5673,3 @@
     </script>
   </body>
 </html>
-
-
-
-
-

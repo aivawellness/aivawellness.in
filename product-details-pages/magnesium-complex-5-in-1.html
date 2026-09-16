@@ -411,6 +411,8 @@
         gap: 10px;
         text-decoration: none;
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
       }
       .brand-mark {
         width: 54px;
@@ -941,7 +943,7 @@
       }
       .image-modal-strip {
         position: absolute;
-        bottom: 16px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
@@ -986,6 +988,20 @@
         border: 2px solid transparent;
         transition: all 0.2s var(--ease);
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .strip-video img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .strip-video i {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
       }
       .strip-video:hover,
       .strip-video.active {
@@ -1511,24 +1527,60 @@
         background: var(--black);
         border-radius: 24px;
         overflow: hidden;
-        max-width: 840px;
+        max-width: 1000px;
         width: 100%;
         position: relative;
         box-shadow: var(--sh-xl);
-        min-height: 420px;
+        min-height: auto;
       }
       .video-modal-inner .video-placeholder {
-        min-height: 420px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 18px;
-        padding: 36px;
+        gap: 0;
+        padding: 0;
       }
       .video-modal-inner .video-placeholder p {
-        max-width: 640px;
+        max-width: 100%;
         text-align: center;
+      }
+      .video-modal-inner video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: calc(100vh - 40px) !important;
+        aspect-ratio: auto !important;
+        object-fit: contain;
+        display: block;
+      }
+      .video-placeholder {
+        aspect-ratio: unset !important;
+        padding: 0 !important;
+      }
+      @media (max-width: 768px) {
+        .video-modal-overlay {
+          padding: 0 !important;
+        }
+        .video-modal-inner {
+          max-width: 100% !important;
+          width: 100% !important;
+          min-height: auto !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+        }
+        .video-modal-inner .video-placeholder {
+          width: 100% !important;
+          padding: 0 !important;
+          min-height: auto !important;
+          aspect-ratio: unset !important;
+        }
+        .video-modal-close {
+          top: 12px;
+          right: 12px;
+          width: 40px;
+          height: 40px;
+        }
       }
       .image-modal-overlay {
         position: fixed;
@@ -1553,9 +1605,9 @@
         flex-direction: column;
         width: 100%;
         min-width: 320px;
-        max-width: 95vw;
-        height: 90vh;
-        max-height: 90vh;
+        max-width: min(980px, 92vw);
+        height: 84vh;
+        max-height: 84vh;
         padding: 12px 0 70px;
         border-radius: 24px;
         overflow: hidden;
@@ -1627,8 +1679,8 @@
         position: relative;
       }
       .image-modal-body img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: min(72vw, 760px);
+        max-height: 72vh;
         width: auto;
         height: auto;
         object-fit: contain;
@@ -1822,6 +1874,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
         gap: 10px;
         min-height: 240px;
@@ -1889,16 +1942,36 @@
         min-width: 520px;
         border-collapse: collapse;
         font-size: 0.87rem;
+        table-layout: fixed;
+      }
+      .nutrition-table th:nth-child(1),
+      .nutrition-table td:nth-child(1) {
+        width: 42%;
+        text-align: left;
+      }
+      .nutrition-table th:nth-child(2),
+      .nutrition-table td:nth-child(2),
+      .nutrition-table th:nth-child(3),
+      .nutrition-table td:nth-child(3),
+      .nutrition-table th:nth-child(4),
+      .nutrition-table td:nth-child(4) {
+        text-align: center;
+      }
+      .nutrition-table th:nth-child(2),
+      .nutrition-table td:nth-child(2) {
+        width: 30%;
+      }
+      .nutrition-table th:nth-child(3),
+      .nutrition-table td:nth-child(3),
+      .nutrition-table th:nth-child(4),
+      .nutrition-table td:nth-child(4) {
+        width: 14%;
       }
       .nutrition-table thead th {
         background: var(--black);
         color: #fff;
         padding: 12px 18px;
-        text-align: left;
         font-weight: 600;
-      }
-      .nutrition-table thead th:last-child {
-        text-align: right;
       }
       .nutrition-table tbody tr {
         border-bottom: 1px solid var(--border);
@@ -1912,10 +1985,6 @@
       .nutrition-table tbody td {
         padding: 12px 18px;
         color: var(--ink);
-      }
-      .nutrition-table tbody td:last-child {
-        text-align: right;
-        font-weight: 700;
       }
       .nutrition-note {
         font-size: 0.76rem;
@@ -2312,6 +2381,72 @@
       .card-act-btn:hover {
         background: var(--blue);
         color: #fff;
+      }
+      .similar-grid .card-img-wrap {
+        position: relative;
+        border-radius: 0;
+      }
+      .similar-grid .product-card {
+        border-radius: 0;
+      }
+      .similar-grid .card-img-wrap > img {
+        transition:
+          transform 0.7s var(--ease),
+          opacity 0.35s;
+      }
+      .similar-grid .card-img-wrap .img-hover {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        object-fit: cover;
+        transition: opacity 0.45s var(--ease);
+      }
+      .similar-grid .product-card:hover .img-hover {
+        opacity: 1;
+      }
+      .similar-grid .share-popover {
+        position: absolute;
+        top: 52px;
+        right: 12px;
+        z-index: 5;
+        display: none;
+        min-width: 142px;
+        padding: 6px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: var(--sh-lg);
+      }
+      .similar-grid .share-popover.active {
+        display: grid;
+        gap: 4px;
+      }
+      .similar-grid .share-option {
+        border: 0;
+        border-radius: 7px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+        font:
+          600 0.72rem "Inter",
+          sans-serif;
+        padding: 8px 10px;
+        text-align: left;
+      }
+      .similar-grid .share-option:hover {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+      .similar-grid .card-btn {
+        align-items: center;
+        display: inline-flex;
+        gap: 6px;
+        text-decoration: none;
+      }
+      .similar-grid .card-btn::before {
+        content: "\f07a";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
       }
       .card-body {
         padding: 16px 18px 20px;
@@ -2754,7 +2889,7 @@
       }
       .image-modal-hint {
         position: absolute;
-        bottom: 18px;
+        bottom: 2px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 15;
@@ -2791,6 +2926,9 @@
           padding: 10px 0 60px;
           border-radius: 22px;
         }
+        .image-modal-hint {
+          bottom: 18px;
+        }
         .image-modal-toolbar {
           left: 12px;
           top: 12px;
@@ -2825,6 +2963,38 @@
         .image-modal-zoombar {
           bottom: 12px;
           right: 12px;
+        }
+        .nutrition-wrap {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: visible;
+        }
+        .nutrition-table {
+          width: 100%;
+          min-width: 0;
+          table-layout: fixed;
+          font-size: 0.74rem;
+        }
+        .nutrition-table thead th,
+        .nutrition-table tbody td {
+          padding: 9px 7px;
+          vertical-align: top;
+          overflow-wrap: anywhere;
+        }
+        .nutrition-table tr > :nth-child(1):nth-last-child(3) {
+          width: 52%;
+        }
+        .nutrition-table tr > :nth-child(2):nth-last-child(2) {
+          width: 28%;
+        }
+        .nutrition-table tr > :nth-child(3):last-child {
+          width: 20%;
+        }
+        .nutrition-table tr > :nth-child(1):nth-last-child(2) {
+          width: 42%;
+        }
+        .nutrition-table tr > :nth-child(2):last-child {
+          width: 58%;
         }
       }
       .image-modal-nav:active {
@@ -3097,12 +3267,9 @@
                 />
                 <div class="video-thumb" onclick="openVideoModal()">
                   <img
-                    src="../products/Magnesium Complex.webp"
+                    src="../videos/magnesium-thumbnail.png"
                     alt="Product Video"
-                    onerror="
-                      this.src =
-                        'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80&auto=format&fm=webp'
-                    "
+                    onerror="this.src = '../videos/magnesium-thumbnail.png'"
                     loading="lazy"
                     decoding="async"
                   />
@@ -3127,23 +3294,6 @@
                 Zinc, Vitamin D3 and Vitamin B6 in a single daily capsule to
                 support bone strength, muscle recovery, and everyday energy.
               </p>
-
-              <div class="stars-gold">
-                ★★★★<span style="color: var(--border)">★</span>
-              </div>
-              <span class="rating-val">4.6</span>
-              <span
-                class="rating-count"
-                onclick="
-                  document
-                    .querySelector('.reviews-section')
-                    .scrollIntoView({ behavior: 'smooth' })
-                "
-                >(128 reviews)</span
-              >
-              <span class="verified-pill"
-                ><i class="fa-solid fa-circle-check"></i> Verified</span
-              >
             </div>
 
             <div class="stock-row">
@@ -3185,11 +3335,11 @@
               </div>
               <div class="trust-item">
                 <div class="trust-icon-w">
-                  <i class="fa-solid fa-rotate-left"></i>
+                  <i class="fa-solid fa-flask"></i>
                 </div>
                 <div>
-                  <div class="trust-text-w">100% Vegetarian</div>
-                  <div class="trust-sub-w">Supplement</div>
+                  <div class="trust-text-w">Clean Formula</div>
+                  <div class="trust-sub-w">Thoughtfully crafted</div>
                 </div>
               </div>
               <div class="trust-item">
@@ -3251,13 +3401,22 @@
 
             <div class="share-row">
               <span class="share-lbl">Share:</span>
-              <a
+              <button
                 class="share-btn"
-                href="https://wa.me/?text=Check+this+product"
-                target="_blank"
-                title="WhatsApp"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
+                title="Share on WhatsApp"
+                onclick="
+                  const url = location.href;
+                  navigator.clipboard && navigator.clipboard.writeText(url);
+                  window.open(
+                    'https://wa.me/?text=' +
+                      encodeURIComponent('Check this product: ' + url),
+                    '_blank',
+                  );
+                  showToast('📱', 'Link copied & WhatsApp opened!');
+                "
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </button>
               <button
                 class="share-btn"
                 title="Copy link"
@@ -3325,7 +3484,13 @@
                       <tr>
                         <td>Manufacturer</td>
                         <td style="text-align: right; font-weight: 700">
-                          Aiva Wellness Pvt. Ltd. India
+                          Beatrix Lifecare
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Packer</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Beatrix Lifecare
                         </td>
                       </tr>
                       <tr>
@@ -3341,6 +3506,12 @@
                         </td>
                       </tr>
                       <tr>
+                        <td>Flavour</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Unflavoured
+                        </td>
+                      </tr>
+                      <tr>
                         <td>Unit Count</td>
                         <td style="text-align: right; font-weight: 700">
                           60 Capsules
@@ -3353,19 +3524,25 @@
                       <tr>
                         <td>Item Weight</td>
                         <td style="text-align: right; font-weight: 700">
-                          150 Grams
+                          52 Grams
                         </td>
                       </tr>
                       <tr>
                         <td>Product Dimensions</td>
                         <td style="text-align: right; font-weight: 700">
-                          5.4 x 5.4 x 11.7 cm
+                          5.5 x 5.5 x 10 cm
                         </td>
                       </tr>
                       <tr>
-                        <td>Customer Reviews</td>
+                        <td>Best Before</td>
                         <td style="text-align: right; font-weight: 700">
-                          4.6 ★ (128 ratings)
+                          18 months from the date of manufacture
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Diet type</td>
+                        <td style="text-align: right; font-weight: 700">
+                          vegan, gluten free
                         </td>
                       </tr>
                       <tr>
@@ -3383,6 +3560,16 @@
                 </div>
               </div>
               <div class="benefits-grid">
+                <div class="benefit-card">
+                  <div class="benefit-icon benefit-icon--brain">
+                    <i class="fa-solid fa-moon"></i>
+                  </div>
+                  <div class="benefit-title">Restful Sleep</div>
+                  <div class="benefit-desc">
+                    Magnesium is known to support relaxation and a calm, restful
+                    night's sleep.
+                  </div>
+                </div>
                 <div class="benefit-card">
                   <div class="benefit-icon benefit-icon--bone">
                     <i class="fa-solid fa-bone"></i>
@@ -3433,16 +3620,6 @@
                     everyday fatigue.
                   </div>
                 </div>
-                <div class="benefit-card">
-                  <div class="benefit-icon benefit-icon--brain">
-                    <i class="fa-solid fa-moon"></i>
-                  </div>
-                  <div class="benefit-title">Restful Sleep</div>
-                  <div class="benefit-desc">
-                    Magnesium is known to support relaxation and a calm, restful
-                    night's sleep.
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -3456,72 +3633,201 @@
                   margin-bottom: 18px;
                 "
               >
-                <strong>Serving Size:</strong> 1 Capsule &nbsp;|&nbsp;
+                <strong>Serving Size:</strong> 2 Tablets (2.40g) &nbsp;|&nbsp;
                 <strong>Servings Per Container:</strong> 60
               </p>
+
+              <h5
+                style="
+                  font-size: 0.9rem;
+                  font-weight: 700;
+                  margin: 16px 0 12px;
+                  color: var(--ink);
+                "
+              >
+                Nutritional Information (Approx Values)
+              </h5>
               <table class="nutrition-table">
                 <thead>
                   <tr>
                     <th>Nutrient</th>
-                    <th style="text-align: center">Per Serving</th>
-                    <th>% RDA</th>
+                    <th style="text-align: center">Each Serving Provides</th>
+                    <th style="text-align: center">% RDA Men</th>
+                    <th style="text-align: center">% RDA Women</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Magnesium (as Magnesium Oxide)</td>
-                    <td style="text-align: center">250 mg</td>
-                    <td>66</td>
+                    <td>Energy Value</td>
+                    <td style="text-align: center">0.5 Kcal</td>
+                    <td style="text-align: center">0.025%</td>
+                    <td style="text-align: center">0.025%</td>
                   </tr>
                   <tr>
-                    <td>Calcium (as Calcium Carbonate)</td>
-                    <td style="text-align: center">200 mg</td>
-                    <td>20</td>
+                    <td>Protein</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td style="text-align: center">0.00%</td>
+                    <td style="text-align: center">0.00%</td>
                   </tr>
                   <tr>
-                    <td>Zinc (as Zinc Sulphate)</td>
-                    <td style="text-align: center">10 mg</td>
-                    <td>91</td>
+                    <td>Carbohydrate</td>
+                    <td style="text-align: center">0.125 g</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
                   </tr>
                   <tr>
-                    <td>Vitamin D3 (Cholecalciferol)</td>
-                    <td style="text-align: center">400 IU</td>
-                    <td>67</td>
+                    <td>Total Sugar</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
                   </tr>
                   <tr>
-                    <td>Vitamin B6 (Pyridoxine)</td>
-                    <td style="text-align: center">2 mg</td>
-                    <td>143</td>
+                    <td>Added Sugar</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td style="text-align: center">0.00%</td>
+                    <td style="text-align: center">0.00%</td>
+                  </tr>
+                  <tr>
+                    <td>Total Fat</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td style="text-align: center">0.00%</td>
+                    <td style="text-align: center">0.00%</td>
+                  </tr>
+                  <tr>
+                    <td>Cholesterol</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
+                  </tr>
+                  <tr>
+                    <td>Sodium</td>
+                    <td style="text-align: center">0.00 g</td>
+                    <td style="text-align: center">0.00%</td>
+                    <td style="text-align: center">0.00%</td>
                   </tr>
                 </tbody>
               </table>
+
+              <h5
+                style="
+                  font-size: 0.9rem;
+                  font-weight: 700;
+                  margin: 20px 0 0;
+                  color: #fff;
+                  background: #1e293b;
+                  padding: 8px 12px;
+                  border-radius: 0;
+                "
+              >
+                Each Serving Provides (Magnesium Forms):
+              </h5>
+              <table class="nutrition-table">
+                <thead>
+                  <tr>
+                    <th>Magnesium Form</th>
+                    <th style="text-align: center">Each Serving Provides</th>
+                    <th style="text-align: center">% RDA Men</th>
+                    <th style="text-align: center">% RDA Women</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Magnesium (form Magnesium Oxide 255mg)</td>
+                    <td style="text-align: center">153 mg elemental</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
+                  </tr>
+                  <tr>
+                    <td>Magnesium (form Magnesium Glycinate 420mg)</td>
+                    <td style="text-align: center">92.4 mg elemental</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
+                  </tr>
+                  <tr>
+                    <td>Magnesium (form Magnesium Citrate 300mg)</td>
+                    <td style="text-align: center">39 mg elemental</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
+                  </tr>
+                  <tr>
+                    <td>Magnesium (form Magnesium Aspartate 290mg)</td>
+                    <td style="text-align: center">29 mg elemental</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
+                  </tr>
+                  <tr>
+                    <td>Magnesium (form Magnesium Gluconate 735mg)</td>
+                    <td style="text-align: center">36.75 mg elemental</td>
+                    <td style="text-align: center">*</td>
+                    <td style="text-align: center">*</td>
+                  </tr>
+                  <tr
+                    style="background: #1e293b; color: #fff; font-weight: 700"
+                  >
+                    <td style="color: #fff">Total Elemental Magnesium:</td>
+                    <td style="text-align: center; color: #fff">350 mg</td>
+                    <td style="text-align: center; color: #fff">*</td>
+                    <td style="text-align: center; color: #fff">*</td>
+                  </tr>
+                </tbody>
+              </table>
+
               <p class="nutrition-note">
                 %RDA values established as per ICMR &amp; FSS (Labeling &amp;
-                Display) Guidelines 2020, based on a sedentary woman.
+                Display) Guidelines 2020. * Adequate Intake (AI) or Reference
+                Nutrient Intake not established.
               </p>
             </div>
           </div>
 
           <div class="tab-panel" id="tab-ingredients">
             <p class="ingredients-text">
-              <strong>Active Ingredients:</strong> Magnesium Oxide (250 mg
-              elemental Magnesium), Calcium Carbonate (200 mg elemental
-              Calcium), Zinc Sulphate (10 mg elemental Zinc), Vitamin D3 –
-              Cholecalciferol (400 IU), Vitamin B6 – Pyridoxine (2 mg).
+              <strong>Active Ingredients (per serving):</strong>
             </p>
-            <p class="ingredients-text">
-              <strong>Other Ingredients:</strong> Microcrystalline Cellulose,
-              Capsule Shell (HPMC – Vegetarian), Magnesium Stearate, Silicon
-              Dioxide (Anti-caking agent).
-            </p>
+            <ul style="list-style: none; padding: 0; margin-bottom: 16px">
+              <li
+                style="padding: 8px 0; border-bottom: 1px solid var(--border)"
+              >
+                <strong>Magnesium Oxide</strong> — 255 mg (providing 153 mg
+                elemental Magnesium)
+              </li>
+              <li
+                style="padding: 8px 0; border-bottom: 1px solid var(--border)"
+              >
+                <strong>Magnesium Glycinate</strong> — 420 mg (providing 92.4 mg
+                elemental Magnesium)
+              </li>
+              <li
+                style="padding: 8px 0; border-bottom: 1px solid var(--border)"
+              >
+                <strong>Magnesium Citrate</strong> — 300 mg (providing 39 mg
+                elemental Magnesium)
+              </li>
+              <li
+                style="padding: 8px 0; border-bottom: 1px solid var(--border)"
+              >
+                <strong>Magnesium Aspartate</strong> — 290 mg (providing 29 mg
+                elemental Magnesium)
+              </li>
+              <li
+                style="padding: 8px 0; border-bottom: 1px solid var(--border)"
+              >
+                <strong>Magnesium Gluconate</strong> — 735 mg (providing 36.75
+                mg elemental Magnesium)
+              </li>
+              <li style="padding: 8px 0; font-weight: 600; color: var(--ink)">
+                <strong>Total Elemental Magnesium per serving: 350 mg</strong>
+              </li>
+            </ul>
             <div class="allergen-box">
               <strong
-                ><i class="fa-solid fa-triangle-exclamation"></i> Allergen
+                ><i class="fa-solid fa-triangle-exclamation"></i> Important
                 Information</strong
-              >100% vegetarian, HPMC-based capsule shell, suitable for
-              vegetarians. Manufactured in a facility that also processes milk
-              and soy derivatives. Not intended to diagnose, treat, cure, or
-              prevent any disease.
+              >This product contains magnesium in multiple forms for enhanced
+              absorption and bioavailability. Consult your healthcare
+              practitioner before use if you are pregnant, lactating, or have
+              kidney concerns. Not for medicinal use. This product is not
+              intended to diagnose, treat, cure, or prevent any disease.
             </div>
           </div>
 
@@ -3530,10 +3836,10 @@
               <div class="usage-step">
                 <div class="step-num">1</div>
                 <div class="step-text">
-                  <h5>Take 1 capsule daily</h5>
+                  <h5>Take 2 tablets daily</h5>
                   <p>
-                    For adults, the recommended dose is one capsule daily.
-                    Recommended dosage should not be exceeded.
+                    For adults, the recommended serving is 2 tablets daily (one
+                    serving). Do not exceed the recommended dosage.
                   </p>
                 </div>
               </div>
@@ -3542,7 +3848,7 @@
                 <div class="step-text">
                   <h5>Take preferably after meals</h5>
                   <p>
-                    Take the capsule daily, preferably after a meal, to support
+                    Take the tablets preferably after a meal to support
                     comfortable digestion and consistent absorption.
                   </p>
                 </div>
@@ -3552,7 +3858,7 @@
                 <div class="step-text">
                   <h5>Swallow with a full glass of water</h5>
                   <p>
-                    Drink at least 200 ml of water when taking the capsule.
+                    Drink at least 200 ml of water when taking the tablets.
                     Avoid taking on an empty stomach if you experience any
                     discomfort.
                   </p>
@@ -3584,7 +3890,7 @@
           </div>
         </div>
 
-        <div class="reviews-section reveal">
+        <div class="reviews-section reveal" hidden>
           <span class="section-eyebrow"
             ><i class="fa-solid fa-star"></i> Customer Reviews</span
           >
@@ -3784,10 +4090,9 @@
                 <div class="card-name">
                   <a href="nattokinase100.html">Nattokinase 100 mg</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>56 reviews</span></div>
                 <div class="card-price-row">
                   <div>
-                    <span class="card-price">₹799</span>
+                    <span class="card-price">₹1,299</span>
                     <span class="card-old">₹949</span>
                   </div>
                   <a class="card-btn" href="nattokinase100.html">Buy Now</a>
@@ -3813,10 +4118,9 @@
                 <div class="card-name">
                   <a href="nattokinase200.html">Nattokinase 200 mg</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>73 reviews</span></div>
                 <div class="card-price-row">
                   <div>
-                    <span class="card-price">₹1,199</span>
+                    <span class="card-price">₹1,299</span>
                     <span class="card-old">₹1,399</span>
                   </div>
                   <a class="card-btn" href="nattokinase200.html">Buy Now</a>
@@ -3825,10 +4129,10 @@
             </div>
             <div class="product-card">
               <div class="card-img-wrap">
-                <span class="card-badge">Top Seller</span>
+                <span class="card-badge sale">Sale</span>
                 <img
-                  src="../products/Magnesium Complex.webp"
-                  alt="Magnesium Complex 5-in-1"
+                  src="../products/reefit forte c new size.webp"
+                  alt="Daily Vitals"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&q=80&auto=format&fm=webp'
@@ -3838,30 +4142,25 @@
                 />
               </div>
               <div class="card-body">
-                <span class="card-cat">Magnesium</span>
+                <span class="card-cat">Immunity</span>
                 <div class="card-name">
-                  <a href="magnesium-complex-5-in-1.html"
-                    >Magnesium Complex 5-in-1</a
-                  >
+                  <a href="dailyvitals.html">Daily Vitals</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>128 reviews</span></div>
                 <div class="card-price-row">
                   <div>
                     <span class="card-price">₹1,299</span>
-                    <span class="card-old">₹1,499</span>
+                    <span class="card-old">₹899</span>
                   </div>
-                  <a class="card-btn" href="magnesium-complex-5-in-1.html"
-                    >Buy Now</a
-                  >
+                  <a class="card-btn" href="dailyvitals.html">Buy Now</a>
                 </div>
               </div>
             </div>
             <div class="product-card">
               <div class="card-img-wrap">
-                <span class="card-badge sale">Sale</span>
+                <span class="card-badge new">New</span>
                 <img
-                  src="../products/reefit forte c new size.webp"
-                  alt="Energy & Immunity Support"
+                  src="../products/all images/men-1.png"
+                  alt="Daily Vitals for Men 40+"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=500&q=80&auto=format&fm=webp'
@@ -3871,21 +4170,16 @@
                 />
               </div>
               <div class="card-body">
-                <span class="card-cat">Immunity</span>
+                <span class="card-cat">Men's Health</span>
                 <div class="card-name">
-                  <a href="energy-immunity-support.html"
-                    >Energy & Immunity Support</a
-                  >
+                  <a href="dailyvitalsmen.html">Daily Vitals for Men 40+</a>
                 </div>
-                <div class="card-stars">★★★★★ <span>67 reviews</span></div>
                 <div class="card-price-row">
                   <div>
-                    <span class="card-price">₹799</span>
-                    <span class="card-old">₹899</span>
+                    <span class="card-price">₹1,299</span>
+                    <span class="card-old">₹1,499</span>
                   </div>
-                  <a class="card-btn" href="energy-immunity-support.html"
-                    >Buy Now</a
-                  >
+                  <a class="card-btn" href="dailyvitalsmen.html">Buy Now</a>
                 </div>
               </div>
             </div>
@@ -3904,11 +4198,27 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="video-placeholder">
-          <div class="video-play-big"><i class="fa-solid fa-play"></i></div>
-          <p>Magnesium Complex 5-in-1 — Product Walkthrough</p>
-          <p style="font-size: 0.76rem; opacity: 0.5">
-            Video will play here · Replace with your hosted video URL
-          </p>
+          <video
+            id="productVideo"
+            controls
+            playsinline
+            preload="metadata"
+            style="
+              width: 100%;
+              height: auto;
+              max-height: calc(100vh - 40px);
+              aspect-ratio: 16/9;
+              object-fit: contain;
+              display: block;
+              background: #000;
+            "
+          >
+            <source
+              src="../videos/magnesium-complex-video.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support HTML5 video.
+          </video>
         </div>
       </div>
     </div>
@@ -3965,6 +4275,25 @@
               alt="Product image"
               draggable="false"
             />
+            <video
+              id="imageModalVideo"
+              controls
+              playsinline
+              preload="metadata"
+              style="
+                display: none;
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+                object-fit: contain;
+                background: #000;
+              "
+            >
+              <source
+                src="../videos/magnesium-complex-video.mp4"
+                type="video/mp4"
+              />
+            </video>
             <span class="image-modal-video-badge" id="imageModalVideoBadge"
               >Video</span
             >
@@ -4072,8 +4401,8 @@
                 <a href="nattokinase100.html">Nattokinase 100 mg</a>
               </li>
               <li>
-                <a href="../product-details-pages/energy-immunity-support.html"
-                  >Energy &amp; Immunity Support</a
+                <a href="../product-details-pages/dailyvitals.html"
+                  >Daily Vitals</a
                 >
               </li>
             </ul>
@@ -4268,6 +4597,7 @@
 
       const imageModal = document.getElementById("imageModal");
       const imageModalImg = document.getElementById("imageModalImg");
+      const imageModalVideo = document.getElementById("imageModalVideo");
       const imageModalBody = document.getElementById("imageModalBody");
       const imageModalVideoBadge = document.getElementById(
         "imageModalVideoBadge",
@@ -4294,7 +4624,8 @@
           if (item.type === "video") {
             const v = document.createElement("div");
             v.className = "strip-video";
-            v.innerHTML = '<i class="fa-solid fa-play"></i>';
+            v.innerHTML =
+              '<img src="../videos/magnesium-thumbnail.png" alt="Magnesium Complex video thumbnail" /><i class="fa-solid fa-play"></i>';
             v.addEventListener("click", (e) => {
               e.stopPropagation();
               showModalItem(i);
@@ -4341,6 +4672,10 @@
         imageModalTx = 0;
         imageModalTy = 0;
         imageModalImg.style.transform = "translate3d(0,0,0) scale(1)";
+        imageModalImg.style.display = "";
+        imageModalVideo.pause();
+        imageModalVideo.currentTime = 0;
+        imageModalVideo.style.display = "none";
         imageModalVideoBadge.classList.remove("show");
         if (zoomPctEl) zoomPctEl.textContent = "100%";
       }
@@ -4351,9 +4686,13 @@
         resetImagePosition();
 
         if (item.type === "video") {
-          imageModalImg.src = "../products/Magnesium Complex.webp";
-          imageModalVideoBadge.classList.add("show");
+          imageModalImg.style.display = "none";
+          imageModalVideo.style.display = "block";
+          imageModalVideo.load();
+          imageModalVideo.play().catch(() => {});
         } else {
+          imageModalImg.style.display = "";
+          imageModalVideo.style.display = "none";
           imageModalImg.src = item.src;
           imageModalVideoBadge.classList.remove("show");
           const thumb = Array.from(
@@ -4641,7 +4980,7 @@
         103: {
           name: "Nattokinase 200 mg",
           img: "../products/Nattokinase Carton.webp",
-          price: 1199,
+          price: 1299,
           old: 1399,
           discount: 14,
           desc: "Nattokinase is a natural fibrinolytic enzyme that supports heart health and healthy blood circulation, helping maintain normal vascular function with every daily serving.",
@@ -4699,6 +5038,80 @@
         document.title = p.name + " | Aiva Wellness";
       })();
     </script>
+    <script>
+      (() => {
+        const cards = document.querySelectorAll(".similar-grid .product-card");
+        cards.forEach((card) => {
+          const link = card.querySelector(".card-name a");
+          const imageWrap = card.querySelector(".card-img-wrap");
+          if (!link || !imageWrap) return;
+          const url = new URL(link.getAttribute("href"), window.location.href)
+            .href;
+          const title = link.textContent.trim();
+          const hoverImages = {
+            "dailyvitals.html": "../products/all images/multivitamin2.png",
+            "dailyvitalsmen.html": "../products/all images/men-2.png",
+            "magnesium-complex-5-in-1.html":
+              "../products/all images/magnesium2.png",
+            "nattokinase100.html": "../products/all images/1.webp",
+            "nattokinase200.html": "../products/all images/p2.png",
+          };
+          const hoverImage = hoverImages[link.getAttribute("href")];
+          if (hoverImage) {
+            const image = document.createElement("img");
+            image.className = "img-hover";
+            image.src = hoverImage;
+            image.alt = `${title} alternate view`;
+            image.loading = "lazy";
+            image.decoding = "async";
+            imageWrap.appendChild(image);
+          }
+          const actions = document.createElement("div");
+          actions.className = "card-actions";
+          actions.innerHTML =
+            '<button type="button" class="card-act-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button><button type="button" class="card-act-btn" title="Share"><i class="fa-solid fa-share-nodes"></i></button>';
+          const popover = document.createElement("div");
+          popover.className = "share-popover";
+          popover.innerHTML =
+            '<button type="button" class="share-option"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button><button type="button" class="share-option"><i class="fa-regular fa-copy"></i> Copy Link</button>';
+          const [quickButton, shareButton] = actions.querySelectorAll("button");
+          const [whatsappButton, copyButton] =
+            popover.querySelectorAll("button");
+          quickButton.addEventListener("click", () => {
+            window.location.href = link.href;
+          });
+          shareButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            document
+              .querySelectorAll(".similar-grid .share-popover.active")
+              .forEach((item) => item.classList.remove("active"));
+            popover.classList.toggle("active");
+          });
+          whatsappButton.addEventListener("click", () => {
+            window.open(
+              `https://wa.me/?text=${encodeURIComponent(`Check out ${title}: ${url}`)}`,
+              "_blank",
+            );
+            popover.classList.remove("active");
+          });
+          copyButton.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(url);
+              if (typeof showToast === "function")
+                showToast("", "Link copied!");
+            } catch (error) {
+              if (typeof showToast === "function") showToast("", "Copy failed");
+            }
+            popover.classList.remove("active");
+          });
+          imageWrap.append(actions, popover);
+        });
+        document.addEventListener("click", () => {
+          document
+            .querySelectorAll(".similar-grid .share-popover.active")
+            .forEach((item) => item.classList.remove("active"));
+        });
+      })();
+    </script>
   </body>
 </html>
-

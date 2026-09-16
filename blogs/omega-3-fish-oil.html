@@ -30,10 +30,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=5"
     />
-    <title>
-      Omega-3 Fish Oil: The Essential Nutrient for Heart, Brain &amp; Joint
-      Health | Aiva Wellness
-    </title>
+    <title>Omega-3 Fish Oil Benefits | Aiva Wellness</title>
 
     <meta
       name="description"
@@ -180,23 +177,6 @@
           "Nutraceuticals",
           "Cardiovascular Health"
         ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Wellness Supplements",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Nattokinase Supplements"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": { "@type": "Product", "name": "Magnesium Complex" }
-            }
-          ]
-        },
         "sameAs": [
           "https://www.instagram.com/aivawellness.in/?hl=en",
           "https://www.facebook.com/profile.php?id=61591507665329",
@@ -672,8 +652,19 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: var(--black);
-        min-height: 520px;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(165, 219, 235, 0.36),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(44, 120, 160, 0.38),
+            transparent 44%
+          ),
+          linear-gradient(135deg, #183a52, #347b9b 52%, #182534);
+        min-height: 390px;
         overflow: hidden;
         width: 100%;
         max-width: 1200px;
@@ -691,12 +682,12 @@
       }
       @media (max-width: 1024px) {
         .article-hero {
-          min-height: 460px;
+          min-height: 350px;
         }
       }
       @media (max-width: 900px) {
         .article-hero {
-          min-height: 360px;
+          min-height: 320px;
           max-width: 100%;
         }
         .article-hero img {
@@ -1987,19 +1978,10 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <picture>
-        <source media="(max-width: 700px)" srcset="images/omega-3.png" />
-        <img
-          src="images/omega-3.png"
-          alt="Omega-3 fish oil for heart, brain and joint health"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
-          <a href="/">Home</a> <span>/</span>
-          <a href="../blog.html">Blog</a> <span>/</span>
+          <a href="/">Home</a> <span>/</span> <a href="../blog.html">Blog</a>
+          <span>/</span>
           <span>Omega-3</span>
         </div>
         <span class="article-tag">Omega-3</span>
@@ -2110,15 +2092,18 @@
         <p>
           Fatty fish such as salmon, mackerel, sardines, and trout naturally
           contain EPA and DHA, along with shellfish like mussels and oysters.
-          Fish oil supplements concentrate these fatty acids into a convenient
-          daily capsule, which is useful for anyone who doesn't regularly eat
-          fish two or more times a week.
+          <a href="../product-details-pages/omega3fishoil.html"
+            >Fish oil supplements</a
+          >
+          concentrate these fatty acids into a convenient daily capsule, which
+          is useful for anyone who doesn't regularly eat fish two or more times
+          a week.
         </p>
 
         <div class="inline-fig">
           <img
             src="images/omega-3.png"
-            alt="Omega-3 fish oil softgel capsules"
+            alt="Omega-3 fish oil capsule capsules"
             loading="lazy"
             decoding="async"
           />
@@ -2241,7 +2226,7 @@
           research using higher amounts — generally under a doctor's guidance.
         </p>
         <p>
-          Since a typical fish oil softgel provides around 300 mg of combined
+          Since a typical fish oil capsule provides around 300 mg of combined
           EPA and DHA, checking the label for the actual EPA/DHA content — not
           just the total fish oil weight — is the most useful way to compare
           products and doses.
@@ -2460,7 +2445,7 @@
       <div class="apc-card">
         <div class="apc-img">
           <img
-            src="../products/omega 3, Vitamin E.webp"
+            src="../blogs/images/omega-3.png"
             alt="Aiva Wellness Omega-3 Fish Oil"
             onerror="
               this.src =
@@ -2479,7 +2464,7 @@
           </p>
           <div class="apc-btns">
             <a
-              href="../product-details-pages/omega-3-fish-oil.html"
+              href="../product-details-pages/omega3fishoil.html"
               class="apc-btn primary"
               >Shop Now <i class="fa-solid fa-arrow-right"></i
             ></a>
@@ -2522,7 +2507,7 @@
         <div class="blog-card reveal">
           <div class="blog-img">
             <img
-              src="images/magnesium.png"
+              src="images/magnesium-card-cover.png"
               alt="Magnesium Benefits"
               loading="lazy"
               decoding="async"
@@ -2537,6 +2522,28 @@
               >
             </h3>
             <a href="magnesium-deficiency.html" class="blog-read"
+              >Read more <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-img">
+            <img
+              src="images/daily-vitals-cover.png"
+              alt="Daily Vitals"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="blog-info">
+            <div class="blog-tag">General Wellness</div>
+            <h3>
+              <a href="daily-vitals.html"
+                >Daily Vitals: Essential Vitamins &amp; Minerals for Everyday
+                Energy</a
+              >
+            </h3>
+            <a href="daily-vitals.html" class="blog-read"
               >Read more <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
@@ -2632,8 +2639,8 @@
                 >
               </li>
               <li>
-                <a href="../product-details-pages/energy-immunity-support.html"
-                  >Energy &amp; Immunity Support</a
+                <a href="../product-details-pages/dailyvitals.html"
+                  >Daily Vitals</a
                 >
               </li>
             </ul>
@@ -2709,4 +2716,3 @@
     </script>
   </body>
 </html>
-

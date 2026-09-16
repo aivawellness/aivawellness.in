@@ -30,10 +30,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=5"
     />
-    <title>
-      Nattokinase: The Natural Enzyme Supporting Cardiovascular Wellness | Aiva
-      Wellness
-    </title>
+    <title>Nattokinase and Cardiovascular Wellness | Aiva Wellness</title>
 
     <meta
       name="description"
@@ -180,23 +177,6 @@
           "Nutraceuticals",
           "Cardiovascular Health"
         ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Wellness Supplements",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Nattokinase Supplements"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": { "@type": "Product", "name": "Magnesium Complex" }
-            }
-          ]
-        },
         "sameAs": [
           "https://www.instagram.com/aivawellness.in/?hl=en",
           "https://www.facebook.com/profile.php?id=61591507665329",
@@ -670,12 +650,19 @@
       /* ═══ ARTICLE HERO ═══ */
       .article-hero {
         position: relative;
-        background: radial-gradient(
-          circle at center,
-          rgba(255, 255, 255, 0.08),
-          rgba(15, 23, 42, 0.94)
-        );
-        min-height: 520px;
+        background:
+          radial-gradient(
+            circle at 18% 18%,
+            rgba(246, 190, 144, 0.36),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(170, 88, 63, 0.4),
+            transparent 44%
+          ),
+          linear-gradient(135deg, #58342d, #9b6048 52%, #28202a);
+        min-height: 390px;
         overflow: hidden;
         width: 100%;
         max-width: 1200px;
@@ -723,12 +710,12 @@
       }
       @media (max-width: 1024px) {
         .article-hero {
-          min-height: 460px;
+          min-height: 350px;
         }
       }
       @media (max-width: 900px) {
         .article-hero {
-          min-height: 360px;
+          min-height: 320px;
           max-width: 100%;
         }
         .article-hero img {
@@ -2018,22 +2005,10 @@
 
     <!-- ARTICLE HERO -->
     <section class="article-hero">
-      <picture>
-        <source
-          media="(max-width: 700px)"
-          srcset="../blogs/images/nattoblogcover.png"
-        />
-        <img
-          src="../blogs/images/nattoblogcover.png"
-          alt="Cardiovascular wellness and heart health"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
       <div class="article-hero-content">
         <div class="breadcrumb">
-          <a href="/">Home</a> <span>/</span>
-          <a href="../blog.html">Blog</a> <span>/</span>
+          <a href="/">Home</a> <span>/</span> <a href="../blog.html">Blog</a>
+          <span>/</span>
           <span>Heart Health</span>
         </div>
         <span class="article-tag">Heart Health</span>
@@ -2311,9 +2286,13 @@
 
         <h2 id="choosing">Choosing a Quality Nattokinase Supplement</h2>
         <p>
-          Not all nattokinase capsules are created equal. Potency is typically
-          measured in Fibrinolytic Units (FU), and quality matters just as much
-          as quantity. When choosing a supplement, look for:
+          Not all
+          <a href="../product-details-pages/nattokinase100.html"
+            >nattokinase capsules</a
+          >
+          are created equal. Potency is typically measured in Fibrinolytic Units
+          (FU), and quality matters just as much as quantity. When choosing a
+          supplement, look for:
         </p>
         <ul>
           <li>
@@ -2563,12 +2542,12 @@
           <div class="blog-info">
             <div class="blog-tag">Heart Health</div>
             <h3>
-              <a href="nattokinase.html"
-                >Nattokinase: The Natural Enzyme Supporting Cardiovascular
+              <a href="nattokinase-explained.html"
+                >What Is Nattokinase? Understanding Its Role in Cardiovascular
                 Wellness</a
               >
             </h3>
-            <a href="nattokinase.html" class="blog-read"
+            <a href="nattokinase-explained.html" class="blog-read"
               >Read more <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
@@ -2576,7 +2555,7 @@
         <div class="blog-card reveal">
           <div class="blog-img">
             <img
-              src="images/magnesium.png"
+              src="images/magnesium-card-cover.png"
               alt="Magnesium Benefits"
               loading="lazy"
               decoding="async"
@@ -2598,21 +2577,21 @@
         <div class="blog-card reveal">
           <div class="blog-img">
             <img
-              src="images/omega-3.png"
-              alt="Omega-3 Fish Oil"
+              src="images/daily-vitals-cover.png"
+              alt="Daily Vitals"
               loading="lazy"
               decoding="async"
             />
           </div>
           <div class="blog-info">
-            <div class="blog-tag">Omega-3</div>
+            <div class="blog-tag">General Wellness</div>
             <h3>
-              <a href="omega-3-fish-oil.html"
-                >Omega-3 Fish Oil: The Essential Nutrient for Heart, Brain &amp;
-                Joint Health</a
+              <a href="daily-vitals.html"
+                >Daily Vitals: Essential Vitamins &amp; Minerals for Everyday
+                Energy</a
               >
             </h3>
-            <a href="omega-3-fish-oil.html" class="blog-read"
+            <a href="daily-vitals.html" class="blog-read"
               >Read more <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
@@ -2708,8 +2687,8 @@
                 >
               </li>
               <li>
-                <a href="../product-details-pages/energy-immunity-support.html"
-                  >Energy &amp; Immunity Support</a
+                <a href="../product-details-pages/dailyvitals.html"
+                  >Daily Vitals</a
                 >
               </li>
             </ul>
@@ -2785,4 +2764,3 @@
     </script>
   </body>
 </html>
-
