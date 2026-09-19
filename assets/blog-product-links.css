@@ -1,0 +1,70 @@
+.blog-product-link {
+  width: min(calc(100% - 48px), 1184px);
+  margin: 0 auto 72px;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 58%, #f0fdf4 100%);
+  box-shadow: 0 12px 36px rgba(15, 23, 42, .08);
+}
+.blog-product-link-media {
+  display: grid;
+  place-items: center;
+  min-height: 230px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+.blog-product-link-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  transition: transform .35s ease;
+}
+.blog-product-link:hover .blog-product-link-media img { transform: scale(1.05); }
+.blog-product-link-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1d4ed8;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.blog-product-link-kicker::before { content: ""; width: 22px; height: 2px; background: #1d4ed8; }
+.blog-product-link h2 {
+  margin: 10px 0 10px;
+  color: #0f172a;
+  font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  line-height: 1.05;
+}
+.blog-product-link p { max-width: 58ch; margin: 0 0 20px; color: #64748b; font-size: .94rem; line-height: 1.7; }
+.blog-product-link-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 18px;
+  border-radius: 9px;
+  background: #1d4ed8;
+  color: #fff;
+  font-size: .86rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(29, 78, 216, .2);
+  transition: transform .25s ease, background .2s ease, box-shadow .25s ease;
+}
+.blog-product-link-action:hover { background: #1e3a8a; color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(29, 78, 216, .28); }
+.blog-product-link-action i { transition: transform .25s ease; }
+.blog-product-link-action:hover i { transform: translateX(4px); }
+@media (max-width: 700px) {
+  .blog-product-link { width: calc(100% - 36px); grid-template-columns: 1fr; gap: 20px; margin-bottom: 56px; }
+  .blog-product-link-media { min-height: 190px; }
+  .blog-product-link-media img { height: 180px; }
+}
