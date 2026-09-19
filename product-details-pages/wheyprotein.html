@@ -105,9 +105,6 @@
       :focus-visible { outline: 2px solid var(--lime-deep); outline-offset: 3px; border-radius: 4px; }
       [id] { scroll-margin-top: calc(var(--header-h) + var(--subnav-h) + 16px); }
 
-      /* scroll progress */
-      .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; background: linear-gradient(90deg, var(--lime), var(--lime-deep)); transform: scaleX(0); transform-origin: left; pointer-events: none; }
-
       /* announcement + header (unchanged look) */
       .announcement { background: var(--ink-deep); color: #eff8f4; text-align: center; padding: 10px 20px; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
       .ann-bar { position: sticky; top: var(--header-h); z-index: 29; background: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 50%, #1e3a8a 100%); color: #fff; font-size: .72rem; letter-spacing: .06em; padding: 9px 0; overflow: hidden; white-space: nowrap; border-bottom: 1px solid rgba(255,255,255,.1); }
@@ -548,7 +545,6 @@
     <script src="../assets/similar-products.js" defer></script>
   </head>
   <body>
-    <div class="progress" id="progress" aria-hidden="true"></div>
     <header class="header">
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="../index.html"><div class="brand-mark"><img src="../assets/logo.png" alt="Aiva Wellness logo" /></div><div><span class="brand-name">Aiva<span>Wellness</span></span><small class="brand-sub">Premium Healthcare &amp; Wellness</small></div></a>
@@ -878,22 +874,6 @@
             else { await navigator.clipboard.writeText(location.href); toast("Link copied"); }
           } catch (err) { /* share dismissed */ }
         });
-
-        /* scroll progress */
-        const bar = $("#progress");
-        let ticking = false;
-        function onScroll() {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(() => {
-            const h = document.documentElement;
-            const max = h.scrollHeight - h.clientHeight;
-            bar.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`;
-            ticking = false;
-          });
-        }
-        window.addEventListener("scroll", onScroll, { passive: true });
-        onScroll();
 
         /* mobile sticky buy bar: appears once hero CTAs scroll away */
         const sticky = $("#stickyBar");
