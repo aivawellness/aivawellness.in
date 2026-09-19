@@ -110,6 +110,12 @@
 
       /* announcement + header (unchanged look) */
       .announcement { background: var(--ink-deep); color: #eff8f4; text-align: center; padding: 10px 20px; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+      .ann-bar { position: sticky; top: var(--header-h); z-index: 29; background: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 50%, #1e3a8a 100%); color: #fff; font-size: .72rem; letter-spacing: .06em; padding: 9px 0; overflow: hidden; white-space: nowrap; border-bottom: 1px solid rgba(255,255,255,.1); }
+      .ann-bar-track { display: inline-flex; animation: whey-marquee 32s linear infinite; gap: 80px; will-change: transform; }
+      .ann-bar-track:hover { animation-play-state: paused; }
+      .ann-bar-track span { display: inline-block; }
+      .ann-bar-track .sep { opacity: .45; }
+      @keyframes whey-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
       .header { position: sticky; top: 0; z-index: 30; background: rgba(248,250,252,.92); border-bottom: 1px solid rgba(226,232,240,.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
       .nav { max-width: 1320px; height: var(--header-h); margin: auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
       .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
@@ -120,7 +126,8 @@
       .brand-sub { display: block; font-size: .68rem; color: var(--muted); margin-top: 1px; white-space: nowrap; letter-spacing: .02em; }
       .links { display: flex; align-items: center; gap: 4px; font-size: .84rem; color: var(--muted); }
       .links a { padding: 6px 14px; border-radius: var(--r-sm); transition: background .2s, color .2s; }
-      .links a:hover, .links .active { color: var(--ink); background: var(--warm); }
+      .links a:hover { color: var(--blue); background: var(--blue-soft); }
+      .links a.active { color: var(--blue); background: var(--blue-soft); font-weight: 600; }
       .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: linear-gradient(135deg, #1d4ed8, #2563eb); color: #fff; border: 0; border-radius: var(--r-sm); padding: 9px 22px; font-size: .82rem; font-weight: 600; cursor: pointer; transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s; box-shadow: 0 4px 16px rgba(29,78,216,.3); white-space: nowrap; }
       .btn-primary:hover { transform: translateY(-2px); background: linear-gradient(135deg, #1e40af, #1d4ed8); box-shadow: 0 8px 28px rgba(29,78,216,.4); }
       .btn-primary:active { transform: translateY(0); }
@@ -555,6 +562,7 @@
         </nav>
       </div>
     </header>
+    <div class="ann-bar" aria-label="Aiva Wellness announcements"><div class="ann-bar-track"><span><i class="fa-solid fa-capsules"></i>&nbsp;Premium Healthcare Formulas&nbsp; <span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong>&nbsp; <span class="sep">|</span>&nbsp; Free shipping on orders over ₹999&nbsp; <span class="sep">|</span>&nbsp; 100% Natural&nbsp; <span class="sep">|</span>&nbsp; 100% Vegan &amp; Cruelty-Free&nbsp; <span class="sep">|</span>&nbsp; No Fillers, No Binders</span><span><i class="fa-solid fa-capsules"></i>&nbsp;Premium Healthcare Formulas&nbsp; <span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong>&nbsp; <span class="sep">|</span>&nbsp; Free shipping on orders over ₹999&nbsp; <span class="sep">|</span>&nbsp; 100% Natural&nbsp; <span class="sep">|</span>&nbsp; 100% Vegan &amp; Cruelty-Free&nbsp; <span class="sep">|</span>&nbsp; No Fillers, No Binders</span></div></div>
 
     <main>
       <div class="wrap" id="overview">
