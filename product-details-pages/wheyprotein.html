@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <title>Whey Protein | Aiva Wellness</title>
+    <meta name="description" content="Aiva Wellness Whey Protein is a premium 2 kg protein formula created for recovery, everyday strength and consistent performance. Launching soon." />
+    <meta name="keywords" content="whey protein, protein powder India, Aiva Wellness whey protein, recovery nutrition" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#102a43" />
+    <link rel="icon" href="../favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Whey Protein",
+        "image": ["https://aivawellness.in/images/protein/whey%20protein.png", "https://aivawellness.in/images/protein/protein.png", "https://aivawellness.in/images/protein/protein2.png"],
+        "description": "Premium whey protein support for recovery and everyday strength.",
+        "sku": "AIVA-WHEY-2KG",
+        "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+        "category": "Sports Nutrition",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://aivawellness.in/product-details-pages/wheyprotein.html",
+          "priceCurrency": "INR",
+          "price": "3499",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --ink: #0f172a;
+        --ink-deep: #080d14;
+        --muted: #64748b;
+        --line: #e2e8f0;
+        --paper: #f8fafc;
+        --white: #fff;
+        --lime: #60a5fa;
+        --lime-deep: #1d4ed8;
+        --aqua: #dbeafe;
+        --warm: #eff6ff;
+        --shadow: 0 18px 55px rgba(8, 13, 20, .11);
+        --ease: cubic-bezier(.22, 1, .36, 1);
+      }
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @font-face { font-family: "Swiss721BoldCondensedBT"; src: url("../fonts/Swiss721BoldCondensedBT.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Inter", sans-serif; }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
+      .announcement { background: var(--ink-deep); color: #eff8f4; text-align: center; padding: 10px 20px; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+      .header { position: sticky; top: 0; z-index: 20; background: rgba(248,250,252,.92); border-bottom: 1px solid rgba(226,232,240,.95); backdrop-filter: blur(16px); }
+      .nav { max-width: 1320px; height: 68px; margin: auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+      .brand-mark { width: 54px; height: 54px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 44px rgba(14,91,255,.12); border: 1px solid rgba(14,91,255,.12); flex-shrink: 0; overflow: hidden; }
+      .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+      .brand-name { font-family: "Sora", sans-serif; font-size: 1.12rem; font-weight: 800; color: var(--ink); display: block; white-space: nowrap; letter-spacing: -.01em; }
+      .brand-name span { color: #2563eb; }
+      .brand-sub { display: block; font-size: .68rem; color: var(--muted); margin-top: 1px; white-space: nowrap; letter-spacing: .02em; }
+      .links { display: flex; align-items: center; gap: 4px; font-size: .84rem; color: var(--muted); }
+      .links a { padding: 6px 14px; border-radius: 8px; }
+      .links a:hover, .links .active { color: var(--ink); background: #eff6ff; }
+      .nav-cta, .primary { display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: var(--ink); color: white; border: 0; border-radius: 5px; padding: 13px 20px; font-weight: 700; cursor: pointer; transition: transform .25s var(--ease), background .25s; }
+      .nav-cta:hover, .primary:hover { transform: translateY(-2px); background: #1b4867; }
+      .menu { display: none; border: 1px solid var(--line); border-radius: 6px; background: white; width: 42px; height: 42px; color: var(--ink); }
+      .wrap { max-width: 1240px; margin: auto; padding: 0 28px; }
+      .crumbs { padding: 22px 0 8px; font-size: .76rem; color: var(--muted); display: flex; gap: 9px; align-items: center; }
+      .crumbs a:hover { color: var(--ink); }
+      .hero { padding: 14px 0 84px; display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr); gap: clamp(34px, 6vw, 88px); align-items: center; }
+      .gallery { min-width: 0; }
+      .main-visual { position: relative; overflow: hidden; aspect-ratio: 1 / 1.05; background: linear-gradient(145deg, #eff6ff, #ffffff 58%, #dbeafe); border: 1px solid #dbeafe; box-shadow: var(--shadow); cursor: zoom-in; }
+      .main-visual::before { content: ""; position: absolute; width: 68%; height: 68%; left: 16%; top: 16%; border: 1px solid rgba(16,42,67,.1); border-radius: 50%; }
+      .main-visual img { width: 100%; height: 100%; object-fit: contain; display: block; position: relative; transition: transform .65s var(--ease), opacity .2s; }
+      .main-visual:hover img { transform: scale(1.035); }
+      .pill { position: absolute; z-index: 2; top: 18px; left: 18px; padding: 8px 12px; background: var(--ink); color: white; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+      .zoom { position: absolute; z-index: 2; right: 17px; bottom: 17px; padding: 9px 12px; background: rgba(255,255,255,.85); color: var(--ink); font-size: .7rem; font-weight: 700; }
+      .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+      .thumb { aspect-ratio: 1.18; padding: 0; overflow: hidden; border: 1px solid var(--line); background: white; cursor: pointer; transition: border-color .2s, transform .2s; }
+      .thumb:hover, .thumb.active { border: 2px solid var(--ink); transform: translateY(-2px); }
+      .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .eyebrow { display: inline-flex; gap: 8px; align-items: center; color: #1d4ed8; font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+      h1, h2, h3 { font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; margin: 0; }
+      h1 { font-size: clamp(2.6rem, 5vw, 5rem); line-height: .98; margin: 18px 0 20px; max-width: 600px; }
+      .intro { max-width: 545px; color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
+      .launch-note { display: flex; align-items: center; gap: 10px; margin: 24px 0; color: var(--ink); font-size: .84rem; font-weight: 700; }
+      .launch-note i { color: #2563eb; }
+      .price { display: flex; align-items: baseline; gap: 12px; margin: 26px 0 7px; }
+      .price strong { font-family: "Sora", sans-serif; font-size: 2rem; letter-spacing: -.05em; }
+      .price del { color: var(--muted); font-size: .95rem; }
+      .save { display: inline-block; color: #1d4ed8; background: #dbeafe; padding: 5px 8px; font-size: .72rem; font-weight: 800; }
+      .price-sub { color: var(--muted); font-size: .75rem; }
+      .actions { display: flex; gap: 10px; margin: 25px 0 28px; flex-wrap: wrap; }
+      .primary { padding: 15px 23px; }
+      .secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 18px; border: 1px solid var(--ink); color: var(--ink); background: transparent; border-radius: 5px; font-weight: 700; transition: background .2s; }
+      .secondary:hover { background: #eff6ff; }
+      .promise { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; gap: 12px; }
+      .promise div { display: flex; gap: 9px; align-items: center; font-size: .74rem; color: var(--muted); line-height: 1.35; }
+      .promise i { color: #2563eb; font-size: 1rem; }
+      .section { padding: 82px 0; border-top: 1px solid var(--line); }
+      .section-heading { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 34px; }
+      .section-heading h2 { font-size: clamp(2rem, 4vw, 3.5rem); max-width: 620px; }
+      .section-heading p { color: var(--muted); line-height: 1.7; max-width: 390px; margin: 0; }
+      .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+      .benefit { padding: 25px 21px; min-height: 205px; background: var(--white); border: 1px solid var(--line); transition: transform .35s var(--ease), box-shadow .35s; }
+      .benefit:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+      .benefit i { color: #2563eb; font-size: 1.25rem; margin-bottom: 28px; }
+      .benefit h3 { font-size: 1.06rem; margin-bottom: 10px; letter-spacing: -.03em; }
+      .benefit p { color: var(--muted); font-size: .82rem; line-height: 1.6; margin: 0; }
+      .details { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+      .details h2 { font-size: clamp(2rem, 3.5vw, 3.1rem); margin-bottom: 18px; }
+      .details p { color: var(--muted); line-height: 1.8; margin: 0 0 18px; }
+      .specs { width: 100%; border-collapse: collapse; background: white; border: 1px solid var(--line); }
+      .specs td { padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: .84rem; }
+      .specs tr:last-child td { border-bottom: 0; }
+      .specs td:last-child { text-align: right; font-weight: 700; color: var(--ink); }
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: step; }
+      .step { border-top: 2px solid var(--lime-deep); padding-top: 17px; }
+      .step span { color: #1d4ed8; font-size: .7rem; font-weight: 800; letter-spacing: .12em; }
+      .step h3 { font-size: 1.15rem; margin: 17px 0 9px; }
+      .step p { color: var(--muted); line-height: 1.65; font-size: .86rem; margin: 0; }
+      .faq { max-width: 820px; margin: auto; }
+      .faq details { border-top: 1px solid var(--line); padding: 19px 0; }
+      .faq details:last-child { border-bottom: 1px solid var(--line); }
+      .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; font-weight: 700; }
+      .faq summary::-webkit-details-marker { display: none; }
+      .faq summary::after { content: "+"; color: #2563eb; font-size: 1.25rem; }
+      .faq details[open] summary::after { content: "−"; }
+      .faq p { color: var(--muted); line-height: 1.7; font-size: .88rem; max-width: 680px; margin: 13px 0 0; }
+      footer { background: var(--ink-deep); color: white; padding: 48px 0 25px; }
+      .footer-main { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+      footer p { color: #9fb1bd; font-size: .82rem; max-width: 300px; line-height: 1.7; }
+      .footer-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; color: #c8d4da; font-size: .78rem; }
+      .footer-links a:hover { color: var(--lime); }
+      .footer-bottom { border-top: 1px solid rgba(255,255,255,.14); color: #8296a2; display: flex; justify-content: space-between; gap: 20px; margin-top: 34px; padding-top: 18px; font-size: .7rem; }
+      footer { background: #080d14; color: #94a3b8; padding: 60px 20px 28px; border-top: 1px solid rgba(255,255,255,.04); }
+      .footer-inner { max-width: 1280px; margin: 0 auto; }
+      .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+      .footer-brand { font-family: "Sora", sans-serif; font-size: 1.1rem; font-weight: 800; color: #fff; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 14px; }
+      .footer-brand .brand-row { display: flex; align-items: center; gap: 10px; }
+      .footer-brand .f-mark { width: 42px; height: 42px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(14,91,255,.12); border: 1px solid rgba(14,91,255,.12); overflow: hidden; }
+      .footer-brand .f-mark img { width: 80%; height: 80%; object-fit: contain; display: block; }
+      .footer-brand .brand-name { color: #fff; font-family: "Sora", sans-serif; font-size: 1.1rem; font-weight: 800; }
+      .footer-brand .brand-name span { color: #60a5fa; }
+      .footer-brand .brand-sub { font-size: .76rem; color: #64748b; font-weight: 500; }
+      .footer-desc { color: #94a3b8; font-size: .8rem; line-height: 1.85; margin: 0 0 20px; max-width: 280px; }
+      .footer-social { display: flex; gap: 10px; flex-wrap: wrap; }
+      .social-btn { width: 38px; height: 38px; background: #1e293b; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 15px; transition: all .25s var(--ease); border: 1px solid rgba(255,255,255,.04); }
+      .social-btn:hover { background: #1d4ed8; color: #fff; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(29,78,216,.25); }
+      .footer-col h6 { font-size: .72rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .1em; margin: 0 0 18px; }
+      .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; padding: 0; margin: 0; }
+      .footer-col ul li a, .footer-contact-item a { color: #64748b; text-decoration: none; font-size: .8rem; transition: color .2s, padding-left .2s; display: inline-block; }
+      .footer-col ul li a:hover { color: #fff; padding-left: 6px; }
+      .footer-contact-item { display: flex; align-items: flex-start; gap: 11px; font-size: .8rem; margin-bottom: 12px; }
+      .footer-contact-item i { color: #60a5fa; margin-top: 2px; flex-shrink: 0; }
+      .footer-contact-item a:hover { color: #60a5fa; }
+      .footer-bottom { border-top: 1px solid #1e293b; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: .74rem; margin-top: 0; }
+      .footer-bottom-links { display: flex; gap: 18px; flex-wrap: wrap; }
+      .footer-bottom-links a { color: #475569; text-decoration: none; transition: color .2s; }
+      .footer-bottom-links a:hover { color: #fff; }
+      @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 600px) { footer { padding: 48px 20px 28px; } .footer-top { grid-template-columns: 1fr; gap: 28px; text-align: center; } .footer-brand, .footer-social, .footer-col ul { justify-content: center; align-items: center; } .footer-col { display: flex; flex-direction: column; align-items: center; } .footer-contact-item { justify-content: center; } .footer-bottom { flex-direction: column; align-items: center; text-align: center; } .footer-bottom-links { justify-content: center; } .footer-desc { max-width: 100%; text-align: center; } }
+      .sticky { display: none; }
+      .modal { position: fixed; inset: 0; z-index: 40; display: none; place-items: center; background: rgba(7,26,42,.82); padding: 24px; }
+      .modal.open { display: grid; }
+      .modal-inner { position: relative; max-width: min(780px, 94vw); max-height: 90vh; background: white; padding: 8px; }
+      .modal img { display: block; max-width: 100%; max-height: 86vh; object-fit: contain; }
+      .modal-close { position: absolute; right: -14px; top: -14px; width: 38px; height: 38px; border: 0; border-radius: 50%; background: var(--lime); color: var(--ink); cursor: pointer; font-size: 1.2rem; }
+      @media (max-width: 900px) { .links, .nav-cta { display: none; } .menu { display: block; } .hero { grid-template-columns: 1fr; padding-bottom: 58px; } .gallery { max-width: 650px; width: 100%; margin: auto; } .benefits { grid-template-columns: repeat(2, 1fr); } .details { grid-template-columns: 1fr; gap: 36px; } }
+      @media (max-width: 600px) { .announcement { font-size: .62rem; padding: 9px 12px; } .nav, .wrap { padding-left: 18px; padding-right: 18px; } .nav { height: 66px; } .brand-mark { width: 54px; height: 54px; } h1 { font-size: 3rem; } .intro { font-size: .94rem; } .promise { gap: 9px; } .promise div { display: block; font-size: .66rem; } .promise i { display: block; margin-bottom: 7px; } .section { padding: 58px 0; } .section-heading { display: block; } .section-heading p { margin-top: 15px; } .benefits, .steps { grid-template-columns: 1fr 1fr; gap: 10px; } .benefit { min-height: 180px; padding: 18px 14px; } .benefit i { margin-bottom: 19px; } .benefit h3 { font-size: .94rem; } .benefit p { font-size: .76rem; } .steps { gap: 20px 13px; } .step h3 { font-size: .98rem; } .step p { font-size: .78rem; } .footer-bottom { display: block; } .footer-bottom span { display: block; margin-bottom: 8px; } .sticky { position: fixed; z-index: 19; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 11px 16px; background: rgba(255,255,255,.95); border-top: 1px solid var(--line); box-shadow: 0 -8px 22px rgba(16,42,67,.08); } .sticky strong { font-size: 1rem; } .sticky a { padding: 11px 15px; font-size: .78rem; } body { padding-bottom: 69px; } }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body>
+    <div class="announcement"><i class="fa-solid fa-sparkles"></i> Introducing our next chapter in everyday performance</div>
+    <header class="header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html"><div class="brand-mark"><img src="../assets/logo.png" alt="Aiva Wellness logo" /></div><div><span class="brand-name">Aiva<span>Wellness</span></span><small class="brand-sub">Premium Healthcare &amp; Wellness</small></div></a>
+        <div class="links"><a href="../index.html">Home</a><a class="active" href="../shop.html">Shop</a><a href="../about.html">About Us</a><a href="../blog.html">Blogs</a><a href="../contact.html">Contact</a></div>
+        <a class="nav-cta" href="../enquire.html"><i class="fa-regular fa-envelope"></i> Enquire Now</a>
+        <button class="menu" type="button" aria-label="Open menu" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+      </nav>
+      <div id="mobileLinks" style="display:none; background:white; padding:8px 18px 16px; border-top:1px solid var(--line)"><a href="../index.html" style="display:block;padding:10px 0">Home</a><a href="../shop.html" style="display:block;padding:10px 0">Shop</a><a href="../about.html" style="display:block;padding:10px 0">About Us</a><a href="../contact.html" style="display:block;padding:10px 0">Contact</a><a href="../enquire.html" style="display:block;padding:10px 0;font-weight:700">Enquire Now</a></div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <div class="crumbs"><a href="../index.html">Home</a><i class="fa-solid fa-chevron-right" style="font-size:.55rem"></i><a href="../shop.html">Shop</a><i class="fa-solid fa-chevron-right" style="font-size:.55rem"></i><span>Whey Protein</span></div>
+        <section class="hero">
+          <div class="gallery">
+            <div class="main-visual" id="mainVisual" onclick="openModal()"><span class="pill">Launching soon</span><img id="mainImage" src="../images/protein/whey%20protein.png" alt="Aiva Wellness Whey Protein pack" /><span class="zoom"><i class="fa-solid fa-expand"></i> View larger</span></div>
+            <div class="thumbs" aria-label="Product images">
+              <button class="thumb active" type="button" onclick="selectImage(this, '../images/protein/whey%20protein.png')"><img src="../images/protein/whey%20protein.png" alt="Whey Protein front pack" /></button>
+              <button class="thumb" type="button" onclick="selectImage(this, '../images/protein/protein.png')"><img src="../images/protein/protein.png" alt="Whey Protein alternate pack view" /></button>
+              <button class="thumb" type="button" onclick="selectImage(this, '../images/protein/protein2.png')"><img src="../images/protein/protein2.png" alt="Whey Protein product detail view" /></button>
+            </div>
+          </div>
+          <div class="product-copy">
+            <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Performance nutrition</span>
+            <h1>Whey Protein<br /><span style="color:#2563eb">built to move.</span></h1>
+            <p class="intro">Clean, high-quality protein support for recovery, everyday strength and the routines that keep you feeling capable.</p>
+            <div class="launch-note"><i class="fa-solid fa-circle-check"></i> Early access is opening soon</div>
+            <div class="price"><strong>₹3,499</strong><del>₹3,999</del><span class="save">SAVE ₹500</span></div>
+            <div class="price-sub">2 kg pack · Inclusive of all taxes · Pan-India delivery</div>
+            <div class="actions"><a class="primary" href="../enquire.html"><i class="fa-solid fa-arrow-right"></i> Get launch updates</a><a class="secondary" href="https://wa.me/917807751711?text=I%20want%20early%20access%20to%20Aiva%20Wellness%20Whey%20Protein" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</a></div>
+            <div class="promise"><div><i class="fa-solid fa-flask"></i><span>Thoughtful<br />formulation</span></div><div><i class="fa-solid fa-shield-halved"></i><span>Quality<br />assured</span></div><div><i class="fa-solid fa-truck-fast"></i><span>Pan-India<br />shipping</span></div></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading"><h2>Made for the work<br />you put in.</h2><p>A focused daily protein ritual for training days, busy days and everything in between.</p></div>
+          <div class="benefits"><article class="benefit"><i class="fa-solid fa-dumbbell"></i><h3>Recovery support</h3><p>Make protein a consistent part of your post-training routine.</p></article><article class="benefit"><i class="fa-solid fa-battery-three-quarters"></i><h3>Everyday strength</h3><p>Simple nutrition support for a stronger, more capable day.</p></article><article class="benefit"><i class="fa-solid fa-scale-balanced"></i><h3>Easy to build in</h3><p>A versatile format for shakes, smoothies and everyday recipes.</p></article><article class="benefit"><i class="fa-solid fa-leaf"></i><h3>Made with intent</h3><p>Aiva Wellness quality thinking, carried into performance nutrition.</p></article></div>
+        </section>
+
+        <section class="section details"><div><span class="eyebrow">The product note</span><h2>Protein that fits your rhythm.</h2><p>Whey Protein is being developed as a reliable, uncomplicated addition to your daily routine. Whether you train early, recover late or simply need a convenient protein option, this is made to meet you there.</p><p>We are putting the finishing touches on the launch so every detail feels right. Join the early-access list for availability, flavour and launch updates.</p><a class="secondary" href="../enquire.html">Join the early-access list <i class="fa-solid fa-arrow-right"></i></a></div><div><table class="specs"><tbody><tr><td>Product</td><td>Whey Protein</td></tr><tr><td>Pack size</td><td>2 kg</td></tr><tr><td>Category</td><td>Sports nutrition</td></tr><tr><td>Best for</td><td>Recovery &amp; strength</td></tr><tr><td>Availability</td><td>Launching soon</td></tr><tr><td>Brand</td><td>Aiva Wellness</td></tr></tbody></table></div></section>
+
+        <section class="section"><div class="section-heading"><h2>A better daily ritual,<br />one scoop at a time.</h2><p>Keep it simple, make it consistent, and let the small habits add up.</p></div><div class="steps"><div class="step"><span>01 / PREPARE</span><h3>Make it yours</h3><p>Blend with your preferred liquid or add to a smoothie once the product launches.</p></div><div class="step"><span>02 / BUILD</span><h3>Keep showing up</h3><p>Use it as part of a balanced routine that supports your training and nutrition goals.</p></div><div class="step"><span>03 / ENJOY</span><h3>Stay consistent</h3><p>Follow the serving guidance on the final pack and make the ritual work for you.</p></div></div></section>
+
+        <section class="section faq"><div class="section-heading"><h2>Questions, answered.</h2><p>More launch details will be shared with early-access members first.</p></div><details open><summary>When will Whey Protein be available?</summary><p>It is launching soon. Use the enquiry form or WhatsApp link above to receive an availability update when the launch goes live.</p></details><details><summary>What is the pack size?</summary><p>The planned pack size is 2 kg, as shown in the product specifications.</p></details><details><summary>Can I get launch updates?</summary><p>Yes. Tap “Get launch updates” to share your details with Aiva Wellness, or message the team directly on WhatsApp.</p></details><details><summary>How should I use it?</summary><p>Follow the serving and preparation directions printed on the final product pack. A balanced diet and personal requirements should guide your routine.</p></details></section>
+      </div>
+    </main>
+
+    <div class="sticky"><strong>₹3,499 <small style="font-weight:400;color:var(--muted)">· 2 kg</small></strong><a class="primary" href="../enquire.html">Get launch updates <i class="fa-solid fa-arrow-right"></i></a></div>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand">
+              <div class="brand-row">
+                <div class="f-mark"><img src="../assets/logo.png" alt="Aiva Wellness logo" /></div>
+                <div>
+                  <div class="brand-name"><span>Aiva</span>Wellness</div>
+                  <small class="brand-sub">Premium Healthcare &amp; Wellness</small>
+                </div>
+              </div>
+            </div>
+            <p class="footer-desc">Science-backed formulas for everyday wellness, thoughtfully made in India.</p>
+            <div class="footer-social">
+              <a class="social-btn" href="https://www.instagram.com/aivawellness.in/?hl=en" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a class="social-btn" href="https://www.facebook.com/profile.php?id=61591507665329" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a class="social-btn" href="https://x.com/aivawellness" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a class="social-btn" href="https://www.linkedin.com/company/aivawellness" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="social-btn" href="https://www.amazon.in/stores/AivaWellness" target="_blank" rel="noopener" aria-label="Amazon"><i class="fa-brands fa-amazon"></i></a>
+            </div>
+          </div>
+          <div class="footer-col"><h6>Quick Links</h6><ul><li><a href="../index.html">Home</a></li><li><a href="../shop.html">Shop</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../blog.html">Blogs</a></li></ul></div>
+          <div class="footer-col"><h6>Our Products</h6><ul><li><a href="wheyprotein.html">Whey Protein</a></li><li><a href="omega3fishoil.html">Omega-3 Fish Oil</a></li><li><a href="nattokinase200.html">Nattokinase 200 mg</a></li><li><a href="magnesium-complex-5-in-1.html">Magnesium Complex 5-in-1</a></li><li><a href="dailyvitals.html">Daily Vitals</a></li></ul></div>
+          <div class="footer-col"><h6>Contact Us</h6><div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751711">+91 78077 51711</a></div><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@aivawellness.in">info@aivawellness.in</a></div></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Aiva Wellness. All rights reserved.</span><div class="footer-bottom-links"><a href="../policies/privacy-policy.html">Privacy Policy</a><a href="../policies/terms-of-service.html">Terms of Service</a><a href="../policies/shipping-policy.html">Shipping Policy</a><a href="../policies/return-policy.html">Return Policy</a></div></div>
+      </div>
+    </footer>
+    <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Product image preview" onclick="closeModal(event)"><div class="modal-inner"><button class="modal-close" type="button" aria-label="Close image" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button><img id="modalImage" src="" alt="Expanded Whey Protein product image" /></div></div>
+    <script>
+      const mainImage = document.getElementById("mainImage");
+      function selectImage(button, src) {
+        document.querySelectorAll(".thumb").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        mainImage.style.opacity = "0";
+        window.setTimeout(() => { mainImage.src = src; mainImage.style.opacity = "1"; }, 130);
+      }
+      function openModal() { document.getElementById("modalImage").src = mainImage.src; document.getElementById("imageModal").classList.add("open"); document.body.style.overflow = "hidden"; }
+      function closeModal(event) { if (event && event.target !== event.currentTarget) return; document.getElementById("imageModal").classList.remove("open"); document.body.style.overflow = ""; }
+      function toggleMenu() { const links = document.getElementById("mobileLinks"); links.style.display = links.style.display === "block" ? "none" : "block"; }
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape") { closeModal(); document.getElementById("mobileLinks").style.display = "none"; } });
+    </script>
+  </body>
+</html>
