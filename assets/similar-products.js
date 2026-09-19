@@ -1,4 +1,23 @@
 (() => {
+  const setupGalleryZoom = () => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    document.querySelectorAll(".main-img-container").forEach((container) => {
+      container.addEventListener("mouseenter", () => container.classList.add("zooming"));
+      container.addEventListener("mouseleave", () => {
+        container.classList.remove("zooming");
+        container.style.removeProperty("--zoom-x");
+        container.style.removeProperty("--zoom-y");
+      });
+      container.addEventListener("mousemove", (event) => {
+        const bounds = container.getBoundingClientRect();
+        container.style.setProperty("--zoom-x", `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
+        container.style.setProperty("--zoom-y", `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
+      });
+    });
+  };
+
+  setupGalleryZoom();
+
   const products = [
     { file: "wheyprotein.html", tag: "Performance nutrition", name: "Whey Protein", blurb: "Clean protein support for recovery and everyday strength.", main: "../images/protein/whey%20protein.png", hover: "../images/protein/protein.png", icon: "fa-dumbbell" },
     { file: "omega3fishoil.html", tag: "Daily essentials", name: "Omega-3 Fish Oil", blurb: "A simple daily addition to your wellness routine.", main: "../products/all images/omega-1.png", hover: "../products/all images/omega-2.png", icon: "fa-fish" },
