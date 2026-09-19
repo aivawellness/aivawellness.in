@@ -861,6 +861,11 @@
       .expand-btn:hover {
         background: var(--blue);
       }
+      .gallery-counter { top: auto; right: auto; left: 18px; bottom: 20px; background: transparent; border: 0; color: var(--muted); padding: 0; border-radius: 0; box-shadow: none; backdrop-filter: none; font-size: .74rem; font-weight: 600; }
+      .expand-btn { top: auto; left: auto; right: 16px; bottom: 16px; width: auto; height: 34px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.9); color: var(--ink); opacity: 1; transform: none; display: inline-flex; align-items: center; gap: 7px; font-size: .72rem; font-weight: 600; transition: background .2s; }
+      .expand-btn::after { content: "View larger"; }
+      .expand-btn:hover { background: #fff; }
+      .zoom-hint { display: none; }
       @media (max-width: 900px) {
         .expand-btn {
           opacity: 1;
