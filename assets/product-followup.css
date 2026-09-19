@@ -30,6 +30,18 @@
 .followup-cta .btn-ghost:hover { background: #25d366; color: #fff; border-color: #25d366; transform: translateY(-3px); box-shadow: 0 10px 24px rgba(37,211,102,.25); }
 .faq-side .btn-ghost { transition: transform .25s var(--ease), background .2s, color .2s, border-color .2s, box-shadow .25s var(--ease); }
 .faq-side .btn-ghost:hover { background: #25d366; color: #fff; border-color: #25d366; transform: translateY(-2px); box-shadow: 0 8px 18px rgba(37,211,102,.2); }
+.cta-group .btn-buy-now:hover .fa-bag-shopping { animation: product-bag-pop .5s ease both; }
+.cta-group .btn-whatsapp:hover .fa-whatsapp,
+.followup-actions .btn-ghost:hover .fa-whatsapp,
+.faq-side .btn-ghost:hover .fa-whatsapp { animation: product-whatsapp-pop .5s ease both; }
+.cta-group .btn-icon { transition: background .2s, color .2s, border-color .2s, transform .25s var(--ease), box-shadow .25s var(--ease); }
+.cta-group .btn-icon:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(15,23,42,.16); }
+.cta-group .btn-icon:hover .fa-share-nodes { animation: product-share-pop .45s ease both; }
+.followup-actions .btn-primary:hover .fa-bell { animation: product-bell-ring .6s ease-in-out both; transform-origin: top center; }
+@keyframes product-bag-pop { 0%, 100% { transform: scale(1); } 45% { transform: scale(1.2) rotate(-7deg); } 75% { transform: scale(1.08) rotate(4deg); } }
+@keyframes product-whatsapp-pop { 0%, 100% { transform: scale(1) rotate(0); } 35% { transform: scale(1.22) rotate(-8deg); } 70% { transform: scale(1.08) rotate(5deg); } }
+@keyframes product-share-pop { 0%, 100% { transform: scale(1) rotate(0); } 45% { transform: scale(1.18) rotate(-8deg); } 75% { transform: scale(1.08) rotate(5deg); } }
+@keyframes product-bell-ring { 0%, 100% { transform: rotate(0); } 20% { transform: rotate(12deg); } 40% { transform: rotate(-10deg); } 60% { transform: rotate(7deg); } 80% { transform: rotate(-4deg); } }
 .product-blog-card { width: min(calc(100% - 48px), 1184px); margin: 0 auto 10px; display: grid; grid-template-columns: 260px 1fr; gap: 30px; align-items: center; padding: 14px; border: 1px solid var(--line, var(--border)); border-radius: 20px; background: linear-gradient(135deg, #fff 0%, #f8fbff 100%); box-shadow: 0 8px 30px rgba(8,13,20,.07); overflow: hidden; transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .25s; }
 .product-blog-card:hover { transform: translateY(-6px); border-color: var(--blue-border, rgba(59,130,246,.22)); box-shadow: 0 20px 44px rgba(29,78,216,.14); }
 .product-blog-card img { width: 260px; height: 156px; object-fit: cover; display: block; border-radius: 14px; box-shadow: 0 6px 18px rgba(8,13,20,.12); transition: transform .45s var(--ease), filter .35s; }
