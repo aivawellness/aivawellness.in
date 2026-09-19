@@ -1312,7 +1312,7 @@
         flex-wrap: wrap;
       }
       .btn-buy-now {
-        flex: 1;
+        flex: 0 0 auto;
         min-width: 160px;
         background: linear-gradient(135deg, #080d14, #1e293b);
         color: #fff;
@@ -1352,6 +1352,15 @@
       .btn-buy-now > * {
         position: relative;
         z-index: 1;
+      }
+      .cta-group .btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 20px; border: 1px solid var(--ink); color: var(--ink); background: transparent; border-radius: var(--r-sm); font-weight: 600; font-size: .9rem; cursor: pointer; text-decoration: none; transition: background .2s, color .2s, border-color .2s; }
+      .cta-group .btn-icon { width: 48px; height: 48px; padding: 0; flex-shrink: 0; }
+      .cta-group .btn-ghost:hover { background: var(--ink); color: #fff; }
+      .cta-group .btn-whatsapp:hover { background: #25d366; border-color: #25d366; }
+      @media (max-width: 600px) {
+        .cta-group { gap: 10px; }
+        .cta-group .btn-buy-now { flex: 1 1 100%; width: 100%; }
+        .cta-group .btn-whatsapp { flex: 1 1 auto; }
       }
       .trust-grid {
         display: grid;
@@ -1467,37 +1476,6 @@
       }
       .delivery-text strong {
         color: var(--blue);
-      }
-      .share-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .share-lbl {
-        font-size: 0.75rem;
-        color: var(--muted);
-        font-weight: 500;
-      }
-      .share-btn {
-        width: 34px;
-        height: 34px;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-        background: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all 0.2s;
-        text-decoration: none;
-        color: var(--ink);
-      }
-      .share-btn:hover {
-        border-color: var(--blue);
-        color: var(--blue);
-        background: var(--blue-soft);
       }
       .meta-row {
         display: flex;
@@ -3031,30 +3009,8 @@
 
     <div class="ann-bar">
       <div class="ann-bar-track">
-        <span
-          ><i class="fa-solid fa-capsules"></i>&nbsp;Premium Healthcare Formulas
-          &nbsp;<span class="sep">|</span>&nbsp; 10%
-          off your first order with code <strong>AIVA10</strong> &nbsp;<span
-            class="sep"
-            >|</span
-          >&nbsp; Free shipping on orders over ₹999 &nbsp;<span class="sep"
-            >|</span
-          >&nbsp; 100% Natural &nbsp;<span class="sep">|</span>&nbsp; 100% Vegan
-          & Cruelty-Free &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No
-          Binders</span
-        >
-        <span
-          ><i class="fa-solid fa-capsules"></i>&nbsp;Premium Healthcare Formulas
-          &nbsp;<span class="sep">|</span>&nbsp; 10%
-          off your first order with code <strong>AIVA10</strong> &nbsp;<span
-            class="sep"
-            >|</span
-          >&nbsp; Free shipping on orders over ₹999 &nbsp;<span class="sep"
-            >|</span
-          >&nbsp; 100% Natural &nbsp;<span class="sep">|</span>&nbsp; 100% Vegan
-          & Cruelty-Free &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No
-          Binders</span
-        >
+        <span><i class="fa-solid fa-capsules"></i>&nbsp;Premium Healthcare Formulas &nbsp;<span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free shipping on orders over ₹999 &nbsp;<span class="sep">|</span>&nbsp; 100% Natural &nbsp;<span class="sep">|</span>&nbsp; 100% Vegan &amp; Cruelty-Free &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No Binders</span>
+        <span><i class="fa-solid fa-capsules"></i>&nbsp;Premium Healthcare Formulas &nbsp;<span class="sep">|</span>&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;<span class="sep">|</span>&nbsp; Free shipping on orders over ₹999 &nbsp;<span class="sep">|</span>&nbsp; 100% Natural &nbsp;<span class="sep">|</span>&nbsp; 100% Vegan &amp; Cruelty-Free &nbsp;<span class="sep">|</span>&nbsp; No Fillers, No Binders</span>
       </div>
     </div>
 
@@ -3308,6 +3264,8 @@
                 <i class="fa-solid fa-bag-shopping"></i>
                 <span>Buy Now</span>
               </button>
+              <a class="btn-ghost btn-whatsapp" href="https://wa.me/" target="_blank" rel="noopener" onclick="event.preventDefault();window.open('https://wa.me/?text='+encodeURIComponent('Check out '+document.title+': '+location.href),'_blank');"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</a>
+              <button class="btn-ghost btn-icon" type="button" aria-label="Share this product" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard&&navigator.clipboard.writeText(location.href);showToast('Link copied!');}"><i class="fa-solid fa-share-nodes"></i></button>
             </div>
 
             <div class="trust-grid">
@@ -3400,32 +3358,6 @@
               </ul>
             </div>
 
-            <div class="share-row">
-              <span class="share-lbl">Share:</span>
-              <button
-                class="share-btn"
-                title="Share on WhatsApp"
-                onclick="
-                  const url = location.href;
-                  navigator.clipboard && navigator.clipboard.writeText(url);
-                  window.open('https://wa.me/?text=' + encodeURIComponent('Check this product: ' + url), '_blank');
-                  showToast('📱', 'Link copied & WhatsApp opened!');
-                "
-              >
-                <i class="fa-brands fa-whatsapp"></i>
-              </button>
-              <button
-                class="share-btn"
-                title="Copy link"
-                onclick="
-                  navigator.clipboard &&
-                    navigator.clipboard.writeText(location.href);
-                  showToast('🔗', 'Link copied!');
-                "
-              >
-                <i class="fa-solid fa-link"></i>
-              </button>
-            </div>
           </div>
         </div>
 
