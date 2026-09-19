@@ -82,6 +82,8 @@
         --lime: #60a5fa;
         --lime-deep: #1d4ed8;
         --blue: #2563eb;
+        --blue-soft: rgba(59, 130, 246, 0.08);
+        --blue-border: rgba(59, 130, 246, 0.22);
         --aqua: #dbeafe;
         --warm: #eff6ff;
         --shadow: 0 18px 55px rgba(8, 13, 20, .11);
@@ -147,9 +149,9 @@
       .crumbs [aria-current] { color: var(--ink); font-weight: 600; }
 
       /* hero */
-      .hero { padding: 14px 0 76px; display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr); gap: clamp(34px, 6vw, 88px); align-items: center; }
-      .gallery { min-width: 0; animation: settle .9s var(--ease) both; }
-      .main-visual { position: relative; overflow: hidden; aspect-ratio: 1 / 1.05; background: linear-gradient(145deg, #eff6ff, #ffffff 58%, #dbeafe); border: 1px solid var(--aqua); border-radius: 0; box-shadow: var(--shadow); cursor: zoom-in; touch-action: pan-y; }
+      .hero { padding: 14px 0 76px; display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr); gap: clamp(34px, 6vw, 88px); align-items: start; margin-top: 6px; }
+      .gallery { min-width: 0; max-width: 640px; width: 100%; margin: 0 auto; animation: settle .9s var(--ease) both; }
+      .main-visual { position: relative; overflow: hidden; aspect-ratio: 1; background: linear-gradient(145deg, #eff6ff, #ffffff 58%, #dbeafe); border: 1px solid var(--aqua); border-radius: 0; box-shadow: var(--shadow); cursor: zoom-in; touch-action: pan-y; }
       .main-visual::before { content: ""; position: absolute; width: 68%; height: 68%; left: 16%; top: 16%; border: 1px solid rgba(16,42,67,.1); border-radius: 50%; }
       .main-visual img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; transition: transform .65s var(--ease), opacity .2s; transform-origin: var(--ox, 50%) var(--oy, 50%); }
       .main-visual.zooming img { transform: scale(1.55); transition: transform .25s var(--ease), opacity .2s; }
@@ -180,24 +182,41 @@
       .product-copy > :nth-child(5) { animation-delay: .33s; }
       .product-copy > :nth-child(6) { animation-delay: .4s; }
       .product-copy > :nth-child(7) { animation-delay: .47s; }
-      .eyebrow { display: inline-flex; gap: 8px; align-items: center; color: var(--lime-deep); font-size: .74rem; font-weight: 700; letter-spacing: .06em; }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: .68rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--blue);
+        font-weight: 700;
+        padding: 5px 14px;
+        background: var(--blue-soft);
+        border-radius: 999px;
+        border: 1px solid var(--blue-border);
+        width: fit-content;
+      }
       h1, h2, h3 { font-family: "Swiss721BoldCondensedBT", "Barlow Condensed", "Cormorant Garamond", serif; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; margin: 0; }
-      h1 { font-size: clamp(2.7rem, 5vw, 5rem); line-height: .98; margin: 16px 0 20px; max-width: 600px; }
+      h1 { font-size: clamp(22px, 2.6vw, 36px); line-height: 1.12; margin: 16px 0 10px; max-width: 600px; letter-spacing: .02em; }
       h1 .accent { color: var(--blue); }
-      .intro { max-width: 520px; color: var(--muted); font-size: 1.05rem; line-height: 1.75; margin: 0; }
+      .intro { max-width: 520px; color: var(--muted); font-size: .92rem; line-height: 1.8; margin: 0; }
       .launch-note { display: flex; align-items: center; gap: 12px; margin: 24px 0 0; padding: 14px 16px; background: var(--warm); border: 1px solid var(--aqua); border-radius: var(--r-md); color: var(--ink); font-size: .84rem; line-height: 1.5; max-width: 520px; }
       .launch-note i { color: var(--blue); font-size: 1.1rem; }
       .launch-note strong { display: block; font-size: .86rem; }
       .launch-note span { color: var(--muted); font-size: .8rem; }
-      .price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; margin: 26px 0 7px; }
-      .price strong { font-family: "Sora", sans-serif; font-size: 2.2rem; letter-spacing: -.05em; }
-      .price del { color: var(--muted); font-size: .95rem; }
-      .save { display: inline-block; color: var(--lime-deep); background: var(--aqua); border-radius: 999px; padding: 5px 10px; font-size: .72rem; font-weight: 800; }
-      .price-sub { color: var(--muted); font-size: .78rem; }
+      .price-card { margin-top: 26px; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-md); padding: 22px 24px; box-shadow: var(--shadow); }
+      .price-row-main { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+      .price-main-val { font-family: "Sora", sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -.02em; }
+      .price-old-val { color: var(--muted); font-size: .95rem; text-decoration: line-through; }
+      .discount-chip { display: inline-block; color: var(--lime-deep); background: var(--aqua); border: 1px solid rgba(37,99,235,.12); border-radius: 6px; padding: 4px 10px; font-size: .7rem; font-weight: 800; letter-spacing: .04em; }
+      .tax-text { color: var(--muted); font-size: .78rem; line-height: 1.45; }
       .actions { display: flex; gap: 10px; margin: 24px 0 26px; flex-wrap: wrap; align-items: center; }
-      .promise { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; gap: 12px; }
-      .promise div { display: flex; gap: 10px; align-items: center; font-size: .76rem; color: var(--muted); line-height: 1.35; }
-      .promise i { color: var(--blue); font-size: 1.05rem; }
+      .promise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .promise div { display: flex; gap: 10px; align-items: center; min-width: 0; padding: 12px 14px; background: #f1f5f9; border: 1px solid var(--line); border-radius: var(--r-sm); font-size: .76rem; color: var(--muted); line-height: 1.35; transition: background .2s, border-color .2s; }
+      .promise div:hover { color: var(--ink); background: var(--blue-soft); border-color: var(--blue-border); }
+      .promise i { flex: 0 0 34px; width: 34px; height: 34px; display: grid; place-items: center; color: var(--blue); background: var(--blue-soft); border-radius: 8px; font-size: 1rem; transition: background .2s, color .2s; }
+      .promise div:hover i { color: #fff; background: var(--blue); }
 
       /* sub navigation */
       .subnav { position: sticky; top: var(--header-h); z-index: 25; background: rgba(248,250,252,.94); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
@@ -465,8 +484,8 @@
         .actions .btn-lg { flex: 1 1 100%; }
         .actions .btn-ghost:not(.btn-icon) { flex: 1; }
         .promise { gap: 9px; }
-        .promise div { display: block; font-size: .68rem; text-align: center; }
-        .promise i { display: block; margin: 0 auto 7px; }
+        .promise div { display: block; padding: 10px 8px; font-size: .68rem; text-align: center; }
+        .promise i { margin: 0 auto 7px; }
         .section { padding: 58px 0; }
         .section-heading, .rail-head { display: block; }
         .section-heading p { margin-top: 15px; }
@@ -557,12 +576,12 @@
 
           <div class="product-copy">
             <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Performance nutrition</span>
-            <h1>Whey Protein<br /><span class="accent">built to move.</span></h1>
+            <h1>Whey Protein <span class="accent">built to move.</span></h1>
             <p class="intro">Clean, high-quality protein support for recovery, everyday strength and the routines that keep you feeling capable.</p>
             <div class="launch-note"><i class="fa-solid fa-circle-check"></i><div><strong>Early access is opening soon</strong><span>Members hear first about availability, flavours and launch updates.</span></div></div>
-            <div>
-              <div class="price"><strong>₹3,499</strong><del>₹3,999</del><span class="save">Save ₹500</span></div>
-              <div class="price-sub">2 kg pack · Inclusive of all taxes · Pan-India delivery</div>
+            <div class="price-card">
+              <div class="price-row-main"><span class="price-main-val">₹3,499</span><span class="price-old-val">₹3,999</span><span class="discount-chip">Save ₹500</span></div>
+              <div class="tax-text">2 kg pack · Inclusive of all taxes · Pan-India delivery</div>
             </div>
             <div class="actions" id="heroActions">
               <a class="btn-primary btn-lg" href="../enquire.html?product=Whey%20Protein"><i class="fa-solid fa-bell"></i> Get launch updates</a>
