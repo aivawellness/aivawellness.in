@@ -299,6 +299,12 @@
       .tab-ingredients li { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
       .tab-ingredients strong { color: var(--ink); }
       .tab-alert { padding: 16px 20px; border: 1px solid #f5d67a; border-radius: 10px; background: #fffbeb; color: #7c4a16; font-size: .84rem; line-height: 1.65; }
+      .key-benefits-card { margin-top: 18px; padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--white); box-shadow: var(--shadow-sm); }
+      .product-copy .key-benefits-card { max-width: 100%; margin: 24px 0 0; }
+      .key-benefits-card h4 { margin: 0 0 16px; color: var(--muted); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; }
+      .key-benefits-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+      .key-benefits-list li { display: flex; align-items: flex-start; gap: 10px; color: var(--ink); font-size: .86rem; line-height: 1.55; }
+      .key-benefits-list i { flex: 0 0 auto; margin-top: 3px; color: #16a34a; }
       .usage-steps { display: flex; flex-direction: column; gap: 24px; max-width: 680px; }
       #tab-usage { max-width: 700px; }
       .usage-step { display: flex; align-items: flex-start; gap: 18px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(135deg, #fff, #f8fbff); transition: transform .3s var(--ease), border-color .3s, box-shadow .3s, background .3s; }
@@ -346,8 +352,8 @@
       .faq-list details:last-child { border-bottom: 1px solid var(--line); }
       .faq-list summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-weight: 600; font-size: .98rem; }
       .faq-list summary::-webkit-details-marker { display: none; }
-      .faq-list summary::after { content: "+"; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--blue); font-size: 1.15rem; line-height: 1; transition: transform .3s var(--ease), background .2s, color .2s; }
-      .faq-list details[open] summary::after { transform: rotate(45deg); background: var(--ink); color: #fff; border-color: var(--ink); }
+      .faq-list summary::after { content: "\f078"; font-family: "Font Awesome 6 Free"; font-weight: 900; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--blue); font-size: .72rem; line-height: 1; transition: transform .3s var(--ease), background .2s, color .2s, border-color .2s; }
+      .faq-list details[open] summary::after { transform: rotate(180deg); background: var(--ink); color: #fff; border-color: var(--ink); }
       .faq-list .ans { animation: reveal .4s var(--ease) both; }
       .faq-list p { color: var(--muted); line-height: 1.75; font-size: .9rem; max-width: 60ch; margin: 14px 0 0; }
       .faq-list p a { color: var(--lime-deep); text-decoration: underline; text-underline-offset: 3px; }
@@ -459,8 +465,8 @@
         .actions .btn-lg { flex: 1 1 100%; }
         .actions .btn-ghost:not(.btn-icon) { flex: 1; }
         .promise { gap: 9px; }
-        .promise div { display: block; font-size: .68rem; }
-        .promise i { display: block; margin-bottom: 7px; }
+        .promise div { display: block; font-size: .68rem; text-align: center; }
+        .promise i { display: block; margin: 0 auto 7px; }
         .section { padding: 58px 0; }
         .section-heading, .rail-head { display: block; }
         .section-heading p { margin-top: 15px; }
@@ -471,8 +477,13 @@
         .tile.feature .ico { top: 24px; left: 24px; }
         .steps { grid-template-columns: 1fr; gap: 30px; }
         .tab-grid { grid-template-columns: 1fr; gap: 28px; }
-        .tab-points { grid-template-columns: 1fr; }
-        .tab-point { min-height: 220px; }
+        .tab-points { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+        .tab-point { min-height: 190px; padding: 16px 12px; gap: 8px; }
+        .tab-point i { width: 48px; height: 48px; font-size: 1rem; }
+        .tab-point strong { font-size: .82rem; }
+        .tab-point span { font-size: .72rem; }
+        .key-benefits-card { padding: 18px 16px; }
+        .product-copy .key-benefits-card { max-width: 100%; margin-top: 24px; }
         .tab-panel { padding-top: 24px; }
         .tab-table { font-size: .8rem; }
         .tab-table th, .tab-table td { padding: 11px 10px; }
@@ -735,6 +746,16 @@
             tab.setAttribute("aria-selected", String(active));
           });
         };
+
+        const descriptionColumn = document.querySelector("#tab-description .tab-grid > div:first-child");
+        const hero = document.querySelector(".hero");
+        const productCopy = document.querySelector(".product-copy");
+        if (descriptionColumn && hero && productCopy && !productCopy.querySelector(".key-benefits-card")) {
+          const keyBenefits = document.createElement("div");
+          keyBenefits.className = "key-benefits-card";
+          keyBenefits.innerHTML = '<h4>Key Benefits</h4><ul class="key-benefits-list"><li><i class="fa-solid fa-check"></i><span>Supports muscle recovery after training</span></li><li><i class="fa-solid fa-check"></i><span>Helps increase daily protein intake</span></li><li><i class="fa-solid fa-check"></i><span>Convenient support for active lifestyles</span></li><li><i class="fa-solid fa-check"></i><span>Easy to add to shakes and smoothies</span></li><li><i class="fa-solid fa-check"></i><span>Supports everyday strength goals</span></li></ul>';
+          productCopy.appendChild(keyBenefits);
+        }
 
         /* gallery */
         const thumbs = $$(".thumb");
