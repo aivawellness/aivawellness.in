@@ -260,6 +260,50 @@
       .step span { color: var(--lime-deep); font-size: .74rem; font-weight: 700; letter-spacing: .08em; }
       .step h3 { font-size: 1.35rem; margin: 12px 0 9px; }
       .step p { color: var(--muted); line-height: 1.7; font-size: .88rem; margin: 0; max-width: 34ch; }
+      .tabs-section { margin-bottom: 72px; }
+      .tabs-nav { display: flex; gap: 8px; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+      .tabs-nav::-webkit-scrollbar { display: none; }
+      .tab-btn { flex: 0 0 auto; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); padding: 14px 18px; font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer; transition: color .2s, border-color .2s; }
+      .tab-btn:hover, .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+      .tab-panel { display: none; padding: 34px 0 0; }
+      .tab-panel.active { display: block; animation: rise .45s var(--ease) both; }
+      .tab-panel h3 { font-size: 1.45rem; margin-bottom: 12px; }
+      .tab-panel p { color: var(--muted); line-height: 1.8; max-width: 72ch; margin: 0 0 18px; }
+      .tab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+      .tab-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .tab-point { min-height: 240px; padding: 22px 20px; border: 1px solid rgba(59,130,246,.16); border-radius: 18px; background: linear-gradient(180deg, #fff 0%, #f8fbff 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; box-shadow: 0 4px 24px rgba(8,13,20,.06); transition: transform .35s var(--ease), background .35s, border-color .35s, box-shadow .35s; }
+      .tab-point:hover { transform: translateY(-6px); background: linear-gradient(180deg, #fff 0%, #eff6ff 100%); border-color: rgba(59,130,246,.35); box-shadow: 0 20px 48px rgba(29,78,216,.14); }
+      .tab-point i { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #a78bfa); color: #fff; font-size: 1.35rem; margin-bottom: 2px; box-shadow: 0 10px 22px rgba(124,58,237,.2); }
+      .tab-point:nth-child(2) i { background: linear-gradient(135deg, #2563eb, #60a5fa); }
+      .tab-point:nth-child(3) i { background: linear-gradient(135deg, #059669, #34d399); }
+      .tab-point:nth-child(4) i { background: linear-gradient(135deg, #dc2626, #fb7185); }
+      .tab-point:nth-child(5) i { background: linear-gradient(135deg, #d97706, #fbbf24); }
+      .tab-point:nth-child(6) i { background: linear-gradient(135deg, #0891b2, #22d3ee); }
+      .tab-point strong { display: block; margin-bottom: 2px; font-size: 1rem; }
+      .tab-point span { display: block; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+      .tab-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: .86rem; overflow: hidden; border-radius: 10px; }
+      .tab-table th, .tab-table td { width: 50%; }
+      .tab-table th { padding: 13px 16px; background: #0f172a; color: #fff; text-align: center; font-weight: 700; }
+      .tab-table td { padding: 13px 16px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: middle; overflow-wrap: anywhere; text-align: center; }
+      .tab-table tbody tr:nth-child(even) { background: #f1f5f9; }
+      .tab-table td:last-child { text-align: center; color: var(--ink); font-weight: 700; }
+      #tab-nutrition .tab-table { max-width: 700px; }
+      .tab-grid .tab-table td, .tab-grid .tab-table td:last-child { text-align: left; }
+      #tab-ingredients { max-width: 700px; }
+      .tab-list { margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.9; }
+      .tab-note { padding: 14px 16px; border-left: 3px solid var(--blue); background: var(--warm); color: var(--muted); font-size: .82rem; line-height: 1.65; }
+      .tab-ingredients { list-style: none; padding: 0; margin: 0 0 16px; }
+      .tab-ingredients li { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+      .tab-ingredients strong { color: var(--ink); }
+      .tab-alert { padding: 16px 20px; border: 1px solid #f5d67a; border-radius: 10px; background: #fffbeb; color: #7c4a16; font-size: .84rem; line-height: 1.65; }
+      .usage-steps { display: flex; flex-direction: column; gap: 24px; max-width: 680px; }
+      #tab-usage { max-width: 700px; }
+      .usage-step { display: flex; align-items: flex-start; gap: 18px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(135deg, #fff, #f8fbff); transition: transform .3s var(--ease), border-color .3s, box-shadow .3s, background .3s; }
+      .usage-step:hover { transform: translateX(6px); border-color: var(--aqua); background: #fff; box-shadow: 0 14px 30px rgba(29,78,216,.12); }
+      .step-num { flex: 0 0 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: #fff; font-weight: 800; box-shadow: 0 8px 18px rgba(37,99,235,.2); transition: transform .3s var(--ease), box-shadow .3s; }
+      .usage-step:hover .step-num { transform: scale(1.08) rotate(-4deg); box-shadow: 0 10px 22px rgba(37,99,235,.3); }
+      .step-text h4 { margin: 2px 0 6px; font-size: .92rem; }
+      .step-text p { margin: 0; font-size: .86rem; line-height: 1.7; }
 
       /* similar products */
       .rail-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
@@ -304,6 +348,8 @@
       .faq-list .ans { animation: reveal .4s var(--ease) both; }
       .faq-list p { color: var(--muted); line-height: 1.75; font-size: .9rem; max-width: 60ch; margin: 14px 0 0; }
       .faq-list p a { color: var(--lime-deep); text-decoration: underline; text-underline-offset: 3px; }
+      .faq-side .btn-ghost:hover { background: #25d366; border-color: #25d366; color: #fff; }
+      .faq-side .btn-ghost:hover .fa-whatsapp { animation: whatsapp-pop .5s ease both; }
 
       /* closing cta */
       .cta-panel { position: relative; overflow: hidden; margin: 10px 0 84px; padding: clamp(36px, 6vw, 68px); border-radius: var(--r-lg); background: linear-gradient(135deg, #0f172a 0%, #172554 70%, #1d4ed8 140%); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
@@ -314,8 +360,11 @@
       .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
       .cta-panel .btn-primary { background: #fff; color: var(--ink); box-shadow: none; }
       .cta-panel .btn-primary:hover { background: var(--aqua); }
+      .cta-panel .btn-primary:hover .fa-bell { animation: bell-ring .6s ease-in-out both; transform-origin: top center; }
       .cta-panel .btn-ghost { border-color: rgba(255,255,255,.4); color: #fff; }
       .cta-panel .btn-ghost:hover { background: #fff; color: var(--ink); border-color: #fff; }
+      .cta-panel .btn-ghost[href^="https://wa.me"]:hover { background: #25d366; color: #fff; border-color: #25d366; }
+      .cta-panel .btn-ghost[href^="https://wa.me"]:hover .fa-whatsapp { animation: whatsapp-pop .5s ease both; }
 
       /* footer */
       footer { background: #080d14; color: #94a3b8; padding: 60px 20px 28px; border-top: 1px solid rgba(255,255,255,.04); }
@@ -369,6 +418,8 @@
       @keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
       @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
       @keyframes ping { 70% { box-shadow: 0 0 0 8px rgba(96,165,250,0); } 100% { box-shadow: 0 0 0 0 rgba(96,165,250,0); } }
+      @keyframes bell-ring { 0%, 100% { transform: rotate(0); } 15% { transform: rotate(14deg); } 30% { transform: rotate(-12deg); } 45% { transform: rotate(9deg); } 60% { transform: rotate(-6deg); } 75% { transform: rotate(3deg); } }
+      @keyframes whatsapp-pop { 0%, 100% { transform: scale(1) rotate(0); } 35% { transform: scale(1.22) rotate(-8deg); } 70% { transform: scale(1.08) rotate(5deg); } }
 
       /* responsive */
       @media (max-width: 1024px) {
@@ -413,6 +464,18 @@
         .tile.feature { min-height: 300px; padding: 26px; }
         .tile.feature .ico { top: 24px; left: 24px; }
         .steps { grid-template-columns: 1fr; gap: 30px; }
+        .tab-grid { grid-template-columns: 1fr; gap: 28px; }
+        .tab-points { grid-template-columns: 1fr; }
+        .tab-point { min-height: 220px; }
+        .tab-panel { padding-top: 24px; }
+        .tab-table { font-size: .8rem; }
+        .tab-table th, .tab-table td { padding: 11px 10px; }
+        .tab-table td:last-child { text-align: right; }
+        #tab-nutrition .tab-table { max-width: 100%; }
+        #tab-ingredients { max-width: 100%; }
+        #tab-usage { max-width: 100%; }
+        .usage-step { gap: 12px; padding: 14px; }
+        .usage-step:hover { transform: translateY(-3px); }
         .rail { grid-auto-columns: 78%; }
         .cta-panel { margin-bottom: 58px; }
         .cta-actions, .cta-actions a { width: 100%; }
@@ -498,70 +561,20 @@
         </section>
       </div>
 
-      <nav class="subnav" aria-label="Page sections">
-        <div class="subnav-inner">
-          <div class="subnav-links" id="subnavLinks">
-            <a href="#overview" class="on">Overview</a>
-            <a href="#benefits">Benefits</a>
-            <a href="#details">Details</a>
-            <a href="#routine">Routine</a>
-            <a href="#more">More products</a>
-            <a href="#faq">FAQ</a>
-          </div>
-          <div class="subnav-buy"><strong>₹3,499 <small>· 2 kg</small></strong><a class="btn-primary" href="../enquire.html?product=Whey%20Protein">Get launch updates</a></div>
-        </div>
-      </nav>
-
       <div class="wrap">
-        <section class="section" id="benefits" aria-labelledby="benefits-h">
-          <div class="section-heading"><h2 id="benefits-h">Made for the work<br />you put in.</h2><p>A focused daily protein ritual for training days, busy days and everything in between.</p></div>
-          <div class="bento">
-            <article class="tile feature"><span class="ico"><i class="fa-solid fa-dumbbell"></i></span><h3>Recovery support</h3><p>Make protein a consistent part of your post-training routine, so the effort you put in has the nutrition behind it.</p></article>
-            <article class="tile"><span class="ico"><i class="fa-solid fa-battery-three-quarters"></i></span><h3>Everyday strength</h3><p>Simple nutrition support for a stronger, more capable day.</p></article>
-            <article class="tile"><span class="ico"><i class="fa-solid fa-scale-balanced"></i></span><h3>Easy to build in</h3><p>A versatile format for shakes, smoothies and everyday recipes.</p></article>
-            <article class="tile wide"><span class="ico"><i class="fa-solid fa-leaf"></i></span><h3>Made with intent</h3><p>Aiva Wellness quality thinking, carried into performance nutrition.</p></article>
+        <section class="tabs-section" aria-label="Whey Protein information">
+          <div class="tabs-nav" role="tablist" aria-label="Product information">
+            <button class="tab-btn active" type="button" role="tab" aria-selected="true" aria-controls="tab-description" onclick="switchTab('description', this)">Description</button>
+            <button class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-nutrition" onclick="switchTab('nutrition', this)">Nutrition Facts</button>
+            <button class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-ingredients" onclick="switchTab('ingredients', this)">Ingredients</button>
+            <button class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-usage" onclick="switchTab('usage', this)">How to Use</button>
           </div>
-        </section>
-
-        <section class="section" aria-labelledby="moments-h">
-          <div class="section-heading"><h2 id="moments-h">Fits wherever<br />your day goes.</h2><p>One 2 kg pack, three everyday moments.</p></div>
-          <div class="moments">
-            <div class="moment"><i class="fa-solid fa-person-running"></i><h3>After training</h3><p>Blend a shake once your session is done and keep recovery simple.</p></div>
-            <div class="moment"><i class="fa-solid fa-briefcase"></i><h3>On busy days</h3><p>Keep a quick protein option on hand when meals get pushed around.</p></div>
-            <div class="moment"><i class="fa-solid fa-blender"></i><h3>In the kitchen</h3><p>Stir it into smoothies and everyday recipes as part of a balanced diet.</p></div>
+          <div class="tab-panel active" id="tab-description" role="tabpanel">
+            <div class="tab-grid"><div><h3>About Whey Protein</h3><p>Whey Protein is being developed as a reliable, uncomplicated addition to your daily routine. It is designed to support recovery, everyday strength and convenient protein intake for active lifestyles.</p><h3>Product Information</h3><table class="tab-table"><tbody><tr><td>Item Form</td><td>Powder</td></tr><tr><td>Pack Size</td><td>2 kg</td></tr><tr><td>Brand</td><td>Aiva Wellness</td></tr><tr><td>Flavour</td><td>To be confirmed</td></tr><tr><td>Protein per serving</td><td>To be confirmed</td></tr><tr><td>Serving size</td><td>To be confirmed</td></tr><tr><td>Country of Origin</td><td>India</td></tr><tr><td>Availability</td><td>Launching soon</td></tr></tbody></table><div class="tab-note">Final formulation and nutrition information will be shared with early-access members and printed on the final pack.</div></div><div class="tab-points"><div class="tab-point"><i class="fa-solid fa-dumbbell"></i><strong>Muscle recovery</strong><span>Helps make protein part of your post-training routine.</span></div><div class="tab-point"><i class="fa-solid fa-person-running"></i><strong>Lean muscle support</strong><span>Convenient protein for active days and training goals.</span></div><div class="tab-point"><i class="fa-solid fa-blender"></i><strong>Convenient nutrition</strong><span>Easy to add to shakes, smoothies and recipes.</span></div><div class="tab-point"><i class="fa-solid fa-flask"></i><strong>Quality protein blend</strong><span>Thoughtfully developed for everyday performance nutrition.</span></div><div class="tab-point"><i class="fa-solid fa-bolt"></i><strong>Active-day support</strong><span>A simple way to build protein into a busy routine.</span></div><div class="tab-point"><i class="fa-solid fa-clock"></i><strong>Flexible routine</strong><span>Use it around training, meals or your daily schedule.</span></div></div></div>
           </div>
-        </section>
-
-        <section class="section" id="details" aria-labelledby="details-h">
-          <div class="details">
-            <div>
-              <span class="eyebrow">The product note</span>
-              <h2 id="details-h" style="margin-top:14px">Protein that fits your rhythm.</h2>
-              <p>Whey Protein is being developed as a reliable, uncomplicated addition to your daily routine. Whether you train early, recover late or simply need a convenient protein option, this is made to meet you there.</p>
-              <p>We are putting the finishing touches on the launch so every detail feels right. Join the early-access list for availability, flavour and launch updates.</p>
-              <a class="btn-ghost" href="../enquire.html?product=Whey%20Protein">Join the early-access list <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div>
-              <table class="specs"><tbody>
-                <tr><td>Product</td><td>Whey Protein</td></tr>
-                <tr><td>Pack size</td><td>2 kg</td></tr>
-                <tr><td>Category</td><td>Sports nutrition</td></tr>
-                <tr><td>Best for</td><td>Recovery &amp; strength</td></tr>
-                <tr><td>Availability</td><td><span class="status">Launching soon</span></td></tr>
-                <tr><td>Brand</td><td>Aiva Wellness</td></tr>
-              </tbody></table>
-              <div class="spec-note"><i class="fa-solid fa-circle-info"></i><span>Full ingredient and nutrition information will be printed on the final pack and shared with early-access members.</span></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="routine" aria-labelledby="routine-h">
-          <div class="section-heading"><h2 id="routine-h">A better daily ritual,<br />one scoop at a time.</h2><p>Keep it simple, make it consistent, and let the small habits add up.</p></div>
-          <div class="steps">
-            <div class="step"><span>Step 1 · Prepare</span><h3>Make it yours</h3><p>Blend with your preferred liquid or add to a smoothie once the product launches.</p></div>
-            <div class="step"><span>Step 2 · Build</span><h3>Keep showing up</h3><p>Use it as part of a balanced routine that supports your training and nutrition goals.</p></div>
-            <div class="step"><span>Step 3 · Enjoy</span><h3>Stay consistent</h3><p>Follow the serving guidance on the final pack and make the ritual work for you.</p></div>
-          </div>
+          <div class="tab-panel" id="tab-nutrition" role="tabpanel"><p><strong>Serving information:</strong> Final nutrition values will be confirmed before launch.</p><table class="tab-table"><thead><tr><th>Product information</th><th>Details</th></tr></thead><tbody><tr><td>Product</td><td>Whey Protein</td></tr><tr><td>Pack size</td><td>2 kg</td></tr><tr><td>Category</td><td>Sports nutrition</td></tr><tr><td>Serving information</td><td>Printed on final pack</td></tr><tr><td>Availability</td><td>Launching soon</td></tr></tbody></table></div>
+          <div class="tab-panel" id="tab-ingredients" role="tabpanel"><p><strong>Ingredients (final panel):</strong></p><ul class="tab-ingredients"><li><strong>Whey protein blend</strong> — High-quality protein support</li><li><strong>Formulation details</strong> — To be confirmed on the final pack</li><li><strong>Flavour and allergen information</strong> — Clearly disclosed before launch</li></ul><div class="tab-alert"><strong><i class="fa-solid fa-triangle-exclamation"></i> Important Information</strong><br />Not for medicinal use. Follow the final pack directions and consult a healthcare practitioner if you have dietary or health concerns.</div></div>
+          <div class="tab-panel" id="tab-usage" role="tabpanel"><div class="usage-steps"><div class="usage-step"><div class="step-num">1</div><div class="step-text"><h4>Prepare your shake</h4><p>Blend the recommended serving with your preferred liquid.</p></div></div><div class="usage-step"><div class="step-num">2</div><div class="step-text"><h4>Use around your routine</h4><p>Enjoy after training or as part of your daily nutrition routine.</p></div></div><div class="usage-step"><div class="step-num">3</div><div class="step-text"><h4>Keep it consistent</h4><p>Follow the serving guidance printed on the final product pack.</p></div></div><div class="usage-step"><div class="step-num">4</div><div class="step-text"><h4>Store correctly</h4><p>Keep the container sealed in a cool, dry place away from direct sunlight.</p></div></div></div></div>
         </section>
 
         <!-- SIMILAR PRODUCTS: update image paths / blurbs below to match your real assets -->
@@ -707,6 +720,15 @@
         menuBtn.addEventListener("click", () => toggleMenu());
         menu.addEventListener("click", (e) => { if (e.target === menu) toggleMenu(false); });
         $$(".mobile-nav-panel a").forEach((a) => a.addEventListener("click", () => toggleMenu(false)));
+
+        window.switchTab = function (id, button) {
+          $$(".tab-panel").forEach((panel) => panel.classList.toggle("active", panel.id === "tab-" + id));
+          $$(".tab-btn").forEach((tab) => {
+            const active = tab === button;
+            tab.classList.toggle("active", active);
+            tab.setAttribute("aria-selected", String(active));
+          });
+        };
 
         /* gallery */
         const thumbs = $$(".thumb");
