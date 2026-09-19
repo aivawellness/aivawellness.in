@@ -14,12 +14,6 @@
     "Immune Support",
     "Magnesium Bisglycinate"
   ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Solan",
-    "addressRegion": "Himachal Pradesh",
-    "addressCountry": "IN"
-  },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+91-78077-51711",
