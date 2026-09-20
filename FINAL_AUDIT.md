@@ -97,6 +97,10 @@ This repository cleanup does not confirm Google crawling, indexing, recrawling, 
 - Shared JavaScript: `assets/product-blog.js`, `assets/similar-products.js`, and `assets/bootstrap.bundle.min.js`.
 - Safe broad extraction was not performed because it would alter script ordering and global functions used by `onclick`, `onchange`, and page-specific DOM IDs. No architecture-only extraction was justified without browser regression testing.
 
-## Remaining Business Data Issue
+## Approved Pricing Update
 
-The product detail pages for Daily Vitals and Nattokinase 100 mg still display old-price values below their sale prices (Daily Vitals: ₹899 below ₹1,299; Nattokinase 100 mg: ₹949 below ₹1,299). These values are present in the current source-of-truth pages, so they were not guessed or silently replaced. A business-approved MRP decision is required before changing them.
+The approved pricing was applied after repository-wide verification:
+
+- Daily Vitals Adults 18+: selling price ₹1,199, MRP ₹1,399, saving ₹200.
+- Nattokinase 100 mg: selling price ₹1,299, MRP ₹1,499, saving ₹200.
+- Daily Vitals for Men and Daily Vitals for Women pages were not changed.
