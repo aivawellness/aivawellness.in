@@ -1944,242 +1944,6 @@
           padding: 18px 14px;
         }
       }
-
-      /* ---------------------------------------------------
-   COMBO / FEATURED PRODUCT
---------------------------------------------------- */
-      .combo-section {
-        max-width: 1200px;
-        margin: 0 auto 96px;
-        padding: 0 24px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 64px;
-      }
-      .combo-img-wrap {
-        position: relative;
-        overflow: hidden;
-        border-radius: 0px;
-        width: 100%;
-        max-width: 520px;
-        flex: 0 0 auto;
-        box-shadow: var(--sh-xl);
-      }
-      .combo-img-wrap img {
-        width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.7s var(--ease);
-      }
-      .combo-img-wrap:hover img {
-        transform: scale(1.04);
-      }
-      .combo-img-badge {
-        position: absolute;
-        top: 18px;
-        left: 18px;
-        background: rgba(8, 13, 20, 0.75);
-        backdrop-filter: blur(8px);
-        color: #fff;
-        font-size: 0.68rem;
-        font-weight: 700;
-        padding: 7px 16px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-      }
-      .combo-info {
-        width: 100%;
-        max-width: 420px;
-        flex: 0 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .combo-info h2 {
-        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
-        font-size: clamp(22px, 3.2vw, 44px);
-        font-weight: 600;
-        color: var(--black);
-        margin-bottom: 12px;
-        line-height: 1.15;
-      }
-      .combo-sub {
-        font-size: 0.84rem;
-        color: var(--muted);
-        margin-bottom: 18px;
-        line-height: 1.75;
-      }
-      .combo-stars {
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-        margin-bottom: 22px;
-        padding: 10px 18px;
-        border-radius: 999px;
-        background: #fff;
-        box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
-        border: 1px solid var(--border);
-      }
-      .combo-rating {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-      .combo-rating i {
-        color: var(--gold);
-        font-size: 13px;
-      }
-      .combo-review {
-        font-size: 0.75rem;
-        color: var(--text-light);
-        font-weight: 600;
-        padding: 5px 12px;
-        background: var(--light);
-        border-radius: 999px;
-      }
-      .combo-price-row {
-        display: flex;
-        align-items: flex-end;
-        gap: 14px;
-        margin-bottom: 6px;
-        justify-content: center;
-      }
-      .combo-price-row .sale {
-        font-family: "Inter", sans-serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: var(--black);
-        line-height: 1;
-      }
-      .combo-price-row .orig {
-        font-size: 0.84rem;
-        color: var(--text-light);
-        text-decoration: line-through;
-        margin-bottom: 4px;
-      }
-      .combo-mrp {
-        font-size: 0.72rem;
-        color: var(--text-light);
-        margin-bottom: 22px;
-      }
-      .combo-includes-label {
-        font-size: 0.68rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--muted);
-        font-weight: 700;
-        margin-bottom: 14px;
-      }
-      .combo-items {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 26px;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: flex-start;
-      }
-      .combo-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        cursor: pointer;
-        position: relative;
-        padding: 0;
-        min-width: 88px;
-      }
-      .combo-item:not(:last-child)::after {
-        content: "+";
-        position: absolute;
-        right: -12px;
-        top: 44%;
-        transform: translateY(-50%);
-        color: #111111;
-        font-weight: 800;
-        font-size: 1.1rem;
-        line-height: 1;
-      }
-      .combo-item img {
-        width: 68px;
-        height: 68px;
-        object-fit: contain;
-        border: 2px solid var(--border);
-        padding: 4px;
-        border-radius: 12px;
-        transition: all 0.25s var(--ease);
-        display: block;
-      }
-      .combo-item:hover img {
-        border-color: var(--blue);
-        box-shadow: 0 6px 18px rgba(29, 78, 216, 0.15);
-        transform: scale(1.06);
-      }
-      .combo-item.active img {
-        border-color: var(--blue);
-        box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
-      }
-      .combo-item span {
-        font-size: 0.68rem;
-        color: var(--muted);
-        display: block;
-        margin-top: 6px;
-        font-weight: 500;
-        line-height: 1.3;
-        max-width: 100px;
-      }
-      .btn-add {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-        background: linear-gradient(135deg, var(--black), #1e293b);
-        color: #fff;
-        border: none;
-        padding: 16px 18px;
-        font-size: 0.95rem;
-        line-height: 1.25;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        cursor: pointer;
-        font-family: "Inter", sans-serif;
-        font-weight: 700;
-        transition: all 0.3s var(--ease);
-        text-decoration: none;
-        border-radius: 14px;
-      }
-      .btn-add:hover {
-        background: linear-gradient(135deg, var(--blue), #1e40af);
-        color: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 12px 32px rgba(29, 78, 216, 0.3);
-      }
-      .combo-note {
-        font-size: 0.68rem;
-        color: var(--text-light);
-        text-align: center;
-        margin-top: 12px;
-        line-height: 1.6;
-      }
-      @media (max-width: 900px) {
-        .combo-section {
-          flex-direction: column;
-          gap: 40px;
-        }
-        .combo-img-wrap,
-        .combo-info {
-          max-width: 100%;
-          width: 100%;
-        }
-      }
-
       /* ---------------------------------------------------
    DROPS (Advantage) SECTION
 --------------------------------------------------- */
@@ -3488,7 +3252,7 @@
       &nbsp;<span class="sep">|</span>&nbsp;
       Get 10% OFF with Code <strong>AIVA10</strong>
       &nbsp;<span class="sep">|</span>&nbsp;
-      Free Shipping on Orders Over &#8377;999
+      Amazon delivery charges shown at checkout
       &nbsp;<span class="sep">|</span>&nbsp;
       Science-Backed Formulas
       &nbsp;<span class="sep">|</span>&nbsp;
@@ -3501,7 +3265,7 @@
       &nbsp;<span class="sep">|</span>&nbsp;
       Get 10% OFF with Code <strong>AIVA10</strong>
       &nbsp;<span class="sep">|</span>&nbsp;
-      Free Shipping on Orders Over &#8377;999
+      Amazon delivery charges shown at checkout
       &nbsp;<span class="sep">|</span>&nbsp;
       Science-Backed Formulas
       &nbsp;<span class="sep">|</span>&nbsp;
@@ -3639,7 +3403,7 @@
           href="product-details-pages/nattokinase200.html"
           class="slide-cta"
         >
-          Buy Now <i class="fa-solid fa-arrow-right"></i>
+          View Product <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -3710,7 +3474,7 @@
         </div>
         <div class="trust-item">
           <div class="trust-icon"><i class="fa-solid fa-truck"></i></div>
-          <span>Free Shipping on &#8377;999+</span>
+          <span>Amazon delivery charges shown at checkout</span>
         </div>
         <div class="trust-item">
           <div class="trust-icon"><i class="fa-solid fa-flask"></i></div>
@@ -3807,7 +3571,7 @@
             </div>
             <div class="buy-actions">
               <a class="btn-cart" href="product-details-pages/nattokinase100.html">
-                <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
+                <i class="fa-solid fa-eye"></i> <span>View Product</span>
               </a>
             </div>
           </div>
@@ -3888,7 +3652,7 @@
             </div>
             <div class="buy-actions">
               <a class="btn-cart" href="product-details-pages/nattokinase200.html">
-                <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
+                <i class="fa-solid fa-eye"></i> <span>View Product</span>
               </a>
             </div>
           </div>
@@ -3958,7 +3722,7 @@
             </div>
             <div class="buy-actions">
               <a class="btn-cart" href="product-details-pages/magnesium-complex-5-in-1.html">
-                <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
+                <i class="fa-solid fa-eye"></i> <span>View Product</span>
               </a>
             </div>
           </div>
@@ -3972,7 +3736,7 @@
                 src="products/all images/men-1.png"
                 loading="lazy"
                 decoding="async"
-                alt="Daily Vitals for Men 40+"
+                alt="Daily Vitals for Men"
                 
                   this.src =
                     'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&auto=format&fm=webp'
@@ -4022,7 +3786,7 @@
             <div class="product-cat">Men's Health</div>
             <h3>
               <a href="product-details-pages/dailyvitalsmen.html"
-                >Daily Vitals for Men 40+</a
+                >Daily Vitals for Men</a
               >
             </h3>
             <div class="price-row">
@@ -4032,7 +3796,7 @@
             </div>
             <div class="buy-actions">
               <a class="btn-cart" href="product-details-pages/dailyvitalsmen.html">
-                <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
+                <i class="fa-solid fa-eye"></i> <span>View Product</span>
               </a>
             </div>
           </div>
@@ -4137,15 +3901,9 @@
               data-target="15"
               data-suffix="+"
               data-decimals="0"
-            >15+
+            >9
             </div>
             <div class="a-stat-label">Premium Products</div>
-          </div>
-          <div class="a-stat">
-            <div class="a-stat-num" data-target="4.8" data-decimals="1">
-              4.8
-            </div>
-            <div class="a-stat-label">Average Rating</div>
           </div>
         </div>
         <div class="about-cta">
@@ -4219,87 +3977,6 @@
             Every formula is thoughtfully developed using science-backed ingredients to provide reliable nutritional support for your everyday wellness.
           </p>
         </div>
-      </div>
-    </section>
-
-    <!-- COMBO / FEATURED PRODUCT -->
-    <section class="combo-section">
-      <div class="combo-img-wrap reveal reveal-right">
-        <img
-          src="products/combo.png"
-          loading="lazy"
-          decoding="async"
-          alt="Nattokinase 200 + Magnesium + Vitamin D3 Combo"
-          onerror="
-            this.src =
-              'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80&auto=format&fm=webp'
-          "
-        />
-        <span class="combo-img-badge">Featured</span>
-      </div>
-      <div class="combo-info reveal reveal-left">
-        <span class="about-eyebrow"
-          ><i class="fa-solid fa-fire"></i> Bestseller Combo</span
-        >
-        <h2><strong>Heart, Sleep & Immunity Trio</strong></h2>
-        <p class="combo-sub">
-          Nattokinase 200 + Magnesium 5-in-1 + Daily Vitals - cardiovascular
-          support, deep sleep, and immune strength combined.
-        </p>
-        <div class="combo-price-row">
-          <span class="sale">&#8377;3,199</span>
-          <span class="orig">MRP &#8377;3,999</span>
-        </div>
-        <p class="combo-mrp">(MRP inclusive of all taxes)</p>
-        <p class="combo-includes-label">What's Included</p>
-        <div class="combo-items">
-          <div class="combo-item active">
-            <img
-              src="products/Nattokinase Carton.webp"
-              loading="lazy"
-              decoding="async"
-              alt="Nattokinase 200"
-              onerror="
-                this.src =
-                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
-              "
-            />
-            <span>Nattokinase 200</span>
-          </div>
-          <div class="combo-item">
-            <img
-              src="products/Magnesium Complex.webp"
-              loading="lazy"
-              decoding="async"
-              alt="Magnesium 5-in-1"
-              onerror="
-                this.src =
-                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
-              "
-            />
-            <span>Magnesium 5-in-1</span>
-          </div>
-          <div class="combo-item">
-            <img
-              src="products/reefit forte c new size.webp"
-              loading="lazy"
-              decoding="async"
-              alt="Daily Vitals"
-              onerror="
-                this.src =
-                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80&auto=format&fm=webp'
-              "
-            />
-            <span>Daily Vitals</span>
-          </div>
-        </div>
-        <a href="shop.html" class="btn-add"
-          ><i class="fa-solid fa-bag-shopping"></i> Buy Now</a
-        >
-        <p class="combo-note">
-          100% Natural &nbsp;|&nbsp; No Fillers &amp; Binders
-          &nbsp;|&nbsp; Made in India
-        </p>
       </div>
     </section>
 
@@ -4424,15 +4101,14 @@
         </div>
         <div class="faq-item open">
   <div class="faq-q" onclick="toggleFaq(this)">
-    <span>Are Aiva Wellness products safe and FSSAI licensed?</span>
+            <span>How can I purchase Aiva Wellness products?</span>
     <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
   </div>
   <div class="faq-a">
     <p>
-      Yes. Every Aiva Wellness product is manufactured in an FSSAI-licensed
-      facility using carefully selected, high-quality ingredients and
-      science-backed formulations. We follow rigorous quality standards to
-      ensure safety, purity, and consistency in every product.
+      The website showcases Aiva Wellness products. Contact us through WhatsApp
+      and we will help you find the official Amazon purchase listing. Amazon
+      handles checkout, payment, delivery charges, and applicable order policies.
     </p>
   </div>
 </div>
@@ -4443,8 +4119,8 @@
           </div>
           <div class="faq-a">
             <p>
-              Most orders ship within 24 hours and are delivered across India in
-              3-7 business days. Free shipping applies on orders above &#8377;999.
+              Delivery charges and timelines are determined by Amazon and shown
+              on the official Amazon listing before purchase.
             </p>
           </div>
         </div>
@@ -4725,6 +4401,8 @@
                 aria-label="Facebook"
                 ><i class="fa-brands fa-facebook"></i
               ></a>
+              <a class="social-btn" href="https://www.threads.com/@aivawellness.in" target="_blank" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+              <a class="social-btn" href="https://www.youtube.com/@aivawellness-in" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
               <a
                 class="social-btn"
                 href="https://x.com/aivawellness"
@@ -4738,13 +4416,6 @@
                 target="_blank"
                 aria-label="LinkedIn"
                 ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <a
-                class="social-btn"
-                href="https://www.amazon.in/stores/AivaWellness"
-                target="_blank"
-                aria-label="Amazon"
-                ><i class="fa-brands fa-amazon"></i
               ></a>
             </div>
           </div>
