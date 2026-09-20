@@ -104,7 +104,6 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
-      fbq("init", "000000000000000");
       fbq("track", "PageView");
     </script>
     <noscript
@@ -112,7 +111,6 @@
         height="1"
         width="1"
         style="display: none"
-        src="https://www.facebook.com/tr?id=000000000000000&ev=PageView&noscript=1"
     /></noscript>
     <script type="application/ld+json">
       {
@@ -3500,182 +3498,6 @@
           revEls.forEach((el) => obs.observe(el));
         })();
 
-      /* TESTIMONIALS */
-      const T_DATA = [
-        {
-          name: "Rajesh Kumar",
-          loc: "Delhi",
-          init: "RK",
-          avatar: "linear-gradient(135deg,#1d4ed8,#3b82f6)",
-          bar: "linear-gradient(90deg,#1d4ed8,#3b82f6)",
-          stars: 5,
-          cat: "Magnesium",
-          prod: "Magnesium Complex 5-in-1",
-          text: "The Magnesium Complex has genuinely improved my sleep quality. I used to wake up 3\u20134 times a night, now I sleep through. Highly recommend it!",
-        },
-        {
-          name: "Sunita Patel",
-          loc: "Mumbai",
-          init: "SP",
-          avatar: "linear-gradient(135deg,#16a34a,#0d9488)",
-          bar: "linear-gradient(90deg,#16a34a,#0d9488)",
-          stars: 5,
-          cat: "Nattokinase",
-          prod: "Nattokinase 200 mg",
-          text: "I've tried many brands but Aiva's Nattokinase stands out. My doctor noticed improvement in my blood viscosity report within 3 months.",
-        },
-        {
-          name: "Deepanshu Shukla",
-          loc: "Delhi",
-          init: "DS",
-          avatar: "linear-gradient(135deg,#7c3aed,#1d4ed8)",
-          bar: "linear-gradient(90deg,#7c3aed,#1d4ed8)",
-          stars: 5,
-          cat: "Magnesium",
-          prod: "Magnesium Complex",
-          text: "What stood out was the transparency \u2014 the label actually matches what\u2019s inside. My sleep and muscle cramps have both improved significantly.",
-        },
-        {
-          name: "Priya Sharma",
-          loc: "Pune",
-          init: "PS",
-          avatar: "linear-gradient(135deg,#db2777,#7c3aed)",
-          bar: "linear-gradient(90deg,#db2777,#7c3aed)",
-          stars: 5,
-          cat: "Vitamins",
-          prod: "Women's Vitamins & Minerals",
-          text: "Ordered the Women's Vitamins pack and delivery was super fast. The product is excellent \u2014 energy levels are noticeably better daily!",
-        },
-        {
-          name: "Manoj Rathi",
-          loc: "Bengaluru",
-          init: "MR",
-          avatar: "linear-gradient(135deg,#0ea5e9,#1d4ed8)",
-          bar: "linear-gradient(90deg,#0ea5e9,#1d4ed8)",
-          stars: 5,
-          cat: "Immunity",
-          prod: "Omega-3 Fish Oil",
-          text: "Best Omega-3 in India at this price. No fish burps, easy to swallow, and my joint pain reduced significantly after just 6 weeks!",
-        },
-        {
-          name: "Tirthankar Purkayastha",
-          loc: "Bengaluru",
-          init: "TP",
-          avatar: "linear-gradient(135deg,#16a34a,#0ea5e9)",
-          bar: "linear-gradient(90deg,#16a34a,#0ea5e9)",
-          stars: 5,
-          cat: "Immunity",
-          prod: "Immunity Pack",
-          text: "Good to see a small Indian brand actually getting their products lab tested. Ordered from Bengaluru and it reached in under a week.",
-        },
-        {
-          name: "Neha Kapoor",
-          loc: "Jaipur",
-          init: "NK",
-          avatar: "linear-gradient(135deg,#d97706,#dc2626)",
-          bar: "linear-gradient(90deg,#d97706,#dc2626)",
-          stars: 5,
-          cat: "Vitamins",
-          prod: "Vitamin D3 Supplement",
-          text: "The Vitamin D3 is exactly what my doctor recommended. Pricing reasonable, quality top notch. Definitely ordering again!",
-        },
-        {
-          name: "Varun Sonagra",
-          loc: "Pune",
-          init: "VS",
-          avatar: "linear-gradient(135deg,#1d4ed8,#7c3aed)",
-          bar: "linear-gradient(90deg,#1d4ed8,#7c3aed)",
-          stars: 5,
-          cat: "Vitamins",
-          prod: "Vitamin D3 + Immunity Pack",
-          text: "I recommend the Vitamin D3 + Immunity pack to clients at my gym. Honest pricing, no gimmicks, and customer support actually replies on WhatsApp.",
-        },
-        {
-          name: "Vikram Singh",
-          loc: "Hyderabad",
-          init: "VS",
-          avatar: "linear-gradient(135deg,#f59e0b,#d97706)",
-          bar: "linear-gradient(90deg,#f59e0b,#d97706)",
-          stars: 5,
-          cat: "Protein",
-          prod: "Whey Isolate Advanced",
-          text: "Sleep quality improved dramatically, and I\u2019m recovering faster between workouts. Best supplement investment I\u2019ve made!",
-        },
-      ];
-      const PER_PAGE = 3;
-      let tFilter = "all",
-        tPage = 0;
-      function tFiltered() {
-        return tFilter === "all"
-          ? T_DATA
-          : T_DATA.filter((r) => r.cat === tFilter);
-      }
-      function tPages() {
-        return Math.ceil(tFiltered().length / PER_PAGE);
-      }
-      function tStars(n) {
-        let o = "";
-        for (let i = 1; i <= 5; i++) o += i <= n ? "\u2605" : "\u2606";
-        return o;
-      }
-      function renderT() {
-        const f = tFiltered(),
-          pages = tPages(),
-          sl = f.slice(tPage * PER_PAGE, (tPage + 1) * PER_PAGE);
-        const g = document.getElementById("tsGrid");
-        g.style.opacity = "0";
-        g.style.transform = "translateY(10px)";
-        setTimeout(() => {
-          g.innerHTML = sl
-            .map(
-              (r) =>
-                `<div class="ts-card" style="--card-bar:${r.bar}"><div class="ts-quote-bg">"</div><div class="ts-card-stars">${tStars(r.stars)}</div><p class="ts-card-text">${r.text}</p><div class="ts-card-sep"></div><div class="ts-card-user"><div class="ts-card-avatar" style="background:${r.avatar}">${r.init}</div><div><div class="ts-card-name">${r.name}</div><div class="ts-card-loc">${r.loc}</div><div class="ts-card-product">${r.prod}</div></div></div><div class="ts-card-verified"><i class="fa-solid fa-circle-check"></i> Verified</div></div>`,
-            )
-            .join("");
-          document.getElementById("tsDots").innerHTML = Array.from(
-            { length: pages },
-            (_, i) =>
-              `<button class="ts-dot${i === tPage ? " active" : ""}" onclick="tGo(${i})"></button>`,
-          ).join("");
-          document.getElementById("tsPageInfo").textContent =
-            `${tPage + 1} / ${pages}`;
-          g.style.transition = "opacity .4s ease,transform .4s ease";
-          g.style.opacity = "1";
-          g.style.transform = "translateY(0)";
-        }, 180);
-      }
-      function setTFilter(cat, btn) {
-        tFilter = cat;
-        tPage = 0;
-        document
-          .querySelectorAll(".ts-filter-btn")
-          .forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderT();
-      }
-      function tNav(d) {
-        tPage = (tPage + d + tPages()) % tPages();
-        renderT();
-      }
-      function tGo(i) {
-        tPage = i;
-        renderT();
-      }
-      /* rating bar animation */
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.querySelectorAll(".ts-dist-fill").forEach((el) =>
-                setTimeout(() => {
-                  el.style.width = el.dataset.w + "%";
-                }, 100),
-              );
-            }
-          });
-        },
-        { threshold: 0.2 },
-      ).observe(document.querySelector(".ts-rating-bar"));
     </script>
   </body>
 </html>
