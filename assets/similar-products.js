@@ -34,7 +34,25 @@
 
   const currentFile = window.location.pathname.split("/").pop().toLowerCase();
   const currentSection = document.querySelector(".similar-section");
-  if (!currentSection || document.querySelector(".rail-section")) return;
+  const existingRail = document.querySelector("#more .rail");
+  if (!currentSection && !existingRail) return;
+
+  const cardMarkup = (product) => `
+        <article class="pcard">
+          <div class="pcard-media"><span class="tag">${product.tag}</span><img src="${product.main}" alt="Aiva Wellness ${product.name}" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" /><img class="img-hover" src="${product.hover}" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()" /><i class="fa-solid ${product.icon}" aria-hidden="true"></i></div>
+          <div class="pcard-body"><h3>${product.name}</h3><p>${product.blurb}</p><a class="pcard-link" href="${product.file}">View product <i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>`;
+
+  if (!currentSection) {
+    const currentFile = window.location.pathname.split("/").pop().toLowerCase();
+    const missingProducts = products.filter((product) =>
+      ["plantprotein.html", "yeastprotein.html"].includes(product.file) &&
+      product.file !== currentFile &&
+      !existingRail.querySelector(`a[href="${product.file}"]`),
+    );
+    existingRail.insertAdjacentHTML("beforeend", missingProducts.map(cardMarkup).join(""));
+    return;
+  }
 
   const railProducts = products.filter((product) => product.file !== currentFile);
   const section = document.createElement("section");
@@ -47,11 +65,7 @@
       <div class="rail-controls"><button class="rail-btn" type="button" data-direction="-1" aria-label="Scroll products left"><i class="fa-solid fa-arrow-left"></i></button><button class="rail-btn" type="button" data-direction="1" aria-label="Scroll products right"><i class="fa-solid fa-arrow-right"></i></button></div>
     </div>
     <div class="rail" tabindex="0" aria-label="Similar products">
-      ${railProducts.map((product) => `
-        <article class="pcard">
-          <div class="pcard-media"><span class="tag">${product.tag}</span><img src="${product.main}" alt="Aiva Wellness ${product.name}" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" /><img class="img-hover" src="${product.hover}" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()" /><i class="fa-solid ${product.icon}" aria-hidden="true"></i></div>
-          <div class="pcard-body"><h3>${product.name}</h3><p>${product.blurb}</p><a class="pcard-link" href="${product.file}">View product <i class="fa-solid fa-arrow-right"></i></a></div>
-        </article>`).join("")}
+      ${railProducts.map(cardMarkup).join("")}
     </div>
     <div class="rail-foot"><a class="btn-ghost" href="../shop.html">Browse the full shop <i class="fa-solid fa-arrow-right"></i></a></div>`;
 
