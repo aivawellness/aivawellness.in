@@ -2567,84 +2567,66 @@
    BLOGS
 --------------------------------------------------- */
       .blogs-section {
-        padding: 80px 20px;
-        background: var(--bg);
+        padding: 76px 20px 84px;
+        background: #fff;
       }
       .blogs-inner {
-        max-width: 1200px;
+        max-width: 1320px;
         margin: 0 auto;
       }
       .blogs-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
       }
       .blog-card {
-        background: #fff;
-        overflow: hidden;
-        border: 1px solid rgba(29, 78, 216, 0.22);
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        background: transparent;
+        overflow: visible;
+        border: 0;
+        box-shadow: none;
         border-radius: 0;
         position: relative;
-        transition: all 0.4s var(--ease);
-      }
-      .blog-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(255, 255, 255, 0.18));
-        opacity: 0;
-        transition: opacity 0.4s var(--ease);
-        pointer-events: none;
-        z-index: 1;
-      }
-      .blog-card:hover::before {
-        opacity: 1;
+        transition: transform 0.35s var(--ease);
       }
       .blog-card:hover {
-        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
-        transform: translateY(-6px);
-        border-color: rgba(29, 78, 216, 0.35);
+        transform: translateY(-4px);
       }
       .blog-img {
         overflow: hidden;
         position: relative;
-        aspect-ratio: 16/9;
+        border-radius: 10px;
         z-index: 0;
+        background: #f1f5f9;
       }
       .blog-img img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-fit: contain;
+        object-position: center;
         display: block;
+        background: #f1f5f9;
         transition: transform 0.7s var(--ease);
       }
       .blog-card:hover .blog-img img {
         transform: scale(1.08);
       }
       .blog-info {
-        padding: 22px;
+        padding: 20px 0 0;
       }
       .blog-tag {
-        font-size: 0.65rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--blue);
-        font-weight: 700;
-        margin-bottom: 10px;
-        padding: 3px 10px;
-        background: var(--blue-soft);
-        border-radius: 999px;
-        display: inline-block;
-        border: 1px solid var(--blue-border);
+        font-size: 0.86rem;
+        color: #1e40af;
+        font-weight: 500;
+        margin-bottom: 7px;
+        display: block;
       }
       .blog-info h3 {
-        font-size: 0.95rem;
+        font-size: 1.08rem;
         font-weight: 700;
-        margin-bottom: 14px;
-        line-height: 1.5;
-        color: var(--black);
+        margin-bottom: 10px;
+        line-height: 1.42;
+        color: #050505;
       }
       .blog-info h3 a {
         color: inherit;
@@ -2652,7 +2634,12 @@
         transition: color 0.2s;
       }
       .blog-info h3 a:hover {
-        color: var(--blue);
+        color: #1e40af;
+      }
+      .blog-meta {
+        color: #64748b;
+        font-size: 0.88rem;
+        line-height: 1.5;
       }
       .blog-read {
         font-size: 0.72rem;
@@ -4166,12 +4153,10 @@
               <div class="blog-tag">Vitamin D3</div>
               <h3>
                 <a href="blogs/vitamin-d3-explained.html"
-                  >Vitamin D3 Explained: Why It Matters</a
+                  >Vitamin D3 Explained: Why This Essential Vitamin Matters</a
                 >
               </h3>
-              <a href="blogs/vitamin-d3-explained.html" class="blog-read"
-                >Read more <i class="fa-solid fa-arrow-right"></i
-              ></a>
+              <p class="blog-meta">By Aiva Wellness Editorial Team / Jul 28, 2026</p>
             </div>
           </div>
           <div class="blog-card reveal">
@@ -4187,12 +4172,10 @@
               <div class="blog-tag">Nattokinase</div>
               <h3>
                 <a href="blogs/nattokinase-100mg-vs-200mg.html"
-                  >Nattokinase 100 mg vs 200 mg Compared</a
+                  >Nattokinase 100mg vs 200mg: Which One Is Right for You?</a
                 >
               </h3>
-              <a href="blogs/nattokinase-100mg-vs-200mg.html" class="blog-read"
-                >Read more <i class="fa-solid fa-arrow-right"></i
-              ></a>
+              <p class="blog-meta">By Aiva Wellness Editorial Team / Aug 12, 2026</p>
             </div>
           </div>
           <div class="blog-card reveal reveal-left">
@@ -4215,9 +4198,26 @@
                   >Essential Nutrients for Men Over 40: Supporting Energy &amp; Everyday Wellness</a
                 >
               </h3>
-              <a href="blogs/essential-nutrients-men-over-40.html" class="blog-read"
-                >Read more <i class="fa-solid fa-arrow-right"></i
-              ></a>
+              <p class="blog-meta">By Aiva Wellness Editorial Team / Aug 27, 2026</p>
+            </div>
+          </div>
+          <div class="blog-card reveal reveal-left">
+            <div class="blog-img">
+              <img
+                src="blogs/images/dailyvitalswomen40.png"
+                alt="Essential nutrients for women over 40"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="blog-info">
+              <div class="blog-tag">Women's Wellness</div>
+              <h3>
+                <a href="blogs/essential-nutrients-women-over-40.html"
+                  >Essential Nutrients for Women Over 40: Supporting Everyday Wellness</a
+                >
+              </h3>
+              <p class="blog-meta">By Aiva Wellness Editorial Team / Sep 21, 2026</p>
             </div>
           </div>
         </div>
