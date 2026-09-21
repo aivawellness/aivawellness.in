@@ -2169,7 +2169,7 @@
                 <span class="cat-item-left"
                   ><i class="fa-solid fa-border-all"></i>All Products</span
                 >
-                <span class="cat-count" id="cnt-all">9</span>
+                <span class="cat-count" id="cnt-all">10+</span>
               </div>
               <div class="cat-item" onclick="filterByCategory('Energy & Immunity', this)">
                 <span class="cat-item-left"><i class="fa-solid fa-bolt"></i>Energy &amp; Immunity</span>
@@ -2237,7 +2237,7 @@
         <div class="toolbar reveal">
           <div class="toolbar-left">
             <span class="result-count"
-              >Showing <strong id="productCount">9</strong> products</span
+              >Showing <strong id="productCount">10+</strong> products</span
             >
           </div>
           <div class="toolbar-right">
@@ -2628,7 +2628,9 @@
             .forEach((el) => revObserver.observe(el));
         }
         document.getElementById("productCount").textContent =
-          filteredProducts.length;
+          currentCategory === "all" && filteredProducts.length >= 10
+            ? "10+"
+            : filteredProducts.length;
         renderPagination();
       }
 
@@ -2973,7 +2975,7 @@
           if (!countEl) return;
           // All products
           if (/all/i.test(label)) {
-            countEl.textContent = PRODUCTS.length;
+            countEl.textContent = PRODUCTS.length >= 10 ? "10+" : PRODUCTS.length;
             return;
           }
           // Exact match first
