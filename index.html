@@ -1728,6 +1728,324 @@
       }
 
       /* ---------------------------------------------------
+   DEAL OF THE DAY
+--------------------------------------------------- */
+      .deal-section {
+        position: relative;
+        overflow: hidden;
+        padding: 96px 24px;
+        background: #071426;
+        color: #fff;
+      }
+      .deal-section::before {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        right: -180px;
+        top: -230px;
+        border: 1px solid rgba(147, 197, 253, 0.2);
+        border-radius: 50%;
+        box-shadow: 0 0 0 34px rgba(147, 197, 253, 0.03), 0 0 0 70px rgba(147, 197, 253, 0.025);
+        pointer-events: none;
+      }
+      .deal-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 1320px;
+        margin: 0 auto;
+      }
+      .deal-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+        margin-bottom: 34px;
+      }
+      .deal-heading .section-eyebrow {
+        color: #93c5fd;
+      }
+      .deal-heading h2 {
+        max-width: 600px;
+        margin-top: 10px;
+        color: #fff;
+        font-family: "Sora", sans-serif;
+        font-size: clamp(2rem, 4vw, 3.7rem);
+        line-height: 1.05;
+      }
+      .deal-heading h2 span {
+        color: #fbbf24;
+      }
+      .deal-heading-copy {
+        max-width: 330px;
+        color: #bfdbfe;
+        font-size: 0.9rem;
+        line-height: 1.75;
+      }
+      .deal-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.42fr) minmax(280px, 0.78fr);
+        gap: 22px;
+      }
+      .deal-feature,
+      .deal-mini {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(191, 219, 254, 0.2);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
+      }
+      .deal-feature {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.9fr) 1.1fr;
+        min-height: 430px;
+      }
+      .deal-feature-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        background: #edf5ff;
+      }
+      .deal-feature-image img {
+        width: 100%;
+        max-height: 350px;
+        object-fit: contain;
+        transition: transform 0.6s var(--ease);
+      }
+      .deal-feature:hover .deal-feature-image img {
+        transform: scale(1.05);
+      }
+      .deal-feature-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 42px 44px;
+      }
+      .deal-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        color: #fbbf24;
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .deal-kicker i {
+        font-size: 0.8rem;
+      }
+      .deal-feature h3 {
+        margin: 16px 0 12px;
+        color: #fff;
+        font-family: "Sora", sans-serif;
+        font-size: clamp(1.65rem, 3vw, 2.55rem);
+        line-height: 1.12;
+      }
+      .deal-feature-description {
+        max-width: 480px;
+        color: #cbd5e1;
+        font-size: 0.92rem;
+        line-height: 1.7;
+      }
+      .deal-benefits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        margin: 22px 0;
+        color: #dbeafe;
+        font-size: 0.76rem;
+      }
+      .deal-benefits span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .deal-benefits i {
+        color: #4ade80;
+      }
+      .deal-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .deal-price {
+        color: #fff;
+        font-family: "Sora", sans-serif;
+        font-size: 1.65rem;
+        font-weight: 700;
+      }
+      .deal-old-price {
+        color: #94a3b8;
+        font-size: 0.85rem;
+        text-decoration: line-through;
+      }
+      .deal-save {
+        padding: 5px 9px;
+        background: rgba(74, 222, 128, 0.14);
+        color: #86efac;
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .deal-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .deal-button,
+      .deal-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        min-height: 46px;
+        padding: 12px 18px;
+        font-size: 0.76rem;
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 0.25s var(--ease), background 0.25s ease;
+      }
+      .deal-button {
+        background: #fff;
+        color: #071426;
+      }
+      .deal-whatsapp {
+        border: 1px solid rgba(134, 239, 172, 0.42);
+        color: #bbf7d0;
+      }
+      .deal-button:hover,
+      .deal-whatsapp:hover {
+        transform: translateY(-2px);
+      }
+      .deal-button:hover {
+        background: #bfdbfe;
+      }
+      .deal-whatsapp:hover {
+        background: rgba(34, 197, 94, 0.16);
+      }
+      .deal-mini-stack {
+        display: grid;
+        gap: 22px;
+      }
+      .deal-mini {
+        display: grid;
+        grid-template-columns: 42% 58%;
+        min-height: 204px;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.35s var(--ease), border-color 0.35s ease;
+      }
+      .deal-mini:hover {
+        transform: translateY(-5px);
+        border-color: rgba(147, 197, 253, 0.65);
+      }
+      .deal-mini-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        background: #f8fafc;
+      }
+      .deal-mini-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .deal-mini-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 22px;
+      }
+      .deal-mini-content .deal-kicker {
+        color: #93c5fd;
+        font-size: 0.58rem;
+      }
+      .deal-mini h3 {
+        margin: 9px 0 8px;
+        color: #fff;
+        font-size: 1.18rem;
+        line-height: 1.2;
+      }
+      .deal-mini-description {
+        display: -webkit-box;
+        overflow: hidden;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        color: #cbd5e1;
+        font-size: 0.72rem;
+        line-height: 1.5;
+      }
+      .deal-mini-price {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .deal-mini-price strong {
+        color: #fff;
+        font-family: "Sora", sans-serif;
+        font-size: 1.05rem;
+      }
+      .deal-mini-price del {
+        color: #94a3b8;
+        font-size: 0.7rem;
+      }
+      .deal-countdown {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 28px;
+        color: #bfdbfe;
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .deal-countdown strong {
+        color: #fbbf24;
+        font-family: "Sora", sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+      }
+      @media (max-width: 960px) {
+        .deal-layout {
+          grid-template-columns: 1fr;
+        }
+        .deal-mini-stack {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 680px) {
+        .deal-section {
+          padding: 74px 18px 82px;
+        }
+        .deal-heading {
+          display: block;
+        }
+        .deal-heading-copy {
+          margin-top: 18px;
+        }
+        .deal-feature {
+          grid-template-columns: 1fr;
+        }
+        .deal-feature-image {
+          min-height: 270px;
+        }
+        .deal-feature-content {
+          padding: 30px 24px 34px;
+        }
+        .deal-mini-stack {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------------------------------------------------
    UPCOMING PRODUCTS
 --------------------------------------------------- */
       .upcoming-section {
@@ -3773,6 +4091,70 @@
       </div>
     </section>
 
+    <!-- DEAL OF THE DAY -->
+    <section class="deal-section" id="deal-of-the-day">
+      <div class="deal-inner">
+        <div class="deal-heading reveal">
+          <div>
+            <span class="section-eyebrow"><i class="fa-solid fa-bolt"></i> Limited-time savings</span>
+            <h2>Deal of the <span>Day.</span></h2>
+          </div>
+          <p class="deal-heading-copy">
+            Thoughtful formulas, considered prices, and everyday support for the routines that matter most.
+          </p>
+        </div>
+        <div class="deal-layout">
+          <article class="deal-feature reveal reveal-right">
+            <a class="deal-feature-image" href="product-details-pages/omega3fishoil.html" aria-label="View Omega-3 Fish Oil">
+              <img src="products/all images/omega-1.png" alt="Aiva Wellness Omega-3 Fish Oil" loading="lazy" decoding="async" />
+            </a>
+            <div class="deal-feature-content">
+              <span class="deal-kicker"><i class="fa-solid fa-star"></i> Featured today</span>
+              <h3>Omega-3 Fish Oil</h3>
+              <p class="deal-feature-description">
+                High-potency Omega-3 with EPA 180 mg, DHA 120 mg, and Vitamin E 10 mg to support heart, brain, eye, skin, and joint wellness.
+              </p>
+              <div class="deal-benefits">
+                <span><i class="fa-solid fa-check"></i> 1000 mg per softgel</span>
+                <span><i class="fa-solid fa-check"></i> EPA + DHA support</span>
+                <span><i class="fa-solid fa-check"></i> Heart &amp; joint wellness</span>
+              </div>
+              <div class="deal-price-row">
+                <span class="deal-price">&#8377;799</span>
+                <del class="deal-old-price">&#8377;1,199</del>
+                <span class="deal-save">Save 33%</span>
+              </div>
+              <div class="deal-actions">
+                <a class="deal-button" href="product-details-pages/omega3fishoil.html">View offer <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="deal-whatsapp" href="https://wa.me/917807751711?text=I%20want%20to%20know%20more%20about%20the%20Aiva%20Wellness%20Omega-3%20Fish%20Oil%20deal" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp</a>
+              </div>
+              <div class="deal-countdown"><i class="fa-regular fa-clock"></i> Offer refreshes in <strong id="dealCountdown">00:00:00</strong></div>
+            </div>
+          </article>
+          <div class="deal-mini-stack">
+            <a class="deal-mini reveal" href="product-details-pages/vitamind3.html">
+              <div class="deal-mini-image"><img src="products/all images/vitamind3-1.png" alt="Aiva Wellness Vitamin D3 60,000 IU" loading="lazy" decoding="async" /></div>
+              <div class="deal-mini-content">
+                <span class="deal-kicker"><i class="fa-solid fa-shield-heart"></i> Bone &amp; immunity</span>
+                <h3>Vitamin D3 60,000 IU</h3>
+                <p class="deal-mini-description">Cholecalciferol IP support for bone strength, calcium absorption, immunity, and energy metabolism.</p>
+                <div class="deal-mini-price"><strong>&#8377;499</strong><del>&#8377;599</del></div>
+              </div>
+            </a>
+            <a class="deal-mini reveal" href="product-details-pages/dailyvitalswomen.html">
+              <div class="deal-mini-image"><img src="products/all images/women-1.png" alt="Aiva Wellness Daily Vitals for Women 40+" loading="lazy" decoding="async" /></div>
+              <div class="deal-mini-content">
+                <span class="deal-kicker"><i class="fa-solid fa-sparkles"></i> Women 40+ vitality</span>
+                <h3>Daily Vitals for Women 40+</h3>
+                <p class="deal-mini-description">Complete multivitamin, multimineral, amino acids, and ginseng support for everyday energy and vitality.</p>
+                <div class="deal-mini-price"><strong>&#8377;1,299</strong><del>&#8377;1,499</del></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- NEWLY LAUNCHED PRODUCTS SECTION -->
     <section class="upcoming-section" id="newly-launched-products">
       <div class="upcoming-inner">
@@ -4822,6 +5204,22 @@
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 2600);
       }
+
+      function updateDealCountdown() {
+        const countdown = document.getElementById("dealCountdown");
+        if (!countdown) return;
+        const now = new Date();
+        const tomorrow = new Date(now);
+        tomorrow.setHours(24, 0, 0, 0);
+        const remaining = Math.max(0, tomorrow - now);
+        const hours = String(Math.floor(remaining / 3600000)).padStart(2, "0");
+        const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, "0");
+        const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2, "0");
+        countdown.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      updateDealCountdown();
+      setInterval(updateDealCountdown, 1000);
 
     </script>
   </body>
