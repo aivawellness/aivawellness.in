@@ -20,8 +20,8 @@
 
   const products = [
     { file: "wheyprotein.html", tag: "Performance nutrition", name: "Whey Protein", blurb: "Clean protein support for recovery and everyday strength.", main: "../images/protein/whey%20protein.png", hover: "../images/protein/protein.png", icon: "fa-dumbbell" },
-    { file: "plantprotein.html", tag: "Plant-based nutrition", name: "Plant Protein", blurb: "Balanced plant-powered nutrition for active, conscious routines.", main: "../images/protein/protein.png", hover: "../images/protein/protein2.png", icon: "fa-leaf" },
-    { file: "yeastprotein.html", tag: "Next-gen nutrition", name: "Yeast Protein", blurb: "Modern protein support thoughtfully made for everyday wellness.", main: "../images/protein/protein2.png", hover: "../images/protein/protein.png", icon: "fa-seedling" },
+    { file: "plantprotein.html", tag: "Plant-based nutrition", name: "Plant Protein", blurb: "Balanced plant-powered nutrition for active, conscious routines.", main: "../images/protein/protein.png", hover: "../images/protein/whey1.png", icon: "fa-leaf" },
+    { file: "yeastprotein.html", tag: "Next-gen nutrition", name: "Yeast Protein", blurb: "Modern protein support thoughtfully made for everyday wellness.", main: "../images/protein/whey1.png", hover: "../images/protein/protein.png", icon: "fa-seedling" },
     { file: "omega3fishoil.html", tag: "Daily essentials", name: "Omega-3 Fish Oil", blurb: "A simple daily addition to your wellness routine.", main: "../products/all images/omega-1.png", hover: "../products/all images/omega-2.png", icon: "fa-fish" },
     { file: "nattokinase200.html", tag: "Wellness", name: "Nattokinase Plus 200 mg", blurb: "Focused support, made with the same quality thinking.", main: "../products/Nattokinase Carton.webp", hover: "../products/all images/p2.png", icon: "fa-heart-pulse" },
     { file: "magnesium-complex-5-in-1.html", tag: "Minerals", name: "Magnesium Complex 5-in-1", blurb: "Five forms of magnesium combined in one formula.", main: "../products/Magnesium Complex.webp", hover: "../products/all images/magnesium2.png", icon: "fa-atom" },
