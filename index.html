@@ -3130,12 +3130,78 @@
         border: 1px solid rgba(148, 163, 184, 0.22);
         box-shadow: 0 14px 30px rgba(30, 41, 59, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.22);
         filter: saturate(0.92);
+        cursor: zoom-in;
         transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), filter 0.45s ease;
       }
       .insta-img:hover {
         transform: translateY(-10px) scale(1.025);
         box-shadow: 0 24px 48px rgba(30, 41, 59, 0.16), 0 0 0 1px rgba(29, 78, 216, 0.2);
         filter: saturate(1.12) contrast(1.02);
+      }
+      .image-lightbox {
+        position: fixed;
+        z-index: 10000;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: rgba(3, 8, 20, 0.88);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .image-lightbox.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .image-lightbox img {
+        display: block;
+        max-width: min(1100px, 94vw);
+        max-height: 88vh;
+        object-fit: contain;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 12px;
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+        transform: scale(0.96);
+        transition: transform 0.35s var(--ease);
+      }
+      .image-lightbox.is-open img { transform: scale(1); }
+      .image-lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 50%;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        font-size: 1.05rem;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .image-lightbox-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg);
+      }
+      body.lightbox-open { overflow: hidden; }
+      @media (max-width: 600px) {
+        .image-lightbox {
+          padding: 14px;
+        }
+        .image-lightbox img {
+          max-width: 100%;
+          max-height: 78vh;
+          border-radius: 8px;
+        }
+        .image-lightbox-close {
+          top: 12px;
+          right: 12px;
+          width: 38px;
+          height: 38px;
+        }
       }
       .insta-progress {
         position: absolute;
@@ -4856,6 +4922,13 @@
       </div>
     </section>
 
+    <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded product image">
+      <button class="image-lightbox-close" type="button" aria-label="Close image viewer" title="Close image viewer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="" alt="" />
+    </div>
+
     <!-- NEWSLETTER -->
     <section class="newsletter-section">
       <div class="newsletter-inner reveal">
@@ -5378,6 +5451,37 @@
           instaControl.setAttribute("title", isPaused ? "Play image slider" : "Pause image slider");
         });
       }
+
+      const imageLightbox = document.querySelector(".image-lightbox");
+      const lightboxImage = imageLightbox?.querySelector("img");
+      const lightboxClose = imageLightbox?.querySelector(".image-lightbox-close");
+      const instaImages = document.querySelectorAll(".insta-img");
+
+      function closeImageLightbox() {
+        if (!imageLightbox || !lightboxImage) return;
+        imageLightbox.classList.remove("is-open");
+        document.body.classList.remove("lightbox-open");
+        lightboxImage.removeAttribute("src");
+      }
+
+      instaImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          if (!imageLightbox || !lightboxImage) return;
+          lightboxImage.src = image.currentSrc || image.src;
+          lightboxImage.alt = image.alt || "Aiva Wellness product image";
+          imageLightbox.classList.add("is-open");
+          document.body.classList.add("lightbox-open");
+          lightboxClose?.focus();
+        });
+      });
+
+      lightboxClose?.addEventListener("click", closeImageLightbox);
+      imageLightbox?.addEventListener("click", (event) => {
+        if (event.target === imageLightbox) closeImageLightbox();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeImageLightbox();
+      });
 
       updateDealCountdown();
       setInterval(updateDealCountdown, 1000);
