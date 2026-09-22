@@ -3013,15 +3013,53 @@
    INSTAGRAM STRIP
 --------------------------------------------------- */
       .insta-section {
-        padding: 60px 0 0;
+        position: relative;
+        padding: 86px 0 0;
         overflow: hidden;
-        background: #fff;
+        background: linear-gradient(180deg, #f8fbff 0%, #ffffff 72%);
         border-top: 1px solid var(--border);
       }
       .insta-header {
-        text-align: center;
-        margin-bottom: 24px;
-        padding: 0 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: 1180px;
+        margin: 0 auto 34px;
+        padding: 0 24px;
+      }
+      .insta-copy { max-width: 560px; }
+      .insta-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        color: var(--blue);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .insta-eyebrow::before {
+        width: 24px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+      .insta-title {
+        margin: 0;
+        color: var(--black);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 600;
+        line-height: 0.98;
+      }
+      .insta-subtitle {
+        max-width: 430px;
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.7;
       }
       .insta-header a {
         font-size: 0.84rem;
@@ -3034,45 +3072,105 @@
         padding: 9px 20px;
         border-radius: 999px;
         border: 1px solid var(--border);
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 10px 28px rgba(30, 41, 59, 0.06);
       }
       .insta-header a i {
         color: #e1306c;
       }
-      .insta-header a:hover {
-        color: var(--blue);
-        border-color: var(--blue-border);
-        background: var(--blue-soft);
+      .insta-header a.facebook-link i {
+        color: #1877f2;
       }
+      .insta-header a:hover {
+        color: #e1306c;
+        border-color: rgba(225, 48, 108, 0.32);
+        background: #fff;
+        transform: translateY(-2px);
+      }
+      .insta-header a.facebook-link:hover {
+        color: #1877f2;
+        border-color: rgba(24, 119, 242, 0.32);
+      }
+      .insta-social-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .insta-frame { position: relative; padding: 10px 0 34px; }
+      .insta-frame::before,
+      .insta-frame::after {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        bottom: 34px;
+        width: clamp(32px, 8vw, 140px);
+        pointer-events: none;
+        content: "";
+      }
+      .insta-frame::before { left: 0; background: linear-gradient(90deg, #f8fbff, transparent); }
+      .insta-frame::after { right: 0; background: linear-gradient(270deg, #ffffff, transparent); }
       .insta-track {
         display: flex;
-        gap: 8px;
+        gap: 14px;
         animation: scrollX 32s linear infinite;
         width: max-content;
+        padding: 0 14px;
       }
       .insta-track:hover {
         animation-play-state: paused;
       }
       .insta-img {
-        min-width: 190px;
-        height: 190px;
+        min-width: clamp(190px, 19vw, 260px);
+        height: clamp(190px, 19vw, 260px);
         object-fit: cover;
         flex-shrink: 0;
-        border-radius: 14px;
-        border: 1px solid rgba(29, 78, 216, 0.12);
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-        transition:
-          opacity 0.2s,
-          transform 0.3s,
-          box-shadow 0.3s,
-          filter 0.3s;
+        border-radius: 20px;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        box-shadow: 0 14px 30px rgba(30, 41, 59, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+        filter: saturate(0.92);
+        transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), filter 0.45s ease;
       }
       .insta-img:hover {
-        opacity: 1;
-        transform: scale(1.02);
-        box-shadow: 0 18px 40px rgba(29, 78, 216, 0.18);
-        filter: saturate(1.08);
+        transform: translateY(-10px) scale(1.025);
+        box-shadow: 0 24px 48px rgba(30, 41, 59, 0.16), 0 0 0 1px rgba(29, 78, 216, 0.2);
+        filter: saturate(1.12) contrast(1.02);
       }
+      .insta-progress {
+        position: absolute;
+        right: 24px;
+        bottom: 8px;
+        left: 24px;
+        height: 2px;
+        overflow: hidden;
+        background: rgba(148, 163, 184, 0.2);
+      }
+      .insta-progress::after {
+        display: block;
+        width: 34%;
+        height: 100%;
+        background: linear-gradient(90deg, var(--blue), #60a5fa);
+        content: "";
+        animation: instaProgress 32s linear infinite;
+      }
+      .insta-control {
+        display: inline-grid;
+        width: 38px;
+        height: 38px;
+        margin-left: 8px;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        color: var(--ink);
+        background: #fff;
+        cursor: pointer;
+        transition: 0.25s ease;
+      }
+      .insta-control:hover { color: var(--blue); border-color: rgba(29, 78, 216, 0.35); transform: translateY(-2px); }
+      .insta-section.is-paused .insta-track,
+      .insta-section.is-paused .insta-progress::after { animation-play-state: paused; }
+      .insta-section.is-paused .insta-control i::before { content: "\f04b"; }
       @keyframes scrollX {
         0% {
           transform: translateX(0);
@@ -3081,11 +3179,59 @@
           transform: translateX(-50%);
         }
       }
+      @keyframes instaProgress {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(300%); }
+      }
       @media (max-width: 600px) {
-        .insta-img {
-          min-width: 140px;
-          height: 140px;
+        .insta-section { padding-top: 64px; }
+        .insta-header {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+          padding: 0 24px;
         }
+        .insta-copy { width: 100%; }
+        .insta-header a { align-self: flex-start; }
+        .insta-social-links {
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 8px;
+          padding-right: 46px;
+        }
+        .insta-social-links a {
+          width: 100%;
+          justify-content: center;
+        }
+        .insta-control {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          margin-left: 0;
+        }
+        .insta-frame {
+          margin-top: 4px;
+          padding-bottom: 28px;
+        }
+        .insta-track {
+          gap: 12px;
+          padding: 0 24px;
+        }
+        .insta-img {
+          min-width: clamp(220px, calc(100vw - 64px), 280px);
+          height: clamp(220px, calc(100vw - 64px), 280px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .insta-track,
+        .insta-progress::after { animation-play-state: paused; }
+        .insta-img,
+        .insta-header a,
+        .insta-control { transition: none; }
       }
 
       /* ---------------------------------------------------
@@ -4612,15 +4758,18 @@
     <!-- INSTAGRAM -->
     <section class="insta-section reveal">
       <div class="insta-header">
-        <a
-          href="https://www.instagram.com/aivawellness.in/?hl=en"
-          target="_blank"
-          rel="noopener"
-          ><i class="fa-brands fa-instagram"></i> Follow @aivawellness on
-          Instagram</a
-        >
+        <div class="insta-copy">
+          <span class="insta-eyebrow"><i class="fa-brands fa-instagram"></i> Aiva Wellness Social</span>
+          <h2 class="insta-title">A closer look at everyday wellness.</h2>
+          <p class="insta-subtitle">Explore our products, routines and wellness moments from the Aiva community.</p>
+        </div>
+        <div class="insta-social-links">
+          <a href="https://www.instagram.com/aivawellness.in/?hl=en" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Follow @aivawellness</a>
+          <a class="facebook-link" href="https://www.facebook.com/profile.php?id=61591507665329" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i> Follow @aivawellness.in</a>
+          <button class="insta-control" type="button" aria-label="Pause image slider" aria-pressed="false" title="Pause image slider"><i class="fa-solid fa-pause"></i></button>
+        </div>
       </div>
-      <div style="overflow: hidden; width: 100%">
+      <div class="insta-frame">
         <div class="insta-track">
           <img
             class="insta-img"
@@ -4703,6 +4852,7 @@
           <img class="insta-img" src="products/reefit forte c new size.webp" alt="Aiva Wellness" loading="lazy" decoding="async" />
           <img class="insta-img" src="products/all images/multivitamin2.png" alt="Aiva Wellness" loading="lazy" decoding="async" />
         </div>
+        <div class="insta-progress" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -5216,6 +5366,17 @@
         const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, "0");
         const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2, "0");
         countdown.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+
+      const instaSection = document.querySelector(".insta-section");
+      const instaControl = document.querySelector(".insta-control");
+      if (instaSection && instaControl) {
+        instaControl.addEventListener("click", () => {
+          const isPaused = instaSection.classList.toggle("is-paused");
+          instaControl.setAttribute("aria-pressed", String(isPaused));
+          instaControl.setAttribute("aria-label", isPaused ? "Play image slider" : "Pause image slider");
+          instaControl.setAttribute("title", isPaused ? "Play image slider" : "Pause image slider");
+        });
       }
 
       updateDealCountdown();
