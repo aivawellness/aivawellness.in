@@ -3,20 +3,20 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/shop.html", "destination": "/shop", "permanent": true },
-    { "source": "/product-details-pages/:slug", "destination": "/products/:slug", "permanent": true },
-    { "source": "/product-details-pages/:slug/", "destination": "/products/:slug", "permanent": true },
     { "source": "/(.*).html/", "destination": "/$1", "permanent": true },
-    { "source": "/(.*).html", "destination": "/$1", "permanent": true }
+    { "source": "/(.*).html", "destination": "/$1", "permanent": true },
+    { "source": "/product-details-pages/:slug", "destination": "/products/:slug", "permanent": true },
+    { "source": "/product-details-pages/:slug/", "destination": "/products/:slug", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/products/:slug", "destination": "/product-details-pages/:slug.html" },
-    { "source": "/products/:slug/", "destination": "/product-details-pages/:slug.html" },
-    { "source": "/shop", "destination": "/shop.html" },
-    { "source": "/", "destination": "/index.html" }
+    { "source": "/products/:slug", "destination": "/product-details-pages/:slug" }
   ],
   "headers": [
     { "source": "/sitemap.xml", "headers": [{ "key": "Content-Type", "value": "application/xml" }] },
-    { "source": "/robots.txt", "headers": [{ "key": "Content-Type", "value": "text/plain" }] }
+    { "source": "/robots.txt", "headers": [{ "key": "Content-Type", "value": "text/plain" }] },
+    { "source": "/humans.txt", "headers": [{ "key": "Content-Type", "value": "text/plain" }] },
+    { "source": "/manifest.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }] },
+    { "source": "/site.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }] },
+    { "source": "/(.well-known/security.txt|security.txt)", "headers": [{ "key": "Content-Type", "value": "text/plain" }] }
   ]
 }
