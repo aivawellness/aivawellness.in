@@ -126,7 +126,7 @@
         "name": "Aiva Wellness",
         "url": "https://aivawellness.in/",
         "logo": "https://aivawellness.in/assets/logo.png",
-        "description": "Aiva Wellness is a premium healthcare & wellness brand formulating science-backed supplements in India.",
+        "description": "Aiva Wellness is a premium healthcare brand creating daily wellness products for Indian routines.",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-78077-51711",
@@ -166,13 +166,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "Shop",
-            "item": "https://aivawellness.in/shop.html"
+            "item": "https://aivawellness.in/shop"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Daily Vitals for Men 40+",
-            "item": "https://aivawellness.in/products/dailyvitalsmen.html"
+            "item": "https://aivawellness.in/products/dailyvitalsmen"
           }
         ]
       }
@@ -2681,7 +2681,7 @@
 
     <meta
       property="og:url"
-      content="https://aivawellness.in/products/dailyvitalsmen.html"
+      content="https://aivawellness.in/products/dailyvitalsmen"
     />
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
@@ -2704,8 +2704,8 @@
         "name": "Aiva Wellness",
         "alternateName": "Aiva Wellness India",
         "logo": "https://aivawellness.in/assets/logo.png",
-        "description": "Premium science-backed healthcare and wellness supplements including Nattokinase and Magnesium Complex.",
-        "slogan": "Science-backed formulas for everyday wellness"
+        "description": "Premium healthcare and wellness supplements including Nattokinase, Magnesium Complex, and daily nutrition essentials.",
+        "slogan": "Wellness formulas for everyday health"
       }
     </script>
     <link rel="stylesheet" href="../assets/similar-products.css" />
@@ -4245,7 +4245,7 @@
           if (!link || !imageWrap) return;
           const url = new URL(link.getAttribute("href"), window.location.href).href;
           const title = link.textContent.trim();
-          const hoverImages = { "dailyvitals.html": "../products/all images/multivitamin2.png", "dailyvitalsmen.html": "../products/all images/men-2.png", "magnesium-complex-5-in-1.html": "../products/all images/magnesium2.png", "nattokinase100.html": "../products/all images/1.webp", "nattokinase200.html": "../products/all images/p2.png" };
+          const hoverImages = { "dailyvitals": "../products/all images/multivitamin2.png", "dailyvitalsmen": "../products/all images/men-2.png", "magnesium-complex-5-in-1": "../products/all images/magnesium2.png", "nattokinase100": "../products/all images/1.webp", "nattokinase200": "../products/all images/p2.png" };
           const hoverImage = hoverImages[link.getAttribute("href")];
           if (hoverImage) { const image = document.createElement("img"); image.className = "img-hover"; image.src = hoverImage; image.alt = `${title} alternate view`; image.loading = "lazy"; image.decoding = "async"; imageWrap.appendChild(image); }
           const actions = document.createElement("div");

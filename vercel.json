@@ -6,8 +6,8 @@
     { "source": "/shop.html", "destination": "/shop", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/products/:slug", "destination": "/product-details-pages/:slug" },
-    { "source": "/products/:slug/", "destination": "/product-details-pages/:slug" },
+    { "source": "/products/:slug", "destination": "/product-details-pages/:slug.html" },
+    { "source": "/products/:slug/", "destination": "/product-details-pages/:slug.html" },
     { "source": "/shop", "destination": "/shop.html" },
     { "source": "/", "destination": "/index.html" }
   ],

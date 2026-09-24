@@ -19,17 +19,17 @@
   setupGalleryZoom();
 
   const products = [
-    { file: "wheyprotein.html", tag: "Performance nutrition", name: "Whey Protein", blurb: "Clean protein support for recovery and everyday strength.", main: "../images/protein/whey%20protein.png", hover: "../images/protein/protein.png", icon: "fa-dumbbell" },
-    { file: "plantprotein.html", tag: "Plant-based nutrition", name: "Plant Protein", blurb: "Balanced plant-powered nutrition for active, conscious routines.", main: "../images/protein/protein.png", hover: "../images/protein/whey1.png", icon: "fa-leaf" },
-    { file: "yeastprotein.html", tag: "Next-gen nutrition", name: "Yeast Protein", blurb: "Modern protein support thoughtfully made for everyday wellness.", main: "../images/protein/whey1.png", hover: "../images/protein/protein.png", icon: "fa-seedling" },
-    { file: "omega3fishoil.html", tag: "Daily essentials", name: "Omega-3 Fish Oil", blurb: "A simple daily addition to your wellness routine.", main: "../products/all images/omega-1.png", hover: "../products/all images/omega-2.png", icon: "fa-fish" },
-    { file: "nattokinase200.html", tag: "Wellness", name: "Nattokinase Plus 200 mg", blurb: "Focused support, made with the same quality thinking.", main: "../products/Nattokinase Carton.webp", hover: "../products/all images/p2.png", icon: "fa-heart-pulse" },
-    { file: "magnesium-complex-5-in-1.html", tag: "Minerals", name: "Magnesium Complex 5-in-1", blurb: "Five forms of magnesium combined in one formula.", main: "../products/Magnesium Complex.webp", hover: "../products/all images/magnesium2.png", icon: "fa-atom" },
-    { file: "dailyvitals.html", tag: "Everyday nutrition", name: "Daily Vitals for Adults 18+", blurb: "An easy everyday habit to keep your nutrition on track.", main: "../products/reefit forte c new size.webp", hover: "../products/all images/multivitamin2.png", icon: "fa-sun" },
-    { file: "nattokinase100.html", tag: "Heart health", name: "Nattokinase 100 mg", blurb: "Everyday cardiovascular support in a focused formula.", main: "../products/Nattokinase Carton  final 3d.webp", hover: "../products/all images/1.webp", icon: "fa-heart-pulse" },
-    { file: "vitamind3.html", tag: "Vitamins", name: "Vitamin D3 60,000 IU", blurb: "Daily bone, immunity and energy metabolism support.", main: "../products/all images/vitamind3-1.png", hover: "../products/all images/vitamind3-2.png", icon: "fa-sun" },
-    { file: "dailyvitalsmen.html", tag: "Men's wellness", name: "Daily Vitals for Men 40+", blurb: "Complete daily nutrition tailored for men's wellness.", main: "../products/all images/men-1.png", hover: "../products/all images/men-2.png", icon: "fa-person" },
-    { file: "dailyvitalswomen.html", tag: "Women's wellness", name: "Daily Vitals for Women 40+", blurb: "Complete daily nutrition tailored for women's wellness.", main: "../products/all images/women-1.png", hover: "../products/all images/women-2.png", icon: "fa-person-dress" }
+    { file: "wheyprotein", tag: "Performance nutrition", name: "Whey Protein", blurb: "Clean protein support for recovery and everyday strength.", main: "../images/protein/whey%20protein.png", hover: "../images/protein/protein.png", icon: "fa-dumbbell" },
+    { file: "plantprotein", tag: "Plant-based nutrition", name: "Plant Protein", blurb: "Balanced plant-powered nutrition for active, conscious routines.", main: "../images/protein/protein.png", hover: "../images/protein/whey1.png", icon: "fa-leaf" },
+    { file: "yeastprotein", tag: "Next-gen nutrition", name: "Yeast Protein", blurb: "Modern protein support thoughtfully made for everyday wellness.", main: "../images/protein/whey1.png", hover: "../images/protein/protein.png", icon: "fa-seedling" },
+    { file: "omega3fishoil", tag: "Daily essentials", name: "Omega-3 Fish Oil", blurb: "A simple daily addition to your wellness routine.", main: "../products/all images/omega-1.png", hover: "../products/all images/omega-2.png", icon: "fa-fish" },
+    { file: "nattokinase200", tag: "Wellness", name: "Nattokinase Plus 200 mg", blurb: "Focused support, made with the same quality thinking.", main: "../products/Nattokinase Carton.webp", hover: "../products/all images/p2.png", icon: "fa-heart-pulse" },
+    { file: "magnesium-complex-5-in-1", tag: "Minerals", name: "Magnesium Complex 5-in-1", blurb: "Five forms of magnesium combined in one formula.", main: "../products/Magnesium Complex.webp", hover: "../products/all images/magnesium2.png", icon: "fa-atom" },
+    { file: "dailyvitals", tag: "Everyday nutrition", name: "Daily Vitals for Adults 18+", blurb: "An easy everyday habit to keep your nutrition on track.", main: "../products/reefit forte c new size.webp", hover: "../products/all images/multivitamin2.png", icon: "fa-sun" },
+    { file: "nattokinase100", tag: "Heart health", name: "Nattokinase 100 mg", blurb: "Everyday cardiovascular support in a focused formula.", main: "../products/Nattokinase Carton  final 3d.webp", hover: "../products/all images/1.webp", icon: "fa-heart-pulse" },
+    { file: "vitamind3", tag: "Vitamins", name: "Vitamin D3 60,000 IU", blurb: "Daily bone, immunity and energy metabolism support.", main: "../products/all images/vitamind3-1.png", hover: "../products/all images/vitamind3-2.png", icon: "fa-sun" },
+    { file: "dailyvitalsmen", tag: "Men's wellness", name: "Daily Vitals for Men 40+", blurb: "Complete daily nutrition tailored for men's wellness.", main: "../products/all images/men-1.png", hover: "../products/all images/men-2.png", icon: "fa-person" },
+    { file: "dailyvitalswomen", tag: "Women's wellness", name: "Daily Vitals for Women 40+", blurb: "Complete daily nutrition tailored for women's wellness.", main: "../products/all images/women-1.png", hover: "../products/all images/women-2.png", icon: "fa-person-dress" }
   ];
 
   const currentFile = window.location.pathname.split("/").pop().toLowerCase();
@@ -40,15 +40,15 @@
   const cardMarkup = (product) => `
         <article class="pcard">
           <div class="pcard-media"><span class="tag">${product.tag}</span><img src="${product.main}" alt="Aiva Wellness ${product.name}" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" /><img class="img-hover" src="${product.hover}" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()" /><i class="fa-solid ${product.icon}" aria-hidden="true"></i></div>
-          <div class="pcard-body"><h3>${product.name}</h3><p>${product.blurb}</p><a class="pcard-link" href="${product.file}">View product <i class="fa-solid fa-arrow-right"></i></a></div>
+          <div class="pcard-body"><h3>${product.name}</h3><p>${product.blurb}</p><a class="pcard-link" href="/products/${product.file}">View product <i class="fa-solid fa-arrow-right"></i></a></div>
         </article>`;
 
   if (!currentSection) {
     const currentFile = window.location.pathname.split("/").pop().toLowerCase();
     const missingProducts = products.filter((product) =>
-      ["plantprotein.html", "yeastprotein.html"].includes(product.file) &&
+      ["plantprotein", "yeastprotein"].includes(product.file) &&
       product.file !== currentFile &&
-      !existingRail.querySelector(`a[href="${product.file}"]`),
+      !existingRail.querySelector(`a[href="/products/${product.file}"]`),
     );
     existingRail.insertAdjacentHTML("beforeend", missingProducts.map(cardMarkup).join(""));
     return;
@@ -67,7 +67,7 @@
     <div class="rail" tabindex="0" aria-label="Similar products">
       ${railProducts.map(cardMarkup).join("")}
     </div>
-    <div class="rail-foot"><a class="btn-ghost" href="../shop.html">Browse the full shop <i class="fa-solid fa-arrow-right"></i></a></div>`;
+    <div class="rail-foot"><a class="btn-ghost" href="/shop">Browse the full shop <i class="fa-solid fa-arrow-right"></i></a></div>`;
 
   currentSection.replaceWith(section);
   const rail = section.querySelector(".rail");
