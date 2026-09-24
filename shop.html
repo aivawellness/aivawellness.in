@@ -39,7 +39,7 @@
     <meta property="og:site_name" content="Aiva Wellness" />
     <meta
       property="og:title"
-      content="Shop | Aiva Wellness — Premium Healthcare & Supplements"
+      content="Buy Supplements Online India | Shop Nattokinase, Magnesium, Protein | Aiva Wellness"
     />
     <meta
       property="og:description"
@@ -58,7 +58,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Shop | Aiva Wellness — Premium Healthcare & Supplements"
+      content="Buy Supplements Online India | Shop Nattokinase, Magnesium, Protein | Aiva Wellness"
     />
     <meta
       name="twitter:description"
@@ -2371,27 +2371,27 @@
               </div>
               <div class="cat-item" onclick="filterByCategory('Energy & Immunity', this)">
                 <span class="cat-item-left"><i class="fa-solid fa-bolt"></i>Energy &amp; Immunity</span>
-                <span class="cat-count" id="cnt-Energy & Immunity">2</span>
+                <span class="cat-count" id="cnt-energy-immunity">2</span>
               </div>
               <div class="cat-item" onclick="filterByCategory('Women\'s Health & Vitality', this)">
                 <span class="cat-item-left"><i class="fa-solid fa-venus"></i>Women's Health &amp; Vitality</span>
-                <span class="cat-count" id="cnt-Women's Health & Vitality">1</span>
+                <span class="cat-count" id="cnt-womens-health-vitality">1</span>
               </div>
               <div class="cat-item" onclick="filterByCategory('Bone & Muscle Health', this)">
                 <span class="cat-item-left"><i class="fa-solid fa-bone"></i>Bone &amp; Muscle Health</span>
-                <span class="cat-count" id="cnt-Bone & Muscle Health">1</span>
+                <span class="cat-count" id="cnt-bone-muscle-health">1</span>
               </div>
               <div class="cat-item" onclick="filterByCategory('Heart Health', this)">
                 <span class="cat-item-left"><i class="fa-solid fa-heart-pulse"></i>Heart Health</span>
-                <span class="cat-count" id="cnt-Heart Health">3</span>
+                <span class="cat-count" id="cnt-heart-health">3</span>
               </div>
               <div class="cat-item" onclick="filterByCategory('Vitamins & Minerals', this)">
                 <span class="cat-item-left"><i class="fa-solid fa-sun"></i>Vitamins &amp; Minerals</span>
-                <span class="cat-count" id="cnt-Vitamins & Minerals">1</span>
+                <span class="cat-count" id="cnt-vitamins-minerals">1</span>
               </div>
               <div class="cat-item" onclick="filterByCategory('Sports Nutrition', this)">
                 <span class="cat-item-left"><i class="fa-solid fa-dumbbell"></i>Sports Nutrition</span>
-                <span class="cat-count" id="cnt-Sports Nutrition">1</span>
+                <span class="cat-count" id="cnt-sports-nutrition">1</span>
               </div>
             </div>
           </div>
@@ -2831,7 +2831,7 @@
         {
           id: 124,
           name: "Plant Protein",
-          cat: "Plant-Based Nutrition",
+          cat: "Sports Nutrition",
           price: 2999,
           old: 3499,
           badge: "new",
@@ -2841,7 +2841,7 @@
         {
           id: 125,
           name: "Yeast Protein",
-          cat: "Next-Gen Nutrition",
+          cat: "Sports Nutrition",
           price: 2799,
           old: 3299,
           badge: "new",
@@ -3281,6 +3281,14 @@
           acc[p.cat] = (acc[p.cat] || 0) + 1;
           return acc;
         }, {});
+        const idMap = {
+          "Energy & Immunity": "cnt-energy-immunity",
+          "Women's Health & Vitality": "cnt-womens-health-vitality",
+          "Bone & Muscle Health": "cnt-bone-muscle-health",
+          "Heart Health": "cnt-heart-health",
+          "Vitamins & Minerals": "cnt-vitamins-minerals",
+          "Sports Nutrition": "cnt-sports-nutrition",
+        };
         document.querySelectorAll(".cat-item").forEach((item) => {
           const left = item.querySelector(".cat-item-left");
           if (!left) return;
@@ -3292,16 +3300,15 @@
             countEl.textContent = PRODUCTS.length >= 10 ? "10+" : PRODUCTS.length;
             return;
           }
-          // Exact match first
-          if (counts[label] !== undefined) {
-            countEl.textContent = counts[label];
-            return;
-          }
-          // Case-insensitive fallback
-          const key = Object.keys(counts).find(
-            (k) => k.toLowerCase() === label.toLowerCase(),
+          const slugId = idMap[label] || Object.keys(idMap).find(
+            (key) => key.toLowerCase() === label.toLowerCase(),
           );
-          countEl.textContent = key ? counts[key] : 0;
+          const target = slugId ? document.getElementById(idMap[slugId] || slugId) : null;
+          const value = counts[slugId] ?? counts[label] ?? 0;
+          if (target) {
+            target.textContent = value;
+          }
+          countEl.textContent = value;
         });
       }
 
