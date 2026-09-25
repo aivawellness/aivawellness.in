@@ -2242,6 +2242,44 @@
         animation: shimmer 1.4s infinite linear;
         border-radius: 8px;
       }
+      .static-product-card { display: none; }
+      .product-skeleton {
+        pointer-events: none;
+      }
+      .product-skeleton .skeleton-image {
+        width: 100%;
+        aspect-ratio: 1;
+      }
+      .product-skeleton .skeleton-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 22px;
+      }
+      .product-skeleton .skeleton-title {
+        width: 78%;
+        height: 18px;
+      }
+      .product-skeleton .skeleton-price-row {
+        display: flex;
+        gap: 10px;
+      }
+      .product-skeleton .skeleton-price {
+        width: 30%;
+        height: 16px;
+      }
+      .product-skeleton .skeleton-old-price {
+        width: 22%;
+        height: 14px;
+      }
+      .product-skeleton .skeleton-button {
+        width: 100%;
+        height: 40px;
+        margin-top: 4px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .skeleton { animation: none; }
+      }
     </style>
 
     <meta property="og:url" content="https://aivawellness.in/shop" />
@@ -2503,7 +2541,39 @@
         </noscript>
 
         <!-- Grid -->
-        <div class="products-grid" id="productsGrid">
+        <div class="products-grid" id="productsGrid" aria-busy="true" aria-label="Loading products">
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
+          <article class="product-card product-skeleton" aria-hidden="true">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-info"><div class="skeleton skeleton-title"></div><div class="skeleton-price-row"><div class="skeleton skeleton-price"></div><div class="skeleton skeleton-old-price"></div></div><div class="skeleton skeleton-button"></div></div>
+          </article>
           <article class="product-card static-product-card">
             <div class="product-img">
               <a href="/products/magnesium-complex-5-in-1"><img src="products/Magnesium Complex.webp" alt="Magnesium Complex 5-in-1" loading="lazy" /></a>
@@ -2939,6 +3009,8 @@
       function renderGrid() {
         const grid = document.getElementById("productsGrid");
         const noRes = document.getElementById("noResults");
+        grid.setAttribute("aria-busy", "false");
+        grid.removeAttribute("aria-label");
         const start = (currentPage - 1) * PER_PAGE;
         const pageItems = filteredProducts.slice(start, start + PER_PAGE);
 
