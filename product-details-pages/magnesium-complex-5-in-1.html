@@ -1250,6 +1250,7 @@
         flex-wrap: wrap;
       }
       .btn-buy-now {
+        text-decoration: none;
         flex: 0 0 auto;
         min-width: 160px;
         background: linear-gradient(135deg, #080d14, #1e293b);
@@ -2264,6 +2265,7 @@
         flex-shrink: 0;
       }
       .sbb-btn {
+        text-decoration: none;
         flex: 1;
         background: linear-gradient(135deg, #080d14, #1e293b);
         color: #fff;
@@ -3011,10 +3013,10 @@
             </div>
 
             <div class="cta-group">
-              <button class="btn-buy-now" onclick="handleBuyNow()">
+              <a class="btn-buy-now" href="#">
                 <i class="fa-brands fa-amazon"></i>
                 <span>Buy on Amazon</span>
-              </button>
+              </a>
               <a class="btn-ghost btn-whatsapp" href="https://wa.me/917807751711?text=I%20want%20to%20know%20more%20about%20Aiva%20Wellness%20Magnesium%20Complex%205-in-1" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</a>
               <button class="btn-ghost btn-icon" type="button" aria-label="Share this product" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href});}else{navigator.clipboard&&navigator.clipboard.writeText(location.href);showToast('Link copied!');}"><i class="fa-solid fa-share-nodes"></i></button>
             </div>
@@ -3809,9 +3811,9 @@
     <div class="sticky-buy-bar" id="stickyBar">
       <div class="sticky-buy-bar-inner">
         <span class="sbb-price">₹1,299</span>
-        <button class="sbb-btn" onclick="handleBuyNow()">
+        <a class="sbb-btn" href="#">
           <i class="fa-brands fa-amazon"></i> Buy on Amazon
-        </button>
+        </a>
       </div>
     </div>
 
