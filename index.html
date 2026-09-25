@@ -891,9 +891,22 @@
       .slider-next {
         right: 20px;
       }
+      .slider-toggle {
+        top: 24px;
+        right: 76px;
+        transform: none;
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+      }
+      .slider-toggle:hover { transform: scale(1.1); }
       @media (max-width: 600px) {
         .slider-btn {
           display: none;
+        }
+        .slider-toggle {
+          display: flex;
+          right: 18px;
         }
       }
 
@@ -1337,6 +1350,55 @@
         width: 100%;
         position: relative;
         overflow: hidden;
+      }
+      .compare-section {
+        padding: 76px 24px;
+        background: var(--white);
+      }
+      .compare-section { background: var(--light); }
+      .compare-wrap { max-width: 1080px; margin: 0 auto; }
+      .compare-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 26px; }
+      .compare-tab {
+        padding: 11px 18px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--muted);
+        background: var(--white);
+        font: inherit;
+        font-size: .78rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .compare-tab[aria-selected="true"] { color: var(--white); background: var(--blue); border-color: var(--blue); }
+      .compare-panel { overflow-x: auto; background: var(--white); border: 1px solid var(--border); }
+      .compare-panel[hidden] { display: none; }
+      .compare-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+      .compare-table th,
+      .compare-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); vertical-align: top; }
+      .compare-table th { color: var(--ink); font-size: .86rem; background: #f8fbff; }
+      .compare-table td { color: var(--muted); font-size: .82rem; line-height: 1.5; }
+      .compare-table th:not(:first-child) { color: var(--blue); }
+      .compare-table tr:last-child td { border-bottom: 0; }
+      .compare-link { color: var(--blue); font-weight: 700; text-decoration: none; }
+      .compare-link:hover { text-decoration: underline; }
+      @media (max-width: 767px) {
+        .compare-section { padding: 58px 14px 64px; }
+        .compare-tabs { flex-direction: column; align-items: stretch; gap: 8px; }
+        .compare-tab { width: 100%; min-height: 46px; }
+        .compare-panel { width: 100%; max-width: 100%; overflow: visible; }
+        .compare-table { width: 100%; min-width: 0; max-width: 100%; display: block; }
+        .compare-table thead { display: none; }
+        .compare-table tbody,
+        .compare-table tr,
+        .compare-table th,
+        .compare-table td { display: block; width: 100%; }
+        .compare-table tr { border-bottom: 1px solid var(--border); }
+        .compare-table tr:last-child { border-bottom: 0; }
+        .compare-table th[scope="row"] { padding: 14px 16px 8px; border-bottom: 0; font-size: .8rem; }
+        .compare-table td { display: grid; grid-template-columns: minmax(6.2rem, 34%) minmax(0, 1fr); gap: 12px; padding: 8px 16px 14px; border-bottom: 0; font-size: .8rem; overflow-wrap: anywhere; }
+        .compare-table td::before { content: attr(data-label); color: var(--blue); font-size: .72rem; font-weight: 700; line-height: 1.4; }
+        .compare-table td:last-child { padding-bottom: 16px; }
+        .compare-link { overflow-wrap: anywhere; }
       }
       .products-section::before {
         content: "";
@@ -3485,7 +3547,7 @@
       }
       .footer-brand .brand-sub {
         font-size: 0.76rem;
-        color: #64748b;
+        color: #cbd5e1;
         margin-top: 4px;
         font-weight: 500;
       }
@@ -3536,7 +3598,7 @@
         gap: 10px;
       }
       .footer-col ul li a {
-        color: #64748b;
+        color: #cbd5e1;
         text-decoration: none;
         font-size: 0.8rem;
         transition:
@@ -3561,7 +3623,7 @@
         flex-shrink: 0;
       }
       .footer-contact-item a {
-        color: #64748b;
+        color: #cbd5e1;
         text-decoration: none;
         transition: color 0.2s;
       }
@@ -3584,12 +3646,23 @@
         flex-wrap: wrap;
       }
       .footer-bottom-links a {
-        color: #475569;
+        color: #cbd5e1;
         text-decoration: none;
         transition: color 0.2s;
       }
       .footer-bottom-links a:hover {
         color: #fff;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
       @media (max-width: 1024px) {
         .footer-top {
@@ -3877,7 +3950,7 @@
     </div>
 
     <!-- HERO SLIDER -->
-<section class="hero-slider" id="heroSlider">
+<section class="hero-slider" id="heroSlider" role="region" aria-roledescription="carousel" aria-label="Featured wellness products">
   <div class="slider-track" id="sliderTrack">
     <!-- Slide 1 -->
     <div class="slide active first-slide">
@@ -4001,6 +4074,17 @@
     <i class="fa-solid fa-chevron-right"></i>
   </button>
 
+  <button
+    class="slider-btn slider-toggle"
+    id="sliderToggle"
+    type="button"
+    aria-label="Pause featured product slider"
+    aria-pressed="false"
+    title="Pause featured product slider"
+  >
+    <i class="fa-solid fa-pause" aria-hidden="true"></i>
+  </button>
+
   <div class="slider-dots" id="sliderDots"></div>
 
   <div class="slider-progress">
@@ -4075,7 +4159,8 @@
             <div class="p-actions">
               <button
                 class="p-action-btn"
-                title="Quick view"
+                title="View Nattokinase 100 mg"
+                aria-label="View Nattokinase 100 mg"
                 onclick="
                   window.location.href =
                     '/products/nattokinase100'
@@ -4085,7 +4170,8 @@
               </button>
               <button
                 class="p-action-btn"
-                title="Share"
+                title="Share Nattokinase 100 mg"
+                aria-label="Share Nattokinase 100 mg"
                 onclick="toggleShareMenu(event, 3)"
               >
                 <i class="fa-solid fa-share-nodes"></i>
@@ -4156,7 +4242,8 @@
             <div class="p-actions">
               <button
                 class="p-action-btn"
-                title="Quick view"
+                title="View Nattokinase Plus 200 mg"
+                aria-label="View Nattokinase Plus 200 mg"
                 onclick="
                   window.location.href =
                     '/products/nattokinase200'
@@ -4166,7 +4253,8 @@
               </button>
               <button
                 class="p-action-btn"
-                title="Share"
+                title="Share Nattokinase Plus 200 mg"
+                aria-label="Share Nattokinase Plus 200 mg"
                 onclick="toggleShareMenu(event, 4)"
               >
                 <i class="fa-solid fa-share-nodes"></i>
@@ -4233,14 +4321,16 @@
             <div class="p-actions">
               <button
                 class="p-action-btn"
-                title="Quick view"
+                title="View Magnesium Complex 5-in-1"
+                aria-label="View Magnesium Complex 5-in-1"
                 onclick="window.location.href = '/products/magnesium-complex-5-in-1'"
               >
                 <i class="fa-regular fa-eye"></i>
               </button>
               <button
                 class="p-action-btn"
-                title="Share"
+                title="Share Magnesium Complex 5-in-1"
+                aria-label="Share Magnesium Complex 5-in-1"
                 onclick="toggleShareMenu(event, 1)"
               >
                 <i class="fa-solid fa-share-nodes"></i>
@@ -4303,14 +4393,16 @@
             <div class="p-actions">
               <button
                 class="p-action-btn"
-                title="Quick view"
+                title="View Daily Vitals for Men 40+"
+                aria-label="View Daily Vitals for Men 40+"
                 onclick="window.location.href = '/products/dailyvitalsmen'"
               >
                 <i class="fa-regular fa-eye"></i>
               </button>
               <button
                 class="p-action-btn"
-                title="Share"
+                title="Share Daily Vitals for Men 40+"
+                aria-label="Share Daily Vitals for Men 40+"
                 onclick="toggleShareMenu(event, 116)"
               >
                 <i class="fa-solid fa-share-nodes"></i>
@@ -4358,6 +4450,55 @@
         <a href="/shop" class="btn-outline"
           >View All Products <i class="fa-solid fa-arrow-right"></i
         ></a>
+      </div>
+    </section>
+
+    <!-- PRODUCT COMPARISON -->
+    <section class="compare-section" id="compare-products" aria-labelledby="compare-title">
+      <div class="compare-wrap">
+        <div class="section-header reveal">
+          <span class="section-eyebrow"><i class="fa-solid fa-scale-balanced"></i> Choose with confidence</span>
+          <h2 id="compare-title">Compare your options</h2>
+          <p>See the practical differences before you visit a product page.</p>
+        </div>
+        <div class="compare-tabs" role="tablist" aria-label="Product comparisons">
+          <button class="compare-tab" id="nattokinase-tab" type="button" role="tab" aria-selected="true" aria-controls="nattokinase-panel">Nattokinase 100 vs 200 mg</button>
+          <button class="compare-tab" id="daily-vitals-tab" type="button" role="tab" aria-selected="false" aria-controls="daily-vitals-panel" tabindex="-1">Daily Vitals variants</button>
+          <button class="compare-tab" id="core-products-tab" type="button" role="tab" aria-selected="false" aria-controls="core-products-panel" tabindex="-1">Everyday wellness</button>
+        </div>
+        <div class="compare-panel" id="nattokinase-panel" role="tabpanel" aria-labelledby="nattokinase-tab">
+          <table class="compare-table">
+            <caption class="sr-only">Comparison of Nattokinase 100 mg and Nattokinase Plus 200 mg</caption>
+            <thead><tr><th scope="col">Consider</th><th scope="col">Nattokinase 100 mg</th><th scope="col">Nattokinase Plus 200 mg</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Best starting point</th><td data-label="100 mg">A lower-strength option for a simpler routine.</td><td data-label="200 mg">A higher-strength option for shoppers seeking more nattokinase per serving.</td></tr>
+              <tr><th scope="row">Choose this when</th><td data-label="100 mg">You are new to nattokinase or prefer a lower daily amount.</td><td data-label="200 mg">You already know nattokinase fits your routine and want the higher strength.</td></tr>
+              <tr><th scope="row">Details</th><td data-label="100 mg"><a class="compare-link" href="/products/nattokinase100">View 100 mg product</a></td><td data-label="200 mg"><a class="compare-link" href="/products/nattokinase200">View 200 mg product</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="compare-panel" id="daily-vitals-panel" role="tabpanel" aria-labelledby="daily-vitals-tab" hidden>
+          <table class="compare-table">
+            <caption class="sr-only">Comparison of Daily Vitals adult, men 40 plus, and women 40 plus formulas</caption>
+            <thead><tr><th scope="col">Consider</th><th scope="col">Adults 18+</th><th scope="col">Men 40+</th><th scope="col">Women 40+</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Best fit</th><td data-label="Adults 18+">General daily nutritional support.</td><td data-label="Men 40+">Focused support for men's everyday vitality.</td><td data-label="Women 40+">Focused support for women's everyday vitality.</td></tr>
+              <tr><th scope="row">Choose this when</th><td data-label="Adults 18+">You want a broad everyday formula.</td><td data-label="Men 40+">You prefer a formula tailored to men 40+.</td><td data-label="Women 40+">You prefer a formula tailored to women 40+.</td></tr>
+              <tr><th scope="row">Details</th><td data-label="Adults 18+"><a class="compare-link" href="/products/dailyvitals">View Adults 18+</a></td><td data-label="Men 40+"><a class="compare-link" href="/products/dailyvitalsmen">View Men 40+</a></td><td data-label="Women 40+"><a class="compare-link" href="/products/dailyvitalswomen">View Women 40+</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="compare-panel" id="core-products-panel" role="tabpanel" aria-labelledby="core-products-tab" hidden>
+          <table class="compare-table">
+            <caption class="sr-only">Comparison of Magnesium Complex, Omega-3 Fish Oil, and Vitamin D3</caption>
+            <thead><tr><th scope="col">Consider</th><th scope="col">Magnesium Complex</th><th scope="col">Omega-3 Fish Oil</th><th scope="col">Vitamin D3</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Best fit</th><td data-label="Magnesium Complex">Sleep, relaxation, and everyday muscle support.</td><td data-label="Omega-3 Fish Oil">Heart, brain, eye, and joint wellness support.</td><td data-label="Vitamin D3">Bone health, calcium absorption, and immunity support.</td></tr>
+              <tr><th scope="row">Choose this when</th><td data-label="Magnesium Complex">You want a five-form magnesium blend in your routine.</td><td data-label="Omega-3 Fish Oil">You want EPA and DHA in a daily softgel.</td><td data-label="Vitamin D3">You are looking for a high-strength vitamin D3 formula.</td></tr>
+              <tr><th scope="row">Details</th><td data-label="Magnesium Complex"><a class="compare-link" href="/products/magnesium-complex-5-in-1">View Magnesium Complex</a></td><td data-label="Omega-3 Fish Oil"><a class="compare-link" href="/products/omega3fishoil">View Omega-3 Fish Oil</a></td><td data-label="Vitamin D3"><a class="compare-link" href="/products/vitamind3">View Vitamin D3</a></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -4977,7 +5118,8 @@
         >
           <input type="hidden" name="access_key" value="54833b69-7278-4ca6-a38a-46f229bbff3a" />
           <input type="hidden" name="subject" value="Aiva Wellness Newsletter Signup" />
-          <input type="email" name="email" placeholder="Enter your email address" required />
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" type="email" name="email" placeholder="Enter your email address" required />
           <button type="submit">Subscribe</button>
         </form>
       </div>
@@ -5090,8 +5232,11 @@
       const dotsEl = document.getElementById("sliderDots");
       const progress = document.getElementById("progressFill");
       const counterCur = document.getElementById("counterCurrent");
+      const sliderToggle = document.getElementById("sliderToggle");
       const slides = track.querySelectorAll(".slide");
       let autoTimer, progressTimer;
+      let manualPause = false;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
       // Build dots
       for (let i = 0; i < TOTAL; i++) {
@@ -5131,12 +5276,34 @@
 
       function resetAuto() {
         clearInterval(autoTimer);
+        if (manualPause || reducedMotion.matches) return;
         autoTimer = setInterval(() => goSlide(currentSlide + 1), 5500);
       }
 
       // initial
-      progress.classList.add("animating");
+      if (!reducedMotion.matches) progress.classList.add("animating");
       resetAuto();
+
+      function updateSliderPauseState() {
+        const isPaused = manualPause || reducedMotion.matches;
+        sliderToggle?.setAttribute("aria-pressed", String(manualPause));
+        sliderToggle?.setAttribute("aria-label", isPaused ? "Play featured product slider" : "Pause featured product slider");
+        sliderToggle?.setAttribute("title", isPaused ? "Play featured product slider" : "Pause featured product slider");
+        if (sliderToggle) sliderToggle.innerHTML = `<i class="fa-solid ${isPaused ? "fa-play" : "fa-pause"}" aria-hidden="true"></i>`;
+        if (isPaused) {
+          clearInterval(autoTimer);
+          progress.classList.remove("animating");
+        } else {
+          progress.classList.add("animating");
+          resetAuto();
+        }
+      }
+
+      sliderToggle?.addEventListener("click", () => {
+        manualPause = !manualPause;
+        updateSliderPauseState();
+      });
+      reducedMotion.addEventListener?.("change", updateSliderPauseState);
 
       // Touch
       let sx = 0,
@@ -5172,7 +5339,9 @@
 
       // Pause on hover
       hero.addEventListener("mouseenter", () => clearInterval(autoTimer));
-      hero.addEventListener("mouseleave", () => resetAuto());
+      hero.addEventListener("mouseleave", () => { if (!manualPause) resetAuto(); });
+      hero.addEventListener("focusin", () => clearInterval(autoTimer));
+      hero.addEventListener("focusout", () => { if (!manualPause) resetAuto(); });
 
       /* --- SCROLL REVEAL --- */
       const revealEls = document.querySelectorAll(".reveal");
@@ -5302,6 +5471,26 @@
           .forEach((i) => i.classList.remove("open"));
         if (!wasOpen) item.classList.add("open");
       }
+
+      /* --- PRODUCT COMPARISON TABS --- */
+      document.querySelectorAll('[role="tab"]').forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll('[role="tab"]').forEach((item) => {
+            const selected = item === tab;
+            item.setAttribute("aria-selected", String(selected));
+            item.tabIndex = selected ? 0 : -1;
+            document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
+          });
+        });
+        tab.addEventListener("keydown", (event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          const tabs = [...document.querySelectorAll('[role="tab"]')];
+          const nextIndex = (tabs.indexOf(tab) + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+          tabs[nextIndex].focus();
+          tabs[nextIndex].click();
+          event.preventDefault();
+        });
+      });
 
       /* --- COMBO ITEM SWITCHER --- */
       document.addEventListener("DOMContentLoaded", () => {
