@@ -1534,6 +1534,19 @@
       .product-info h3 a:hover {
         color: var(--blue);
       }
+      .product-differentiator {
+        max-width: 270px;
+        min-height: 48px;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        line-height: 1.55;
+        text-align: center;
+      }
+      .product-differentiator strong {
+        color: var(--blue);
+        font-weight: 700;
+      }
       .stars {
         color: var(--gold);
         font-size: 0.95rem;
@@ -2932,6 +2945,20 @@
         },
       ];
 
+      const PRODUCT_CARD_DETAILS = {
+        101: "350 mg per 2 capsules · 60 vegan capsules · Sleep and muscle support · Best for: evening routines",
+        103: "100 mg / 2,000 FU · 60 vegan capsules · Circulation support · Best for: first-time users",
+        104: "200 mg / 4,000 FU · 30 vegan capsules · High-strength circulation support · Best for: experienced users",
+        116: "1 capsule daily · 60 capsules · Energy and vitality support · Gelatin capsule · Best for: men 40+",
+        107: "1 capsule daily · 60 vegan capsules · Everyday energy and immune support · Best for: adults 18+",
+        117: "1 vegan capsule daily · 60 vegan capsules · Women's vitality support · Best for: women 40+",
+        122: "1,000 mg fish oil · 60 softgels · EPA + DHA support · Fish-based · Best for: heart and joint wellness",
+        118: "60,000 IU · 60 vegetarian capsules · Bone and immunity support · Best for: vitamin D3 routines",
+        123: "As directed on pack · 2 kg powder · Recovery and strength support · Whey-based · Best for: active lifestyles",
+        124: "As directed on pack · 1 kg powder · Recovery and strength support · Plant-based · Best for: plant-powered routines",
+        125: "As directed on pack · 1 kg powder · Recovery and strength support · Yeast-based · Best for: everyday performance",
+      };
+
       const PER_PAGE = 12;
       let currentPage = 1,
         currentCategory = "all",
@@ -2970,6 +2997,7 @@
       function renderCard(p, delay) {
         const saving = Math.round(((p.old - p.price) / p.old) * 100);
         const detailLink = PRODUCT_PAGE_MAP[p.id] || "/shop";
+        const differentiator = PRODUCT_CARD_DETAILS[p.id] || "Everyday wellness support · Best for: building a consistent routine";
         return `<div class="product-card reveal d${(delay % 6) + 1}" data-id="${p.id}">
     <div class="product-img">
       <span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>
@@ -2988,6 +3016,7 @@
     </div>
     <div class="product-info">
       <h3><a href="${detailLink}">${p.name}</a></h3>
+      <p class="product-differentiator">${differentiator}</p>
       <div class="price-row">
         <span class="sale-price">${fmtINR(p.price)}</span>
         <span class="original-price">${fmtINR(p.old)}</span>
