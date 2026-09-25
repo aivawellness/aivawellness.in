@@ -4555,7 +4555,6 @@
                 <a class="deal-button" href="/products/omega3fishoil">View offer <i class="fa-solid fa-arrow-right"></i></a>
                 <a class="deal-whatsapp" href="https://wa.me/917807751711?text=I%20want%20to%20know%20more%20about%20the%20Aiva%20Wellness%20Omega-3%20Fish%20Oil%20deal" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp</a>
               </div>
-              <div class="deal-countdown"><i class="fa-regular fa-clock"></i> Offer refreshes in <strong id="dealCountdown">00:00:00</strong></div>
             </div>
           </article>
           <div class="deal-mini-stack">
@@ -5660,19 +5659,6 @@
         setTimeout(() => toast.remove(), 2600);
       }
 
-      function updateDealCountdown() {
-        const countdown = document.getElementById("dealCountdown");
-        if (!countdown) return;
-        const now = new Date();
-        const tomorrow = new Date(now);
-        tomorrow.setHours(24, 0, 0, 0);
-        const remaining = Math.max(0, tomorrow - now);
-        const hours = String(Math.floor(remaining / 3600000)).padStart(2, "0");
-        const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, "0");
-        const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2, "0");
-        countdown.textContent = `${hours}:${minutes}:${seconds}`;
-      }
-
       const instaSection = document.querySelector(".insta-section");
       const instaControl = document.querySelector(".insta-control");
       if (instaSection && instaControl) {
@@ -5714,9 +5700,6 @@
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") closeImageLightbox();
       });
-
-      updateDealCountdown();
-      setInterval(updateDealCountdown, 1000);
 
     </script>
   </body>
