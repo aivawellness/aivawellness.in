@@ -1351,6 +1351,82 @@
         position: relative;
         overflow: hidden;
       }
+      .trio-section { padding: 88px 24px; background: linear-gradient(135deg, #eef5ff 0%, #f8fafc 54%, #edf5ef 100%); }
+      .trio-wrap { max-width: 1180px; margin: 0 auto; }
+      .trio-showcase { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); overflow: hidden; border: 1px solid #dce5ed; border-radius: 8px; background: #fff; box-shadow: 0 20px 55px rgba(15, 23, 42, .1); }
+      .trio-visual { position: relative; display: grid; min-width: 0; min-height: 480px; place-items: center; overflow: hidden; padding: 28px; background: linear-gradient(145deg, #edf4fb 0%, #f5f8f5 100%); }
+      .trio-visual img { display: block; width: 100%; height: 100%; max-height: 520px; object-fit: contain; transition: transform .55s ease; }
+      .trio-showcase:hover .trio-visual img { transform: scale(1.025); }
+      .trio-content { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 42px; }
+      .trio-content .section-eyebrow { align-self: flex-start; margin-bottom: 16px; }
+      .trio-content h2 { margin: 0 0 12px; color: var(--ink); font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-size: 2.35rem; font-weight: 600; line-height: 1.1; }
+      .trio-intro { margin: 0 0 20px; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+      .trio-products { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid #e8edf2; }
+      .trio-products li { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid #e8edf2; }
+      .trio-icon { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; background: #eff6ff; color: #1d4ed8; font-size: .82rem; }
+      .trio-products li:first-child .trio-icon { background: #fff1f2; color: #be123c; }
+      .trio-products li:nth-child(2) .trio-icon { background: #ecfdf5; color: #047857; }
+      .trio-product-copy { display: grid; gap: 3px; min-width: 0; }
+      .trio-product-copy small { color: #64748b; font-size: .62rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+      .trio-product-copy a { width: fit-content; color: var(--ink); font-size: .82rem; font-weight: 700; line-height: 1.4; text-decoration: none; }
+      .trio-product-copy a:hover { color: var(--blue); }
+      .trio-product-price { color: #334155; font-family: "Sora", sans-serif; font-size: .78rem; font-weight: 700; white-space: nowrap; }
+      .trio-total { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 18px 0 14px; }
+      .trio-total span { color: #64748b; font-size: .76rem; }
+      .trio-total strong { color: var(--ink); font-family: "Sora", sans-serif; font-size: 1.5rem; font-weight: 700; }
+      .trio-cta { display: flex; min-height: 48px; align-items: center; justify-content: center; gap: 9px; padding: 12px 16px; border: 1px solid #1d4ed8; border-radius: 6px; background: #1d4ed8; color: #fff; font-size: .8rem; font-weight: 700; text-decoration: none; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+      .trio-cta:hover { transform: translateY(-2px); background: #1e40af; box-shadow: 0 8px 20px rgba(29, 78, 216, .22); color: #fff; }
+      .trio-cta:focus-visible { outline: 3px solid rgba(29, 78, 216, .28); outline-offset: 3px; }
+      .trio-note { margin: 12px 0 0; color: #64748b; font-size: .68rem; line-height: 1.55; text-align: center; }
+      @media (max-width: 900px) {
+        .trio-showcase { grid-template-columns: 1fr; }
+        .trio-visual { min-height: 0; aspect-ratio: 16 / 10; }
+      }
+      @media (max-width: 600px) {
+        .trio-section { padding: 60px 16px; }
+        .trio-visual { aspect-ratio: 1 / .82; padding: 18px; }
+        .trio-content { padding: 26px 20px 22px; }
+        .trio-content h2 { font-size: 1.9rem; }
+        .trio-products li { grid-template-columns: 34px minmax(0, 1fr) auto; gap: 9px; }
+        .trio-icon { width: 32px; height: 32px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trio-visual img, .trio-cta { transition: none; }
+        .trio-showcase:hover .trio-visual img, .trio-cta:hover { transform: none; }
+      }
+      .trio-section { background: linear-gradient(180deg, #edf2f7 0%, #e7edf3 100%); }
+      .trio-showcase { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); border-color: #d7e0e9; background: #101b2b; box-shadow: 0 24px 64px rgba(15, 23, 42, .17); }
+      .trio-visual { padding: 0; aspect-ratio: 1; background: #101b2b; }
+      .trio-visual img { max-height: none; }
+      .trio-content { padding: 48px; background: linear-gradient(145deg, #16263b 0%, #0c1625 100%); }
+      .trio-content .section-eyebrow { margin-bottom: 18px; border-color: rgba(217, 185, 107, .38); background: rgba(217, 185, 107, .08); color: #e8ce8f; }
+      .trio-content h2 { margin-bottom: 13px; color: #f8fafc; font-size: 2.65rem; line-height: 1.05; }
+      .trio-content .trio-intro { max-width: 42ch; margin-bottom: 22px; color: #bdc8d7; }
+      .trio-content .trio-products { border-color: rgba(255, 255, 255, .14); }
+      .trio-content .trio-products li { padding: 14px 0; border-color: rgba(255, 255, 255, .14); }
+      .trio-content .trio-icon { border: 1px solid rgba(217, 185, 107, .35); background: rgba(217, 185, 107, .07); color: #e4c875; }
+      .trio-content .trio-products li:first-child .trio-icon { border-color: rgba(230, 130, 130, .36); background: rgba(190, 50, 60, .12); color: #f0a2a0; }
+      .trio-content .trio-products li:nth-child(2) .trio-icon { border-color: rgba(99, 190, 153, .34); background: rgba(16, 130, 94, .12); color: #8bd0af; }
+      .trio-content .trio-product-copy small { color: #d9bd75; letter-spacing: .11em; }
+      .trio-content .trio-product-copy a { color: #f4f6f9; font-size: .84rem; }
+      .trio-content .trio-product-copy a:hover { color: #f1d890; }
+      .trio-content .trio-product-price { color: #d7deea; }
+      .trio-content .trio-total { padding: 18px 0 16px; }
+      .trio-content .trio-total span { color: #bdc8d7; }
+      .trio-content .trio-total strong { color: #f0d78e; font-size: 1.72rem; }
+      .trio-content .trio-cta { min-height: 50px; border-color: #e0c16e; background: #e0c16e; color: #172234; font-weight: 800; }
+      .trio-content .trio-cta:hover { border-color: #f0d58e; background: #f0d58e; box-shadow: 0 8px 20px rgba(0, 0, 0, .2); color: #111827; }
+      .trio-content .trio-cta:focus-visible { outline-color: rgba(240, 213, 142, .42); }
+      .trio-content .trio-note { color: #aeb9c9; }
+      @media (max-width: 900px) {
+        .trio-showcase { grid-template-columns: 1fr; }
+        .trio-visual { min-height: 0; aspect-ratio: 1; }
+      }
+      @media (max-width: 600px) {
+        .trio-visual { aspect-ratio: 1; }
+        .trio-content { padding: 30px 20px 24px; }
+        .trio-content h2 { font-size: 2rem; }
+      }
       .compare-section {
         padding: 88px 24px;
         background: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
@@ -4475,6 +4551,41 @@
         <a href="/shop" class="btn-outline"
           >View All Products <i class="fa-solid fa-arrow-right"></i
         ></a>
+      </div>
+    </section>
+
+    <section class="trio-section" id="heart-immunity-sleep" aria-labelledby="trio-title">
+      <div class="trio-wrap">
+        <div class="trio-showcase">
+          <div class="trio-visual">
+            <img src="products/combo.png" alt="Aiva Wellness Heart, Immunity and Sleep trio" loading="lazy" decoding="async" />
+          </div>
+          <div class="trio-content">
+            <span class="section-eyebrow"><i class="fa-solid fa-heart-pulse"></i> The wellness trio</span>
+            <h2 id="trio-title">Heart, Immunity &amp; Sleep</h2>
+            <p class="trio-intro">Three focused formulas brought together in one simple wellness pairing.</p>
+            <ul class="trio-products" aria-label="Products in the Heart, Immunity and Sleep trio">
+              <li>
+                <span class="trio-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></span>
+                <span class="trio-product-copy"><small>Heart</small><a href="/products/nattokinase200">Nattokinase Plus 200 mg</a></span>
+                <span class="trio-product-price">₹1,299</span>
+              </li>
+              <li>
+                <span class="trio-icon" aria-hidden="true"><i class="fa-solid fa-shield-heart"></i></span>
+                <span class="trio-product-copy"><small>Immunity</small><a href="/products/dailyvitals">Daily Vitals for Adults 18+</a></span>
+                <span class="trio-product-price">₹1,199</span>
+              </li>
+              <li>
+                <span class="trio-icon" aria-hidden="true"><i class="fa-solid fa-moon"></i></span>
+                <span class="trio-product-copy"><small>Sleep</small><a href="/products/magnesium-complex-5-in-1">Magnesium Complex 5-in-1</a></span>
+                <span class="trio-product-price">₹1,299</span>
+              </li>
+            </ul>
+            <div class="trio-total"><span>Combined listed price</span><strong>₹3,797</strong></div>
+            <a class="trio-cta" href="https://wa.me/917807751711?text=Hi%20Aiva%20Wellness%2C%20please%20confirm%20availability%20and%20current%20price%20for%20the%20Heart%2C%20Immunity%20%26%20Sleep%20trio%20with%20Nattokinase%20Plus%20200%20mg." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Enquire about this trio</a>
+            <p class="trio-note">Price is the sum of the three current individual listings; it is not a bundle discount. Confirm availability with our team.</p>
+          </div>
+        </div>
       </div>
     </section>
 
