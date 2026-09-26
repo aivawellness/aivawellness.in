@@ -1368,8 +1368,12 @@
         font-size: .78rem;
         font-weight: 700;
         cursor: pointer;
+        transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
       }
       .compare-tab[aria-selected="true"] { color: var(--white); background: var(--blue); border-color: var(--blue); }
+      .compare-tab:hover { color: var(--blue); border-color: var(--blue); background: #eff6ff; transform: translateY(-1px); }
+      .compare-tab[aria-selected="true"]:hover { color: var(--white); background: #1e40af; border-color: #1e40af; }
+      .compare-tab:focus-visible { outline: 3px solid rgba(29, 78, 216, .3); outline-offset: 3px; }
       .compare-panel { overflow-x: auto; background: var(--white); border: 1px solid var(--border); }
       .compare-panel[hidden] { display: none; }
       .compare-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
@@ -4469,54 +4473,94 @@
       </div>
     </section>
 
-    <!-- PRODUCT COMPARISON -->
-    <section class="compare-section" id="compare-products" aria-labelledby="compare-title">
-      <div class="compare-wrap">
-        <div class="section-header reveal">
-          <span class="section-eyebrow"><i class="fa-solid fa-scale-balanced"></i> Choose with confidence</span>
-          <h2 id="compare-title">Compare your options</h2>
-          <p>See the practical differences before you visit a product page.</p>
-        </div>
-        <div class="compare-tabs" role="tablist" aria-label="Product comparisons">
-          <button class="compare-tab" id="nattokinase-tab" type="button" role="tab" aria-selected="true" aria-controls="nattokinase-panel">Nattokinase 100 vs 200 mg</button>
-          <button class="compare-tab" id="daily-vitals-tab" type="button" role="tab" aria-selected="false" aria-controls="daily-vitals-panel" tabindex="-1">Daily Vitals variants</button>
-          <button class="compare-tab" id="core-products-tab" type="button" role="tab" aria-selected="false" aria-controls="core-products-panel" tabindex="-1">Everyday wellness</button>
-        </div>
-        <div class="compare-panel" id="nattokinase-panel" role="tabpanel" aria-labelledby="nattokinase-tab">
-          <table class="compare-table">
-            <caption class="sr-only">Comparison of Nattokinase 100 mg and Nattokinase Plus 200 mg</caption>
-            <thead><tr><th scope="col">Consider</th><th scope="col">Nattokinase 100 mg</th><th scope="col">Nattokinase Plus 200 mg</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Best starting point</th><td data-label="100 mg">A lower-strength option for a simpler routine.</td><td data-label="200 mg">A higher-strength option for shoppers seeking more nattokinase per serving.</td></tr>
-              <tr><th scope="row">Choose this when</th><td data-label="100 mg">You are new to nattokinase or prefer a lower daily amount.</td><td data-label="200 mg">You already know nattokinase fits your routine and want the higher strength.</td></tr>
-              <tr><th scope="row">Details</th><td data-label="100 mg"><a class="compare-link" href="/products/nattokinase100">View 100 mg product</a></td><td data-label="200 mg"><a class="compare-link" href="/products/nattokinase200">View 200 mg product</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="compare-panel" id="daily-vitals-panel" role="tabpanel" aria-labelledby="daily-vitals-tab" hidden>
-          <table class="compare-table">
-            <caption class="sr-only">Comparison of Daily Vitals adult, men 40 plus, and women 40 plus formulas</caption>
-            <thead><tr><th scope="col">Consider</th><th scope="col">Adults 18+</th><th scope="col">Men 40+</th><th scope="col">Women 40+</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Best fit</th><td data-label="Adults 18+">General daily nutritional support.</td><td data-label="Men 40+">Focused support for men's everyday vitality.</td><td data-label="Women 40+">Focused support for women's everyday vitality.</td></tr>
-              <tr><th scope="row">Choose this when</th><td data-label="Adults 18+">You want a broad everyday formula.</td><td data-label="Men 40+">You prefer a formula tailored to men 40+.</td><td data-label="Women 40+">You prefer a formula tailored to women 40+.</td></tr>
-              <tr><th scope="row">Details</th><td data-label="Adults 18+"><a class="compare-link" href="/products/dailyvitals">View Adults 18+</a></td><td data-label="Men 40+"><a class="compare-link" href="/products/dailyvitalsmen">View Men 40+</a></td><td data-label="Women 40+"><a class="compare-link" href="/products/dailyvitalswomen">View Women 40+</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="compare-panel" id="core-products-panel" role="tabpanel" aria-labelledby="core-products-tab" hidden>
-          <table class="compare-table">
-            <caption class="sr-only">Comparison of Magnesium Complex, Omega-3 Fish Oil, and Vitamin D3</caption>
-            <thead><tr><th scope="col">Consider</th><th scope="col">Magnesium Complex</th><th scope="col">Omega-3 Fish Oil</th><th scope="col">Vitamin D3</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Best fit</th><td data-label="Magnesium Complex">Sleep, relaxation, and everyday muscle support.</td><td data-label="Omega-3 Fish Oil">Heart, brain, eye, and joint wellness support.</td><td data-label="Vitamin D3">Bone health, calcium absorption, and immunity support.</td></tr>
-              <tr><th scope="row">Choose this when</th><td data-label="Magnesium Complex">You want a five-form magnesium blend in your routine.</td><td data-label="Omega-3 Fish Oil">You want EPA and DHA in a daily softgel.</td><td data-label="Vitamin D3">You are looking for a high-strength vitamin D3 formula.</td></tr>
-              <tr><th scope="row">Details</th><td data-label="Magnesium Complex"><a class="compare-link" href="/products/magnesium-complex-5-in-1">View Magnesium Complex</a></td><td data-label="Omega-3 Fish Oil"><a class="compare-link" href="/products/omega3fishoil">View Omega-3 Fish Oil</a></td><td data-label="Vitamin D3"><a class="compare-link" href="/products/vitamind3">View Vitamin D3</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+    <!-- PRODUCT COMPARISON - COMPLETE -->
+<section class="compare-section" id="compare-products" aria-labelledby="compare-title">
+  <div class="compare-wrap">
+    <div class="section-header reveal">
+      <span class="section-eyebrow"><i class="fa-solid fa-scale-balanced"></i> Choose with confidence</span>
+      <h2 id="compare-title">Compare your options</h2>
+      <p>See the practical differences before you visit a product page.</p>
+    </div>
+
+    <div class="compare-tabs" role="tablist" aria-label="Product comparisons">
+      <button class="compare-tab active" id="nattokinase-tab" type="button" role="tab" aria-selected="true" aria-controls="nattokinase-panel">Nattokinase 100 vs 200 mg</button>
+      <button class="compare-tab" id="daily-vitals-tab" type="button" role="tab" aria-selected="false" aria-controls="daily-vitals-panel" tabindex="-1">Daily Vitals variants</button>
+      <button class="compare-tab" id="core-products-tab" type="button" role="tab" aria-selected="false" aria-controls="core-products-panel" tabindex="-1">Everyday wellness</button>
+    </div>
+
+    <!-- PANEL 1: NATTOKINASE -->
+    <div class="compare-panel active" id="nattokinase-panel" role="tabpanel" aria-labelledby="nattokinase-tab">
+      <table class="compare-table">
+        <caption class="sr-only">Comparison of Nattokinase 100 mg and Nattokinase Plus 200 mg</caption>
+        <thead><tr><th scope="col">Consider</th><th scope="col">Nattokinase 100 mg</th><th scope="col">Nattokinase Plus 200 mg</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Strength per serving</th><td data-label="100 mg"><strong>100 mg</strong> Nattokinase</td><td data-label="200 mg"><strong>200 mg</strong> Nattokinase</td></tr>
+          <tr><th scope="row">Potency (FU)</th><td data-label="100 mg">2,000 FU</td><td data-label="200 mg">4,000 FU - High Strength</td></tr>
+          <tr><th scope="row">Count & Supply</th><td data-label="100 mg">60 vegan capsules / 60-day supply</td><td data-label="200 mg">30 vegan capsules / 30-day supply</td></tr>
+          <tr><th scope="row">Form</th><td data-label="100 mg">Vegan capsule, Non-GMO</td><td data-label="200 mg">Vegan capsule, Non-GMO</td></tr>
+          <tr><th scope="row">Best for</th><td data-label="100 mg"><span class="compare-badge">First-time users</span> Daily circulation support</td><td data-label="200 mg"><span class="compare-badge">Experienced users</span> Higher strength support</td></tr>
+          <tr><th scope="row">Supports</th><td data-label="100 mg">Healthy circulation & cardiovascular wellness</td><td data-label="200 mg">Healthy circulation & cardiovascular wellness</td></tr>
+          <tr><th scope="row">Purity</th><td data-label="100 mg">No fillers, No binders, 100% Vegan</td><td data-label="200 mg">No fillers, No binders, 100% Vegan</td></tr>
+          <tr><th scope="row">Choose when</th><td data-label="100 mg">You are new to nattokinase or prefer a lower daily amount.</td><td data-label="200 mg">You already know nattokinase fits your routine and want double strength per serving.</td></tr>
+          <tr><th scope="row">Details</th><td data-label="100 mg"><a class="compare-link" href="/products/nattokinase100">View 100 mg product →</a></td><td data-label="200 mg"><a class="compare-link" href="/products/nattokinase200">View 200 mg product →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PANEL 2: DAILY VITALS -->
+    <div class="compare-panel" id="daily-vitals-panel" role="tabpanel" aria-labelledby="daily-vitals-tab" hidden>
+      <table class="compare-table">
+        <caption class="sr-only">Comparison of Daily Vitals adult, men 40 plus, and women 40 plus formulas</caption>
+        <thead><tr><th scope="col">Consider</th><th scope="col">Adults 18+</th><th scope="col">Men 40+</th><th scope="col">Women 40+</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Best fit</th><td data-label="Adults 18+">General daily nutritional support</td><td data-label="Men 40+">Focused support for men's vitality</td><td data-label="Women 40+">Focused support for women's vitality</td></tr>
+          <tr><th scope="row">Count & Dosage</th><td data-label="Adults 18+">60 capsules / 1 daily</td><td data-label="Men 40+">60 capsules / 1 capsule daily</td><td data-label="Women 40+">60 capsules / 1 daily</td></tr>
+          <tr><th scope="row">Form</th><td data-label="Adults 18+">Veg capsule</td><td data-label="Men 40+">Gelatin capsule</td><td data-label="Women 40+">Veg capsule</td></tr>
+          <tr><th scope="row">Key Focus</th><td data-label="Adults 18+">Energy, immunity, overall vitality</td><td data-label="Men 40+">Energy, stamina, heart & prostate health</td><td data-label="Women 40+">Bone health, energy, hormonal balance</td></tr>
+          <tr><th scope="row">Supports</th><td data-label="Adults 18+">Daily nutrition gap & immune resilience</td><td data-label="Men 40+">Everyday performance & vitality after 40</td><td data-label="Women 40+">Everyday wellness & vitality after 40</td></tr>
+          <tr><th scope="row">Choose when</th><td data-label="Adults 18+">You want a broad everyday formula for 18+</td><td data-label="Men 40+">You prefer a formula tailored to men 40+</td><td data-label="Women 40+">You prefer a formula tailored to women 40+</td></tr>
+          <tr><th scope="row">Details</th><td data-label="Adults 18+"><a class="compare-link" href="/products/dailyvitals">View Adults 18+ →</a></td><td data-label="Men 40+"><a class="compare-link" href="/products/dailyvitalsmen">View Men 40+ →</a></td><td data-label="Women 40+"><a class="compare-link" href="/products/dailyvitalswomen">View Women 40+ →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PANEL 3: EVERYDAY WELLNESS -->
+    <div class="compare-panel" id="core-products-panel" role="tabpanel" aria-labelledby="core-products-tab" hidden>
+      <table class="compare-table">
+        <caption class="sr-only">Comparison of Magnesium Complex, Omega-3 Fish Oil, and Vitamin D3</caption>
+        <thead><tr><th scope="col">Consider</th><th scope="col">Magnesium Complex 5-in-1</th><th scope="col">Omega-3 Fish Oil</th><th scope="col">Vitamin D3 60,000 IU</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Best fit</th><td data-label="Magnesium">Sleep, relaxation & muscle support</td><td data-label="Omega-3">Heart, brain, eye & joint wellness</td><td data-label="D3">Bone health & immunity support</td></tr>
+          <tr><th scope="row">Strength per serving</th><td data-label="Magnesium">350 mg per 2 capsules (5 forms blend)</td><td data-label="Omega-3">1000 mg Fish Oil per softgel</td><td data-label="D3">60,000 IU Cholecalciferol IP per tablet</td></tr>
+          <tr><th scope="row">Active Blend</th><td data-label="Magnesium">Aspartate + Citrate + Glycinate + Gluconate + Oxide</td><td data-label="Omega-3">EPA 180 mg + DHA 120 mg + Vitamin E 10 mg</td><td data-label="D3">Vitamin D3 IP - High potency weekly dose</td></tr>
+          <tr><th scope="row">Count & Dosage</th><td data-label="Magnesium">60 vegan caps / 2 daily / Evening routine</td><td data-label="Omega-3">60 softgels / 1 daily with meal</td><td data-label="D3">4 film-coated tabs / Weekly as directed by doctor</td></tr>
+          <tr><th scope="row">Form</th><td data-label="Magnesium">Vegan capsule</td><td data-label="Omega-3">Softgel</td><td data-label="D3">Film-coated tablet</td></tr>
+          <tr><th scope="row">Purity</th><td data-label="Magnesium">No unnecessary fillers, Clean formula</td><td data-label="Omega-3">No fishy aftertaste, Purified</td><td data-label="D3">No fillers, Lab tested</td></tr>
+          <tr><th scope="row">Choose when</th><td data-label="Magnesium">You want a five-form magnesium blend for night routine</td><td data-label="Omega-3">You want EPA & DHA in a daily softgel</td><td data-label="D3">You need high-strength D3 for bone & calcium absorption</td></tr>
+          <tr><th scope="row">Details</th><td data-label="Magnesium"><a class="compare-link" href="/products/magnesium-complex-5-in-1">View Magnesium Complex →</a></td><td data-label="Omega-3"><a class="compare-link" href="/products/omega3fishoil">View Omega-3 Fish Oil →</a></td><td data-label="D3"><a class="compare-link" href="/products/vitamind3">View Vitamin D3 →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+.compare-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:#eef6f0;color:#1a5d34;padding:4px 8px;border-radius:20px;margin-bottom:4px}
+.compare-table td strong{font-weight:700}
+.compare-panel.active{display:block}
+</style>
+
+<script>
+document.querySelectorAll('.compare-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    const target = document.getElementById(tab.getAttribute('aria-controls'));
+    document.querySelectorAll('.compare-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');t.tabIndex=-1});
+    document.querySelectorAll('.compare-panel').forEach(p=>{p.hidden=true;p.classList.remove('active')});
+    tab.classList.add('active');tab.setAttribute('aria-selected','true');tab.tabIndex=0;
+    target.hidden=false;target.classList.add('active');
+  });
+});
+</script>
 
     <!-- DEAL OF THE DAY -->
     <section class="deal-section" id="deal-of-the-day">
