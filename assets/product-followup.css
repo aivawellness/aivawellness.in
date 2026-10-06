@@ -46,7 +46,7 @@
 .product-blog-card::before { content: ""; position: absolute; z-index: -1; inset: 0 auto 0 0; width: 4px; background: linear-gradient(180deg, #bf9b55 0%, #2563eb 76%); }
 .product-blog-card::after { content: ""; position: absolute; z-index: -1; width: 210px; height: 210px; right: -95px; bottom: -130px; border: 1px solid rgba(37,99,235,.1); border-radius: 50%; box-shadow: 0 0 0 22px rgba(37,99,235,.025), 0 0 0 44px rgba(37,99,235,.02); pointer-events: none; }
 .product-blog-card:hover { transform: translateY(-3px); border-color: rgba(37,99,235,.24); box-shadow: 0 24px 56px rgba(15,23,42,.105), 0 5px 14px rgba(37,99,235,.055); }
-.product-blog-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; max-height: 236px; object-fit: cover; object-position: center; display: block; border: 1px solid rgba(15,23,42,.08); border-radius: 19px; background: #eef3f9; box-shadow: 0 12px 28px rgba(15,23,42,.13), 0 2px 5px rgba(15,23,42,.06); transition: transform .5s ease, box-shadow .35s ease; }
+.product-blog-card img { width: 100%; height: auto; aspect-ratio: auto; max-height: none; object-fit: contain; object-position: center; display: block; border: 1px solid rgba(15,23,42,.08); border-radius: 4px; background: #eef3f9; box-shadow: 0 12px 28px rgba(15,23,42,.13), 0 2px 5px rgba(15,23,42,.06); transition: transform .5s ease, box-shadow .35s ease; }
 .product-blog-card:hover img { transform: scale(1.015); box-shadow: 0 16px 34px rgba(15,23,42,.16), 0 3px 8px rgba(15,23,42,.07); }
 .product-blog-card > div { position: relative; z-index: 1; width: 100%; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
 .product-blog-card > div:last-child { display: flex; grid-template-columns: none; }
@@ -63,7 +63,7 @@
 .product-blog-card a:active { transform: translateY(0); box-shadow: 0 4px 10px rgba(29,78,216,.2); }
 @media (max-width: 760px) {
   .product-blog-card { width: calc(100% - 36px); grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 20px; border-radius: 23px; }
-  .product-blog-card img { max-height: none; aspect-ratio: 16 / 9; border-radius: 16px; }
+  .product-blog-card img { aspect-ratio: auto; border-radius: 4px; }
   .product-blog-card h3 { margin-top: 12px; font-size: clamp(1.45rem, 6vw, 1.85rem); }
   .product-blog-card p { max-width: 56ch; font-size: .93rem; }
   .product-blog-card a { min-height: 50px; margin-top: 19px; }
