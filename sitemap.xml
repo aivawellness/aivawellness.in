@@ -1,37 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://aivawellness.in/</loc></url>
-  <url><loc>https://aivawellness.in/about</loc></url>
-  <url><loc>https://aivawellness.in/blog</loc></url>
-  <url><loc>https://aivawellness.in/blogs/daily-vitals</loc></url>
-  <url><loc>https://aivawellness.in/blogs/epa-vs-dha-omega-3</loc></url>
-  <url><loc>https://aivawellness.in/blogs/essential-nutrients-men-over-40</loc></url>
-  <url><loc>https://aivawellness.in/blogs/essential-nutrients-women-over-40</loc></url>
-  <url><loc>https://aivawellness.in/blogs/essential-vitamins-adults-18-plus</loc></url>
-  <url><loc>https://aivawellness.in/blogs/magnesium-5-types-explained</loc></url>
-  <url><loc>https://aivawellness.in/blogs/magnesium-deficiency</loc></url>
-  <url><loc>https://aivawellness.in/blogs/magnesium-sleep-relaxation-wellness</loc></url>
-  <url><loc>https://aivawellness.in/blogs/nattokinase</loc></url>
-  <url><loc>https://aivawellness.in/blogs/nattokinase-100mg-vs-200mg</loc></url>
-  <url><loc>https://aivawellness.in/blogs/nattokinase-explained</loc></url>
-  <url><loc>https://aivawellness.in/blogs/nattokinase-plus-200mg-4000fu</loc></url>
-  <url><loc>https://aivawellness.in/blogs/omega-3-fish-oil</loc></url>
-  <url><loc>https://aivawellness.in/blogs/omega-3-fish-oil-buying-guide</loc></url>
-  <url><loc>https://aivawellness.in/blogs/vitamin-d3-bone-health</loc></url>
-  <url><loc>https://aivawellness.in/blogs/vitamin-d3-explained</loc></url>
-  <url><loc>https://aivawellness.in/contact</loc></url>
-  <url><loc>https://aivawellness.in/enquire</loc></url>
-  <url><loc>https://aivawellness.in/policies/privacy-policy</loc></url>
-  <url><loc>https://aivawellness.in/policies/return-policy</loc></url>
-  <url><loc>https://aivawellness.in/policies/shipping-policy</loc></url>
-  <url><loc>https://aivawellness.in/policies/terms-of-service</loc></url>
-  <url><loc>https://aivawellness.in/products/dailyvitals</loc></url>
-  <url><loc>https://aivawellness.in/products/dailyvitalsmen</loc></url>
-  <url><loc>https://aivawellness.in/products/dailyvitalswomen</loc></url>
-  <url><loc>https://aivawellness.in/products/magnesium-complex-5-in-1</loc></url>
-  <url><loc>https://aivawellness.in/products/nattokinase100</loc></url>
-  <url><loc>https://aivawellness.in/products/nattokinase200</loc></url>
-  <url><loc>https://aivawellness.in/products/omega3fishoil</loc></url>
-  <url><loc>https://aivawellness.in/products/vitamind3</loc></url>
-  <url><loc>https://aivawellness.in/shop</loc></url>
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://aivawellness.in/</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/about</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/shop</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/contact</loc>
+  </url>
+
+  <!-- Product pages -->
+  <url>
+    <loc>https://aivawellness.in/products/dailyvitals</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/products/dailyvitalsmen</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/products/dailyvitalswomen</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/products/magnesium-complex-5-in-1</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/products/nattokinase100</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/products/nattokinase200</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/products/omega3fishoil</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/products/vitamind3</loc>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://aivawellness.in/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/daily-vitals</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/epa-vs-dha-omega-3</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/essential-nutrients-men-over-40</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/essential-nutrients-women-over-40</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/essential-vitamins-adults-18-plus</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/magnesium-5-types-explained</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/magnesium-deficiency</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/magnesium-sleep-relaxation-wellness</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/nattokinase</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/nattokinase-100mg-vs-200mg</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/nattokinase-explained</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/nattokinase-plus-200mg-4000fu</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/omega-3-fish-oil</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/omega-3-fish-oil-buying-guide</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/vitamin-d3-bone-health</loc>
+  </url>
+
+  <url>
+    <loc>https://aivawellness.in/blogs/vitamin-d3-explained</loc>
+  </url>
+
 </urlset>
