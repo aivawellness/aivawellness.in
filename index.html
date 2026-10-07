@@ -3893,7 +3893,16 @@
         "alternateName": "Aiva Wellness India",
         "url": "https://aivawellness.in/",
         "logo": { "@type": "ImageObject", "url": "https://aivawellness.in/assets/aivawellness-logo-800x800.jpg" },
-        "description": "Premium quality healthcare and wellness supplements including Nattokinase and Magnesium Complex.",
+        "description": "Aiva Wellness is an Indian wellness brand based in Solan, Himachal Pradesh, creating daily nutrition and wellness supplements.",
+        "brand": { "@id": "https://aivawellness.in/#brand", "@type": "Brand", "name": "Aiva Wellness" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vill. Loharon, P.O. Ghatti",
+          "addressLocality": "Solan",
+          "addressRegion": "Himachal Pradesh",
+          "postalCode": "173211",
+          "addressCountry": "IN"
+        },
         "sameAs": [
           "https://www.instagram.com/aivawellness.in/?hl=en",
           "https://www.facebook.com/profile.php?id=61591507665329",
@@ -3908,11 +3917,23 @@
         }
       },
       {
+        "@type": "Brand",
+        "@id": "https://aivawellness.in/#brand",
+        "name": "Aiva Wellness",
+        "logo": "https://aivawellness.in/assets/logo.png",
+        "description": "Premium nutritional supplements and wellness products for everyday health routines."
+      },
+      {
         "@type": "WebSite",
         "@id": "https://aivawellness.in/#website",
         "name": "Aiva Wellness",
         "url": "https://aivawellness.in/",
-        "publisher": { "@id": "https://aivawellness.in/#organization" }
+        "publisher": { "@id": "https://aivawellness.in/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://aivawellness.in/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "FAQPage",

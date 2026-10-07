@@ -2284,12 +2284,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Brand",
-    "name": "Aiva Wellness",
-    "alternateName": "Aiva Wellness India",
-    "logo": "https://aivawellness.in/assets/logo.png",
-    "description": "Premium healthcare and wellness supplements for daily wellness. High-quality, clean formulation.",
-    "slogan": "Premium formulas for everyday wellness"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://aivawellness.in/#organization",
+        "name": "Aiva Wellness",
+        "alternateName": "Aiva Wellness India",
+        "url": "https://aivawellness.in/",
+        "logo": "https://aivawellness.in/assets/logo.png",
+        "description": "Aiva Wellness is an Indian wellness and nutraceutical brand based in Solan, Himachal Pradesh.",
+        "brand": { "@id": "https://aivawellness.in/#brand" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vill. Loharon, P.O. Ghatti",
+          "addressLocality": "Solan",
+          "addressRegion": "Himachal Pradesh",
+          "postalCode": "173211",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-78077-51711",
+          "contactType": "customer support",
+          "email": "info@aivawellness.in",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi"]
+        }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://aivawellness.in/#brand",
+        "name": "Aiva Wellness",
+        "alternateName": "Aiva Wellness India",
+        "logo": "https://aivawellness.in/assets/logo.png",
+        "description": "Premium health and wellness supplements for everyday nutrition and vitality.",
+        "slogan": "Premium formulas for everyday wellness"
+      }
+    ]
   }
   </script>
   </head>

@@ -112,42 +112,52 @@
       );
     </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Aiva Wellness",
-  "url": "https://aivawellness.in/",
-  "logo": "https://aivawellness.in/assets/logo.png",
-  "description": "Aiva Wellness is a premium healthcare and wellness brand offering high-quality supplements for daily wellness with clean formulation and premium ingredients.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-78077-51711",
-    "contactType": "customer service",
-    "email": "info@aivawellness.in",
-    "areaServed": "IN",
-    "availableLanguage": [
-      "en",
-      "hi"
-    ]
-  },
-  "knowsAbout": [
-    "Nutraceuticals",
-    "Dietary Supplements",
-    "Vitamins and Minerals",
-    "Magnesium Supplements",
-    "Omega-3 Supplements",
-    "Nattokinase"
-  ],
-  "sameAs": [
-    "https://www.instagram.com/aivawellness.in/?hl=en",
-    "https://www.facebook.com/profile.php?id=61591507665329",
-    "https://www.threads.com/@aivawellness.in",
-    "https://www.youtube.com/@aivawellness-in",
-    "https://x.com/aivawellness",
-    "https://www.linkedin.com/company/aivawellness"
-]
-}
-</script>
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://aivawellness.in/#organization",
+            "name": "Aiva Wellness",
+            "alternateName": "Aiva Wellness India",
+            "url": "https://aivawellness.in/",
+            "logo": "https://aivawellness.in/assets/logo.png",
+            "description": "Aiva Wellness is an Indian wellness and nutraceutical brand based in Solan, Himachal Pradesh.",
+            "brand": { "@id": "https://aivawellness.in/#brand" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Vill. Loharon, P.O. Ghatti",
+              "addressLocality": "Solan",
+              "addressRegion": "Himachal Pradesh",
+              "postalCode": "173211",
+              "addressCountry": "IN"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-78077-51711",
+              "contactType": "customer service",
+              "email": "info@aivawellness.in",
+              "areaServed": "IN",
+              "availableLanguage": ["en", "hi"]
+            },
+            "sameAs": [
+              "https://www.instagram.com/aivawellness.in/?hl=en",
+              "https://www.facebook.com/profile.php?id=61591507665329",
+              "https://x.com/aivawellness",
+              "https://www.linkedin.com/company/aivawellness"
+            ]
+          },
+          {
+            "@type": "Brand",
+            "@id": "https://aivawellness.in/#brand",
+            "name": "Aiva Wellness",
+            "alternateName": "Aiva Wellness India",
+            "logo": "https://aivawellness.in/assets/logo.png",
+            "description": "Premium wellness supplements for Indian lifestyles and daily health support."
+          }
+        ]
+      }
+    </script>
 
 
     <!-- Product schema removed from non-product 'Shop' listing pages -->
@@ -190,7 +200,7 @@
               "url": "https://aivawellness.in/products/magnesium-complex-5-in-1",
               "image": "https://aivawellness.in/products/Magnesium%20Complex.webp",
               "description": "Magnesium Complex 5-in-1 combines five magnesium forms with calcium, zinc, vitamin D3 and vitamin B6 for everyday bone, muscle and energy support.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -208,7 +218,7 @@
               "url": "https://aivawellness.in/products/nattokinase100",
               "image": "https://aivawellness.in/products/Nattokinase%20Carton%20%20final%203d.webp",
               "description": "Aiva Wellness Nattokinase 100 mg provides 2,000 FU per serving in a daily capsule designed to support healthy circulation and cardiovascular wellness.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -226,7 +236,7 @@
               "url": "https://aivawellness.in/products/nattokinase200",
               "image": "https://aivawellness.in/products/Nattokinase%20Carton.webp",
               "description": "Aiva Wellness Nattokinase Plus 200 mg provides 4,000 FU per capsule as a high-potency formula for healthy circulation and cardiovascular wellness.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -244,7 +254,7 @@
               "url": "https://aivawellness.in/products/dailyvitals",
               "image": "https://aivawellness.in/products/reefit%20forte%20c%20new%20size.webp",
               "description": "Daily Vitals for Adults 18+ is a multivitamin, multimineral, zinc and omega-3 formula for daily energy, immune wellness and overall vitality.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -262,7 +272,7 @@
               "url": "https://aivawellness.in/products/dailyvitalsmen",
               "image": "https://aivawellness.in/products/all%20images/men-1.png",
               "description": "Daily Vitals for Men 40+ is a multivitamin and multimineral formula with amino acids for everyday energy, immune wellness and recovery after 40.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -280,7 +290,7 @@
               "url": "https://aivawellness.in/products/dailyvitalswomen",
               "image": "https://aivawellness.in/products/all%20images/women-1.png",
               "description": "Daily Vitals for Women 40+ is a multivitamin and multimineral formula with amino acids and ginseng for bone strength, energy and daily vitality.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -298,7 +308,7 @@
               "url": "https://aivawellness.in/products/vitamind3",
               "image": "https://aivawellness.in/products/all%20images/vitamind3-1.png",
               "description": "Aiva Wellness Vitamin D3 60,000 IU contains Cholecalciferol IP in a film-coated tablet for medically guided bone, calcium absorption and immune support.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -316,7 +326,7 @@
               "url": "https://aivawellness.in/products/omega3fishoil",
               "image": "https://aivawellness.in/products/all%20images/omega-1.png",
               "description": "Aiva Wellness Omega-3 Fish Oil provides 1,000 mg fish oil with EPA, DHA and vitamin E to support heart, brain, eye and joint wellness.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -334,7 +344,7 @@
               "url": "https://aivawellness.in/products/wheyprotein",
               "image": "https://aivawellness.in/images/protein/whey%20protein.png",
               "description": "Aiva Wellness Whey Protein is a 2 kg sports nutrition formula for convenient protein intake, recovery and everyday strength.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -352,7 +362,7 @@
               "url": "https://aivawellness.in/products/plantprotein",
               "image": "https://aivawellness.in/images/protein/protein.png",
               "description": "Aiva Wellness Plant Protein is a 1 kg plant-based sports nutrition formula for convenient protein intake, recovery and active routines.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
@@ -370,7 +380,7 @@
               "url": "https://aivawellness.in/products/yeastprotein",
               "image": "https://aivawellness.in/images/protein/whey1.png",
               "description": "Aiva Wellness Yeast Protein is a 1 kg sports nutrition formula designed for convenient protein intake, recovery and everyday strength.",
-              "brand": { "@type": "Brand", "name": "Aiva Wellness" },
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "INR",
