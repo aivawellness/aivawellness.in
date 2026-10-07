@@ -28,24 +28,34 @@
     <link rel="preload" as="image" href="../images/protein/whey%20protein.png" />
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Whey Protein",
-        "image": ["https://aivawellness.in/images/protein/whey%20protein.png", "https://aivawellness.in/images/protein/wheyprotein2.jpg", "https://aivawellness.in/images/protein/wheyprotein3.jpg"],
-        "description": "Premium whey protein support for recovery and everyday strength.",
-        "sku": "AIVA-WHEY-2KG",
-        "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
-        "category": "Sports Nutrition",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "INR",
-          "price": "3499",
-          "availability": "https://schema.org/InStock",
-          "itemCondition": "https://schema.org/NewCondition"
-        }
-      }
-    </script>
+{
+    "@context":  "https://schema.org",
+    "@type":  "Product",
+    "name":  "Whey Protein",
+    "image":  [
+                  "https://aivawellness.in/images/protein/whey%20protein.png",
+                  "https://aivawellness.in/images/protein/wheyprotein2.jpg",
+                  "https://aivawellness.in/images/protein/wheyprotein3.jpg"
+              ],
+    "description":  "Premium whey protein support for recovery and everyday strength.",
+    "brand":  {
+                  "@type":  "Brand",
+                  "@id":  "https://aivawellness.in/#brand",
+                  "name":  "Aiva Wellness"
+              },
+    "category":  "Sports Nutrition",
+    "offers":  {
+                   "@type":  "Offer",
+                   "priceCurrency":  "INR",
+                   "price":  "3499",
+                   "availability":  "https://schema.org/InStock",
+                   "itemCondition":  "https://schema.org/NewCondition",
+                   "seller":  {
+                                  "@id":  "https://aivawellness.in/#organization"
+                              }
+               }
+}
+</script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -58,19 +68,61 @@
       }
     </script>
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "How can I order Whey Protein?", "acceptedAnswer": { "@type": "Answer", "text": "Use the enquiry form or WhatsApp link on this page and the Aiva Wellness team will help you place your order." } },
-          { "@type": "Question", "name": "What is the pack size?", "acceptedAnswer": { "@type": "Answer", "text": "The planned pack size is 2 kg." } },
-          { "@type": "Question", "name": "How can I contact the team?", "acceptedAnswer": { "@type": "Answer", "text": "Use the enquiry form or message Aiva Wellness directly on WhatsApp for product and order support." } },
-          { "@type": "Question", "name": "How should I use it?", "acceptedAnswer": { "@type": "Answer", "text": "Follow the serving and preparation directions printed on the final product pack. A balanced diet and personal requirements should guide your routine." } },
-          { "@type": "Question", "name": "Will it be delivered across India?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, pan-India delivery is planned. Delivery timelines and charges are covered in our Shipping Policy." } },
-          { "@type": "Question", "name": "Where can I find ingredient and nutrition details?", "acceptedAnswer": { "@type": "Answer", "text": "Ingredient, nutrition and serving information is available on this page and on the product pack." } }
-        ]
-      }
-    </script>
+{
+    "@context":  "https://schema.org",
+    "@type":  "FAQPage",
+    "mainEntity":  [
+                       {
+                           "@type":  "Question",
+                           "name":  "How can I order Whey Protein?",
+                           "acceptedAnswer":  {
+                                                  "@type":  "Answer",
+                                                  "text":  "Use the enquiry form or WhatsApp link on this page and the Aiva Wellness team will help you place your order."
+                                              }
+                       },
+                       {
+                           "@type":  "Question",
+                           "name":  "What is the pack size?",
+                           "acceptedAnswer":  {
+                                                  "@type":  "Answer",
+                                                  "text":  "The planned pack size is 2 kg, as shown in the product specifications."
+                                              }
+                       },
+                       {
+                           "@type":  "Question",
+                           "name":  "How can I contact the team?",
+                           "acceptedAnswer":  {
+                                                  "@type":  "Answer",
+                                                  "text":  "Use the enquiry form or message Aiva Wellness directly on WhatsApp for product and order support."
+                                              }
+                       },
+                       {
+                           "@type":  "Question",
+                           "name":  "How should I use it?",
+                           "acceptedAnswer":  {
+                                                  "@type":  "Answer",
+                                                  "text":  "Follow the serving and preparation directions printed on the final product pack. A balanced diet and personal requirements should guide your routine."
+                                              }
+                       },
+                       {
+                           "@type":  "Question",
+                           "name":  "Will it be delivered across India?",
+                           "acceptedAnswer":  {
+                                                  "@type":  "Answer",
+                                                  "text":  "Yes, pan-India delivery is planned. Delivery timelines and charges are covered in our Shipping Policy."
+                                              }
+                       },
+                       {
+                           "@type":  "Question",
+                           "name":  "Where can I find ingredient and nutrition details?",
+                           "acceptedAnswer":  {
+                                                  "@type":  "Answer",
+                                                  "text":  "Ingredient, nutrition and serving information is available on this page and on the product pack."
+                                              }
+                       }
+                   ]
+}
+</script>
 
     <style>
       :root {
@@ -541,7 +593,19 @@
     </style>
     <link rel="stylesheet" href="../assets/similar-products.css" />
     <script src="../assets/similar-products.js" defer></script>
-  </head>
+
+    <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "WebPage",
+    "@id":  "https://aivawellness.in/products/wheyprotein",
+    "url":  "https://aivawellness.in/products/wheyprotein",
+    "isPartOf":  {
+                     "@id":  "https://aivawellness.in/#website"
+                 }
+}
+    </script>
+</head>
   <body>
     <header class="header">
       <nav class="nav" aria-label="Primary navigation">
