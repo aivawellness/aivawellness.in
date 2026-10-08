@@ -21,6 +21,7 @@
   .image-modal-inner .image-modal-close { top: 6px; right: 6px; }
 }
 
+.rail-section { margin-top: 40px; }
 .rail-section .rail-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
 .rail-section .rail-head h2 { font-size: clamp(2.1rem, 4vw, 3.4rem); }
 .rail-section .rail-head p { color: var(--muted); margin: 10px 0 0; max-width: 46ch; line-height: 1.7; }
