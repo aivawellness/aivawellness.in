@@ -45,8 +45,8 @@
 
   const cardMarkup = (product) => `
         <article class="pcard" data-category="${product.category}">
-          <div class="pcard-media"><span class="tag">${product.tag}</span><img src="${product.main}" alt="Aiva Wellness ${product.name}" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" /><img class="img-hover" src="${product.hover}" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()" /><i class="fa-solid ${product.icon}" aria-hidden="true"></i></div>
-          <div class="pcard-body"><h3>${product.name}</h3><p>${product.blurb}</p><a class="pcard-link" href="/products/${product.file}">View product <i class="fa-solid fa-arrow-right"></i></a></div>
+          <div class="pcard-media"><img src="${product.main}" alt="Aiva Wellness ${product.name}" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" /><img class="img-hover" src="${product.hover}" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()" /><i class="fa-solid ${product.icon}" aria-hidden="true"></i></div>
+          <div class="pcard-body"><span class="tag">${product.tag}</span><h3>${product.name}</h3><p>${product.blurb}</p><a class="pcard-link" href="/products/${product.file}">View product <i class="fa-solid fa-arrow-right"></i></a></div>
         </article>`;
 
   if (!currentSection) {
