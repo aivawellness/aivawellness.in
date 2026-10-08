@@ -6,21 +6,21 @@
     <meta charset="UTF-8" />
     <meta name="p:domain_verify" content="b231daff23568a121390a2b12890ac0"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <title>Whey Protein 2 kg | Recovery Nutrition | Aiva Wellness</title>
+    <title>Whey Protein 500 g &amp; 1 kg | Aiva Wellness</title>
     <link rel="canonical" href="https://aivawellness.in/products/wheyprotein" />
-    <meta name="description" content="Aiva Wellness Whey Protein is a 2 kg chocolate-flavour whey protein blend. Contains milk and milk products; check the pack for serving and nutrition information." />
+    <meta name="description" content="Aiva Wellness Whey Protein is available in 500 g and 1 kg packs, in Chocolate and Vanilla flavours. Contains milk and milk products." />
     <meta name="keywords" content="whey protein, protein powder India, Aiva Wellness whey protein, recovery nutrition" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#102a43" />
     <meta property="og:type" content="product" />
     <meta property="og:site_name" content="Aiva Wellness" />
     <meta property="og:title" content="Whey Protein | Aiva Wellness" />
-    <meta property="og:description" content="Explore Aiva Wellness Whey Protein, a 2 kg chocolate-flavour blend. Contains milk and milk products." />
+    <meta property="og:description" content="Explore Aiva Wellness Whey Protein in 500 g and 1 kg packs, with Chocolate and Vanilla flavours." />
     <meta property="og:image" content="https://aivawellness.in/images/protein/whey%20protein.png" />
     <meta property="og:url" content="https://aivawellness.in/products/wheyprotein" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Whey Protein 2 kg | Aiva Wellness" />
-    <meta name="twitter:description" content="Aiva Wellness Whey Protein is a 2 kg formula created for recovery and everyday strength." />
+    <meta name="twitter:title" content="Whey Protein 500 g &amp; 1 kg | Aiva Wellness" />
+    <meta name="twitter:description" content="Aiva Wellness Whey Protein is available in 500 g and 1 kg packs, with Chocolate and Vanilla flavours." />
     <meta name="twitter:image" content="https://aivawellness.in/images/protein/whey%20protein.png" />
 
     <link rel="icon" href="/assets/logo.png" type="image/png" />
@@ -40,7 +40,7 @@
                   "https://aivawellness.in/images/protein/wheyprotein2.jpg",
                   "https://aivawellness.in/images/protein/wheyprotein3.jpg"
               ],
-    "description":  "A 2 kg chocolate-flavour whey protein blend. Contains milk and milk products; see the product pack for serving and nutrition information.",
+    "description":  "Whey Protein in 500 g and 1 kg packs, available in Chocolate and Vanilla flavours. Contains milk and milk products.",
     "brand":  {
                   "@type":  "Brand",
                   "@id":  "https://aivawellness.in/#brand",
@@ -48,9 +48,11 @@
               },
     "category":  "Sports Nutrition",
     "offers":  {
-                   "@type":  "Offer",
+                   "@type":  "AggregateOffer",
                    "priceCurrency":  "INR",
-                   "price":  "3499",
+                   "lowPrice":  "1099",
+                   "highPrice":  "1999",
+                   "offerCount":  "4",
                    "availability":  "https://schema.org/InStock",
                    "itemCondition":  "https://schema.org/NewCondition",
                    "seller":  {
@@ -88,7 +90,7 @@
                            "name":  "What is the pack size?",
                            "acceptedAnswer":  {
                                                   "@type":  "Answer",
-                                                  "text":  "The pack size is 2 kg, as listed in the product specifications."
+                                                  "text":  "Choose a 500 g or 1 kg pack in Chocolate or Vanilla flavour."
                                               }
                        },
                        {
@@ -264,6 +266,11 @@
       .price-old-val { color: var(--muted); font-size: .95rem; text-decoration: line-through; }
       .discount-chip { display: inline-block; color: var(--lime-deep); background: var(--aqua); border: 1px solid rgba(37,99,235,.12); border-radius: 6px; padding: 4px 10px; font-size: .7rem; font-weight: 800; letter-spacing: .04em; }
       .tax-text { color: var(--muted); font-size: .78rem; line-height: 1.45; }
+      .variant-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 22px 0 -8px; }
+      .variant-options label { display: grid; gap: 7px; color: var(--muted); font-size: .76rem; font-weight: 700; }
+      .variant-options select { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font: inherit; font-size: .88rem; }
+      .variant-options select:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+      @media (max-width: 520px) { .variant-options { grid-template-columns: 1fr; } }
       .actions { display: flex; gap: 10px; margin: 24px 0 26px; flex-wrap: wrap; align-items: center; }
       .promise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
       .promise div { display: flex; gap: 10px; align-items: center; min-width: 0; padding: 12px 14px; background: #f1f5f9; border: 1px solid var(--line); border-radius: var(--r-sm); font-size: .76rem; color: var(--muted); line-height: 1.35; transition: background .2s, border-color .2s; }
@@ -643,10 +650,24 @@
           <div class="product-copy">
             <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Performance nutrition</span>
             <h1>Whey Protein <span class="accent">built to move.</span></h1>
-            <p class="intro">A 2 kg chocolate-flavour whey protein blend. Contains milk and milk products. Check the product pack for serving and nutrition information.</p>
+            <p class="intro">Choose a 500 g or 1 kg pack in Chocolate or Vanilla flavour. Contains milk and milk products; check the pack for serving and nutrition information.</p>
+            <div class="variant-options">
+              <label for="packSize">Pack size
+                <select id="packSize">
+                  <option value="500 g" selected>500 g</option>
+                  <option value="1 kg">1 kg</option>
+                </select>
+              </label>
+              <label for="productFlavor">Flavour
+                <select id="productFlavor">
+                  <option value="Chocolate" selected>Chocolate</option>
+                  <option value="Vanilla">Vanilla</option>
+                </select>
+              </label>
+            </div>
             <div class="price-card">
-              <div class="price-row-main"><span class="price-main-val">₹3,499</span><span class="price-old-val">₹3,999</span><span class="discount-chip">Save ₹500</span></div>
-              <div class="tax-text">2 kg pack · Inclusive of all taxes · Pan-India delivery</div>
+              <div class="price-row-main"><span class="price-main-val" id="selectedPrice">₹1,099</span></div>
+              <div class="tax-text" id="selectedPack">500 g pack · Inclusive of all taxes · Pan-India delivery</div>
             </div>
             <div class="actions" id="heroActions">
               <a class="btn-primary btn-lg" href="/enquire?product=Whey%20Protein"><i class="fa-solid fa-cart-shopping"></i> Enquire to order</a>
@@ -668,9 +689,9 @@
           </div>
           <div class="tab-panel active" id="tab-description" role="tabpanel">
             <p>Explore our <a href="/blog">wellness guides</a> for more nutrition and routine ideas.</p>
-            <div class="tab-grid"><div><h3>About Whey Protein</h3><p>Aiva Wellness Whey Protein is a chocolate-flavour whey protein blend in a 2 kg pack. Refer to the product label for serving, nutrition, ingredient and allergen information.</p><h3>Product Information</h3><table class="tab-table"><tbody><tr><td>Item Form</td><td>Powder</td></tr><tr><td>Pack Size</td><td>2 kg</td></tr><tr><td>Brand</td><td>Aiva Wellness</td></tr><tr><td>Flavour</td><td>Chocolate</td></tr><tr><td>Protein per serving</td><td>High-quality protein blend</td></tr><tr><td>Serving size</td><td>As directed on pack</td></tr><tr><td>Country of Origin</td><td>India</td></tr><tr><td>Availability</td><td>Available now</td></tr></tbody></table><div class="tab-note">Please follow the serving, storage and allergen information printed on the product pack.</div></div><div class="tab-points"><div class="tab-point"><i class="fa-solid fa-dumbbell"></i><strong>Muscle recovery</strong><span>Helps make protein part of your post-training routine.</span></div><div class="tab-point"><i class="fa-solid fa-person-running"></i><strong>Lean muscle support</strong><span>Convenient protein for active days and training goals.</span></div><div class="tab-point"><i class="fa-solid fa-blender"></i><strong>Convenient nutrition</strong><span>Easy to add to shakes, smoothies and recipes.</span></div><div class="tab-point"><i class="fa-solid fa-flask"></i><strong>Quality protein blend</strong><span>Thoughtfully developed for everyday performance nutrition.</span></div><div class="tab-point"><i class="fa-solid fa-bolt"></i><strong>Active-day support</strong><span>A simple way to build protein into a busy routine.</span></div><div class="tab-point"><i class="fa-solid fa-clock"></i><strong>Flexible routine</strong><span>Use it around training, meals or your daily schedule.</span></div></div></div>
+            <div class="tab-grid"><div><h3>About Whey Protein</h3><p>Aiva Wellness Whey Protein is available in Chocolate and Vanilla flavours, in 500 g and 1 kg packs. Refer to the product label for serving, nutrition, ingredient and allergen information.</p><h3>Product Information</h3><table class="tab-table"><tbody><tr><td>Item Form</td><td>Powder</td></tr><tr><td>Pack Size</td><td>500 g or 1 kg</td></tr><tr><td>Brand</td><td>Aiva Wellness</td></tr><tr><td>Flavour</td><td>Chocolate or Vanilla</td></tr><tr><td>Protein per serving</td><td>High-quality protein blend</td></tr><tr><td>Serving size</td><td>As directed on pack</td></tr><tr><td>Country of Origin</td><td>India</td></tr><tr><td>Availability</td><td>Available now</td></tr></tbody></table><div class="tab-note">Please follow the serving, storage and allergen information printed on the product pack.</div></div><div class="tab-points"><div class="tab-point"><i class="fa-solid fa-dumbbell"></i><strong>Muscle recovery</strong><span>Helps make protein part of your post-training routine.</span></div><div class="tab-point"><i class="fa-solid fa-person-running"></i><strong>Lean muscle support</strong><span>Convenient protein for active days and training goals.</span></div><div class="tab-point"><i class="fa-solid fa-blender"></i><strong>Convenient nutrition</strong><span>Easy to add to shakes, smoothies and recipes.</span></div><div class="tab-point"><i class="fa-solid fa-flask"></i><strong>Quality protein blend</strong><span>Thoughtfully developed for everyday performance nutrition.</span></div><div class="tab-point"><i class="fa-solid fa-bolt"></i><strong>Active-day support</strong><span>A simple way to build protein into a busy routine.</span></div><div class="tab-point"><i class="fa-solid fa-clock"></i><strong>Flexible routine</strong><span>Use it around training, meals or your daily schedule.</span></div></div></div>
           </div>
-          <div class="tab-panel" id="tab-nutrition" role="tabpanel"><p><strong>Serving information:</strong> Follow the nutrition and serving information printed on the pack.</p><table class="tab-table"><thead><tr><th>Product information</th><th>Details</th></tr></thead><tbody><tr><td>Product</td><td>Whey Protein</td></tr><tr><td>Pack size</td><td>2 kg</td></tr><tr><td>Category</td><td>Sports nutrition</td></tr><tr><td>Serving information</td><td>As directed on pack</td></tr><tr><td>Availability</td><td>Available now</td></tr></tbody></table></div>
+          <div class="tab-panel" id="tab-nutrition" role="tabpanel"><p><strong>Serving information:</strong> Follow the nutrition and serving information printed on the pack.</p><table class="tab-table"><thead><tr><th>Product information</th><th>Details</th></tr></thead><tbody><tr><td>Product</td><td>Whey Protein</td></tr><tr><td>Pack size</td><td>500 g or 1 kg</td></tr><tr><td>Category</td><td>Sports nutrition</td></tr><tr><td>Serving information</td><td>As directed on pack</td></tr><tr><td>Availability</td><td>Available now</td></tr></tbody></table></div>
           <div class="tab-panel" id="tab-ingredients" role="tabpanel"><p><strong>Ingredients:</strong></p><ul class="tab-ingredients"><li><strong>Whey protein blend</strong> — High-quality protein support</li><li><strong>Flavour system</strong> — Chocolate flavour</li><li><strong>Allergen information</strong> — Contains milk and milk products</li></ul><div class="tab-alert"><strong><i class="fa-solid fa-triangle-exclamation"></i> Important Information</strong><br />Not for medicinal use. Follow the product pack directions and consult a healthcare practitioner if you have dietary or health concerns.</div></div>
           <div class="tab-panel" id="tab-usage" role="tabpanel"><div class="usage-steps"><div class="usage-step"><div class="step-num">1</div><div class="step-text"><h4>Prepare your shake</h4><p>Blend the recommended serving with your preferred liquid.</p></div></div><div class="usage-step"><div class="step-num">2</div><div class="step-text"><h4>Use around your routine</h4><p>Enjoy after training or as part of your daily nutrition routine.</p></div></div><div class="usage-step"><div class="step-num">3</div><div class="step-text"><h4>Keep it consistent</h4><p>Follow the serving guidance printed on the final product pack.</p></div></div><div class="usage-step"><div class="step-num">4</div><div class="step-text"><h4>Store correctly</h4><p>Keep the container sealed in a cool, dry place away from direct sunlight.</p></div></div></div></div>
         </section>
@@ -727,7 +748,7 @@
             </div>
             <div class="faq-list" id="faqList">
               <details open><summary>How can I order Whey Protein?</summary><div class="ans"><p>Use the enquiry form or WhatsApp link on this page and the Aiva Wellness team will help you place your order.</p></div></details>
-              <details><summary>What is the pack size?</summary><div class="ans"><p>The pack size is 2 kg, as listed in the product specifications.</p></div></details>
+              <details><summary>What pack sizes and flavours are available?</summary><div class="ans"><p>Choose a 500 g or 1 kg pack in Chocolate or Vanilla flavour.</p></div></details>
               <details><summary>How can I contact the team?</summary><div class="ans"><p>Use the enquiry form or message Aiva Wellness directly on WhatsApp for product and order support.</p></div></details>
               <details><summary>How should I use it?</summary><div class="ans"><p>Follow the serving and preparation directions printed on the final product pack. A balanced diet and personal requirements should guide your routine.</p></div></details>
               <details><summary>Will it be delivered across India?</summary><div class="ans"><p>Yes, pan-India delivery is planned. Delivery timelines and charges are covered in our <a href="/policies/shipping-policy">Shipping Policy</a>.</p></div></details>
@@ -746,7 +767,7 @@
       </div>
     </main>
 
-    <div class="sticky" id="stickyBar"><strong>₹3,499 <small style="font-weight:400;color:var(--muted)">· 2 kg</small></strong><a class="btn-primary" href="/enquire?product=Whey%20Protein">Enquire to order <i class="fa-solid fa-arrow-right"></i></a></div>
+    <div class="sticky" id="stickyBar"><strong><span id="stickyPrice">₹1,099</span> <small id="stickyPack" style="font-weight:400;color:var(--muted)">· 500 g</small></strong><a class="btn-primary" href="/enquire?product=Whey%20Protein">Enquire to order <i class="fa-solid fa-arrow-right"></i></a></div>
 
     <footer>
       <div class="footer-inner">
@@ -822,6 +843,31 @@
       (() => {
         const $ = (s, c = document) => c.querySelector(s);
         const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+        const proteinProduct = {
+          name: "Whey Protein",
+          prices: { "500 g": 1099, "1 kg": 1999 },
+          flavors: ["Chocolate", "Vanilla"],
+        };
+        const packSize = $("#packSize");
+        const productFlavor = $("#productFlavor");
+        const initialSelection = new URLSearchParams(location.search);
+        if (proteinProduct.prices[initialSelection.get("size")]) packSize.value = initialSelection.get("size");
+        if (proteinProduct.flavors.includes(initialSelection.get("flavor"))) productFlavor.value = initialSelection.get("flavor");
+        function updateProductSelection() {
+          const size = packSize.value;
+          $("#selectedPrice").textContent = `₹${proteinProduct.prices[size].toLocaleString("en-IN")}`;
+          $("#selectedPack").textContent = `${size} pack · Inclusive of all taxes · Pan-India delivery`;
+          $("#stickyPrice").textContent = `₹${proteinProduct.prices[size].toLocaleString("en-IN")}`;
+          $("#stickyPack").textContent = `· ${size}`;
+          const enquiryQuery = new URLSearchParams({ product: proteinProduct.name, flavor: productFlavor.value, size });
+          document.querySelectorAll('a[href^="/enquire?product="]').forEach((link) => {
+            link.href = `/enquire?${enquiryQuery.toString()}`;
+          });
+        }
+        packSize.addEventListener("change", updateProductSelection);
+        productFlavor.addEventListener("change", updateProductSelection);
+        updateProductSelection();
 
         /* toast */
         let toastTimer;
