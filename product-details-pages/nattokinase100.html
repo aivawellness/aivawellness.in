@@ -24,15 +24,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=5"
     />
-    <title>Nattokinase 100 mg | 2,000 FU | Aiva Wellness</title>
+    <title>Nattokinase 100 mg, 2,000 FU, 60 Capsules | Aiva Wellness</title>
     <link rel="canonical" href="https://aivawellness.in/products/nattokinase100" />
     <meta
       name="description"
-      content="Nattokinase 100 mg by Aiva Wellness — a natural fibrinolytic enzyme that supports healthy blood circulation and cardiovascular wellness. ₹1,299."
-    />
-    <meta
-      name="keywords"
-      content="Nattokinase 100mg, Nattokinase 100 mg capsules, Nattokinase 2000 FU, Nattokinase supplement India, Nattokinase for circulation, Nattokinase 100 mg vs 200 mg, heart health supplement, cardiovascular wellness, Aiva Wellness"
+      content="Aiva Wellness Nattokinase provides 100 mg from fermented soybean extract and 2,000 FU enzyme activity per capsule. 60 capsules per bottle."
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -43,10 +39,10 @@
     <!-- Open Graph -->
     <meta property="og:type" content="product" />
     <meta property="og:site_name" content="Aiva Wellness" />
-    <meta property="og:title" content="Nattokinase 100 mg | Aiva Wellness" />
+    <meta property="og:title" content="Nattokinase 100 mg, 2,000 FU, 60 Capsules | Aiva Wellness" />
     <meta
       property="og:description"
-      content="Nattokinase 100 mg by Aiva Wellness — a natural fibrinolytic enzyme that supports healthy blood circulation and cardiovascular wellness. ₹1,299."
+      content="Aiva Wellness Nattokinase provides 100 mg from fermented soybean extract and 2,000 FU enzyme activity per capsule. 60 capsules per bottle."
     />
 
     <meta
@@ -59,10 +55,10 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nattokinase 100 mg | Aiva Wellness" />
+    <meta name="twitter:title" content="Nattokinase 100 mg, 2,000 FU, 60 Capsules | Aiva Wellness" />
     <meta
       name="twitter:description"
-      content="Nattokinase 100 mg by Aiva Wellness — a natural fibrinolytic enzyme that supports healthy blood circulation and cardiovascular wellness. ₹1,299."
+      content="Aiva Wellness Nattokinase provides 100 mg from fermented soybean extract and 2,000 FU enzyme activity per capsule. 60 capsules per bottle."
     />
     <meta
       name="twitter:image"
@@ -183,7 +179,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Nattokinase 100 mg",
+            "name": "Nattokinase 100 mg — 2,000 FU | 60 Capsules",
             "item": "https://aivawellness.in/products/nattokinase100"
           }
         ]
@@ -193,20 +189,22 @@
       {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": "Nattokinase 100 mg",
+        "name": "Nattokinase 100 mg — 2,000 FU | 60 Capsules",
         "image": [
           "https://aivawellness.in/products/Nattokinase%20Carton%20%20final%203d.webp"
         ],
-        "description": "Nattokinase 100 mg is a natural fibrinolytic enzyme that supports healthy blood circulation and everyday cardiovascular wellness.",
+        "description": "Aiva Wellness Nattokinase provides 100 mg from fermented soybean extract and 2,000 FU enzyme activity per capsule. Each bottle contains 60 capsules.",
         "sku": "AIVA-NATO-100",
+        "url": "https://aivawellness.in/products/nattokinase100",
         "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
-        "category": "Heart Health",
+        "category": "Dietary Supplement",
         "offers": {
           "@type": "Offer",
           "priceCurrency": "INR",
           "price": "1299",
           "priceValidUntil": "2026-12-31",
           "validFrom": "2026-07-13",
+          "url": "https://aivawellness.in/products/nattokinase100",
           "availability": "https://schema.org/InStock",
           "itemCondition": "https://schema.org/NewCondition",
           "seller": { "@type": "Organization", "@id": "https://aivawellness.in/#organization", "name": "Aiva Wellness" }
@@ -1129,31 +1127,48 @@
         line-height: 1.8;
         max-width: 520px;
       }
-      .rating-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
+      .potency-glance {
+        margin-top: 18px;
+        padding: 18px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        box-shadow: var(--sh);
       }
-      .stars-gold {
-        color: var(--gold);
-        font-size: 15px;
-        letter-spacing: 1px;
-      }
-      .rating-val {
-        font-size: 0.84rem;
-        font-weight: 700;
+      .potency-glance h2 {
+        margin-bottom: 12px;
         color: var(--black);
+        font-size: 1rem;
       }
-      .rating-count {
-        font-size: 0.8rem;
-        color: var(--blue);
-        cursor: pointer;
-        transition: opacity 0.2s;
+      .potency-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
       }
-      .rating-count:hover {
-        opacity: 0.7;
-        text-decoration: underline;
+      .potency-item {
+        padding: 10px 12px;
+        background: var(--bg);
+        border-radius: var(--r-sm);
+      }
+      .potency-label {
+        display: block;
+        color: var(--muted);
+        font-size: 0.72rem;
+        line-height: 1.4;
+      }
+      .potency-value {
+        display: block;
+        margin-top: 3px;
+        color: var(--ink);
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .potency-note {
+        margin-top: 12px;
+        color: var(--text-mid);
+        font-size: 0.76rem;
+        line-height: 1.6;
       }
       .verified-pill {
         background: var(--green-soft);
@@ -1751,12 +1766,15 @@
         margin-bottom: 16px;
         word-break: break-word;
       }
-      .desc-text h4 {
+      .desc-text h2 {
         font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: var(--black);
-        margin-bottom: 10px;
+        margin: 22px 0 10px;
+      }
+      .desc-text h2:first-child {
+        margin-top: 0;
       }
       .benefits-grid {
         display: grid;
@@ -2739,54 +2757,118 @@
     <script src="../assets/product-blog.js" defer></script>
     <script src="../assets/similar-products.js" defer></script>
 
-    <script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "What is Nattokinase 100 mg?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "It is a naturally fermented enzyme formula designed to support healthy circulation and everyday cardiovascular wellness."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "What does 100 mg mean?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "It refers to the planned nattokinase amount per serving. Check the final pack for the confirmed enzyme activity and serving guidance."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "How should I use it?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Follow the final label directions and consult a healthcare professional if you take blood-thinning medication or have health concerns."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Is it a medicine?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "No. It is a wellness supplement and is not intended to diagnose, treat or cure disease."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Is pan-India delivery planned?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes, pan-India delivery is planned, with final timelines shared at launch."
-                                              }
-                       }
-                   ]
-}
-</script>
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is nattokinase?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nattokinase is an enzyme obtained from fermented soybean (natto)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does 100 mg mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "100 mg is the stated amount by weight of nattokinase from fermented soybean extract in one capsule."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does 2,000 FU mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "2,000 FU describes the enzyme activity per capsule. It is a different measurement from the ingredient's weight in milligrams."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is FU used to describe nattokinase?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "FU means Fibrinolytic Units and is used to describe nattokinase's enzymatic activity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many capsules are in the bottle?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Each bottle contains 60 capsules."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the source of Aiva Wellness Nattokinase?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The nattokinase is from fermented soybean extract (natto)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Aiva Wellness Nattokinase vegetarian?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The product information lists its diet type as vegan."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does nattokinase contain soy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. It contains a soy-fermented enzyme, and the manufacturing facility may process soy ingredients."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How should I take Nattokinase 100 mg?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The product directions state one capsule daily for adults, preferably with meals and with at least 200 ml of water. Do not exceed the recommended dose."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I take nattokinase with blood-thinning medication?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Consult your healthcare practitioner before use if you take blood-thinning medication or have a bleeding disorder."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is nattokinase a medicine?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. This product is not for medicinal use and is not intended to diagnose, treat, cure, or prevent any disease."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How should Nattokinase be stored?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Store at room temperature in a cool, dry place away from direct sunlight and out of reach of children."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Aiva Wellness Nattokinase manufactured?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The product information names Beatrix Lifecare as manufacturer and India as the country of origin."
+                }
+              }
+            ]
+          }
+        </script>
 
     <script type="application/ld+json">
 {
@@ -2906,7 +2988,7 @@
                   <img
                     id="mainImg"
                     src="../products/Nattokinase Carton  final 3d.webp"
-                    alt="Aiva Wellness Nattokinase 100 mg 2000 FU bottle - 60 veg capsules for healthy blood circulation" title="Aiva Wellness Nattokinase 100 mg 2000 FU bottle - 60 veg capsules for healthy blood circulation"
+                    alt="Aiva Wellness Nattokinase 100 mg supplement bottle, 2,000 FU, 60 capsules"
                     onerror="
                       this.src =
                         'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=700&q=80&auto=format&fm=webp'
@@ -2929,7 +3011,7 @@
                   class="thumb-img active"
                   src="../products/Nattokinase Carton  final 3d.webp"
                   data-full-src="../products/Nattokinase Carton  final 3d.webp"
-                  alt="Aiva Wellness Nattokinase 100 mg 2000 FU bottle - 60 veg capsules for healthy blood circulation" title="Aiva Wellness Nattokinase 100 mg 2000 FU bottle - 60 veg capsules for healthy blood circulation"
+                  alt="Aiva Wellness Nattokinase 100 mg supplement bottle, 2,000 FU, 60 capsules"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=150&q=80&auto=format&fm=webp'
@@ -2947,7 +3029,7 @@
                   class="thumb-img"
                   src="../products/all images/1.webp"
                   data-full-src="../products/all images/1.webp"
-                  alt="Key benefits of Nattokinase 100 mg 2000 FU - supports heart health and blood flow naturally" title="Key benefits of Nattokinase 100 mg 2000 FU - supports heart health and blood flow naturally"
+                  alt="Aiva Wellness Nattokinase product information graphic"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80&auto=format&fm=webp'
@@ -2960,7 +3042,7 @@
                   class="thumb-img"
                   src="../products/all images/2.webp"
                   data-full-src="../products/all images/2.webp"
-                  alt="Aiva Wellness Nattokinase premium quality - fermented soy derived natural fibrinolytic enzyme" title="Aiva Wellness Nattokinase premium quality - fermented soy derived natural fibrinolytic enzyme"
+                  alt="Aiva Wellness Nattokinase product information graphic"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=150&q=80&auto=format&fm=webp'
@@ -2973,7 +3055,7 @@
                   class="thumb-img"
                   src="../products/all images/3.webp"
                   data-full-src="../products/all images/3.webp"
-                  alt="How to take Aiva Wellness Nattokinase 100 mg - 1 capsule daily with water after meal" title="How to take Aiva Wellness Nattokinase 100 mg - 1 capsule daily with water after meal"
+                  alt="Aiva Wellness Nattokinase product use information graphic"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=150&q=80&auto=format&fm=webp'
@@ -2986,7 +3068,7 @@
                   class="thumb-img"
                   src="../products/all images/4.webp"
                   data-full-src="../products/all images/4.webp"
-                  alt="Nattokinase 100 mg nutritional label - 100 mg fermented soybean extract per serving details" title="Nattokinase 100 mg nutritional label - 100 mg fermented soybean extract per serving details"
+                  alt="Aiva Wellness Nattokinase nutrition information graphic"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=150&q=80&auto=format&fm=webp'
@@ -2998,7 +3080,7 @@
                 <div class="video-thumb" onclick="openVideoModal()">
                   <img
                     src="../videos/natto100thumbnail.png"
-                    alt="Aiva Wellness Nattokinase 100 mg product video explaining dosage and circulation benefits"
+                    alt="Aiva Wellness Nattokinase product video"
                     onerror="
                       this.src =
                         'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=150&q=80&auto=format&fm=webp'
@@ -3013,23 +3095,50 @@
 
           <div class="product-info reveal">
             <span class="p-eyebrow"
-              ><i class="fa-solid fa-leaf"></i> Aiva Wellness — Bestseller</span
+              ><i class="fa-solid fa-leaf"></i> Aiva Wellness — Dietary Supplement</span
             >
 
             <div>
-              <h1 id="productTitle" class="p-title">Nattokinase 100 mg</h1>
+              <h1 id="productTitle" class="p-title">Nattokinase 100 mg — 2,000 FU | 60 Capsules</h1>
               <p id="productDesc" class="p-short">
-                Nattokinase is a natural fibrinolytic enzyme that supports
-                healthy blood circulation and cardiovascular wellness. Each
-                serving delivers 2000 FU (100 mg) of fibrinolytic enzyme to help
-                maintain normal blood flow and everyday heart health.
+                Aiva Wellness Nattokinase contains 100 mg of nattokinase from
+                fermented soybean extract, with 2,000 FU enzyme activity per
+                capsule. Each bottle contains 60 capsules.
               </p>
             </div>
+
+            <section class="potency-glance" aria-labelledby="potency-title">
+              <h2 id="potency-title">Potency at a Glance</h2>
+              <div class="potency-grid">
+                <div class="potency-item">
+                  <span class="potency-label">Nattokinase</span>
+                  <span class="potency-value">100 mg</span>
+                </div>
+                <div class="potency-item">
+                  <span class="potency-label">Enzyme Activity</span>
+                  <span class="potency-value">2,000 FU</span>
+                </div>
+                <div class="potency-item">
+                  <span class="potency-label">Serving Size</span>
+                  <span class="potency-value">1 Capsule</span>
+                </div>
+                <div class="potency-item">
+                  <span class="potency-label">Capsules per Bottle</span>
+                  <span class="potency-value">60</span>
+                </div>
+              </div>
+              <p class="potency-note">
+                100 mg is the ingredient amount by weight. FU (Fibrinolytic
+                Units) describes enzyme activity; 2,000 FU is not a weight
+                conversion of 100 mg. One capsule per serving means 60 servings
+                per container.
+              </p>
+            </section>
 
             <div class="stock-row">
               <div class="stock-dot"></div>
               <span class="stock-label">In Stock</span>
-              <span class="stock-sub">· 220+ units · Ships in 24 hrs</span></div>
+            </div>
 
             <div class="price-card">
               <div class="price-row-main">
@@ -3097,33 +3206,31 @@
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  2000 FU natural fibrinolytic enzyme per serving — ideal
-                  starter potency
+                  100 mg nattokinase and 2,000 FU enzyme activity per capsule
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Supports healthy blood circulation &amp; vascular function
+                  Nattokinase from fermented soybean extract
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Promotes cardiovascular and heart wellness
+                  60 capsules per bottle
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Fermented soy-derived enzyme, traditionally used for
-                  circulatory support
+                  One capsule per serving
                 </li>
                 <li>
                   <span class="feat-check"
                     ><i class="fa-solid fa-check"></i
                   ></span>
-                  Convenient daily capsule, easy to incorporate into routine
+                  Consult the product directions and precautions before use
                 </li>
               </ul>
             </div>
@@ -3150,23 +3257,47 @@
           <div class="tab-panel active" id="tab-desc">
             <div class="desc-grid">
               <div class="desc-text">
-                <h4>About Nattokinase 100 mg</h4>
+                <h2>What Is Nattokinase?</h2>
                 <p>
-                  Aiva Wellness Nattokinase 100 mg is a natural fibrinolytic
-                  enzyme derived from fermented soybean (Natto), delivering 2000
-                  FU (100 mg) per serving in an easy-to-take capsule. It is a
-                  gentler everyday-strength formula designed to support healthy
-                  blood circulation, vascular function, and ongoing
-                  cardiovascular wellness.
+                  Nattokinase is an enzyme obtained from natto, a fermented
+                  soybean food. Aiva Wellness Nattokinase provides 100 mg of
+                  nattokinase from fermented soybean extract and 2,000 FU of
+                  enzyme activity per capsule.
+                </p>
+                <h2>Why Does FU Matter?</h2>
+                <p>
+                  FU means Fibrinolytic Units and describes nattokinase enzyme
+                  activity. Milligrams describe ingredient weight; these are
+                  different measurements. When comparing nattokinase products,
+                  consider the stated enzyme activity as well as the ingredient
+                  amount rather than comparing mg alone.
+                </p>
+                <h2>Nattokinase Wellness Support</h2>
+                <p>
+                  This product page states the nattokinase amount and enzyme
+                  activity per capsule for clear product information. Nattokinase
+                  is sold as a dietary supplement, not as a medicine.
                 </p>
                 <p>
-                  Learn how nattokinase strength and FU ratings compare in our
+                  Learn more about ingredient amounts and enzyme activity in our
                   <a href="/blogs/nattokinase-100mg-vs-200mg">100 mg vs 200 mg guide</a>.
                 </p>
-                <h4 style="margin-top: 20px">Product Information</h4>
+                <h2>Product Specifications</h2>
                 <div class="nutrition-wrap" style="max-width: 100%">
                   <table class="nutrition-table" style="min-width: 100%">
                     <tbody>
+                      <tr>
+                        <td>Product</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Nattokinase
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Strength</td>
+                        <td style="text-align: right; font-weight: 700">
+                          100 mg per capsule
+                        </td>
+                      </tr>
                       <tr>
                         <td>Item Form</td>
                         <td style="text-align: right; font-weight: 700">
@@ -3176,37 +3307,19 @@
                       <tr>
                         <td>Potency</td>
                         <td style="text-align: right; font-weight: 700">
-                          2000 FU per serving
+                          2,000 FU per capsule
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Source</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Fermented Soybean Extract (Natto)
                         </td>
                       </tr>
                       <tr>
                         <td>Brand</td>
                         <td style="text-align: right; font-weight: 700">
                           Aiva Wellness
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Manufacturer</td>
-                        <td style="text-align: right; font-weight: 700">
-                          Beatrix Lifecare
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Packer</td>
-                        <td style="text-align: right; font-weight: 700">
-                          Beatrix Lifecare
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Marketed By</td>
-                        <td style="text-align: right; font-weight: 700">
-                          Aiva Wellness
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Country of Origin</td>
-                        <td style="text-align: right; font-weight: 700">
-                          India
                         </td>
                       </tr>
                       <tr>
@@ -3225,6 +3338,18 @@
                         <td>Unit Count</td>
                         <td style="text-align: right; font-weight: 700">
                           60 Capsules
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Serving Size</td>
+                        <td style="text-align: right; font-weight: 700">
+                          1 Capsule
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Servings per Container</td>
+                        <td style="text-align: right; font-weight: 700">
+                          60
                         </td>
                       </tr>
                       <tr>
@@ -3264,69 +3389,76 @@
                     </tbody>
                   </table>
                   <p class="nutrition-note">
-                    Quality-focused supplement formulation. Not for medicinal use.
+                    Not for medicinal use. Refer to the product label for full
+                    directions and precautions.
                   </p>
                 </div>
+                <h2>Quality &amp; Manufacturing</h2>
+                <p>
+                  Product information lists Beatrix Lifecare as the manufacturer
+                  and packer, Aiva Wellness as the marketer, and India as the
+                  country of origin.
+                </p>
               </div>
-              <div class="benefits-grid">
-                <div class="benefit-card">
+              <div class="product-glance-column">
+                <h2 class="section-hd">Product Information at a Glance</h2>
+                <div class="benefits-grid">
+                  <div class="benefit-card">
                   <div class="benefit-icon benefit-icon--heart">
-                    <i class="fa-solid fa-heart-pulse"></i>
+                    <i class="fa-solid fa-scale-balanced"></i>
                   </div>
-                  <div class="benefit-title">Heart Health</div>
+                  <div class="benefit-title">Ingredient Amount</div>
                   <div class="benefit-desc">
-                    Supports healthy blood flow and overall cardiovascular
-                    wellness with daily use.
+                    100 mg nattokinase from fermented soybean extract per
+                    capsule.
                   </div>
-                </div>
-                <div class="benefit-card">
+                  </div>
+                  <div class="benefit-card">
                   <div class="benefit-icon benefit-icon--shield">
-                    <i class="fa-solid fa-droplet"></i>
-                  </div>
-                  <div class="benefit-title">Circulation Support</div>
-                  <div class="benefit-desc">
-                    A natural fibrinolytic enzyme that helps maintain smooth,
-                    healthy circulation.
-                  </div>
-                </div>
-                <div class="benefit-card">
-                  <div class="benefit-icon benefit-icon--bolt">
-                    <i class="fa-solid fa-bolt"></i>
-                  </div>
-                  <div class="benefit-title">Vascular Wellness</div>
-                  <div class="benefit-desc">
-                    Helps support normal vascular tone and arterial flexibility
-                    over time.
-                  </div>
-                </div>
-                <div class="benefit-card">
-                  <div class="benefit-icon benefit-icon--bone">
                     <i class="fa-solid fa-flask"></i>
                   </div>
-                  <div class="benefit-title">High Potency</div>
+                  <div class="benefit-title">Enzyme Activity</div>
                   <div class="benefit-desc">
-                    Each capsule delivers a concentrated 2000 FU (100 mg) dose
-                    of natural enzyme.
+                    2,000 FU per capsule; FU and mg describe different
+                    measurements.
                   </div>
-                </div>
-                <div class="benefit-card">
-                  <div class="benefit-icon benefit-icon--dumbbell">
-                    <i class="fa-solid fa-seedling"></i>
                   </div>
-                  <div class="benefit-title">Naturally Fermented</div>
-                  <div class="benefit-desc">
-                    Sourced from traditionally fermented soybean (Natto) for a
-                    natural enzyme profile.
-                  </div>
-                </div>
-                <div class="benefit-card">
-                  <div class="benefit-icon benefit-icon--brain">
+                  <div class="benefit-card">
+                  <div class="benefit-icon benefit-icon--bolt">
                     <i class="fa-solid fa-capsules"></i>
                   </div>
-                  <div class="benefit-title">Daily Wellness</div>
+                  <div class="benefit-title">Serving Size</div>
                   <div class="benefit-desc">
-                    Easy one-capsule daily routine to support long-term
-                    cardiovascular care.
+                    The listed serving is one capsule.
+                  </div>
+                  </div>
+                  <div class="benefit-card">
+                  <div class="benefit-icon benefit-icon--dumbbell">
+                    <i class="fa-solid fa-box"></i>
+                  </div>
+                  <div class="benefit-title">Bottle Quantity</div>
+                  <div class="benefit-desc">
+                    Each bottle contains 60 capsules.
+                  </div>
+                  </div>
+                  <div class="benefit-card">
+                  <div class="benefit-icon benefit-icon--bone">
+                    <i class="fa-solid fa-seedling"></i>
+                  </div>
+                  <div class="benefit-title">Soybean Source</div>
+                  <div class="benefit-desc">
+                    The nattokinase source is fermented soybean extract
+                    (natto).
+                  </div>
+                  </div>
+                  <div class="benefit-card">
+                  <div class="benefit-icon benefit-icon--brain">
+                    <i class="fa-solid fa-leaf"></i>
+                  </div>
+                  <div class="benefit-title">Diet Type</div>
+                  <div class="benefit-desc">
+                    Product information lists the diet type as vegan.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3335,6 +3467,7 @@
 
           <div class="tab-panel" id="tab-nutrition">
             <div class="nutrition-wrap">
+              <h2 class="section-hd">Supplement Facts</h2>
               <p
                 style="
                   font-size: 0.84rem;
@@ -3356,7 +3489,12 @@
                 <tbody>
                   <tr>
                     <td>Nattokinase from Fermented Soybean Extract</td>
-                    <td style="text-align: center">100 mg / 2000 FU</td>
+                    <td style="text-align: center">100 mg</td>
+                    <td>**</td>
+                  </tr>
+                  <tr>
+                    <td>Enzyme Activity</td>
+                    <td style="text-align: center">2,000 FU</td>
                     <td>**</td>
                   </tr>
                   <tr>
@@ -3421,9 +3559,14 @@
           </div>
 
           <div class="tab-panel" id="tab-ingredients">
+            <h2 class="section-hd">Ingredients &amp; Source</h2>
             <p class="ingredients-text">
               <strong>Active Ingredient:</strong> Nattokinase from Fermented
-              Soybean Extract (100 mg / 2000 FU)
+              Soybean Extract — 100 mg per capsule.
+            </p>
+            <p class="ingredients-text">
+              <strong>Enzyme Activity:</strong> 2,000 FU per capsule. FU
+              describes activity, not ingredient weight.
             </p>
             <p class="ingredients-text">
               <strong>Other Ingredients:</strong> Diluents (460(ii) &amp; 421),
@@ -3435,12 +3578,15 @@
                 ><i class="fa-solid fa-triangle-exclamation"></i> Allergen
                 Information</strong
               >Contains soy-fermented enzyme. Manufactured in a facility that
-              may process soy ingredients. Not intended to diagnose, treat,
-              cure, or prevent any disease.
+              may process soy ingredients.
             </div>
+            <p class="nutrition-note">
+              Not intended to diagnose, treat, cure, or prevent any disease.
+            </p>
           </div>
 
           <div class="tab-panel" id="tab-usage">
+            <h2 class="section-hd">How to Use</h2>
             <div class="usage-steps">
               <div class="usage-step">
                 <div class="step-num">1</div>
@@ -3457,8 +3603,7 @@
                 <div class="step-text">
                   <h5>Take preferably with meals</h5>
                   <p>
-                    Take the capsule daily, preferably with meals, to support
-                    comfortable digestion and consistent absorption.
+                    Take the capsule daily, preferably with meals.
                   </p>
                 </div>
               </div>
@@ -3476,28 +3621,31 @@
               <div class="usage-step">
                 <div class="step-num">4</div>
                 <div class="step-text">
-                  <h5>Use consistently for best results</h5>
+                  <h5>Store the product properly</h5>
                   <p>
-                    Benefits build over time with regular daily use. Store in a
-                    cool, dry place at room temperature and out of direct
-                    sunlight, away from children.
+                    Store at room temperature in a cool, dry place, away from
+                    direct sunlight and out of reach of children.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="warning-box">
-              <strong
-                ><i class="fa-solid fa-circle-exclamation"></i> Important
-                Notice</strong
-              >Consult your healthcare practitioner before taking this product
-              if you are pregnant, lactating, or trying to conceive, or if you
-              are on blood-thinning medication or have a bleeding disorder. Not
-              for medicinal use. This product is not intended to diagnose,
-              treat, cure, or prevent any disease, and is not to be used as a
-              substitute for a varied diet. Keep out of reach of children.
-            </div>
           </div>
         </div>
+
+        <section class="section" aria-labelledby="safety-h">
+          <h2 class="section-hd" id="safety-h">Safety &amp; Precautions</h2>
+          <div class="warning-box">
+            <strong
+              ><i class="fa-solid fa-circle-exclamation"></i> Important
+              Notice</strong
+            >Consult your healthcare practitioner before use if you are
+            pregnant, lactating, or trying to conceive, take blood-thinning
+            medication, or have a bleeding disorder. Do not exceed the
+            recommended dose. Not for medicinal use and not intended to
+            diagnose, treat, cure, or prevent any disease. This product is not
+            a substitute for a varied diet. Keep out of reach of children.
+          </div>
+        </section>
 
         <div class="similar-section reveal">
           <span class="section-eyebrow"
@@ -3626,7 +3774,75 @@
           </div>
         </div>
       </div>
-      <section class="section" id="faq" aria-labelledby="faq-h"><div class="faq-layout"><div class="faq-side"><h2 id="faq-h">Questions, answered.</h2><p>Learn more about the focused 100 mg nattokinase formula.</p><a class="btn-ghost" href="https://wa.me/917807751711?text=I%20have%20a%20question%20about%20Aiva%20Wellness%20Nattokinase%20100%20mg" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Ask the team</a></div><div class="faq-list" id="faqList"><details open><summary>What is Nattokinase 100 mg?</summary><div class="ans"><p>It is a naturally fermented enzyme formula designed to support healthy circulation and everyday cardiovascular wellness.</p></div></details><details><summary>What does 100 mg mean?</summary><div class="ans"><p>It refers to the planned nattokinase amount per serving. Check the final pack for the confirmed enzyme activity and serving guidance.</p></div></details><details><summary>How should I use it?</summary><div class="ans"><p>Follow the final label directions and consult a healthcare professional if you take blood-thinning medication or have health concerns.</p></div></details><details><summary>Is it a medicine?</summary><div class="ans"><p>No. It is a wellness supplement and is not intended to diagnose, treat or cure disease.</p></div></details><details><summary>Is pan-India delivery planned?</summary><div class="ans"><p>Yes, pan-India delivery is planned, with final timelines shared at launch.</p></div></details></div></div></section>
+      <section class="section" id="faq" aria-labelledby="faq-h">
+        <div class="faq-layout">
+          <div class="faq-side">
+            <h2 id="faq-h">Nattokinase FAQ</h2>
+            <p>Answers about the ingredient, product directions, and precautions.</p>
+            <a
+              class="btn-ghost"
+              href="https://wa.me/917807751711?text=I%20have%20a%20question%20about%20Aiva%20Wellness%20Nattokinase%20100%20mg"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-whatsapp"></i> Ask the team</a
+            >
+          </div>
+          <div class="faq-list" id="faqList">
+            <details open>
+              <summary>What is nattokinase?</summary>
+              <div class="ans"><p>Nattokinase is an enzyme obtained from fermented soybean (natto).</p></div>
+            </details>
+            <details>
+              <summary>What does 100 mg mean?</summary>
+              <div class="ans"><p>100 mg is the stated amount by weight of nattokinase from fermented soybean extract in one capsule.</p></div>
+            </details>
+            <details>
+              <summary>What does 2,000 FU mean?</summary>
+              <div class="ans"><p>2,000 FU describes the enzyme activity per capsule. It is a different measurement from the ingredient's weight in milligrams.</p></div>
+            </details>
+            <details>
+              <summary>Why is FU used to describe nattokinase?</summary>
+              <div class="ans"><p>FU means Fibrinolytic Units and is used to describe nattokinase's enzymatic activity.</p></div>
+            </details>
+            <details>
+              <summary>How many capsules are in the bottle?</summary>
+              <div class="ans"><p>Each bottle contains 60 capsules.</p></div>
+            </details>
+            <details>
+              <summary>What is the source of Aiva Wellness Nattokinase?</summary>
+              <div class="ans"><p>The nattokinase is from fermented soybean extract (natto).</p></div>
+            </details>
+            <details>
+              <summary>Is Aiva Wellness Nattokinase vegetarian?</summary>
+              <div class="ans"><p>The product information lists its diet type as vegan.</p></div>
+            </details>
+            <details>
+              <summary>Does nattokinase contain soy?</summary>
+              <div class="ans"><p>Yes. It contains a soy-fermented enzyme, and the manufacturing facility may process soy ingredients.</p></div>
+            </details>
+            <details>
+              <summary>How should I take Nattokinase 100 mg?</summary>
+              <div class="ans"><p>The product directions state one capsule daily for adults, preferably with meals and with at least 200 ml of water. Do not exceed the recommended dose.</p></div>
+            </details>
+            <details>
+              <summary>Can I take nattokinase with blood-thinning medication?</summary>
+              <div class="ans"><p>Consult your healthcare practitioner before use if you take blood-thinning medication or have a bleeding disorder.</p></div>
+            </details>
+            <details>
+              <summary>Is nattokinase a medicine?</summary>
+              <div class="ans"><p>No. This product is not for medicinal use and is not intended to diagnose, treat, cure, or prevent any disease.</p></div>
+            </details>
+            <details>
+              <summary>How should Nattokinase be stored?</summary>
+              <div class="ans"><p>Store at room temperature in a cool, dry place away from direct sunlight and out of reach of children.</p></div>
+            </details>
+            <details>
+              <summary>Where is Aiva Wellness Nattokinase manufactured?</summary>
+              <div class="ans"><p>The product information names Beatrix Lifecare as manufacturer and India as the country of origin.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
       <section class="followup-cta" aria-labelledby="cta-h"><div><h2 id="cta-h">Keep circulation in focus.</h2><p>Get Nattokinase 100 mg updates and product guidance directly from Aiva Wellness.</p></div><div class="followup-actions"><a class="btn-primary btn-lg" href="/enquire?product=Nattokinase%20100%20mg"><i class="fa-solid fa-bell"></i> Get updates</a><a class="btn-ghost" href="https://wa.me/917807751711?text=I%20want%20updates%20about%20Aiva%20Wellness%20Nattokinase%20100%20mg" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</a></div></section>
     </main>
 
@@ -4385,12 +4601,13 @@
           desc: "Magnesium Complex 5 in 1 supports bone strength, muscle recovery, and cardiac wellness with a balanced formula of Magnesium, Vitamin D3, Zinc, and Calcium. Ideal for daily energy, immunity, and overall vitality.",
         },
         103: {
-          name: "Nattokinase 100 mg",
+          name: "Nattokinase 100 mg — 2,000 FU | 60 Capsules",
+          pageTitle: "Nattokinase 100 mg, 2,000 FU, 60 Capsules | Aiva Wellness",
           img: "../products/Nattokinase Carton  final 3d.webp",
           price: 1299,
           old: 1499,
           discount: 13,
-          desc: "Nattokinase 100 mg delivers an everyday-strength dose of natural fibrinolytic enzyme to support heart health and healthy blood circulation.",
+          desc: "Aiva Wellness Nattokinase contains 100 mg of nattokinase from fermented soybean extract, with 2,000 FU enzyme activity per capsule. Each bottle contains 60 capsules.",
         },
         108: {
           name: "Vitamin D3 Supplement",
@@ -4434,7 +4651,7 @@
             t.getAttribute("data-full-src") === p.img,
         );
         switchThumb(thumbMatch || document.querySelector(".thumb-img"), p.img);
-        document.title = p.name + " | Aiva Wellness";
+        document.title = p.pageTitle || p.name + " | Aiva Wellness";
       })();
     </script>
     <script>

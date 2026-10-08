@@ -9,7 +9,7 @@
     omega3fishoil: ["../blogs/images/OMEGA3FISHOIL.png", "Omega-3 Fish Oil Benefits", "Explore why EPA and DHA matter and what to consider in an everyday Omega-3 routine.", "../blogs/omega-3-fish-oil.html"],
     vitamind3: ["../blogs/images/VITAMINd3EXPLAINED.png", "Vitamin D3 Explained: Why It Matters", "Learn the role of Vitamin D3 in bone health, immunity and a carefully guided routine.", "../blogs/vitamin-d3-explained.html"]
   };
-  const key = location.pathname.split("/").pop();
+  const key = location.pathname.split("/").pop().replace(/\.html$/i, "");
   const data = cards[key];
   const cta = document.querySelector(".followup-cta");
   if (!data || !cta) return;
