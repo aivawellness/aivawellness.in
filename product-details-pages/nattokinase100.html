@@ -1111,6 +1111,25 @@
         border: 1px solid var(--blue-border);
         width: fit-content;
       }
+      .p-eyebrow-icon {
+        display: grid;
+        place-items: center;
+        width: 24px;
+        height: 24px;
+        border: 1px solid var(--blue-border);
+        border-radius: 50%;
+        background: linear-gradient(145deg, #fff, var(--blue-soft));
+        box-shadow: 0 2px 6px rgba(29, 78, 216, 0.12);
+      }
+      .p-eyebrow-icon svg {
+        width: 14px;
+        height: 14px;
+        fill: none;
+        stroke: var(--blue);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+      }
       .p-title {
         font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
         font-size: clamp(22px, 2.6vw, 36px);
@@ -1128,7 +1147,7 @@
         max-width: 520px;
       }
       .potency-glance {
-        margin-top: 18px;
+        margin-top: 0;
         padding: 18px;
         background: var(--white);
         border: 1px solid var(--border);
@@ -1356,6 +1375,24 @@
       }
       .trust-item:hover .trust-icon-w {
         background: var(--blue);
+      }
+      .trust-icon-verified {
+        border: 1px solid var(--blue-border);
+        border-radius: 50%;
+        background: linear-gradient(145deg, #fff, var(--blue-soft));
+        box-shadow: 0 2px 8px rgba(29, 78, 216, 0.12);
+      }
+      .trust-icon-w svg {
+        width: 21px;
+        height: 21px;
+        fill: var(--blue);
+        transition: fill 0.2s;
+      }
+      .trust-item:hover .trust-icon-w svg {
+        fill: #fff;
+      }
+      .trust-item:hover .trust-icon-verified {
+        border-color: var(--blue);
       }
       .trust-icon-w i {
         font-size: 14px;
@@ -3098,9 +3135,15 @@
           </div>
 
           <div class="product-info reveal">
-            <span class="p-eyebrow"
-              ><i class="fa-solid fa-leaf"></i> Aiva Wellness — Dietary Supplement</span
-            >
+            <span class="p-eyebrow">
+              <span class="p-eyebrow-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M20 4c-8 0-14 3-14 10a6 6 0 0 0 6 6c7 0 10-6 8-16Z" />
+                  <path d="M4 21c3-5 7-8 12-11" />
+                </svg>
+              </span>
+              Aiva Wellness — Dietary Supplement
+            </span>
 
             <div>
               <h1 id="productTitle" class="p-title">Nattokinase 100 mg — 2,000 FU | 60 Capsules</h1>
@@ -3139,11 +3182,6 @@
               </p>
             </section>
 
-            <div class="stock-row">
-              <div class="stock-dot"></div>
-              <span class="stock-label">In Stock</span>
-            </div>
-
             <div class="price-card">
               <div class="price-row-main">
                 <span id="priceMain" class="price-main-val">₹1,299</span>
@@ -3169,8 +3207,16 @@
 
             <div class="trust-grid">
               <div class="trust-item">
-                <div class="trust-icon-w">
-                  <i class="fa-solid fa-shield-halved"></i>
+                <div class="trust-icon-w trust-icon-verified">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    focusable="false"
+                  >
+                    <path
+                      d="M23 12l-2.44-2.79.34-3.69-3.61-.82L15.4 1.5 12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.06 3.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"
+                    />
+                  </svg>
                 </div>
                 <div>
                   <div class="trust-text-w">100% Genuine</div>

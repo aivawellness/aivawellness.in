@@ -1342,6 +1342,15 @@
       .trust-item:hover .trust-icon-w i {
         color: #fff;
       }
+      .trust-icon-w svg {
+        width: 21px;
+        height: 21px;
+        fill: var(--blue);
+        transition: fill 0.2s;
+      }
+      .trust-item:hover .trust-icon-w svg {
+        fill: #fff;
+      }
       .trust-text-w {
         font-size: 0.76rem;
         font-weight: 600;
@@ -3025,7 +3034,9 @@
             <div class="trust-grid">
               <div class="trust-item">
                 <div class="trust-icon-w">
-                  <i class="fa-solid fa-shield-halved"></i>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                    <path d="M23 12l-2.44-2.79.34-3.69-3.61-.82L15.4 1.5 12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.06 3.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/>
+                  </svg>
                 </div>
                 <div>
                   <div class="trust-text-w">100% Genuine</div>
