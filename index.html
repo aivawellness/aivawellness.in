@@ -1426,62 +1426,92 @@
         .trio-content { padding: 30px 20px 24px; }
       }
       .compare-section {
-        padding: 88px 24px;
-        background: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+        position: relative;
+        overflow: hidden;
+        padding: clamp(64px, 7vw, 96px) 24px;
+        background:
+          radial-gradient(ellipse at 50% 0%, rgba(219, 234, 254, 0.72), transparent 48%),
+          linear-gradient(180deg, #f8fafc 0%, #edf3f8 100%);
       }
-      .compare-wrap { max-width: 1080px; margin: 0 auto; }
-      .compare-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+      .compare-wrap { position: relative; max-width: 1120px; margin: 0 auto; }
+      .compare-section .section-header { max-width: 680px; margin: 0 auto 34px; text-align: center; }
+      .compare-section .section-header h2 { margin: 12px 0 10px; color: #0f172a; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.045em; line-height: 1.08; }
+      .compare-section .section-header p { max-width: 54ch; margin: 0 auto; color: #64748b; font-size: .98rem; line-height: 1.7; }
+      .compare-section .section-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 12px; border: 1px solid #d7e4f4; border-radius: 999px; background: rgba(255, 255, 255, .76); color: #1d4ed8; font-size: .69rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+      .compare-section .section-eyebrow i { font-size: .78rem; }
+      .compare-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 auto 22px; }
       .compare-tab {
-        padding: 11px 18px;
-        border: 1px solid var(--border);
+        min-height: 44px;
+        padding: 10px 17px;
+        border: 1px solid #dce5ef;
         border-radius: 999px;
-        color: var(--muted);
-        background: var(--white);
+        color: #526175;
+        background: rgba(255, 255, 255, .82);
         font: inherit;
         font-size: .8rem;
         font-weight: 700;
         cursor: pointer;
-        box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
+        box-shadow: 0 2px 6px rgba(15, 23, 42, .035);
         transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
       }
-      .compare-tab[aria-selected="true"] { color: var(--white); background: var(--blue); border-color: var(--blue); box-shadow: 0 5px 14px rgba(29, 78, 216, .2); }
-      .compare-tab:hover { color: var(--blue); border-color: #93b4f5; background: #eff6ff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(15, 23, 42, .08); }
-      .compare-tab[aria-selected="true"]:hover { color: var(--white); background: #1e40af; border-color: #1e40af; }
-      .compare-tab:focus-visible { outline: 3px solid rgba(29, 78, 216, .3); outline-offset: 3px; }
-      .compare-panel { overflow-x: auto; background: var(--white); border: 1px solid #dce5ef; border-radius: 12px; box-shadow: 0 16px 36px rgba(15, 23, 42, .07); }
+      .compare-tab[aria-selected="true"] { color: #fff; background: linear-gradient(135deg, #1d4ed8, #2458c5); border-color: #1d4ed8; box-shadow: 0 7px 18px rgba(29, 78, 216, .2); }
+      .compare-tab:hover { color: #1d4ed8; border-color: #a9c4eb; background: #fff; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(15, 23, 42, .07); }
+      .compare-tab[aria-selected="true"]:hover { color: #fff; background: #1e40af; border-color: #1e40af; }
+      .compare-tab:focus-visible, .compare-link:focus-visible { outline: 3px solid rgba(29, 78, 216, .3); outline-offset: 3px; }
+      .compare-panel { overflow: hidden; background: rgba(255, 255, 255, .94); border: 1px solid #dce5ef; border-radius: 18px; box-shadow: 0 22px 54px rgba(15, 23, 42, .085); }
       .compare-panel[hidden] { display: none; }
-      .compare-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+      .compare-panel.active { animation: compare-enter .28s ease both; }
+      @keyframes compare-enter { from { opacity: .55; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+      .compare-table { width: 100%; min-width: 620px; border-collapse: separate; border-spacing: 0; text-align: left; }
+      .compare-table caption { padding: 0; }
       .compare-table th,
-      .compare-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); vertical-align: top; }
-      .compare-table th { color: var(--ink); font-size: .86rem; background: #f8fafc; }
-      .compare-table td { color: var(--muted); font-size: .82rem; line-height: 1.5; }
-      .compare-table th:not(:first-child) { color: var(--blue); }
-      .compare-table tr:last-child td { border-bottom: 0; }
-      .compare-link { color: var(--blue); font-weight: 700; text-decoration: none; }
-      .compare-link:hover { text-decoration: underline; }
+      .compare-table td { padding: 17px 20px; border-bottom: 1px solid #e9eef4; vertical-align: top; }
+      .compare-table thead th { padding: 17px 20px; background: #f1f6fc; color: #23406b; font-size: .76rem; font-weight: 750; letter-spacing: .04em; line-height: 1.4; }
+      .compare-table thead th:first-child { width: 19%; color: #64748b; }
+      .compare-table thead th:not(:first-child) { color: #1745a4; }
+      .compare-table tbody th[scope="row"] { width: 19%; background: #fbfcfe; color: #334155; font-size: .77rem; font-weight: 700; line-height: 1.5; }
+      .compare-table tbody td { color: #526175; font-size: .8rem; line-height: 1.65; overflow-wrap: anywhere; }
+      .compare-table tbody tr:last-child th,
+      .compare-table tbody tr:last-child td { border-bottom: 0; }
+      .compare-table tbody tr:hover th[scope="row"],
+      .compare-table tbody tr:hover td { background-color: #f8fbff; }
+      .compare-table strong { color: #142d55; font-weight: 750; }
+      .compare-link { display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 8px 12px; border: 1px solid #cbdcf5; border-radius: 9px; background: #eff6ff; color: #1745a4; font-size: .76rem; font-weight: 750; line-height: 1.35; text-decoration: none; transition: background-color .2s ease, border-color .2s ease, transform .2s ease; }
+      .compare-link:hover { transform: translateY(-1px); border-color: #9bb9e9; background: #e2edff; }
       @media (max-width: 767px) {
-        .compare-section { padding: 60px 16px 68px; }
-        .compare-section .section-header { margin-bottom: 28px; padding: 0 4px; }
-        .compare-section .section-eyebrow { max-width: 100%; justify-content: center; padding: 5px 10px; font-size: .62rem; letter-spacing: .11em; }
-        .compare-tabs { justify-content: flex-start; flex-wrap: nowrap; gap: 8px; overflow-x: auto; margin: 0 -2px 18px; padding: 3px 2px 10px; scrollbar-width: none; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+        .compare-section { padding: 62px 16px 70px; }
+        .compare-section .section-header { margin-bottom: 25px; padding: 0 4px; }
+        .compare-section .section-header h2 { margin-top: 11px; font-size: clamp(1.9rem, 8vw, 2.55rem); }
+        .compare-section .section-header p { font-size: .9rem; }
+        .compare-section .section-eyebrow { max-width: 100%; padding: 6px 10px; font-size: .61rem; letter-spacing: .1em; }
+        .compare-tabs { justify-content: flex-start; flex-wrap: nowrap; gap: 8px; overflow-x: auto; margin: 0 -1px 15px; padding: 3px 2px 10px; scrollbar-width: none; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
         .compare-tabs::-webkit-scrollbar { display: none; }
-        .compare-tab { flex: 0 0 auto; width: auto; min-height: 44px; padding: 10px 15px; white-space: nowrap; scroll-snap-align: start; }
-        .compare-panel { width: 100%; max-width: 100%; overflow: visible; border-radius: 10px; }
-        .compare-table { width: 100%; min-width: 0; max-width: 100%; display: block; }
+        .compare-tab { flex: 0 0 auto; min-height: 44px; padding: 10px 13px; font-size: .74rem; white-space: nowrap; scroll-snap-align: start; }
+        .compare-panel { border-radius: 15px; }
+        .compare-table { display: block; width: 100%; min-width: 0; }
         .compare-table thead { display: none; }
-        .compare-table tbody { display: block; padding: 0; }
-        .compare-table tr { display: block; width: 100%; border-bottom: 1px solid #e8edf3; background: var(--white); }
-        .compare-table tr:last-child { border-bottom: 0; }
-        .compare-table th[scope="row"] { display: block; width: 100%; padding: 11px 14px; border: 0; border-bottom: 1px solid #edf1f5; color: var(--ink); background: #f8fafc; font-size: .79rem; }
-        .compare-table td { display: grid; grid-template-columns: 78px minmax(0, 1fr); align-items: start; gap: 10px; width: 100%; padding: 10px 14px; border: 0; color: #475569; font-size: .8rem; line-height: 1.5; overflow-wrap: anywhere; }
-        .compare-table td + td { border-top: 1px solid #f0f3f7; }
-        .compare-table td::before { content: attr(data-label); display: block; color: #1d4ed8; font-size: .68rem; font-weight: 700; line-height: 1.45; overflow-wrap: anywhere; }
-        #nattokinase-panel tbody tr:first-child td::before { content: none; }
-        .compare-link { overflow-wrap: anywhere; }
+        .compare-table tbody { display: grid; gap: 10px; padding: 12px; }
+        .compare-table tbody tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 12px; border: 1px solid #e7edf4; border-radius: 12px; background: #fff; box-shadow: 0 3px 10px rgba(15, 23, 42, .035); }
+        .compare-table tbody th[scope="row"] { grid-column: 1 / -1; width: auto; padding: 0 0 8px; border: 0; border-bottom: 1px solid #edf1f6; background: transparent; color: #334155; font-size: .76rem; }
+        .compare-table tbody td { min-width: 0; padding: 8px 9px; border: 1px solid #edf1f6; border-radius: 9px; background: #f8fafc; color: #475569; font-size: .75rem; line-height: 1.55; }
+        .compare-table tbody td::before { display: block; margin-bottom: 5px; color: #1d4ed8; content: attr(data-label); font-size: .62rem; font-weight: 750; letter-spacing: .025em; line-height: 1.4; }
+        .compare-table tbody td:only-of-type { grid-column: 1 / -1; }
+        .compare-table tbody td:last-child:nth-child(4) { grid-column: 1 / -1; }
+        .compare-table tbody tr:hover th[scope="row"],
+        .compare-table tbody tr:hover td { background-color: #f8fafc; }
+        .compare-link { min-height: 40px; padding: 7px 9px; font-size: .7rem; }
+      }
+      @media (max-width: 420px) {
+        .compare-tabs { justify-content: center; flex-wrap: wrap; overflow: visible; padding-bottom: 2px; }
+        .compare-tab { flex: 1 1 calc(50% - 4px); max-width: calc(50% - 4px); padding: 9px 10px; white-space: normal; }
+        #daily-vitals-panel .compare-table tbody tr,
+        #core-products-panel .compare-table tbody tr { grid-template-columns: minmax(0, 1fr); }
+        #daily-vitals-panel .compare-table tbody td,
+        #core-products-panel .compare-table tbody td { grid-column: 1 / -1; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .compare-tab { transition: none; }
-        .compare-tab:hover { transform: none; }
+        .compare-tab, .compare-link, .compare-panel.active { animation: none; transition: none; }
+        .compare-tab:hover, .compare-link:hover { transform: none; }
       }
       .products-section::before {
         content: "";
@@ -4583,7 +4613,7 @@
     <div class="section-header reveal">
       <span class="section-eyebrow"><i class="fa-solid fa-scale-balanced"></i> Choose with confidence</span>
       <h2 id="compare-title">Compare your options</h2>
-      <p>See the practical differences before you visit a product page.</p>
+      <p>Compare Nattokinase strengths, Daily Vitals formulas, and everyday wellness supplements side by side.</p>
     </div>
 
     <div class="compare-tabs" role="tablist" aria-label="Product comparisons">
@@ -4634,14 +4664,14 @@
         <caption class="sr-only">Comparison of Magnesium Complex, Omega-3 Fish Oil, and Vitamin D3</caption>
         <thead><tr><th scope="col">Consider</th><th scope="col">Magnesium Complex 5-in-1</th><th scope="col">Omega-3 Fish Oil</th><th scope="col">Vitamin D3 60,000 IU</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Best fit</th><td data-label="Magnesium">Sleep, relaxation & muscle support</td><td data-label="Omega-3">Heart, brain, eye & joint wellness</td><td data-label="D3">Bone health & immunity support</td></tr>
-          <tr><th scope="row">Strength per serving</th><td data-label="Magnesium">350 mg per 2 capsules (5 forms blend)</td><td data-label="Omega-3">1000 mg Fish Oil per softgel</td><td data-label="D3">60,000 IU Cholecalciferol IP per tablet</td></tr>
-          <tr><th scope="row">Active Blend</th><td data-label="Magnesium">Aspartate + Citrate + Glycinate + Gluconate + Oxide</td><td data-label="Omega-3">EPA 180 mg + DHA 120 mg + Vitamin E 10 mg</td><td data-label="D3">Vitamin D3 IP - High potency weekly dose</td></tr>
-          <tr><th scope="row">Count & Dosage</th><td data-label="Magnesium">60 vegan caps / 2 daily / Evening routine</td><td data-label="Omega-3">60 softgels / 1 daily with meal</td><td data-label="D3">4 film-coated tabs / Weekly as directed by doctor</td></tr>
-          <tr><th scope="row">Form</th><td data-label="Magnesium">Vegan capsule</td><td data-label="Omega-3">Softgel</td><td data-label="D3">Film-coated tablet</td></tr>
-          <tr><th scope="row">Purity</th><td data-label="Magnesium">No unnecessary fillers, Clean formula</td><td data-label="Omega-3">No fishy aftertaste, Purified</td><td data-label="D3">No fillers, Lab tested</td></tr>
-          <tr><th scope="row">Choose when</th><td data-label="Magnesium">You want a five-form magnesium blend for night routine</td><td data-label="Omega-3">You want EPA & DHA in a daily softgel</td><td data-label="D3">You need high-strength D3 for bone & calcium absorption</td></tr>
-          <tr><th scope="row">Details</th><td data-label="Magnesium"><a class="compare-link" href="/products/magnesium-complex-5-in-1">View Magnesium Complex →</a></td><td data-label="Omega-3"><a class="compare-link" href="/products/omega3fishoil">View Omega-3 Fish Oil →</a></td><td data-label="D3"><a class="compare-link" href="/products/vitamind3">View Vitamin D3 →</a></td></tr>
+          <tr><th scope="row">Best fit</th><td data-label="Magnesium Complex 5-in-1">Sleep, relaxation & muscle support</td><td data-label="Omega-3 Fish Oil">Heart, brain, eye & joint wellness</td><td data-label="Vitamin D3 60,000 IU">Bone health & immunity support</td></tr>
+          <tr><th scope="row">Strength per serving</th><td data-label="Magnesium Complex 5-in-1">350 mg per 2 capsules (5 forms blend)</td><td data-label="Omega-3 Fish Oil">1000 mg Fish Oil per softgel</td><td data-label="Vitamin D3 60,000 IU">60,000 IU Cholecalciferol IP per tablet</td></tr>
+          <tr><th scope="row">Active Blend</th><td data-label="Magnesium Complex 5-in-1">Aspartate + Citrate + Glycinate + Gluconate + Oxide</td><td data-label="Omega-3 Fish Oil">EPA 180 mg + DHA 120 mg + Vitamin E 10 mg</td><td data-label="Vitamin D3 60,000 IU">Vitamin D3 IP - High potency weekly dose</td></tr>
+          <tr><th scope="row">Count & Dosage</th><td data-label="Magnesium Complex 5-in-1">60 vegan caps / 2 daily / Evening routine</td><td data-label="Omega-3 Fish Oil">60 softgels / 1 daily with meal</td><td data-label="Vitamin D3 60,000 IU">60 film-coated tablets / Use weekly only as directed by a doctor</td></tr>
+          <tr><th scope="row">Form</th><td data-label="Magnesium Complex 5-in-1">Vegan capsule</td><td data-label="Omega-3 Fish Oil">Softgel</td><td data-label="Vitamin D3 60,000 IU">Film-coated tablet</td></tr>
+          <tr><th scope="row">Purity</th><td data-label="Magnesium Complex 5-in-1">No unnecessary fillers, Clean formula</td><td data-label="Omega-3 Fish Oil">No fishy aftertaste, Purified</td><td data-label="Vitamin D3 60,000 IU">No fillers, Lab tested</td></tr>
+          <tr><th scope="row">Choose when</th><td data-label="Magnesium Complex 5-in-1">You want a five-form magnesium blend for night routine</td><td data-label="Omega-3 Fish Oil">You want EPA & DHA in a daily softgel</td><td data-label="Vitamin D3 60,000 IU">You need high-strength D3 for bone & calcium absorption</td></tr>
+          <tr><th scope="row">Details</th><td data-label="Magnesium Complex 5-in-1"><a class="compare-link" href="/products/magnesium-complex-5-in-1">View Magnesium Complex →</a></td><td data-label="Omega-3 Fish Oil"><a class="compare-link" href="/products/omega3fishoil">View Omega-3 Fish Oil →</a></td><td data-label="Vitamin D3 60,000 IU"><a class="compare-link" href="/products/vitamind3">View Vitamin D3 →</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -4655,13 +4685,36 @@
 </style>
 
 <script>
-document.querySelectorAll('.compare-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    const target = document.getElementById(tab.getAttribute('aria-controls'));
-    document.querySelectorAll('.compare-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');t.tabIndex=-1});
-    document.querySelectorAll('.compare-panel').forEach(p=>{p.hidden=true;p.classList.remove('active')});
-    tab.classList.add('active');tab.setAttribute('aria-selected','true');tab.tabIndex=0;
-    target.hidden=false;target.classList.add('active');
+const compareTabs = [...document.querySelectorAll('.compare-tab')];
+const activateCompareTab = (tab, moveFocus = false) => {
+  const target = document.getElementById(tab.getAttribute('aria-controls'));
+  if (!target) return;
+  compareTabs.forEach((item) => {
+    const selected = item === tab;
+    item.classList.toggle('active', selected);
+    item.setAttribute('aria-selected', String(selected));
+    item.tabIndex = selected ? 0 : -1;
+  });
+  document.querySelectorAll('.compare-panel').forEach((panel) => {
+    const selected = panel === target;
+    panel.hidden = !selected;
+    panel.classList.toggle('active', selected);
+  });
+  if (moveFocus) tab.focus();
+};
+
+compareTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => activateCompareTab(tab));
+  tab.addEventListener('keydown', (event) => {
+    let nextIndex;
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % compareTabs.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + compareTabs.length) % compareTabs.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = compareTabs.length - 1;
+    if (nextIndex !== undefined) {
+      event.preventDefault();
+      activateCompareTab(compareTabs[nextIndex], true);
+    }
   });
 });
 </script>
@@ -5893,4 +5946,3 @@ document.querySelectorAll('.compare-tab').forEach(tab=>{
     </script>
   </body>
 </html>
-
