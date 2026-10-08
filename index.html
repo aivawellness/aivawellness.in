@@ -2236,79 +2236,98 @@
       }
 
       /* ---------------------------------------------------
-   UPCOMING PRODUCTS
+   PROTEIN RANGE
 --------------------------------------------------- */
-      .upcoming-section {
-        --upcoming-ink: var(--ink);
-        --upcoming-muted: var(--muted);
+      .protein-range {
         position: relative;
         isolation: isolate;
         overflow: hidden;
-        padding: 104px 24px 112px;
-        color: var(--upcoming-ink);
-        background: linear-gradient(180deg, #f8fbff 0%, #edf5ff 52%, #f8fafc 100%);
+        padding: clamp(68px, 8vw, 108px) 24px;
+        color: #172b27;
+        background:
+          radial-gradient(ellipse at 50% 0%, rgba(221, 236, 225, .82), transparent 48%),
+          linear-gradient(180deg, #f7f8f3 0%, #eef2ec 52%, #f8f8f4 100%);
       }
-      .upcoming-section::before,
-      .upcoming-section::after {
+      .protein-range::before,
+      .protein-range::after {
         content: "";
         position: absolute;
         pointer-events: none;
-        border: 1px solid rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(34, 80, 65, .09);
         border-radius: 50%;
       }
-      .upcoming-section::before { width: 420px; height: 420px; top: -245px; right: 8%; }
-      .upcoming-section::after { width: 270px; height: 270px; bottom: -175px; left: 5%; }
-      .upcoming-inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; }
-      .upcoming-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 48px; }
-      .upcoming-heading .section-eyebrow { color: var(--blue); background: var(--blue-soft); border-color: var(--blue-border); }
-      .upcoming-heading h2 { max-width: 580px; color: var(--black); font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-size: clamp(2.25rem, 5vw, 4.4rem); line-height: 0.98; letter-spacing: 0.01em; }
-      .upcoming-heading h2 span { color: var(--blue); }
-      .upcoming-heading p { max-width: 330px; margin-bottom: 4px; color: var(--upcoming-muted); font-size: 0.95rem; line-height: 1.75; }
-      .upcoming-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-      .upcoming-card { --spot-x: 50%; --spot-y: 50%; position: relative; min-height: 596px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; border: 1px solid rgba(15, 23, 42, 0.1); border-radius: 2px; background: linear-gradient(150deg, rgba(255,255,255,.98), rgba(247,250,255,.95)); box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08); transition: transform 0.55s var(--ease), border-color 0.45s ease, box-shadow 0.55s var(--ease); text-decoration: none; color: inherit; }
-      .upcoming-card::after { content: ""; position: absolute; width: 210px; height: 210px; right: -108px; bottom: -112px; border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 50%; transition: transform .65s var(--ease), border-color .4s ease; }
-      .upcoming-card:hover, .upcoming-card.touch-active { transform: translateY(-12px); border-color: rgba(96, 165, 250, 0.62); background: linear-gradient(145deg, #0b1220 0%, #102a43 58%, #173b63 100%); box-shadow: 0 34px 78px rgba(15, 23, 42, 0.3); }
-      .upcoming-card:hover::after, .upcoming-card.touch-active::after { transform: scale(1.18); border-color: rgba(37,99,235,.36); }
-      .upcoming-card-top, .upcoming-card-bottom { position: relative; z-index: 1; }
-      .upcoming-card-top { padding: 0 30px; }
-      .upcoming-visual { display: block; width: calc(100% + 60px); aspect-ratio: 1 / 1; height: auto; margin: 0 -30px 28px; padding: 0; object-fit: cover; object-position: center; background: transparent; filter: saturate(.92); transition: transform .7s var(--ease), filter .45s ease; }
-      .upcoming-card:hover .upcoming-visual, .upcoming-card.touch-active .upcoming-visual { transform: scale(1.08) translateY(-5px); filter: saturate(1.12) contrast(1.02); }
-      .upcoming-card:hover .upcoming-number, .upcoming-card.touch-active .upcoming-number { color: #93c5fd; }
-      .upcoming-card:hover .upcoming-number::after, .upcoming-card.touch-active .upcoming-number::after { color: #86efac; }
-      .upcoming-number { display: flex; align-items: center; justify-content: space-between; color: var(--blue); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.17em; }
-      .upcoming-number::after { content: "AVAILABLE NOW"; color: #16a34a; font-size: .58rem; letter-spacing: .12em; }
-      .upcoming-card h3 { margin: 12px 0 9px; color: var(--black); font-size: clamp(1.55rem, 2.2vw, 2rem); letter-spacing: 0; }
-      .upcoming-card p { max-width: 290px; min-height: 48px; color: var(--upcoming-muted); font-size: 0.88rem; line-height: 1.65; }
-      .upcoming-card:hover h3, .upcoming-card.touch-active h3 { color: #fff; }
-      .upcoming-card:hover p, .upcoming-card.touch-active p { color: #bfdbfe; }
-      .upcoming-price { display: flex; align-items: baseline; gap: 10px; margin-top: 22px; }
-      .upcoming-price strong { color: var(--black); font-family: "Sora", sans-serif; font-size: 1.55rem; letter-spacing: -.04em; }
-      .upcoming-price del { color: #94a3b8; font-size: .82rem; }
-      .upcoming-pack { display: block; margin-top: 4px; color: #64748b; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
-      .upcoming-card:hover .upcoming-price strong, .upcoming-card.touch-active .upcoming-price strong { color: #fff; }
-      .upcoming-card:hover .upcoming-price del, .upcoming-card.touch-active .upcoming-price del { color: #93c5fd; }
-      .upcoming-card:hover .upcoming-pack, .upcoming-card.touch-active .upcoming-pack { color: #93c5fd; }
-      .upcoming-card-bottom { display: flex; align-items: center; justify-content: space-between; padding: 25px 30px 30px; border-top: 1px solid rgba(15,23,42,.08); }
-      .upcoming-card:hover .upcoming-card-bottom, .upcoming-card.touch-active .upcoming-card-bottom { border-top-color: rgba(147,197,253,.22); }
-      .upcoming-status { display: inline-flex; align-items: center; gap: 9px; padding: 11px 14px; color: var(--blue); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid rgba(37,99,235,.2); background: rgba(255,255,255,.72); transition: gap .35s var(--ease), color .35s ease, background .35s ease, border-color .35s ease; }
-      .upcoming-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 5px rgba(34,197,94,.1), 0 0 14px rgba(34,197,94,.45); }
-      .upcoming-status i { transition: transform .35s var(--ease); }
-      .upcoming-card:hover .upcoming-status, .upcoming-card.touch-active .upcoming-status { gap: 13px; }
-      .upcoming-card:hover .upcoming-status i, .upcoming-card.touch-active .upcoming-status i { transform: translate(3px, -3px); }
-      .upcoming-card:hover .upcoming-status, .upcoming-card.touch-active .upcoming-status { color: #fff; background: var(--blue); border-color: var(--blue); }
-      .upcoming-card:focus-visible { outline: 3px solid rgba(37,99,235,.35); outline-offset: 5px; }
-      @media (max-width: 800px) {
-        .upcoming-heading { display: block; }
-        .upcoming-heading p { max-width: 520px; margin-top: 20px; }
-        .upcoming-grid { grid-template-columns: 1fr; gap: 16px; }
+      .protein-range::before { width: 500px; height: 500px; top: -310px; right: 6%; }
+      .protein-range::after { width: 320px; height: 320px; bottom: -225px; left: 3%; }
+      .protein-range-inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; }
+      .protein-range-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .55fr); align-items: end; gap: 36px; margin-bottom: 34px; }
+      .protein-range .section-eyebrow { color: #245b49; background: #e7efe7; border-color: #d1e0d2; }
+      .protein-range-heading h2 { max-width: 720px; margin-top: 14px; color: #172b27; font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-size: clamp(2.45rem, 5.2vw, 4.65rem); font-weight: 600; line-height: .98; letter-spacing: .005em; }
+      .protein-range-heading h2 span { color: #a7823f; }
+      .protein-range-intro { max-width: 420px; margin: 0 0 5px; color: #586963; font-size: .96rem; line-height: 1.8; }
+      .protein-range-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 20px; }
+      .protein-card { --protein-accent: #316d57; position: relative; display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid #dce5dc; border-radius: 20px; background: #fff; box-shadow: 0 14px 38px rgba(23, 43, 39, .075); transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease; }
+      .protein-card::before { position: absolute; z-index: 2; top: 0; right: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--protein-accent), rgba(205, 176, 112, .85)); content: ""; }
+      .protein-card:nth-child(2) { --protein-accent: #39775b; }
+      .protein-card:nth-child(3) { --protein-accent: #416579; }
+      .protein-card:hover { transform: translateY(-6px); border-color: #c5d5c6; box-shadow: 0 24px 54px rgba(23, 43, 39, .13); }
+      .protein-card-media { position: relative; display: grid; height: clamp(225px, 23vw, 285px); place-items: center; overflow: hidden; padding: 14px; background: linear-gradient(145deg, #f2f5ed, #e9efe7); }
+      .protein-card:nth-child(2) .protein-card-media { background: linear-gradient(145deg, #eef4f0, #e4eee7); }
+      .protein-card:nth-child(3) .protein-card-media { background: linear-gradient(145deg, #eef3f5, #e4ebee); }
+      .protein-card-media::after { position: absolute; right: -52px; bottom: -94px; width: 210px; height: 210px; border: 1px solid rgba(54, 99, 78, .12); border-radius: 50%; content: ""; pointer-events: none; }
+      .protein-card-media img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
+      .protein-card:hover .protein-card-media img { transform: scale(1.035); }
+      .protein-card-body { display: flex; flex: 1; flex-direction: column; padding: 22px 22px 20px; }
+      .protein-card-kicker { display: inline-flex; width: fit-content; align-items: center; gap: 7px; color: var(--protein-accent); font-size: .64rem; font-weight: 800; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; }
+      .protein-card-kicker::before { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: currentColor; content: ""; }
+      .protein-card h3 { margin: 10px 0 8px; color: #172b27; font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-size: clamp(1.55rem, 2vw, 1.9rem); font-weight: 600; line-height: 1.12; }
+      .protein-card-summary { min-height: 76px; margin: 0; color: #586963; font-size: .84rem; line-height: 1.7; }
+      .protein-card-fit { margin: 15px 0 0; padding: 12px 13px; border: 1px solid #e7ece6; border-radius: 11px; background: #f8faf7; }
+      .protein-card-fit strong { display: block; margin-bottom: 3px; color: #65746c; font-size: .62rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+      .protein-card-fit span { display: block; color: #30473e; font-size: .76rem; font-weight: 650; line-height: 1.5; }
+      .protein-card-facts { display: flex; flex-wrap: wrap; gap: 7px; margin: 13px 0 0; padding: 0; list-style: none; }
+      .protein-card-facts li { padding: 6px 9px; border: 1px solid #e6ebe5; border-radius: 999px; color: #596860; background: #fff; font-size: .65rem; font-weight: 650; line-height: 1.35; }
+      .protein-card-purchase { display: flex; align-items: baseline; gap: 9px; margin-top: auto; padding-top: 20px; }
+      .protein-card-purchase data { color: #172b27; font-family: "Sora", sans-serif; font-size: 1.45rem; font-weight: 750; letter-spacing: -.04em; }
+      .protein-card-purchase del { color: #849189; font-size: .77rem; }
+      .protein-card-saving { margin-left: auto; padding: 5px 8px; border: 1px solid #d6e7d8; border-radius: 999px; color: #286044; background: #eff7ef; font-size: .62rem; font-weight: 750; white-space: nowrap; }
+      .protein-card-cta { display: flex; min-height: 48px; align-items: center; justify-content: center; gap: 9px; margin-top: 13px; padding: 11px 14px; border: 1px solid #214e40; border-radius: 10px; color: #fffdf7; background: linear-gradient(135deg, #173b35, #205047); font-size: .77rem; font-weight: 750; letter-spacing: .015em; text-decoration: none; box-shadow: 0 6px 14px rgba(22, 58, 52, .13); transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
+      .protein-card-cta i { color: #e3cf9d; transition: transform .2s ease; }
+      .protein-card-cta:hover { transform: translateY(-1px); background: linear-gradient(135deg, #204c43, #286154); box-shadow: 0 9px 20px rgba(22, 58, 52, .2); }
+      .protein-card-cta:hover i { transform: translateX(3px); }
+      .protein-card-cta:focus-visible { outline: 3px solid rgba(167, 130, 63, .46); outline-offset: 3px; }
+      .protein-guide { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 24px; overflow: hidden; border: 1px solid #dce5dc; border-radius: 15px; background: rgba(255, 255, 255, .68); }
+      .protein-guide-step { display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: start; gap: 10px; padding: 17px 18px; }
+      .protein-guide-step + .protein-guide-step { border-left: 1px solid #e2e9e1; }
+      .protein-guide-number { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid #d7e3d6; border-radius: 50%; color: #2b604b; background: #eef4ec; font-family: "Sora", sans-serif; font-size: .72rem; font-weight: 700; }
+      .protein-guide-step strong { display: block; margin: 1px 0 3px; color: #233d33; font-size: .75rem; }
+      .protein-guide-step p { margin: 0; color: #66746c; font-size: .69rem; line-height: 1.55; }
+      .protein-range-note { max-width: 900px; margin: 15px auto 0; color: #68766e; font-size: .68rem; line-height: 1.65; text-align: center; }
+      @media (max-width: 900px) {
+        .protein-range-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .protein-card:last-child { grid-column: 1 / -1; width: calc(50% - 10px); justify-self: center; }
+        .protein-card-media { height: clamp(220px, 32vw, 280px); }
       }
-      @media (max-width: 520px) {
-        .upcoming-section { padding: 76px 18px 84px; }
-        .upcoming-heading { margin-bottom: 36px; }
-        .upcoming-card { min-height: 560px; }
-        .upcoming-card-top { padding: 0 24px; }
-        .upcoming-card-bottom { padding: 20px 24px 24px; }
-        .upcoming-visual { width: calc(100% + 48px); aspect-ratio: 1 / 1; height: auto; margin: 0 -24px 24px; padding: 0; }
+      @media (max-width: 620px) {
+        .protein-range { padding: 64px 16px 70px; }
+        .protein-range-heading { grid-template-columns: minmax(0, 1fr); gap: 13px; margin-bottom: 24px; }
+        .protein-range-heading h2 { margin-top: 11px; font-size: clamp(2.35rem, 10vw, 3.35rem); line-height: 1; }
+        .protein-range-intro { max-width: 54ch; font-size: .87rem; line-height: 1.7; }
+        .protein-range-grid { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+        .protein-card:last-child { grid-column: auto; width: 100%; }
+        .protein-card { border-radius: 16px; }
+        .protein-card-media { height: clamp(235px, 72vw, 330px); padding: 12px; }
+        .protein-card-body { padding: 19px 18px 18px; }
+        .protein-card h3 { font-size: 1.7rem; }
+        .protein-card-summary { min-height: 0; font-size: .83rem; }
+        .protein-guide { grid-template-columns: minmax(0, 1fr); margin-top: 17px; }
+        .protein-guide-step { padding: 13px 15px; }
+        .protein-guide-step + .protein-guide-step { border-top: 1px solid #e2e9e1; border-left: 0; }
+        .protein-range-note { margin-top: 12px; font-size: .66rem; text-align: left; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .protein-card, .protein-card-media img, .protein-card-cta, .protein-card-cta i { transition: none; }
+        .protein-card:hover, .protein-card-cta:hover { transform: none; }
+        .protein-card:hover .protein-card-media img, .protein-card-cta:hover i { transform: none; }
       }
 
       /* ---------------------------------------------------
@@ -4782,51 +4801,134 @@ compareTabs.forEach((tab, index) => {
       </div>
     </section>
 
-    <!-- NEWLY LAUNCHED PRODUCTS SECTION -->
-    <section class="upcoming-section" id="newly-launched-products">
-      <div class="upcoming-inner">
-        <div class="upcoming-heading reveal">
+    <section class="protein-range" id="protein-range" aria-labelledby="protein-range-title">
+      <div class="protein-range-inner">
+        <header class="protein-range-heading reveal">
           <div>
-            <span class="section-eyebrow"><i class="fa-solid fa-sparkles"></i> Newly Launched</span>
-            <h2>Power your everyday <span>wellness.</span></h2>
+            <span class="section-eyebrow"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Aiva Wellness Protein Range</span>
+            <h2 id="protein-range-title">Find the protein that fits <span>your routine.</span></h2>
           </div>
-          <p>Thoughtfully developed nutrition for strength, balance, and better everyday performance.</p>
-        </div>
-        <div class="upcoming-grid">
-          <a class="upcoming-card reveal d1" href="/products/wheyprotein" aria-label="View Whey Protein">
-            <div class="upcoming-card-top">
-              <img class="upcoming-visual" src="images/protein/whey%20protein.png" alt="Whey protein" loading="lazy" decoding="async" />
-              <span class="upcoming-number">01 / PERFORMANCE</span>
+          <p class="protein-range-intro">
+            Explore whey, plant and yeast protein options. Choose by the source
+            you prefer, then check the product label for serving size,
+            nutrition and allergen information.
+          </p>
+        </header>
+
+        <div class="protein-range-grid">
+          <article class="protein-card reveal d1">
+            <div class="protein-card-media">
+              <img src="images/protein/whey%20protein.png" alt="Aiva Wellness Whey Protein chocolate-flavour pouch, 2 kg" width="720" height="720" loading="lazy" decoding="async" />
+            </div>
+            <div class="protein-card-body">
+              <span class="protein-card-kicker">Milk-derived protein</span>
               <h3>Whey Protein</h3>
-              <p>Clean, high-quality protein support for recovery and everyday strength.</p>
-              <div class="upcoming-price"><strong>&#8377;3,499</strong><del>&#8377;3,999</del></div>
-              <span class="upcoming-pack">2 kg pack · Inclusive of all taxes</span>
+              <p class="protein-card-summary">
+                A convenient protein powder for people who include dairy and
+                want to add protein around training or everyday meals.
+              </p>
+              <div class="protein-card-fit">
+                <strong>Consider this if</strong>
+                <span>You prefer a dairy-based option</span>
+              </div>
+              <ul class="protein-card-facts" aria-label="Whey Protein product details">
+                <li>Chocolate flavour</li>
+                <li>2 kg pack</li>
+                <li>Contains milk</li>
+              </ul>
+              <div class="protein-card-purchase">
+                <data value="3499">₹3,499</data>
+                <del aria-label="Regular price ₹3,999">₹3,999</del>
+                <span class="protein-card-saving">Save ₹500</span>
+              </div>
+              <a class="protein-card-cta" href="/products/wheyprotein" aria-label="Explore Aiva Wellness Whey Protein">
+                Explore Whey Protein <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
             </div>
-            <div class="upcoming-card-bottom"><span class="upcoming-status">View product details <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></div>
-          </a>
-          <a class="upcoming-card reveal d2" href="/products/plantprotein" aria-label="View Plant Protein">
-            <div class="upcoming-card-top">
-              <img class="upcoming-visual" src="images/protein/protein.png" alt="Plant protein" loading="lazy" decoding="async" />
-              <span class="upcoming-number">02 / PLANT-BASED</span>
+          </article>
+
+          <article class="protein-card reveal d2">
+            <div class="protein-card-media">
+              <img src="images/protein/protein.png" alt="Aiva Wellness Plant Protein pouch, 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+            </div>
+            <div class="protein-card-body">
+              <span class="protein-card-kicker">Plant protein blend</span>
               <h3>Plant Protein</h3>
-              <p>Balanced plant-powered nutrition designed for a lighter, conscious routine.</p>
-              <div class="upcoming-price"><strong>&#8377;2,999</strong><del>&#8377;3,499</del></div>
-              <span class="upcoming-pack">1 kg pack · Inclusive of all taxes</span>
+              <p class="protein-card-summary">
+                A plant-based powder for people who prefer plant-derived
+                nutrition as part of their everyday food and training routine.
+              </p>
+              <div class="protein-card-fit">
+                <strong>Consider this if</strong>
+                <span>You are choosing a plant-based protein</span>
+              </div>
+              <ul class="protein-card-facts" aria-label="Plant Protein product details">
+                <li>Plant-based</li>
+                <li>1 kg pack</li>
+                <li>Check source on pack</li>
+              </ul>
+              <div class="protein-card-purchase">
+                <data value="2999">₹2,999</data>
+                <del aria-label="Regular price ₹3,499">₹3,499</del>
+                <span class="protein-card-saving">Save ₹500</span>
+              </div>
+              <a class="protein-card-cta" href="/products/plantprotein" aria-label="Explore Aiva Wellness Plant Protein">
+                Explore Plant Protein <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
             </div>
-            <div class="upcoming-card-bottom"><span class="upcoming-status">View product details <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></div>
-          </a>
-          <a class="upcoming-card reveal d3" href="/products/yeastprotein" aria-label="View Yeast Protein">
-            <div class="upcoming-card-top">
-              <img class="upcoming-visual" src="images/protein/whey1.png" alt="Yeast protein" loading="lazy" decoding="async" />
-              <span class="upcoming-number">03 / NEXT-GEN NUTRITION</span>
+          </article>
+
+          <article class="protein-card reveal d3">
+            <div class="protein-card-media">
+              <img src="images/protein/whey1.png" alt="Aiva Wellness Yeast Protein pouch, 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+            </div>
+            <div class="protein-card-body">
+              <span class="protein-card-kicker">Yeast protein blend</span>
               <h3>Yeast Protein</h3>
-              <p>Next-generation nutrition, thoughtfully formulated for modern wellness.</p>
-              <div class="upcoming-price"><strong>&#8377;2,799</strong><del>&#8377;3,299</del></div>
-              <span class="upcoming-pack">1 kg pack · Inclusive of all taxes</span>
+              <p class="protein-card-summary">
+                An alternative protein source for people comparing different
+                ingredients and looking for a convenient powder for their routine.
+              </p>
+              <div class="protein-card-fit">
+                <strong>Consider this if</strong>
+                <span>You want to explore a yeast-protein option</span>
+              </div>
+              <ul class="protein-card-facts" aria-label="Yeast Protein product details">
+                <li>Yeast protein blend</li>
+                <li>1 kg pack</li>
+                <li>Check ingredients on pack</li>
+              </ul>
+              <div class="protein-card-purchase">
+                <data value="2799">₹2,799</data>
+                <del aria-label="Regular price ₹3,299">₹3,299</del>
+                <span class="protein-card-saving">Save ₹500</span>
+              </div>
+              <a class="protein-card-cta" href="/products/yeastprotein" aria-label="Explore Aiva Wellness Yeast Protein">
+                Explore Yeast Protein <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
             </div>
-            <div class="upcoming-card-bottom"><span class="upcoming-status">View product details <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></div>
-          </a>
+          </article>
         </div>
+
+        <div class="protein-guide" aria-label="How to choose and use a protein powder">
+          <div class="protein-guide-step">
+            <span class="protein-guide-number" aria-hidden="true">01</span>
+            <div><strong>Choose your source</strong><p>Start with the protein type that matches your food preferences.</p></div>
+          </div>
+          <div class="protein-guide-step">
+            <span class="protein-guide-number" aria-hidden="true">02</span>
+            <div><strong>Read the product label</strong><p>Check the ingredients, allergens and protein per serving.</p></div>
+          </div>
+          <div class="protein-guide-step">
+            <span class="protein-guide-number" aria-hidden="true">03</span>
+            <div><strong>Follow pack directions</strong><p>Use the serving guidance on pack; individual protein needs vary.</p></div>
+          </div>
+        </div>
+        <p class="protein-range-note">
+          Protein powders are a convenient way to add dietary protein, not a
+          substitute for a varied diet. For specific nutrition or health needs,
+          seek advice from a qualified healthcare professional.
+        </p>
       </div>
     </section>
 
@@ -5614,20 +5716,6 @@ compareTabs.forEach((tab, index) => {
         { threshold: 0.12 },
       );
       revealEls.forEach((el) => revObserver.observe(el));
-
-      /* --- UPCOMING PRODUCT TOUCH STATES --- */
-      document.querySelectorAll(".upcoming-card").forEach((card) => {
-        card.addEventListener(
-          "touchstart",
-          () => {
-            document
-              .querySelectorAll(".upcoming-card")
-              .forEach((item) => item.classList.remove("touch-active"));
-            card.classList.add("touch-active");
-          },
-          { passive: true },
-        );
-      });
 
       /* --- ABOUT IMAGE TOUCH HOVER --- */
       const aboutImageBlocks = document.querySelectorAll('.about-img-main');
