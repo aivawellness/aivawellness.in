@@ -2274,10 +2274,8 @@
       .protein-card:nth-child(3) .protein-card-media { background: linear-gradient(145deg, #edf5ff, #e2edff); }
       .protein-card-media img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; transition: opacity .3s ease; }
       .protein-card-media .protein-card-image-secondary { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
-      .protein-card:hover .protein-card-image-primary,
-      .protein-card:focus-within .protein-card-image-primary { opacity: 0; }
-      .protein-card:hover .protein-card-image-secondary,
-      .protein-card:focus-within .protein-card-image-secondary { opacity: 1; }
+      .protein-card-media:hover .protein-card-image-primary { opacity: 0; }
+      .protein-card-media:hover .protein-card-image-secondary { opacity: 1; }
       .protein-card-body { display: flex; flex: 1; flex-direction: column; padding: 22px 22px 20px; }
       .protein-card-kicker { display: inline-flex; width: fit-content; align-items: center; gap: 7px; color: var(--protein-accent); font-size: .64rem; font-weight: 800; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; }
       .protein-card-kicker::before { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: currentColor; content: ""; }
