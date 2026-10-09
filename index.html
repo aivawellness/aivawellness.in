@@ -1343,16 +1343,35 @@
    PRODUCTS SECTION
 --------------------------------------------------- */
       .products-section {
-        background: linear-gradient(
-          180deg,
-          #f0f6ff 0%,
-          #e8f0fe 50%,
-          var(--light) 100%
-        );
+        isolation: isolate;
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(96, 165, 250, 0.18), transparent 34%),
+          radial-gradient(ellipse at 88% 76%, rgba(29, 78, 216, 0.11), transparent 33%),
+          radial-gradient(ellipse at 50% 48%, rgba(255, 255, 255, 0.94), transparent 63%),
+          linear-gradient(135deg, #eef5ff 0%, #f9fbff 48%, #eaf2ff 100%);
         padding: 96px 24px;
         width: 100%;
         position: relative;
         overflow: hidden;
+      }
+      .products-section::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: -180px;
+        bottom: -300px;
+        width: 540px;
+        height: 540px;
+        border: 1px solid rgba(59, 130, 246, 0.12);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 36px rgba(59, 130, 246, 0.025),
+          0 0 0 76px rgba(59, 130, 246, 0.02);
+        pointer-events: none;
+      }
+      .products-section > * {
+        position: relative;
+        z-index: 1;
       }
       .trio-section { padding: 88px 24px; background: linear-gradient(135deg, #eef5ff 0%, #f8fafc 54%, #edf5ef 100%); }
       .trio-wrap { max-width: 1180px; margin: 0 auto; }
@@ -1516,6 +1535,7 @@
       .products-section::before {
         content: "";
         position: absolute;
+        z-index: -1;
         top: -120px;
         right: -80px;
         width: 500px;
@@ -1523,7 +1543,7 @@
         border-radius: 50%;
         background: radial-gradient(
           circle,
-          rgba(59, 130, 246, 0.07) 0%,
+          rgba(59, 130, 246, 0.12) 0%,
           transparent 70%
         );
         pointer-events: none;
