@@ -2265,15 +2265,19 @@
       .protein-range-heading h2 span { color: #1d4ed8; }
       .protein-range-intro { max-width: 420px; margin: 0 0 5px; color: #64748b; font-size: .96rem; line-height: 1.8; }
       .protein-range-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 20px; }
-      .protein-card { --protein-accent: #1d4ed8; position: relative; display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid rgba(59, 130, 246, .2); border-radius: 20px; background: rgba(255, 255, 255, .88); box-shadow: 0 14px 38px rgba(30, 64, 120, .08); transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease; }
+      .protein-card { --protein-accent: #1d4ed8; position: relative; display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid rgba(59, 130, 246, .2); border-radius: 0; background: rgba(255, 255, 255, .88); box-shadow: 0 14px 38px rgba(30, 64, 120, .08); transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease; }
       .protein-card:nth-child(2) { --protein-accent: #2563eb; }
       .protein-card:nth-child(3) { --protein-accent: #3b82f6; }
       .protein-card:hover { transform: translateY(-6px); border-color: rgba(59, 130, 246, .48); box-shadow: 0 24px 54px rgba(30, 64, 120, .15); }
-      .protein-card-media { position: relative; display: grid; aspect-ratio: 1; place-items: center; overflow: hidden; padding: 8px; background: linear-gradient(145deg, #eff6ff, #e5efff); }
+      .protein-card-media { position: relative; display: grid; aspect-ratio: 1; place-items: center; overflow: hidden; padding: 0; background: linear-gradient(145deg, #eff6ff, #e5efff); }
       .protein-card:nth-child(2) .protein-card-media { background: linear-gradient(145deg, #f2f7ff, #eaf2ff); }
       .protein-card:nth-child(3) .protein-card-media { background: linear-gradient(145deg, #edf5ff, #e2edff); }
-      .protein-card-media::after { position: absolute; right: -52px; bottom: -94px; width: 210px; height: 210px; border: 1px solid rgba(59, 130, 246, .16); border-radius: 50%; content: ""; pointer-events: none; }
-      .protein-card-media img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+      .protein-card-media img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; transition: opacity .3s ease; }
+      .protein-card-media .protein-card-image-secondary { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+      .protein-card:hover .protein-card-image-primary,
+      .protein-card:focus-within .protein-card-image-primary { opacity: 0; }
+      .protein-card:hover .protein-card-image-secondary,
+      .protein-card:focus-within .protein-card-image-secondary { opacity: 1; }
       .protein-card-body { display: flex; flex: 1; flex-direction: column; padding: 22px 22px 20px; }
       .protein-card-kicker { display: inline-flex; width: fit-content; align-items: center; gap: 7px; color: var(--protein-accent); font-size: .64rem; font-weight: 800; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; }
       .protein-card-kicker::before { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: currentColor; content: ""; }
@@ -2311,8 +2315,7 @@
         .protein-range-intro { max-width: 54ch; font-size: .87rem; line-height: 1.7; }
         .protein-range-grid { grid-template-columns: minmax(0, 1fr); gap: 15px; }
         .protein-card:last-child { grid-column: auto; width: 100%; }
-        .protein-card { border-radius: 16px; }
-        .protein-card-media { padding: 8px; }
+        .protein-card { border-radius: 0; }
         .protein-card-body { padding: 19px 18px 18px; }
         .protein-card h3 { font-size: 1.7rem; }
         .protein-card-summary { min-height: 0; font-size: .83rem; }
@@ -2322,7 +2325,7 @@
         .protein-range-note { margin-top: 12px; font-size: .66rem; text-align: left; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .protein-card, .protein-card-cta, .protein-card-cta i { transition: none; }
+        .protein-card, .protein-card-media img, .protein-card-cta, .protein-card-cta i { transition: none; }
         .protein-card:hover, .protein-card-cta:hover { transform: none; }
         .protein-card-cta:hover i { transform: none; }
       }
@@ -4932,7 +4935,8 @@ compareTabs.forEach((tab, index) => {
         <div class="protein-range-grid">
           <article class="protein-card reveal d1">
             <div class="protein-card-media">
-              <img src="images/protein/whey%20protein.png" alt="Aiva Wellness Whey Protein pouch — Chocolate & Vanilla flavours, available in 500 g & 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+              <img class="protein-card-image-primary" src="images/protein/whey%20protein.png" alt="Aiva Wellness Whey Protein pouch — Chocolate & Vanilla flavours, available in 500 g & 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+              <img class="protein-card-image-secondary" src="images/protein/wheyprotein2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
             </div>
             <div class="protein-card-body">
               <span class="protein-card-kicker">Milk-derived protein</span>
@@ -4963,7 +4967,8 @@ compareTabs.forEach((tab, index) => {
 
           <article class="protein-card reveal d2">
             <div class="protein-card-media">
-              <img src="images/protein/protein.png" alt="Aiva Wellness Plant Protein pouch — Coffee & Mango flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+              <img class="protein-card-image-primary" src="images/protein/protein.png" alt="Aiva Wellness Plant Protein pouch — Coffee & Mango flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+              <img class="protein-card-image-secondary" src="images/protein/protein2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
             </div>
             <div class="protein-card-body">
               <span class="protein-card-kicker">Plant protein blend</span>
@@ -4994,7 +4999,8 @@ compareTabs.forEach((tab, index) => {
 
           <article class="protein-card reveal d3">
             <div class="protein-card-media">
-              <img src="images/protein/whey1.png" alt="Aiva Wellness Yeast Protein pouch — Strawberry &amp; Kesar Pista flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+              <img class="protein-card-image-primary" src="images/protein/whey1.png" alt="Aiva Wellness Yeast Protein pouch — Strawberry &amp; Kesar Pista flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+              <img class="protein-card-image-secondary" src="images/protein/whey2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
             </div>
             <div class="protein-card-body">
               <span class="protein-card-kicker">Yeast protein blend</span>
