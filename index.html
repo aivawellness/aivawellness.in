@@ -97,14 +97,7 @@
     <!-- End Google Tag Manager -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="image"
-      fetchpriority="high"
-      href="/images/1.png"
-      media="(min-width: 769px)"
-    />
-    <link rel="preload" as="image" href="/images/mob01.png" media="(max-width: 768px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/1.png" fetchpriority="high" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
@@ -697,6 +690,40 @@
         margin-bottom: 14px;
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
       }
+      .slide.first-slide .slide-content {
+        max-width: 760px;
+        width: min(100%, 760px);
+      }
+      .slide.first-slide .slide-content h1 {
+        font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 9vw, 3.2rem);
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: normal;
+        margin: 0 0 14px;
+        text-shadow: 0 2px 32px rgba(0, 0, 0, 0.2);
+      }
+      .slide.first-slide .slide-content h1 span {
+        display: inline-block;
+        margin-left: 0.12em;
+        color: #bff5f2;
+        transition: opacity 0.28s ease, transform 0.28s ease;
+        will-change: opacity, transform;
+      }
+      .slide.first-slide .slide-content h1 span.is-flipping {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      @media (min-width: 769px) {
+        .slide.first-slide .slide-content h1 {
+          font-size: clamp(3.8rem, 7vw, 7rem);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .slide.first-slide .slide-content h1 span {
+          transition: none;
+        }
+      }
       .slide-content p {
         font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.82);
@@ -752,6 +779,12 @@
           padding: 0 5% 50px;
           max-width: 100%;
         }
+        .slide.first-slide .slide-content {
+          max-width: 100%;
+        }
+        .slide.first-slide .slide-content h1 {
+          font-size: clamp(2rem, 9vw, 3.2rem);
+        }
         .slide-content p {
           display: none;
         }
@@ -795,6 +828,13 @@
         .slide-content h1,
         .slide-content h2 {
           display: none;
+        }
+        .slide.first-slide .slide-content h1 {
+          display: block;
+        }
+        .slide.first-slide .slide-img-wrap img {
+          object-fit: cover;
+          object-position: 68% center;
         }
 
         .slide-cta {
@@ -4116,7 +4156,7 @@
     <div class="slide active first-slide">
       <div class="slide-img-wrap">
         <picture>
-          <source media="(max-width: 768px)" srcset="images/mob01.png" />
+          <source media="(max-width: 768px)" srcset="images/1.png" />
           <img
             src="images/1.png"
             alt="Buy Nattokinase 100mg supplement online India"
@@ -4127,9 +4167,9 @@
         </picture>
       </div>
       <div class="slide-content">
-        <h1>PREMIUM HEALTHCARE,<br>MADE FOR EVERYDAY WELLNESS.</h1>
+        <h1>Your Daily <span data-words="Nutrition, Vitamins, Wellness, Vitality">Nutrition</span></h1>
         <p>
-          Premium quality supplements for a healthier, stronger you.
+          Discover premium health supplements, essential vitamins and daily nutrition crafted to support your wellness routine.
         </p>
         <a href="/shop" class="slide-cta">
           Explore Now <i class="fa-solid fa-arrow-right"></i>
@@ -5538,6 +5578,40 @@ compareTabs.forEach((tab, index) => {
       let autoTimer, progressTimer;
       let manualPause = false;
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const flipWord = document.querySelector(".slide.first-slide .slide-content h1 span");
+      const flipWords = (flipWord?.dataset.words || "")
+        .split(",")
+        .map((word) => word.trim())
+        .filter(Boolean);
+      let flipWordIndex = 0;
+      let flipTimer;
+      let flipTransitionTimer;
+
+      function stopWordCycle() {
+        clearInterval(flipTimer);
+        clearTimeout(flipTransitionTimer);
+        flipWord?.classList.remove("is-flipping");
+      }
+
+      function updateWordCycle() {
+        stopWordCycle();
+        if (!flipWord || flipWords.length < 2) return;
+        flipWord.textContent = flipWords[flipWordIndex];
+        if (reducedMotion.matches) return;
+
+        flipTimer = setInterval(() => {
+          flipWord.classList.add("is-flipping");
+          flipTransitionTimer = setTimeout(() => {
+            flipWordIndex = (flipWordIndex + 1) % flipWords.length;
+            flipWord.textContent = flipWords[flipWordIndex];
+            flipWord.classList.remove("is-flipping");
+          }, 280);
+        }, 2600);
+      }
+
+      updateWordCycle();
+      reducedMotion.addEventListener?.("change", updateWordCycle);
+      window.addEventListener("pagehide", stopWordCycle, { once: true });
 
       // Build dots
       for (let i = 0; i < TOTAL; i++) {
