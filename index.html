@@ -3094,127 +3094,264 @@
    BLOGS
 --------------------------------------------------- */
       .blogs-section {
-        padding: 76px 20px 84px;
-        background: #fff;
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: 92px 24px 100px;
+        background:
+          radial-gradient(ellipse at 12% 8%, rgba(184, 148, 89, 0.09), transparent 34%),
+          linear-gradient(180deg, #fbfaf7 0%, #f5f4ef 100%);
+      }
+      .blogs-section::before {
+        position: absolute;
+        z-index: -1;
+        top: 18%;
+        right: -140px;
+        width: 360px;
+        height: 360px;
+        border: 1px solid rgba(173, 143, 91, 0.14);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+      }
+      .blogs-section .section-header {
+        max-width: 720px;
+        margin: 0 auto 48px;
+      }
+      .blogs-section .section-eyebrow {
+        color: #557363;
+        background: rgba(255, 255, 255, 0.72);
+        border-color: rgba(85, 115, 99, 0.2);
+      }
+      .blogs-section .section-header h2 {
+        color: #172c25;
+        letter-spacing: -0.035em;
+      }
+      .blogs-section .section-header h2::after {
+        width: 48px;
+        height: 2px;
+        margin-top: 14px;
+        background: #b28a4d;
+        opacity: 1;
+      }
+      .blogs-section .section-header p {
+        color: #68756e;
       }
       .blogs-inner {
+        position: relative;
         max-width: 1320px;
         margin: 0 auto;
       }
       .blogs-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 30px;
+        align-items: stretch;
+        gap: 22px;
       }
       .blog-card {
-        background: transparent;
-        overflow: visible;
-        border: 0;
-        box-shadow: none;
-        border-radius: 0;
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgba(40, 61, 50, 0.1);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 8px 26px rgba(31, 47, 39, 0.055);
         position: relative;
-        transition: transform 0.35s var(--ease);
+        transition:
+          transform 0.4s var(--ease),
+          border-color 0.4s var(--ease),
+          box-shadow 0.4s var(--ease);
       }
       .blog-card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-7px);
+        border-color: rgba(178, 138, 77, 0.42);
+        box-shadow: 0 22px 48px rgba(31, 47, 39, 0.13);
       }
       .blog-img {
         overflow: hidden;
         position: relative;
-        border-radius: 0;
         z-index: 0;
-        background: #f1f5f9;
+        flex: 0 0 auto;
+        aspect-ratio: 1.48;
+        background: linear-gradient(135deg, #eeeee7 0%, #f7f5ef 100%);
+      }
+      .blog-img::after {
+        position: absolute;
+        inset: 45% 0 0;
+        background: linear-gradient(180deg, transparent, rgba(16, 33, 26, 0.12));
+        content: "";
+        opacity: 0.55;
+        pointer-events: none;
+        transition: opacity 0.4s var(--ease);
       }
       .blog-img img {
         width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 10;
+        height: 100%;
         object-fit: contain;
         object-position: center;
         display: block;
-        background: #f1f5f9;
-        transition: transform 0.7s var(--ease);
+        transition: transform 0.8s var(--ease);
       }
       .blog-card:hover .blog-img img {
-        transform: scale(1.08);
+        transform: scale(1.045);
+      }
+      .blog-card:hover .blog-img::after {
+        opacity: 0.85;
       }
       .blog-info {
-        padding: 20px 0 0;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 21px 20px 19px;
       }
       .blog-tag {
-        font-size: 0.86rem;
-        color: #1e40af;
-        font-weight: 500;
-        margin-bottom: 7px;
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        margin-bottom: 12px;
+        padding: 5px 9px;
+        border: 1px solid rgba(85, 115, 99, 0.16);
+        border-radius: 999px;
+        background: #f2f5f0;
+        color: #466553;
+        font-size: 0.65rem;
+        font-weight: 750;
+        letter-spacing: 0.09em;
+        line-height: 1;
+        text-transform: uppercase;
       }
       .blog-info h3 {
-        font-size: 1.08rem;
+        margin-bottom: 12px;
+        color: #1b2e26;
+        font-size: 1.04rem;
         font-weight: 700;
-        margin-bottom: 10px;
-        line-height: 1.42;
-        color: #050505;
+        letter-spacing: -0.018em;
+        line-height: 1.48;
       }
       .blog-info h3 a {
         color: inherit;
         text-decoration: none;
-        transition: color 0.2s;
+        transition: color 0.25s ease;
       }
-      .blog-info h3 a:hover {
-        color: #1e40af;
+      .blog-info h3 a:hover,
+      .blog-info h3 a:focus-visible {
+        color: #8a6938;
+      }
+      .blog-info h3 a:focus-visible,
+      .blog-read:focus-visible {
+        outline: 2px solid #b28a4d;
+        outline-offset: 4px;
       }
       .blog-meta {
-        color: #64748b;
-        font-size: 0.88rem;
-        line-height: 1.5;
+        margin-top: auto;
+        color: #78827b;
+        font-size: 0.72rem;
+        line-height: 1.65;
       }
       .blog-read {
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--blue);
-        font-weight: 700;
-        text-decoration: none;
         display: inline-flex;
         align-items: center;
-        gap: 7px;
-        transition: gap 0.25s var(--ease);
+        gap: 8px;
+        margin-top: 16px;
+        color: #315341;
+        font-size: 0.7rem;
+        font-weight: 750;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.25s ease, gap 0.25s var(--ease);
       }
-      .blog-read:hover {
-        gap: 13px;
+      .blog-read:hover,
+      .blog-read:focus-visible {
+        gap: 12px;
+        color: #9a753d;
+      }
+      .blog-read i {
+        font-size: 0.68rem;
       }
       .blogs-cta {
-        margin-top: 32px;
+        margin-top: 42px;
         text-align: center;
       }
       .blogs-cta .btn-center {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 14px 30px;
-        border-radius: 0;
-        border: 1.5px solid var(--blue);
-        color: var(--blue);
+        gap: 11px;
+        min-height: 50px;
+        padding: 13px 25px;
+        border: 1px solid #315341;
+        border-radius: 999px;
+        color: #315341;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.09em;
         font-weight: 700;
-        font-size: 0.8rem;
-        background: transparent;
-        transition: all 0.3s var(--ease);
+        font-size: 0.72rem;
+        background: rgba(255, 255, 255, 0.7);
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          transform 0.3s var(--ease),
+          box-shadow 0.3s var(--ease);
       }
       .blogs-cta .btn-center:hover {
-        background: var(--blue);
+        border-color: #254635;
+        background: #254635;
         color: #fff;
-        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(37, 70, 53, 0.18);
+        transform: translateY(-3px);
       }
       @media (max-width: 900px) {
+        .blogs-section {
+          padding: 78px 22px 84px;
+        }
         .blogs-grid {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 18px;
         }
       }
       @media (max-width: 600px) {
+        .blogs-section {
+          padding: 64px 16px 72px;
+        }
+        .blogs-section .section-header {
+          margin-bottom: 30px;
+          padding: 0 4px;
+        }
+        .blogs-section .section-header p {
+          font-size: 0.9rem;
+        }
         .blogs-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 16px;
+        }
+        .blog-card {
+          border-radius: 16px;
+        }
+        .blog-img {
+          aspect-ratio: 1.65;
+        }
+        .blog-info {
+          padding: 18px 18px 17px;
+        }
+        .blog-info h3 {
+          font-size: 1rem;
+        }
+        .blogs-cta {
+          margin-top: 30px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .blog-card,
+        .blog-img img,
+        .blog-img::after,
+        .blog-info h3 a,
+        .blog-read,
+        .blogs-cta .btn-center {
+          transition: none;
         }
       }
 
@@ -5316,6 +5453,7 @@ compareTabs.forEach((tab, index) => {
                 >
               </h3>
               <p class="blog-meta">By Aiva Wellness Editorial Team / Jul 28, 2026</p>
+              <a class="blog-read" href="/blogs/vitamin-d3-explained">Read article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
           <div class="blog-card reveal">
@@ -5335,6 +5473,7 @@ compareTabs.forEach((tab, index) => {
                 >
               </h3>
               <p class="blog-meta">By Aiva Wellness Editorial Team / Aug 12, 2026</p>
+              <a class="blog-read" href="/blogs/nattokinase-100mg-vs-200mg">Read article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
           <div class="blog-card reveal reveal-left">
@@ -5358,6 +5497,7 @@ compareTabs.forEach((tab, index) => {
                 >
               </h3>
               <p class="blog-meta">By Aiva Wellness Editorial Team / Aug 27, 2026</p>
+              <a class="blog-read" href="/blogs/essential-nutrients-men-over-40">Read article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
           <div class="blog-card reveal reveal-left">
@@ -5377,6 +5517,7 @@ compareTabs.forEach((tab, index) => {
                 >
               </h3>
               <p class="blog-meta">By Aiva Wellness Editorial Team / Sep 21, 2026</p>
+              <a class="blog-read" href="/blogs/essential-nutrients-women-over-40">Read article <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
