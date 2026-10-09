@@ -2270,12 +2270,11 @@
       .protein-card:nth-child(2) { --protein-accent: #2563eb; }
       .protein-card:nth-child(3) { --protein-accent: #3b82f6; }
       .protein-card:hover { transform: translateY(-6px); border-color: rgba(59, 130, 246, .48); box-shadow: 0 24px 54px rgba(30, 64, 120, .15); }
-      .protein-card-media { position: relative; display: grid; height: clamp(225px, 23vw, 285px); place-items: center; overflow: hidden; padding: 14px; background: linear-gradient(145deg, #eff6ff, #e5efff); }
+      .protein-card-media { position: relative; display: grid; aspect-ratio: 1; place-items: center; overflow: hidden; padding: 8px; background: linear-gradient(145deg, #eff6ff, #e5efff); }
       .protein-card:nth-child(2) .protein-card-media { background: linear-gradient(145deg, #f2f7ff, #eaf2ff); }
       .protein-card:nth-child(3) .protein-card-media { background: linear-gradient(145deg, #edf5ff, #e2edff); }
       .protein-card-media::after { position: absolute; right: -52px; bottom: -94px; width: 210px; height: 210px; border: 1px solid rgba(59, 130, 246, .16); border-radius: 50%; content: ""; pointer-events: none; }
-      .protein-card-media img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
-      .protein-card:hover .protein-card-media img { transform: scale(1.035); }
+      .protein-card-media img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
       .protein-card-body { display: flex; flex: 1; flex-direction: column; padding: 22px 22px 20px; }
       .protein-card-kicker { display: inline-flex; width: fit-content; align-items: center; gap: 7px; color: var(--protein-accent); font-size: .64rem; font-weight: 800; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; }
       .protein-card-kicker::before { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: currentColor; content: ""; }
@@ -2305,7 +2304,6 @@
       @media (max-width: 900px) {
         .protein-range-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .protein-card:last-child { grid-column: 1 / -1; width: calc(50% - 10px); justify-self: center; }
-        .protein-card-media { height: clamp(220px, 32vw, 280px); }
       }
       @media (max-width: 620px) {
         .protein-range { padding: 64px 16px 70px; }
@@ -2315,7 +2313,7 @@
         .protein-range-grid { grid-template-columns: minmax(0, 1fr); gap: 15px; }
         .protein-card:last-child { grid-column: auto; width: 100%; }
         .protein-card { border-radius: 16px; }
-        .protein-card-media { height: clamp(235px, 72vw, 330px); padding: 12px; }
+        .protein-card-media { padding: 8px; }
         .protein-card-body { padding: 19px 18px 18px; }
         .protein-card h3 { font-size: 1.7rem; }
         .protein-card-summary { min-height: 0; font-size: .83rem; }
@@ -2325,9 +2323,9 @@
         .protein-range-note { margin-top: 12px; font-size: .66rem; text-align: left; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .protein-card, .protein-card-media img, .protein-card-cta, .protein-card-cta i { transition: none; }
+        .protein-card, .protein-card-cta, .protein-card-cta i { transition: none; }
         .protein-card:hover, .protein-card-cta:hover { transform: none; }
-        .protein-card:hover .protein-card-media img, .protein-card-cta:hover i { transform: none; }
+        .protein-card-cta:hover i { transform: none; }
       }
 
       /* ---------------------------------------------------
