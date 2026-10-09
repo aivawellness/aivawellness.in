@@ -3099,8 +3099,9 @@
         overflow: hidden;
         padding: 92px 24px 100px;
         background:
-          radial-gradient(ellipse at 12% 8%, rgba(184, 148, 89, 0.09), transparent 34%),
-          linear-gradient(180deg, #fbfaf7 0%, #f5f4ef 100%);
+          radial-gradient(ellipse at 12% 8%, rgba(59, 130, 246, 0.12), transparent 36%),
+          radial-gradient(ellipse at 88% 80%, rgba(29, 78, 216, 0.07), transparent 38%),
+          linear-gradient(180deg, #f8fbff 0%, #eff5fc 100%);
       }
       .blogs-section::before {
         position: absolute;
@@ -3109,7 +3110,7 @@
         right: -140px;
         width: 360px;
         height: 360px;
-        border: 1px solid rgba(173, 143, 91, 0.14);
+        border: 1px solid rgba(59, 130, 246, 0.16);
         border-radius: 50%;
         content: "";
         pointer-events: none;
@@ -3119,23 +3120,23 @@
         margin: 0 auto 48px;
       }
       .blogs-section .section-eyebrow {
-        color: #557363;
+        color: #1d4ed8;
         background: rgba(255, 255, 255, 0.72);
-        border-color: rgba(85, 115, 99, 0.2);
+        border-color: rgba(59, 130, 246, 0.22);
       }
       .blogs-section .section-header h2 {
-        color: #172c25;
+        color: #0f172a;
         letter-spacing: -0.035em;
       }
       .blogs-section .section-header h2::after {
         width: 48px;
         height: 2px;
         margin-top: 14px;
-        background: #b28a4d;
+        background: linear-gradient(90deg, #1d4ed8, #60a5fa);
         opacity: 1;
       }
       .blogs-section .section-header p {
-        color: #68756e;
+        color: #64748b;
       }
       .blogs-inner {
         position: relative;
@@ -3153,10 +3154,12 @@
         min-width: 0;
         flex-direction: column;
         overflow: hidden;
-        border: 1px solid rgba(40, 61, 50, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.18);
         border-radius: 18px;
-        background: rgba(255, 255, 255, 0.94);
-        box-shadow: 0 8px 26px rgba(31, 47, 39, 0.055);
+        background: rgba(255, 255, 255, 0.58);
+        -webkit-backdrop-filter: blur(18px) saturate(145%);
+        backdrop-filter: blur(18px) saturate(145%);
+        box-shadow: 0 10px 30px rgba(30, 64, 120, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
         position: relative;
         transition:
           transform 0.4s var(--ease),
@@ -3165,8 +3168,9 @@
       }
       .blog-card:hover {
         transform: translateY(-7px);
-        border-color: rgba(178, 138, 77, 0.42);
-        box-shadow: 0 22px 48px rgba(31, 47, 39, 0.13);
+        border-color: rgba(59, 130, 246, 0.42);
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 22px 48px rgba(30, 64, 120, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.92);
       }
       .blog-img {
         overflow: hidden;
@@ -3174,12 +3178,12 @@
         z-index: 0;
         flex: 0 0 auto;
         aspect-ratio: 1.48;
-        background: linear-gradient(135deg, #eeeee7 0%, #f7f5ef 100%);
+        background: linear-gradient(135deg, #eaf2ff 0%, #f7faff 100%);
       }
       .blog-img::after {
         position: absolute;
         inset: 45% 0 0;
-        background: linear-gradient(180deg, transparent, rgba(16, 33, 26, 0.12));
+        background: linear-gradient(180deg, transparent, rgba(15, 42, 92, 0.2));
         content: "";
         opacity: 0.55;
         pointer-events: none;
@@ -3212,10 +3216,10 @@
         min-height: 26px;
         margin-bottom: 12px;
         padding: 5px 9px;
-        border: 1px solid rgba(85, 115, 99, 0.16);
+        border: 1px solid rgba(59, 130, 246, 0.18);
         border-radius: 999px;
-        background: #f2f5f0;
-        color: #466553;
+        background: rgba(219, 234, 254, 0.62);
+        color: #1d4ed8;
         font-size: 0.65rem;
         font-weight: 750;
         letter-spacing: 0.09em;
@@ -3224,7 +3228,7 @@
       }
       .blog-info h3 {
         margin-bottom: 12px;
-        color: #1b2e26;
+        color: #172b4d;
         font-size: 1.04rem;
         font-weight: 700;
         letter-spacing: -0.018em;
@@ -3237,16 +3241,16 @@
       }
       .blog-info h3 a:hover,
       .blog-info h3 a:focus-visible {
-        color: #8a6938;
+        color: #1d4ed8;
       }
       .blog-info h3 a:focus-visible,
       .blog-read:focus-visible {
-        outline: 2px solid #b28a4d;
+        outline: 2px solid #3b82f6;
         outline-offset: 4px;
       }
       .blog-meta {
         margin-top: auto;
-        color: #78827b;
+        color: #64748b;
         font-size: 0.72rem;
         line-height: 1.65;
       }
@@ -3255,7 +3259,7 @@
         align-items: center;
         gap: 8px;
         margin-top: 16px;
-        color: #315341;
+        color: #1d4ed8;
         font-size: 0.7rem;
         font-weight: 750;
         letter-spacing: 0.08em;
@@ -3266,7 +3270,7 @@
       .blog-read:hover,
       .blog-read:focus-visible {
         gap: 12px;
-        color: #9a753d;
+        color: #163fae;
       }
       .blog-read i {
         font-size: 0.68rem;
@@ -3282,14 +3286,16 @@
         gap: 11px;
         min-height: 50px;
         padding: 13px 25px;
-        border: 1px solid #315341;
+        border: 1px solid rgba(29, 78, 216, 0.48);
         border-radius: 999px;
-        color: #315341;
+        color: #1d4ed8;
         text-transform: uppercase;
         letter-spacing: 0.09em;
         font-weight: 700;
         font-size: 0.72rem;
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.62);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
         transition:
           color 0.3s ease,
           background-color 0.3s ease,
@@ -3298,10 +3304,10 @@
           box-shadow 0.3s var(--ease);
       }
       .blogs-cta .btn-center:hover {
-        border-color: #254635;
-        background: #254635;
+        border-color: #1d4ed8;
+        background: #1d4ed8;
         color: #fff;
-        box-shadow: 0 10px 24px rgba(37, 70, 53, 0.18);
+        box-shadow: 0 10px 24px rgba(29, 78, 216, 0.24);
         transform: translateY(-3px);
       }
       @media (max-width: 900px) {
