@@ -1605,6 +1605,35 @@
         border-radius: 999px;
         font-weight: 700;
       }
+      .protein-size-control {
+        display: grid;
+        gap: 5px;
+        margin: -5px 0 16px;
+        color: var(--text-light);
+        font-size: .64rem;
+        font-weight: 750;
+        letter-spacing: .07em;
+        text-align: left;
+        text-transform: uppercase;
+      }
+      .protein-size-control select {
+        width: 100%;
+        min-height: 38px;
+        padding: 0 11px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--black);
+        background: var(--white);
+        font: 600 .78rem "Inter", sans-serif;
+        letter-spacing: normal;
+        text-transform: none;
+        cursor: pointer;
+      }
+      .protein-size-control select:focus-visible {
+        outline: 3px solid rgba(59, 130, 246, .38);
+        outline-offset: 2px;
+        border-color: #3b82f6;
+      }
 
       /* Buy button */
       .btn-cart {
@@ -2694,7 +2723,13 @@
             </div>
             <div class="product-info">
               <h3><a href="/products/wheyprotein">Whey Protein</a></h3>
-              <div class="price-row"><span class="sale-price">₹3,499</span><span class="original-price">₹3,999</span></div>
+              <div class="price-row"><span class="sale-price">₹1,099</span><span class="original-price">₹1,399</span><span class="save-badge">Save 21%</span></div>
+              <label class="protein-size-control">Pack size
+                <select data-protein-size aria-label="Whey Protein pack size">
+                  <option value="500 g" selected>500 g</option>
+                  <option value="1 kg">1 kg</option>
+                </select>
+              </label>
             </div>
           </article>
           <article class="product-card static-product-card">
@@ -2703,7 +2738,13 @@
             </div>
             <div class="product-info">
               <h3><a href="/products/plantprotein">Plant Protein</a></h3>
-              <div class="price-row"><span class="sale-price">₹2,999</span><span class="original-price">₹3,499</span></div>
+              <div class="price-row"><span class="sale-price">₹1,399</span><span class="original-price">₹1,799</span><span class="save-badge">Save 22%</span></div>
+              <label class="protein-size-control">Pack size
+                <select data-protein-size aria-label="Plant Protein pack size">
+                  <option value="500 g" selected>500 g</option>
+                  <option value="1 kg">1 kg</option>
+                </select>
+              </label>
             </div>
           </article>
           <article class="product-card static-product-card">
@@ -2712,7 +2753,13 @@
             </div>
             <div class="product-info">
               <h3><a href="/products/yeastprotein">Yeast Protein</a></h3>
-              <div class="price-row"><span class="sale-price">₹2,799</span><span class="original-price">₹3,299</span></div>
+              <div class="price-row"><span class="sale-price">₹1,299</span><span class="original-price">₹1,599</span><span class="save-badge">Save 19%</span></div>
+              <label class="protein-size-control">Pack size
+                <select data-protein-size aria-label="Yeast Protein pack size">
+                  <option value="500 g" selected>500 g</option>
+                  <option value="1 kg">1 kg</option>
+                </select>
+              </label>
             </div>
           </article>
         </div>
@@ -2946,8 +2993,12 @@
           id: 123,
           name: "Whey Protein",
           cat: "Sports Nutrition",
-          price: 3499,
-          old: 3999,
+          price: 1099,
+          old: 1399,
+          sizes: {
+            "500 g": { price: 1099, old: 1399 },
+            "1 kg": { price: 1999, old: 2499 },
+          },
           badge: "new",
           img: "images/protein/whey protein.png",
           img2: "images/protein/wheyprotein2.jpg",
@@ -2956,8 +3007,12 @@
           id: 124,
           name: "Plant Protein",
           cat: "Sports Nutrition",
-          price: 2999,
-          old: 3499,
+          price: 1399,
+          old: 1799,
+          sizes: {
+            "500 g": { price: 1399, old: 1799 },
+            "1 kg": { price: 2499, old: 3199 },
+          },
           badge: "new",
           img: "images/protein/protein.png",
           img2: "images/protein/protein2.jpg",
@@ -2966,8 +3021,12 @@
           id: 125,
           name: "Yeast Protein",
           cat: "Sports Nutrition",
-          price: 2799,
-          old: 3299,
+          price: 1299,
+          old: 1599,
+          sizes: {
+            "500 g": { price: 1299, old: 1599 },
+            "1 kg": { price: 2299, old: 2899 },
+          },
           badge: "new",
           img: "images/protein/whey1.png",
           img2: "images/protein/whey2.jpg",
@@ -3024,9 +3083,17 @@
 
       /* -- render card -- */
       function renderCard(p, delay) {
-        const saving = Math.round(((p.old - p.price) / p.old) * 100);
+        const hasDiscount = Number.isFinite(p.old) && p.old > p.price;
+        const saving = hasDiscount ? Math.round(((p.old - p.price) / p.old) * 100) : 0;
         const detailLink = PRODUCT_PAGE_MAP[p.id] || "/shop";
         const differentiator = PRODUCT_CARD_DETAILS[p.id] || "Everyday wellness support · Best for: building a consistent routine";
+        const sizeSelector = p.sizes
+          ? `<label class="protein-size-control">Pack size
+        <select data-protein-size aria-label="${p.name} pack size">
+          ${Object.keys(p.sizes).map((size) => `<option value="${size}"${size === "500 g" ? " selected" : ""}>${size}</option>`).join("")}
+        </select>
+      </label>`
+          : "";
         return `<div class="product-card reveal d${(delay % 6) + 1}" data-id="${p.id}">
     <div class="product-img">
       <span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>
@@ -3048,9 +3115,9 @@
       <p class="product-differentiator">${differentiator}</p>
       <div class="price-row">
         <span class="sale-price">${fmtINR(p.price)}</span>
-        <span class="original-price">${fmtINR(p.old)}</span>
-        <span class="save-badge">Save ${saving}%</span>
+        ${hasDiscount ? `<span class="original-price">${fmtINR(p.old)}</span><span class="save-badge">Save ${saving}%</span>` : ""}
       </div>
+      ${sizeSelector}
       <div class="buy-actions">
         <button class="btn-cart" onclick="window.location.href='${detailLink}'">
           <i class="fa-regular fa-eye"></i><span>View Product</span>
@@ -3061,6 +3128,27 @@
       </div>
     </div>
   </div>`;
+      }
+
+      function updateProteinSize(select) {
+        const card = select.closest(".product-card");
+        const product = PRODUCTS.find((item) => String(item.id) === card.dataset.id);
+        const variant = product?.sizes?.[select.value];
+        if (!variant) return;
+
+        const priceRow = card.querySelector(".price-row");
+        const saving = Math.round(((variant.old - variant.price) / variant.old) * 100);
+        priceRow.querySelector(".sale-price").textContent = fmtINR(variant.price);
+        priceRow.querySelector(".original-price").textContent = fmtINR(variant.old);
+        priceRow.querySelector(".save-badge").textContent = `Save ${saving}%`;
+
+        const detailLink = `${PRODUCT_PAGE_MAP[product.id]}?${new URLSearchParams({ size: select.value })}`;
+        card.querySelectorAll(`a[href="${PRODUCT_PAGE_MAP[product.id]}"]`).forEach((link) => {
+          link.href = detailLink;
+        });
+        card.querySelector(".btn-cart").onclick = () => {
+          window.location.href = detailLink;
+        };
       }
 
       /* -- render grid -- */
@@ -3078,6 +3166,9 @@
         } else {
           noRes.style.display = "none";
           grid.innerHTML = pageItems.map((p, i) => renderCard(p, i)).join("");
+          grid.querySelectorAll("[data-protein-size]").forEach((select) => {
+            select.addEventListener("change", () => updateProteinSize(select));
+          });
           // trigger reveal on newly inserted cards
           grid
             .querySelectorAll(".reveal")
@@ -3157,7 +3248,13 @@
           filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
         else if (sort === "discount")
           filteredProducts.sort(
-            (a, b) => (b.old - b.price) / b.old - (a.old - a.price) / a.old,
+            (a, b) => {
+              const discountRate = (product) =>
+                product.old > product.price
+                  ? (product.old - product.price) / product.old
+                  : 0;
+              return discountRate(b) - discountRate(a);
+            },
           );
 
         currentPage = 1;
@@ -3478,5 +3575,3 @@
     </script>
   </body>
 </html>
-
-

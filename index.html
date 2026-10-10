@@ -2345,8 +2345,10 @@
       .protein-card-fit span { display: block; color: #1e3a5f; font-size: .76rem; font-weight: 650; line-height: 1.5; }
       .protein-card-facts { display: flex; flex-wrap: wrap; gap: 7px; margin: 13px 0 0; padding: 0; list-style: none; }
       .protein-card-facts li { padding: 6px 9px; border: 1px solid #dbeafe; border-radius: 999px; color: #475569; background: #fff; font-size: .65rem; font-weight: 650; line-height: 1.35; }
-      .protein-card-purchase { display: flex; align-items: baseline; gap: 9px; margin-top: auto; padding-top: 20px; }
+      .protein-card-purchase { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-top: auto; padding-top: 20px; }
       .protein-card-purchase data { color: #172b4d; font-family: "Sora", sans-serif; font-size: 1.45rem; font-weight: 750; letter-spacing: -.04em; }
+      .protein-card-purchase del { color: #8492a6; font-size: .76rem; }
+      .protein-card-saving { margin-left: auto; padding: 5px 8px; border: 1px solid #bfdbfe; border-radius: 999px; color: #1d4ed8; background: #eff6ff; font-size: .62rem; font-weight: 750; white-space: nowrap; }
       .protein-card-variants { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
       .protein-card-variants label { display: grid; min-width: 0; gap: 5px; color: #64748b; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
       .protein-card-variants select { width: 100%; min-width: 0; min-height: 40px; padding: 0 30px 0 11px; border: 1px solid #dbeafe; border-radius: 9px; color: #1e3a5f; background: #f8fbff; font: 650 .75rem/1.2 "Inter", sans-serif; letter-spacing: normal; text-transform: none; cursor: pointer; }
@@ -4848,7 +4850,7 @@ compareTabs.forEach((tab, index) => {
         </header>
 
         <div class="protein-range-grid">
-          <article class="protein-card reveal d1" data-price-500g="1099" data-price-1kg="1999">
+          <article class="protein-card reveal d1" data-price-500g="1099" data-price-1kg="1999" data-mrp-500g="1399" data-mrp-1kg="2499">
             <div class="protein-card-media">
               <img class="protein-card-image-primary" src="images/protein/whey%20protein.png" alt="Aiva Wellness Whey Protein pouch — Chocolate & Vanilla flavours, available in 500 g & 1 kg" width="720" height="720" loading="lazy" decoding="async" />
               <img class="protein-card-image-secondary" src="images/protein/wheyprotein2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
@@ -4871,6 +4873,8 @@ compareTabs.forEach((tab, index) => {
               </ul>
               <div class="protein-card-purchase">
                 <data value="1099">₹1,099</data>
+                <del data-protein-mrp>₹1,399</del>
+                <span class="protein-card-saving" data-protein-saving>Save 21%</span>
               </div>
               <div class="protein-card-variants">
                 <label>Size
@@ -4892,7 +4896,7 @@ compareTabs.forEach((tab, index) => {
             </div>
           </article>
 
-          <article class="protein-card reveal d2" data-price-500g="1399" data-price-1kg="2499">
+          <article class="protein-card reveal d2" data-price-500g="1399" data-price-1kg="2499" data-mrp-500g="1799" data-mrp-1kg="3199">
             <div class="protein-card-media">
               <img class="protein-card-image-primary" src="images/protein/protein.png" alt="Aiva Wellness Plant Protein pouch — Coffee & Mango flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
               <img class="protein-card-image-secondary" src="images/protein/protein2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
@@ -4915,6 +4919,8 @@ compareTabs.forEach((tab, index) => {
               </ul>
               <div class="protein-card-purchase">
                 <data value="1399">₹1,399</data>
+                <del data-protein-mrp>₹1,799</del>
+                <span class="protein-card-saving" data-protein-saving>Save 22%</span>
               </div>
               <div class="protein-card-variants">
                 <label>Size
@@ -4936,7 +4942,7 @@ compareTabs.forEach((tab, index) => {
             </div>
           </article>
 
-          <article class="protein-card reveal d3" data-price-500g="1299" data-price-1kg="2299">
+          <article class="protein-card reveal d3" data-price-500g="1299" data-price-1kg="2299" data-mrp-500g="1599" data-mrp-1kg="2899">
             <div class="protein-card-media">
               <img class="protein-card-image-primary" src="images/protein/whey1.png" alt="Aiva Wellness Yeast Protein pouch — Strawberry &amp; Kesar Pista flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
               <img class="protein-card-image-secondary" src="images/protein/whey2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
@@ -4959,6 +4965,8 @@ compareTabs.forEach((tab, index) => {
               </ul>
               <div class="protein-card-purchase">
                 <data value="1299">₹1,299</data>
+                <del data-protein-mrp>₹1,599</del>
+                <span class="protein-card-saving" data-protein-saving>Save 19%</span>
               </div>
               <div class="protein-card-variants">
                 <label>Size
@@ -5013,8 +5021,11 @@ compareTabs.forEach((tab, index) => {
 
         const updateVariant = () => {
           const priceValue = Number(card.getAttribute(sizeSelect.value === "1 kg" ? "data-price-1kg" : "data-price-500g"));
+          const mrpValue = Number(card.getAttribute(sizeSelect.value === "1 kg" ? "data-mrp-1kg" : "data-mrp-500g"));
           price.value = String(priceValue);
           price.textContent = `₹${priceValue.toLocaleString("en-IN")}`;
+          card.querySelector("[data-protein-mrp]").textContent = `₹${mrpValue.toLocaleString("en-IN")}`;
+          card.querySelector("[data-protein-saving]").textContent = `Save ${Math.round(((mrpValue - priceValue) / mrpValue) * 100)}%`;
 
           const query = new URLSearchParams({
             size: sizeSelect.value,
