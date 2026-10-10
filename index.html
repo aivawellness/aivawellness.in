@@ -2347,8 +2347,10 @@
       .protein-card-facts li { padding: 6px 9px; border: 1px solid #dbeafe; border-radius: 999px; color: #475569; background: #fff; font-size: .65rem; font-weight: 650; line-height: 1.35; }
       .protein-card-purchase { display: flex; align-items: baseline; gap: 9px; margin-top: auto; padding-top: 20px; }
       .protein-card-purchase data { color: #172b4d; font-family: "Sora", sans-serif; font-size: 1.45rem; font-weight: 750; letter-spacing: -.04em; }
-      .protein-card-purchase del { color: #8492a6; font-size: .77rem; }
-      .protein-card-saving { margin-left: auto; padding: 5px 8px; border: 1px solid #bfdbfe; border-radius: 999px; color: #1d4ed8; background: #eff6ff; font-size: .62rem; font-weight: 750; white-space: nowrap; }
+      .protein-card-variants { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+      .protein-card-variants label { display: grid; min-width: 0; gap: 5px; color: #64748b; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      .protein-card-variants select { width: 100%; min-width: 0; min-height: 40px; padding: 0 30px 0 11px; border: 1px solid #dbeafe; border-radius: 9px; color: #1e3a5f; background: #f8fbff; font: 650 .75rem/1.2 "Inter", sans-serif; letter-spacing: normal; text-transform: none; cursor: pointer; }
+      .protein-card-variants select:focus-visible { outline: 3px solid rgba(59, 130, 246, .38); outline-offset: 2px; border-color: #3b82f6; }
       .protein-card-cta { display: flex; min-height: 48px; align-items: center; justify-content: center; gap: 9px; margin-top: 13px; padding: 11px 14px; border: 1px solid #1d4ed8; border-radius: 10px; color: #fff; background: linear-gradient(135deg, #1d4ed8, #2563eb); font-size: .77rem; font-weight: 750; letter-spacing: .015em; text-decoration: none; box-shadow: 0 6px 14px rgba(29, 78, 216, .16); transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
       .protein-card-cta i { color: #dbeafe; transition: transform .2s ease; }
       .protein-card-cta:hover { transform: translateY(-1px); background: linear-gradient(135deg, #1e40af, #1d4ed8); box-shadow: 0 9px 20px rgba(29, 78, 216, .24); }
@@ -4846,7 +4848,7 @@ compareTabs.forEach((tab, index) => {
         </header>
 
         <div class="protein-range-grid">
-          <article class="protein-card reveal d1">
+          <article class="protein-card reveal d1" data-price-500g="1099" data-price-1kg="1999">
             <div class="protein-card-media">
               <img class="protein-card-image-primary" src="images/protein/whey%20protein.png" alt="Aiva Wellness Whey Protein pouch — Chocolate & Vanilla flavours, available in 500 g & 1 kg" width="720" height="720" loading="lazy" decoding="async" />
               <img class="protein-card-image-secondary" src="images/protein/wheyprotein2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
@@ -4869,8 +4871,20 @@ compareTabs.forEach((tab, index) => {
               </ul>
               <div class="protein-card-purchase">
                 <data value="1099">₹1,099</data>
-                <del aria-label="1 kg price ₹1,999">₹1,999</del>
-                <span class="protein-card-saving">From ₹1,099</span>
+              </div>
+              <div class="protein-card-variants">
+                <label>Size
+                  <select data-protein-size aria-label="Whey Protein size">
+                    <option value="500 g" selected>500 g</option>
+                    <option value="1 kg">1 kg</option>
+                  </select>
+                </label>
+                <label>Flavour
+                  <select data-protein-flavor aria-label="Whey Protein flavour">
+                    <option value="Chocolate" selected>Chocolate</option>
+                    <option value="Vanilla">Vanilla</option>
+                  </select>
+                </label>
               </div>
               <a class="protein-card-cta" href="/products/wheyprotein" aria-label="Explore Aiva Wellness Whey Protein">
                 Explore Whey Protein <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -4878,7 +4892,7 @@ compareTabs.forEach((tab, index) => {
             </div>
           </article>
 
-          <article class="protein-card reveal d2">
+          <article class="protein-card reveal d2" data-price-500g="1399" data-price-1kg="2499">
             <div class="protein-card-media">
               <img class="protein-card-image-primary" src="images/protein/protein.png" alt="Aiva Wellness Plant Protein pouch — Coffee & Mango flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
               <img class="protein-card-image-secondary" src="images/protein/protein2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
@@ -4901,8 +4915,20 @@ compareTabs.forEach((tab, index) => {
               </ul>
               <div class="protein-card-purchase">
                 <data value="1399">₹1,399</data>
-                <del aria-label="1 kg price ₹2,499">₹2,499</del>
-                <span class="protein-card-saving">From ₹1,399</span>
+              </div>
+              <div class="protein-card-variants">
+                <label>Size
+                  <select data-protein-size aria-label="Plant Protein size">
+                    <option value="500 g" selected>500 g</option>
+                    <option value="1 kg">1 kg</option>
+                  </select>
+                </label>
+                <label>Flavour
+                  <select data-protein-flavor aria-label="Plant Protein flavour">
+                    <option value="Coffee" selected>Coffee</option>
+                    <option value="Mango">Mango</option>
+                  </select>
+                </label>
               </div>
               <a class="protein-card-cta" href="/products/plantprotein" aria-label="Explore Aiva Wellness Plant Protein">
                 Explore Plant Protein <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -4910,7 +4936,7 @@ compareTabs.forEach((tab, index) => {
             </div>
           </article>
 
-          <article class="protein-card reveal d3">
+          <article class="protein-card reveal d3" data-price-500g="1299" data-price-1kg="2299">
             <div class="protein-card-media">
               <img class="protein-card-image-primary" src="images/protein/whey1.png" alt="Aiva Wellness Yeast Protein pouch — Strawberry &amp; Kesar Pista flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
               <img class="protein-card-image-secondary" src="images/protein/whey2.jpg" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
@@ -4933,8 +4959,20 @@ compareTabs.forEach((tab, index) => {
               </ul>
               <div class="protein-card-purchase">
                 <data value="1299">₹1,299</data>
-                <del aria-label="1 kg price ₹2,299">₹2,299</del>
-                <span class="protein-card-saving">From ₹1,299</span>
+              </div>
+              <div class="protein-card-variants">
+                <label>Size
+                  <select data-protein-size aria-label="Yeast Protein size">
+                    <option value="500 g" selected>500 g</option>
+                    <option value="1 kg">1 kg</option>
+                  </select>
+                </label>
+                <label>Flavour
+                  <select data-protein-flavor aria-label="Yeast Protein flavour">
+                    <option value="Strawberry" selected>Strawberry</option>
+                    <option value="Kesar Pista">Kesar Pista</option>
+                  </select>
+                </label>
               </div>
               <a class="protein-card-cta" href="/products/yeastprotein" aria-label="Explore Aiva Wellness Yeast Protein">
                 Explore Yeast Protein <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -4964,6 +5002,32 @@ compareTabs.forEach((tab, index) => {
         </p>
       </div>
     </section>
+
+    <script>
+      document.querySelectorAll(".protein-card").forEach((card) => {
+        const sizeSelect = card.querySelector("[data-protein-size]");
+        const flavorSelect = card.querySelector("[data-protein-flavor]");
+        const price = card.querySelector(".protein-card-purchase data");
+        const link = card.querySelector(".protein-card-cta");
+        const productPath = link.getAttribute("href");
+
+        const updateVariant = () => {
+          const priceValue = Number(card.getAttribute(sizeSelect.value === "1 kg" ? "data-price-1kg" : "data-price-500g"));
+          price.value = String(priceValue);
+          price.textContent = `₹${priceValue.toLocaleString("en-IN")}`;
+
+          const query = new URLSearchParams({
+            size: sizeSelect.value,
+            flavor: flavorSelect.value
+          });
+          link.href = `${productPath}?${query.toString()}`;
+        };
+
+        sizeSelect.addEventListener("change", updateVariant);
+        flavorSelect.addEventListener("change", updateVariant);
+        updateVariant();
+      });
+    </script>
 
     <!-- ABOUT SECTION -->
     <section class="about-section">
