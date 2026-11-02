@@ -492,7 +492,7 @@
   box-shadow: 0 8px 24px rgba(35, 52, 82, .07);
 }
 .rail-section .pcard-media {
-  aspect-ratio: 1 / .78;
+  aspect-ratio: 1;
   background: linear-gradient(145deg, #f0f5fb, #fff 68%, #e8f0fa);
 }
 .rail-section .pcard-body { padding: 18px 18px 20px; }
