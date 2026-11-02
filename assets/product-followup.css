@@ -88,3 +88,47 @@
   .product-blog-card .blog-kicker { font-size: .62rem; letter-spacing: .11em; }
   .product-blog-card a { width: 100%; justify-content: space-between; }
 }
+.potency-glance { margin-top: 0; padding: 18px; background: var(--white); border: 1px solid var(--border); border-radius: var(--r); box-shadow: var(--sh); }
+.potency-glance h2 { margin-bottom: 12px; color: var(--black); font-size: 1rem; }
+.potency-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.potency-item { padding: 10px 12px; background: var(--bg); border-radius: var(--r-sm); }
+.potency-label { display: block; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+.potency-value { display: block; margin-top: 3px; color: var(--ink); font-size: .88rem; font-weight: 700; line-height: 1.4; }
+.potency-note { margin-top: 12px; color: var(--text-mid); font-size: .76rem; line-height: 1.6; }
+.desc-text h2 { margin: 22px 0 10px; color: var(--black); font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 700; }
+.desc-text h2:first-child { margin-top: 0; }
+.tabs-section { margin-bottom: 24px; }
+.product-glance-column { min-width: 0; }
+.protein-product-page .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; padding: 8px 2px 10px; }
+.protein-product-page .benefit-card { min-width: 0; width: 100%; min-height: 220px; padding: 22px 20px; border: 1px solid rgba(59,130,246,.16); border-radius: 18px; background: linear-gradient(180deg,#fff 0%,#f8fbff 100%); box-shadow: 0 4px 24px rgba(8,13,20,.06); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+.protein-product-page .benefit-card:hover { transform: translateY(-4px); border-color: rgba(59,130,246,.35); box-shadow: 0 16px 36px rgba(29,78,216,.12); }
+.protein-product-page .benefit-icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%); color: #fff; font-size: 21px; }
+.protein-product-page .benefit-title { color: var(--black); font-size: .9rem; font-weight: 700; line-height: 1.4; }
+.protein-product-page .benefit-desc { color: var(--text-mid); font-size: .78rem; line-height: 1.65; }
+.protein-product-page .warning-box { max-width: 680px; margin-top: 16px; padding: 16px 20px; border: 1px solid #fecaca; border-radius: var(--r-sm); background: #fef2f2; color: #991b1b; font-size: .83rem; line-height: 1.7; }
+.protein-product-page .warning-box strong { display: block; margin-bottom: 5px; }
+.protein-product-page { --black: var(--ink); --text-mid: var(--muted); --border: var(--line); --bg: var(--paper); --r: var(--r-md); --sh: var(--shadow-sm); }
+.protein-product-page .wrap { max-width: 1320px; margin: 0 auto; padding: 40px 24px 80px; }
+.protein-product-page .hero { grid-template-columns: 1fr 1fr; gap: 56px; margin: 0 0 72px; padding: 0; align-items: start; }
+.protein-product-page .gallery { position: sticky; top: 88px; align-self: start; max-width: none; width: 100%; }
+.protein-product-page .product-copy { display: flex; flex-direction: column; gap: 24px; }
+.protein-product-page .product-copy h1 { margin: 0; color: var(--black); font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-size: clamp(22px, 2.6vw, 36px); font-weight: 700; letter-spacing: .02em; line-height: 1.12; }
+.protein-product-page .product-copy h1 .accent { color: inherit; }
+.protein-product-page .intro { max-width: 520px; color: var(--text-mid); font-size: .92rem; line-height: 1.8; }
+.protein-product-page .variant-options { margin: 0; }
+.protein-product-page .tabs-nav { flex-wrap: wrap; }
+.protein-product-page .desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.protein-product-page .tab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.protein-product-page .desc-text h3 { margin: 22px 0 10px; color: var(--black); font-family: "Swiss721BoldCondensedBT", "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 700; }
+.protein-product-page .desc-text h3:first-child { margin-top: 0; }
+.protein-product-page .tabs-section { margin-bottom: 24px; }
+@media (max-width: 900px) {
+  .protein-product-page .hero { grid-template-columns: 1fr; gap: 32px; }
+  .protein-product-page .gallery { position: static; }
+}
+@media (max-width: 768px) {
+  .protein-product-page .desc-grid { grid-template-columns: 1fr; }
+  .protein-product-page .tab-grid { grid-template-columns: 1fr; }
+  .protein-product-page .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .protein-product-page .benefit-card { min-height: 200px; padding: 16px 14px; }
+}
