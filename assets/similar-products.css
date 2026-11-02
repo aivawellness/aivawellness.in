@@ -550,18 +550,46 @@
   background: #294b80;
 }
 @media (max-width: 600px) {
-  .rail-section { padding: 24px 18px 20px; border-radius: 18px; }
-  .rail-section .rail-head { display: block; }
-  .rail-section .rail-head h2 { font-size: clamp(1.8rem, 8vw, 2.35rem); }
-  .rail-section .rail-head p { font-size: .88rem; }
-  .rail-section .rail-controls { display: flex; justify-content: flex-end; margin-top: 14px; }
-  .rail-section .rail { grid-auto-columns: 88%; gap: 13px; padding: 14px 8px 22px; scroll-padding-inline: 8px; }
-  .rail-section .rail-categories { flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
-  .rail-section .rail-category { min-height: 42px; padding: 8px 12px; border-radius: 999px; font-size: .72rem; }
-  .rail-section .pcard-body { padding: 17px 16px 16px; }
-  .rail-section .rail-status { margin: -8px 8px 12px; }
-  .rail-section .rail-foot { align-items: stretch; gap: 12px; }
+  .rail-section {
+    width: calc(100% + 48px);
+    margin: 36px 0 0 -24px;
+    padding: 24px 16px 20px;
+    border-radius: 0;
+  }
+  .rail-section .rail-head { display: block; margin-bottom: 18px; }
+  .rail-section .rail-head h2 { max-width: 18ch; font-size: clamp(1.85rem, 8vw, 2.35rem); }
+  .rail-section .rail-head p { margin-top: 9px; font-size: .86rem; line-height: 1.6; }
+  .rail-section .rail-controls { display: flex; justify-content: flex-end; margin-top: 12px; }
+  .rail-section .rail-btn { width: 42px; height: 42px; flex-basis: 42px; }
+  .rail-section .rail-categories {
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 0 -4px 10px;
+    padding: 4px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    touch-action: pan-x;
+  }
+  .rail-section .rail-categories::-webkit-scrollbar { display: none; }
+  .rail-section .rail-category {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: .72rem;
+    white-space: nowrap;
+  }
+  .rail-section .rail-instructions { margin-bottom: 4px; font-size: .76rem; }
+  .rail-section .rail { grid-auto-columns: min(86%, 300px); gap: 12px; padding: 12px 8px 20px; scroll-padding-inline: 8px; }
+  .rail-section .pcard-body { padding: 16px 15px 15px; }
+  .rail-section .rail-status { margin: -6px 8px 12px; }
+  .rail-section .rail-foot { align-items: stretch; gap: 10px; padding-top: 16px; }
+  .rail-section .rail-foot p { font-size: .78rem; }
   .rail-section .rail-foot .btn-ghost { width: 100%; }
+}
+@media (max-width: 360px) {
+  .rail-section { padding-right: 12px; padding-left: 12px; }
+  .rail-section .rail { grid-auto-columns: 88%; gap: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rail-section .pcard,
