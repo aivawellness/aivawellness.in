@@ -108,108 +108,182 @@
         "https://connect.facebook.net/en_US/fbevents.js",
       );
     </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://aivawellness.in/#organization",
-            "name": "Aiva Wellness",
-            "alternateName": "Aiva Wellness India",
-            "url": "https://aivawellness.in/",
-            "logo": "https://aivawellness.in/assets/logo.png",
-            "description": "Aiva Wellness is an Indian wellness and nutraceutical brand based in Solan, Himachal Pradesh.",
-            "brand": { "@id": "https://aivawellness.in/#brand" },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Vill. Loharon, P.O. Ghatti",
-              "addressLocality": "Solan",
-              "addressRegion": "Himachal Pradesh",
-              "postalCode": "173211",
-              "addressCountry": "IN"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+91-78077-51711",
-              "contactType": "customer service",
-              "email": "info@aivawellness.in",
-              "areaServed": "IN",
-              "availableLanguage": ["en", "hi"]
-            },
-            "sameAs": [
-              "https://www.instagram.com/aivawellness.in/?hl=en",
-              "https://www.facebook.com/profile.php?id=61591507665329",
-              "https://x.com/aivawellness",
-              "https://www.linkedin.com/company/aivawellness"
-            ]
-          },
-          {
-            "@type": "Brand",
-            "@id": "https://aivawellness.in/#brand",
-            "name": "Aiva Wellness",
-            "alternateName": "Aiva Wellness India",
-            "logo": "https://aivawellness.in/assets/logo.png",
-            "description": "Premium wellness supplements for Indian lifestyles and daily health support."
-          }
-        ]
-      }
+        <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "Organization",
+                       "@id":  "https://aivawellness.in/#organization",
+                       "name":  "Aiva Wellness",
+                       "alternateName":  "Aiva Wellness India",
+                       "url":  "https://aivawellness.in/",
+                       "logo":  "https://aivawellness.in/assets/logo.png",
+                       "description":  "Aiva Wellness is an Indian wellness and nutraceutical brand based in Solan, Himachal Pradesh.",
+                       "brand":  {
+                                     "@id":  "https://aivawellness.in/#brand"
+                                 },
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "streetAddress":  "Vill. Loharon, P.O. Ghatti",
+                                       "addressLocality":  "Solan",
+                                       "addressRegion":  "Himachal Pradesh",
+                                       "postalCode":  "173211",
+                                       "addressCountry":  "IN"
+                                   },
+                       "contactPoint":  {
+                                            "@type":  "ContactPoint",
+                                            "telephone":  "+91-78077-51711",
+                                            "contactType":  "customer service",
+                                            "email":  "info@aivawellness.in",
+                                            "areaServed":  "IN",
+                                            "availableLanguage":  [
+                                                                      "en",
+                                                                      "hi"
+                                                                  ]
+                                        },
+                       "sameAs":  [
+                                      "https://www.instagram.com/aivawellness.in/?hl=en",
+                                      "https://www.facebook.com/profile.php?id=61591507665329",
+                                      "https://x.com/aivawellness",
+                                      "https://www.linkedin.com/company/aivawellness"
+                                  ]
+                   },
+                   {
+                       "@type":  "Brand",
+                       "@id":  "https://aivawellness.in/#brand",
+                       "name":  "Aiva Wellness",
+                       "alternateName":  "Aiva Wellness India",
+                       "logo":  "https://aivawellness.in/assets/logo.png",
+                       "description":  "Premium wellness supplements for Indian lifestyles and daily health support."
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://aivawellness.in/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Shop",
+                                                   "item":  "https://aivawellness.in/shop"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  3,
+                                                   "name":  "Omega-3 Fish Oil",
+                                                   "item":  "https://aivawellness.in/products/omega3fishoil"
+                                               }
+                                           ]
+                   },
+                   {
+                       "@type":  "Product",
+                       "name":  "Omega-3 Fish Oil",
+                       "image":  [
+                                     "https://aivawellness.in/products/all%20images/omega-1.png",
+                                     "https://aivawellness.in/products/all%20images/omega-2.png",
+                                     "https://aivawellness.in/products/all%20images/omega-3.png",
+                                     "https://aivawellness.in/products/all%20images/omega-4.png",
+                                     "https://aivawellness.in/products/all%20images/omega-5.png"
+                                 ],
+                       "description":  "Omega-3 Fish Oil is a high-potency softgel delivering EPA and DHA to support heart, brain and joint wellness.",
+                       "sku":  "AIVA-OMEGA-799",
+                       "brand":  {
+                                     "@type":  "Brand",
+                                     "@id":  "https://aivawellness.in/#brand",
+                                     "name":  "Aiva Wellness"
+                                 },
+                       "category":  "Heart Health",
+                       "offers":  {
+                                      "@type":  "Offer",
+                                      "priceCurrency":  "INR",
+                                      "price":  "799",
+                                      "priceValidUntil":  "2026-12-31",
+                                      "validFrom":  "2026-07-13",
+                                      "availability":  "https://schema.org/InStock",
+                                      "itemCondition":  "https://schema.org/NewCondition",
+                                      "seller":  {
+                                                     "@type":  "Organization",
+                                                     "@id":  "https://aivawellness.in/#organization",
+                                                     "name":  "Aiva Wellness"
+                                                 }
+                                  }
+                   },
+                   {
+                       "@type":  "Brand",
+                       "name":  "Aiva Wellness",
+                       "alternateName":  "Aiva Wellness India",
+                       "logo":  "https://aivawellness.in/assets/logo.png",
+                       "description":  "Premium healthcare and wellness supplements including Omega-3 Fish Oil, Nattokinase, and daily nutrition essentials.",
+                       "slogan":  "Wellness formulas for everyday health"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What is Omega-3 Fish Oil?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "It is a daily fish oil formula designed to provide Omega-3 support for heart, brain and overall wellness."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What are EPA and DHA?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "EPA and DHA are key Omega-3 fatty acids. Confirm the final amount per serving on the product label."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "When should I take it?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Follow the serving directions on the final pack and take it consistently with your daily routine."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Does it contain fish?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes, fish oil products contain fish-derived ingredients. Review the final allergen and ingredient panel before use."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is pan-India delivery planned?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes, pan-India delivery is planned, with final timelines shared at launch."
+                                                                 }
+                                          }
+                                      ]
+                   },
+                   {
+                       "@type":  "WebPage",
+                       "@id":  "https://aivawellness.in/products/omega3fishoil",
+                       "url":  "https://aivawellness.in/products/omega3fishoil",
+                       "isPartOf":  {
+                                        "@type":  "WebSite",
+                                        "@id":  "https://aivawellness.in/#website",
+                                        "name":  "Aiva Wellness",
+                                        "url":  "https://aivawellness.in/"
+                                    }
+                   }
+               ]
+}
     </script>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://aivawellness.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Shop",
-            "item": "https://aivawellness.in/shop"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Omega-3 Fish Oil",
-            "item": "https://aivawellness.in/products/omega3fishoil"
-          }
-        ]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Omega-3 Fish Oil",
-        "image": [
-          "https://aivawellness.in/products/all%20images/omega-1.png",
-          "https://aivawellness.in/products/all%20images/omega-2.png",
-          "https://aivawellness.in/products/all%20images/omega-3.png",
-          "https://aivawellness.in/products/all%20images/omega-4.png",
-          "https://aivawellness.in/products/all%20images/omega-5.png"
-        ],
-        "description": "Omega-3 Fish Oil is a high-potency softgel delivering EPA and DHA to support heart, brain and joint wellness.",
-        "sku": "AIVA-OMEGA-799",
-        "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
-        "category": "Heart Health",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "INR",
-          "price": "799",
-          "priceValidUntil": "2026-12-31",
-          "validFrom": "2026-07-13",
-          "availability": "https://schema.org/InStock",
-          "itemCondition": "https://schema.org/NewCondition",
-          "seller": { "@type": "Organization", "@id": "https://aivawellness.in/#organization", "name": "Aiva Wellness" }
-        }
-      }
-    </script>
+
+
+
 
     <link rel="icon" href="/assets/logo.png" type="image/png" />
     <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
@@ -2733,85 +2807,15 @@
         y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "xmnjshu9fg");
     </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Brand",
-        "name": "Aiva Wellness",
-        "alternateName": "Aiva Wellness India",
-        "logo": "https://aivawellness.in/assets/logo.png",
-        "description": "Premium healthcare and wellness supplements including Omega-3 Fish Oil, Nattokinase, and daily nutrition essentials.",
-        "slogan": "Wellness formulas for everyday health"
-      }
-    </script>
+
     <link rel="stylesheet" href="../assets/similar-products.css" />
     <link rel="stylesheet" href="../assets/product-followup.css" />
     <script src="../assets/product-blog.js" defer></script>
     <script src="../assets/similar-products.js" defer></script>
 
-    <script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "FAQPage",
-    "mainEntity":  [
-                       {
-                           "@type":  "Question",
-                           "name":  "What is Omega-3 Fish Oil?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "It is a daily fish oil formula designed to provide Omega-3 support for heart, brain and overall wellness."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "What are EPA and DHA?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "EPA and DHA are key Omega-3 fatty acids. Confirm the final amount per serving on the product label."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "When should I take it?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Follow the serving directions on the final pack and take it consistently with your daily routine."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Does it contain fish?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes, fish oil products contain fish-derived ingredients. Review the final allergen and ingredient panel before use."
-                                              }
-                       },
-                       {
-                           "@type":  "Question",
-                           "name":  "Is pan-India delivery planned?",
-                           "acceptedAnswer":  {
-                                                  "@type":  "Answer",
-                                                  "text":  "Yes, pan-India delivery is planned, with final timelines shared at launch."
-                                              }
-                       }
-                   ]
-}
-</script>
 
-    <script type="application/ld+json">
-{
-    "@context":  "https://schema.org",
-    "@type":  "WebPage",
-    "@id":  "https://aivawellness.in/products/omega3fishoil",
-    "url":  "https://aivawellness.in/products/omega3fishoil",
-    "isPartOf":  {
-                     "@type":  "WebSite",
-                     "@id":  "https://aivawellness.in/#website",
-                     "name":  "Aiva Wellness",
-                     "url":  "https://aivawellness.in/"
-                 }
-}
-    </script>
+
+
 </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -4393,7 +4397,7 @@
         ).observe(el);
       });
 
-      
+
 
       (() => {
         const bar = document.getElementById("stickyBar");
