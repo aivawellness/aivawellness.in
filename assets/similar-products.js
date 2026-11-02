@@ -19,17 +19,116 @@
   setupGalleryZoom();
 
   const products = [
-    { file: "nattokinase200", category: "targeted", tag: "Targeted support", name: "Nattokinase Plus 200 mg", blurb: "200 mg / 4,000 FU · 30 vegan capsules · High-strength circulation support · <strong>Best for: experienced users</strong>", main: "../products/Nattokinase Carton.webp", hover: "../products/all images/p2.png", icon: "fa-heart-pulse" },
-    { file: "magnesium-complex-5-in-1", category: "daily", tag: "Daily essentials", name: "Magnesium Complex 5-in-1", blurb: "350 mg per 2 capsules · 60 vegan capsules · Sleep and muscle support · <strong>Best for: evening routines</strong>", main: "../products/Magnesium Complex.webp", hover: "../products/all images/magnesium2.png", icon: "fa-atom" },
-    { file: "dailyvitals", category: "daily", tag: "Daily essentials", name: "Daily Vitals for Adults 18+", blurb: "1 capsule daily · 60 vegan capsules · Everyday energy and immune support · <strong>Best for: adults 18+</strong>", main: "../products/reefit forte c new size.webp", hover: "../products/all images/multivitamin2.png", icon: "fa-sun" },
-    { file: "nattokinase100", category: "targeted", tag: "Targeted support", name: "Nattokinase 100 mg", blurb: "100 mg / 2,000 FU · 60 vegan capsules · Circulation support · <strong>Best for: first-time users</strong>", main: "../products/Nattokinase Carton  final 3d.webp", hover: "../products/all images/1.webp", icon: "fa-heart-pulse" },
-    { file: "vitamind3", category: "daily", tag: "Daily essentials", name: "Vitamin D3 60,000 IU", blurb: "60,000 IU · 60 vegetarian capsules · Bone and immunity support · <strong>Best for: vitamin D3 routines</strong>", main: "../products/all images/vitamind3-1.png", hover: "../products/all images/vitamind3-2.png", icon: "fa-sun" },
-    { file: "dailyvitalsmen", category: "daily", tag: "Daily essentials", name: "Daily Vitals for Men 40+", blurb: "1 capsule daily · 60 capsules · Energy and vitality support · Gelatin capsule · <strong>Best for: men 40+</strong>", main: "../products/all images/men-1.png", hover: "../products/all images/men-2.png", icon: "fa-person" },
-    { file: "dailyvitalswomen", category: "daily", tag: "Daily essentials", name: "Daily Vitals for Women 40+", blurb: "1 vegan capsule daily · 60 vegan capsules · Women's vitality support · <strong>Best for: women 40+</strong>", main: "../products/all images/women-1.png", hover: "../products/all images/women-2.png", icon: "fa-person-dress" },
-    { file: "wheyprotein", category: "performance", tag: "Performance nutrition", name: "Whey Protein", blurb: "As directed on pack · Available in 500 g & 1 kg · Chocolate, Vanilla · Recovery and strength support · Whey-based · <strong>Best for: active lifestyles</strong>", main: "../images/protein/whey%20protein.png", hover: "../images/protein/protein.png", icon: "fa-dumbbell" },
-    { file: "plantprotein", category: "performance", tag: "Plant-based nutrition", name: "Plant Protein", blurb: "As directed on pack · 1 kg powder · Recovery and strength support · Plant-based · <strong>Best for: plant-powered routines</strong>", main: "../images/protein/protein.png", hover: "../images/protein/whey1.png", icon: "fa-leaf" },
-    { file: "yeastprotein", category: "performance", tag: "Next-gen nutrition", name: "Yeast Protein", blurb: "As directed on pack · 1 kg powder · Recovery and strength support · Yeast-based · <strong>Best for: everyday performance</strong>", main: "../images/protein/whey1.png", hover: "../images/protein/protein.png", icon: "fa-seedling" },
-    { file: "omega3fishoil", category: "targeted", tag: "Targeted support", name: "Omega-3 Fish Oil", blurb: "1,000 mg fish oil · 60 softgels · EPA + DHA support · Fish-based · <strong>Best for: heart and joint wellness</strong>", main: "../products/all images/omega-1.png", hover: "../products/all images/omega-2.png", icon: "fa-fish" }
+    {
+      file: "nattokinase200",
+      category: "targeted",
+      tag: "Nattokinase supplement",
+      name: "Nattokinase Plus 200 mg",
+      facts: ["200 mg nattokinase per capsule", "4,000 FU enzyme activity", "30 vegan capsules"],
+      main: "../products/Nattokinase Carton.webp",
+      hover: "../products/all images/p2.png",
+      icon: "fa-heart-pulse",
+    },
+    {
+      file: "magnesium-complex-5-in-1",
+      category: "daily",
+      tag: "Magnesium supplement",
+      name: "Magnesium Complex 5-in-1",
+      facts: ["350 mg elemental magnesium per 2-capsule serving", "Five magnesium forms", "60 vegan capsules"],
+      main: "../products/Magnesium Complex.webp",
+      hover: "../products/all images/magnesium2.png",
+      icon: "fa-atom",
+    },
+    {
+      file: "dailyvitals",
+      category: "daily",
+      tag: "Daily multivitamin",
+      name: "Daily Vitals for Adults 18+",
+      facts: ["Multivitamin, multimineral and Zinc", "Includes Omega-3 and Vitamin E", "60 capsules"],
+      main: "../products/reefit forte c new size.webp",
+      hover: "../products/all images/multivitamin2.png",
+      icon: "fa-sun",
+    },
+    {
+      file: "nattokinase100",
+      category: "targeted",
+      tag: "Nattokinase supplement",
+      name: "Nattokinase 100 mg",
+      facts: ["100 mg nattokinase per capsule", "2,000 FU enzyme activity", "60 vegan capsules"],
+      main: "../products/Nattokinase Carton  final 3d.webp",
+      hover: "../products/all images/1.webp",
+      icon: "fa-heart-pulse",
+    },
+    {
+      file: "vitamind3",
+      category: "targeted",
+      tag: "Vitamin D3 tablets",
+      name: "Vitamin D3 60,000 IU",
+      facts: ["60,000 IU Vitamin D3 (Cholecalciferol IP) per tablet", "60 film-coated tablets", "Use only as directed by a Registered Medical Practitioner"],
+      main: "../products/all images/vitamind3-1.png",
+      hover: "../products/all images/vitamind3-2.png",
+      icon: "fa-sun",
+    },
+    {
+      file: "dailyvitalsmen",
+      category: "daily",
+      tag: "Men's multivitamin",
+      name: "Daily Vitals for Men 40+",
+      facts: ["Multivitamin, multimineral and amino acids", "Formulated for men aged 40+", "60 capsules"],
+      main: "../products/all images/men-1.png",
+      hover: "../products/all images/men-2.png",
+      icon: "fa-person",
+    },
+    {
+      file: "dailyvitalswomen",
+      category: "daily",
+      tag: "Women's multivitamin",
+      name: "Daily Vitals for Women 40+",
+      facts: ["Multivitamin, multimineral, amino acids and Ginseng", "Formulated for women aged 40+", "60 vegan capsules"],
+      main: "../products/all images/women-1.png",
+      hover: "../products/all images/women-2.png",
+      icon: "fa-person-dress",
+    },
+    {
+      file: "wheyprotein",
+      category: "performance",
+      tag: "Whey protein powder",
+      name: "Whey Protein",
+      facts: ["500 g and 1 kg packs", "Chocolate and Vanilla flavours", "Contains milk and milk products"],
+      main: "../images/protein/whey%20protein.png",
+      hover: "../images/protein/protein.png",
+      icon: "fa-dumbbell",
+    },
+    {
+      file: "plantprotein",
+      category: "performance",
+      tag: "Plant protein powder",
+      name: "Plant Protein",
+      facts: ["500 g and 1 kg packs", "Coffee and Mango flavours", "Check pack for protein and ingredient details"],
+      main: "../images/protein/protein.png",
+      hover: "../images/protein/whey1.png",
+      icon: "fa-leaf",
+    },
+    {
+      file: "yeastprotein",
+      category: "performance",
+      tag: "Yeast protein powder",
+      name: "Yeast Protein",
+      facts: ["500 g and 1 kg packs", "Strawberry and Kesar Pista flavours", "Check pack for protein and ingredient details"],
+      main: "../images/protein/whey1.png",
+      hover: "../images/protein/protein.png",
+      icon: "fa-seedling",
+    },
+    {
+      file: "omega3fishoil",
+      category: "targeted",
+      tag: "Omega-3 fish oil",
+      name: "Omega-3 Fish Oil",
+      facts: ["1,000 mg Omega-3 per softgel", "180 mg EPA and 120 mg DHA", "60 softgels; contains fish oil"],
+      main: "../products/all images/omega-1.png",
+      hover: "../products/all images/omega-2.png",
+      icon: "fa-fish",
+    },
   ];
   const categories = [
     { id: "all", label: "All products" },
@@ -41,23 +140,14 @@
   const currentFile = window.location.pathname.split("/").pop().toLowerCase().replace(/\.html$/, "");
   const currentSection = document.querySelector(".similar-section");
   const existingRail = document.querySelector("#more .rail");
-  if (!currentSection && !existingRail) return;
+  const sectionToReplace = currentSection || existingRail?.closest("#more");
+  if (!sectionToReplace) return;
 
   const cardMarkup = (product) => `
         <article class="pcard" data-category="${product.category}">
-          <div class="pcard-media"><img src="${product.main}" alt="Aiva Wellness ${product.name}" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()" /><img class="img-hover" src="${product.hover}" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()" /><i class="fa-solid ${product.icon}" aria-hidden="true"></i></div>
-          <div class="pcard-body"><span class="tag">${product.tag}</span><h3>${product.name}</h3><p>${product.blurb}</p><a class="pcard-link" href="/products/${product.file}">View ${product.name} <i class="fa-solid fa-arrow-right"></i></a></div>
+          <div class="pcard-media"><img src="${product.main}" alt="Aiva Wellness ${product.name}" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('no-img');this.remove()" /><img class="img-hover" src="${product.hover}" alt="" aria-hidden="true" loading="lazy" decoding="async" onerror="this.remove()" /><i class="fa-solid ${product.icon}" aria-hidden="true"></i></div>
+          <div class="pcard-body"><span class="tag">${product.tag}</span><h3>${product.name}</h3><ul class="pcard-facts">${product.facts.map((fact) => `<li>${fact}</li>`).join("")}</ul><a class="pcard-link" href="/products/${product.file}" aria-label="View ${product.name} product details">View ${product.name} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
         </article>`;
-
-  if (!currentSection) {
-    const missingProducts = products.filter((product) =>
-      ["plantprotein", "yeastprotein"].includes(product.file) &&
-      product.file !== currentFile &&
-      !existingRail.querySelector(`a[href="/products/${product.file}"]`),
-    );
-    existingRail.insertAdjacentHTML("beforeend", missingProducts.map(cardMarkup).join(""));
-    return;
-  }
 
   const railProducts = products.filter((product) => product.file !== currentFile);
   const section = document.createElement("section");
@@ -68,30 +158,34 @@
     <div class="rail-head">
       <div class="rail-intro">
         <span class="rail-eyebrow"><i class="fa-solid fa-sparkles" aria-hidden="true"></i> The Aiva Wellness collection</span>
-        <h2 id="more-h">Find your next<br />daily essential</h2>
-        <p>Explore thoughtfully developed nutrition across everyday essentials, targeted formulas and performance support.</p>
+        <h2 id="more-h">Explore more Aiva Wellness supplements</h2>
+        <p>Browse Aiva Wellness daily multivitamins, Vitamin D3 60,000 IU tablets, magnesium supplements, nattokinase capsules, Omega-3 fish oil and protein powders. Compare pack sizes, ingredients and serving details on each product page.</p>
       </div>
-      <div class="rail-controls"><button class="rail-btn" type="button" data-direction="-1" aria-label="Scroll products left"><i class="fa-solid fa-arrow-left"></i></button><button class="rail-btn" type="button" data-direction="1" aria-label="Scroll products right"><i class="fa-solid fa-arrow-right"></i></button></div>
+      <div class="rail-controls"><button class="rail-btn" type="button" data-direction="-1" aria-label="Show previous products"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button><button class="rail-btn" type="button" data-direction="1" aria-label="Show next products"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
     </div>
-    <div class="rail-categories" role="group" aria-label="Filter products by category">
+    <div class="rail-categories" role="group" aria-label="Filter related supplements by category">
         ${categories.map((category, index) => `
           <button class="rail-category${index === 0 ? " is-active" : ""}" type="button" data-category="${category.id}" aria-pressed="${index === 0}">
             ${category.label}<span>${category.id === "all" ? railProducts.length : railProducts.filter((product) => product.category === category.id).length}</span>
           </button>`).join("")}
     </div>
-    <div class="rail" tabindex="0" aria-label="Similar products">
+    <p class="rail-instructions" id="rail-instructions">Use the category filters or arrows to browse. On touchscreens, swipe through the products. Open a product page for its ingredients, directions and full details.</p>
+    <div class="rail" tabindex="0" aria-label="Related Aiva Wellness products" aria-describedby="rail-instructions">
         ${railProducts.map(cardMarkup).join("")}
     </div>
+    <p class="rail-status" aria-live="polite" aria-atomic="true">${railProducts.length} related products</p>
     <div class="rail-foot">
-      <p>Good routines start with choices that fit you.</p>
-      <a class="btn-ghost" href="/shop">Explore the full collection <i class="fa-solid fa-arrow-right"></i></a>
+      <p>Check each product label for full ingredients, serving information and precautions.</p>
+      <a class="btn-ghost" href="/shop" aria-label="Browse all Aiva Wellness supplements">Browse all supplements <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
     </div>`;
 
-  currentSection.replaceWith(section);
+  sectionToReplace.replaceWith(section);
   const rail = section.querySelector(".rail");
   const buttons = section.querySelectorAll(".rail-btn");
   const categoryButtons = section.querySelectorAll(".rail-category");
   const cards = rail.querySelectorAll(".pcard");
+  const status = section.querySelector(".rail-status");
+  const scrollBehavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
   const updateButtons = () => {
     buttons[0].disabled = rail.scrollLeft <= 1;
     buttons[1].disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 1;
@@ -106,14 +200,20 @@
     cards.forEach((card) => {
       card.hidden = category !== "all" && card.dataset.category !== category;
     });
-    rail.scrollTo({ left: 0, behavior: "smooth" });
+    const visibleCount = [...cards].filter((card) => !card.hidden).length;
+    const categoryName = categories.find((item) => item.id === category)?.label;
+    status.textContent = category === "all"
+      ? `${visibleCount} related products`
+      : `${visibleCount} ${categoryName.toLowerCase()} ${visibleCount === 1 ? "product" : "products"}`;
+    rail.scrollTo({ left: 0, behavior: scrollBehavior });
     requestAnimationFrame(updateButtons);
   }));
   buttons.forEach((button) => button.addEventListener("click", () => {
-    const card = rail.querySelector(".pcard");
+    const card = rail.querySelector(".pcard:not([hidden])");
     const direction = Number(button.dataset.direction) || 1;
-    const distance = (card ? card.getBoundingClientRect().width : rail.clientWidth) + 18 * (card ? 1 : 0);
-    rail.scrollBy({ left: distance * direction, behavior: "smooth" });
+    const gap = Number.parseFloat(getComputedStyle(rail).columnGap) || 0;
+    const distance = card ? card.getBoundingClientRect().width + gap : rail.clientWidth;
+    rail.scrollBy({ left: distance * direction, behavior: scrollBehavior });
   }));
   rail.addEventListener("scroll", updateButtons, { passive: true });
   window.addEventListener("resize", updateButtons);
