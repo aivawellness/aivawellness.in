@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/product-details-pages/dailyvitals.html", "destination": "/products/dailyvitals", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/shop.html", "destination": "/shop", "permanent": true }
   ],
