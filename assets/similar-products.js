@@ -26,7 +26,7 @@
       name: "Nattokinase Plus 200 mg",
       facts: ["200 mg nattokinase per capsule", "4,000 FU enzyme activity", "30 vegan capsules"],
       main: "../products/Nattokinase Carton.webp",
-      hover: "../products/all images/p2.png",
+      hover: "../products/all images/p2.webp",
       icon: "fa-heart-pulse",
     },
     {
@@ -36,7 +36,7 @@
       name: "Magnesium Complex 5-in-1",
       facts: ["350 mg elemental magnesium per 2-capsule serving", "Five magnesium forms", "60 vegan capsules"],
       main: "../products/Magnesium Complex.webp",
-      hover: "../products/all images/magnesium2.png",
+      hover: "../products/all images/magnesium2.webp",
       icon: "fa-atom",
     },
     {
@@ -46,7 +46,7 @@
       name: "Daily Vitals for Adults 18+",
       facts: ["Multivitamin, multimineral and Zinc", "Includes Omega-3 and Vitamin E", "60 capsules"],
       main: "../products/reefit forte c new size.webp",
-      hover: "../products/all images/multivitamin2.png",
+      hover: "../products/all images/multivitamin2.webp",
       icon: "fa-sun",
     },
     {
@@ -65,8 +65,8 @@
       tag: "Vitamin D3 tablets",
       name: "Vitamin D3 60,000 IU",
       facts: ["60,000 IU Vitamin D3 (Cholecalciferol IP) per tablet", "60 film-coated tablets", "Use only as directed by a Registered Medical Practitioner"],
-      main: "../products/all images/vitamind3-1.png",
-      hover: "../products/all images/vitamind3-2.png",
+      main: "../products/all images/vitamind3-1.webp",
+      hover: "../products/all images/vitamind3-2.webp",
       icon: "fa-sun",
     },
     {
@@ -75,8 +75,8 @@
       tag: "Men's multivitamin",
       name: "Daily Vitals for Men 40+",
       facts: ["Multivitamin, multimineral and amino acids", "Formulated for men aged 40+", "60 capsules"],
-      main: "../products/all images/men-1.png",
-      hover: "../products/all images/men-2.png",
+      main: "../products/all images/men-1.webp",
+      hover: "../products/all images/men-2.webp",
       icon: "fa-person",
     },
     {
@@ -85,8 +85,8 @@
       tag: "Women's multivitamin",
       name: "Daily Vitals for Women 40+",
       facts: ["Multivitamin, multimineral, amino acids and Ginseng", "Formulated for women aged 40+", "60 vegan capsules"],
-      main: "../products/all images/women-1.png",
-      hover: "../products/all images/women-2.png",
+      main: "../products/all images/women-1.webp",
+      hover: "../products/all images/women-2.webp",
       icon: "fa-person-dress",
     },
     {
@@ -95,8 +95,8 @@
       tag: "Whey protein powder",
       name: "Whey Protein",
       facts: ["500 g and 1 kg packs", "Chocolate and Vanilla flavours", "Contains milk and milk products"],
-      main: "../images/protein/whey%20protein.png",
-      hover: "../images/protein/protein.png",
+      main: "../images/protein/whey%20protein.webp",
+      hover: "../images/protein/protein.webp",
       icon: "fa-dumbbell",
     },
     {
@@ -105,8 +105,8 @@
       tag: "Plant protein powder",
       name: "Plant Protein",
       facts: ["500 g and 1 kg packs", "Coffee and Mango flavours", "Check pack for protein and ingredient details"],
-      main: "../images/protein/protein.png",
-      hover: "../images/protein/whey1.png",
+      main: "../images/protein/protein.webp",
+      hover: "../images/protein/whey1.webp",
       icon: "fa-leaf",
     },
     {
@@ -115,8 +115,8 @@
       tag: "Yeast protein powder",
       name: "Yeast Protein",
       facts: ["500 g and 1 kg packs", "Strawberry and Kesar Pista flavours", "Check pack for protein and ingredient details"],
-      main: "../images/protein/whey1.png",
-      hover: "../images/protein/protein.png",
+      main: "../images/protein/whey1.webp",
+      hover: "../images/protein/protein.webp",
       icon: "fa-seedling",
     },
     {
@@ -125,8 +125,8 @@
       tag: "Omega-3 fish oil",
       name: "Omega-3 Fish Oil",
       facts: ["1,000 mg Omega-3 per softgel", "180 mg EPA and 120 mg DHA", "60 softgels; contains fish oil"],
-      main: "../products/all images/omega-1.png",
-      hover: "../products/all images/omega-2.png",
+      main: "../products/all images/omega-1.webp",
+      hover: "../products/all images/omega-2.webp",
       icon: "fa-fish",
     },
   ];
