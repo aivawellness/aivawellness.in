@@ -129,6 +129,26 @@
       hover: "../products/all images/omega-2.webp",
       icon: "fa-fish",
     },
+    {
+      file: "energyimmunity",
+      category: "daily",
+      tag: "Energy and immunity multivitamin",
+      name: "Energy & Immunity",
+      facts: ["Multivitamin, multimineral and zinc", "Vitamin C, D3, E and B-complex", "60 veg capsules"],
+      main: "../products/all images/energy-immunity-1.jpg",
+      hover: "../products/all images/energy-immunity-2-carton-bottle.jpg",
+      icon: "fa-bolt",
+    },
+    {
+      file: "hearthealthimmunity",
+      category: "targeted",
+      tag: "Heart health and immunity support",
+      name: "Heart Health & Immunity Booster",
+      facts: ["CoQ10, Lycopene and Omega-3", "Vitamin B12, Zinc and mixed carotenoids", "60 veg capsules"],
+      main: "../products/all images/heart-health-immunity-1.webp.png",
+      hover: "../products/all images/heart-health-immunity-2.webp.jpg",
+      icon: "fa-heart-pulse",
+    },
   ];
   const categories = [
     { id: "all", label: "All products" },

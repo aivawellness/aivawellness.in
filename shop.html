@@ -190,7 +190,7 @@
         "@type": "ItemList",
         "name": "Aiva Wellness Products",
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
-        "numberOfItems": 11,
+        "numberOfItems": 13,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -392,6 +392,42 @@
                 "lowPrice": "1299",
                 "highPrice": "2299",
                 "offerCount": "2",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "item": {
+              "@type": "Product",
+              "name": "Energy & Immunity",
+              "url": "https://aivawellness.in/products/energyimmunity",
+              "image": "https://aivawellness.in/products/all%20images/energy-immunity-1.jpg",
+              "description": "A daily multivitamin, multimineral and zinc capsule with Vitamin C, D3, E and B-complex for energy metabolism and immune support.",
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "price": "799",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 13,
+            "item": {
+              "@type": "Product",
+              "name": "Heart Health & Immunity Booster",
+              "url": "https://aivawellness.in/products/hearthealthimmunity",
+              "image": "https://aivawellness.in/products/all%20images/heart-health-immunity-1.webp.png",
+              "description": "A daily capsule with Co-Enzyme Q10, Lycopene, Omega-3, Vitamin B12, Zinc and mixed carotenoids for everyday heart and immune wellness.",
+              "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "price": "949",
                 "availability": "https://schema.org/InStock"
               }
             }
@@ -2617,6 +2653,8 @@
             <a href="/products/wheyprotein">Whey Protein</a>
             <a href="/products/plantprotein">Plant Protein</a>
             <a href="/products/yeastprotein">Yeast Protein</a>
+            <a href="/products/energyimmunity">Energy &amp; Immunity</a>
+            <a href="/products/hearthealthimmunity">Heart Health &amp; Immunity Booster</a>
           </div>
         </noscript>
 
@@ -2771,6 +2809,24 @@
               </label>
             </div>
           </article>
+          <article class="product-card static-product-card">
+            <div class="product-img">
+              <a href="/products/energyimmunity"><img src="products/all images/energy-immunity-1.jpg" alt="Energy &amp; Immunity multivitamin with zinc, 60 veg capsules" loading="lazy" /></a>
+            </div>
+            <div class="product-info">
+              <h3><a href="/products/energyimmunity">Energy &amp; Immunity</a></h3>
+              <div class="price-row"><span class="sale-price">&#8377;799</span><span class="original-price">&#8377;999</span><span class="save-badge">Save 20%</span></div>
+            </div>
+          </article>
+          <article class="product-card static-product-card">
+            <div class="product-img">
+              <a href="/products/hearthealthimmunity"><img src="products/all images/heart-health-immunity-1.webp.png" alt="Heart Health &amp; Immunity Booster, 60 veg capsules" loading="lazy" /></a>
+            </div>
+            <div class="product-info">
+              <h3><a href="/products/hearthealthimmunity">Heart Health &amp; Immunity Booster</a></h3>
+              <div class="price-row"><span class="sale-price">&#8377;949</span><span class="original-price">&#8377;1,199</span><span class="save-badge">Save 21%</span></div>
+            </div>
+          </article>
         </div>
 
         <!-- No results -->
@@ -2870,7 +2926,7 @@
               <li><a href="/products/vitamind3">Vitamin D3</a></li>
               <li><a href="/products/dailyvitalsmen">Daily Vitals for Men 40+</a></li>
               <li><a href="/products/dailyvitalswomen">Daily Vitals for Women 40+</a></li>
-            </ul>
+            <li><a href="/products/energyimmunity">Energy &amp; Immunity</a></li><li><a href="/products/hearthealthimmunity">Heart Health &amp; Immunity Booster</a></li></ul>
           </div>
           <div class="footer-col">
             <h6>Contact Us</h6>
@@ -2918,6 +2974,8 @@
         123: "/products/wheyprotein",
         124: "/products/plantprotein",
         125: "/products/yeastprotein",
+        126: "/products/energyimmunity",
+        127: "/products/hearthealthimmunity",
       };
 
       const PRODUCTS = [
@@ -3043,6 +3101,26 @@
           img: "images/protein/whey1.webp",
           img2: "images/protein/whey2.webp",
         },
+        {
+          id: 126,
+          name: "Energy & Immunity",
+          cat: "Energy & Immunity",
+          price: 799,
+          old: 999,
+          badge: "new",
+          img: "products/all images/energy-immunity-1.jpg",
+          img2: "products/all images/energy-immunity-2-carton-bottle.jpg",
+        },
+        {
+          id: 127,
+          name: "Heart Health & Immunity Booster",
+          cat: "Heart Health",
+          price: 949,
+          old: 1199,
+          badge: "new",
+          img: "products/all images/heart-health-immunity-1.webp.png",
+          img2: "products/all images/heart-health-immunity-2.webp.jpg",
+        },
       ];
 
       const PRODUCT_CARD_DETAILS = {
@@ -3057,6 +3135,8 @@
         123: "As directed on pack · Available in 500 g & 1 kg · Chocolate, Vanilla · Recovery and strength support · Whey-based · Best for: active lifestyles",
         124: "As directed on pack · Available in 500 g & 1 kg · Coffee, Mango · Recovery and strength support · Plant-based · Best for: plant-powered routines",
         125: "As directed on pack · Available in 500 g & 1 kg · Strawberry, Kesar Pista · Recovery and strength support · Yeast-based · Best for: everyday performance",
+        126: "1 capsule daily - 60 veg capsules - Energy metabolism and immune support - Best for: daily multivitamin routines",
+        127: "1 capsule daily - 60 veg capsules - Heart and immune wellness support - Best for: everyday wellness routines",
       };
 
       const PER_PAGE = 12;
