@@ -2353,6 +2353,8 @@
       .protein-card-saving { margin-left: auto; padding: 5px 8px; border: 1px solid #bfdbfe; border-radius: 999px; color: #1d4ed8; background: #eff6ff; font-size: .62rem; font-weight: 750; white-space: nowrap; }
       .protein-card-variants { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
       .protein-card-variants label { display: grid; min-width: 0; gap: 5px; color: #64748b; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      .protein-card-variants .protein-card-flavour { display: grid; align-content: start; gap: 5px; color: #64748b; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      .protein-card-flavour strong { display: flex; min-height: 40px; align-items: center; padding: 0 11px; border: 1px solid #dbeafe; border-radius: 9px; color: #1e3a5f; background: #f8fbff; font-size: .75rem; letter-spacing: normal; text-transform: none; }
       .protein-card-variants select { width: 100%; min-width: 0; min-height: 40px; padding: 0 30px 0 11px; border: 1px solid #dbeafe; border-radius: 9px; color: #1e3a5f; background: #f8fbff; font: 650 .75rem/1.2 "Inter", sans-serif; letter-spacing: normal; text-transform: none; cursor: pointer; }
       .protein-card-variants select:focus-visible { outline: 3px solid rgba(59, 130, 246, .38); outline-offset: 2px; border-color: #3b82f6; }
       .protein-card-cta { display: flex; min-height: 48px; align-items: center; justify-content: center; gap: 9px; margin-top: 13px; padding: 11px 14px; border: 1px solid #1d4ed8; border-radius: 10px; color: #fff; background: linear-gradient(135deg, #1d4ed8, #2563eb); font-size: .77rem; font-weight: 750; letter-spacing: .015em; text-decoration: none; box-shadow: 0 6px 14px rgba(29, 78, 216, .16); transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
@@ -4945,7 +4947,7 @@ compareTabs.forEach((tab, index) => {
 
           <article class="protein-card reveal d3" data-price-500g="1299" data-price-1kg="2299" data-mrp-500g="1599" data-mrp-1kg="2899">
             <div class="protein-card-media">
-              <img class="protein-card-image-primary" src="images/protein/whey1.webp" alt="Aiva Wellness Yeast Protein pouch — Strawberry &amp; Kesar Pista flavours, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
+              <img class="protein-card-image-primary" src="images/protein/whey1.webp" alt="Aiva Wellness Yeast Protein pouch — Chocolate flavour, available in 500 g &amp; 1 kg" width="720" height="720" loading="lazy" decoding="async" />
               <img class="protein-card-image-secondary" src="images/protein/whey2.webp" alt="" aria-hidden="true" width="720" height="720" loading="lazy" decoding="async" />
             </div>
             <div class="protein-card-body">
@@ -4960,7 +4962,7 @@ compareTabs.forEach((tab, index) => {
                 <span>You want to explore a yeast-protein option</span>
               </div>
               <ul class="protein-card-facts" aria-label="Yeast Protein product details">
-                <li>Strawberry, Kesar Pista</li>
+                <li>Chocolate flavour</li>
                 <li>Available in 500 g &amp; 1 kg</li>
                 <li>Check ingredients on pack</li>
               </ul>
@@ -4976,12 +4978,7 @@ compareTabs.forEach((tab, index) => {
                     <option value="1 kg">1 kg</option>
                   </select>
                 </label>
-                <label>Flavour
-                  <select data-protein-flavor aria-label="Yeast Protein flavour">
-                    <option value="Strawberry" selected>Strawberry</option>
-                    <option value="Kesar Pista">Kesar Pista</option>
-                  </select>
-                </label>
+                <div class="protein-card-flavour"><span>Flavour</span><strong>Chocolate</strong></div>
               </div>
               <a class="protein-card-cta" href="/products/yeastprotein" aria-label="Explore Aiva Wellness Yeast Protein">
                 Explore Yeast Protein <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -5030,13 +5027,13 @@ compareTabs.forEach((tab, index) => {
 
           const query = new URLSearchParams({
             size: sizeSelect.value,
-            flavor: flavorSelect.value
+            flavor: flavorSelect ? flavorSelect.value : "Chocolate"
           });
           link.href = `${productPath}?${query.toString()}`;
         };
 
         sizeSelect.addEventListener("change", updateVariant);
-        flavorSelect.addEventListener("change", updateVariant);
+        if (flavorSelect) flavorSelect.addEventListener("change", updateVariant);
         updateVariant();
       });
     </script>

@@ -114,7 +114,7 @@
       category: "performance",
       tag: "Yeast protein powder",
       name: "Yeast Protein",
-      facts: ["500 g and 1 kg packs", "Strawberry and Kesar Pista flavours", "Check pack for protein and ingredient details"],
+      facts: ["Chocolate flavour", "500 g and 1 kg packs", "Check pack for protein and ingredient details"],
       main: "../images/protein/whey1.webp",
       hover: "../images/protein/protein.webp",
       icon: "fa-seedling",

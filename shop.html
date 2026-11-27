@@ -384,7 +384,7 @@
               "name": "Yeast Protein",
               "url": "https://aivawellness.in/products/yeastprotein",
               "image": "https://aivawellness.in/images/protein/whey1.webp",
-              "description": "Aiva Wellness Yeast Protein is available in 500 g and 1 kg packs, in Strawberry and Kesar Pista flavours.",
+              "description": "Aiva Wellness Yeast Protein is available in 500 g and 1 kg packs in Chocolate flavour.",
               "brand": { "@type": "Brand", "@id": "https://aivawellness.in/#brand", "name": "Aiva Wellness" },
               "offers": {
                 "@type": "AggregateOffer",
@@ -1671,6 +1671,53 @@
         outline-offset: 2px;
         border-color: #3b82f6;
       }
+      .protein-size-card .product-info {
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+      .price-size-row {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+      .price-size-row .price-row {
+        min-width: 0;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 4px;
+        margin: 0;
+      }
+      .price-size-row .sale-price {
+        font-size: .9rem;
+      }
+      .price-size-row .original-price {
+        font-size: .65rem;
+      }
+      .price-size-row .save-badge {
+        padding: 3px 5px;
+        font-size: .52rem;
+        white-space: nowrap;
+      }
+      .price-size-row .protein-size-control {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 4px;
+        margin: 0;
+        font-size: .56rem;
+        letter-spacing: .02em;
+        white-space: nowrap;
+      }
+      .price-size-row .protein-size-control select {
+        width: auto;
+        min-width: 58px;
+        min-height: 34px;
+        padding: 0 5px;
+        font-size: .68rem;
+      }
 
       /* Buy button */
       .btn-cart {
@@ -2764,12 +2811,13 @@
               <div class="price-row"><span class="sale-price">₹799</span><span class="original-price">₹1,199</span></div>
             </div>
           </article>
-          <article class="product-card static-product-card">
+          <article class="product-card static-product-card protein-size-card">
             <div class="product-img">
               <a href="/products/wheyprotein"><img src="images/protein/whey protein.webp" alt="Whey Protein" loading="lazy" /></a>
             </div>
             <div class="product-info">
               <h3><a href="/products/wheyprotein">Whey Protein</a></h3>
+              <div class="price-size-row">
               <div class="price-row"><span class="sale-price">₹1,099</span><span class="original-price">₹1,399</span><span class="save-badge">Save 21%</span></div>
               <label class="protein-size-control">Pack size
                 <select data-protein-size aria-label="Whey Protein pack size">
@@ -2777,14 +2825,16 @@
                   <option value="1 kg">1 kg</option>
                 </select>
               </label>
+              </div>
             </div>
           </article>
-          <article class="product-card static-product-card">
+          <article class="product-card static-product-card protein-size-card">
             <div class="product-img">
               <a href="/products/plantprotein"><img src="images/protein/protein.webp" alt="Plant Protein" loading="lazy" /></a>
             </div>
             <div class="product-info">
               <h3><a href="/products/plantprotein">Plant Protein</a></h3>
+              <div class="price-size-row">
               <div class="price-row"><span class="sale-price">₹1,399</span><span class="original-price">₹1,799</span><span class="save-badge">Save 22%</span></div>
               <label class="protein-size-control">Pack size
                 <select data-protein-size aria-label="Plant Protein pack size">
@@ -2792,14 +2842,16 @@
                   <option value="1 kg">1 kg</option>
                 </select>
               </label>
+              </div>
             </div>
           </article>
-          <article class="product-card static-product-card">
+          <article class="product-card static-product-card protein-size-card">
             <div class="product-img">
               <a href="/products/yeastprotein"><img src="images/protein/whey1.webp" alt="Yeast Protein" loading="lazy" /></a>
             </div>
             <div class="product-info">
               <h3><a href="/products/yeastprotein">Yeast Protein</a></h3>
+              <div class="price-size-row">
               <div class="price-row"><span class="sale-price">₹1,299</span><span class="original-price">₹1,599</span><span class="save-badge">Save 19%</span></div>
               <label class="protein-size-control">Pack size
                 <select data-protein-size aria-label="Yeast Protein pack size">
@@ -2807,6 +2859,7 @@
                   <option value="1 kg">1 kg</option>
                 </select>
               </label>
+              </div>
             </div>
           </article>
           <article class="product-card static-product-card">
@@ -2985,7 +3038,7 @@
           cat: "Heart Health",
           price: 1299,
           old: 1499,
-          badge: "new",
+          badge: null,
           img: "products/Nattokinase Carton  final 3d.webp",
           img2: "products/all images/1.webp",
         },
@@ -2995,7 +3048,7 @@
           cat: "Heart Health",
           price: 1299,
           old: 1499,
-          badge: "New",
+          badge: null,
           img: "products/Nattokinase Carton.webp",
           img2: "products/all images/p2.webp",
         },
@@ -3005,7 +3058,7 @@
           cat: "Energy & Immunity",
           price: 1299,
           old: 1499,
-          badge: "new",
+          badge: null,
           img: "products/all images/men-1.webp",
           img2: "products/all images/men-2.webp",
         },
@@ -3015,7 +3068,7 @@
           cat: "Bone & Muscle Health",
           price: 1299,
           old: 1499,
-          badge: "new",
+          badge: null,
           img: "products/Magnesium Complex.webp",
           img2: "products/all images/magnesium2.webp",
         },
@@ -3025,7 +3078,7 @@
           cat: "Energy & Immunity",
           price: 1199,
           old: 1399,
-          badge: "sale",
+          badge: null,
           img: "products/reefit forte c new size.webp",
           img2: "products/all images/multivitamin2.webp",
         },
@@ -3035,7 +3088,7 @@
           cat: "Women's Health & Vitality",
           price: 1299,
           old: 1499,
-          badge: "new",
+          badge: null,
           img: "products/all images/women-1.webp",
           img2: "products/all images/women-2.webp",
         },
@@ -3045,7 +3098,7 @@
           cat: "Heart Health",
           price: 799,
           old: 1199,
-          badge: "sale",
+          badge: null,
           img: "products/all images/omega-1.webp",
           img2: "products/all images/omega-2.webp",
         },
@@ -3055,7 +3108,7 @@
           cat: "Vitamins & Minerals",
           price: 499,
           old: 599,
-          badge: "new",
+          badge: null,
           img: "products/all images/vitamind3-1.webp",
           img2: "products/all images/vitamind3-2.webp",
         },
@@ -3069,7 +3122,7 @@
             "500 g": { price: 1099, old: 1399 },
             "1 kg": { price: 1999, old: 2499 },
           },
-          badge: "new",
+          badge: null,
           img: "images/protein/whey protein.webp",
           img2: "images/protein/wheyprotein2.webp",
         },
@@ -3083,7 +3136,7 @@
             "500 g": { price: 1399, old: 1799 },
             "1 kg": { price: 2499, old: 3199 },
           },
-          badge: "new",
+          badge: null,
           img: "images/protein/protein.webp",
           img2: "images/protein/protein2.webp",
         },
@@ -3097,7 +3150,7 @@
             "500 g": { price: 1299, old: 1599 },
             "1 kg": { price: 2299, old: 2899 },
           },
-          badge: "new",
+          badge: null,
           img: "images/protein/whey1.webp",
           img2: "images/protein/whey2.webp",
         },
@@ -3134,7 +3187,7 @@
         118: "60,000 IU · 60 vegetarian capsules · Bone and immunity support · Best for: vitamin D3 routines",
         123: "As directed on pack · Available in 500 g & 1 kg · Chocolate, Vanilla · Recovery and strength support · Whey-based · Best for: active lifestyles",
         124: "As directed on pack · Available in 500 g & 1 kg · Coffee, Mango · Recovery and strength support · Plant-based · Best for: plant-powered routines",
-        125: "As directed on pack · Available in 500 g & 1 kg · Strawberry, Kesar Pista · Recovery and strength support · Yeast-based · Best for: everyday performance",
+        125: "As directed on pack - available in 500 g and 1 kg - Chocolate flavour - yeast-based recovery and strength support - best for everyday performance",
         126: "1 capsule daily - 60 veg capsules - Energy metabolism and immune support - Best for: daily multivitamin routines",
         127: "1 capsule daily - 60 veg capsules - Heart and immune wellness support - Best for: everyday wellness routines",
       };
@@ -3178,6 +3231,9 @@
         const hasDiscount = Number.isFinite(p.old) && p.old > p.price;
         const saving = hasDiscount ? Math.round(((p.old - p.price) / p.old) * 100) : 0;
         const detailLink = PRODUCT_PAGE_MAP[p.id] || "/shop";
+        const badgeMarkup = p.badge
+          ? `<span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>`
+          : "";
         const differentiator = PRODUCT_CARD_DETAILS[p.id] || "Everyday wellness support · Best for: building a consistent routine";
         const sizeSelector = p.sizes
           ? `<label class="protein-size-control">Pack size
@@ -3186,9 +3242,16 @@
         </select>
       </label>`
           : "";
-        return `<div class="product-card reveal d${(delay % 6) + 1}" data-id="${p.id}">
+        const priceRow = `<div class="price-row">
+        <span class="sale-price">${fmtINR(p.price)}</span>
+        ${hasDiscount ? `<span class="original-price">${fmtINR(p.old)}</span><span class="save-badge">Save ${saving}%</span>` : ""}
+      </div>`;
+        const priceAndSize = p.sizes
+          ? `<div class="price-size-row">${priceRow}${sizeSelector}</div>`
+          : priceRow;
+        return `<div class="product-card reveal d${(delay % 6) + 1}${p.sizes ? " protein-size-card" : ""}" data-id="${p.id}">
     <div class="product-img">
-      <span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>
+      ${badgeMarkup}
       <a href="${detailLink}">
         <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.src='${PLACEHOLDER}'"/>
         <img class="img-hover" src="${p.img2}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.src='${PLACEHOLDER}'"/>
@@ -3205,11 +3268,7 @@
     <div class="product-info">
       <h3><a href="${detailLink}">${p.name}</a></h3>
       <p class="product-differentiator">${differentiator}</p>
-      <div class="price-row">
-        <span class="sale-price">${fmtINR(p.price)}</span>
-        ${hasDiscount ? `<span class="original-price">${fmtINR(p.old)}</span><span class="save-badge">Save ${saving}%</span>` : ""}
-      </div>
-      ${sizeSelector}
+      ${priceAndSize}
       <div class="buy-actions">
         <button class="btn-cart" onclick="window.location.href='${detailLink}'">
           <i class="fa-regular fa-eye"></i><span>View ${p.name}</span>
